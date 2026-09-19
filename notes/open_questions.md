@@ -34,6 +34,49 @@ The repository lives under `MohitPratapSinghRathore`. Owner decision 2026-09-19:
 there. Noted so that the Zenodo DOI and replication package inherit that identity
 deliberately rather than by accident.
 
+### Q4. DECISION NEEDED: HMDA is blocked from this environment
+
+Every CFPB and FFIEC host returns HTTP 403 to this environment, the same Akamai-style block
+already seen on BLS and openICPSR:
+
+| URL | Status |
+|---|---|
+| ffiec.cfpb.gov/v2/data-browser-api/view/filers | 403 |
+| ffiec.cfpb.gov/v2/data-browser-api/view/aggregations | 403 |
+| ffiec.cfpb.gov/data-publication/snapshot-national-loan-level-dataset/2023 | 403 |
+| s3.amazonaws.com/cfpb-hmda-public/.../2023_public_lar_csv.zip | 403 |
+| www.consumerfinance.gov/data-research/hmda/ | 403 |
+
+Browser user-agent and Referer headers do not help; this is a network-level block on the
+host, not a user-agent policy like SEC's.
+
+What this blocks, precisely:
+- Step 3 B3(a), share of DAR by ultimate holder class (GSE, large bank, regional, credit
+  union, nonbank). This is the headline output of Step 3 and the Step 3 gate question.
+- Step 3 B3(c), lender-level exposure ranking.
+- Step 3 B3(d) partially: the LTV proxy side of the double trigger.
+- Step 4 entirely.
+
+What it does NOT block: the PUMS side of Step 3, which is built
+(`src/build_dar_geo.py`): PUMA-level wage, mortgage and rent at risk across the c grid with
+replicate-weight standard errors, and the spatial concentration statistics.
+
+Options:
+1. Owner downloads the HMDA snapshot through a browser and drops it in
+   `data/raw/manual/hmda/`. The 2023 or 2024 national LAR is the file needed. The loader
+   will apply the registered filters and the B2 column whitelist locally. This is the
+   cleanest route and needs one manual download.
+2. Owner runs the Data Browser filtered download UI, restricted to the registered filters,
+   and supplies the CSV.
+3. Substitute a different holder source. FDIC call reports and NCUA give portfolio
+   residential balances by institution, and Census/FHFA give GSE shares, but none of them
+   give the county-by-lender detail the lender map needs. This would change B3(a) from a
+   lender map into a sector-level split.
+
+Recommendation: option 1. Until then Step 3's gate question, where Leg W exposure sits,
+cannot be answered, and that is the single most important unanswered question in the
+project.
+
 ### Q3. Co-author recruitment (brief Section 8.7)
 
 The brief asks for candidate names with macro-finance or central bank credentials, found
@@ -48,6 +91,8 @@ has completed only the first query batch.
 |---|---|---|---|
 | SEC EDGAR XBRL | RESOLVED, contact address declared | - | - |
 | BLS OES | HTTP 403 to this environment | employment and wage weights for PAEI | ACS PUMS used instead; OES still wanted for occupation-level wage bills |
+| HMDA (CFPB/FFIEC, all hosts) | HTTP 403 to this environment | Step 3 holder map and lender ranking, all of Step 4 | owner download, see Q4 |
+| openICPSR | HTTP 403 to this environment | Acemoglu-Restrepo replication package | owner download to data/raw/manual/ |
 | IFR World Robotics | paid | robot stock and shipments, WS1 | ask owner whether to purchase |
 | Scopus / Web of Science | subscription | strict PRISMA coverage in WS0 | audit currently documented as a structured search, declared as a limitation |
 | Preqin | paid | private credit to AI infrastructure, Leg A Tier 2b | BIS aggregates as a labelled estimate |
