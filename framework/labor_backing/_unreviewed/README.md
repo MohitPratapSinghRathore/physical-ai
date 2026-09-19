@@ -23,3 +23,21 @@ The copies left in this folder are duplicates and are superseded by the parent-d
 versions. Nothing should read from this folder.
 
 Owner decision needed: two sessions are writing `framework/labor_backing/` at the same time.
+
+## Update, same day: the parallel session is actively regenerating these files
+
+After the quarantine was applied, the same eight filenames reappeared in
+`framework/labor_backing/`. A parallel session is evidently still writing there. **The copies
+in this folder were NOT moved back and the live files were NOT moved again**: repeatedly
+relocating another session's working files would be a destructive collision, not a fix.
+
+What this means for the owner:
+
+- The copies in `_unreviewed/` are a snapshot taken at quarantine time and are a record, not
+  the live version.
+- The live files in `framework/labor_backing/` are still unreviewed by the analysis sessions
+  and are still built on fiscal inputs superseded by A72, A76, A77 and A79.
+- **Two sessions are writing to the same directory.** That needs an owner decision about
+  which session owns `framework/labor_backing/` before Part B is rerun.
+
+Nothing in the analysis pipeline reads from either location.
