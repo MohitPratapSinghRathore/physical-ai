@@ -748,3 +748,79 @@ manipulation and must be scenario-ed separately rather than summed into one c.
 **Recommendation for the paper.** Report the headline with the flag decomposition attached,
 never alone. Consider a separate capability parameter for autonomous driving, which is the
 single flag doing the most work at high c.
+
+## A19. A4. The rubric is highly reliable, and it does NOT reproduce S_original
+
+**What was tested.** 200 O*NET Core task statements, stratified across S_rank quintiles with
+probability proportional to employment, scored independently by two LLM raters on four
+dimensions (environment predictability, object variability, workspace access, need for
+improvisation). Raters received only the occupation title and the task text. S, S_rank, P
+and PAEI were withheld from the rating file so scores could not anchor on the value under
+validation.
+
+**Result 1, reliability: excellent.**
+
+| Dimension | Pearson | ICC(2,1) | Krippendorff alpha | Exact agreement | Within one point |
+|---|---|---|---|---|---|
+| Predictability | 0.972 | 0.971 | 0.971 | 91.5% | 100% |
+| Object variability | 0.890 | 0.880 | 0.879 | 79.0% | 95.0% |
+| Workspace access | 0.951 | 0.951 | 0.951 | 88.0% | 100% |
+| Improvisation | 0.928 | 0.928 | 0.927 | 81.0% | 100% |
+| **S_text scale (mean of four)** | **0.969** | **0.967** | **0.967** | | |
+
+The rubric is reproducible. Two independent raters agree at alpha 0.967 on the composite.
+
+**Result 2, validity: the correlation with S_original is 0.306, below the 0.5 threshold.**
+
+| Comparison | Pearson | Spearman |
+|---|---|---|
+| S_text (mean of raters) vs S_original | **+0.306** | +0.273 |
+| S_text rater 1 vs S_original | +0.321 | +0.295 |
+| S_text rater 2 vs S_original | +0.286 | +0.248 |
+
+The critical point: **the raters agree with each other (0.969) far more than either agrees
+with S_original (about 0.30).** The gap is therefore not rater noise. It is a genuine
+construct difference. A text-based reading of what a task's environment is like and a
+descriptor-based aggregate of O*NET Work Context scales are measuring substantially
+different things, and both are internally stable.
+
+S_text is also far less compressed than S_original (sd 0.271 against 0.071 in the same
+sample), which is a point in its favour on scale grounds and is the defect that forced the
+rank transform in Step 2.
+
+**Result 3, arbitration by the A3 adoption test, per the owner's decision rule.**
+
+| Sample | S_original | S_text |
+|---|---|---|
+| High-P occupations (n = 100) | Spearman +0.181 (p = 0.071) | +0.155 (p = 0.123) |
+| All sampled occupations (n = 200) | **+0.187 (p = 0.008)** | +0.011 (p = 0.873) |
+
+On the full 200-occupation sample S_original predicts observed robot adoption and S_text
+does not, at all. On the high-P subsample the two are within 0.03 of each other and
+**neither is significant at 5 percent**, so the high-P arbitration is inconclusive on its
+own terms.
+
+Design caveat, stated because it cuts toward S_original: the sample was stratified on
+S_original's rank, which guarantees S_original full spread. That favours S_original, so its
+win should be read as the expected direction of a biased test rather than as a clean
+victory.
+
+**DECISION (logged as D17): retain S_original. Report S_text as a robustness check.** It is
+the incumbent, it is the version validated on the full 476-occupation A3 test, and it is the
+only version that predicts adoption in this subsample.
+
+**What this does to the thesis, stated plainly.** It weakens confidence in S as a construct
+without changing which version the paper uses. Two defensible, internally reliable
+operationalisations of "environmental structure" correlate at only 0.31. That is a
+measurement problem the paper must disclose rather than resolve, and it belongs in the
+limitations section, not in a footnote.
+
+**Power caveat on A15.** In this 200-occupation subsample S_original's high-P correlation
+with adoption is +0.181 and not significant, against +0.419 (p = 1.5e-11) on the full
+476-occupation sample. The A3 gate result rests on the full sample; the subsample is
+underpowered (n = 100 high-P) and should not be read as contradicting it.
+
+**Not yet done from A4.** The owner's specification called for 50 items flagged for human
+review. The merged item-level ratings are in `data/processed/a4/a4_merged_ratings.csv`; the
+50 highest-disagreement items should be extracted and sent for owner adjudication before the
+index is published.

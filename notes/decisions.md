@@ -242,3 +242,34 @@ in src/config.py, with the policy URL, and the fetcher imports them. Verified: H
 
 This supersedes the "blocked" status in D8. D8's reasoning stands; only the resolution
 changed, from blocked to compliant.
+
+## D17. S_original retained over S_text, with the construct tension disclosed (2026-09-19)
+
+A4 built an independent S from O*NET task text using two LLM raters on a fixed rubric.
+
+Reliability of the rubric is excellent: Krippendorff alpha 0.879 to 0.971 per dimension and
+0.967 for the composite. Validity against S_original is 0.306, below the owner's 0.5
+threshold. Because the raters agree with each other far more than either agrees with
+S_original, the gap is a construct difference and not rater noise.
+
+Arbitration by the A3 adoption test, as the owner's rule directs: on the full 200-occupation
+sample S_original predicts robot adoption (Spearman +0.187, p = 0.008) and S_text does not
+(+0.011, p = 0.873). On the high-P subsample the two are within 0.03 and neither is
+significant, so that comparison is inconclusive.
+
+Decision: retain S_original; report S_text as a robustness check.
+
+Tradeoff, and it is a real one. S_text is the better-scaled measure (sd 0.271 against 0.071
+in the same sample), and its compression is exactly the defect that forced the rank
+transform in Step 2. Retaining S_original keeps a compressed scale whose rank transform
+creates the identity noted in A14. The deciding consideration is external prediction, not
+scale aesthetics: only S_original tracks observed adoption.
+
+The test was also biased toward S_original, because the A4 sample was stratified on
+S_original's rank and so guarantees it full spread. That is disclosed rather than corrected,
+and it is the reason this decision is recorded as provisional: if a future, unstratified
+comparison reverses it, switch.
+
+Consequence for the paper: two internally reliable operationalisations of environmental
+structure correlate at 0.31. That belongs in the limitations section as a measurement
+problem the paper discloses rather than resolves.

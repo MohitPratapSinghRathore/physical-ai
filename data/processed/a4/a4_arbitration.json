@@ -1,0 +1,55 @@
+{
+  "n_sample": 200,
+  "n_high_P": 100,
+  "P_median": 0.38975,
+  "spread": {
+    "S_original_sd": 0.07047323107029674,
+    "S_text_sd": 0.27061474321621853,
+    "S_original_range": [
+      0.3227,
+      0.7025
+    ],
+    "S_text_range": [
+      0.0,
+      1.0
+    ]
+  },
+  "high_P": {
+    "S_original": {
+      "label": "S_original (rank)",
+      "n": 100,
+      "spearman": 0.18141014101410138,
+      "spearman_p": 0.07086951031245747,
+      "pearson": 0.36305867612202025,
+      "pearson_empwt": 0.3374549542329105
+    },
+    "S_text": {
+      "label": "S_text (rank)",
+      "n": 100,
+      "spearman": 0.15517551755175518,
+      "spearman_p": 0.1231708828916879,
+      "pearson": 0.27001917133566966,
+      "pearson_empwt": 0.2614111211738197
+    }
+  },
+  "all": {
+    "S_original": {
+      "label": "S_original (rank)",
+      "n": 200,
+      "spearman": 0.186555163879097,
+      "spearman_p": 0.008168782331492161,
+      "pearson": 0.23888702377792906,
+      "pearson_empwt": 0.17270947074692464
+    },
+    "S_text": {
+      "label": "S_text (rank)",
+      "n": 200,
+      "spearman": 0.011403285082127056,
+      "spearman_p": 0.8726753326073988,
+      "pearson": -0.009493979339850585,
+      "pearson_empwt": -0.04242417954299287
+    }
+  },
+  "corr_between_versions": 0.3064107307027233,
+  "verdict": "TIE within 0.05 Spearman: retain S_original (incumbent) and report S_text as a robustness check"
+}

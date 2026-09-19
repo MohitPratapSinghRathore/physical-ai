@@ -1,0 +1,86 @@
+{
+  "n_items": 200,
+  "reliability_by_dimension": {
+    "predictability": {
+      "pearson": 0.9719200688553444,
+      "spearman": 0.9606330730206498,
+      "icc21": 0.9708309262883799,
+      "krippendorff_alpha": 0.9706733485429399,
+      "exact_agreement_pct": 91.5,
+      "within_one_pct": 100.0,
+      "mean_r1": 4.03,
+      "mean_r2": 4.085,
+      "sd_r1": 1.216182552086651,
+      "sd_r2": 1.1907035735228142
+    },
+    "object_variability": {
+      "pearson": 0.8904059209715232,
+      "spearman": 0.8840357734790129,
+      "icc21": 0.8804293025215306,
+      "krippendorff_alpha": 0.8791998028318622,
+      "exact_agreement_pct": 79.0,
+      "within_one_pct": 95.0,
+      "mean_r1": 3.62,
+      "mean_r2": 3.825,
+      "sd_r1": 1.351147660324363,
+      "sd_r2": 1.3245282178949604
+    },
+    "workspace_access": {
+      "pearson": 0.9508156406262811,
+      "spearman": 0.9561545203926087,
+      "icc21": 0.9510495244342408,
+      "krippendorff_alpha": 0.9508156406262809,
+      "exact_agreement_pct": 88.0,
+      "within_one_pct": 100.0,
+      "mean_r1": 3.99,
+      "mean_r2": 3.99,
+      "sd_r1": 1.1044908329180463,
+      "sd_r2": 1.1044908329180465
+    },
+    "improvisation": {
+      "pearson": 0.9281891209510992,
+      "spearman": 0.9341435380377979,
+      "icc21": 0.9275420643133648,
+      "krippendorff_alpha": 0.9272030651340997,
+      "exact_agreement_pct": 81.0,
+      "within_one_pct": 100.0,
+      "mean_r1": 3.905,
+      "mean_r2": 3.895,
+      "sd_r1": 1.1162325026624158,
+      "sd_r2": 1.1678934026699526
+    }
+  },
+  "reliability_of_S_text_scale": {
+    "pearson_r1_r2": 0.9687381410528411,
+    "spearman_r1_r2": 0.9691653798646594,
+    "icc21": 0.9672328306619036,
+    "krippendorff_alpha": 0.9670464671176467
+  },
+  "validity_vs_S_original": {
+    "S_text_mean_of_raters": {
+      "pearson_vs_S_original": 0.30642285308067485,
+      "spearman_vs_S_original": 0.27266182781439674,
+      "pearson_vs_S_rank": 0.3061735949464483,
+      "spearman_vs_S_rank": 0.27249400907867627
+    },
+    "S_text_rater1": {
+      "pearson_vs_S_original": 0.3214488385715036,
+      "spearman_vs_S_original": 0.29474419787964307,
+      "pearson_vs_S_rank": 0.3228914334012342,
+      "spearman_vs_S_rank": 0.29454860684002526
+    },
+    "S_text_rater2": {
+      "pearson_vs_S_original": 0.2863779830667137,
+      "spearman_vs_S_original": 0.24800053646068912,
+      "pearson_vs_S_rank": 0.28442037288315375,
+      "spearman_vs_S_rank": 0.24785816838737246
+    }
+  },
+  "occupation_level": {
+    "n_occupations": 200,
+    "pearson": 0.3064228530806749,
+    "spearman": 0.27266182781439674
+  },
+  "owner_threshold": 0.5,
+  "verdict": "BELOW 0.5 THRESHOLD: S_original reliability in question, arbitrate with the A3 adoption test"
+}
