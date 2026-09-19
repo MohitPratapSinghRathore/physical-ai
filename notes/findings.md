@@ -1282,3 +1282,121 @@ diversification, but it is also far less likely to produce the localised negativ
 spirals that turn income shocks into mortgage losses. **The two halves of the double trigger
 move in opposite directions as c rises**, and the paper should say so rather than assuming
 higher capability is monotonically worse for financial stability.
+
+# PHASE 2 BLOCK 4
+
+## A26. ITEM 0. Package identified. It is NOT Robots and Jobs
+
+`data/raw/manual/114030-V1.zip`, 38 files, contains: `smt88.dta`, `smt93.dta` (Survey of
+Manufacturing Technology), `sic5811.dta` and `naics5811.dta` (NBER-CES manufacturing
+productivity database), seven `*_table_sic87_codes.dta` files, `FH_offshoring_naics.dta`,
+KLEMS multifactor productivity workbooks, `nber-ces-naics-emp.dta`, `hrs.xlsx`, BEA GDP by
+industry.
+
+There is **no commuting-zone file, no IFR robot series and no adjusted-penetration-of-robots
+variable**. This is the replication package for Acemoglu and Restrepo, "Automation and New
+Tasks: How Technology Displaces and Reinstates Labor", Journal of Economic Perspectives
+33(2), 2019, as the owner suspected. Confirmed by contents; the package ships no README.
+
+The Robots and Jobs (JPE 2020) package is no longer being pursued. The commuting-zone
+replication of A3 is therefore closed unbuilt, which no longer matters because A3 itself is
+now closed (A27).
+
+## A27. ITEM 1. THE S QUESTION IS CLOSED. S fails the decisive test
+
+This was the one test with genuine within-manufacturing variation, and S does not pass it.
+
+**Setup.** SMT gives technology use at 4-digit SIC across SIC 34 to 38 (150 industries in
+1988, 161 in 1993). Robot use is `ppr` (pick and place robots) plus `otr` (other robots),
+measured as employment in establishments using them over total employment. Crosswalk SIC87
+to 1997 NAICS (Census concordance) to PUMS INDP. **35 distinct PUMS industries are usable,
+above the owner's threshold of about 25, so the test is properly powered and its result
+stands.**
+
+Verification note: the SMT's 5-category, 17-technology structure is confirmed against Census
+descriptions, and the 17 column stems partition exactly into those categories with the
+documented counts. A variable-level dictionary naming each stem was not located, so the
+stem-to-technology mapping is inferred from transparent naming plus the exact partition. High
+confidence, not documented, recorded as such.
+
+**Result, high-P occupations (n = 146), across 35 detailed manufacturing industries:**
+
+| Measure | Spearman | p | Employment-weighted |
+|---|---|---|---|
+| Robot use, employment share | **-0.140** | 0.092 | +0.010 |
+| Robot use, establishment share | **+0.265** | 0.001 | +0.035 |
+| All occupations, employment share | -0.100 | 0.087 | -0.027 |
+
+**The two measures of the same quantity disagree in sign**, and both employment-weighted
+versions are null. There is no coherent association. The establishment-share result is
+positive and significant and is reported here rather than suppressed, but it cannot carry
+the construct on its own when the employment-share version of the identical variable points
+the other way and neither survives employment weighting.
+
+**VERDICT: the S question is closed permanently.** S has now been tested four ways:
+
+| Test | Result |
+|---|---|
+| Independent LLM rubric (A19) | reliable at alpha 0.967, reproduces S at only r = 0.31 |
+| ACES capex, 8 sectors (A15, corrected in A23) | association is sector composition |
+| Webb task-level robot potential (A21) | null, -0.03 among high-P |
+| **SMT, 35 detailed manufacturing industries (here)** | **null, and sign-inconsistent** |
+
+This goes in the limitations section as a stated failure, not as an open question. The
+honest sentence for the paper: *we could not validate the environmental-structure component
+against any external measure of robot adoption or robot-reachability, and we report the
+index's structure factor as theoretically motivated but empirically unsupported.*
+
+What survives: P (embodiment), which carries the Webb correlation and the whole pathway
+decomposition. The paper's quantities do not depend on S.
+
+## A28. ITEM 2 GATE. The S-free geography result. Hypothesis SUPPORTED
+
+The A25 c-path result is superseded. It was partly mechanical: the c-threshold runs on
+S_rank, and S largely proxies manufacturing, so a c-path necessarily starts in manufacturing
+geography and diffuses out of it. This version uses no S anywhere.
+
+Groups defined externally:
+
+| Group | Occupations | Workers |
+|---|---|---|
+| Robot-reachable, top decile of Webb pct_robot | 43 | 19.3m |
+| Robot-reachable, top quintile | 77 | 24.7m |
+| Robot-reachable, top tercile | 129 | 34.6m |
+| All embodied work (P at or above median) | 238 | 80.0m |
+
+**Concentration of the mortgage at-risk RATE, county level:**
+
+| Group | National rate | Gini | p90/p10 | **p99/p1** |
+|---|---|---|---|---|
+| Robot-reachable, top 10% | 4.57% | 0.283 | 3.35 | **11.86** |
+| Robot-reachable, top 20% | 5.97% | 0.258 | 3.52 | **8.99** |
+| Robot-reachable, top 33% | 8.62% | 0.211 | 2.79 | **6.73** |
+| **All embodied work** | **20.68%** | **0.141** | **2.02** | **3.85** |
+
+Acemoglu and Restrepo report their commuting-zone robot exposure spanning roughly ninefold
+from p1 to p99. **The top-quintile robot-reachable group comes in at 8.99, essentially their
+number.** All embodied work comes in at 3.85, less than half as concentrated.
+
+PUMA level is starker and noisier at the extremes: 81.5 (top decile), 57.5 (top quintile)
+against 16.0 for all embodied work.
+
+**Tradable share of the wage bill:**
+
+| Group | Tradable % | Nontradable % |
+|---|---|---|
+| Robot-reachable, top 20% | 19.6 | 18.7 |
+| All embodied work | 14.8 | **40.5** |
+
+**Both halves of the registered hypothesis hold, on an S-free construction.** Currently
+robot-reachable work is concentrated in tradable manufacturing geography at almost exactly
+the magnitude Acemoglu and Restrepo measured for industrial robots. All embodied work is
+near-uniform and heavily nontradable.
+
+**Why this matters more than A25 did.** The claim is no longer about a capability parameter
+on a discredited index. It is a statement about two observable groups of occupations, one
+defined by an external published measure of robot-reachability and one by embodiment alone:
+*the work robots can currently reach sits where industrial robots already sat; the rest of
+embodied work does not, and is spread almost evenly across the country.* Physical AI's
+financial footprint becomes geographically undiversifiable only to the extent it moves
+beyond currently robot-reachable work.

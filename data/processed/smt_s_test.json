@@ -1,0 +1,26 @@
+{
+  "n_distinct_industries": 35,
+  "all": {
+    "n": 291,
+    "spearman": -0.10038327442142077,
+    "p": 0.08738423460358008,
+    "pearson": -0.08059039668388882,
+    "spearman_empwt": -0.02701720537503998
+  },
+  "high_P": {
+    "n": 146,
+    "spearman": -0.1398631869575194,
+    "p": 0.09223319582842922,
+    "pearson": -0.11127736647092831,
+    "spearman_empwt": 0.010492065723196083
+  },
+  "high_P_est": {
+    "n": 146,
+    "spearman": 0.2645089393325145,
+    "p": 0.0012541804176650496,
+    "pearson": 0.25752440714481567,
+    "spearman_empwt": 0.03531983180792133
+  },
+  "verdict": "S FAILS: close the S question permanently",
+  "n_industries_threshold_met": true
+}

@@ -296,3 +296,55 @@ organising axis changes.
 Tradeoff: the scenario-conditional index was the most novel single artifact and it now sits
 in robustness. Accepted. A measure whose novel component has no clean external validation
 cannot carry a paper's headline.
+
+## D19. Robots and Jobs package no longer pursued; 114030 identified (2026-09-19)
+
+`114030-V1.zip` is the replication package for Acemoglu and Restrepo, "Automation and New
+Tasks", JEP 33(2), 2019. It contains the Survey of Manufacturing Technology, NBER-CES, KLEMS
+and SIC/NAICS tables, and NO commuting-zone or IFR robot series. Owner instruction: stop
+pursuing the Robots and Jobs (JPE 2020) package. The commuting-zone replication of A3 closes
+unbuilt, which is moot because A3 itself is now closed (A27).
+
+Tradeoff: we lose the one design that could have given commuting-zone robot exposure
+directly. Accepted, because the SMT test in the package turned out to be the better test
+anyway: it has within-manufacturing variation, which the commuting-zone measure does not.
+
+## D20. Step 4, the HMDA pricing test, is DROPPED (2026-09-19)
+
+Owner instruction, with the justification run as Block 4 item 6 in short form.
+
+The registered test regresses HMDA rate spreads on local PAEI(c) exposure. It cannot be
+informative at either end of the capability range:
+
+**At high c the test is underpowered.** The at-risk rate across counties at high capability
+has a p90/p10 ratio of about 1.4 to 2.0 and a Gini around 0.06 to 0.13 (A25). Standardised,
+that is a regressor with very little cross-sectional spread. Detecting a risk premium
+requires the coefficient on a near-degenerate regressor to clear the residual variance of
+loan-level rate spreads, and rate spreads are dominated by borrower credit characteristics,
+lock timing and lender pricing policy. A null would be uninformative about whether the risk
+is priced, because the test could not have detected pricing had it existed.
+
+**At low c the test is confounded.** There the exposure IS manufacturing geography
+(A28: robot-reachable work has a county p99/p1 of about 9, matching Acemoglu and Restrepo's
+robot exposure). Any coefficient would be competing with the China shock, manufacturing
+decline, and local house-price dynamics, which is precisely the identification problem
+Acemoglu and Restrepo devoted an entire paper and a European instrument to solving. We have
+no instrument.
+
+I am NOT reporting a numeric minimum detectable effect. Doing so honestly requires a
+verified figure for the residual variance of HMDA rate spreads from a published study, and I
+did not obtain one. Inventing a plausible-looking number to dress up the argument would
+violate Rule 2. The structural argument above stands on the dispersion figures we did
+measure.
+
+Tradeoff: we lose the "is the risk priced" result, which would have been a clean and
+quotable finding either way. Accepted. The consequence for the owner is concrete: **do not
+download HMDA.** notes/prereg_pricing.md is retained as the record of a registered test that
+was dropped for power and identification reasons before any outcome data was seen, which is
+the correct disposal of a pre-registration.
+
+## D21. A4 resample dropped (2026-09-19)
+
+Owner instruction. The A4 adjudication sample was stratified on S_original; with S closed
+permanently (A27) there is nothing left for a resample to adjudicate. The existing
+`a4_50_for_owner_review.csv` is retained as a record, not as a live work item.
