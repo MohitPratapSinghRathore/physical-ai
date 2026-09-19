@@ -288,3 +288,140 @@ See notes/sizing_method.md.
   (A4) came back flat and the consumer-credit answer is where the brief's hypothesis is
   most likely to survive. Needs SCF or credit-bureau microdata; ACS PUMS cannot see it.
 - The mortgage DEBT STOCK version of DAR, as opposed to debt service. Needs SCF.
+
+---
+
+# PHASE 2
+
+Session 2: 2026-09-19. Structure per MASTER_PROMPT_PHASE2.md: what was tested, the result,
+what it does to the thesis, what it rules out, what remains unknown. Anything that weakens
+the thesis leads.
+
+## A6. STEP 0 GATE. The concentration hypothesis is refuted decisively, on a better measure
+
+**What was tested.** Phase 1 found a flat concentration ratio and I reported the flatness
+itself as the result. Phase 2 Step 0 required four corrections: household PAEI as the
+earnings-weighted mean over earners rather than a share-attribution of debt service;
+mortgage payments decontaminated using the MRGT and MRGI inclusion flags; renters added;
+ADJHSG applied. The rebuilt measure was then tested against the obvious confound.
+
+**Result, stage 1.** On the corrected measure the gradient is NOT flat. It is steep and
+monotone:
+
+| Measure | q1 | q2 | q3 | q4 | q5 | q5 burden |
+|---|---|---|---|---|---|---|
+| Owner mortgage, all | 0.87 | 1.00 | 1.01 | 1.08 | 1.37 | 21.6% |
+| Owner mortgage, clean P&I | 0.87 | 1.01 | 1.04 | 1.13 | 1.44 | 17.8% |
+| Renter gross rent | 0.81 | 0.96 | 0.98 | 1.06 | 1.26 | 34.4% |
+| Combined housing | 0.82 | 0.96 | 0.99 | 1.10 | 1.45 | 27.9% |
+
+Read alone this looks like confirmation of the brief's hypothesis, and reporting it there
+would have been a mistake.
+
+**Result, stage 2, which is the actual finding.** Housing costs are less than proportional
+to income, and PAEI correlates negatively with wages, so an income effect alone produces
+exactly this gradient. Stratifying by income decile and comparing PAEI quintiles within
+each:
+
+| Denominator | Raw q5-q1 gap | Income-standardised gap | Deciles with a positive gap |
+|---|---|---|---|
+| Household wage income | +12.31 pp | **-9.55 pp** | **0 of 10** |
+| Total household income | +8.32 pp | **-5.41 pp** | **0 of 10** |
+
+The gradient does not merely vanish under an income control. It REVERSES, in every income
+decile, on both denominators. At a given income level, high-PAEI households carry a LOWER
+housing burden than low-PAEI households.
+
+**What this does to the thesis.** The brief's Tier 2 hypothesis, that Physical AI exposure
+concentrates in mid-income high debt-to-income households, is refuted. It was already
+marked refuted in Phase 1 on weaker evidence and a flawed measure. It is now refuted on the
+correct measure with the confound controlled. PROJECT_BRIEF.md Section 3 has been updated
+to move it out of "our hypotheses, unverified" into an explicit REFUTED row.
+
+**What it rules out.** Three things. First, any household-DTI-based story about the
+mortgage channel: there is no concentration to find. Second, the Phase 1 "flatness"
+framing, which was an artifact of share-attribution across mixed-occupation households.
+Third, the retired diversification claim (D9 point 3), which depended on flatness.
+
+**What remains unknown.** Everything that matters now sits elsewhere:
+- The geographic channel. Default needs an income shock PLUS negative equity, and mortgage
+  books are regional. Household-level DTI was the wrong place to look. Step 3.
+- Non-housing debt. Unsecured and auto debt and liquid buffers are untested; equal debt
+  service can still hide very unequal default risk. Step 5.
+- Whether the risk is priced at all. Step 4.
+
+**Honest note on direction.** The reversal is not evidence that high-PAEI households are
+safe. A lower housing burden at the same income is consistent with thinner assets, weaker
+credit access and more renting, all of which show up in the tenure table below. It relocates
+the risk; it does not remove it.
+
+## A7. Tenure composition, which is where the renter result comes from
+
+Percent of households, by PAEI quintile:
+
+| Quintile | Owner with mortgage | Owner outright | Renter |
+|---|---|---|---|
+| q1 (least exposed) | 54.0 | 17.6 | 27.5 |
+| q2 | 50.4 | 19.1 | 29.3 |
+| q3 | 48.7 | 18.3 | 31.9 |
+| q4 | 42.6 | 19.8 | 36.2 |
+| q5 (most exposed) | 32.2 | 21.0 | 45.0 |
+
+Mortgaged homeownership falls from 54.0 to 32.2 percent across the exposure distribution
+while renting rises from 27.5 to 45.0 percent. Phase 1 looked only at mortgages and so
+looked at the tenure group that high-PAEI households are least likely to be in. This is the
+mechanical reason the level result in Phase 1 (A4) put most mortgage service in low-PAEI
+quintiles, and it is why renters had to be added before any claim about household exposure
+could be made.
+
+For the thesis this is a relocation, not a reprieve: rent is a wage-backed obligation with
+a much shorter enforcement lag than a mortgage, and the renter burden in q5 is 34.4 percent
+of wage income, the highest cell in the table.
+
+## A8. The 77.7 percent labor-linked receipts figure was overstated
+
+**What was tested.** Phase 1 treated all federal personal current taxes as labor-linked.
+
+**Result.** Splitting by the IRS SOI wage and salary share of AGI (Table 1.4, All Returns:
+Sources of Income):
+
+| | USD bn | Share of federal current receipts |
+|---|---|---|
+| Personal current taxes, labor-linked portion | 1,716.5 | |
+| Federal social insurance contributions | 2,074.4 | |
+| **Central estimate** | **3,790.9** | **63.4%** |
+| Upper bound (Phase 1 figure) | 4,645.8 | 77.7% |
+
+Wage share of AGI: 61.0 percent (2021), 65.7 percent (2022), 66.8 percent (2023). The 2021
+dip is the capital gains realisation spike.
+
+**What this does to the thesis.** It weakens the headline number by 14 percentage points
+but does not change its direction: roughly two thirds of federal current receipts are still
+a claim on the wage bill. Use 63.4 percent as the central figure and 77.7 percent only as
+an explicitly labelled upper bound.
+
+**Remaining bias, stated.** The wage share of AGI is not the wage share of TAX. Because the
+income tax is progressive and capital income concentrates in top brackets, the true
+labor-linked share of liability is plausibly below 63.4 percent. The central figure is
+itself still an upper bound, just a tighter one.
+
+## A9. Citation verified: BIS on off-balance-sheet AI financing
+
+The Phase 1 dependent claim (finding A2, decision D4) is confirmed against the source.
+
+- Title: "Financing the AI infrastructure boom: on- and off-balance sheet borrowing"
+- Publication: BIS Quarterly Review, March 2026, published 16 March 2026
+- URL: https://www.bis.org/publ/qtrpdf/r_qt2603u.htm
+
+Verbatim, on the structure the Leg A measurement problem turns on: "A common structure
+involves a dedicated vehicle - often a joint venture or special purpose entity - that
+acquires or develops data centre assets... The hyperscaler typically holds a minority
+stake, commits to long-term operating leases or capacity offtake agreements." And:
+"Economically, this substitutes upfront capex with multi-year operating expenses while
+keeping most of the associated debt off the hyperscaler's balance sheet." And: these
+arrangements "amount to 'shadow borrowing': obligations that are economically akin to debt
+but largely reside outside corporate balance sheets."
+
+Outstanding: the BIS page does not name the feature's authors in the fetched content. Author
+names must be taken from the PDF before this enters references.bib. Logged in
+lit/unverified.md as a partial verification, not a failure.

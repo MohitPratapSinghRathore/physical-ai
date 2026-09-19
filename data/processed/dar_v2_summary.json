@@ -1,0 +1,22 @@
+{
+  "pums_year": 2023,
+  "household_paei_definition": "earnings-weighted mean of PAEI over earners",
+  "quintile_cutpoints_hh_weighted": [
+    0.08885,
+    0.12063275515384085,
+    0.17534,
+    0.2424333333333333
+  ],
+  "corr_ew_vs_reference_person": 0.8448546457612273,
+  "pct_households_changing_quintile_vs_reference_person": 28.199735780340628,
+  "corr_ew_vs_highest_earner": 0.9586936006134228,
+  "pct_households_changing_quintile_vs_highest_earner": 18.370725341311786,
+  "mortgage_hh_weighted": 50231926.0,
+  "pct_mortgage_hh_with_clean_PI": 21.031180448864333,
+  "mean_annual_mortgage_payment_all_usd": 20056.699239125333,
+  "mean_annual_mortgage_payment_PI_clean_usd": 17628.673911082416,
+  "contamination_bias_pct": 13.773159230749162,
+  "renter_hh_weighted": 43425976.0,
+  "total_rent_usd_bn": 824.333166552,
+  "total_mortgage_usd_bn": 1007.486631984
+}

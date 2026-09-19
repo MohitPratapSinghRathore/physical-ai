@@ -1,0 +1,44 @@
+{
+  "soi_years_read": [
+    2021,
+    2022,
+    2023
+  ],
+  "soi_year_used": 2023,
+  "wage_share_of_agi": 0.6675444273908338,
+  "wage_share_of_total_income": 0.6612193432633543,
+  "fed_personal_current_taxes_usd_bn": 2571.4,
+  "fed_social_insurance_contrib_usd_bn": 2074.4,
+  "fed_current_receipts_usd_bn": 5980.6,
+  "labor_linked_upper_bound_usd_bn": 4645.8,
+  "labor_linked_upper_bound_pct": 77.68116911346686,
+  "labor_linked_central_usd_bn": 3790.9237405927897,
+  "labor_linked_central_pct": 63.38701368746931,
+  "soi_detail": {
+    "2023": {
+      "agi_usd_bn": 15286.017359,
+      "total_income_usd_bn": 15432.240162,
+      "wages_usd_bn": 10204.095705,
+      "wage_share_of_agi": 0.6675444273908338,
+      "wage_share_of_total_income": 0.6612193432633543,
+      "file": "23in14ar.xls"
+    },
+    "2022": {
+      "agi_usd_bn": 14833.956956,
+      "total_income_usd_bn": 14977.662516,
+      "wages_usd_bn": 9738.950972,
+      "wage_share_of_agi": 0.6565308906374314,
+      "wage_share_of_total_income": 0.6502317008142153,
+      "file": "22in14ar.xls"
+    },
+    "2021": {
+      "agi_usd_bn": 14795.61407,
+      "total_income_usd_bn": 14936.967974,
+      "wages_usd_bn": 9022.352941,
+      "wage_share_of_agi": 0.6097991538785791,
+      "wage_share_of_total_income": 0.6040284050086161,
+      "file": "21in14ar.xls"
+    }
+  },
+  "caveat": "The wage share of AGI is not the wage share of tax. The individual income tax is progressive and non-wage income concentrates in the top brackets, so the wage share of tax paid is plausibly below the wage share of AGI. The central figure is therefore still an upper bound, though a much tighter one. A bracket-level calculation is a later extension."
+}

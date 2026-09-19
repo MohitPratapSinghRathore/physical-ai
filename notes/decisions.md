@@ -132,3 +132,113 @@ themselves with a contact address. Escalated to the owner instead, as open quest
 Tradeoff: WS1 Tier 2 is blocked this session. Accepted; misrepresenting the client to a
 regulator's data service to build a paper about financial regulation is not a trade worth
 making, and a referee who learned of it would be entitled to distrust the whole pipeline.
+
+---
+
+# PHASE 2
+
+## D9. Phase 2 repositioning accepted in full (2026-09-19)
+
+External review moved the paper from framework-led to measurement-led, retired one claim,
+and made PAEI scenario-conditional. PROJECT_BRIEF.md Section 1.1 records the five changes.
+Primary venue changes from TFSC to Journal of Financial Stability.
+
+Why accepted without pushback: every one of the five points is a correction to something
+Phase 1 actually got wrong or overstated, and three of them (mechanical flatness, the
+retired diversification claim, PAEI measuring current robotics) were errors this pipeline
+produced. The review is right.
+
+Tradeoff: the scenario and foresight apparatus that justified the TFSC target becomes
+scaffolding, and the paper now lives or dies on measurement quality. Accepted.
+
+## D10. Household PAEI is the earnings-weighted mean over earners (2026-09-19)
+
+Phase 1 attributed each household's debt service across PAEI quintiles in proportion to
+each earner's wage share. That is a different estimand and it mechanically pulls every
+mixed-occupation household toward the middle, which manufactured the flat result.
+
+Decision: the household's exposure is the earnings-weighted mean of PAEI across its
+earners, and the household is assigned whole to one quintile.
+
+Movement, measured rather than assumed:
+- correlation with reference-person PAEI 0.845; 28.2 percent of households change quintile
+- correlation with highest-earner PAEI 0.959; 18.4 percent change quintile
+
+Tradeoff: a single scalar cannot represent a household where one earner is fully exposed
+and another is not. The earnings weighting is the right first-order choice because it is
+the income at risk that matters, but a two-earner dispersion measure should be added later.
+
+## D11. Mortgage payments are decontaminated using MRGT and MRGI (2026-09-19)
+
+PUMS MRGP may include real estate taxes (MRGT == 1) and fire, hazard and flood insurance
+(MRGI == 1). Phase 1 used MRGP as if it were debt service.
+
+Only 21.0 percent of mortgage households report taxes AND insurance paid separately. The
+mean annual payment is 20,057 USD on the full sample against 17,629 USD on the clean
+subsample, so the contamination is 13.8 percent.
+
+Decision: report both. The clean principal-and-interest subsample is the headline for any
+debt-service claim; the full sample is reported for coverage, labelled as housing outlay
+rather than debt service.
+
+Tradeoff: the clean subsample is only a fifth of mortgage households and is not random
+(escrow is more common on high-LTV and FHA loans), so it likely under-represents
+higher-leverage borrowers. Flagged as a limitation rather than corrected, because
+correcting it needs a selection model the data cannot support.
+
+## D12. ADJHSG applied to housing amounts (2026-09-19)
+
+The PUMS dictionary instructs that MRGP and GRNTP be adjusted by ADJHSG. Phase 1 did not.
+For the 2023 single-year file ADJHSG is exactly 1.000000, so nothing moves numerically, but
+the omission would have been a real error on any multi-year build. Applied programmatically.
+
+## D13. Renters are in scope (2026-09-19)
+
+Gross rent is a wage-backed housing obligation. Excluding renters excluded 45 percent of
+the households in the most exposed PAEI quintile, which is where the thesis expects the
+exposure to be. Owner, renter and combined results are now reported separately.
+
+## D14. The income confound is tested before any gradient is reported (2026-09-19)
+
+The Step 0 rebuild produced a steep raw gradient (concentration ratio 0.87 to 1.44,
+combined housing burden 15.6 to 27.9 percent). It would have been easy and wrong to report
+that as confirmation of the brief's hypothesis.
+
+Housing costs are less than proportional to income, and PAEI correlates negatively with
+wages, so an income effect alone produces exactly that gradient. Decision: no PAEI gradient
+is reported without a within-income-band test and a direct-standardisation estimate.
+
+Result: the gradient reverses sign in 10 of 10 income deciles, on both a wage-income and a
+total-income denominator. See findings A6.
+
+Tradeoff: none. This test is cheap and it is the difference between a result and an
+artifact.
+
+## D15. Labor-linked federal receipts are split by the SOI wage share of AGI (2026-09-19)
+
+Phase 1's 77.7 percent treated all federal personal current taxes as labor-linked.
+Individual income tax also falls on capital gains, dividends, interest, business and
+retirement income.
+
+Decision: scale personal current taxes by the wage and salary share of AGI from IRS SOI
+Table 1.4, leaving social insurance contributions unscaled. Central estimate 63.4 percent;
+77.7 percent retained and labelled as the upper bound.
+
+Wage share of AGI: 61.0 percent (2021), 65.7 percent (2022), 66.8 percent (2023). The 2021
+dip is the capital gains realisation spike, which is exactly the volatility this correction
+exists to capture.
+
+Tradeoff: the wage share of AGI is not the wage share of TAX. Progressivity plus the
+concentration of capital income in top brackets means the true labor-linked share of
+liability is plausibly below 63.4 percent, so the central figure is still an upper bound,
+just a much tighter one. A bracket-level calculation needs SOI liability-by-source data and
+is deferred.
+
+## D16. SEC User-Agent moved to src/config.py with the owner's name and address (2026-09-19)
+
+D8 declined to spoof a browser user-agent. The correct route, which SEC publishes, is to
+declare a real name and contact email and stay under 10 requests per second. Both are now
+in src/config.py, with the policy URL, and the fetcher imports them. Verified: HTTP 200.
+
+This supersedes the "blocked" status in D8. D8's reasoning stands; only the resolution
+changed, from blocked to compliant.

@@ -1,0 +1,42 @@
+{
+  "wage_denominator": {
+    "denominator": "household wage income",
+    "unconditional_pct": {
+      "q1": 15.574986477125561,
+      "q2": 18.37817949632274,
+      "q3": 19.127735609103365,
+      "q4": 21.130172723555592,
+      "q5": 27.88505662730626
+    },
+    "unconditional_gap_pp": 12.310070150180698,
+    "standardised_pct": {
+      "q1": 45.627283023478924,
+      "q2": 42.03359866259632,
+      "q3": 40.17727421149283,
+      "q4": 38.65265385069374,
+      "q5": 36.08138174820696
+    },
+    "standardised_gap_pp": -9.545901275271966,
+    "deciles_with_positive_gap": 0
+  },
+  "total_income_denominator": {
+    "denominator": "total household income",
+    "unconditional_pct": {
+      "q1": 13.492194739789548,
+      "q2": 15.423084107305796,
+      "q3": 16.175689534817312,
+      "q4": 17.542274924275336,
+      "q5": 21.815813564937862
+    },
+    "unconditional_gap_pp": 8.323618825148314,
+    "standardised_pct": {
+      "q1": 29.912128053806455,
+      "q2": 27.55431746238574,
+      "q3": 26.51802342983681,
+      "q4": 26.074225255089935,
+      "q5": 24.503684557483798
+    },
+    "standardised_gap_pp": -5.408443496322658,
+    "deciles_with_positive_gap": 0
+  }
+}

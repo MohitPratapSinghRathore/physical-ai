@@ -4,6 +4,8 @@ Physical AI, wage-backed debt, and the architecture of a post-labor financial sy
 
 Owner: Gunveer Kalsi. Read this file fully before doing anything. Treat it as the source of truth. If something here conflicts with a later instruction from the owner, the owner wins, and you update this file.
 
+AMENDED 2026-09-19 for Phase 2. MASTER_PROMPT_PHASE2.md supersedes the workstream order below. All hard rules in Section 4 still apply. The amendments are summarised in Section 1.1 and marked inline as PHASE 2.
+
 ---
 
 ## 1. What this project is
@@ -13,6 +15,30 @@ A research paper targeting a Q1 journal. Primary target: Technological Forecasti
 Format: scenario and foresight paper with a formal balance-sheet framework and one original quantitative artifact. It is NOT a DSGE or HANK paper, and it is NOT a narrative essay.
 
 Your job: build the evidence base, the data pipeline, the framework, and the manuscript, in that order. Writing prose comes last.
+
+### 1.1 PHASE 2 amendments (2026-09-19)
+
+External review of Phase 1 changed the paper's shape. Five changes, all binding:
+
+1. **The paper is measurement-led, not framework-led.** New section order: PAEI(c), DAR,
+   holder map, framework as scaffolding, short architecture section. Primary target is now
+   **Journal of Financial Stability**; TFSC is the fallback. The scenario-and-foresight
+   framing above is demoted to scaffolding.
+2. **The flat debt-service result is partly mechanical.** Underwriting caps DTI, so
+   proportionality is produced by construction. It cannot be presented as a discovery.
+3. **Retired claim.** "Occupational diversification does not hedge a mortgage book" is
+   withdrawn. A flat distribution does not stop an individual lender from selecting
+   low-exposure borrowers. The defensible replacements are (a) the risk is unpriced and
+   uniformly spread, so the system in aggregate cannot rotate out of it, and (b)
+   occupation-based underwriting collides with fair lending law, because occupation
+   correlates with protected classes. Claim (b) requires ECOA, Fair Housing Act and
+   disparate impact sourcing before it appears in the paper.
+4. **The mortgage channel runs through geography, not household DTI.** Default needs an
+   income shock plus negative equity, mortgage books are regional, and local house prices
+   follow local wages. Geographic DAR and the lender map are the centerpiece.
+5. **PAEI must become scenario-conditional.** As built it penalises unstructured
+   environments, which is precisely what Physical AI is supposed to overcome, so PAEI at
+   c = 0 is a current-robotics index. PAEI(c) ties exposure to the capability axis.
 
 ---
 
@@ -66,7 +92,8 @@ Most proposed remedies (UBI, AI dividends, robot taxes, sovereign funds) repair 
 | Tier | Claims |
 |---|---|
 | Established in literature | So-so automation (Acemoglu and Restrepo). Inequality, leverage and crises (Kumhof, Ranciere, Winant). Indebted demand (Mian, Straub, Sufi). AGI transition scenarios for wages and output (Korinek and Suh). IMF 2026 scenario note flags household balance sheet and bank channel qualitatively. BIS September 2026 speech flags the displaced worker as lost consumer loop. arXiv 2026 "The Demand Externality of Automation". |
-| Our hypotheses, unverified | The two-sided bet framing. The hedge failure proposition. The tau * s threshold. That Physical AI exposure concentrates in mid-income, high debt-to-income households. |
+| Our hypotheses, unverified | The two-sided bet framing. The hedge failure proposition. The tau * s threshold. |
+| REFUTED (PHASE 2) | That Physical AI exposure concentrates in mid-income, high debt-to-income households. Tested twice on ACS PUMS 2023. Conditional on income the gradient REVERSES in 10 of 10 income deciles. See notes/findings.md A4, A6. Do not restate this hypothesis. |
 | Unknown, could kill or reshape the thesis | Relative size of Leg A versus Leg W. Who holds both legs. Whether someone has already published this framing. |
 
 Novelty statement to use until WS0 is complete, verbatim:
@@ -106,6 +133,11 @@ Goal: confirm or narrow the novelty claim.
 Kill or reshape criterion: if any paper already combines both legs in one exposure framework, stop and report to the owner with a proposed repositioning.
 
 ### WS1. Sizing the two legs (time-box: 2 weeks for feasibility, then full build)
+
+PHASE 2: Tier 2 is built and reported as a labelled LOWER BOUND (2.14 percent of US
+household debt). The 5 percent kill criterion is NOT evaluable until Tier 1 and Tier 2b
+exist, because filings exclude the off-balance-sheet SPV structures BIS QR March 2026
+identifies as dominant. See notes/sizing_method.md and decision D4.
 
 Goal: the headline table. Economies: United States, euro area, China, Japan, South Korea. India as a contrast case (Leg W present, domestic Leg A near absent, exposure is imported).
 
@@ -173,7 +205,7 @@ For each regime, give the minimum architecture, the precedent (for example Alask
 
 Only after WS0 and WS1 report. Structure: introduction, related literature with audit protocol, framework, scenarios, sizing and holder evidence, architectures, limitations, conclusion. LaTeX, Elsevier template, around 9,000 to 11,000 words. Abstract under 200 words.
 
-### WS7 (optional follow-up paper, do not start without approval)
+### WS7 PROMOTED (PHASE 2): now the core of the main paper, not a sequel
 
 Physical AI occupational exposure index from O*NET task data with LLM-assisted classification and human validation, mapped to household debt microdata (Debt-at-Automation-Risk). This is the empirical sequel and a stronger finance-journal paper.
 

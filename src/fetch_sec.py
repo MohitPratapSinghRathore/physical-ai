@@ -4,11 +4,11 @@ import json, pathlib, sys, time, datetime
 import requests
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from sources import SEC_COMPANIES, SEC_TAGS
+from config import SEC_USER_AGENT, SEC_REQUEST_DELAY_SECONDS
 
 RAW = pathlib.Path(__file__).parents[1] / "data" / "raw" / "sec"
 RAW.mkdir(parents=True, exist_ok=True)
-# SEC fair-access policy requires a declared contact address for automated requests.
-UA = {"User-Agent": "physical-ai-research/0.1 (team@oviguide.in)"}
+UA = {"User-Agent": SEC_USER_AGENT}   # see src/config.py
 URL = "https://data.sec.gov/api/xbrl/companyconcept/CIK{cik}/us-gaap/{tag}.json"
 
 def main():
@@ -25,7 +25,7 @@ def main():
                                               "cik": cik, "concept": key, "tag": tag,
                                               "ok": ok, "status": r.status_code, "url": u,
                                               "retrieved": datetime.date.today().isoformat()}
-                time.sleep(0.12)  # SEC fair-access limit: 10 req/s
+                time.sleep(SEC_REQUEST_DELAY_SECONDS)  # SEC limit: 10 req/s
         got = [k for k in SEC_TAGS if any(v["ok"] for kk, v in log.items()
                if v["ticker"] == tic and v["concept"] == k)]
         print(f"{tic:6s} {name[:28]:28s} {len(got)}/{len(SEC_TAGS)} tags: {','.join(got)}")
