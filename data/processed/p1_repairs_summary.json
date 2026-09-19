@@ -1,0 +1,39 @@
+{
+  "any_feasible": false,
+  "breakeven_rho_closed_economy": {
+    "AMR_g0.0": 0.8104575163398693,
+    "AMR_g0.1": 0.8755364806866953,
+    "AMR_g0.25": 0.9178470254957507,
+    "bottom_up_low_g0.0": 0.8903654485049833,
+    "bottom_up_low_g0.1": 0.9240214888718344,
+    "bottom_up_low_g0.25": 0.9479768786127166,
+    "bottom_up_high_g0.0": 0.9140461215932915,
+    "bottom_up_high_g0.1": 0.9394387001477106,
+    "bottom_up_high_g0.25": 0.9580348004094168
+  },
+  "payroll": {
+    "effective_payroll_rate_on_wage_bill": 0.1552090503696166,
+    "statutory_split_OASDI": 0.8104575163398693,
+    "statutory_split_HI": 0.18954248366013074,
+    "OASDI_payroll_income_usd_bn": 1323.2,
+    "HI_payroll_income_usd_bn": 406.9
+  },
+  "PD": {
+    "mortgage_base": 0.0186,
+    "mortgage_stress_2010": 0.1148,
+    "consumer_base": 0.0266,
+    "consumer_stress_2010": 0.066
+  },
+  "LGD": {
+    "mortgage_low": 0.1,
+    "mortgage_high": 0.25,
+    "consumer_low": 0.2,
+    "consumer_high": 0.4
+  },
+  "PD_displaced_bracket": {
+    "low": 0.05,
+    "high": 0.2
+  },
+  "mortgage_balance_base_usd_bn": 14010.9,
+  "consumer_balance_base_usd_bn": 5120.3
+}

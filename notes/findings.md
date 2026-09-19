@@ -1777,3 +1777,165 @@ are less indebted on most measures, and the vehicle-debt concentration is drivin
 the evidence now points the paper's centre of gravity at the public budget rather than at
 household credit.
 
+
+## A33. P1 REPAIRED. My framing was wrong, the IMF got there first on the mechanism, and the net-position figure was an artifact
+
+### Four things that weaken what I reported last session
+
+**1. "s must exceed 2.55" was wrong as framed.** Under output neutrality s = 1 - c_r/w, so
+s <= 1 by construction. A requirement of s >= 2.55 is not a demanding threshold, it is an
+unattainable one. The correct statement is the opposite in character: **output-neutral
+automation is never fiscally neutral, for any adoption speed.** There is no break-even s.
+The only question is how large the loss is.
+
+**2. The mechanism is already in the literature.** IMF Staff Discussion Note SDN/2024/002,
+"Broadening the Gains from Generative AI", states that labour substitution can reduce
+revenue if capital income is taxed less than labour income, and that developing economies
+specialising in labour-intensive sectors are particularly at risk of losing tax revenue.
+That is P1's mechanism and P1's emerging-market corollary, stated qualitatively, in a 2024
+IMF publication. The novelty claim must be narrowed accordingly (Section 8 below).
+
+**3. The 674 billion dollar net fiscal position was an artifact and I am withdrawing it.**
+It equalled the displaced wage bill to within 0.3 billion. That is a coincidence, not an
+identity: the employment-weighted mix happened to put outlays at about 0.62 to 0.87 of mean
+wage and tax at about 0.32, summing to roughly 1.0. More importantly, **the scenario outlays
+(459bn) were 2.1 times the measured revenue loss (215bn)**, so the headline figure was
+dominated by the one component that is assumption rather than measurement. The revenue side
+is now led on its own; the outlay side is reported separately and always labelled scenario.
+
+**4. rho is not sourced.** The BLS Displaced Worker Survey reemployment rate was not
+obtained. rho is a stipulated scenario parameter throughout. omega IS sourced (Jacobson,
+LaLonde and Sullivan 1993).
+
+### (1) P1 restated, in scale-free per-dollar form
+
+Displace one dollar of wage bill. The public loss is
+
+    **L(s) = tau_l + g - tau_k * s**,   with   **s = 1 - c_r/w <= 1**
+
+so L is bounded below by tau_l + g - tau_k and above by tau_l + g. Fiscal neutrality
+requires additional taxable OUTPUT y beyond the substitution, of
+
+    **y >= (tau_l + g)/tau_k - s**,  and at best (s = 1)  **y >= (tau_l + g - tau_k)/tau_k**
+
+| tau_l source | g | Loss at s to 0 | Loss at s = 1 | Neutral? | Extra taxable output required at s = 1 |
+|---|---|---|---|---|---|
+| AMR 0.255 | 0 | 0.255 | **0.155** | No | 1.55 |
+| AMR 0.255 | 0.10 | 0.355 | 0.255 | No | 2.55 |
+| AMR 0.255 | 0.25 | 0.505 | 0.405 | No | 4.05 |
+| Bottom-up 0.301 | 0 | 0.301 | 0.201 | No | 2.01 |
+| Bottom-up 0.318 | 0 | 0.318 | **0.218** | No | 2.18 |
+| Bottom-up 0.318 | 0.25 | 0.568 | 0.468 | No | 4.68 |
+
+**No parameterisation is fiscally neutral.** The headline per-dollar number is a loss of
+**15.5 to 21.8 cents per dollar of displaced wages with no outlay response**, rising to 25.5
+to 56.8 cents with outlays.
+
+### (3) On the two rate sets
+
+AMR's 25.5 percent is an effective marginal rate on labour built from statutory rates,
+payroll taxes and employer-side treatment inside their user-cost framework. The bottom-up
+30.1 to 31.8 percent is an average rate: actual federal income tax on wages (SOI-corrected),
+plus actual federal social insurance contributions, plus state and local income tax, each
+divided by the NIPA wage bill. Marginal and average rates differ, and the two are built for
+different purposes. Every magnitude is reported at both. The word "conservative" is removed:
+using the lower figure is a choice that narrows the estimate, not one that makes it safe.
+
+### (2) The general condition with retained tax streams
+
+    **tau_k*s + tau_l*rho*omega + tau_r*(1-m)*(1-s)  >=  tau_l + g*(1-rho)**
+
+rho reemployment share, omega wage ratio on reemployment (0.75 central, 0.65 to 0.82 range,
+from Jacobson, LaLonde and Sullivan 1993, AER 83(4), 685-709: long-term losses average about
+25 percent for high-tenure displaced workers), m imported share of robot capital, tau_r the
+rate on robot-producer income.
+
+**Closed-economy corollary (m = 0, tau_r = tau_k).** The s terms cancel, because a dollar
+spent on robot cost and a dollar of surplus are both taxed at tau_k. The condition reduces to
+
+    tau_k + tau_l*rho*omega >= tau_l + g*(1-rho)
+
+which does not contain s at all. **Adoption speed is irrelevant in a closed economy with
+uniform capital taxation; only the tax wedge and the reemployment margin matter.**
+
+Break-even reemployment share, omega = 0.75:
+
+| tau_l | g = 0 | g = 0.10 | g = 0.25 |
+|---|---|---|---|
+| AMR 0.255 | **0.810** | 0.876 | 0.918 |
+| Bottom-up 0.301 | 0.890 | 0.924 | 0.948 |
+| Bottom-up 0.318 | 0.914 | 0.939 | 0.958 |
+
+**Between 81 and 96 percent of displaced workers must be reemployed, at 75 percent of their
+prior wage, for the public budget to break even.** This is the single most policy-relevant
+number the project has produced, and it is scale-free.
+
+**Imported-robot corollary (m = 1): the emerging-market case.** The robot cost leaves the
+country untaxed and only the surplus is domestically taxable. At AMR rates, g = 0:
+
+| rho | s = 0.05 | s = 0.50 | s = 1.00 |
+|---|---|---|---|
+| 0.0 | **-0.250** | -0.205 | -0.155 |
+| 0.5 | -0.154 | -0.109 | -0.059 |
+| 0.7 | -0.116 | -0.071 | -0.021 |
+| 0.9 | -0.078 | -0.033 | **+0.017** |
+
+With no reemployment and near the adoption margin, **essentially the entire labour tax is
+lost with no offsetting domestic base**. Only at 90 percent reemployment AND costless robots
+does the position turn positive. This is the brief's India contrast case, and it is the
+sharpest form of the result.
+
+### (4) Payroll, split by trust fund
+
+Effective payroll rate on the wage bill: 15.52 percent. Statutory split OASDI 12.4 and HI
+2.9 of 15.3, so 81.0 percent OASDI and 19.0 percent HI.
+
+Denominators: OASDI payroll income 1,323.2bn (91.3 percent of 1,449.3bn combined OASDI
+income, 2025 Trustees Report); HI payroll income about 406.9bn (payroll was 88 percent of
+Part A revenue of 462.4bn, 2024). The combined OASDI funds ran a 160.2bn deficit in 2025.
+
+### (6) Like-for-like channel comparison, 25 percent displacement
+
+Fiscal loss uses the per-dollar form above (low = AMR with g = 0 at s = 1; high = bottom-up
+0.318 with g = 0.10 near the adoption margin). Expected credit loss = balance at risk x
+displaced share x default probability among displaced households x loss given default.
+Default bracket 5 to 20 percent (anchored on measured aggregate mortgage delinquency of 1.86
+percent now against an 11.48 percent peak in 2010, FRED DRSFRMACBS). LGD brackets: mortgage
+10 to 25 percent, consumer 20 to 40 percent, indicative industry ranges and NOT authoritative.
+
+| Pathway | Displaced wage bill | Fiscal loss | Expected credit loss | Fiscal / credit |
+|---|---|---|---|---|
+| Driving | $56.7bn | $8.8 to 23.7bn | $0.5 to 4.9bn | **1.8x to 44x** |
+| Gated | $445.1bn | $69.0 to 186.1bn | $4.3 to 39.7bn | **1.7x to 43x** |
+| Manipulation | $172.1bn | $26.7 to 72.0bn | $1.6 to 14.5bn | **1.8x to 45x** |
+
+**The fiscal channel exceeds the household credit channel at every corner of both brackets.**
+Even comparing the lowest fiscal estimate with the highest credit estimate, fiscal is 1.7 to
+1.8 times larger. At the other corner it is more than forty times larger. This is the
+like-for-like comparison the correction asked for and it is robust to the bracket choices.
+
+### (8) Targeted literature check, and the narrow novelty claim
+
+| Work | Verified citation | What it shows | States a fiscal-neutrality condition for automation? |
+|---|---|---|---|
+| Acemoglu, Manera and Restrepo | Brookings Papers 2020(1), 231-300 | Effective tax rates: labour 25.5%, capital 10%, equipment and software about 5% post-2017; the US code favours automation; optimal taxation counterfactuals | **No.** Supplies P1's parameters; does not state the condition |
+| Guerreiro, Rebelo and Teles | Review of Economic Studies 89(1), Jan 2022, 279-311 (NBER WP 23806) | Optimal to tax robots while current routine workers are in the labour force; zero once they retire | **No.** Optimal-tax and inequality object |
+| Costinot and Werning | NBER WP 25103, 2018 | Sufficient-statistic approach to optimal technology regulation | **No** |
+| Thuemmel | CESifo working paper, 2018 | Optimal taxation of robots | **No** |
+| Korinek and Lockwood | "Public Finance in the Age of AI: A Primer", Nov 2025, prepared for Brookings CRM | TAI erodes the two main tax bases, labour income and human consumption; optimal taxation across transition stages | **No** condition of P1's form found. Adjacent object: optimal policy, not an accounting neutrality condition. No treatment of imported capital or reemployment in P1's form |
+| IMF | Staff Discussion Note SDN/2024/002, "Broadening the Gains from Generative AI" | **Labour substitution can reduce revenue if capital income is taxed less than labour income; developing economies specialising in labour-intensive sectors are particularly at risk** | **Qualitatively yes.** This is P1's mechanism and P1's emerging-market corollary, stated without a formal condition |
+
+**Novelty claim for P1, stated as narrowly as the evidence requires:**
+
+> The mechanism is not new: the IMF (2024) states that labour substitution erodes revenue
+> when capital is taxed more lightly than labour, and flags labour-intensive developing
+> economies as most exposed. We have not identified a source that writes this as a
+> closed-form accounting condition per dollar of displaced wages including the retained tax
+> streams (reemployment at rate rho and wage ratio omega, and robot-cost income with
+> imported share m), that states the feasibility result that output neutrality makes fiscal
+> neutrality unattainable whenever tau_k < tau_l + g so that no break-even adoption speed
+> exists, or that reduces the closed-economy case to a single calibrated break-even
+> reemployment share.
+
+That is the whole of the claim. It is a formalisation and calibration claim, not a discovery
+claim, and the paper must not present it as more.

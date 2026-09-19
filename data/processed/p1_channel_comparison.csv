@@ -1,0 +1,10 @@
+pathway,displacement,displaced_wage_bill_usd_bn,fiscal_loss_low_usd_bn,fiscal_loss_high_usd_bn,mortgage_balance_at_risk_usd_bn,consumer_balance_at_risk_usd_bn,expected_credit_loss_low_usd_bn,expected_credit_loss_high_usd_bn,fiscal_to_credit_ratio_low,fiscal_to_credit_ratio_high
+driving,0.1,22.686,3.516,9.483,24.799,9.063,0.215,1.965,1.789,44.183
+driving,0.25,56.715,8.791,23.707,61.998,22.657,0.537,4.912,1.789,44.183
+driving,0.5,113.43,17.582,47.414,123.996,45.315,1.073,9.825,1.789,44.183
+gated,0.1,178.04,27.596,74.421,200.538,73.287,1.736,15.89,1.737,42.88
+gated,0.25,445.101,68.991,186.052,501.345,183.217,4.339,39.725,1.737,42.88
+gated,0.5,890.202,137.981,372.105,1002.69,366.434,8.678,79.449,1.737,42.88
+manipulation,0.1,68.85,10.672,28.779,73.375,26.815,0.635,5.814,1.836,45.32
+manipulation,0.25,172.126,26.679,71.949,183.438,67.038,1.588,14.535,1.836,45.32
+manipulation,0.5,344.252,53.359,143.897,366.875,134.075,3.175,29.07,1.836,45.32

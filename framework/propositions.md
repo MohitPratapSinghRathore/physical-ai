@@ -41,7 +41,9 @@ condition: can the government collect as much as it loses. P1 is strictly harder
 tau_k < tau_l, and the gap is the tax wedge between labour and capital. **The brief's
 threshold understates the constraint by assuming the revenue arrives.**
 
-**Status: draft, arithmetic checked, assumptions not yet stress-tested.** Open issues: tau_k
+**SUPERSEDED 2026-09-19 by P1r below. The statement above is wrong in framing: it presents s >= 2.55 as a threshold, but under output neutrality s <= 1 by construction, so the condition is unattainable rather than demanding. Kept as the record of the error.**
+
+**Status: draft, arithmetic checked.** Open issues: tau_k
 is an economy-wide average applied to a marginal surplus; the 1:1 mapping of displaced wage
 income into taxable capital income assumes output preserved and no change in factor shares
 beyond the substitution itself; g is scenario, not measured.
@@ -49,3 +51,56 @@ beyond the substitution itself; g is scenario, not measured.
 ## P2. Hedge failure
 
 Not yet drafted. To be written with the fiscal wedge from P1 integrated.
+
+
+---
+
+## P1r. The fiscal condition, restated and repaired
+
+**Setup.** Displace one dollar of wage bill. A robot performs the same task at all-in cost
+c_r against wage w, so the cost saving is s = 1 - c_r/w, with 0 < s <= 1. Let tau_l be the
+effective labour tax rate, tau_k the rate on the capital income that replaces it, tau_r the
+rate on robot-producer income, m the imported share of robot capital, g added public outlays
+per dollar displaced, rho the reemployment share and omega the wage ratio on reemployment.
+
+**General condition for fiscal neutrality:**
+
+    tau_k*s + tau_l*rho*omega + tau_r*(1-m)*(1-s)  >=  tau_l + g*(1-rho)
+
+**Proposition P1r (infeasibility under output neutrality).** With rho = 0 and m = 1 the
+condition is tau_k*s >= tau_l + g. Since s <= 1, it cannot hold whenever tau_k < tau_l + g.
+At tau_l = 0.255 and tau_k = 0.10 it fails for every g >= 0.
+
+*Therefore output-neutral automation is never fiscally neutral. There is no break-even
+adoption speed. The public loss per dollar displaced is*
+
+    L(s) = tau_l + g - tau_k*s,  with  tau_l + g - tau_k <= L <= tau_l + g
+
+*and fiscal neutrality requires additional taxable output y >= (tau_l + g)/tau_k - s, at
+best (tau_l + g - tau_k)/tau_k.*
+
+**Corollary 1 (closed economy).** With m = 0 and tau_r = tau_k the s terms cancel and the
+condition becomes tau_k + tau_l*rho*omega >= tau_l + g*(1-rho), independent of s. Adoption
+speed is irrelevant; only the tax wedge and the reemployment margin matter. Break-even
+reemployment share at omega = 0.75 is 0.810 to 0.958 across the rate and outlay ranges.
+
+**Corollary 2 (imported capital, the emerging-market case).** With m = 1 the robot cost is
+untaxed domestically and only the surplus is taxable. Near the adoption margin the entire
+labour tax base is lost with essentially no offsetting domestic base: -0.250 per dollar
+displaced at AMR rates with rho = 0, s = 0.05.
+
+**Relation to the brief.** PROJECT_BRIEF.md Section 2.3 states tau*s >= 1 as the condition
+for full income replacement. That is the REDISTRIBUTION condition and sits downstream: it
+asks whether collected revenue can replace lost income, taking collection as given. P1r asks
+whether revenue is collected at all, and is binding first.
+
+**Calibration sources.** tau_l 0.255 and tau_k 0.10 (0.05 equipment and software): Acemoglu,
+Manera and Restrepo, Brookings Papers 2020(1), 231-300. Bottom-up tau_l 0.301 to 0.318:
+NIPA and IRS SOI, this repository. omega 0.75 (0.65 to 0.82): Jacobson, LaLonde and
+Sullivan, AER 83(4), 1993, 685-709. **rho is stipulated, not sourced.**
+
+**Novelty, narrowly.** The mechanism is stated qualitatively by the IMF (SDN/2024/002),
+including the developing-economy exposure. We have not identified a source that writes the
+closed-form per-dollar condition with retained streams, states the infeasibility result, or
+reduces the closed-economy case to a calibrated break-even reemployment share. This is a
+formalisation and calibration claim, not a discovery claim.
