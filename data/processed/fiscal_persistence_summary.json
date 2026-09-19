@@ -1,0 +1,20 @@
+{
+  "correction": "A70 amortised a stock as a flow. Terminal-year annual loss is horizon-invariant for the same cumulative displacement; cumulative loss RISES with horizon.",
+  "thirty_fold_statement": "WITHDRAWN",
+  "discount_rate": 0.03,
+  "federal_receipts_bn": 5980.631,
+  "compensation_bn": 16224.289,
+  "terminal_pct_receipts_range": [
+    0.053913858562260115,
+    42.186789272249435
+  ],
+  "cumulative_bn_range": [
+    5.310220065515684,
+    10218.954906216284
+  ],
+  "pv_bn_range": [
+    5.055445627458611,
+    6894.200121424303
+  ],
+  "R_held_at_terminal_value": true
+}

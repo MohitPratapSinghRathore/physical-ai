@@ -4870,3 +4870,95 @@ publishes its minimum DSCR standards in the Guide text rather than by reference.
 Also still outstanding from A67, unchanged: the auto loan loss rate separately from student
 loans. The New York Fed 2026:Q2 report PDF was obtained and read; the companion data file
 carrying the auto 90-plus transition series behind chart 25 was not retrieved.
+
+## A72. A70 AMORTISED A STOCK AS A FLOW. The correction raises long-horizon losses by up to twenty times and the "thirty-fold" statement is WITHDRAWN
+
+`src/fiscal_persistence.py`.
+
+### The error
+
+A70 computed `cumulative loss = displaced wage bill x loss per dollar`, then
+`annual loss = cumulative / horizon`. That treats the revenue loss as a one-time flow spread
+over the horizon. **It is a stock.** Once a worker is displaced and not fully reemployed, the
+revenue they no longer generate is missing in every subsequent year.
+
+Correct treatment: annual loss in year t equals the loss rate per displaced wage dollar times
+the CUMULATIVE displaced wage bill at t. With displacement arriving evenly over H years to a
+cumulative total D:
+
+| Quantity | Value |
+|---|---|
+| Terminal-year annual loss | k x D, **independent of H** |
+| Average annual loss | k x D x (H+1)/(2H) |
+| Cumulative loss over the horizon | k x D x (H+1)/2, **RISING in H** |
+
+### The correction, terminal-year annual loss as a percent of federal receipts
+
+tau_l 0.301, no outlays, Barkai reading, phi 0.5. Federal receipts 5,980.6bn, compensation
+16,224.3bn, both 2026 Q2.
+
+| Type | Level | 2y | 5y | 10y | 20y | **A70 said at 20y** |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE | 50% | 1.51 | 1.15 | 1.01 | **0.94** | 0.05 |
+| Cognitive AIOE | 90% | 3.80 | 2.61 | 2.05 | **1.81** | 0.09 |
+| Embodied | 90% | 7.65 | 5.27 | 3.64 | **3.00** | 0.15 |
+| **Both** | **90%** | **18.75** | **13.04** | **8.71** | **5.94** | **0.30** |
+
+**A70 understated the twenty-year annual loss by a factor of about twenty.**
+
+### The "thirty-fold" statement is withdrawn
+
+A70 said 90 percent of both exposure types costs 42.4 percent of federal receipts a year over
+two years and 1.34 percent over twenty, and called that a thirty-fold difference for the same
+cumulative displacement. **That comparison was an artifact of the amortisation error.**
+
+On the correct treatment the same cumulative displacement leaves the same wage bill missing
+whatever the horizon, so the terminal-year loss is nearly horizon-invariant: 18.75 against
+5.94 percent, a **3.2-fold** range for both types and **2.1-fold** for cognitive AIOE. The
+residual variation is not the amortisation; it is the labour model, where slower displacement
+produces less slack, a higher retained wage share R and therefore a smaller loss per dollar.
+That is a real effect and a much smaller one than A70 claimed.
+
+**A56's speed result is unaffected and stands on its own terms.** Speed drives the LABOUR
+MARKET channel through slack and reemployment. It does not drive the fiscal channel the way
+A70 implied. Conflating the two was the error.
+
+### Cumulative loss now RISES with horizon, which reverses the direction A70 implied
+
+USD billions, same cells:
+
+| Type | Level | 2y | 5y | 10y | 20y |
+|---|---|---|---|---|---|
+| Cognitive AIOE | 90% | 341 | 468 | 676 | **1,139** |
+| Embodied | 90% | 686 | 945 | 1,197 | **1,884** |
+| Both | 90% | 1,682 | 2,339 | 2,864 | **3,727** |
+
+Present value at 3 percent: 1,601bn (2y) to 2,514bn (20y) for both types at 90 percent. The
+discounting compresses the horizon difference but does not reverse it.
+
+**A slow transition is not a cheaper transition in fiscal terms. It is a more expensive one,
+because the loss accrues for longer.** The slow path is cheaper only in the labour market
+channel, where it gives reemployment time to work.
+
+### Against the trust funds, which is where this bites hardest
+
+Terminal-year annual loss as a percent of OASDI payroll income (1,323.2bn, A32):
+
+| Type | Level | 2y | 10y | 20y |
+|---|---|---|---|---|
+| Cognitive AIOE | 90% | 17.2 | 9.3 | **8.2** |
+| Both | 50% | 30.1 | 14.6 | **12.3** |
+| **Both** | **90%** | **84.7** | **39.4** | **26.8** |
+
+Against a fund whose combined programmes already ran a 160.2bn deficit in 2025 (A32), a
+permanent loss of a quarter of payroll income is a different order of problem from anything
+in the household channel.
+
+### Range across the whole grid
+
+Terminal-year annual loss 0.00 to 18.75 percent of federal receipts. Cumulative loss 8bn to
+3,727bn. Present value at 3 percent, 8bn to 2,514bn.
+
+**R is held at its terminal value along the whole path.** R deteriorates as slack rises, so
+this overstates the early-year loss. A full treatment would path R year by year. Stated
+rather than hidden.
