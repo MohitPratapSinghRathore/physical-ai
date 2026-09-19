@@ -824,3 +824,94 @@ underpowered (n = 100 high-P) and should not be read as contradicting it.
 review. The merged item-level ratings are in `data/processed/a4/a4_merged_ratings.csv`; the
 50 highest-disagreement items should be extracted and sent for owner adjudication before the
 index is published.
+
+## A20. STEP 3 GATE (PARTIAL). Geography is built; the holder map is BLOCKED
+
+**Gate question, from MASTER_PROMPT_PHASE2.md: where does Leg W exposure sit (GSEs, large
+banks, regional banks, nonbanks)?**
+
+**THE GATE CANNOT BE ANSWERED. HMDA is unreachable from this environment.** Every CFPB and
+FFIEC host returns HTTP 403: the data-browser API, the snapshot publication page, and the
+public S3 bucket. Browser user-agent and Referer headers do not help, so this is a
+network-level block like BLS and openICPSR, not a user-agent policy like SEC's. This blocks
+B3(a) holder class, B3(c) lender ranking, the LTV half of B3(d), and all of Step 4.
+Resolution requires a manual download into `data/raw/manual/hmda/` (open question Q4).
+
+What follows is the PUMS half of Step 3, which is complete.
+
+### Result 1: national geographic DAR, with replication standard errors (B5)
+
+2,462 PUMAs, ACS PUMS 2023, PAEI_C_VERSION v2-occp-spine. SEs are ACS
+successive-difference over 80 replicate weights.
+
+| c | Wage at risk (USD bn) | SE | Share | Mortgage at risk (USD bn) | SE | Share | Rent at risk (USD bn) | Share |
+|---|---|---|---|---|---|---|---|---|
+| 0.2 | 417.9 | 1.6 | 3.8% | 35.6 | 0.19 | 3.5% | 45.9 | 5.6% |
+| 0.3 | 650.3 | 2.0 | 6.0% | 55.7 | 0.23 | 5.5% | 67.2 | 8.2% |
+| 0.5 | 1,250.2 | 2.6 | 11.5% | 108.2 | 0.33 | 10.7% | 114.5 | 13.9% |
+| 0.8 | 2,261.8 | 3.6 | 20.8% | 195.3 | 0.48 | 19.4% | 183.9 | 22.3% |
+| 1.0 | 2,935.4 | 4.4 | 27.0% | 256.5 | 0.59 | 25.5% | 223.6 | 27.1% |
+
+National SEs are tight (relative SE under 0.5 percent). PUMA-level SEs are not: the median
+relative SE is 9.6 percent on wage at risk and 14.8 percent on mortgage at risk, so
+individual PUMA estimates are noisy and should never be read as point facts.
+
+**Rent at risk exceeds mortgage at risk as a share at every c** (13.9 against 10.7 percent
+at c = 0.5). That is consistent with the tenure composition in A7 and it keeps pointing the
+same way: the renter channel is where exposure concentrates, and it is the channel the
+paper's Leg W framing currently handles least well.
+
+### Result 2, which weakens Phase 2 point 4: exposure RATES are close to uniform in space
+
+Two statistics answer two different questions and they disagree in a way that matters.
+
+**Dollars concentrate.** At c = 0.5 the top decile of counties holds **73.7 percent** of
+mortgage debt service at risk. County Gini on levels is 0.81.
+
+**Rates do not.** Across counties with above-median mortgage volume, the at-risk share runs
+p10 = 8.8 percent, p50 = 11.1 percent, p90 = 13.8 percent. That is a **p90/p10 ratio of
+1.55**. At PUMA level the same ratio is about 1.8.
+
+The top-10 counties by at-risk DOLLARS are Los Angeles, Cook, Maricopa, Orange, San Diego,
+King, Harris, Riverside, Santa Clara and Miami-Dade, and their at-risk rates are 10.0 to
+11.9 percent, essentially the national average. The top-10 counties by at-risk RATE are
+small and mid-sized counties in Indiana, upstate New York, New Mexico, Wisconsin, Kentucky,
+Wyoming and Arkansas at 16 to 18 percent, and they carry very few dollars.
+
+**The dollar concentration is a population artifact.** Big metros hold most of the exposure
+because they hold most of the mortgages, not because they are more exposed.
+
+**Effect on the thesis.** Phase 2 point 4 held that the mortgage channel runs through
+geography rather than household DTI. The geographic channel is real but it is weak in the
+dimension that matters for lender selection. A 1.55x spread in exposure rate is not a
+regional concentration story; it is close to a uniform rate. The structural conclusion is
+the same one the household analysis reached, now on independent evidence: **there is no
+low-exposure pocket to rotate into, by occupation or by geography.** Exposure tracks the
+wage bill, and the wage bill is everywhere.
+
+This does NOT dispose of the geographic argument. Default requires an income shock plus
+negative equity, and the equity half is county-specific and untested here because the FHFA
+HPI download failed and HMDA LTV is blocked. A uniform income-shock rate can still produce
+very non-uniform defaults once local house prices and leverage are layered on. That is the
+double trigger (B3d) and it remains open.
+
+### What remains unknown after Step 3
+
+- The holder map, which is the gate question. Blocked on HMDA.
+- Whether GSEs hold most of this, which would make the exposure effectively sovereign and
+  would be, as the prompt says, a major finding whichever way it falls.
+- The double trigger: no FHFA HPI and no LTV, so no equity overlay.
+- Moran's I was NOT computed. It needs area centroids, and rather than approximate them the
+  statistic is reported as not computed.
+- B4 (how many HMDA years approximate the stock) cannot be assessed without the data.
+
+### Methodological notes
+
+- PUMA to county allocation uses the Census 2020 tract-to-PUMA relationship file with
+  **tract COUNT** as the allocation factor. The correct basis is tract population. This is a
+  stated approximation and its error is unquantified; diagnostics are in
+  `data/processed/dar_geo_allocation_diagnostics.json`.
+- c = 0.0 rows are degenerate (near-zero exposure), so concentration statistics at c = 0 are
+  meaningless and should be ignored.
+- Every output row carries `paei_c_version`, so revising the index does not require
+  rewriting Step 3 (B1).

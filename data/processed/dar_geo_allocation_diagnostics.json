@@ -1,0 +1,8 @@
+{
+  "n_pumas_in_crosswalk": 2487,
+  "n_counties": 3222,
+  "pct_pumas_single_county": 74.70848411741053,
+  "mean_counties_per_puma": 1.8902291917973462,
+  "max_counties_per_puma": 24,
+  "allocation_factor_basis": "tract COUNT (approximation; correct basis is tract population)"
+}
