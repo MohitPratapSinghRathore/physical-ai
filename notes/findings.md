@@ -687,3 +687,64 @@ salaries 13,365.2 USD bn (NIPA WASCUR).
 These are ratios of a flow at risk to flows currently serviced by that same wage bill. They
 are not loss estimates, not probabilities and not forecasts. The gate sensitivity in A16
 applies to every row.
+
+## A18. A6. Most of the wage bill at risk does NOT run through general-purpose robotics
+
+**What was tested.** Three occupation-level flags, added as diagnostics and not as a third
+index factor: driving-dominant (exposure runs through autonomous vehicles, a separate
+capability pathway on its own regulatory clock), high interpersonal intensity, and legal or
+custodial accountability (substitution gated by liability and statute, not capability).
+Built from O*NET Work Activities and Work Context descriptors at the employment-weighted
+70th percentile, plus SOC major-group membership for legal, protective service and
+healthcare practitioner accountability.
+
+Each flag covers roughly 30 percent of employment (driving 30.1, interpersonal 30.1,
+accountability 32.4), and they overlap substantially.
+
+**Result. Wage bill at risk, USD bn, P-weighted:**
+
+| c | All | Excl. driving | Excl. interpersonal | Excl. accountability | Excl. all three |
+|---|---|---|---|---|---|
+| 0.2 | 417.9 | 411.4 (-1.6%) | 293.3 (-29.8%) | 297.7 (-28.8%) | **210.2 (-49.7%)** |
+| 0.5 | 1,250.2 | 1,083.6 (-13.3%) | 912.9 (-27.0%) | 885.1 (-29.2%) | **593.3 (-52.5%)** |
+| 0.8 | 2,261.8 | 1,557.1 (-31.2%) | 1,605.9 (-29.0%) | 1,366.3 (-39.6%) | **764.4 (-66.2%)** |
+| 1.0 | 2,935.4 | 1,715.5 (-41.6%) | 2,076.8 (-29.2%) | 1,554.1 (-47.1%) | **821.3 (-72.0%)** |
+
+**This is the most important qualification in Part A and it must lead the magnitude
+discussion.** At high capability, 72 percent of the headline wage bill at risk sits in
+occupations flagged as driving-dominant, interpersonally intensive, or accountability-gated.
+The residual that is cleanly attributable to general-purpose physical manipulation is
+821 USD bn at c = 1, against a headline of 2,935 USD bn.
+
+The driving share rises steeply with c (1.6 percent of the total at c = 0.2 to 41.6 percent
+at c = 1.0), which is the expected signature: driving occupations sit at high structure
+deficit and only enter the exposed set at high capability. That is precisely why they need
+separating. Autonomous vehicles are a distinct technology with a distinct timeline and a
+distinct regulatory gate, and folding them into a single robotics capability parameter c
+conflates two things that will not arrive together.
+
+**The switcher list barely survives the flags.** Of the 43 embodiment-gated occupations
+switching between medium and high capability (21.3 million workers), only **3 occupations
+and 1.72 million workers** carry none of the three flags:
+
+| Occupation | P | deficit | Employment |
+|---|---|---|---|
+| Landscaping and groundskeeping workers | 0.486 | 0.573 | 1,525,107 |
+| Drywall and ceiling tile installers | 0.618 | 0.594 | 149,945 |
+| Merchandise displayers and window trimmers | 0.570 | 0.639 | 44,982 |
+
+**Effect on the thesis.** It narrows it considerably. The earlier claim that the
+medium-to-high capability band is where Physical AI does something prior automation did not
+survives only for a small set of occupations once vehicles, interpersonal work and
+liability-gated work are separated out. The larger numbers are real but they are not
+"robots doing physical work"; they are three different substitution stories with different
+clocks.
+
+**What this does NOT say.** It does not say the flagged exposure is fake. Autonomous
+vehicles displacing driving is a genuine wage-bill shock and arguably the largest single
+one in the table. The point is that it is a different technology from general-purpose
+manipulation and must be scenario-ed separately rather than summed into one c.
+
+**Recommendation for the paper.** Report the headline with the flag decomposition attached,
+never alone. Consider a separate capability parameter for autonomous driving, which is the
+single flag doing the most work at high c.

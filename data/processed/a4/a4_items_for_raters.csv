@@ -1,0 +1,201 @@
+item_id,occupation_title,task
+T001,Lawyers,"Analyze the probable outcomes of cases, using knowledge of legal precedents."
+T002,"Plumbers, pipefitters, and steamfitters","Install green plumbing equipment, such as faucet flow restrictors, dual-flush or pressure-assisted flush toilets, or tankless hot water heaters."
+T003,Construction laborers,"Load, unload, or identify building materials, machinery, or tools, distributing them to the appropriate locations, according to project plans or specifications."
+T004,Sailors and marine oilers,"Splice and repair ropes, wire cables, or cordage, using marlinespikes, wire cutters, twine, and hand tools."
+T005,Recreation workers,"Supervise and coordinate the work activities of personnel, such as training staff members and assigning work duties."
+T006,Construction managers,"Plan, schedule, or coordinate construction project activities to meet deadlines."
+T007,"Therapists, all other","Plan or structure music therapy sessions to achieve appropriate transitions, pacing, sequencing, energy level, or intensity in accordance with treatment plans."
+T008,Speech-language pathologists,"Complete administrative responsibilities, such as coordinating paperwork, scheduling case management activities, or writing lesson plans."
+T009,Education and childcare administrators ,"Plan, direct, and monitor instructional methods and content of educational, vocational, or student activity programs."
+T010,Construction equipment operators,"Operate tractors or bulldozers to perform such tasks as clearing land, mixing sludge, trimming backfills, or building roadways or parking lots."
+T011,Firefighters,"Select and attach hose nozzles, depending on fire type, and direct streams of water or chemicals onto fires."
+T012,Bus and truck mechanics and diesel engine specialists,Adjust or repair computer controlled exhaust emissions devices.
+T013,"Farmers, ranchers, and other agricultural managers","Maintain financial, operational, production, or employment records for farms or ranches."
+T014,First-line supervisors of construction trades and extraction workers,"Record information, such as personnel, production, or operational data on specified forms or reports."
+T015,Childcare workers,"Read to children and teach them simple painting, drawing, handicrafts, and songs."
+T016,Police officers,"Patrol specific area on foot, horseback, or motorized conveyance, responding promptly to calls for assistance."
+T017,Special education teachers,"Guide or counsel students with adjustment problems, academic problems, or special academic interests."
+T018,Secondary school teachers,Instruct and monitor students in the use and care of equipment and materials to prevent injury and damage.
+T019,"Brickmasons, blockmasons, and stonemasons","Fasten or fuse brick or other building material to structure with wire clamps, anchor holes, torch, or cement."
+T020,Small engine mechanics,Show customers how to maintain equipment.
+T021,Real estate brokers and sales agents,Evaluate mortgage options to help clients obtain financing at the best prevailing rates and terms.
+T022,Clergy,"Train leaders of church, community, or youth groups."
+T023,"First-line supervisors of landscaping, lawn service, and groundskeeping workers","Train workers in tasks such as transplanting or pruning trees or shrubs, finishing cement, using equipment, or caring for turf."
+T024,Control and valve installers and repairers,Set doors into place or stack hardware sections into openings after rail or track installation.
+T025,Urban and regional planners,Review and evaluate environmental impact reports pertaining to private or public planning projects or programs.
+T026,Miscellaneous construction and related workers,Discuss the design with the client.
+T027,"Derrick, rotary drill, and service unit operators, oil and gas  ","Cap wells with packers, or turn valves, to regulate outflow of oil from wells."
+T028,First-line supervisors of firefighting and prevention workers,Assign firefighters to jobs at strategic locations to facilitate rescue of persons and maximize application of extinguishing agents.
+T029,Electricians,"Test electrical systems or continuity of circuits in electrical wiring, equipment, or fixtures, using testing devices, such as ohmmeters, voltmeters, or oscilloscopes, to ensure compatibility and safety of system."
+T030,Preschool and kindergarten teachers,"Establish clear objectives for all lessons, units, and projects and communicate those objectives to children."
+T031,Construction and building inspectors,Collect and analyze field data related to energy usage.
+T032,Marriage and family therapists,"Maintain case files that include activities, progress notes, evaluations, and recommendations."
+T033,Flight attendants,"Prepare reports showing places of departure and destination, passenger ticket numbers, meal and beverage inventories, the conditions of cabin equipment, and any problems encountered by passengers."
+T034,Sales managers,Resolve customer complaints regarding sales and service.
+T035,Advertising sales agents,Process all correspondence and paperwork related to accounts.
+T036,Shuttle drivers and chauffeurs,"Provide passengers with assistance entering and exiting vehicles, and help them with any luggage."
+T037,Glaziers,"Secure mirrors in position, using mastic cement, putty, bolts, or screws."
+T038,Electrical power-line installers and repairers,"Lay underground cable directly in trenches, or string it through conduit running through the trenches."
+T039,Heavy vehicle and mobile equipment service technicians and mechanics,Test units for operability before and after repairs.
+T040,"Directors, religious activities and education","Schedule special events, such as camps, conferences, meetings, seminars, or retreats."
+T041,"Laborers and freight, stock, and material movers, hand","Move freight, stock, or other materials to and from storage or production areas, loading docks, delivery vehicles, ships, or containers, by hand or using trucks, tractors, or other equipment."
+T042,"Maintenance and repair workers, general",Train or manage maintenance personnel or subcontractors.
+T043,Civil engineers,"Compute load and grade requirements, water flow rates, or material stress factors to determine design specifications."
+T044,"First-line supervisors of mechanics, installers, and repairers",Meet with vendors or suppliers to discuss products used in repair work.
+T045,Painters and paperhangers,"Remove fixtures such as pictures, door knobs, lamps, or electric switch covers prior to painting."
+T046,Driver/sales workers and truck drivers,Read maps and follow written or verbal geographic directions.
+T047,General and operations managers,"Direct and coordinate activities of businesses or departments concerned with the production, pricing, sales, or distribution of products."
+T048,Probation officers and correctional treatment specialists,"Gather information about offenders' backgrounds by talking to offenders, their families and friends, and other people who have relevant information."
+T049,Elementary and middle school teachers,Prepare reports on students and activities as required by administration.
+T050,Sales engineers,"Document account activities, generate reports, and keep records of business transactions with customers and suppliers."
+T051,Nurse practitioners,Advocate for accessible health care that minimizes environmental health risks.
+T052,"Managers, all other",Advise internal management or business partners on the implementation or operation of compliance programs.
+T053,Physician assistants,Monitor and document patients' progress during post-anesthesia period.
+T054,"Educational, guidance, and career counselors and advisors",Refer students to outside counseling services.
+T055,Registered nurses,"Monitor all aspects of patient care, including diet and physical activity."
+T056,Chief executives,"Develop, or oversee the development of, sustainability evaluation or monitoring systems."
+T057,Insurance sales agents,Select company that offers type of coverage requested by client to underwrite policy.
+T058,"Business operations specialists, all other",Respond to emergency situations on an on-call basis.
+T059,Carpenters,Follow established safety rules and regulations and maintain a safe and clean environment.
+T060,Tutors,"Review class material with students by discussing text, working solutions to problems, or reviewing worksheets or other assignments."
+T061,Teaching assistants,"Inform students of the procedures for completing and submitting class work, such as lab reports."
+T062,Exercise trainers and group fitness instructors,Advise clients about proper clothing and shoes.
+T063,"Sales representatives, wholesale and manufacturing","Collaborate with colleagues to exchange information, such as selling strategies or marketing information."
+T064,"Environmental scientists and specialists, including health",Perform environmentally extended input-output (EE I-O) analyses.
+T065,Facilities managers,"Develop, recommend, or manage security procedures for operations or processes, such as security call centers, access control, and reporting tools."
+T066,Miscellaneous agricultural workers,"Drive trucks, tractors, and other equipment to distribute feed to animals."
+T067,"Property, real estate, and community association managers","Investigate complaints, disturbances, and violations and resolve problems, following management rules and regulations."
+T068,Cleaners of vehicles and equipment,"Apply paints, dyes, polishes, reconditioners, waxes, or masking materials to vehicles to preserve, protect, or restore color or condition."
+T069,Physical therapists,Participate in community or community agency activities or help to formulate public policy.
+T070,Architectural and engineering managers,"Assess project feasibility by analyzing technology, resource needs, or market demand."
+T071,"Meeting, convention, and event planners","Arrange the availability of audio-visual equipment, transportation, displays, and other event needs."
+T072,Compliance officers,Confer with officials of public health and law enforcement agencies to coordinate interdepartmental activities.
+T073,Veterinary technologists and technicians,"Take animals into treatment areas and assist with physical examinations by performing such duties as obtaining temperature, pulse, or respiration data."
+T074,Photographers,"Take pictures of individuals, families, and small groups, either in studio or on location."
+T075,Couriers and messengers,Unload and sort items collected along delivery routes.
+T076,Agricultural and food scientists,"Conduct experiments to develop new or improved varieties of field crops, focusing on characteristics such as yield, quality, disease resistance, nutritional value, or adaptation to specific soils or climates."
+T077,Detectives and criminal investigators,"Create sketches and diagrams, by hand or computer software, to depict crime scenes."
+T078,Stationary engineers and boiler operators,"Observe and interpret readings on gauges, meters, and charts registering various aspects of boiler operation to ensure that boilers are operating properly."
+T079,Physical therapist assistants and aides,"Perform clerical duties, such as taking inventory, ordering supplies, answering telephone, taking messages, or filling out forms."
+T080,Industrial truck and tractor operators,"Position lifting devices under, over, or around loaded pallets, skids, or boxes and secure material or products for transport to designated areas."
+T081,Food service managers,Order and purchase equipment and supplies.
+T082,Retail salespersons,"Recommend, select, and help locate or obtain merchandise based on customer needs and desires."
+T083,First-Line supervisors of non-retail sales workers,Monitor sales staff performance to ensure that goals are met.
+T084,"Sales representatives of services, except advertising, insurance, financial services, and travel","Answer customers' questions about services, prices, availability, or credit terms."
+T085,Human resources workers,"Draft rules or regulations to govern collective bargaining activities in collaboration with company, government, or employee representatives."
+T086,Mechanical engineers,"Plan or implement fuel cell cost reduction or product improvement projects in collaboration with other engineers, suppliers, support personnel, or customers."
+T087,"Heating, air conditioning, and refrigeration mechanics and installers","Comply with all applicable standards, policies, or procedures, such as safety procedures or the maintenance of a clean work area."
+T088,Personal care aides,"Provide clients with communication assistance, typing their correspondence or obtaining information for them."
+T089,"Claims adjusters, appraisers, examiners, and investigators",Verify and analyze data used in settling claims to ensure that claims are valid and that settlements are made according to company practices and procedures.
+T090,First-Line supervisors of office and administrative support workers,"Supervise the work of office, administrative, or customer service employees to ensure adherence to quality standards, deadlines, and proper procedures, correcting errors or problems."
+T091,Management analysts,"Document findings of study and prepare recommendations for implementation of new systems, procedures, or organizational changes."
+T092,Automotive body and related repairers,Follow supervisors' instructions as to which parts to restore or replace and how much time the job should take.
+T093,Materials engineers,"Solve problems in a number of engineering fields, such as mechanical, chemical, electrical, civil, nuclear, and aerospace."
+T094,Security guards and gambling surveillance officers,Lock doors and gates of entrances and exits to secure buildings.
+T095,First-Line supervisors of retail sales workers,Instruct staff on how to handle difficult and complicated sales.
+T096,Automotive service technicians and mechanics,"Perform routine and scheduled maintenance services, such as oil changes, lubrications, and tune-ups."
+T097,Human resources managers,Prepare personnel forecast to project employment needs.
+T098,Marketing managers,"Develop pricing strategies, balancing firm objectives and customer satisfaction."
+T099,Landscaping and groundskeeping workers,"Connect hoses and nozzles selected according to terrain, distribution pattern requirements, types of infestations, and velocities."
+T100,Air traffic controllers and airfield operations specialists,Provide aircrews with information and services needed for airfield management and flight planning.
+T101,First-line supervisors of production and operating workers,"Direct and coordinate the activities of employees engaged in the production or processing of goods, such as inspectors, machine setters, or fabricators."
+T102,Chiropractors,Perform a series of manual adjustments to the spine or other articulations of the body to correct the musculoskeletal system.
+T103,Electrical and electronics engineers,"Inspect electronic equipment, instruments, products, or systems to ensure conformance to specifications, safety standards, or applicable codes or regulations."
+T104,Project management specialists,Schedule or facilitate project meetings.
+T105,Computer and information systems managers,Evaluate data processing proposals to assess project feasibility and requirements.
+T106,Editors,"Direct the policies and departments of newspapers, magazines and other publishing establishments."
+T107,Social and community service managers,Establish and maintain relationships with other agencies and organizations in community to meet community needs and to ensure that services are not duplicated.
+T108,"Shipping, receiving, and inventory clerks","Confer or correspond with establishment representatives to rectify problems, such as damages, shortages, or nonconformance to specifications."
+T109,Precision instrument and equipment repairers,"Disassemble malfunctioning equipment and remove, repair, or replace defective parts, such as motors, clutches, or transformers."
+T110,"Bus drivers, transit and intercity","Drive vehicles over specified routes or to specified destinations according to time schedules, complying with traffic regulations to ensure that passengers have a smooth and safe ride."
+T111,Miscellaneous health technologists and technicians,"Measure the thickness of the retinal nerve, using scanning laser polarimetry techniques to aid in diagnosis of glaucoma."
+T112,Credit counselors and loan officers,"Assess clients' overall financial situations by reviewing income, assets, debts, expenses, credit reports, or other financial information."
+T113,Information security analysts,"Modify computer security files to incorporate new software, correct errors, or change individual access status."
+T114,Floral designers,"Inform customers about the care, maintenance, and handling of various flowers and foliage, indoor plants, and other items."
+T115,"Engineers, all other","Design or conduct tests of new nanotechnology products, processes, or systems."
+T116,Tool and die makers,"Fit and assemble parts to make, repair, or modify dies, jigs, gauges, and tools, using machine tools, hand tools, or welders."
+T117,Industrial production managers,"Coordinate the selection and implementation of quality control equipment, such as inspection gauges."
+T118,"Architects, except landscape and naval","Perform predesign services, such as feasibility or environmental impact studies."
+T119,"Hairdressers, hairstylists, and cosmetologists","Massage and treat scalp for hygienic and remedial purposes, using hands, fingers, or vibrating equipment."
+T120,Psychiatric technicians,"Provide nursing, psychiatric, or personal care to patients with cognitive, intellectual, or developmental disabilities."
+T121,Stockers and order fillers,Take inventory or examine merchandise to identify items to be reordered or replenished.
+T122,"Secretaries and administrative assistants, except legal, medical, and executive",Order and dispense supplies.
+T123,Waiters and waitresses,Take orders from patrons for food or beverages.
+T124,Cooks,Specialize in preparing fancy dishes or food for special diets.
+T125,Operations research analysts,"Develop business methods and procedures, including accounting systems, file systems, office systems, logistics systems, and production schedules."
+T126,Nursing assistants,Transport portable medical equipment or medical supplies between rooms or departments.
+T127,Software developers,"Consult with customers or other departments on project status, proposals, or technical issues, such as software system design or maintenance."
+T128,"Food servers, nonrestaurant",Place food servings on plates or trays according to orders or instructions.
+T129,Fast food and counter workers,"Monitor and order supplies or food items, and restock as necessary to maintain inventory."
+T130,Executive secretaries and executive administrative assistants,"Coordinate and direct office services, such as records, departmental finances, budget preparation, personnel issues, and housekeeping, to aid executives."
+T131,Licensed practical and licensed vocational nurses,"Collect samples, such as blood, urine, or sputum from patients, and perform routine laboratory tests on samples."
+T132,Financial managers,"Develop internal control policies, guidelines, and procedures for activities, such as budget administration, cash and credit management, and accounting."
+T133,"Welding, soldering, and brazing workers",Examine workpieces for defects and measure workpieces with straightedges or templates to ensure conformance with specifications.
+T134,Dining room and cafeteria attendants and bartender helpers,Serve food to customers when waiters or waitresses need assistance.
+T135,Receptionists and information clerks,"Greet persons entering establishment, determine nature and purpose of visit, and direct or escort them to specific destinations."
+T136,Dental hygienists,Maintain patient recall system.
+T137,Radiologic technologists and technicians,Position patient on examining table and set up and adjust equipment to obtain optimum view of specific body area as requested by physician.
+T138,Home health aides,"Care for patients by changing bed linens, washing and ironing laundry, cleaning, or assisting with their personal care."
+T139,Computer hardware engineers,"Direct technicians, engineering designers or other technical support personnel as needed."
+T140,"Inspectors, testers, sorters, samplers, and weighers","Record inspection or test data, such as weights, temperatures, grades, or moisture content, and quantities inspected or graded."
+T141,Artists and related workers,"Manage own accounts and projects, working within budget and scheduling requirements."
+T142,Cost estimators,"Assess cost effectiveness of products, projects or services, tracking actual costs relative to bids as the project develops."
+T143,Dental assistants,Clean and polish removable appliances.
+T144,Procurement clerks,Check shipments when they arrive to ensure that orders have been filled correctly and that goods meet specifications.
+T145,Librarians and media collections specialists,Arrange for interlibrary loans of materials not available in a particular library.
+T146,Postal service mail carriers,Hold mail for customers who are away from delivery locations.
+T147,Word processors and typists,Transmit work electronically to other locations.
+T148,First-line supervisors of housekeeping and janitorial workers,"Direct activities for stopping the spread of infections in facilities, such as hospitals."
+T149,Interpreters and translators,"Identify and resolve conflicts related to the meanings of words, concepts, practices, or behaviors."
+T150,Chefs and head cooks,Determine how food should be presented and create decorative food displays.
+T151,Computer systems analysts,"Analyze information processing or computation needs and plan and design computer systems, using techniques such as structured analysis, data modeling, and information engineering."
+T152,"Computer occupations, all other","Assist in determining document management policies to facilitate efficient, legal, and secure access to electronic content."
+T153,Billing and posting clerks,"Perform general administrative tasks, such as answering telephones, scheduling appointments, and ordering supplies or equipment."
+T154,"Human resources assistants, except payroll and timekeeping","Search employee files to obtain information for authorized persons and organizations, such as credit bureaus and finance companies."
+T155,Barbers,Provide skin care and nail treatments.
+T156,Dancers and choreographers,"Train, exercise, and attend dance classes to maintain high levels of technical proficiency, physical ability, and physical fitness."
+T157,Medical assistants,Clean and sterilize instruments and dispose of contaminated supplies.
+T158,"Hosts and hostesses, restaurant, lounge, and coffee shop",Greet guests and seat them at tables or in waiting areas.
+T159,"Purchasing agents, except wholesale, retail, and farm products","Hire, train, or supervise purchasing clerks, buyers, and expediters."
+T160,Medical records specialists,"Maintain or operate a variety of health record indexes or storage and retrieval systems to collect, classify, store, or analyze information."
+T161,Food preparation workers,Remove trash and clean kitchen garbage containers.
+T162,Dishwashers,Receive and store supplies.
+T163,Data entry keyers,Store completed documents in appropriate locations.
+T164,Clinical laboratory technologists and technicians,Establish or monitor quality assurance programs or activities to ensure the accuracy of laboratory results.
+T165,Customer service representatives,"Complete contract forms, prepare change of address records, or issue service discontinuance orders, using computers."
+T166,"Office clerks, general","Compile, copy, sort, and file records of office activities, business transactions, and other activities."
+T167,"Library assistants, clerical",Inspect returned books for condition and due-date status and compute any applicable fines.
+T168,"Weighers, measurers, checkers, and samplers, recordkeeping","Maintain, monitor, and clean work areas, such as recycling collection sites, drop boxes, counters and windows, and areas around scale houses."
+T169,"Packers and packagers, hand","Measure, weigh, and count products and materials."
+T170,"Butchers and other meat, poultry, and fish processing workers",Cut and trim meat to prepare for packing.
+T171,Laundry and dry-cleaning workers,"Clean machine filters, and lubricate equipment."
+T172,Accountants and auditors,"Supervise auditing of establishments, and determine scope of investigation required."
+T173,"Bookkeeping, accounting, and auditing clerks","Receive, record, and bank cash, checks, and vouchers."
+T174,Pharmacy technicians,"Measure visual acuity, including near, distance, pinhole, or dynamic visual acuity, using appropriate tests."
+T175,Cashiers,Maintain cage security according to rules.
+T176,Respiratory therapists,"Set up and operate devices, such as mechanical ventilators, therapeutic gas administration apparatus, environmental control systems, or aerosol generators, following specified parameters of treatment."
+T177,Maids and housekeeping cleaners,"Sweep, scrub, wax, or polish floors, using brooms, mops, or powered scrubbing and waxing machines."
+T178,"Physical scientists, all other",Organize and maintain geospatial data and associated documentation.
+T179,"Interviewers, except eligibility and loan",Prepare reports to provide answers in response to specific problems.
+T180,Helpers--production workers,Examine products to verify conformance to quality standards.
+T181,Tellers,Answer telephones and assist customers with their questions.
+T182,Computer programmers,"Investigate whether networks, workstations, the central processing unit of the system, or peripheral equipment are responding to a program's instructions."
+T183,Bakers,"Place dough in pans, molds, or on sheets, and bake in production ovens or on grills."
+T184,Musicians and singers,Make or participate in recordings in music studios.
+T185,Dental and ophthalmic laboratory technicians and medical appliance technicians,"Make orthotic or prosthetic devices, using materials such as thermoplastic and thermosetting materials, metal alloys and leather, and hand or power tools."
+T186,First-line supervisors of food preparation and serving workers,"Observe and evaluate workers and work procedures to ensure quality standards and service, and complete disciplinary write-ups."
+T187,Packaging and filling machine operators and tenders,"Monitor the production line, watching for problems such as pile-ups, jams, or glue that isn't sticking properly."
+T188,Medical and health services managers,"Conduct and administer fiscal operations, including accounting, planning budgets, authorizing expenditures, establishing rates for services, and coordinating financial reporting."
+T189,Cutting workers,"Start machines to verify setups, and make any necessary adjustments."
+T190,Sewing machine operators,"Position items under needles, using marks on machines, clamps, templates, or cloth as guides."
+T191,Magnetic resonance imaging technologists,"Operate optical systems to capture dynamic magnetic resonance imaging (MRI) images, such as functional brain imaging, real-time organ motion tracking, or musculoskeletal anatomy and trajectory visualization."
+T192,Painting workers,"Apply coatings, such as paint, ink, or lacquer, to protect or decorate workpiece surfaces, using spray guns, pens, or brushes."
+T193,Insurance claims and policy processing clerks,"Organize or work with detailed office or warehouse records, using computers to enter, access, search or retrieve data."
+T194,Tax preparers,"Compute taxes owed or overpaid, using adding machines or personal computers, and complete entries on forms, following tax form instructions and tax tables."
+T195,"Compensation, benefits, and job analysis specialists",Assist in preparing and maintaining personnel records and handbooks.
+T196,Medical transcriptionists,"Distinguish between homonyms and recognize inconsistencies and mistakes in medical terms, referring to dictionaries, drug references, and other sources on anatomy, physiology, and medicine."
+T197,Machinists,Monitor the feed and speed of machines during the machining process.
+T198,Payroll and timekeeping clerks,"Provide information to employees and managers on payroll matters, tax issues, benefit plans, and collective agreement provisions."
+T199,"Postal service mail sorters, processors, and processing machine operators","Operate various types of equipment, such as computer scanning equipment, addressographs, mimeographs, optical character readers, and bar-code sorters."
+T200,Computer numerically controlled tool operators and programmers,"Write programs in the language of a machine's controller and store programs on media, such as punch tapes, magnetic tapes, or disks."

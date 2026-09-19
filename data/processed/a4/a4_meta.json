@@ -1,0 +1,7 @@
+{
+  "n_items": 200,
+  "seed": 20260919,
+  "stratified_on": "structure_S_rank quintile, PPS by employment",
+  "rater_file": "a4_items_for_raters.csv (no S, S_rank, P or PAEI)",
+  "key_file": "a4_key.csv"
+}

@@ -1,0 +1,18 @@
+{
+  "thresholds_employment_weighted_p70": {
+    "drive_score": 0.40757073285267,
+    "inter_score": 0.76625,
+    "acct_score": 0.5926803353508512
+  },
+  "flag_shares_of_employment_pct": {
+    "flag_driving": 30.115700519976166,
+    "flag_interpersonal": 30.084861886534018,
+    "flag_accountability": 32.41826185904713
+  },
+  "switchers": {
+    "n_all": 43,
+    "n_unflagged": 3,
+    "employment_all": 21303971.0,
+    "employment_unflagged": 1720034.0
+  }
+}

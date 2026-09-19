@@ -1,0 +1,5 @@
+c,wagebill_at_risk_all_usd_bn,excl_driving_usd_bn,excl_driving_pct_removed,excl_interpersonal_usd_bn,excl_interpersonal_pct_removed,excl_accountability_usd_bn,excl_accountability_pct_removed,excl_all_three_usd_bn,excl_all_three_pct_removed
+0.2,417.91,411.42,1.55,293.29,29.82,297.68,28.77,210.15,49.71
+0.5,1250.15,1083.62,13.32,912.93,26.97,885.11,29.2,593.28,52.54
+0.8,2261.76,1557.06,31.16,1605.87,29.0,1366.27,39.59,764.45,66.2
+1.0,2935.41,1715.55,41.56,2076.83,29.25,1554.09,47.06,821.31,72.02
