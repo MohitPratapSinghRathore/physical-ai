@@ -1,0 +1,5 @@
+group,households_weighted,household_share_pct,median_household_income_usd,homeownership_rate_pct,mortgaged_ownership_pct,primary_earner_in_group_pct,mortgage_UPPER_pct,mortgage_CENTRAL_pct,mortgage_LOWER_pct,rent_UPPER_pct,rent_CENTRAL_pct,rent_LOWER_pct
+driving,4512749.0,3.105,87474.644,64.443,41.992,70.657,3.074,1.77,0.981,3.579,2.382,1.301
+gated,30254788.0,20.817,91756.62,63.224,43.751,71.493,24.034,14.313,7.829,24.367,17.054,9.222
+manipulation,19287431.0,13.271,80327.2,57.044,38.214,56.351,13.057,5.237,2.74,17.799,10.98,5.696
+all_embodied,47443849.0,32.645,84518.042,61.143,41.545,75.22,35.278,21.32,11.55,39.642,30.416,16.218

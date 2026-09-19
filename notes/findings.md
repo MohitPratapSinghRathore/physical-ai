@@ -1400,3 +1400,56 @@ defined by an external published measure of robot-reachability and one by embodi
 embodied work does not, and is spread almost evenly across the country.* Physical AI's
 financial footprint becomes geographically undiversifiable only to the extent it moves
 beyond currently robot-reachable work.
+
+## A29. ITEM 3 and CORRECTION A. The two mortgage figures reconciled, and bounded
+
+**The discrepancy was real and it was mine.** Block 4 reported "all embodied work" at 20.68
+percent of national mortgage debt service; the Block 3 pathway table summed to 11.55. Both
+were correct arithmetic on different estimands, and neither said which.
+
+    geo_groups.py  weighted by the household's share of wage income in the group.
+    build_pathways.py  multiplied that share by embodiment P as well.
+
+The implied ratio is 0.542, which is the mean embodiment P of in-scope occupations. The
+entire gap is the embodiment weighting. Reconciled exactly: the pathway CENTRAL figures now
+sum to 21.32, identical to the all-embodied CENTRAL figure, so the decomposition is additive.
+
+**Three definitions, now reported as bounds. Percent of national debt service.**
+
+| Group | Mortgage UPPER | **Mortgage CENTRAL** | Mortgage LOWER | Rent UPPER | **Rent CENTRAL** | Rent LOWER |
+|---|---|---|---|---|---|---|
+| Driving | 3.07 | **1.77** | 0.98 | 3.58 | **2.38** | 1.30 |
+| Gated | 24.03 | **14.31** | 7.83 | 24.37 | **17.05** | 9.22 |
+| Manipulation | 13.06 | **5.24** | 2.74 | 17.80 | **10.98** | 5.70 |
+| **All embodied** | **35.28** | **21.32** | **11.55** | **39.64** | **30.42** | **16.22** |
+
+UPPER counts the full debt service of any household with an exposed earner. CENTRAL weights
+by the pathway's share of household wage income. LOWER additionally weights by P.
+
+**The paper's headline definition is CENTRAL.** P is already used to SELECT occupations into
+scope, so using it again as a weight applies the same filter twice. The Block 3 pathway
+figures were therefore understated, and the Block 4 figure was the right one.
+
+Small residual: Block 4's 20.68 against 21.32 here. Block 4 aggregated through the
+PUMA-to-county allocation; this is direct national. The 0.64 point gap is allocation, not
+definition.
+
+**Rent exposure exceeds mortgage exposure on every definition**, 30.42 against 21.32 on the
+headline. This is now the fourth independent way that result has appeared.
+
+### Household characteristics by pathway
+
+| Group | Households | Share of all HH | Median HH income | Homeownership | Mortgaged | Primary earner in group |
+|---|---|---|---|---|---|---|
+| Driving | 4.51m | 3.1% | $87,475 | 64.4% | 42.0% | 70.7% |
+| Gated | 30.25m | 20.8% | $91,757 | 63.2% | 43.8% | 71.5% |
+| Manipulation | 19.29m | 13.3% | $80,327 | 57.0% | 38.2% | **56.4%** |
+| All embodied | 47.44m | 32.6% | $84,518 | 61.1% | 41.5% | 75.2% |
+
+Two things matter here. **Roughly a third of all US households (32.6 percent) contain at
+least one worker in an embodied occupation.** And the manipulation pathway, the one the
+paper's framing is about, is the weakest on every household-balance-sheet measure: lowest
+median income, lowest homeownership, lowest mortgaged ownership, and the only pathway where
+the exposed worker is usually NOT the primary earner (56.4 percent). Manipulation exposure
+sits disproportionately in secondary earners of lower-income renting households, which is
+precisely where mortgage credit is not and where consumer credit and rent are.

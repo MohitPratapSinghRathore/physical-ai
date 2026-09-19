@@ -1,0 +1,11 @@
+{
+  "pathway_sum_CENTRAL_mortgage_pct": 21.319827727896758,
+  "pathway_sum_LOWER_mortgage_pct": 11.550255304043649,
+  "all_embodied_CENTRAL_mortgage_pct": 21.31982772789676,
+  "all_embodied_LOWER_mortgage_pct": 11.550255304043647,
+  "block4_geo_groups_reported": 20.68,
+  "block3_pathway_table_reported": 11.55,
+  "explanation": "Block 4 used the CENTRAL (wage-share) definition; Block 3 used the LOWER (P-weighted) definition. The ratio is the mean embodiment P of in-scope occupations.",
+  "implied_mean_P": 0.5417611929823553,
+  "headline_definition": "CENTRAL: weighted by the pathway share of household wage income"
+}
