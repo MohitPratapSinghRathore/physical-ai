@@ -81,8 +81,11 @@ best (tau_l + g - tau_k)/tau_k.*
 
 **Corollary 1 (closed economy).** With m = 0 and tau_r = tau_k the s terms cancel and the
 condition becomes tau_k + tau_l*rho*omega >= tau_l + g*(1-rho), independent of s. Adoption
-speed is irrelevant; only the tax wedge and the reemployment margin matter. Break-even
-reemployment share at omega = 0.75 is 0.810 to 0.958 across the rate and outlay ranges.
+speed is irrelevant; only the tax wedge and the reemployment margin matter. Break-even reemployment share rho* = (1 - tau_k/tau_l)/omega. At omega = 0.75 and tau_k =
+0.10 this is 0.810 to 0.914, and it is INFEASIBLE (above 1) at the 5 percent equipment rate.
+But allowing for the robot sector's own labour share, 0.337 for NAICS 333 machinery
+(NBER-CES), a third of robot spending is wages taxed at tau_l, and rho* falls to 0.537 in
+the central case and is feasible everywhere. See A34.
 
 **Corollary 2 (imported capital, the emerging-market case).** With m = 1 the robot cost is
 untaxed domestically and only the surplus is taxable. Near the adoption margin the entire

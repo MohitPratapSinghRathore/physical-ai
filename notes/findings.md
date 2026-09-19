@@ -1939,3 +1939,118 @@ like-for-like comparison the correction asked for and it is robust to the bracke
 
 That is the whole of the claim. It is a formalisation and calibration claim, not a discovery
 claim, and the paper must not present it as more.
+
+## A34. P1r FIXES. The break-even reemployment bar was overstated; the channel ratio was understated
+
+### Fix 4a: the robot sector pays wages, and I had ignored that
+
+The break-even reemployment share is rho* = (1 - tau_k/tau_l) / omega.
+
+| tau_l | omega | tau_k = 0.05 | tau_k = 0.10 | tau_k = 0.21 |
+|---|---|---|---|---|
+| AMR 0.255 | 0.75 | **1.072 INFEASIBLE** | 0.810 | 0.235 |
+| AMR 0.255 | 0.82 | 0.980 | 0.741 | 0.215 |
+| Bottom-up 0.301 | 0.75 | **1.112 INFEASIBLE** | 0.890 | 0.403 |
+| Bottom-up 0.301 | 0.82 | **1.017 INFEASIBLE** | 0.814 | 0.369 |
+| Bottom-up 0.318 | 0.75 | **1.124 INFEASIBLE** | 0.914 | 0.453 |
+| Bottom-up 0.318 | 0.82 | **1.028 INFEASIBLE** | 0.836 | 0.414 |
+
+**5 of 18 cells are infeasible**, all at the equipment and software rate of 5 percent: they
+require reemploying more than 100 percent of displaced workers, which cannot happen. At the
+statutory upper case of 21 percent the bar falls to 0.215 to 0.453.
+
+**But the grid above omits something that materially softens the result.** Robot production
+and integration is itself labour-intensive, and those wages are taxed at tau_l, not tau_k.
+Using the NBER-CES labour share of value added for machinery manufacturing, NAICS 333,
+computed from `naics5811.dta` in the Acemoglu and Restrepo package: **0.337**, 2005 onward.
+
+Re-deriving with a share ls of robot-sector income taxed at tau_l:
+
+| tau_l | omega | tau_k = 0.05 | tau_k = 0.10 | tau_k = 0.21 |
+|---|---|---|---|---|
+| AMR 0.255 | 0.75 | 0.711 | **0.537** | 0.156 |
+| AMR 0.255 | 0.82 | 0.650 | 0.492 | 0.143 |
+| Bottom-up 0.318 | 0.75 | 0.745 | 0.606 | 0.300 |
+| Bottom-up 0.318 | 0.82 | 0.682 | 0.554 | 0.275 |
+
+**Every cell is now feasible, and the central case falls from 0.810 to 0.537.** About a
+third of what is spent on robots is wages, taxed at the labour rate, which recovers roughly
+a third of the wedge. My previous "81 to 96 percent of displaced workers must be
+reemployed" was overstated by ignoring this. **The corrected central range is roughly 50 to
+75 percent**, which is demanding but within the range of observed reemployment outcomes.
+
+Two caveats now stated with the grid: (i) this is partial equilibrium, with no
+productivity-driven labour demand elsewhere in the economy, which if present lowers rho*
+further; (ii) the labour share used is for machinery manufacturing and integrators may be
+more labour-intensive still, which would lower rho* again.
+
+### Fix 3: wording corrected
+
+The closed-economy corollary says the loss per displaced dollar is **independent of the
+robot cost ratio s** under uniform capital taxation. It says nothing about adoption speed.
+I wrote "adoption speed is irrelevant" last session. That was wrong and is corrected in
+findings and in framework/propositions.md.
+
+### Fix 1: default probability conditional on job loss
+
+Replaced the population delinquency bracket with conditional estimates from Gerardi,
+Herkenhoff, Ohanian and Willen, "Can't Pay or Won't Pay? Unemployment, Negative Equity, and
+Strategic Default", Review of Financial Studies 31(3), 2018, 1098-1131 (NBER WP 21630),
+PSID-based, verified from the working paper PDF:
+
+- **"the most risky subsample, 'can't pay' households with high LTV ratios have a default
+  rate approaching 20 percent"** -> upper bound 0.20, conditional on inability to pay AND
+  high LTV
+- "the effect of involuntary job loss on the default probability is equivalent to a 37
+  percentage point drop in equity"
+- a 30-fold difference in default rates across their groups
+
+Lower bound of 0.05, for job loss WITHOUT negative equity, is an interpolation and NOT a
+GHOW estimate. Labelled as such.
+
+Honest note: the numeric bracket [0.05, 0.20] is almost the same as the population-based
+bracket I used before. What changed is that it is now correctly grounded in a
+conditional-on-job-loss estimate rather than in an aggregate delinquency series that
+answers a different question.
+
+**Auto and rent: no verified conditional-on-job-loss source was obtained.** Those channels
+use the same bracket by assumption and are flagged. This is a gap.
+
+### Fix 2: common time basis, and the ratio is larger than I said
+
+The two channels are different objects and the previous comparison hid it. **Fiscal loss is
+a recurring annual flow; credit loss is a one-time stock loss on each displaced cohort.**
+Both are now computed as present values at a 3 percent discount rate over the scenario
+horizon, with displacement ramping linearly.
+
+25 percent displacement, 10-year horizon, present values in USD bn:
+
+| Pathway | Fiscal PV | Credit PV | Ratio |
+|---|---|---|---|
+| Driving | 39.4 to 106.3 | 0.5 to 4.2 | 9.4x to 232x |
+| Gated | 309.4 to 834.2 | 3.7 to 33.9 | 9.1x to 225x |
+| Manipulation | 119.6 to 322.6 | 1.4 to 12.4 | 9.7x to 238x |
+
+Across all displacement, horizon, default and LGD cases: **9.13x to 431.6x**.
+
+"Exceeds at every corner" was withdrawn pending this and is now **restored and strengthened**,
+with the reason made explicit: the fiscal channel recurs every year while the credit loss
+is incurred once per displaced cohort. Over a decade that asymmetry dominates the parameter
+uncertainty.
+
+**The caveat that cuts the other way, and it is important.** The fiscal figures use
+L = tau_l - tau_k with rho = 0, that is NO reemployment. Fix 4 shows reemployment is the
+dominant margin: at rho = 0.537 the closed-economy fiscal loss goes to zero entirely. **The
+9x to 432x range is therefore an upper bound conditional on no reemployment, and the honest
+statement is that the fiscal channel dominates the credit channel IF displaced workers are
+not reabsorbed.** The credit channel does not have a comparable offset. Both facts belong in
+the paper.
+
+### Fix 5: rho remains stipulated
+
+BLS returns HTTP 403 to this environment on every endpoint tried (`disp.nr0.htm`,
+`disp.pdf`, `disp.t01.htm`). **Owner action:** download the BLS Displaced Workers Summary
+news release, series "Worker Displacement" (biennial, from the CPS Displaced Worker
+Supplement), Table 1, "Displaced workers by selected characteristics and employment status",
+which gives the share of displaced workers reemployed at the survey date. Drop it in
+`data/raw/manual/`. Until then rho is labelled stipulated everywhere it appears.

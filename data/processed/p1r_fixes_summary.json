@@ -1,0 +1,17 @@
+{
+  "labour_share": {
+    "naics_333_machinery_labour_share_of_value_added": 0.33681903367445554,
+    "years": "2005 onward",
+    "source": "NBER-CES, naics5811.dta"
+  },
+  "discount_rate": 0.03,
+  "PD_conditional_on_job_loss": {
+    "with_negative_equity_GHOW": 0.2,
+    "without_negative_equity_interpolated": 0.05
+  },
+  "ratio_range_cumulative": {
+    "min": 9.129084414821897,
+    "max": 431.57711494044804
+  },
+  "rho_star_feasible_share": 0.7222222222222222
+}
