@@ -627,6 +627,12 @@ wholesale 145, construction 44, transportation and warehousing 22.
 carries all of PAEI's novelty and had none (A10). The novel half of the index is no longer
 unvalidated.
 
+> **DOWNGRADED 2026-09-19 by A23. Do not cite this gate as passed.** Controlling for
+> manufacturing employment share, the association vanishes on the full sample (+0.293 to
+> -0.005) and retains only a weak manufacturing-confined residual among high-P occupations
+> (+0.419 to +0.145). The adoption measure has an R-squared of 0.996 on the industry mix, so
+> it carries essentially no within-industry information. See A23.
+
 **c_today is NOT cleanly identified, and this is the honest caveat.** The adoption profile
 across deficit deciles is not monotone: 81, 100, 12, 36, 47, 27, 68, 29, 25, 21 percent of
 peak intensity. Adoption is clearly concentrated at deficit <= 0.2 but recovers at
@@ -1023,3 +1029,120 @@ cite directly: automotive employs 38 percent of existing robots, electronics 15 
 plastics and chemicals 10 percent, metal products 7 percent; and the headline estimate that
 one more robot per thousand workers reduces the aggregate employment-to-population ratio by
 about 0.2 percentage points and wages by about 0.42 percent.
+
+# PHASE 2 BLOCK 3
+
+## A22. ITEM 1. Orientation is consistent. A3 is NOT a sign error
+
+Checked against the data rather than the code comments. In `paei_c.csv`, the employment
+weighted percentile rank `structure_S_rank` correlates **+1.000** (Spearman) with raw
+structure S, and `structure_deficit_rank` correlates **-1.000** with it.
+
+| Where | Column used | Meaning |
+|---|---|---|
+| (a) Step 2, PAEI(c) | `structure_S_rank` for reporting, `structure_deficit_rank` for the threshold | percentile of STRUCTURE; threshold exposes occupations whose UNSTRUCTUREDNESS percentile is at or below c |
+| (b) A3, anchor_c.py | `structure_S_rank` | percentile of STRUCTURE |
+| (c) Webb comparison | `structure_S_rank` | percentile of STRUCTURE |
+
+Confirmation from the threshold itself: at c = 0.5 the exposed set has mean raw S of 0.528
+against 0.410 for the unexposed set, so the exposed half is the MORE structured half, which
+is the intended semantics.
+
+So "adoption rises in S_rank at +0.419" means adoption rises with STRUCTURE. That is the
+sign the theory predicts and A3 is not a fail on orientation grounds. The most structured
+occupations (postal mail sorters, press machine setters, food batchmakers, machinists) carry
+S_rank near 1.0; the least structured (animal control workers, crossing guards, tree
+trimmers, power-line installers, EMTs) carry S_rank near 0.
+
+**Item 1 passes. No stop on this ground.** A3 fails for a different reason, below.
+
+## A23. ITEM 2 GATE: S is largely a SECTOR PROXY. A15 is downgraded
+
+**This is the finding that most weakens the thesis in this block and it leads.**
+
+### The structural problem, which is prior to any result
+
+The occupation-level adoption measure is
+
+    robot_exposure(occ) = sum over sectors of share_i(occ) * intensity_i
+
+and `intensity_i` varies only across 2-digit NAICS sectors. It is therefore a deterministic
+function of the occupation's industry mix. Regressing it on the full NAICS2 share vector
+returns **R-squared = 0.9958**. There is essentially no within-industry variation for S to
+explain, so item 2(a) as specified (control for the full two-digit mix) is vacuous by
+construction, not by result.
+
+Manufacturing share alone explains **75.0 percent** of the variance in robot_exposure.
+
+### What the feasible tests show
+
+**T1, partial Spearman of S_rank with adoption, controlling for manufacturing share:**
+
+| Sample | Raw | Partial | p |
+|---|---|---|---|
+| All occupations (n = 476) | +0.293 | **-0.005** | 0.906 |
+| High-P occupations (n = 238) | +0.419 | **+0.145** | 0.026 |
+
+On the full sample the association is **entirely** manufacturing share. Among high-P
+occupations roughly a third of the raw magnitude survives, at +0.145.
+
+**T3, by dominant sector, high-P only:**
+
+| Subsample | n | Spearman | p |
+|---|---|---|---|
+| Dominant sector is manufacturing | 49 | **+0.381** | 0.007 |
+| Dominant sector is non-manufacturing | 189 | **+0.076** | 0.301 |
+
+The surviving association is confined to manufacturing-dominant occupations and is null
+everywhere else, in the much larger subsample.
+
+**T4, both variables demeaned within dominant sector:** +0.203 all, +0.232 high-P, both
+p < 0.001. This does not rescue S. The residual variation exists because occupations sharing
+a dominant sector still differ in their SECONDARY industry mix, so T4 is measuring
+composition too, just at a finer grain.
+
+### Verdict
+
+**Item 2 fails in substance.** S does not demonstrably predict robot adoption independent of
+industry composition. What A15 established, restated honestly:
+
+> High-S occupations are concentrated in robot-intensive sectors, above all manufacturing.
+> Once manufacturing share is controlled, the association vanishes on the full sample and
+> retains only a weak, manufacturing-confined residual among high-P occupations.
+
+**A15's "GATE: PASS, first external evidence for S" is downgraded.** It was not wrong
+arithmetically, but it was over-read: I reported a between-sector correlation as evidence
+for an occupation-level environmental construct, and I flagged the industry-level limitation
+without testing it. This test was available at the time and I should have run it before
+calling the gate.
+
+### What this does to the thesis, and the consequence the owner specified
+
+S now has three external results and they do not cohere:
+
+| Test | Result for S |
+|---|---|
+| Independent LLM rubric, S_text (A19) | reliable (alpha 0.967) but reproduces S at only r = 0.31 |
+| ACES observed robot capex (A15, as corrected here) | association is largely sector composition |
+| Webb task-level robot potential (A21) | null, -0.03 among high-P |
+
+There is no longer a clean external result supporting S as an occupation-level construct.
+Per the owner's instruction: **the pathway decomposition (item 3) becomes the paper's primary
+structure and c is demoted to a robustness section.**
+
+### What is NOT overturned
+
+- PAEI at c = 0 still passes the Step 1 gate against Webb (A21, +0.708 overall). That test
+  is occupation-level and does not depend on S; it is carried by P.
+- The Phase 1 and Step 0 household results, the geographic results, and the A6 pathway
+  decomposition are untouched by this. None of them rest on S's external validity.
+- The multiplicative form and the Moravec framing remain defensible as theory. What is not
+  currently defensible is the claim that S has been validated against observed adoption.
+
+### What would settle it
+
+A measure of robot adoption with genuine within-industry variation across occupations.
+The Acemoglu and Restrepo commuting-zone design does not provide this either: their APR is
+also industry-level (19 IFR industries) interacted with local employment shares, so their
+exposure measure has the same property. Settling this needs either establishment-level or
+occupation-level deployment data, which no public US source currently provides.

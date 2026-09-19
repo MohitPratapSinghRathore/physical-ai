@@ -273,3 +273,26 @@ comparison reverses it, switch.
 Consequence for the paper: two internally reliable operationalisations of environmental
 structure correlate at 0.31. That belongs in the limitations section as a measurement
 problem the paper discloses rather than resolves.
+
+
+## D18. Pathway decomposition replaces c as the paper's primary structure (2026-09-19)
+
+Item 2 of Block 3 showed that S's association with observed robot adoption is largely
+industry composition (A23). Combined with A19 (an independent rubric reproduces S at only
+r = 0.31) and A21 (S is null against Webb's task-level robot potential), there is no clean
+external result supporting S as an occupation-level construct.
+
+Decision, per the owner's standing instruction in Block 3 item 2: the three-pathway
+decomposition (manipulation robotics, autonomous driving, accountability or interpersonally
+gated work) becomes the paper's primary organising structure. PAEI(c) and the capability
+parameter c are demoted to a robustness section.
+
+Why this is the right call rather than a retreat: the pathway split is built on P and on
+occupation-level flags, neither of which depends on S's contested external validity, and A18
+already showed the pathways carry most of the magnitude (excluding all three removes 72
+percent of the wage bill at risk at c = 1). The paper's quantities survive; only the
+organising axis changes.
+
+Tradeoff: the scenario-conditional index was the most novel single artifact and it now sits
+in robustness. Accepted. A measure whose novel component has no clean external validation
+cannot carry a paper's headline.
