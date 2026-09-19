@@ -1,0 +1,86 @@
+{
+  "cognitive_AIOE": [
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "cognitive_only",
+      "households_pct": 13.077,
+      "wage_bill_pct": 26.912,
+      "mortgage_service_pct": 24.692,
+      "rent_pct": 14.431,
+      "mortgage_lean_vs_wage": 0.917,
+      "rent_lean_vs_wage": 0.536
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "embodied_only",
+      "households_pct": 18.805,
+      "wage_bill_pct": 19.538,
+      "mortgage_service_pct": 17.781,
+      "rent_pct": 21.385,
+      "mortgage_lean_vs_wage": 0.91,
+      "rent_lean_vs_wage": 1.095
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "both",
+      "households_pct": 2.089,
+      "wage_bill_pct": 3.926,
+      "mortgage_service_pct": 3.502,
+      "rent_pct": 1.769,
+      "mortgage_lean_vs_wage": 0.892,
+      "rent_lean_vs_wage": 0.451
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "neither",
+      "households_pct": 66.029,
+      "wage_bill_pct": 49.624,
+      "mortgage_service_pct": 54.025,
+      "rent_pct": 62.415,
+      "mortgage_lean_vs_wage": 1.089,
+      "rent_lean_vs_wage": 1.258
+    }
+  ],
+  "cognitive_GPT": [
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "cognitive_only",
+      "households_pct": 14.378,
+      "wage_bill_pct": 23.658,
+      "mortgage_service_pct": 22.18,
+      "rent_pct": 17.023,
+      "mortgage_lean_vs_wage": 0.938,
+      "rent_lean_vs_wage": 0.72
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "embodied_only",
+      "households_pct": 17.824,
+      "wage_bill_pct": 18.614,
+      "mortgage_service_pct": 17.005,
+      "rent_pct": 20.325,
+      "mortgage_lean_vs_wage": 0.914,
+      "rent_lean_vs_wage": 1.092
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "both",
+      "households_pct": 3.07,
+      "wage_bill_pct": 4.85,
+      "mortgage_service_pct": 4.278,
+      "rent_pct": 2.829,
+      "mortgage_lean_vs_wage": 0.882,
+      "rent_lean_vs_wage": 0.583
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "neither",
+      "households_pct": 64.728,
+      "wage_bill_pct": 52.878,
+      "mortgage_service_pct": 56.537,
+      "rent_pct": 59.823,
+      "mortgage_lean_vs_wage": 1.069,
+      "rent_lean_vs_wage": 1.131
+    }
+  ]
+}

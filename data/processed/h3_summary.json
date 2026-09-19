@@ -1,0 +1,128 @@
+{
+  "density_benchmark_gini_of_levels": {
+    "PUMA": 0.23090176194840617,
+    "county": 0.8116032671296293
+  },
+  "stats": [
+    {
+      "level": "PUMA",
+      "group": "cognitive_AIOE",
+      "n_areas": 2462,
+      "national_rate": 0.2094,
+      "gini_of_rate": 0.2172,
+      "p90_p10": 2.7514,
+      "p99_p1": 6.1668,
+      "corr_home_value": 0.5198,
+      "corr_mean_wage": 0.7668,
+      "gini_of_wage_LEVELS_benchmark": 0.2309
+    },
+    {
+      "level": "PUMA",
+      "group": "cognitive_GPT",
+      "n_areas": 2462,
+      "national_rate": 0.1661,
+      "gini_of_rate": 0.176,
+      "p90_p10": 2.2084,
+      "p99_p1": 4.4581,
+      "corr_home_value": 0.4853,
+      "corr_mean_wage": 0.5743,
+      "gini_of_wage_LEVELS_benchmark": 0.2309
+    },
+    {
+      "level": "PUMA",
+      "group": "embodied",
+      "n_areas": 2462,
+      "national_rate": 0.1235,
+      "gini_of_rate": 0.2847,
+      "p90_p10": 4.7962,
+      "p99_p1": 19.4128,
+      "corr_home_value": -0.5971,
+      "corr_mean_wage": -0.81,
+      "gini_of_wage_LEVELS_benchmark": 0.2309
+    },
+    {
+      "level": "PUMA",
+      "group": "robot_reachable",
+      "n_areas": 2462,
+      "national_rate": 0.1014,
+      "gini_of_rate": 0.2929,
+      "p90_p10": 4.8344,
+      "p99_p1": 20.0659,
+      "corr_home_value": -0.6005,
+      "corr_mean_wage": -0.8266,
+      "gini_of_wage_LEVELS_benchmark": 0.2309
+    },
+    {
+      "level": "PUMA",
+      "group": "placebo_random20",
+      "n_areas": 2462,
+      "national_rate": 0.1992,
+      "gini_of_rate": 0.0951,
+      "p90_p10": 1.5345,
+      "p99_p1": 2.3013,
+      "corr_home_value": 0.164,
+      "corr_mean_wage": 0.2176,
+      "gini_of_wage_LEVELS_benchmark": 0.2309
+    },
+    {
+      "level": "county",
+      "group": "cognitive_AIOE",
+      "n_areas": 3143,
+      "national_rate": 0.2094,
+      "gini_of_rate": 0.1763,
+      "p90_p10": 2.2761,
+      "p99_p1": 4.5084,
+      "corr_home_value": 0.5298,
+      "corr_mean_wage": 0.5434,
+      "gini_of_wage_LEVELS_benchmark": 0.8116
+    },
+    {
+      "level": "county",
+      "group": "cognitive_GPT",
+      "n_areas": 3143,
+      "national_rate": 0.1661,
+      "gini_of_rate": 0.1513,
+      "p90_p10": 1.9897,
+      "p99_p1": 3.61,
+      "corr_home_value": 0.4419,
+      "corr_mean_wage": 0.3754,
+      "gini_of_wage_LEVELS_benchmark": 0.8116
+    },
+    {
+      "level": "county",
+      "group": "embodied",
+      "n_areas": 3143,
+      "national_rate": 0.1235,
+      "gini_of_rate": 0.1562,
+      "p90_p10": 2.1174,
+      "p99_p1": 5.6535,
+      "corr_home_value": -0.5813,
+      "corr_mean_wage": -0.5747,
+      "gini_of_wage_LEVELS_benchmark": 0.8116
+    },
+    {
+      "level": "county",
+      "group": "robot_reachable",
+      "n_areas": 3143,
+      "national_rate": 0.1014,
+      "gini_of_rate": 0.172,
+      "p90_p10": 2.3645,
+      "p99_p1": 6.0251,
+      "corr_home_value": -0.62,
+      "corr_mean_wage": -0.6067,
+      "gini_of_wage_LEVELS_benchmark": 0.8116
+    },
+    {
+      "level": "county",
+      "group": "placebo_random20",
+      "n_areas": 3143,
+      "national_rate": 0.1992,
+      "gini_of_rate": 0.09,
+      "p90_p10": 1.4861,
+      "p99_p1": 2.3131,
+      "corr_home_value": 0.185,
+      "corr_mean_wage": 0.1497,
+      "gini_of_wage_LEVELS_benchmark": 0.8116
+    }
+  ]
+}

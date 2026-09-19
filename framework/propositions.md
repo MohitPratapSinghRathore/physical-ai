@@ -72,7 +72,9 @@ condition is tau_k*s >= tau_l + g. Since s <= 1, it cannot hold whenever tau_k <
 At tau_l = 0.255 and tau_k = 0.10 it fails for every g >= 0.
 
 *Therefore output-neutral automation is never fiscally neutral. There is no break-even
-adoption speed. The public loss per dollar displaced is*
+value of the robot cost ratio s. (This is a statement about s, NOT about adoption speed:
+speed determines how fast the loss accrues, not its size per displaced dollar.) The public
+loss per dollar displaced is*
 
     L(s) = tau_l + g - tau_k*s,  with  tau_l + g - tau_k <= L <= tau_l + g
 
@@ -80,8 +82,12 @@ adoption speed. The public loss per dollar displaced is*
 best (tau_l + g - tau_k)/tau_k.*
 
 **Corollary 1 (closed economy).** With m = 0 and tau_r = tau_k the s terms cancel and the
-condition becomes tau_k + tau_l*rho*omega >= tau_l + g*(1-rho), independent of s. Adoption
-speed is irrelevant; only the tax wedge and the reemployment margin matter. Break-even reemployment share rho* = (1 - tau_k/tau_l)/omega. At omega = 0.75 and tau_k =
+condition becomes tau_k + tau_l*rho*omega >= tau_l + g*(1-rho), independent of s. **The
+loss per displaced dollar is independent of the ROBOT COST RATIO s under uniform capital
+taxation. This says nothing about adoption speed**, which governs how fast the loss accrues,
+not its size per dollar. (Corrected 2026-09-19; an earlier version said adoption speed was
+irrelevant, which does not follow.) Only the tax wedge and the reemployment margin set the
+size of the per-dollar loss. Break-even reemployment share rho* = (1 - tau_k/tau_l)/omega. At omega = 0.75 and tau_k =
 0.10 this is 0.810 to 0.914, and it is INFEASIBLE (above 1) at the 5 percent equipment rate.
 But allowing for the robot sector's own labour share, 0.337 for NAICS 333 machinery
 (NBER-CES), a third of robot spending is wages taxed at tau_l, and rho* falls to 0.537 in

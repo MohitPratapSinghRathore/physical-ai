@@ -2141,11 +2141,20 @@ sheet.
 | Embodied top 20% | **14.48%** | 19.12% | 19.74% |
 
 **Top-quintile cognitively exposed households hold roughly twice the mortgage balance share
-of top-quintile embodied households** (27 to 28 percent against 14.5 percent). On consumer
+of top-quintile embodied households** (27 to 28 percent against 14.5 percent).
+
+> **SUPERSEDED 2026-09-19 by A36.** On raw NATIONAL dollar shares, which are now the
+> headline rule, neither exposure type over-holds mortgage debt relative to its wage bill:
+> cognitive leans 0.92, embodied 0.91. The absolute gap is a wage-level difference, not a
+> concentration difference. The claim below that "the mortgage channel is a
+> cognitive-exposure channel" is WITHDRAWN. What survives is the rent contrast: embodied
+> leans 1.09 against cognitive 0.54. On consumer
 credit the gap is much smaller (23 to 24 against 19), and on housing payments the two are
 essentially equal (about 20 to 22 against 19.7).
 
 So the mortgage channel is a cognitive-exposure channel; the rent channel is shared.
+(**Both halves of that sentence are superseded by A36.** Mortgage leans are equal across
+exposure types on raw shares; rent is NOT shared, it leans embodied by a factor of two.)
 
 ### What this does to the thesis
 
@@ -2169,3 +2178,145 @@ Every measure in the levels table and every adjusted coefficient is in
 including the nulls (all-debt, unsecured) and the wrong-signed level results (cognitive
 households have LOWER mortgage and total DTI than the no-exposure base in raw levels, and
 only exceed it after adjustment). No selection.
+
+## A36. HEADLINE RULE APPLIED. "Mortgage debt leans cognitive" does not survive raw dollar shares
+
+The headline rule (raw dollar shares lead every stability claim) was applied and it
+immediately overturned the A35 wording. **A35's "the mortgage channel is a cognitive-exposure
+channel" is withdrawn.**
+
+All cognitive figures below: AIOE and Eloundou measure TASK OVERLAP, not displacement and
+not timing, and top-quintile occupations include likely-augmented work. Both definitions
+reported side by side.
+
+### Raw national dollar shares, four mutually exclusive groups, summing to 100
+
+**Felten AIOE definition:**
+
+| Class | Households | Wage bill | Mortgage service | Rent | Mortgage lean | Rent lean |
+|---|---|---|---|---|---|---|
+| Cognitive only | 13.08% | 26.91% | 24.69% | 14.43% | **0.92** | **0.54** |
+| Embodied only | 18.80% | 19.54% | 17.78% | 21.39% | **0.91** | **1.09** |
+| Both exposed | 2.09% | 3.93% | 3.50% | 1.77% | 0.89 | 0.45 |
+| Neither | 66.03% | 49.62% | 54.03% | 62.41% | **1.09** | **1.26** |
+
+**Eloundou GPT definition:**
+
+| Class | Households | Wage bill | Mortgage service | Rent | Mortgage lean | Rent lean |
+|---|---|---|---|---|---|---|
+| Cognitive only | 14.38% | 23.66% | 22.18% | 17.02% | 0.94 | 0.72 |
+| Embodied only | 17.82% | 18.61% | 17.01% | 20.33% | 0.91 | 1.09 |
+| Both exposed | 3.07% | 4.85% | 4.28% | 2.83% | 0.88 | 0.58 |
+| Neither | 64.73% | 52.88% | 56.54% | 59.82% | 1.07 | 1.13 |
+
+"Lean" is the group's share of the debt divided by its share of the wage bill. 1.0 is
+proportional.
+
+### What this overturns
+
+**Neither exposure type over-holds mortgage debt relative to its wage bill.** Cognitive-only
+leans 0.92, embodied-only 0.91. They are indistinguishable, and both are slightly UNDER
+proportional. The over-holder is the unexposed majority at 1.09.
+
+Cognitive households hold a larger absolute share of mortgage service (24.7 against 17.8
+percent) **because they earn more** (26.9 against 19.5 percent of the wage bill), not
+because they carry more mortgage per dollar earned. A35 read the absolute gap as a
+concentration result. It is a wage-level result.
+
+The A35 adjusted coefficients (cognitive AIOE +1.92, t = 2.19; embodied -1.90, t = -2.27)
+are not wrong, but they answer a different question: whether exposure predicts mortgage
+holding for otherwise-similar households. They are now labelled secondary throughout.
+
+### What survives, and it is a genuine exposure-type contrast
+
+**Rent leans embodied and leans away from cognitive, by a factor of two.** Embodied-only
+households hold 21.4 percent of national rent on 19.5 percent of the wage bill, a lean of
+1.09. Cognitive-only households hold 14.4 percent of rent on 26.9 percent of wages, a lean
+of 0.54. The same pattern holds on the Eloundou definition (1.09 against 0.72).
+
+**The rent channel is the one channel where the two exposure types differ in kind rather
+than in level.** It is also the channel with the shortest enforcement lag.
+
+The overlap is small: only 2.1 to 3.1 percent of households contain both a top-quintile
+cognitive and a top-quintile embodied worker.
+
+## A37. H3 GATE. Half refuted, half confirmed more strongly than registered
+
+Registered prediction 1: cognitive exposure is MORE geographically concentrated than
+embodied. Registered prediction 2: cognitive correlates with local house prices, embodied
+does not.
+
+### Prediction 1: REFUTED at fine geography
+
+At-risk rate (group wage bill over local wage bill), top-quintile groups:
+
+| Level | Group | National rate | Gini | p90/p10 | p99/p1 |
+|---|---|---|---|---|---|
+| PUMA | Cognitive AIOE | 20.9% | 0.217 | 2.75 | 6.17 |
+| PUMA | Cognitive GPT | 16.6% | 0.176 | 2.21 | 4.46 |
+| PUMA | **Embodied** | 12.3% | **0.285** | **4.80** | **19.41** |
+| PUMA | **Robot-reachable** | 10.1% | **0.293** | **4.83** | **20.07** |
+| PUMA | *Placebo, random 20%* | 19.9% | *0.095* | *1.53* | *2.30* |
+| county | Cognitive AIOE | 20.9% | 0.176 | 2.28 | 4.51 |
+| county | Embodied | 12.3% | 0.156 | 2.12 | 5.65 |
+| county | Robot-reachable | 10.1% | 0.172 | 2.37 | 6.03 |
+| county | *Placebo* | 19.9% | *0.090* | *1.49* | *2.31* |
+
+**Embodied and robot-reachable exposure are MORE geographically concentrated than cognitive
+exposure at PUMA level, by a factor of three on p99/p1** (19.4 and 20.1 against 6.2). At
+county level the three are close and cognitive is marginally highest on Gini. Prediction 1
+is refuted where geography is fine enough to matter.
+
+**Density control passes.** The placebo group, occupations drawn at random to match 20
+percent of employment, has a Gini of 0.090 to 0.095 and p99/p1 of 2.3. Every real group is
+well above it, so the concentration is not sampling noise. And because the statistic is a
+RATE, area size is already normalised out; the Gini of wage LEVELS (0.231 PUMA, 0.812
+county) is reported only as the density benchmark it is. **Embodied near-uniformity is NOT
+just density.**
+
+### Reconciliation with A28, which I must flag
+
+A28 reported embodied work as near-uniform (county Gini 0.141, p99/p1 3.85) against
+robot-reachable at 0.258 and 8.99. Here top-quintile embodied comes in at 0.156 and 5.65,
+close to robot-reachable. **The difference is the group definition, not the data.** A28 used
+above-median P (80m workers); this uses top-quintile P (37m workers). Narrower groups are
+more concentrated. Both are correct for their definition, and the paper must state which it
+means. The "embodied work is near-uniform" claim holds for BROAD embodied work and NOT for
+the top quintile.
+
+### Prediction 2: CONFIRMED, and more strongly than registered
+
+Spearman correlation of the local at-risk rate with local median home value and local mean
+wage:
+
+| Group | Home value (PUMA) | Mean wage (PUMA) | Home value (county) | Mean wage (county) |
+|---|---|---|---|---|
+| Cognitive AIOE | **+0.520** | **+0.767** | +0.530 | +0.543 |
+| Cognitive GPT | +0.485 | +0.574 | +0.442 | +0.375 |
+| **Embodied** | **-0.597** | **-0.810** | -0.581 | -0.575 |
+| **Robot-reachable** | **-0.600** | **-0.827** | -0.620 | -0.607 |
+| *Placebo* | *+0.164* | *+0.218* | *+0.185* | *+0.150* |
+
+The registered prediction was that cognitive correlates and embodied does not. **The
+correlations have OPPOSITE SIGNS.** Cognitive exposure sits in high-home-value, high-wage
+areas; embodied exposure sits in low-home-value, low-wage areas, at -0.81 against mean wage
+at PUMA level. The two exposure types are not merely differently concentrated, they are
+geographically opposed.
+
+### What this does to the comparative thesis
+
+It damages the draft version. **"Physical AI adds the undiversifiable geography" is wrong as
+stated**: at top-quintile definition embodied exposure is the MORE concentrated of the two,
+hence the more diversifiable. The defensible geographic claim is narrower and different in
+character:
+
+> The two exposure types sit in opposite places. Cognitive exposure is where home values and
+> wages are high; embodied exposure is where they are low. A lender or a region is exposed
+> to one or the other, rarely both, and the overlap is only 2 to 3 percent of households.
+
+That is a better finding than the one registered, but it is not the one the comparative
+thesis was built on, and the thesis draft must be rewritten around it rather than around
+undiversifiability.
+
+**Not yet done from this session:** item 4, the runway calculation. Moran's I still not
+computed; centroids not obtained.

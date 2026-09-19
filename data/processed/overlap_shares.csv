@@ -1,0 +1,9 @@
+cognitive_definition,class,households_pct,wage_bill_pct,mortgage_service_pct,rent_pct,mortgage_lean_vs_wage,rent_lean_vs_wage
+cognitive_AIOE,cognitive_only,13.077,26.912,24.692,14.431,0.917,0.536
+cognitive_AIOE,embodied_only,18.805,19.538,17.781,21.385,0.91,1.095
+cognitive_AIOE,both,2.089,3.926,3.502,1.769,0.892,0.451
+cognitive_AIOE,neither,66.029,49.624,54.025,62.415,1.089,1.258
+cognitive_GPT,cognitive_only,14.378,23.658,22.18,17.023,0.938,0.72
+cognitive_GPT,embodied_only,17.824,18.614,17.005,20.325,0.914,1.092
+cognitive_GPT,both,3.07,4.85,4.278,2.829,0.882,0.583
+cognitive_GPT,neither,64.728,52.878,56.537,59.823,1.069,1.131
