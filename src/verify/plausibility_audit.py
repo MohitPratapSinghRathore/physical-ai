@@ -49,7 +49,7 @@ def main():
     for col, lab in [("terminal_pct_OASDI", "OASDI payroll income"),
                      ("terminal_pct_HI", "HI Part A revenue")]:
         mx = float(b[col].max())
-        chk(f"terminal fiscal loss as percent of {lab}", mx,
+        chk(f"SUPERSEDED A77 terminal fiscal loss as percent of {lab}", mx,
             "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
             mx <= 100.0,
             f"maximum across the extended axis at the ten-year horizon")
@@ -73,7 +73,8 @@ def main():
     hc = pd.read_csv(OUT / "verify" / "hand_check_credit.csv")
     for loan in hc["loan"].unique():
         s = hc[hc.loan == loan].iloc[0]
-        chk(f"implied bank share of {loan} balances", float(s["bank_share_implied"]),
+        chk(f"SUPERSEDED A79 implied bank share of {loan} balances",
+            float(s["bank_share_implied"]),
             "a subset cannot exceed its total: 0 to 1",
             float(s["bank_share_implied"]) <= 1.0,
             "above 1 means the survey under-reports that balance relative to the aggregate")

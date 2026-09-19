@@ -1,0 +1,5 @@
+price_and_wage_fall,dsti_multiplier,share_above_dsti_50,increment_pp,implied_default_uplift_pp
+0.0,1.0,0.0957,0.0,0.0
+0.05,1.0526,0.105,0.9326,0.7143
+0.1,1.1111,0.1162,2.0474,1.4286
+0.2,1.25,0.1441,4.8355,2.8571

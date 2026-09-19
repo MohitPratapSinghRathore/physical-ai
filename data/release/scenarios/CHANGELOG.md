@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.6.0 (2026-09-20)
+- THE ORDER OF STRESS IS RETIRED AND REPLACED BY A DOSE-RESPONSE TABLE. Ranking balance
+  sheets by which crosses its materiality threshold first is not meaningful when each sheet
+  is measured against a different yardstick: only 4 of 15 pairwise orderings survived moving
+  the thresholds. Every cell now reports the loss in dollars, as a share of GDP, and as a
+  share of that sheet's own SOURCED absorbing capacity, in two columns, first round and with
+  second-round effects.
+- SECOND-ROUND MODULE added: demand through a marginal propensity to consume derived from
+  Mian, Straub and Sufi; house prices through the Harter-Dreiman income elasticity, larger
+  in supply-constrained high-cost metros; business credit, commercial real estate and cards
+  through the Federal Reserve mapping only. All SCENARIO, all banded.
+- SOVEREIGN CONSOLIDATION added: the share of every loss that ultimately lands on the
+  federal government, after credit risk transfer and private mortgage insurance take the
+  first loss on the agency book.
+- SURVEY UNDER-REPORTING CORRECTED AT SOURCE. The earlier factors conflated under-reporting
+  with sample coverage and were 14 to 26 percent too large. Every credit row falls.
+- EXPOSURE-TYPE CONTRASTS DOWNGRADED. Neither the household nor the fiscal contrast survives
+  controlling for pay. The scenario axis is now reported by WAGE QUINTILE as well as by
+  exposure index, and the exposure indices are named scenarios for where in the wage
+  distribution displacement falls.
+- MORTGAGE HOLDER SPLIT SOURCED. The flagged 60 to 70 percent agency range is replaced by a
+  decomposition read from the GSEs' own 2025 Forms 10-K: GSE 51.1 percent, FHA 12.6 percent
+  (flagged proxy), bank portfolio 11.5 percent, residual 24.9 percent.
+- REINSTATEMENT TERM added to the labour model from Acemoglu and Restrepo 2019, after which
+  the labour model is FROZEN as an appendix scenario generator.
+- SEALED EXPECTED VALUES published alongside a replication brief.
+
 ## 0.5.0 (2026-09-19)
 - Supervisory conversion layer added: Federal Reserve 2026 DFAST severely adverse scenario
   and Table 9 loss rates, Gerardi et al. conditional default, NY Fed household debt.

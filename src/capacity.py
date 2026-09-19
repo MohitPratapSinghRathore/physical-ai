@@ -75,6 +75,38 @@ LOSSES_ABSORBED_BN = 708.0
 FED_LOSSES_BN = {"mortgage": 22.5, "card": 203.0, "auto": 54.1, "student": 54.1,
                  "business_credit": 158.2, "cre": 76.5, "total": 624.9}
 
+# ---- GSE loss-absorbing layers, amendment (b) of the final session.
+# READ FROM THE GSEs' OWN 2025 FORM 10-K FILINGS through the SEC XBRL API and the filing
+# text. Pre-provision pre-tax earnings are net income plus income tax expense plus the
+# provision for credit losses, which is the standard first-loss earnings layer.
+GSE_PPE = {                       # FY2025, USD billions, from us-gaap facts
+    "Fannie Mae": {"net_income": 14.36, "tax": 3.62, "provision": 1.61},
+    "Freddie Mac": {"net_income": 10.73, "tax": 2.63, "provision": 1.29},
+}
+# Credit risk transferred to private investors. FHFA Credit Risk Transfer Progress Report,
+# Fourth Quarter 2023, the latest edition FHFA has published: from 2013 through 2023 the
+# Enterprises transferred a portion of credit risk on about 6.7tn of UPB with a combined
+# Risk in Force of 210bn, or 3.2 percent of UPB. FLAGGED AS STALE: 4Q2023 against a 2026
+# balance sheet.
+CRT_RIF_BN = 210.0
+CRT_UPB_TN = 6.7
+CRT_RIF_PCT_OF_UPB = 3.2
+# Private mortgage insurance, from the 2025 Form 10-Ks.
+#   Fannie Mae: total mortgage insurance risk in force 201,355m, 6 percent of the
+#   single-family conventional guaranty book; loans with credit enhancement 1,663bn UPB,
+#   47 percent of that book; credit enhancement generally required above 80 percent LTV.
+#   Freddie Mac: primary mortgage insurance covers 22 percent of the single-family
+#   portfolio by UPB and CRT and other 52 percent, with 39 percent not credit enhanced;
+#   mortgage insurers' maximum loss limits 181.5bn.
+PMI_RIF_BN = {"Fannie Mae": 201.355, "Freddie Mac": 181.5}
+CREDIT_ENHANCED_SHARE = {"Fannie Mae": 0.47, "Freddie Mac": 0.61}
+# FHA. FLAGGED PROXY, recorded in lit/unverified.md: hud.gov returns HTTP 403 on every
+# route, so the FY2025 MMI Fund figures come from secondary reporting and are not cited.
+FHA_CAPITAL_RATIO = 0.1147
+FHA_INSURANCE_IN_FORCE_BN = 1_647.0
+FHA_ECONOMIC_NET_WORTH_BN = FHA_CAPITAL_RATIO * FHA_INSURANCE_IN_FORCE_BN
+FHA_STATUTORY_MINIMUM = 0.02
+
 # ---- trust funds
 OASDI_PAYROLL_INCOME_BN = 1_323.2      # A32, verified
 HI_COMBINED_RATE = 0.029               # 26 USC 3101(b) and 3111(b), employee plus employer
@@ -152,6 +184,7 @@ def build():
 
     gse = gse_net_worth()
     gse_total = sum(v["net_worth_bn"] for v in gse.values())
+    gse_ppe = sum(v["net_income"] + v["tax"] + v["provision"] for v in GSE_PPE.values())
 
     wage_bill_bn = total_wage_bill_bn()
     hi_payroll_income_bn = HI_COMBINED_RATE * wage_bill_bn
@@ -195,6 +228,57 @@ def build():
                         "preferred agreements sit behind it. This is a scale comparison, "
                         "not a solvency test.",
                 "detail": gse,
+                "layers": {
+                    "annual_pre_provision_pre_tax_earnings_bn": gse_ppe,
+                    "earnings_source": "FY2025 Forms 10-K through the SEC XBRL API: net "
+                                       "income plus income tax expense plus the provision "
+                                       "for credit losses",
+                    "capital_plus_1y_earnings_bn": gse_total + gse_ppe,
+                    "capital_plus_3y_earnings_bn": gse_total + 3 * gse_ppe,
+                    "crt_risk_in_force_bn": CRT_RIF_BN,
+                    "crt_share_of_upb_pct": CRT_RIF_PCT_OF_UPB,
+                    "crt_source": "FHFA Credit Risk Transfer Progress Report, Fourth "
+                                  "Quarter 2023: risk transferred on about 6.7tn of UPB "
+                                  "with a combined Risk in Force of 210bn, 3.2 percent of "
+                                  "UPB. FLAGGED AS STALE, 4Q2023 against a 2026 book.",
+                    "pmi_risk_in_force_bn": PMI_RIF_BN,
+                    "pmi_total_bn": sum(PMI_RIF_BN.values()),
+                    "credit_enhanced_share_of_book": CREDIT_ENHANCED_SHARE,
+                    "pmi_source": "2025 Forms 10-K. Fannie Mae: total mortgage insurance "
+                                  "risk in force 201,355m, 6 percent of the single-family "
+                                  "conventional guaranty book; loans with credit "
+                                  "enhancement 1,663bn UPB, 47 percent of the book; credit "
+                                  "enhancement generally required above 80 percent LTV. "
+                                  "Freddie Mac: primary mortgage insurance on 22 percent "
+                                  "of the portfolio, CRT and other on 52 percent, 39 "
+                                  "percent not credit enhanced; insurers' maximum loss "
+                                  "limits 181.5bn.",
+                    "note": "CRT and PMI are LOSS TRANSFERS, not capital. They reduce the "
+                            "loss reaching the Enterprises rather than increasing what the "
+                            "Enterprises can absorb, and they are applied on the loss side "
+                            "of the dose-response table, not added to capacity here.",
+                },
+            },
+            "mortgage_agency_FHA": {
+                "capacity_bn": FHA_ECONOMIC_NET_WORTH_BN,
+                "measure": "FHA Mutual Mortgage Insurance Fund economic net worth",
+                "source": "FLAGGED PROXY, see lit/unverified.md. hud.gov returns HTTP 403 "
+                          f"to this environment. Capital ratio {FHA_CAPITAL_RATIO:.2%} on "
+                          f"{FHA_INSURANCE_IN_FORCE_BN:,.0f}bn of insurance in force, "
+                          f"FY2025, statutory minimum {FHA_STATUTORY_MINIMUM:.0%}",
+                "insurance_in_force_bn": FHA_INSURANCE_IN_FORCE_BN,
+                "flag": "The MMI Fund is a federal fund. A loss here lands on the federal "
+                        "government, not on a private balance sheet, and it is consolidated "
+                        "as such in the sovereign block.",
+            },
+            "mortgage_agency_VA": {
+                "capacity_bn": None,
+                "measure": "NOT a capacity. The VA home loan guaranty is backed by the full "
+                           "faith and credit of the United States and has no separate "
+                           "loss-absorbing fund to exhaust",
+                "source": "38 USC chapter 37",
+                "flag": "Every dollar of VA guaranty loss is a federal loss on the first "
+                        "dollar. It is carried in the sovereign block and nowhere else.",
             },
             "auto_lenders": {
                 "capacity_bn": cet1_surplus_bn,

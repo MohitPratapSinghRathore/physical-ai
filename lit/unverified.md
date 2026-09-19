@@ -61,3 +61,23 @@ Do not cite the superseded title.
   every derivation assumption, and computed in src/bls_dws.py.
 - This entry is kept only so the earlier "blocked" statements in findings A41 and A45 can be
   traced to their resolution.
+
+## FHA Mutual Mortgage Insurance Fund, FY2025 (added 2026-09-20)
+
+**NOT VERIFIED AGAINST THE PUBLISHER.** hud.gov returns HTTP 403 to this environment on
+every route tried, including the annual report PDF and the HUD press release. The figures
+below come from secondary reporting of the FY2025 FHA Annual Report to Congress and are
+used in the analysis as a FLAGGED PROXY, never cited in the bibliography.
+
+- MMI Fund capital ratio FY2025: **11.47 percent**, against a statutory minimum of 2 percent
+- Insurance in force: about **1.647 trillion dollars**
+- Economic net worth: about **188.9 billion dollars**
+
+**A discrepancy in the secondary sources, resolved arithmetically.** One outlet reports
+economic net worth of 118.87bn and another 188.87bn. The capital ratio times insurance in
+force is 0.1147 x 1,647bn = 188.9bn, so 118.87 is a transposition and 188.87 is the
+internally consistent figure. This is a consistency check, not a verification.
+
+**The exact document is the FHA Annual Report to Congress on the Financial Status of the
+MMI Fund, FY2025, and the accompanying Annual Actuarial Review.** If the owner places
+either in `data/raw/manual/`, the flag is removed and the figure is cited.

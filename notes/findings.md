@@ -5798,3 +5798,488 @@ accounts for essentially all of the gap without needing any of those.
 it still passes as an arithmetic description of the two groups. What it cannot support is the
 interpretation attached to it, that exposure type drives the fiscal cost. Claim status moves
 to DOWNGRADED with the arithmetic retained and the interpretation withdrawn.
+
+---
+
+## A88. THE SCENARIO AXIS REORGANISED BY THE WAGE DISTRIBUTION, and the exposure indices become named scenarios
+
+`src/wage_targeting.py`. Amendment (a). A87 showed exposure type is mostly a pay proxy, so
+the primitive is where in the wage distribution displacement falls.
+
+### The wage distribution, ACS 2023, person weighted, total wage bill 10,568bn
+
+| Quintile | Wage range | Mean | Share of the wage bill |
+|---|---|---|---|
+| Q1 | 4 to 21,410 | 11,041 | **3.24%** |
+| Q2 | 21,512 to 40,679 | 31,049 | 8.95% |
+| Q3 | 40,781 to 60,152 | 48,637 | 14.26% |
+| Q4 | 61,171 to 92,776 | 74,231 | 22.33% |
+| Q5 | 93,796 to 886,981 | 174,165 | **51.22%** |
+
+**The bottom quintile cannot deliver even a 5 percent dose.** All of Q1 is 3.24 percent of
+the wage bill. The middle quintile tops out at 14.26 percent. **Only the top quintile can
+produce the scenarios the owner's hypothesis concerns**, which is an arithmetic fact about
+the wage distribution and not a claim about AI.
+
+### The fiscal loss depends on where the displacement falls, and the split flips
+
+Effective rates on the displaced wage dollar. Payroll is statutory: OASDI 12.4 percent under
+the 184,500 dollar base and HI 2.9 percent uncapped. Income tax is a MARGINAL effective rate
+differenced across AGI classes in IRS SOI Table 1.4 for 2023, flagged as before credits and
+therefore an upper bound, most at the bottom.
+
+| Target | Payroll rate | Income tax rate | **Payroll share of the fiscal loss** |
+|---|---|---|---|
+| Bottom Q1 | 15.30% | 8.39% | **64.6%** |
+| Middle Q3 | 15.30% | 10.60% | **59.1%** |
+| Top Q5 | **12.84%** | **16.86%** | **43.2%** |
+
+**Displacement at the bottom is a payroll tax event; displacement at the top is an income tax
+event.** The payroll rate falls at the top only because the earnings cap binds, and the
+income tax rate doubles. This is the mechanism behind A84's cap contrast, stated in the
+primitive that actually drives it.
+
+At a 5 percent dose the fiscal loss is 136.8bn if it falls on the middle quintile and 156.9bn
+if it falls on the top, and the composition is completely different: 65.5bn of OASDI from the
+middle against 52.5bn from the top, and 56.0bn of income tax from the middle against 89.1bn
+from the top.
+
+### Where the exposure indices actually fall
+
+Share of each index's top-quintile wage bill sitting in each wage quintile:
+
+| Exposure | Q1 | Q2 | Q3 | Q4 | Q5 |
+|---|---|---|---|---|---|
+| Embodied | 5.4 | 17.3 | 25.4 | 29.4 | **22.5** |
+| Cognitive AIOE | 0.8 | 3.0 | 7.9 | 17.0 | **71.3** |
+| Cognitive GPT | 2.0 | 7.3 | 13.4 | 20.4 | **56.9** |
+
+**Cognitive AIOE exposure is a top-quintile scenario: 71 percent of its wage bill is in Q5.
+Embodied exposure is a middle-of-the-distribution scenario, spread across Q2 to Q4.** Read
+that way, the two indices are two named points on one axis, which is what the paper should
+say rather than presenting them as two mechanisms.
+
+### Balances, buffers and runway by wage quintile, SIPP
+
+Balances scaled by the corrected full-universe factors.
+
+| Quintile | Mean wage | Mortgage bn | Card bn | Auto bn | Student bn | Median liquid | **Median runway, months** | **Under 1 month** |
+|---|---|---|---|---|---|---|---|---|
+| Q1 | 13,595 | 2,247 | 307 | 318 | 328 | 8,700 | 1.26 | 47.7% |
+| Q2 | 35,542 | 2,003 | 312 | 356 | 338 | 6,000 | **0.84** | **55.1%** |
+| Q3 | 55,416 | 2,821 | 329 | 413 | 524 | 10,050 | 1.09 | 49.7% |
+| Q4 | 84,909 | 4,059 | 391 | 503 | 588 | 17,000 | 1.40 | 43.2% |
+| Q5 | 227,078 | 6,528 | 398 | 525 | 562 | 37,710 | 1.81 | 36.4% |
+
+**The thinnest buffers are in the SECOND quintile, not the first.** Q1 contains students,
+part-year and part-time workers who often sit in households with other income; Q2 is where
+full-time low-paid work with obligations concentrates. **Runway is not monotonic in wage and
+the paper must not assume it is.** Even at the top, the median runway is 1.81 months and 36
+percent of households have under one month.
+
+---
+
+## A89. THE OPPOSITE-PLACES GEOGRAPHY RESULT IS ALSO A PAY RESULT, and it does not survive the control
+
+`src/wage_targeting.py`, 2,462 PUMAs. A36 reported that the two exposure types sit in
+geographically opposed places: cognitive exposure where home values and wages are high,
+embodied where they are low. Amendment (a) asked whether that is a pay result.
+
+| Exposure | Correlation with PUMA mean wage | With mean home value | **Partial, given wage** | **Survives** |
+|---|---|---|---|---|
+| Embodied | **-0.798** | -0.596 | **+0.006** | **-1.0%** |
+| Cognitive AIOE | **+0.781** | +0.554 | **-0.077** | **-13.9%** |
+| Cognitive GPT | +0.566 | +0.459 | **+0.062** | 13.6% |
+
+**The correlation with home values vanishes once PUMA mean wage is controlled.** It does not
+merely weaken: on embodied it goes to 0.006, and on cognitive AIOE it reverses. Exposure is
+correlated with where housing is expensive ONLY because it is correlated with where wages are
+high, which is the same fact as A87 measured across places instead of across people.
+
+**A36's geographic claim must be restated.** "The two exposure types sit in opposite places"
+is true and the correlations are large, but the place variable that does the work is the
+LOCAL WAGE LEVEL, not anything about housing or about exposure type. The defensible sentence
+is:
+
+> Exposure type sorts across places by local pay. Cognitive exposure concentrates in
+> high-wage areas and embodied exposure in low-wage areas, and the association with house
+> values is entirely an association with wages.
+
+That is the third time in this session that a result presented as an exposure-type finding
+has turned out to be a pay finding. **The pattern is now the result.**
+
+---
+
+## A90. THE MORTGAGE HOLDER SPLIT IS NO LONGER A GUESS, AND THE GSE LOSS LAYERS ARE SOURCED
+
+`src/capacity.py`, amendment (b).
+
+### The holder decomposition of the 13,100bn national mortgage balance
+
+| Holder | Balance | Share | Source |
+|---|---|---|---|
+| **GSE** | **6,694bn** | **51.1%** | Fannie Mae 3,538bn (2025 Form 10-K: 1,663bn credit-enhanced at 47 percent of the book) and Freddie Mac 3,156bn ("our Single-Family mortgage portfolio was $3.2 trillion at December 31, 2025") |
+| FHA | 1,647bn | 12.6% | FLAGGED PROXY, `lit/unverified.md`, hud.gov is 403 |
+| Bank portfolio | 1,500bn | 11.5% | Federal Reserve 2026 DFAST first-lien balance |
+| Residual | 3,259bn | 24.9% | VA, private label, credit unions, lenders outside the DFAST panel. FLAGGED as a residual |
+
+This **replaces the flagged 60 to 70 percent agency range** used in every earlier version.
+Three of the four shares are now read from a publisher. The queue item "holder proxy" is
+substantially discharged; what remains is decomposing the residual.
+
+### The GSE loss-absorbing stack, in order
+
+| Layer | Amount | Source |
+|---|---|---|
+| Credit risk transferred to private investors | **210bn** Risk in Force on 6.7tn of UPB, 3.2 percent | FHFA Credit Risk Transfer Progress Report 4Q2023. **FLAGGED AS STALE**: 4Q2023 is the latest edition FHFA has published, against a 2026 book |
+| Private mortgage insurance | **382.9bn** (Fannie 201.4bn risk in force, 6 percent of the book; Freddie 181.5bn maximum loss limits) | the 2025 Forms 10-K |
+| Enterprise capital | 190.4bn | 10-Q net worth |
+| One year of pre-provision pre-tax earnings | **34.2bn** (Fannie 19.6bn, Freddie 14.7bn) | FY2025 10-K: net income plus tax plus provision |
+| Three years of earnings | 102.7bn | as above |
+
+**CRT and PMI are LOSS TRANSFERS, not capital.** They reduce the loss that reaches the
+Enterprises; they do not raise what the Enterprises can absorb. They are applied on the loss
+side, ahead of capital, and that ordering is what makes the sovereign consolidation in A92
+defensible rather than alarmist.
+
+**Losses against capital alone, against capital plus one year of earnings (224.7bn) and
+against capital plus three years (293.2bn)** are all reported. The conservatorship caveat
+stands: Enterprise net worth is not loss-absorbing capital of the same kind as bank CET1, and
+the Treasury senior preferred agreements sit behind it.
+
+**FHA and VA are added as separate government-backed holders.** FHA has a fund with a
+measurable capital ratio, flagged. **VA has no separate fund at all**: the guaranty is backed
+by the full faith and credit of the United States, so every dollar of VA loss is federal on
+the first dollar. Its book size was not sourced and it is therefore named but not quantified.
+
+### What the sourced split does to the headline
+
+The agency row was reported at 60 to 70 percent of national mortgage losses; it is 51.1
+percent. **Every agency figure in A85 falls by about a fifth.** At a 25 percent cognitive
+dose the GSE loss is 29.7 percent of combined net worth rather than 40.6, and at 50 percent
+it is 57.0 rather than 77.7. The finding survives in direction and is smaller in size.
+
+---
+
+## A91. THE SECOND-ROUND MODULE. Registered expectation (i) is REFUTED and (ii) is CONFIRMED
+
+`src/second_round.py`, governed by `notes/prereg_second_round.md` and its 4f to 4j addendum,
+both committed before the run. **Everything in this entry is SCENARIO, banded, and none of it
+is a forecast.**
+
+### The two verified inputs the module turns on
+
+**Marginal propensity to consume.** Mian, Straub and Sufi, NBER Working Paper 26941, April
+2020 revised July 2025: "the top 1% save at an exceptionally high rate, averaging well over
+40% of their disposable income. The saving rate drops to 20% for the next 9%, falls to 12%
+for households in the 51st to 90th percentile, and is effectively zero for the bottom 50%,
+who live hand-to-mouth." The MPCs used here are ONE MINUS those saving rates, which is a
+derivation from the paper's numbers and not a figure the paper states: **0.80 to 1.00 out of
+labour income and 0.35 to 0.55 out of capital income.**
+
+**House price response.** Harter-Dreiman, OFHEO Working Paper 03-2, December 2003: "The
+elasticity of price with respect to income in the national sample is 0.27", and "the income
+coefficient for the constrained MSAs is larger than the coefficient for the unconstrained
+MSAs (0.38 versus 0.21)". The constrained figure is what the prereg meant by a larger
+response in cognitive-heavy high-cost metros. **FLAGGED: a long-run equilibrium elasticity
+fitted on 1980 to 1998 data. It says where prices settle, not how far they overshoot.**
+
+### 4a and 4f: the demand channel, output held constant
+
+Cognitive AIOE, upper end of the band, 10-year horizon:
+
+| Dose | Wage income fall | Consumption fall | As a share of GDP | House prices, national | High-cost metros | **Severity against the Fed** |
+|---|---|---|---|---|---|---|
+| 5% | 2.4% | 153bn | 0.48% | -0.6% | -0.9% | 0.10 |
+| 10% | 5.0% | 318bn | 0.99% | -1.3% | -1.9% | 0.21 |
+| 25% | 13.4% | 857bn | 2.66% | -3.6% | **-5.1%** | 0.58 |
+| 50% | 31.4% | 2,016bn | **6.26%** | -8.5% | **-11.9%** | **1.36** |
+
+**OUTPUT IS HELD CONSTANT IN EVERY ROW.** Every dollar of wage income lost becomes a dollar
+of capital income. The shortfall exists only because the people who gain the income spend
+less of it than the people who lost it. **These are distributional failures, not resource
+shortages, and the paper should say so in exactly those words.**
+
+### 4b: where each dose sits against the Fed severely adverse scenario
+
+Ratio of the demand shortfall to the Fed's 4.6 percent GDP fall:
+
+| Dose | Embodied | Cognitive AIOE | Cognitive GPT |
+|---|---|---|---|
+| 5% | 0.10 | 0.10 | 0.10 |
+| 10% | 0.21 | 0.21 | 0.26 |
+| 25% | 0.79 | 0.58 | 0.59 |
+| 50% | **1.46** | **1.36** | **1.72** |
+
+**A 50 percent dose is between 1.4 and 1.7 times the Fed's severely adverse scenario on
+demand.** On house prices it is only 0.28 to 0.36 of the Fed's 30 percent fall, because the
+long-run income elasticity is small. **The two severity measures disagree by a factor of
+four, and that disagreement is itself the honest result**: a displacement shock of this size
+is a demand event first and a housing event second, which is the opposite of 2008.
+
+### 4g: prices and wages fall while nominal debt does not
+
+Baseline share of obligated working-core households above DSTI 50: **9.57 percent.**
+
+| Price and wage fall | DSTI multiplier | Share above DSTI 50 | Increment | Implied default uplift |
+|---|---|---|---|---|
+| 5% | 1.053 | 10.50% | +0.93pp | +0.71pp |
+| 10% | 1.111 | 11.62% | **+2.05pp** | +1.43pp |
+| 20% | 1.250 | 14.41% | **+4.84pp** | +2.86pp |
+
+A 10 percent deflation does about as much balance-sheet damage as a 10 percent displacement
+shock does in the first round, **without displacing anyone.** The default uplift column uses
+the Gerardi et al. exchange rate (job loss is worth 5.0 points and is equivalent to a 35
+percent equity decline) and is **FLAGGED as an extension of their result to a price level
+fall, not their result.**
+
+### 4h: credit supply, a labelled sensitivity and nothing more
+
+No verified elasticity of house prices to a lender pullback was obtained. **STATED
+ASSUMPTION**: an extra 5, 10 or 20 points of house price decline in high-exposure metros. At
+a 25 percent dose that takes the high-cost metro fall from 5.1 percent to 10.1, 15.1 or 25.1.
+Only the last is comparable to the Fed's 30 percent.
+
+### 4i: federal debt dynamics, debt to GDP starting at 121.4 percent
+
+STATED ASSUMPTIONS: reserve currency r = g = 4.0 percent; adverse reserve currency r 5.0
+against g 3.5; an emerging market that cannot borrow freely in its own currency r 9.0 against
+g 3.0. **No CBO baseline: CBO publication pages return HTTP 403.**
+
+| Dose | Horizon | Reserve currency | Adverse | **Emerging market** |
+|---|---|---|---|---|
+| 10% | 10y | 1.25 | 1.44 | **2.18** |
+| 10% | 20y | 1.28 | 1.70 | **3.89** |
+| 25% | 20y | 1.43 | 1.86 | **4.15** |
+| 50% | 20y | **1.83** | 2.33 | **4.88** |
+
+**The reserve-currency issuer absorbs even a 50 percent dose over twenty years at 183 percent
+of GDP. The emerging market does not: it reaches 389 percent at a 10 percent dose.** The same
+shock is a manageable fiscal problem for one issuer and a sovereign crisis for another, and
+the difference is entirely the terms on which it borrows. **The paper's policy section cannot
+be written as if the United States case generalises.**
+
+### 4c and 4e: the Fed mapping, and the two columns
+
+Which sheets reach 25 percent of their own yardstick, cognitive AIOE:
+
+| Dose | Inside data | First round | With second round |
+|---|---|---|---|
+| 5% | yes | **nothing crosses** | **nothing crosses** |
+| 10% | yes | **nothing crosses** | **3: bank mortgage, auto, student** |
+| 25% | yes | 4: HI, agency, bank mortgage, student | **9** |
+| 50% | no | 6 | **11 of 11** |
+
+### REGISTERED EXPECTATION (i) IS REFUTED, on both halves
+
+> "At moderate displacement, under about 25 percent, only the public budget and the trust
+> funds cross, in both columns. At large displacement the first-round column still shows
+> little bank stress while the second-round column crosses."
+
+**Both halves fail.**
+
+1. **At a 10 percent dose, which is inside the data, nothing crosses in the first round but
+   three to seven private sheets cross in the second.** The expectation had the fiscal sheets
+   crossing first at moderate doses; in fact at moderate doses the fiscal sheets do NOT cross
+   and the private ones do, through demand.
+2. **At large doses the first-round column shows three to five non-fiscal sheets crossing**,
+   not "little bank stress".
+
+The direction of the error is worth stating: **the first round is more benign than registered
+at moderate doses and less benign at large doses, and the second round bites much earlier
+than registered.**
+
+### REGISTERED EXPECTATION (ii) IS CONFIRMED
+
+> "Under NO POLICY RESPONSE, large displacement produces losses on bank books and public debt
+> paths comparable to or beyond the Fed's severely adverse scenario, driven mainly by demand,
+> house prices and business credit rather than by displaced borrowers' own loans."
+
+| Dose | Bank losses, first round | With second round | Against the Fed's 624.9bn | **From the second round** |
+|---|---|---|---|---|
+| 50% | 72bn | **901bn** | **1.44x** | **92%** |
+| 75% | 103bn | **932bn** | **1.49x** | **89%** |
+
+**Confirmed, and the mechanism is confirmed too. Nine tenths of the bank loss at large
+displacement comes from demand, house prices and business credit, not from displaced
+borrowers defaulting on their own loans.** That is the single most useful sentence in this
+module for a stress-test designer: **a displacement scenario built only on displaced
+borrowers' own obligations will understate bank losses by roughly a factor of ten.**
+
+---
+
+## A92. AMENDMENT (c). THE SOVEREIGN BEARS THE MAJORITY AT EVERY DOSE, IN BOTH COLUMNS. CONFIRMED
+
+`src/second_round.py`. What counts as federal: general revenue, OASDI, HI, the federal share
+of student loans, FHA, and GSE losses beyond their absorbing capacity under conservatorship.
+What counts as private: bank mortgage portfolios, CRT and private mortgage insurance
+investors, residual mortgage holders, auto and card lenders, and the private slice of the
+student book.
+
+**97.3 percent of the student loan book is a federal asset** (FRED FGCCSAQ027S, 1,605.1bn at
+2026:Q2, against the NY Fed's 1,650bn total). That single fact moves the largest consumer
+credit book in the scenario onto the government's side of the ledger.
+
+| Exposure | Dose | Federal bn | Private bn | **Federal share, first round** | **With second round** | Inside data |
+|---|---|---|---|---|---|---|
+| Embodied | 5% | 88.9 | 16.1 | **84.6%** | 63.4% | yes |
+| Embodied | 10% | 205.2 | 32.0 | **86.5%** | 64.6% | yes |
+| Cognitive AIOE | 10% | 194.0 | 49.0 | **79.8%** | 61.3% | yes |
+| Cognitive AIOE | 25% | 567.1 | 119.5 | **82.6%** | 63.2% | yes |
+| Cognitive GPT | 25% | 593.5 | 127.5 | **82.3%** | 63.4% | yes |
+| Cognitive AIOE | 50% | 1,497.9 | 229.0 | **86.7%** | 66.1% | no |
+
+**REGISTERED EXPECTATION (c) IS CONFIRMED: the federal government bears the majority at every
+dose in both columns, in 100 percent of rows.** The first-round share is 77 to 92 percent and
+the second-round share is 60 to 70 percent.
+
+**The second round REDUCES the federal share while raising the total**, because the demand
+channel lands on private bank books first. That is a genuinely useful asymmetry: **the state
+is the first-round absorber and the banking system is the second-round absorber.**
+
+**This is the finding that most changes what the paper is about.** A project that began as a
+question about bank balance sheets has produced a result about the sovereign. Wage-based
+fiscal architecture means the government is the residual claimant on wage income, and every
+guarantee it has written on household credit compounds that. **The concentration of wage risk
+on the sovereign is the thesis, and the bank channel is the second-round consequence of it.**
+
+---
+
+## A93. 4j. TWO WORLDS, AND WHAT THE POLICY RESPONSE DOES NOT FIX
+
+`src/second_round.py`. The instruments are those named in `framework/architecture_spec.md`:
+tax the surplus at the break-even rate, fund replacement income from it, and apply
+displacement-contingent debt relief. **`framework/architecture.md` itself is NOT YET BUILT:
+it is gated on owner approval of a thesis statement, so what is modelled is the
+specification's three named instruments, not a built table.**
+
+The break-even capital tax rate comes straight from P1r: `tau_k = tau_l * (1 - R)`.
+
+| Exposure | Dose | R | **Break-even tau_k** | No response | With response | **Removed** |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE | 10% | 0.571 | **12.9%** | 472.7bn | 67.0bn | **85.8%** |
+| Cognitive AIOE | 25% | 0.504 | **14.9%** | 1,306.3bn | 180.7bn | **86.2%** |
+| Embodied | 25% | 0.274 | **21.8%** | 1,842.5bn | 288.5bn | **84.3%** |
+| Cognitive AIOE | 50% | 0.338 | **19.9%** | 3,184.6bn | 425.1bn | **86.7%** |
+| Embodied | 50% | 0.000 | **30.1%** | 3,540.9bn | 530.4bn | **85.0%** |
+
+With a 20 percent leakage of the surplus beyond the reach of the capital tax, consistent with
+the profit-shifting literature, the share removed falls to **78 to 81 percent**.
+
+**The response removes about five sixths of the loss, and the registered expectation that
+"most of that is avoided" is CONFIRMED.**
+
+### What it does not remove, and why that matters more than what it does
+
+**The payroll-funded trust funds survive the response in full.** Replacement income financed
+out of a capital tax is not covered wages, so OASDI and HI lose their base whether or not the
+household is made whole. **That is a design choice, not a law of nature**: making the
+replacement payroll-taxable would close it, at the cost of taxing a transfer. The paper
+should put that choice in front of the reader rather than assuming either answer.
+
+**The break-even rate is not small and it rises with the dose.** At a 50 percent embodied
+dose R falls to zero and the break-even capital tax rate is 30.1 percent, above the 21
+percent statutory federal corporate rate and far above the 3.2 to 20.4 percent sourced range
+for the effective rate on capital. **The instrument that fixes the problem is outside the
+range of anything currently observed**, and saying so is more honest than reporting the 85
+percent removal rate on its own.
+
+**Output is preserved in every scenario.** The losses the response removes were never
+resource losses.
+
+---
+
+## A94. THE REINSTATEMENT TERM CHANGES ALMOST NOTHING, AND THAT IS THE ARGUMENT FOR FREEZING THE LABOUR MODEL
+
+`src/reinstatement.py`, item 5. 7,776 cells, 7,272 with a finite limit.
+
+Every version of this project's labour model has been displacement-only. Acemoglu and
+Restrepo's framework says the same technology creates tasks as well as destroying them, and
+their own estimates say the created flow has historically been nearly as large as the
+destroyed one. **Journal of Economic Perspectives 33(2), 2019**, now in `data/raw/manual/`:
+
+- 1947 to 1987, page 19: "the displacement effect reduced labor demand at about 0.48 percent
+  per year, but simultaneously, there was an equally strong reinstatement effect, equivalent
+  to an increase in labor demand of 0.47 percent per year."
+- 1987 to 2017, page 21: "reinstatement increased labor demand only by 0.35 percent per year
+  compared to 0.47 percent in 1947-1987" and "displacement reduced labor demand by 0.7
+  percent per year". Cumulatively, "changes in the task content of production reduced labor
+  demand by 10 percent" over that period.
+
+Added to the flow model as `reinstated = min(r * E, U)` and crossed with every existing
+dimension.
+
+### The result
+
+| Reinstatement | 5th percentile | **Median** | 95th |
+|---|---|---|---|
+| off, 0.0000 | 0.833% | **6.60%** | 15.0% |
+| AR recent, 0.0035 | 0.950% | **6.95%** | 15.0% |
+| AR postwar, 0.0047 | 0.950% | **7.05%** | 15.0% |
+
+**The historically largest offsetting force in the literature raises the median speed limit
+by 5 to 7 percent.** Not by a factor, by a few percent.
+
+### What actually drives the answer
+
+Share of the variance of the speed limit explained by each modelling choice:
+
+| Choice | Share |
+|---|---|
+| **slack measure** | **0.665** |
+| horizon | 0.142 |
+| phi (destination pool) | 0.017 |
+| T (hazard conversion) | 0.006 |
+| exit treatment | 0.005 |
+| turnover | 0.000 |
+| **reinstatement** | **0.000** |
+| alpha (attrition) | 0.000 |
+
+**Two thirds of everything this model has ever disagreed with itself about is the choice of
+slack measure**, which is a measurement decision, already settled in A63 in favour of
+prime-age nonemployment, and not a fact about automation. Reinstatement, attrition and
+turnover together explain nothing.
+
+### Why this closes the labour model rather than opening it
+
+The honest reading is not that reinstatement does not matter in the world. It is that **this
+model cannot see it**, because the model is a flow accounting identity whose binding
+constraint is a nonemployment ceiling, and a 0.35 percent annual inflow is small against a
+6.6 percent annual speed limit. A model that cannot distinguish the presence from the absence
+of the single largest force in the literature it is drawn from is not identifying anything
+about that force.
+
+**THE LABOUR MODEL IS NOW FROZEN.** It is an appendix scenario generator: it produces doses
+for the dose-response table and nothing else. No result in the body of the paper depends on
+its parameters, and no later session reopens them. The verification, in one line: the
+reinstatement-off cells reproduce the committed specification table exactly except where the
+earlier run's search ceiling of 10 percent censored the limit, and the medians are identical
+at 6.60 percent.
+
+---
+
+## A95. ITEMS 6 AND 7. THE REPLICATION BRIEF, THE SEALED VALUES AND THE RELEASE
+
+`notes/replication_brief.md`, `src/seal.py`, `data/release/sealed_expected_values.json`,
+`src/make_release.py` at version 0.6.0.
+
+**The brief is written for an instance that does not read `src/`.** It names the raw sources,
+states each construction as a formula, and states the errors a replicator will reproduce if
+they follow the wrong path: vacant units counted as households, a portfolio loss rate applied
+to exposure at default, a general-revenue loss over a payroll-only denominator, a cumulative
+loss divided by a horizon, an aggregate over a working-core balance, FRED series in millions
+read as billions, and rho fitted on the unemployment rate.
+
+**66 sealed quantities** across nine sections, each with an expected value, a tolerance and
+the construction's identity: rho(slack), the fiscal condition, fiscal magnitudes at 10 and 25
+percent, trust funds, under-reporting factors, household first-round losses at 10 percent,
+the OASDI cap contrast, the pay control, and the incidence comparison. Tolerances are 2
+percent relative for survey aggregates, 5 percent for fitted coefficients and 0.01 absolute
+for shares.
+
+**The release is regenerated at 0.6.0** with a new `dose_response/` directory carrying the
+two-column table, the first-round table, the sovereign consolidation, the wage-quintile
+version, the two policy worlds, the severity mapping and the sourced absorbing capacities.
+Its README carries the six statements that must travel with every number, including that only
+the 5 and 10 percent doses are fully inside the data and that no single exposure type can
+deliver a 75 percent dose.

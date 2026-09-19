@@ -17,10 +17,37 @@ ROOT = pathlib.Path(__file__).parents[1]
 OUT = ROOT / "data" / "processed"
 REL = ROOT / "data" / "release"
 SCEN, DASH = REL / "scenarios", REL / "dashboard"
-VERSION = "0.5.0"
-TODAY = "2026-09-19"
+VERSION = "0.6.0"
+TODAY = "2026-09-20"
 
 CHANGELOG = """# Changelog
+
+## 0.6.0 (2026-09-20)
+- THE ORDER OF STRESS IS RETIRED AND REPLACED BY A DOSE-RESPONSE TABLE. Ranking balance
+  sheets by which crosses its materiality threshold first is not meaningful when each sheet
+  is measured against a different yardstick: only 4 of 15 pairwise orderings survived moving
+  the thresholds. Every cell now reports the loss in dollars, as a share of GDP, and as a
+  share of that sheet's own SOURCED absorbing capacity, in two columns, first round and with
+  second-round effects.
+- SECOND-ROUND MODULE added: demand through a marginal propensity to consume derived from
+  Mian, Straub and Sufi; house prices through the Harter-Dreiman income elasticity, larger
+  in supply-constrained high-cost metros; business credit, commercial real estate and cards
+  through the Federal Reserve mapping only. All SCENARIO, all banded.
+- SOVEREIGN CONSOLIDATION added: the share of every loss that ultimately lands on the
+  federal government, after credit risk transfer and private mortgage insurance take the
+  first loss on the agency book.
+- SURVEY UNDER-REPORTING CORRECTED AT SOURCE. The earlier factors conflated under-reporting
+  with sample coverage and were 14 to 26 percent too large. Every credit row falls.
+- EXPOSURE-TYPE CONTRASTS DOWNGRADED. Neither the household nor the fiscal contrast survives
+  controlling for pay. The scenario axis is now reported by WAGE QUINTILE as well as by
+  exposure index, and the exposure indices are named scenarios for where in the wage
+  distribution displacement falls.
+- MORTGAGE HOLDER SPLIT SOURCED. The flagged 60 to 70 percent agency range is replaced by a
+  decomposition read from the GSEs' own 2025 Forms 10-K: GSE 51.1 percent, FHA 12.6 percent
+  (flagged proxy), bank portfolio 11.5 percent, residual 24.9 percent.
+- REINSTATEMENT TERM added to the labour model from Acemoglu and Restrepo 2019, after which
+  the labour model is FROZEN as an appendix scenario generator.
+- SEALED EXPECTED VALUES published alongside a replication brief.
 
 ## 0.5.0 (2026-09-19)
 - Supervisory conversion layer added: Federal Reserve 2026 DFAST severely adverse scenario
@@ -237,11 +264,68 @@ def build_dashboard():
     return D
 
 
+
+def build_dose_response():
+    """The dose-response table and the sovereign consolidation, as published artifacts."""
+    import shutil
+    DR = REL / "dose_response"
+    DR.mkdir(parents=True, exist_ok=True)
+    moved = []
+    for src, dst in [("dose_response_two_columns.csv", "dose_response_two_columns.csv"),
+                     ("dose_response_first_round.csv", "dose_response_first_round.csv"),
+                     ("sovereign_consolidation.csv", "sovereign_consolidation.csv"),
+                     ("wage_targeted_dose_response.csv", "by_wage_quintile.csv"),
+                     ("two_worlds.csv", "policy_response_two_worlds.csv"),
+                     ("second_round_severity.csv", "second_round_severity.csv"),
+                     ("capacities.json", "absorbing_capacities.json")]:
+        s = OUT / src
+        if s.exists():
+            shutil.copyfile(s, DR / dst)
+            moved.append(dst)
+    (DR / "README.md").write_text(
+        "# Dose-response table\n\n"
+        f"Version {VERSION}, generated {TODAY}.\n\n"
+        "Rows are displacement as a share of the TOTAL US wage bill. Columns are balance "
+        "sheets. Every cell reports the loss in dollars, as a share of GDP, and as a share "
+        "of that sheet's own absorbing capacity, whose measure and source are in "
+        "`absorbing_capacities.json`.\n\n"
+        "## Two columns, and what they mean\n\n"
+        "**First round** is an accounting exercise on measured balances: displaced "
+        "households, their obligations, and a default uplift from Gerardi, Herkenhoff, "
+        "Ohanian and Willen. It holds house prices, consumer demand, business revenue and "
+        "the employment of non-displaced workers FIXED. Against an economy-wide supervisory "
+        "scenario it is a LOWER BOUND, not an estimate.\n\n"
+        "**With second-round effects** is SCENARIO throughout. It maps each dose onto a "
+        "macroeconomic severity and then borrows the Federal Reserve's own 2026 severely "
+        "adverse loss rates at that severity. Beyond the Fed's own scenario the numbers are "
+        "an extrapolation of its rates and are labelled as such.\n\n"
+        "## What must travel with every number\n\n"
+        "- **Cognitive exposure measures TASK OVERLAP, not displacement and not timing.** "
+        "Top-quintile occupations on either cognitive index include a great deal of work "
+        "more likely to be augmented than replaced.\n"
+        "- **Only the 5 and 10 percent doses are fully inside the observed data range for "
+        "every exposure type.** At 25 percent the embodied rows are already outside it.\n"
+        "- **No single exposure type can deliver a 75 percent dose.** Embodied saturates at "
+        "33.7 percent of the total wage bill, cognitive AIOE at 47.4 and cognitive GPT at "
+        "53.6. Saturated rows report the loss at the largest attainable dose.\n"
+        "- **No result is quoted as a cumulative percentage without its horizon.**\n"
+        "- **No dollar figure is quoted without naming the incidence assumption.** On "
+        "household counts incidence moves the answer by 5 to 9 percent; on dollars by 1.75 "
+        "to 3.01 times.\n"
+        "- **Exposure type is mostly a pay proxy.** Neither the household nor the fiscal "
+        "exposure-type contrast survives controlling for wage level. `by_wage_quintile.csv` "
+        "is the version organised around the primitive that actually does the work.\n",
+        encoding="utf-8")
+    return moved
+
+
 def main():
     P = build_scenarios()
     D = build_dashboard()
     pd.set_option("display.width", 220)
+    moved = build_dose_response()
     print(f"=== release {VERSION} written to data/release/ ===")
+    print(f"  dose_response/: {', '.join(moved)}")
     print(f"\nscenarios/paths.csv: {len(P)} rows")
     print(P.groupby("regime").size().to_string())
     print("\n  regimes are now INSIDE_DATA / BOUNDARY_BAND / OUTSIDE_DATA, replacing "

@@ -4,6 +4,7 @@
     "oasdi",
     "hi",
     "mortgage_agency",
+    "mortgage_FHA",
     "mortgage_bank_held",
     "auto_lenders",
     "card_consumer_lenders",
@@ -106,10 +107,12 @@
     "0.75": 0.0
   },
   "flagged": {
-    "agency_share": [
-      0.6,
-      0.7
-    ],
+    "holder_decomposition": {
+      "gse": 0.5109923664122138,
+      "fha": 0.12572519083969466,
+      "bank_portfolio": 0.11450381679389313,
+      "residual": 0.24877862595419845
+    },
     "rent_nonpayment": [
       0.25,
       0.5

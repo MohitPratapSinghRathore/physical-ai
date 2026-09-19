@@ -1,0 +1,24 @@
+{
+  "source": "Acemoglu and Restrepo, Journal of Economic Perspectives 33(2), 2019",
+  "rates": {
+    "off_0.0000": 0.0,
+    "AR_recent_0.0035": 0.0035,
+    "AR_postwar_0.0047": 0.0047
+  },
+  "median_speed_limit_pct_by_setting": {
+    "AR_postwar_0.0047": 7.050000000000001,
+    "AR_recent_0.0035": 6.950000000000001,
+    "off_0.0000": 6.6000000000000005
+  },
+  "variance_share_by_dimension": {
+    "slack": 0.6650899608376649,
+    "phi": 0.017053647264118208,
+    "exit": 0.0051632780179272095,
+    "T": 0.005538005691163737,
+    "alpha": 0.0,
+    "turnover": 0.0004030191841063452,
+    "horizon": 0.1417752400850304,
+    "reinstatement": 0.00026481963242656935
+  },
+  "FROZEN": "The labour model is frozen after this run. It is an appendix scenario generator: it produces doses for the dose-response table and nothing else. No result in the body of the paper depends on its parameters."
+}

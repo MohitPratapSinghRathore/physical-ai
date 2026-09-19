@@ -67,8 +67,24 @@ HORIZONS = [2, 5, 10, 20]
 TYPES = ["embodied", "cognitive_AIOE", "cognitive_GPT"]
 CASES = ["a_incumbents", "b_entrants", "c_sourced_mix"]
 
-MORTGAGE_BANK_HELD = 0.115       # NY Fed aggregate against the Fed's bank-held balance
-AGENCY_SHARE = (0.60, 0.70)      # FLAGGED, no verified holder share obtained
+# HOLDER DECOMPOSITION OF THE 13,100bn NATIONAL MORTGAGE BALANCE (NY Fed HHDC 2026Q2).
+# This replaces the flagged 60 to 70 percent agency range used earlier. Three of the four
+# shares are now read from a publisher.
+#   GSE        6,694bn, 51.1 percent. Fannie Mae's single-family conventional guaranty book
+#              is 3,538bn (its 2025 Form 10-K reports 1,663bn of credit-enhanced loans at 47
+#              percent of the book) and Freddie Mac's single-family portfolio is 3,156bn
+#              ("our Single-Family mortgage portfolio was $3.2 trillion at December 31,
+#              2025", Table: total 3,156,290m).
+#   FHA        1,647bn, 12.6 percent. FLAGGED PROXY, see lit/unverified.md: hud.gov is 403.
+#   bank       1,500bn, 11.5 percent. The Federal Reserve's 2026 DFAST first-lien balance.
+#   residual   3,259bn, 24.9 percent: VA, private label, credit unions and portfolio
+#              lenders outside the DFAST panel. FLAGGED as a residual, not a measurement.
+MORTGAGE_BALANCE_BN = 13_100.0
+MORTGAGE_BANK_HELD = 1_500.0 / MORTGAGE_BALANCE_BN
+MORTGAGE_GSE_SHARE = 6_694.0 / MORTGAGE_BALANCE_BN
+MORTGAGE_FHA_SHARE = 1_647.0 / MORTGAGE_BALANCE_BN
+MORTGAGE_RESIDUAL_SHARE = 1.0 - MORTGAGE_BANK_HELD - MORTGAGE_GSE_SHARE - MORTGAGE_FHA_SHARE
+AGENCY_SHARE = (MORTGAGE_GSE_SHARE, MORTGAGE_GSE_SHARE)
 RENT_NONPAYMENT = (0.25, 0.50)   # FLAGGED, share of lost renter wage income that becomes
                                  # arrears rather than being met from savings or transfers
 
@@ -194,9 +210,16 @@ def build():
                                 C["mortgage_bank_held"]["capacity_bn"])
                             tot_lo = lo / MORTGAGE_BANK_HELD
                             tot_hi = hi / MORTGAGE_BANK_HELD
-                            add(r, "mortgage_agency", tot_lo * AGENCY_SHARE[0],
-                                tot_hi * AGENCY_SHARE[1], gdp,
+                            add(r, "mortgage_agency", tot_lo * MORTGAGE_GSE_SHARE,
+                                tot_hi * MORTGAGE_GSE_SHARE, gdp,
                                 C["mortgage_agency"]["capacity_bn"])
+                            add(r, "mortgage_FHA", tot_lo * MORTGAGE_FHA_SHARE,
+                                tot_hi * MORTGAGE_FHA_SHARE, gdp,
+                                C["mortgage_agency_FHA"]["capacity_bn"])
+                            r["mortgage_national_loss_lo_bn"] = tot_lo
+                            r["mortgage_national_loss_hi_bn"] = tot_hi
+                            r["mortgage_residual_holders_loss_hi_bn"] = (
+                                tot_hi * MORTGAGE_RESIDUAL_SHARE)
                         else:
                             add(r, sheet, lo, hi, gdp, C[sheet]["capacity_bn"])
                     # --- landlords and multifamily: an arrears share, not a dollar capacity
@@ -222,7 +245,8 @@ def add(r, sheet, lo, hi, gdp, capacity):
     r[f"{sheet}_pct_capacity_hi"] = (100 * hi / capacity) if capacity else np.nan
 
 
-SHEETS = ["public_budget", "oasdi", "hi", "mortgage_agency", "mortgage_bank_held",
+SHEETS = ["public_budget", "oasdi", "hi", "mortgage_agency", "mortgage_FHA",
+          "mortgage_bank_held",
           "auto_lenders", "card_consumer_lenders", "student_loan_holders",
           "business_credit", "commercial_real_estate", "bank_capital"]
 
@@ -321,7 +345,10 @@ def main():
             D[D.dose_share_of_total_wage_bill == wb]["inside_observed_data_range"].mean())
             for wb in WB_LEVELS},
         "flagged": {
-            "agency_share": list(AGENCY_SHARE),
+            "holder_decomposition": {"gse": MORTGAGE_GSE_SHARE,
+                                     "fha": MORTGAGE_FHA_SHARE,
+                                     "bank_portfolio": MORTGAGE_BANK_HELD,
+                                     "residual": MORTGAGE_RESIDUAL_SHARE},
             "rent_nonpayment": list(RENT_NONPAYMENT),
             "separability": "exposure-type and incidence enter as multipliers on the "
                             "per-level exposure at default; the level effect and the "

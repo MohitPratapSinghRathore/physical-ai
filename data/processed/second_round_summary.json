@@ -1,0 +1,22 @@
+{
+  "mpc_labour": [
+    0.8,
+    1.0
+  ],
+  "mpc_capital": [
+    0.35,
+    0.55
+  ],
+  "hp_elasticity": {
+    "national": 0.27,
+    "constrained_high_cost": 0.38,
+    "unconstrained": 0.21
+  },
+  "okun": 0.5,
+  "federal_student_share": 0.9728084848484848,
+  "debt_to_gdp_start": 1.21412078269093,
+  "debt_date": "2026-01-01",
+  "baseline_dsti50_share": 0.09570257391736182,
+  "federal_majority_first_round_share_of_rows": 1.0,
+  "federal_majority_with_second_round_share_of_rows": 1.0
+}

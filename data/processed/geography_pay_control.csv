@@ -1,0 +1,4 @@
+exposure,corr_with_PUMA_mean_wage,corr_with_home_value,partial_corr_home_value_given_wage,share_of_correlation_surviving
+embodied,-0.7983,-0.5962,0.0059,-0.0098
+cognitive_AIOE,0.7814,0.5541,-0.077,-0.139
+cognitive_GPT,0.5662,0.4585,0.0624,0.136

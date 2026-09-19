@@ -1,5 +1,5 @@
 {
-  "n_checks": 32,
+  "n_checks": 36,
   "n_violations": 4,
   "checks": [
     {
@@ -24,14 +24,14 @@
       "detail": "survey balances scaled to official aggregates in A79"
     },
     {
-      "quantity": "terminal fiscal loss as percent of OASDI payroll income",
+      "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of OASDI payroll income",
       "value": 236.3878,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "VIOLATION",
       "detail": "maximum across the extended axis at the ten-year horizon"
     },
     {
-      "quantity": "terminal fiscal loss as percent of HI Part A revenue",
+      "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of HI Part A revenue",
       "value": 676.4455,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "VIOLATION",
@@ -59,32 +59,60 @@
       "detail": ""
     },
     {
-      "quantity": "implied bank share of mortgage balances",
+      "quantity": "SUPERSEDED A79 implied bank share of mortgage balances",
       "value": 0.1757,
       "bound": "a subset cannot exceed its total: 0 to 1",
       "verdict": "OK",
       "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
     },
     {
-      "quantity": "implied bank share of card balances",
+      "quantity": "SUPERSEDED A79 implied bank share of card balances",
       "value": 2.9739,
       "bound": "a subset cannot exceed its total: 0 to 1",
       "verdict": "VIOLATION",
       "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
     },
     {
-      "quantity": "implied bank share of auto balances",
+      "quantity": "SUPERSEDED A79 implied bank share of auto balances",
       "value": 1.0644,
       "bound": "a subset cannot exceed its total: 0 to 1",
       "verdict": "VIOLATION",
       "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
     },
     {
-      "quantity": "implied bank share of student balances",
+      "quantity": "SUPERSEDED A79 implied bank share of student balances",
       "value": 0.7238,
       "bound": "a subset cannot exceed its total: 0 to 1",
       "verdict": "OK",
       "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
+    },
+    {
+      "quantity": "mortgage loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.001660772097697835,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.004069861530514442,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.002672282586917765,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.004004509333584134,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
     },
     {
       "quantity": "mortgage loss at 10% of wage bill, as a share of the national balance",

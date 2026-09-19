@@ -1,0 +1,133 @@
+{
+  "total_wage_bill_bn": 10567.67719192453,
+  "quintile_edges": [
+    21511.830078125,
+    40780.71875,
+    61171.078125,
+    93795.65625
+  ],
+  "marginal_income_tax_schedule": [
+    {
+      "upper": 0.0,
+      "marg": 0.0
+    },
+    {
+      "upper": 5000.0,
+      "marg": 0.0028
+    },
+    {
+      "upper": 10000.0,
+      "marg": 0.0014
+    },
+    {
+      "upper": 15000.0,
+      "marg": 0.0017
+    },
+    {
+      "upper": 20000.0,
+      "marg": 0.0128
+    },
+    {
+      "upper": 25000.0,
+      "marg": 0.0251
+    },
+    {
+      "upper": 30000.0,
+      "marg": 0.0371
+    },
+    {
+      "upper": 40000.0,
+      "marg": 0.0515
+    },
+    {
+      "upper": 50000.0,
+      "marg": 0.0648
+    },
+    {
+      "upper": 75000.0,
+      "marg": 0.0797
+    },
+    {
+      "upper": 100000.0,
+      "marg": 0.0972
+    },
+    {
+      "upper": 200000.0,
+      "marg": 0.1191
+    },
+    {
+      "upper": 500000.0,
+      "marg": 0.1688
+    },
+    {
+      "upper": 1000000.0,
+      "marg": 0.2289
+    },
+    {
+      "upper": 1500000.0,
+      "marg": 0.2608
+    },
+    {
+      "upper": 2000000.0,
+      "marg": 0.2723
+    },
+    {
+      "upper": 5000000.0,
+      "marg": 0.2796
+    },
+    {
+      "upper": 10000000.0,
+      "marg": 0.2795
+    },
+    {
+      "upper": null,
+      "marg": 0.2558
+    }
+  ],
+  "geography": [
+    {
+      "exposure": "embodied",
+      "corr_with_PUMA_mean_wage": -0.7983,
+      "corr_with_home_value": -0.5962,
+      "partial_corr_home_value_given_wage": 0.0059,
+      "share_of_correlation_surviving": -0.0098
+    },
+    {
+      "exposure": "cognitive_AIOE",
+      "corr_with_PUMA_mean_wage": 0.7814,
+      "corr_with_home_value": 0.5541,
+      "partial_corr_home_value_given_wage": -0.077,
+      "share_of_correlation_surviving": -0.139
+    },
+    {
+      "exposure": "cognitive_GPT",
+      "corr_with_PUMA_mean_wage": 0.5662,
+      "corr_with_home_value": 0.4585,
+      "partial_corr_home_value_given_wage": 0.0624,
+      "share_of_correlation_surviving": 0.136
+    }
+  ],
+  "exposure_by_wage_quintile": {
+    "embodied": {
+      "Q1": 0.0538,
+      "Q2": 0.1731,
+      "Q3": 0.2542,
+      "Q4": 0.2941,
+      "Q5": 0.2249
+    },
+    "cognitive_AIOE": {
+      "Q1": 0.0079,
+      "Q2": 0.0299,
+      "Q3": 0.0794,
+      "Q4": 0.1699,
+      "Q5": 0.7128
+    },
+    "cognitive_GPT": {
+      "Q1": 0.0204,
+      "Q2": 0.0728,
+      "Q3": 0.134,
+      "Q4": 0.2041,
+      "Q5": 0.5686
+    }
+  }
+}
