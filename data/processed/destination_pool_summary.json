@@ -1,0 +1,659 @@
+{
+  "exposed_shares": {
+    "cognitive_AIOE": 0.13247923567405276,
+    "cognitive_GPT": 0.15381547562118367,
+    "embodied": 0.2010892712775382,
+    "both_AIOE": 0.33356850695159096,
+    "both_GPT": 0.35490474689872187
+  },
+  "phi_grid": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "phi_anchor_note": "employment share of the exposed group; a LOWER BOUND on phi because displaced workers move to nearby occupations, which are more similar in exposure than a random draw",
+  "transition_matrix_status": "NOT OBTAINED from a verifiable public source in this session; phi run over the specified grid instead",
+  "phi0_assumption": "new work created at the historical rate indefinitely; the A56 speed limit is an upper bound conditional on it",
+  "limits": [
+    {
+      "construct": "embodied_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.045,
+      "max_cumulative_inside": 0.09
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.034,
+      "max_cumulative_inside": 0.17
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0315,
+      "max_cumulative_inside": 0.315
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.61
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 5,
+      "max_d_inside_observed": 0.032,
+      "max_cumulative_inside": 0.16
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 10,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.27
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0225,
+      "max_cumulative_inside": 0.45
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0435,
+      "max_cumulative_inside": 0.087
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.1525
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.024,
+      "max_cumulative_inside": 0.24
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.018,
+      "max_cumulative_inside": 0.36
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "anchor",
+      "phi": 0.2011,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "anchor",
+      "phi": 0.2011,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0335,
+      "max_cumulative_inside": 0.1675
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "anchor",
+      "phi": 0.2011,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0295,
+      "max_cumulative_inside": 0.295
+    },
+    {
+      "construct": "embodied_only",
+      "phi_label": "anchor",
+      "phi": 0.2011,
+      "horizon": 20,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.54
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.045,
+      "max_cumulative_inside": 0.09
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.034,
+      "max_cumulative_inside": 0.17
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0315,
+      "max_cumulative_inside": 0.315
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.61
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 5,
+      "max_d_inside_observed": 0.032,
+      "max_cumulative_inside": 0.16
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 10,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.27
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0225,
+      "max_cumulative_inside": 0.45
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0435,
+      "max_cumulative_inside": 0.087
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.1525
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.024,
+      "max_cumulative_inside": 0.24
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.018,
+      "max_cumulative_inside": 0.36
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "anchor",
+      "phi": 0.1325,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "anchor",
+      "phi": 0.1325,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0335,
+      "max_cumulative_inside": 0.1675
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "anchor",
+      "phi": 0.1325,
+      "horizon": 10,
+      "max_d_inside_observed": 0.03,
+      "max_cumulative_inside": 0.3
+    },
+    {
+      "construct": "cognitive_AIOE_only",
+      "phi_label": "anchor",
+      "phi": 0.1325,
+      "horizon": 20,
+      "max_d_inside_observed": 0.028,
+      "max_cumulative_inside": 0.56
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.045,
+      "max_cumulative_inside": 0.09
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.034,
+      "max_cumulative_inside": 0.17
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0315,
+      "max_cumulative_inside": 0.315
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.61
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 5,
+      "max_d_inside_observed": 0.032,
+      "max_cumulative_inside": 0.16
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 10,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.27
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0225,
+      "max_cumulative_inside": 0.45
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0435,
+      "max_cumulative_inside": 0.087
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.1525
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.024,
+      "max_cumulative_inside": 0.24
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.018,
+      "max_cumulative_inside": 0.36
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "anchor",
+      "phi": 0.1538,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "anchor",
+      "phi": 0.1538,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0335,
+      "max_cumulative_inside": 0.1675
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "anchor",
+      "phi": 0.1538,
+      "horizon": 10,
+      "max_d_inside_observed": 0.03,
+      "max_cumulative_inside": 0.3
+    },
+    {
+      "construct": "cognitive_GPT_only",
+      "phi_label": "anchor",
+      "phi": 0.1538,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0275,
+      "max_cumulative_inside": 0.55
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.045,
+      "max_cumulative_inside": 0.09
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.034,
+      "max_cumulative_inside": 0.17
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0315,
+      "max_cumulative_inside": 0.315
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.61
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 5,
+      "max_d_inside_observed": 0.032,
+      "max_cumulative_inside": 0.16
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 10,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.27
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0225,
+      "max_cumulative_inside": 0.45
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0435,
+      "max_cumulative_inside": 0.087
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.1525
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.024,
+      "max_cumulative_inside": 0.24
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.018,
+      "max_cumulative_inside": 0.36
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "anchor",
+      "phi": 0.3336,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "anchor",
+      "phi": 0.3336,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0325,
+      "max_cumulative_inside": 0.1625
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "anchor",
+      "phi": 0.3336,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0285,
+      "max_cumulative_inside": 0.285
+    },
+    {
+      "construct": "both_AIOE",
+      "phi_label": "anchor",
+      "phi": 0.3336,
+      "horizon": 20,
+      "max_d_inside_observed": 0.025,
+      "max_cumulative_inside": 0.5
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.045,
+      "max_cumulative_inside": 0.09
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.034,
+      "max_cumulative_inside": 0.17
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0315,
+      "max_cumulative_inside": 0.315
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0",
+      "phi": 0.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.61
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 5,
+      "max_d_inside_observed": 0.032,
+      "max_cumulative_inside": 0.16
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 10,
+      "max_d_inside_observed": 0.027,
+      "max_cumulative_inside": 0.27
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "0.5",
+      "phi": 0.5,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0225,
+      "max_cumulative_inside": 0.45
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0435,
+      "max_cumulative_inside": 0.087
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0305,
+      "max_cumulative_inside": 0.1525
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 10,
+      "max_d_inside_observed": 0.024,
+      "max_cumulative_inside": 0.24
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "1",
+      "phi": 1.0,
+      "horizon": 20,
+      "max_d_inside_observed": 0.018,
+      "max_cumulative_inside": 0.36
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "anchor",
+      "phi": 0.3549,
+      "horizon": 2,
+      "max_d_inside_observed": 0.0445,
+      "max_cumulative_inside": 0.089
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "anchor",
+      "phi": 0.3549,
+      "horizon": 5,
+      "max_d_inside_observed": 0.0325,
+      "max_cumulative_inside": 0.1625
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "anchor",
+      "phi": 0.3549,
+      "horizon": 10,
+      "max_d_inside_observed": 0.0285,
+      "max_cumulative_inside": 0.285
+    },
+    {
+      "construct": "both_GPT",
+      "phi_label": "anchor",
+      "phi": 0.3549,
+      "horizon": 20,
+      "max_d_inside_observed": 0.0245,
+      "max_cumulative_inside": 0.49
+    }
+  ]
+}

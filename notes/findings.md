@@ -4050,3 +4050,195 @@ share and labour tax rate, not a measurement. The paper must give the range or g
 **What IS robust across all twelve combinations: the condition is unmet in 2026, and has
 been unmet continuously since 2018 in every one of them.** The disagreement is entirely
 about how long before 2018 it had already failed.
+
+## A59. AMENDMENT D. The 2026 depreciation regime verified against the statute, and AMR's 0.05 is retained for a reason
+
+`src/tau_k_margins.py`, `data/processed/current_law_168k.json`. Read from the current text of
+**26 U.S.C. 168(k)** on 2026-09-19.
+
+- **168(k)(1)(A)** provides a first-year allowance equal to **one hundred percent** of the
+  adjusted basis of qualified property.
+- **168(k)(6)**, the phase-down schedule that stepped the allowance through 80, 60, 40 and 20
+  percent, is shown as **REPEALED by Pub. L. 119-21, title VII, section 70301(b)(1)(B),
+  July 4, 2025, 139 Stat. 189**. Paragraph (8) is repealed by the same provision.
+- **168(k)(2)(A)(i)** defines qualified property to include property with a recovery period
+  of 20 years or less and computer software under 167(f)(1)(B), which is exactly the
+  equipment-and-software category AMR measure.
+
+**Full immediate expensing is in force in 2026 and the phase-down is gone from the statute.**
+The regime that produced AMR's post-2017 effective rate of 0.05 lapsed during the phase-down
+years and was restored in July 2025. AMR's 0.05 is therefore the RIGHT value for the 2026
+point, and it is retained for that reason rather than by default.
+
+**Where this bites, stated rather than smoothed over:** the 2024 DWS vintage sits inside the
+phase-down window, when the allowance was 60 percent. A partial allowance raises the
+effective rate on the normal return above 0.05, toward the 2010s value of 0.10. This project
+has no measured effective rate for the phase-down years and will not interpolate one, so the
+2024 point retains 0.05 and carries the flag. It changes no conclusion: the 2024 point fails
+the condition at 0.05 and would fail by less at a higher rate, and the 2026 point, which
+carries the conclusions, is on solid ground.
+
+---
+
+## A60. AMENDMENT C. Margins on the post-2017 result. One cell is within 0.004 of flipping, and it needs a labour market slightly better than today's
+
+`data/processed/tau_k_margins_post2017.csv`. Margin = available tau_k minus required tau_k.
+
+| Outlays g | Cells passing, of 30 | Best margin |
+|---|---|---|
+| 0.00 | **0 of 30** | **-0.0039** |
+| 0.10 | 0 of 30 | -0.0378 |
+| 0.25 | 0 of 30 | -0.0887 |
+
+**Exactly one cell is within 0.01 of flipping:** Barkai rent share, closed economy, tau_l =
+0.255, margin **-0.0039**. It requires all three of the most favourable sourced assumptions
+at once: the economic-profits reading of the residual, no profit shifting at all, and the
+lowest of the three labour tax rates.
+
+What would flip it: **R = 0.5837, which is rho = 0.679** at the counterfactual omega. Today's
+rho is 0.661 and the highest ever observed across fourteen vintages is 0.740, so that cell is
+**attainable**. Every other cell needs rho of 0.75 or above, which has never been observed.
+
+| Cell | R needed | rho needed | Attainable? |
+|---|---|---|---|
+| Barkai, closed, tau_l 0.255 | 0.5837 | **0.679** | **yes** |
+| Barkai, Clausing-high, tau_l 0.255 | 0.6470 | 0.752 | never observed |
+| Barkai, closed, tau_l 0.301 | 0.6473 | 0.753 | never observed |
+| Barkai, closed, tau_l 0.318 | 0.6662 | 0.775 | never observed |
+
+**With any outlay response at all the knife edge disappears**: at g = 0.10 the best margin is
+-0.0378 and nothing is close.
+
+---
+
+## A61. AMENDMENT A. The destination pool. A56's speed limit is an UPPER BOUND, and a cumulative CEILING appears that A56 said did not exist
+
+`src/destination_pool.py`. A56's rho(u) was estimated on cyclical variation, where the jobs
+displaced workers return to still exist. Sustained technological displacement shrinks the
+destination pool. The amendment:
+
+    h_eff(t) = h(u_t) * max(0, 1 - phi * D(t))
+
+phi = 0 is A56 exactly and **assumes new work is created at the historical rate
+indefinitely.** Occupation-to-occupation transition matrices were not obtained from a
+verifiable public source in this session, so phi is run over {0, 0.5, 1} plus a per-construct
+ANCHOR equal to the exposed group's employment share, which is a LOWER bound on phi because
+displaced workers move to nearby occupations and nearby occupations are more alike in
+exposure than a random draw.
+
+Exposed shares: embodied 20.1 percent, cognitive AIOE 13.2, cognitive GPT 15.4, both 33.4.
+
+### Speed limit, percent of employment a year
+
+| Horizon | phi = 0 | phi = 0.5 | phi = 1 | anchor (both) |
+|---|---|---|---|---|
+| 2y | 4.50 | 4.45 | 4.35 | 4.45 |
+| 5y | 3.40 | 3.20 | 3.05 | 3.25 |
+| 10y | **3.15** | 2.70 | 2.40 | 2.85 |
+| 20y | 3.05 | 2.25 | **1.80** | 2.50 |
+
+**A56's 3.15 percent is the phi = 0, ten-year corner of this table.** At phi = 1 over twenty
+years the limit is **1.80 percent**, a 41 percent reduction. The limit is a decreasing
+function of horizon once phi exceeds zero, which is the signature of the pool effect: the
+longer the path, the more of the destination pool has already gone.
+
+### The cumulative ceiling, which corrects A56
+
+| Horizon | phi = 0 | phi = 0.5 | phi = 1 |
+|---|---|---|---|
+| 10y | 31.5% | 27.0% | 24.0% |
+| 20y | **61.0%** | 45.0% | **36.0%** |
+
+**A56 concluded that speed binds and size does not. That is true only at phi = 0.** Once the
+destination pool shrinks, maximum cumulative displacement inside the observed labour market
+range is capped at **36 to 61 percent** regardless of how slowly it arrives. Claim 61 is
+amended: speed binds at phi = 0, and both speed and size bind for any phi above zero.
+
+---
+
+## A62. THE FRONTIER. Two failure modes, and they have nothing in common
+
+`src/frontier.py`, `data/processed/frontier_grid.csv`. Four types by six levels of the
+exposed wage bill by four horizons by three phi values.
+
+### Speed-driven failure: terminal unemployment, phi = 0.5
+
+| Type | Level of exposed | 2y | 5y | 10y | 20y |
+|---|---|---|---|---|---|
+| Embodied | 50% | **10.72** | 6.77 | 5.06 | 4.30 |
+| Embodied | 90% | **17.14** | **10.98** | 6.77 | 5.11 |
+| Cognitive AIOE | 90% | **12.27** | 7.58 | 5.42 | 4.48 |
+| Both | 50% | **8.04**... | | | |
+| Both | 90% | **15.01 flow** | | | |
+
+**Displacing ninety percent of the exposed embodied wage bill over twenty years raises
+unemployment to 5.11 percent.** The baseline is 4.32. Everything at ten and twenty year
+horizons is inside the observed data range for every type and every level. Only the two and
+some five year scenarios leave it.
+
+### Feasibility, and it settles which scenarios can be embodied
+
+Embodied annual flow caps from capital formation (`src/feasibility_bounds.py`), equipment
+investment 1,864.8bn USD a year against average compensation of 101,991 USD:
+
+| Cap | Annual flow |
+|---|---|
+| Tight: 10 percent of equipment investment is automation capital, capex 2x annual wage | **0.498%** |
+| Loose: ALL equipment investment, capex 1x annual wage | 9.955% |
+
+| Level of exposed | 2y | 5y | 10y | 20y |
+|---|---|---|---|---|
+| 25% | no | no | no | **yes** |
+| 50% | no | no | no | **no** |
+| 90% | no | no | no | **no** |
+
+**Under the tight cap, displacing half the exposed embodied wage bill is physically
+unattainable at any horizon**, because it needs more automation capital per year than plausibly
+exists. **Every fast scenario in this frontier is therefore cognitive-led by construction**,
+which is what the owner predicted and is now sourced rather than assumed. Cognitive
+displacement carries no capacity cap here, and that absence is an assumption about deployment
+speed, not a measurement.
+
+ACES robotic equipment capital expenditure could NOT be extracted from the 2022 tables in
+this session and IFR World Robotics is paid. The caps above rest on equipment investment
+aggregates only.
+
+### Size-driven failure: it fails everywhere, including at zero displacement
+
+Terminal R with switcher compounding, against a break-even of **0.722 to 0.777** at the
+post-2017 tau_k of 0.0708:
+
+| Type | Level | 2y | 5y | 10y | 20y |
+|---|---|---|---|---|---|
+| Cognitive AIOE | 5% | 0.593 | 0.601 | 0.604 | 0.605 |
+| Embodied | 90% | 0.247 | 0.408 | 0.518 | 0.562 |
+| Both | 90% | **0.000** | 0.233 | 0.410 | 0.523 |
+
+**Not one cell reaches break-even, including the mildest scenario in the grid.** That is not
+a displacement result. It is A57 and A58 restated: the condition already fails in 2026 at
+zero AI displacement, so every scenario inherits the failure and displacement only deepens
+it. The prereg note flagged this as nearly tautological before the run and it is.
+
+Wage compounding matters at speed: at 90 percent of both exposure types over two years the
+average worker is displaced more than once and R collapses to zero under the switcher omega.
+
+### Nonlinearity: REFUTED. There is no threshold
+
+Quadratic fits of terminal unemployment on the annual flow, R-squared 0.95 to 0.997:
+
+| Type | phi | Curvature | Slope at lowest flow | Slope at highest flow | **Acceleration ratio** |
+|---|---|---|---|---|---|
+| Embodied | 0.0 | -0.025 | 1.712 | 1.269 | **0.742** |
+| Embodied | 1.0 | -0.056 | 1.995 | 0.987 | **0.494** |
+| Cognitive AIOE | 0.0 | -0.004 | 1.475 | 1.429 | **0.969** |
+| Both | 1.0 | -0.059 | 2.378 | 0.606 | **0.255** |
+
+**Curvature is negative in every one of the twelve cells and the acceleration ratio is below
+one everywhere.** The marginal effect of displacement on unemployment DECELERATES. There is
+no tipping point, no threshold and no runaway in this channel within the modelled range.
+
+The mechanism is mundane: as unemployment rises the exit hazard drains the stock and the
+labour force shrinks, so measured unemployment rises less than proportionally. **A thesis
+that needs a threshold in the household or unemployment channel does not have one here.** The
+nonlinearity, if the paper has one, has to come from the balance-sheet side, which is what
+the order-of-failure work is for.

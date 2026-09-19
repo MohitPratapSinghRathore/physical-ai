@@ -1,0 +1,11 @@
+{
+  "statute": "26 U.S.C. 168(k)",
+  "source": "Legal Information Institute text of the current code",
+  "retrieved": "2026-09-19",
+  "allowance_2026": 1.0,
+  "phase_down_paragraph_6": "REPEALED by Pub. L. 119-21, title VII, sec. 70301(b)(1)(B), July 4, 2025, 139 Stat. 189",
+  "qualified_property_covers": "recovery period 20 years or less; computer software under 167(f)(1)(B)",
+  "tau_normal_2026_retained": 0.05,
+  "reason": "Full expensing is in force, which is the regime AMR measured at 0.05. Retained because it is correct for 2026, not by default.",
+  "caveat": "The 2024 vintage sits in the phase-down window (60 percent allowance) where the effective rate on the normal return would be above 0.05. No measured value exists for those years and none is interpolated."
+}

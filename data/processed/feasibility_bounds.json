@@ -1,0 +1,16 @@
+{
+  "equipment_investment_bn": 1864.836,
+  "equipment_investment_date": "2026-04-01",
+  "all_nonresidential_fixed_assets_bn": 35899.94,
+  "equipment_net_stock_date": "2024-01-01",
+  "equipment_investment_over_all_fixed_assets": 0.05194537929589854,
+  "aces_robotics": null,
+  "embodied_employment": 36933207.0,
+  "embodied_share_of_employment": 0.2010892712775382,
+  "dar_columns": [
+    "paei_quintile",
+    "mortgage_service_usd_bn",
+    "share_of_total_pct"
+  ],
+  "average_compensation_per_worker": 101991.44428728588
+}

@@ -1,0 +1,17 @@
+bound,capex_multiple_of_annual_wage,workers_displaceable_per_year,as_share_of_embodied_employment,as_share_of_total_employment
+1_all_equipment_investment,1.0,18284239.555891,0.495062,0.099552
+1_all_equipment_investment,2.0,9142119.777945,0.247531,0.049776
+1_all_equipment_investment,3.0,6094746.51863,0.165021,0.033184
+1_all_equipment_investment,5.0,3656847.911178,0.099012,0.01991
+2_automation_share_0.05,1.0,914211.977795,0.024753,0.004978
+2_automation_share_0.10,1.0,1828423.955589,0.049506,0.009955
+2_automation_share_0.20,1.0,3656847.911178,0.099012,0.01991
+2_automation_share_0.05,2.0,457105.988897,0.012377,0.002489
+2_automation_share_0.10,2.0,914211.977795,0.024753,0.004978
+2_automation_share_0.20,2.0,1828423.955589,0.049506,0.009955
+2_automation_share_0.05,3.0,304737.325932,0.008251,0.001659
+2_automation_share_0.10,3.0,609474.651863,0.016502,0.003318
+2_automation_share_0.20,3.0,1218949.303726,0.033004,0.006637
+2_automation_share_0.05,5.0,182842.395559,0.004951,0.000996
+2_automation_share_0.10,5.0,365684.791118,0.009901,0.001991
+2_automation_share_0.20,5.0,731369.582236,0.019802,0.003982
