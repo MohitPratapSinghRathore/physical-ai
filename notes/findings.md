@@ -4703,3 +4703,170 @@ The auto-specific loss rate row stays empty, with the exact document named in A6
 until this session.** A trigger dashboard built on unemployment, displaced-worker
 reemployment and household delinquency would currently read as benign while the measured
 19 percent gap widens.
+
+## A69. A1 INCIDENCE. The registered expectation is confirmed on mortgages and student debt and REFUTED on auto
+
+`src/incidence_run.py`. Pre-registered in `notes/prereg_incidence.md` before running.
+
+### The outcome measure changed, and A41 is downgraded because of it
+
+Gerardi, Herkenhoff, Ohanian and Willen find that only 30 percent of defaulters would have to
+drop below subsistence to stay current, and 38 percent could pay without cutting consumption
+at all. **An affordability threshold therefore misses most defaults.** A41's DSTI crossings
+are demoted to secondary throughout. The headline is now a default probability built from
+their verified factors: **+5.0 percentage points for one displaced earner, more than +8.0 for
+two, and job loss equivalent to a 35 percent equity decline.**
+
+### The balance sheets, SIPP 2025, and they differ exactly where it matters
+
+| Group | Households | With a mortgage | **With student debt** | With vehicle debt | In the double-trigger region |
+|---|---|---|---|---|---|
+| Incumbent working core, no 22 to 29 year old | 62.81m | **47.97%** | **21.13%** | 36.39% | 13.17% |
+| Containing a 22 to 29 year old | 21.99m | **32.68%** | **35.60%** | 36.88% | 13.71% |
+
+Balances, USD billions:
+
+| Group | Mortgage | Student | Vehicle | Credit card |
+|---|---|---|---|---|
+| Incumbents | **7,160.1** | 740.1 | 553.5 | 317.2 |
+| Young-adult households | **1,557.6** | 322.6 | 171.0 | 94.6 |
+
+Young-adult households are a third less likely to hold a mortgage and **two thirds more
+likely to hold student debt**. The double-trigger region, where a further 35 percent equity
+decline would put the household underwater, is essentially the same share in both (13.2
+against 13.7 percent), so the equity leg does not differ by age.
+
+### Expected extra defaults and exposure at default, same total employment loss
+
+Cognitive AIOE exposure, 10 percent of employment:
+
+| Case | Households targeted | Mean default uplift | Extra defaults | **Mortgage** | **Student** | **Vehicle** | Card |
+|---|---|---|---|---|---|---|---|
+| (a) Incumbents | 14.78m | 0.70pp | 0.104m | **17.15bn** | **1.99bn** | **1.12bn** | 0.59bn |
+| (b) Entrants | 3.46m | **3.17pp** | 0.110m | **11.72bn** | **2.73bn** | **1.35bn** | 0.74bn |
+| (c) Sourced mix | 15.17m | 0.70pp | 0.106m | 17.36bn | 2.02bn | 1.17bn | 0.61bn |
+
+Embodied exposure shows the same pattern with smaller mortgage exposure throughout
+(9.23bn against 7.83bn), consistent with A44.
+
+### Verdict on the registered expectation
+
+The expectation was: **"attrition absorption leaves the fiscal loss unchanged, cuts mortgage
+and auto stress sharply, and shifts stress to rent, student loans and delayed household
+formation."**
+
+- **Fiscal loss unchanged: CONFIRMED**, and by construction. A70 shows why.
+- **Mortgage stress cut sharply: CONFIRMED.** Exposure at default falls 32 percent, from
+  17.15bn to 11.72bn.
+- **Shifted to student loans: CONFIRMED.** Exposure rises 37 percent, from 1.99bn to 2.73bn.
+- **Auto stress cut sharply: REFUTED.** Vehicle exposure **RISES 21 percent**, from 1.12bn to
+  1.35bn. Young-adult households hold vehicle debt at essentially the same rate as
+  incumbents (36.9 against 36.4 percent), so concentrating the shock on them raises auto
+  exposure rather than lowering it. Auto is not an incumbent asset the way mortgages are.
+
+### The finding that neither case anticipated: concentration
+
+The same total employment loss produces **almost the same number of extra defaults** (0.104m
+against 0.110m) but at a **4.5 times higher default uplift per household** (0.70pp against
+3.17pp), because it lands on a population a quarter the size. **The entrant channel cannot
+absorb an economy-wide shock without hitting nearly half of all young-adult exposed
+households**: the implied hit rate is 42.7 percent.
+
+For external calibration, the observed entry gap is 19 percent (Brynjolfsson, Chandar and
+Chen, through June 2026). The 10 percent economy-wide scenario modelled here is therefore
+roughly **twice the intensity of what is currently measurable** in the entry-level channel.
+
+### What this does to A64 and A65
+
+A64 and A65 found attrition absorption exactly neutral for aggregate employment, unemployment,
+wage income and the speed limit. **That neutrality survives and is now correctly labelled.**
+It is an accounting property of symmetric treatment in a stock-flow model. On balance sheets
+the two cases are not close: mortgage exposure differs by a third, student debt by more than
+a third in the other direction, and the per-household intensity by a factor of four and a
+half. **Aggregate neutrality and incidence neutrality are different claims and only the first
+one holds.**
+
+---
+
+## A70. A2 FISCAL MAGNITUDES. Identical across incidence cases, and the disputed rent share moves the loss by 30 percent
+
+`src/fiscal_magnitudes.py`. **No pass or fail language: A57, A58 and A60 established the
+condition is unmet in 2026 at zero AI displacement, under every sourced combination. This is
+a measurement of size, not a test.**
+
+**Identical across the three incidence cases by construction, and worth stating rather than
+discovering:** the fiscal loss depends on the displaced wage bill and the retained wage share.
+A dollar of wage income not earned costs the same revenue whether the person was laid off or
+never hired. A69 showed the incidence cases differ sharply in where credit losses land; here
+they do not differ at all.
+
+Denominators: federal current receipts and compensation of employees from FRED with units
+read from the provider; OASDI payroll income 1,323.2bn and HI Part A revenue 462.4bn from A32.
+
+### Annual revenue loss as a percent of federal receipts
+
+tau_l 0.301, no outlays, Barkai reading, phi 0.5:
+
+| Type | Level of exposed | 2y | 5y | 10y | 20y |
+|---|---|---|---|---|---|
+| Cognitive AIOE | 25% | 1.33 | 0.45 | 0.21 | 0.10 |
+| Cognitive AIOE | 50% | 3.42 | 1.04 | 0.45 | 0.21 |
+| Cognitive AIOE | 90% | 8.59 | 2.36 | 0.93 | 0.41 |
+| Embodied | 50% | 6.49 | 1.83 | 0.75 | 0.34 |
+| Embodied | 90% | 17.29 | 4.76 | 1.65 | 0.68 |
+| **Both** | **90%** | **42.37** | **11.78** | **3.94** | **1.34** |
+
+Range across the whole grid: **0.00 to 21.09 percent of federal receipts annually**;
+cumulative loss 3bn to 2,523bn dollars.
+
+**The horizon does almost all the work.** Ninety percent of both exposure types costs 42.4
+percent of federal receipts a year if it arrives over two years and 1.34 percent if it
+arrives over twenty. That is the fiscal counterpart of A56's speed result and it is a
+thirty-fold difference for the same cumulative displacement.
+
+### The rent-share disagreement moves the loss by about 30 percent
+
+Annual loss, USD bn, 50 percent of exposed over 10 years, tau_l 0.301, no outlays:
+
+| Type | Karabarbounis-Neiman reading | Barkai reading | Difference |
+|---|---|---|---|
+| Both | 25.0 | 19.3 | **+30%** |
+| Cognitive AIOE | 8.2 | 6.0 | **+37%** |
+| Embodied | 13.3 | 9.9 | **+34%** |
+
+**The Karabarbounis-Neiman reading is the fiscally worse one**, because a rent share near
+zero means a lower effective tax rate on AI surplus and therefore less offsetting capital
+tax revenue. The disagreement A57 recorded as unresolvable is worth about a third of the
+fiscal loss, which is larger than most of the parameter uncertainty elsewhere in the project.
+
+### Outlays roughly triple it
+
+Cognitive AIOE, 50 percent over 10 years, annual loss as a percent of federal receipts:
+
+| tau_l | No outlays | g = 0.10 | g = 0.25 |
+|---|---|---|---|
+| 0.255 | 0.07 | 0.12 | **0.21** |
+| 0.301 | 0.10 | 0.16 | **0.25** |
+| 0.318 | 0.11 | 0.17 | **0.26** |
+
+---
+
+## A71. A3 BLOCKED ON ONE INPUT, named once
+
+The order-of-stress table needs a stated materiality threshold for the landlord and
+multifamily lender sheet, which requires the agency minimum debt service coverage ratio.
+
+**The exact document: Fannie Mae Multifamily Underwriting Standards, Form 4660.** The
+Multifamily Selling and Servicing Guide at `mfguide.fanniemae.com` is fully reachable and was
+read; every DSCR and LTV requirement in it is stated as "per Form 4660" rather than given
+numerically. Form 4660 itself was not retrievable from the public Guide site in this session
+and appears to sit behind DUS Navigate. Guide node 586 defines the Tier system as "Tier 1,
+Tier 2, Tier 3, or Tier 4 per the Multifamily Underwriting Standards (Form 4660)"; node 10786
+confirms the same for the underwritten DSCR.
+
+**The equivalent alternative is the Freddie Mac Multifamily Seller/Servicer Guide**, which
+publishes its minimum DSCR standards in the Guide text rather than by reference.
+
+Also still outstanding from A67, unchanged: the auto loan loss rate separately from student
+loans. The New York Fed 2026:Q2 report PDF was obtained and read; the companion data file
+carrying the auto 90-plus transition series behind chart 25 was not retrieved.

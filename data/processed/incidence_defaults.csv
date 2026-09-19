@@ -1,0 +1,10 @@
+exposure,case,households_targeted_m,share_hit,mean_default_uplift_pp,expected_extra_defaults_m,exposure_mortgage_bn,exposure_student_bn,exposure_vehicle_bn,exposure_card_bn,exposure_unsecured_bn,pct_in_double_trigger_region
+cognitive_AIOE,a_incumbents,14.7791,0.1,0.7008,0.1036,17.1494,1.989,1.1167,0.5913,2.9541,16.8365
+cognitive_AIOE,b_entrants,3.4622,0.4269,3.1663,0.1096,11.7179,2.7293,1.3468,0.7439,3.9406,12.3443
+cognitive_AIOE,c_sourced_mix,15.1683,0.1,0.7011,0.1063,17.3562,2.0224,1.1706,0.607,3.0271,16.547
+cognitive_GPT,a_incumbents,17.2951,0.1,0.698,0.1207,17.6563,1.8626,1.2561,0.7569,3.0035,15.5722
+cognitive_GPT,b_entrants,4.5584,0.3794,2.7936,0.1273,13.2647,3.1706,1.2137,0.8865,4.4741,14.7985
+cognitive_GPT,c_sourced_mix,17.9397,0.1,0.6973,0.1251,17.8697,1.9157,1.3085,0.7829,3.1127,15.1063
+embodied,a_incumbents,17.7312,0.1,0.6908,0.1225,9.2289,0.932,1.3042,0.6108,2.0551,11.2932
+embodied,b_entrants,5.8872,0.3012,2.2266,0.1311,7.8246,1.3384,1.537,0.6622,2.662,13.226
+embodied,c_sourced_mix,18.6823,0.1,0.6926,0.1294,9.6439,0.9668,1.4068,0.6365,2.1577,11.4581

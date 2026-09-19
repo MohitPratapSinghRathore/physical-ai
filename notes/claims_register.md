@@ -153,6 +153,14 @@ them in the same list.
 | 93 | The entry-level attrition channel is already measured and operating: employment of 22 to 25 year olds in AI-exposed occupations is 19 percent below counterfactual and widening, operating through REDUCED HIRING not separations | standing, Brynjolfsson, Chandar and Chen (2026) | A68 | yes | n/a | n/a | n/a | n/a | n/a |
 | 94 | A64's blind-spot deduction is confirmed by independent data | standing | A68 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 95 | The channel already operating is the one this project's household engine measures WORST, because 22 to 25 year olds mostly do not hold mortgages | **provisional** | A68 | n/a | n/a | n/a | n/a | n/a | yes |
+| 96 | Attrition absorption cuts MORTGAGE exposure at default sharply (17.15 to 11.72bn, -32 percent) and raises STUDENT debt exposure (1.99 to 2.73bn, +37 percent) | **provisional**, prereg confirmed | A69 | yes | no (SIPP only) | yes | n/a | n/a | yes |
+| 97 | Attrition absorption cuts AUTO stress | **REFUTED** | A69: vehicle exposure RISES 21 percent (1.12 to 1.35bn). Young-adult households hold vehicle debt at the same rate as incumbents, so auto is not an incumbent asset the way mortgages are | yes | no | yes | n/a | n/a | yes |
+| 98 | The entrant channel concentrates harm: the same total employment loss gives almost the same number of extra defaults at a 4.5x higher per-household uplift, implying a 42.7 percent hit rate on young exposed households | **provisional** | A69 | yes | no | yes | n/a | n/a | yes |
+| 99 | Aggregate neutrality of attrition (A64, A65) does NOT imply incidence neutrality; only the first claim holds | standing | A69 | n/a | n/a | n/a | n/a | n/a | yes |
+| 100 | The fiscal loss is identical across incidence cases by construction, because it depends on the displaced wage bill and R, not on who was displaced | standing | A70 | n/a | n/a | n/a | n/a | n/a | yes |
+| 101 | Annual revenue loss ranges 0.00 to 21.09 percent of federal receipts across the grid; the HORIZON does almost all the work (90 percent of both types costs 42.4 percent of receipts a year over 2 years and 1.34 percent over 20) | **provisional** | A70 | yes | n/a | n/a | n/a | n/a | yes |
+| 102 | The unresolvable rent-share disagreement is worth about 30 to 37 percent of the fiscal loss, with the Karabarbounis-Neiman reading the worse one | **provisional** | A70 | n/a | n/a | n/a | yes | n/a | n/a |
+| 103 | A41's DSTI crossings are the right headline for household stress | **DOWNGRADED to secondary** | A69: Gerardi et al. show affordability thresholds miss most defaults (only 30 percent of defaulters would need to go below subsistence; 38 percent could pay without cutting consumption) | yes | yes | yes | n/a | n/a | yes |
 
 ## Engine-based claims, opened this session
 

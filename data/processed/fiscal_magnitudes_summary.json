@@ -1,0 +1,15 @@
+{
+  "federal_receipts_bn": 5980.631,
+  "receipts_date": "2026-04-01",
+  "compensation_bn": 16224.289,
+  "compensation_date": "2026-04-01",
+  "oasdi_payroll_income_bn": 1323.2,
+  "hi_revenue_bn": 462.4,
+  "identical_across_incidence_cases": true,
+  "why": "The fiscal loss depends on the displaced wage bill and the retained wage share. A dollar of wage income not earned costs the same revenue whether the person was laid off or never hired.",
+  "condition_already_fails_at_zero_displacement": true,
+  "annual_pct_receipts_range": [
+    0.002695692928113006,
+    21.093394636124717
+  ]
+}
