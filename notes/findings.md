@@ -425,3 +425,63 @@ but largely reside outside corporate balance sheets."
 Outstanding: the BIS page does not name the feature's authors in the fetched content. Author
 names must be taken from the PDF before this enters references.bib. Logged in
 lit/unverified.md as a partial verification, not a failure.
+
+## A10. STEP 1 GATE. PAEI is not a cognitive index, but its novel half is unvalidated
+
+**What was tested.** PAEI against Felten, Raj and Seamans AIOE (85.7 percent match) and
+Eloundou et al. GPT exposure (100 percent match), unweighted and employment-weighted.
+
+**Result 1, discriminant validity, passes.** PAEI correlates -0.878 with AIOE and -0.758
+with Eloundou GPT beta. PAEI is close to the mirror image of cognitive AI exposure, so it
+is not a relabelling of an existing index.
+
+**Result 2, which is the finding that matters and weakens the claim.** Decomposed:
+
+| Measure | vs Felten AIOE | vs Eloundou beta |
+|---|---|---|
+| PAEI (P x S) | -0.878 | -0.758 |
+| embodiment P alone | **-0.935** | -0.810 |
+| structure S alone | **+0.027** | +0.127 |
+
+P, at r = -0.935 against a published index, is very nearly the negative of cognitive
+exposure. "Physical jobs are the ones cognitive AI does not touch" is not new. Almost all
+of PAEI's discriminant validity is inherited from the unoriginal half of the index.
+
+S is orthogonal to everything published (r = +0.03 to +0.13). That is where PAEI's novelty
+lives, and S currently has NO external validation of any kind.
+
+**What this does to the thesis.** It does not damage the thesis, but it relocates the risk
+in the paper's central artifact. The defensible statement is now: PAEI is a known quantity
+multiplied by an unvalidated novel quantity. Validating S is the critical path.
+
+**GATE VERDICT: UNRESOLVED, and it cannot be resolved with available data.** The gate is
+stated against Webb's robot score, which is the only published index targeting the same
+technology. Webb distributes scores only via his own site; michaelwebb.co/data.html and
+web.stanford.edu/~mww/ both return 404 as of 2026-09-19. Frey and Osborne probabilities
+were not obtainable in a verified machine-readable form, and Rule 1 forbids third-party
+reproductions that cannot be checked against the original. Every convergent test in Step 1
+is blocked: Webb (unavailable), Acemoglu and Restrepo robot exposure (needs IFR, paid), IFR
+density (paid), BLS OES weights (HTTP 403).
+
+Stated in advance so it can be checked later: I expect P to correlate above 0.8 with Webb's
+robot score, and PAEI as a whole to correlate lower. If so the verdict is that PAEI at
+c = 0 is NOT novel and the novelty rests entirely on PAEI(c), which is what Step 2 builds.
+
+**What remains unknown.** Whether S predicts anything real. Until an external convergent
+test exists, S is a theoretically motivated construct with good face validity and no
+evidence.
+
+## A11. A near-precedent on the paper's own theoretical hook
+
+Schaal, J. (2025), "A theory-based AI automation exposure index: Applying Moravec's Paradox
+to the US labor market", arXiv 2510.13369, 15 October 2025.
+
+Applies Moravec's paradox to O*NET to build an exposure index. Different construction
+(19,000 tasks, LLM-scored on performance variance, tacit knowledge, data abundance,
+algorithmic gaps) and it produces close to the opposite ranking: management, STEM and
+sciences most exposed, maintenance, agriculture and construction least.
+
+It does not preempt PAEI, which targets embodied rather than cognitive automation and is
+two-factor and multiplicative. It does mean "we apply Moravec's paradox to occupational
+exposure" is no longer an unclaimed framing and must be written as a contrast, not a
+discovery. See notes/paei_validation.md Section 5.
