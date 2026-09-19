@@ -1,0 +1,12 @@
+{
+  "saturation_removed": true,
+  "rho_modes": [
+    "fitted",
+    "floor at the lowest observed rho of 0.49"
+  ],
+  "nonemployment_max_observed": 24.71,
+  "range_terminal_pct_receipts": [
+    0.059790133433810955,
+    117.68688176227525
+  ]
+}

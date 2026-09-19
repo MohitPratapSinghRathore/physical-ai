@@ -5129,6 +5129,15 @@ labelled outside the data where it is.
 
 ## A75. THE ORDER OF STRESS. The public budget crosses first, the trust funds second, and NO PRIVATE BALANCE SHEET EVER CROSSES
 
+> **WITHDRAWN IN ITS HEADLINE by A76.** The loss conversion multiplied exposure at
+> default by a PORTFOLIO loss rate, applying the probability of default twice and making the
+> credit channel look 21.7 times smaller than it is. Corrected and scaled to the tested
+> banks' share, mortgage and student loan holders cross the 25 percent materiality threshold
+> at 25 percent of the total wage bill and auto lenders at 50 percent. The ORDERING survives:
+> the public budget still crosses first, and cards never cross. The fiscal columns are also
+> superseded by A77. Nothing in this entry should be quoted.
+
+
 `src/order_of_stress.py`. Every scenario expressed against the Federal Reserve's 2026
 severely adverse scenario. **Materiality threshold stated before the result: a balance sheet
 is materially stressed when the scenario's incremental loss reaches 25 percent of what the
@@ -5211,3 +5220,113 @@ percent in the Fed's own severely adverse test. This is where that chain ends.
   that cap at 23.1 percent. The 2.05 and 9.29 figures at 50 and 75 percent are floors, not
   estimates. The fiscal side must be rerun on the extended axis before those two cells are
   quoted.
+
+## A76. A75 IS WITHDRAWN. The loss conversion applied the probability of default twice, and it made the credit channel look 22 times smaller than it is
+
+`src/verify/hand_check_credit.py`, a fresh script importing nothing from `src/`, streaming
+SIPP by hand and using Federal Reserve figures retyped from the document.
+
+### The error
+
+A75 computed credit losses as **exposure at default multiplied by the Federal Reserve's
+PORTFOLIO loss rate**. A portfolio loss rate already contains a probability of default.
+Exposure at default already contains a probability of default. **Multiplying them applies
+default twice and divides the loss by roughly the default rate.**
+
+The correct conversion is exposure at default times **loss given default**.
+
+At 75 percent of the total wage bill displaced, mortgages:
+
+| Step | Value |
+|---|---|
+| Exposure at default | **471.1bn** |
+| Loss at LGD 0.25 to 0.40 | **117.8 to 188.5bn** |
+| A75 method, EAD x 1.5 percent | **7.1bn** |
+| **Ratio** | **21.7 times too small** |
+
+LGD ranges are stated and bounded by the Fed's own arithmetic: a 1.5 percent first-lien loss
+rate over nine quarters implies, at a 4 to 6 percent cumulative default rate, an LGD of 0.25
+to 0.375, which brackets the conventional 30 to 40 percent severity.
+
+### The second scaling, which A75 also omitted
+
+SIPP losses are a HOUSEHOLD-UNIVERSE loss. The Fed figure is the loss on the 32 tested banks'
+own books. Only the share those banks hold is comparable. Implied bank share, from the Fed's
+own implied portfolio balances divided by the national household balance: **17.6 percent for
+first-lien mortgages**. Cards and auto come out above 1.0, which is itself a finding: **SIPP
+under-reports card and auto balances relative to the credit panel**, so those rows are capped
+at 1.0 and are conservative.
+
+### The corrected table, bank-held basis, as a percent of the Fed severely adverse loss
+
+| Share of total wage bill | Mortgage | Student | Auto | Card |
+|---|---|---|---|---|
+| 10% | 13.7 to 22.0 | 8.2 to 10.9 | 4.7 to 6.8 | 1.3 to 1.6 |
+| **25%** | **33.5 to 53.6** | **19.9 to 26.6** | 11.5 to 16.6 | 3.1 to 3.9 |
+| 50% | 64.1 to 102.6 | 38.3 to 51.1 | **22.1 to 31.9** | 5.9 to 7.4 |
+| 75% | **92.0 to 147.2** | 55.1 to 73.5 | 31.7 to 45.8 | 8.5 to 10.7 |
+
+### The corrected order of stress
+
+| Balance sheet | Crosses 25 percent materiality at |
+|---|---|
+| **Public budget** | about **10 percent** of the total wage bill |
+| **Mortgage holders** | **25 percent** |
+| **Student loan holders** | **25 percent** |
+| **Trust funds** | **25 percent** |
+| Auto lenders | **50 percent** |
+| Card and consumer lenders | **never in the grid**, maximum 10.7 percent |
+
+**A75's "no private balance sheet crosses at any level" is WITHDRAWN.** Private sheets do
+cross, from 25 percent of the total wage bill. What survives is the ORDERING: the public
+budget still crosses first, and cards never cross.
+
+**The headline that must not be quoted is "there is no credit event."** The correct headline
+is that the public budget crosses first, private credit follows at a quarter of the wage
+bill, and the card book is the only sheet that never crosses.
+
+---
+
+## A77. FISCAL SATURATION REMOVED, and the extended axis is far worse than the saturated one
+
+`src/fiscal_extended_axis.py`. A75 flagged that the fiscal columns saturated above 25 percent
+of the total wage bill because the persistence run was built on top-quintile scenarios capping
+at 23.1 percent. Rebuilt on the extended axis with rho solved as a fixed point in prime-age
+nonemployment.
+
+Terminal-year loss, tau_l 0.301, no outlays, Barkai reading, ten-year horizon:
+
+| Share of total wage bill | % of federal receipts | % of OASDI payroll | % of HI revenue | Terminal nonemployment | rho | Inside data? |
+|---|---|---|---|---|---|---|
+| 10% | **1.79** | **8.08** | 23.1 | 21.4% | 0.640 | **yes, 0 of 20 outside** |
+| 25% | **6.10** | **27.57** | 78.9 | 25.0% | 0.541 | mixed, 6 of 15 outside |
+| 50% | 23.76 | **107.38** | 307.3 | 37.9% | 0.216 | **no, all outside** |
+| 75% | 47.52 | **214.78** | 614.6 | 61.5% | 0.000 | **no, all outside** |
+
+A75 reported 2.05 percent of receipts and 9.29 percent of OASDI at 25, 50 and 75 percent
+alike. Corrected, the 25 percent cell is **three times larger** and the higher cells are not
+comparable at all.
+
+**At 50 percent of the wage bill and above the loss exceeds OASDI payroll income entirely
+(107 and 215 percent), and rho falls to zero.** Those are not estimates. They are the
+arithmetic of an extrapolated relationship past the point where it means anything, and they
+are labelled outside data on every row. What they say qualitatively is that the payroll tax
+base itself is destroyed, which is a statement the model cannot quantify.
+
+**The only cell that is fully inside the data is 10 percent of the total wage bill**, and
+there the terminal loss is 1.79 percent of federal receipts and 8.08 percent of OASDI payroll
+income.
+
+---
+
+## A78. SCOPE OF THE HOUSEHOLD ENGINE, to be attached to every result
+
+**The engine measures FIRST-ROUND losses only: displaced households defaulting on their own
+obligations. It holds house prices, consumer demand, business revenue and the employment of
+non-displaced workers FIXED, and it uses a default factor (Gerardi, Herkenhoff, Ohanian and
+Willen) estimated in ordinary labour markets. The Federal Reserve's 708 billion dollars comes
+from an economy-wide scenario in which all of those move together. Comparing the two is a
+LOWER BOUND on bank losses, not an estimate.**
+
+That paragraph is now attached to A75, A76, A77 and to the release artifacts, and it is why
+the second-round module (item 4) is not optional. Everything above is the floor.
