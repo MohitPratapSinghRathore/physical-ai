@@ -104,3 +104,27 @@ join, not the exposure measure and not the household data, both of which are bor
    result from a non-systematic search. It is stated as "none located" and not as "none
    exists". The systematic protocol in `lit/protocol.md` covers a different question and was
    not re-run for this one.
+
+---
+
+# Addendum: novelty check for the labour backing ratio
+
+Searched 2026-09-19 for any work measuring, system-wide, the share of financial claims
+ultimately serviced from labour income. **None located.** Full assessment in
+`framework/labor_backing/feasibility.md`. Three adjacent literatures, none of which computes
+it:
+
+1. **Human wealth and housing collateral** (Lustig and Van Nieuwerburgh, and with Verdelhan).
+   Measures the present value of labour income as an ASSET and the housing-to-human-wealth
+   ratio. The mirror image of the proposed statistic, not the same object.
+2. **Debt service ratios** (BIS database, seventeen economies; Federal Reserve household
+   DSR). Interest plus amortisation over income, where income explicitly includes labour,
+   self-employment and capital income together, with no labour decomposition, and covering
+   only the private non-financial sector.
+3. **Whom-to-whom financial accounts.** Trace who HOLDS claims, not what cash flow services
+   them.
+
+The search was NOT systematic; `lit/protocol.md` governs a different question and was not
+re-run. The claim is "none located", not "none exists", and it should not be load-bearing
+until a systematic search and a direct approach to the Federal Reserve Financial Accounts
+team have been made.
