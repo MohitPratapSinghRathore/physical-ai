@@ -1,0 +1,608 @@
+{
+  "levels": [
+    {
+      "group": "driving",
+      "metric": "dti_vehicle",
+      "n_unweighted": 289,
+      "estimate": 11.6578,
+      "se": 1.9541,
+      "ci_low": 7.8278,
+      "ci_high": 15.4878,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_credit_card",
+      "n_unweighted": 289,
+      "estimate": 4.7576,
+      "se": 0.7853,
+      "ci_low": 3.2184,
+      "ci_high": 6.2967,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_medical",
+      "n_unweighted": 289,
+      "estimate": 1.3922,
+      "se": 0.4057,
+      "ci_low": 0.597,
+      "ci_high": 2.1874,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_unsecured_total",
+      "n_unweighted": 289,
+      "estimate": 15.0497,
+      "se": 2.5031,
+      "ci_low": 10.1436,
+      "ci_high": 19.9557,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_mortgage",
+      "n_unweighted": 289,
+      "estimate": 56.2068,
+      "se": 5.5512,
+      "ci_low": 45.3265,
+      "ci_high": 67.0872,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_all_debt",
+      "n_unweighted": 289,
+      "estimate": 89.5204,
+      "se": 7.9122,
+      "ci_low": 74.0125,
+      "ci_high": 105.0283,
+      "thin_cell": false
+    },
+    {
+      "group": "driving",
+      "metric": "buffer_under_1mo_income",
+      "n_unweighted": 289,
+      "estimate": 56.968,
+      "se": 3.5689,
+      "ci_low": 49.9729,
+      "ci_high": 63.963,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_vehicle",
+      "n_unweighted": 1924,
+      "estimate": 6.852,
+      "se": 0.3992,
+      "ci_low": 6.0695,
+      "ci_high": 7.6346,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_credit_card",
+      "n_unweighted": 1924,
+      "estimate": 3.5785,
+      "se": 0.2436,
+      "ci_low": 3.101,
+      "ci_high": 4.056,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_medical",
+      "n_unweighted": 1924,
+      "estimate": 1.7678,
+      "se": 0.378,
+      "ci_low": 1.027,
+      "ci_high": 2.5087,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_unsecured_total",
+      "n_unweighted": 1924,
+      "estimate": 14.8213,
+      "se": 1.0304,
+      "ci_low": 12.8017,
+      "ci_high": 16.8408,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_mortgage",
+      "n_unweighted": 1924,
+      "estimate": 63.389,
+      "se": 2.8936,
+      "ci_low": 57.7176,
+      "ci_high": 69.0605,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_all_debt",
+      "n_unweighted": 1924,
+      "estimate": 101.7708,
+      "se": 4.3263,
+      "ci_low": 93.2914,
+      "ci_high": 110.2503,
+      "thin_cell": false
+    },
+    {
+      "group": "gated",
+      "metric": "buffer_under_1mo_income",
+      "n_unweighted": 1924,
+      "estimate": 54.2415,
+      "se": 1.3647,
+      "ci_low": 51.5667,
+      "ci_high": 56.9164,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_vehicle",
+      "n_unweighted": 1151,
+      "estimate": 6.4744,
+      "se": 0.4338,
+      "ci_low": 5.624,
+      "ci_high": 7.3247,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_credit_card",
+      "n_unweighted": 1151,
+      "estimate": 4.0918,
+      "se": 0.3764,
+      "ci_low": 3.3541,
+      "ci_high": 4.8296,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_medical",
+      "n_unweighted": 1151,
+      "estimate": 1.6702,
+      "se": 0.3669,
+      "ci_low": 0.9511,
+      "ci_high": 2.3892,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_unsecured_total",
+      "n_unweighted": 1151,
+      "estimate": 12.5572,
+      "se": 0.9924,
+      "ci_low": 10.6121,
+      "ci_high": 14.5023,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_mortgage",
+      "n_unweighted": 1151,
+      "estimate": 55.9439,
+      "se": 3.5779,
+      "ci_low": 48.9313,
+      "ci_high": 62.9566,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_all_debt",
+      "n_unweighted": 1151,
+      "estimate": 90.7911,
+      "se": 5.2313,
+      "ci_low": 80.5378,
+      "ci_high": 101.0444,
+      "thin_cell": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "buffer_under_1mo_income",
+      "n_unweighted": 1151,
+      "estimate": 56.073,
+      "se": 1.5804,
+      "ci_low": 52.9755,
+      "ci_high": 59.1705,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_vehicle",
+      "n_unweighted": 3012,
+      "estimate": 7.3027,
+      "se": 0.3414,
+      "ci_low": 6.6335,
+      "ci_high": 7.9719,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_credit_card",
+      "n_unweighted": 3012,
+      "estimate": 3.8364,
+      "se": 0.2206,
+      "ci_low": 3.4039,
+      "ci_high": 4.2688,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_medical",
+      "n_unweighted": 3012,
+      "estimate": 1.7999,
+      "se": 0.2671,
+      "ci_low": 1.2763,
+      "ci_high": 2.3235,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_unsecured_total",
+      "n_unweighted": 3012,
+      "estimate": 14.6046,
+      "se": 0.7859,
+      "ci_low": 13.0643,
+      "ci_high": 16.1449,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_mortgage",
+      "n_unweighted": 3012,
+      "estimate": 61.9836,
+      "se": 2.226,
+      "ci_low": 57.6206,
+      "ci_high": 66.3466,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_all_debt",
+      "n_unweighted": 3012,
+      "estimate": 98.8252,
+      "se": 3.2627,
+      "ci_low": 92.4303,
+      "ci_high": 105.2201,
+      "thin_cell": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "buffer_under_1mo_income",
+      "n_unweighted": 3012,
+      "estimate": 55.2604,
+      "se": 1.0973,
+      "ci_low": 53.1097,
+      "ci_high": 57.4111,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_vehicle",
+      "n_unweighted": 3722,
+      "estimate": 4.813,
+      "se": 0.1901,
+      "ci_low": 4.4405,
+      "ci_high": 5.1856,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_credit_card",
+      "n_unweighted": 3722,
+      "estimate": 2.9665,
+      "se": 0.1471,
+      "ci_low": 2.6781,
+      "ci_high": 3.2548,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_medical",
+      "n_unweighted": 3722,
+      "estimate": 0.79,
+      "se": 0.16,
+      "ci_low": 0.4763,
+      "ci_high": 1.1036,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_unsecured_total",
+      "n_unweighted": 3722,
+      "estimate": 13.9486,
+      "se": 0.7778,
+      "ci_low": 12.424,
+      "ci_high": 15.4731,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_mortgage",
+      "n_unweighted": 3722,
+      "estimate": 75.2771,
+      "se": 2.3443,
+      "ci_low": 70.6822,
+      "ci_high": 79.872,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "dti_all_debt",
+      "n_unweighted": 3722,
+      "estimate": 124.1111,
+      "se": 7.0629,
+      "ci_low": 110.2677,
+      "ci_high": 137.9544,
+      "thin_cell": false
+    },
+    {
+      "group": "no_embodied_worker",
+      "metric": "buffer_under_1mo_income",
+      "n_unweighted": 3722,
+      "estimate": 42.7871,
+      "se": 0.9594,
+      "ci_low": 40.9067,
+      "ci_high": 44.6674,
+      "thin_cell": false
+    }
+  ],
+  "gaps_vs_no_embodied": [
+    {
+      "group": "driving",
+      "metric": "dti_vehicle",
+      "gap": 6.8448,
+      "se": 1.9519,
+      "ci_low": 3.0191,
+      "ci_high": 10.6706,
+      "significant": true
+    },
+    {
+      "group": "driving",
+      "metric": "dti_credit_card",
+      "gap": 1.7911,
+      "se": 0.8032,
+      "ci_low": 0.2167,
+      "ci_high": 3.3655,
+      "significant": true
+    },
+    {
+      "group": "driving",
+      "metric": "dti_medical",
+      "gap": 0.6022,
+      "se": 0.4378,
+      "ci_low": -0.2559,
+      "ci_high": 1.4603,
+      "significant": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_unsecured_total",
+      "gap": 1.1011,
+      "se": 2.6026,
+      "ci_low": -4.0,
+      "ci_high": 6.2023,
+      "significant": false
+    },
+    {
+      "group": "driving",
+      "metric": "dti_mortgage",
+      "gap": -19.0703,
+      "se": 6.2369,
+      "ci_low": -31.2945,
+      "ci_high": -6.846,
+      "significant": true
+    },
+    {
+      "group": "driving",
+      "metric": "dti_all_debt",
+      "gap": -34.5907,
+      "se": 10.8009,
+      "ci_low": -55.7604,
+      "ci_high": -13.421,
+      "significant": true
+    },
+    {
+      "group": "driving",
+      "metric": "buffer_under_1mo_income",
+      "gap": 14.1809,
+      "se": 3.7528,
+      "ci_low": 6.8254,
+      "ci_high": 21.5364,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "dti_vehicle",
+      "gap": 2.039,
+      "se": 0.4349,
+      "ci_low": 1.1866,
+      "ci_high": 2.8915,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "dti_credit_card",
+      "gap": 0.612,
+      "se": 0.2904,
+      "ci_low": 0.0429,
+      "ci_high": 1.1812,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "dti_medical",
+      "gap": 0.9779,
+      "se": 0.4132,
+      "ci_low": 0.1681,
+      "ci_high": 1.7877,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "dti_unsecured_total",
+      "gap": 0.8727,
+      "se": 1.3127,
+      "ci_low": -1.7002,
+      "ci_high": 3.4456,
+      "significant": false
+    },
+    {
+      "group": "gated",
+      "metric": "dti_mortgage",
+      "gap": -11.8881,
+      "se": 3.8242,
+      "ci_low": -19.3835,
+      "ci_high": -4.3926,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "dti_all_debt",
+      "gap": -22.3403,
+      "se": 8.8196,
+      "ci_low": -39.6267,
+      "ci_high": -5.0538,
+      "significant": true
+    },
+    {
+      "group": "gated",
+      "metric": "buffer_under_1mo_income",
+      "gap": 11.4545,
+      "se": 1.6945,
+      "ci_low": 8.1332,
+      "ci_high": 14.7758,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_vehicle",
+      "gap": 1.6614,
+      "se": 0.4705,
+      "ci_low": 0.7392,
+      "ci_high": 2.5835,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_credit_card",
+      "gap": 1.1254,
+      "se": 0.4169,
+      "ci_low": 0.3083,
+      "ci_high": 1.9424,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_medical",
+      "gap": 0.8802,
+      "se": 0.3884,
+      "ci_low": 0.119,
+      "ci_high": 1.6414,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_unsecured_total",
+      "gap": -1.3913,
+      "se": 1.3172,
+      "ci_low": -3.9731,
+      "ci_high": 1.1905,
+      "significant": false
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_mortgage",
+      "gap": -19.3331,
+      "se": 4.3301,
+      "ci_low": -27.8201,
+      "ci_high": -10.8461,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "dti_all_debt",
+      "gap": -33.32,
+      "se": 8.9614,
+      "ci_low": -50.8844,
+      "ci_high": -15.7556,
+      "significant": true
+    },
+    {
+      "group": "manipulation",
+      "metric": "buffer_under_1mo_income",
+      "gap": 13.2859,
+      "se": 1.8861,
+      "ci_low": 9.5891,
+      "ci_high": 16.9827,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_vehicle",
+      "gap": 2.4897,
+      "se": 0.3816,
+      "ci_low": 1.7417,
+      "ci_high": 3.2377,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_credit_card",
+      "gap": 0.8699,
+      "se": 0.2727,
+      "ci_low": 0.3353,
+      "ci_high": 1.4045,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_medical",
+      "gap": 1.0099,
+      "se": 0.3082,
+      "ci_low": 0.4058,
+      "ci_high": 1.6141,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_unsecured_total",
+      "gap": 0.656,
+      "se": 1.1204,
+      "ci_low": -1.54,
+      "ci_high": 2.8521,
+      "significant": false
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_mortgage",
+      "gap": -13.2935,
+      "se": 3.296,
+      "ci_low": -19.7536,
+      "ci_high": -6.8334,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "dti_all_debt",
+      "gap": -25.2859,
+      "se": 8.1108,
+      "ci_low": -41.183,
+      "ci_high": -9.3888,
+      "significant": true
+    },
+    {
+      "group": "all_embodied",
+      "metric": "buffer_under_1mo_income",
+      "gap": 12.4733,
+      "se": 1.5103,
+      "ci_low": 9.5132,
+      "ci_high": 15.4335,
+      "significant": true
+    }
+  ]
+}

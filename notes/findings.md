@@ -1530,3 +1530,143 @@ household size correlates with both income and pathway membership, so the group 
 carry an unquantified bias. The correct weight is the household reference person's. **This
 needs a rerun with the proper household weight before any of these figures are published.**
 Recorded rather than quietly carried.
+
+## A31. ITEM 4 REBUILT. Two of my three headline claims from A30 do not survive
+
+A30 is superseded in full. None of its numbers should be quoted.
+
+### Fix 1: weights
+
+Census SIPP 2018-redesign guidance, verified against Census documentation: household
+estimates use WPFINWGT from the household REFERENCE PERSON record, ERELRPE in (1, 2), at
+MONTHCODE 12. A30 used the maximum person weight in the household.
+
+| | Weighted households |
+|---|---|
+| A30 (max person weight) | 153.8m |
+| **A31 (reference person weight)** | **134.98m** |
+| Published benchmark | roughly 131 to 132m |
+
+Still about 2 to 3 percent above benchmark, which is within normal SIPP household-estimate
+tolerance, and no longer materially wrong.
+
+### Fix 2 and 3: restricted sample, and inference
+
+Restricted sample is households with at least one employed member and a reference person
+aged 25 to 64: 6,734 unweighted, 79.8m weighted. Confidence intervals use the SIPP replicate
+weights (Fay, rho = 0.5, 240 replicates), matched to 100 percent of households.
+
+Cell counts, restricted: driving 289, gated 1,924, manipulation 1,151, all embodied 3,012,
+no embodied worker 3,722. **No pathway cell is thin at the household level.** The one thin
+cell is in the driving split, below.
+
+### The results, with unadjusted 95 percent CIs and regression adjustment
+
+Gaps against households with no embodied worker. Adjustment controls reference-person age,
+household size, number of earners, region and household income.
+
+| Measure | All-embodied gap [95% CI] | Adjusted coef (t) | Verdict |
+|---|---|---|---|
+| **Liquid buffer under 1 month of income** | **+12.47 pp [9.51, 15.43]** | **+9.22 pp (t = 2.64)** | **SURVIVES** |
+| Vehicle debt to income | +2.49 [1.74, 3.24] | +2.84 (t = 0.85) | **fails adjustment** |
+| Credit card debt to income | +0.87 [0.34, 1.40] | not run | small, positive |
+| Medical debt to income | +1.01 [0.41, 1.61] | not run | small, positive |
+| Unsecured debt to income | +0.66 [-1.54, 2.85] | -0.27 (t = -0.30) | **NULL both ways** |
+| Mortgage debt to income | **-13.29 [-19.75, -6.83]** | -1.90 (t = -0.99) | less leveraged |
+| **All debt to income** | **-25.29 [-41.18, -9.39]** | not run | **much less leveraged** |
+
+### What this overturns from A30
+
+**1. The vehicle-debt claim was wrong as stated.** A30 led with vehicle debt as a general
+embodied-household finding. Adjusted, it is entirely a DRIVING phenomenon:
+
+| Pathway | Adjusted vehicle DTI coef | t |
+|---|---|---|
+| Driving | **+13.39** | **3.50** |
+| Gated | -4.76 | -1.54 |
+| Manipulation | **-5.89** | **-1.98** |
+| All embodied | +2.84 | 0.85 |
+
+Manipulation households carry LESS vehicle debt than comparable non-embodied households, at
+the edge of significance. The raw all-embodied gap was composition: income, household size
+and earner count. **The driving result stands and is strong; the generalisation to embodied
+work does not.**
+
+**2. The unsecured-credit claim is null.** A30 framed unsecured and vehicle credit together.
+Unsecured debt to income is null unadjusted (+0.66, CI spans zero) and null adjusted
+(-0.27). There is no unsecured-credit concentration in embodied households.
+
+**3. Embodied households are substantially LESS indebted overall**, by 25.3 points of annual
+income [CI -41.2, -9.4], and less mortgaged by 13.3 points. This was visible in A30 on
+mortgages only; it is much broader than that.
+
+### What survives, and it is the claim that matters
+
+**"Under-buffered, not over-borrowed" passes the test as the owner specified it.** The
+buffer gap survives adjustment (+9.22 pp, t = 2.64) and the leverage gap does not reverse:
+it runs strongly in the direction the claim requires. Embodied households hold less debt of
+almost every kind relative to income and less of every asset, and 55.3 percent of them sit
+under one month of income in liquid assets against 42.8 percent.
+
+By pathway, the adjusted buffer gap is significant for **manipulation (+8.20, t = 2.62)** and
+for all embodied work (+9.22, t = 2.64), and NOT individually significant for driving
+(+6.67, t = 1.66) or gated (+4.41, t = 1.35). The buffer claim is established for embodied
+work as a whole and for manipulation specifically.
+
+### The wealth gap is broad, not just liquid
+
+Restricted-sample medians, embodied against no-embodied-worker households:
+
+| | Embodied | No embodied worker | Ratio |
+|---|---|---|---|
+| Liquid (bank) | $6,153 | $13,918 | 0.44 |
+| **Retirement accounts** | **$7,152** | **$43,473** | **0.16** |
+| Home value | $125,000 | $230,000 | 0.54 |
+| All assets | $249,558 | $438,779 | 0.57 |
+| Net worth | $138,924 | $256,484 | 0.54 |
+
+The retirement gap (6 to 1) is far larger than the liquid gap (2.3 to 1). Framing this as a
+liquidity problem understates it: these households are behind on every asset class, most
+severely on the one that cannot be drawn on in a shock.
+
+### Fix 4: full disclosure, including the wrong-signed results
+
+Every debt measure available, restricted sample, debt to annual household income, percent.
+
+| Measure | Embodied | No embodied | Direction |
+|---|---|---|---|
+| Credit card | 3.84 | 2.97 | embodied higher |
+| Medical | 1.80 | 0.79 | embodied higher |
+| Vehicle | 7.30 | 4.81 | embodied higher (fails adjustment) |
+| Other | 1.35 | 1.28 | flat |
+| Unsecured total | 14.60 | 13.95 | null |
+| **Student** | **7.64** | **8.91** | **embodied LOWER** |
+| **Mortgage** | **61.98** | **75.28** | **embodied LOWER** |
+| **Other real estate** | **3.34** | **5.22** | **embodied LOWER** |
+| **Rental property** | **5.06** | **8.59** | **embodied LOWER** |
+| **Business** | **6.54** | **16.27** | **embodied LOWER** |
+| **Secured total** | **84.22** | **110.17** | **embodied LOWER** |
+| **All debt** | **98.82** | **124.11** | **embodied LOWER** |
+
+Seven of twelve debt measures run against the concentration hypothesis. Three support it and
+two are flat. This is the complete set, not a selection.
+
+### Fix 5: driving pathway, employee against self-employed and gig
+
+| | n | Vehicle DTI | Percent holding | Business debt DTI | Buffer under 1 month | Median income |
+|---|---|---|---|---|---|---|
+| Driving, employee | 225 | 10.67 | 42.1 | 0.66 | 59.5% | $89,826 |
+| **Driving, self-employed or gig** | **64** | **14.94** | 37.9 | **9.28** | 48.4% | $81,605 |
+
+**The self-employed cell is thin (n = 64) and its figures are not quotable.** Pooling SIPP
+panels is required and is the stated next step for this split.
+
+What the direction suggests, at thin-cell confidence: self-employed drivers carry more
+vehicle debt and fourteen times the business debt, consistent with the financed vehicle
+being the income-producing asset. They also appear BETTER buffered (48.4 against 59.5
+percent under one month), which cuts against the simple story.
+
+**What SIPP cannot say:** it does not identify whether a financed vehicle is used for
+business. Vehicle debt and business debt are separate items with no link between them, so
+the truck that is both the collateral and the income source cannot be identified directly in
+these data. That requires the equipment-finance sources in item 7.

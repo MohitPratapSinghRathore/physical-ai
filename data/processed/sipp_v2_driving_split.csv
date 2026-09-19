@@ -1,0 +1,3 @@
+group,n_unweighted,thin_cell,weighted,veh_dti_pct,veh_pct_holding,med_veh_value,buffer_under_1mo_income,business_debt_dti_pct,med_hh_income
+driving_employee,225,False,2697143.006,10.666,42.101,18029.267,59.483,0.659,89826.421
+driving_selfemp_gig,64,True,794629.329,14.944,37.896,17244.451,48.431,9.276,81604.547

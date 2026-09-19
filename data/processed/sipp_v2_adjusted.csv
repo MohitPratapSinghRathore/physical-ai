@@ -1,0 +1,17 @@
+outcome,group,adjusted_coef,se,t,n
+under1mo,driving,0.06666,0.04023,1.65706,6734
+under1mo,gated,0.04411,0.03261,1.35272,6734
+under1mo,manipulation,0.08197,0.03134,2.61586,6734
+under1mo,all_embodied,0.09216,0.03496,2.63592,6734
+veh_dti,driving,13.39136,3.82461,3.50136,6681
+veh_dti,gated,-4.75514,3.09661,-1.5356,6681
+veh_dti,manipulation,-5.88782,2.97681,-1.97789,6681
+veh_dti,all_embodied,2.83562,3.31999,0.8541,6681
+mort_dti,driving,-1.004,2.21854,-0.45255,6681
+mort_dti,gated,-0.76347,1.79625,-0.42504,6681
+mort_dti,manipulation,-1.70224,1.72676,-0.9858,6681
+mort_dti,all_embodied,-1.90067,1.92583,-0.98694,6681
+unsec_dti,driving,2.00834,1.04795,1.91645,6681
+unsec_dti,gated,-0.61118,0.84848,-0.72032,6681
+unsec_dti,manipulation,-0.94814,0.81565,-1.16243,6681
+unsec_dti,all_embodied,-0.27435,0.90968,-0.30159,6681
