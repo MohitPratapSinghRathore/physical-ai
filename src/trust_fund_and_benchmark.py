@@ -192,7 +192,18 @@ def main():
     FED_BAL = {"mortgage": 1500.0, "card": 1187.1, "auto": 741.1, "student": 741.1}
     LGD = {"mortgage": (0.25, 0.40), "card": (0.80, 1.00),
            "auto": (0.45, 0.65), "student": (0.75, 1.00)}
-    sf = {r["loan"]: r["scaling_factor"] for _, r in S.iterrows()}
+    # CORRECTED, item 2 of the final session. A80's scaling factor divided the official
+    # aggregate by the WORKING-CORE balance, which conflates survey under-reporting with
+    # sample coverage. The survey correction is the official aggregate over the FULL SIPP
+    # household universe; the working-core share is a coverage fact and is not a scaling.
+    urp = OUT / "under_reporting_factors.csv"
+    if urp.exists():
+        ur = pd.read_csv(urp)
+        sf = {r["loan"]: r["UNDER_REPORTING_factor"] for _, r in ur.iterrows()}
+        print("\n  USING CORRECTED FULL-UNIVERSE UNDER-REPORTING FACTORS: "
+              + ", ".join(f"{k} {v:.3f}" for k, v in sf.items()))
+    else:
+        sf = {r["loan"]: r["scaling_factor"] for _, r in S.iterrows()}
     rows2 = []
     for _, h in hc.iterrows():
         ln = h["loan"]

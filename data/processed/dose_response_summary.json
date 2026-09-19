@@ -1,0 +1,119 @@
+{
+  "sheets": [
+    "public_budget",
+    "oasdi",
+    "hi",
+    "mortgage_agency",
+    "mortgage_bank_held",
+    "auto_lenders",
+    "card_consumer_lenders",
+    "student_loan_holders",
+    "business_credit",
+    "commercial_real_estate",
+    "bank_capital"
+  ],
+  "invariant_orderings": [
+    "mortgage before public budget",
+    "mortgage before student loans",
+    "mortgage before trust funds",
+    "public budget before student loans"
+  ],
+  "chosen_scenarios": {
+    "embodied@0.05": {
+      "group": "embodied_top30",
+      "level": 0.25,
+      "actual_dose": 0.051
+    },
+    "embodied@0.1": {
+      "group": "embodied_top20",
+      "level": 0.75,
+      "actual_dose": 0.1021
+    },
+    "embodied@0.25": {
+      "group": "embodied_top50",
+      "level": 0.75,
+      "actual_dose": 0.2524
+    },
+    "embodied@0.5": {
+      "group": "embodied_top50",
+      "level": 1.0,
+      "actual_dose": 0.3366
+    },
+    "embodied@0.75": {
+      "group": "embodied_top50",
+      "level": 1.0,
+      "actual_dose": 0.3366
+    },
+    "cognitive_AIOE@0.05": {
+      "group": "cognitive_AIOE_top20",
+      "level": 0.25,
+      "actual_dose": 0.0577
+    },
+    "cognitive_AIOE@0.1": {
+      "group": "cognitive_AIOE_top20",
+      "level": 0.5,
+      "actual_dose": 0.1154
+    },
+    "cognitive_AIOE@0.25": {
+      "group": "cognitive_AIOE_top30",
+      "level": 0.9,
+      "actual_dose": 0.2694
+    },
+    "cognitive_AIOE@0.5": {
+      "group": "cognitive_AIOE_top50",
+      "level": 1.0,
+      "actual_dose": 0.4745
+    },
+    "cognitive_AIOE@0.75": {
+      "group": "cognitive_AIOE_top50",
+      "level": 1.0,
+      "actual_dose": 0.4745
+    },
+    "cognitive_GPT@0.05": {
+      "group": "cognitive_GPT_top50",
+      "level": 0.1,
+      "actual_dose": 0.0536
+    },
+    "cognitive_GPT@0.1": {
+      "group": "cognitive_GPT_top50",
+      "level": 0.25,
+      "actual_dose": 0.1341
+    },
+    "cognitive_GPT@0.25": {
+      "group": "cognitive_GPT_top50",
+      "level": 0.5,
+      "actual_dose": 0.2682
+    },
+    "cognitive_GPT@0.5": {
+      "group": "cognitive_GPT_top50",
+      "level": 1.0,
+      "actual_dose": 0.5364
+    },
+    "cognitive_GPT@0.75": {
+      "group": "cognitive_GPT_top50",
+      "level": 1.0,
+      "actual_dose": 0.5364
+    }
+  },
+  "saturated_rows": 60,
+  "rows_inside_data_range": 96,
+  "rows_total": 180,
+  "inside_by_dose": {
+    "0.05": 1.0,
+    "0.1": 1.0,
+    "0.25": 0.6666666666666666,
+    "0.5": 0.0,
+    "0.75": 0.0
+  },
+  "flagged": {
+    "agency_share": [
+      0.6,
+      0.7
+    ],
+    "rent_nonpayment": [
+      0.25,
+      0.5
+    ],
+    "separability": "exposure-type and incidence enter as multipliers on the per-level exposure at default; the level effect and the composition effect are treated as separable"
+  }
+}

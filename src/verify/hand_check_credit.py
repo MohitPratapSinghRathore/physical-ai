@@ -113,7 +113,7 @@ def main():
               f"-> balance {v:>8,.0f}bn")
 
     rows = []
-    for wb in (0.10, 0.25, 0.50, 0.75):
+    for wb in (0.05, 0.10, 0.25, 0.50, 0.75):
         # share of working-core EARNERS displaced equals the share of the wage bill
         # displaced, to first order
         share = wb

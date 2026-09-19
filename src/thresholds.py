@@ -107,14 +107,8 @@ def main():
     # survey under-reporting with sample coverage and over-scaled every row. The corrected
     # under-reporting factors come from the FULL SIPP universe (item 2). Applied here as a
     # ratio so the rest of the pipeline does not have to be rebuilt.
-    ur = pd.read_csv(OUT / "under_reporting_factors.csv")
-    corr = {r["loan"]: r["UNDER_REPORTING_factor"] / r["A80_factor_working_core"]
-            for _, r in ur.iterrows()}
-    for c in ["bank_loss_lo_bn", "bank_loss_hi_bn", "pct_of_fed_lo", "pct_of_fed_hi"]:
-        cb[c] = cb.apply(lambda r: r[c] * corr.get(r["loan"], 1.0), axis=1)
-    print("\n=== credit rows rescaled by the corrected under-reporting factors ===")
-    for k, v in corr.items():
-        print(f"  {k:9s} x {v:.3f}")
+    # NOTE: credit_benchmarked.csv is now built on the corrected full-universe
+    # under-reporting factors at source, so no re-scaling is applied here.
     tf = pd.read_csv(OUT / "trust_fund_corrected.csv")
     fx = pd.read_csv(OUT / "fiscal_extended_axis.csv")
     fx = fx[(fx.tau_l == "bottom_up_0.301") & (fx.outlays == "no_outlays")

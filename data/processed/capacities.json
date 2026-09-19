@@ -1,0 +1,129 @@
+{
+  "gdp_bn": 32175.8935,
+  "gdp_as_of": "2026-12-31",
+  "gdp_source": "FRED GDP, annual mean of quarterly nominal GDP",
+  "total_wage_bill_bn": 9870.244390057136,
+  "total_wage_bill_source": "this project's occupational grid, data/processed/paei_c.csv",
+  "sheets": {
+    "bank_capital": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate CET1 above the 4.5 percent regulatory minimum",
+      "source": "2026 DFAST Table 4: CET1 12.8 percent of 12,583.7bn RWA at 2025:Q4; minimum 4.5 percent per 12 CFR 217.10",
+      "alt_capacity_bn": 708.0,
+      "alt_measure": "losses the Federal Reserve found the 32 banks could absorb in the 2026 severely adverse scenario",
+      "strict_capacity_bn": 201.3392000000002,
+      "strict_measure": "headroom to the test's PROJECTED MINIMUM CET1 of 11.2 percent, which is what the 708bn actually consumed",
+      "cet1_bn": 1610.7136
+    },
+    "mortgage_bank_held": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 22.5,
+      "alt_measure": "Fed severely adverse first-lien domestic mortgage loss, 2026 DFAST Table 9"
+    },
+    "mortgage_agency": {
+      "capacity_bn": 190.436,
+      "measure": "combined net worth of Fannie Mae and Freddie Mac",
+      "source": "SEC XBRL company facts from the GSEs' own 10-Q filings: Fannie Mae 112.7bn at 2026-03-31 (10-Q); Freddie Mac 77.8bn at 2026-06-30 (10-Q)",
+      "flag": "The GSEs are in conservatorship. Net worth is not loss-absorbing capital of the same kind as bank CET1 and the Treasury senior preferred agreements sit behind it. This is a scale comparison, not a solvency test.",
+      "detail": {
+        "Fannie Mae": {
+          "net_worth_bn": 112.667,
+          "as_of": "2026-03-31",
+          "form": "10-Q",
+          "cik": "0000310522",
+          "tag": "StockholdersEquity"
+        },
+        "Freddie Mac": {
+          "net_worth_bn": 77.769,
+          "as_of": "2026-06-30",
+          "form": "10-Q",
+          "cik": "0001026214",
+          "tag": "StockholdersEquity"
+        }
+      }
+    },
+    "auto_lenders": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 54.1,
+      "alt_measure": "Fed severely adverse Other consumer loss, which FOLDS auto and student together, 2026 DFAST Table 9",
+      "flag": "Auto is not broken out from student loans by the Fed. The book-specific yardstick is therefore shared between the two rows."
+    },
+    "card_consumer_lenders": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 203.0,
+      "alt_measure": "Fed severely adverse credit card loss, 2026 DFAST Table 9"
+    },
+    "student_loan_holders": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 54.1,
+      "alt_measure": "Fed severely adverse Other consumer loss, shared with auto",
+      "flag": "Most outstanding student debt is federally held, not bank held, so the bank capacity denominator understates who actually bears it. The federal holder's capacity is the public budget row."
+    },
+    "business_credit": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 158.2,
+      "alt_measure": "Fed severely adverse commercial and industrial loss"
+    },
+    "commercial_real_estate": {
+      "capacity_bn": 1044.4471000000003,
+      "measure": "aggregate bank CET1 above the regulatory minimum",
+      "source": "2026 DFAST Table 4",
+      "alt_capacity_bn": 76.5,
+      "alt_measure": "Fed severely adverse domestic CRE loss"
+    },
+    "public_budget": {
+      "capacity_bn": 5926.564,
+      "measure": "annual federal current receipts",
+      "source": "FRED FGRECPT, annual mean, 2026-12-31",
+      "reference_point": {
+        "largest_annual_fall": 0.13167257960291642,
+        "years": [
+          2008,
+          2009
+        ],
+        "note": "DERIVED from FRED because CBO publication pages return HTTP 403 to this environment. The exact document is CBO's Preliminary Estimate of the Effects of H.R. 748."
+      }
+    },
+    "oasdi": {
+      "capacity_bn": 1323.2,
+      "measure": "annual OASDI payroll income",
+      "source": "A32, verified in this repository",
+      "reserves_bn": null,
+      "reserves_status": "BLOCKED. SSA.gov returns HTTP 403 on every route and no FRED series carries the trust fund balance. The exact document is the annual OASDI Trustees Report summary tables. Left empty rather than guessed.",
+      "reference_point": {
+        "existing_deficit_share": 0.1210701330108827,
+        "note": "the combined deficit already being run, A32"
+      }
+    },
+    "hi": {
+      "capacity_bn": 286.237087311657,
+      "measure": "annual HI payroll income at the statutory combined rate",
+      "source": "2.9 percent (26 USC 3101(b) and 3111(b)) on the uncapped wage bill of 9,870bn",
+      "reserves_bn": null,
+      "reserves_status": "BLOCKED, same as OASDI."
+    },
+    "landlords_multifamily": {
+      "capacity_bn": null,
+      "measure": "NOT a dollar capacity. Arrears share that breaches debt service coverage, 1 - 1/D",
+      "breach_share_range": [
+        0.2592592592592593,
+        0.16666666666666663
+      ],
+      "dscr_range": [
+        1.2,
+        1.35
+      ],
+      "source": "FLAGGED. The agency minimum could not be read: Fannie Form 4660 sits behind DUS Navigate and the Freddie Multifamily Guide is a JavaScript application. The range 1.20 to 1.35 is carried as a flagged proxy."
+    }
+  }
+}

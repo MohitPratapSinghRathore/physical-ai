@@ -5584,3 +5584,217 @@ project has found there, and it runs opposite to the household-channel contrast 
 embodied displacement was more distress-efficient for the same reason: embodied work is
 lower paid. **The same fact drives both, and it is worth stating once and using twice rather
 than presenting them as two findings.**
+
+---
+
+## A85. THE RANKING IS RETIRED AND REPLACED BY A DOSE-RESPONSE TABLE
+
+`src/capacity.py`, `src/dose_response.py`. A82 showed only 4 of 15 pairwise orderings
+survived moving the thresholds. The correct conclusion is not that the ordering is fragile
+but that ranking was the wrong question: each balance sheet is measured against a different
+yardstick, so the order is largely a fact about the yardsticks. What a supervisor needs is
+the loss at a given dose and its size against what that sheet can absorb.
+
+### Absorbing capacity, every measure sourced
+
+| Sheet | Capacity | Source |
+|---|---|---|
+| Bank capital and every bank-held book | **1,044.4bn** CET1 above the 4.5 percent minimum | 2026 DFAST Table 4: CET1 12.8 percent of 12,583.7bn RWA at 2025:Q4; 12 CFR 217.10 |
+| Bank capital, second measure | **708bn** absorbed in the 2026 test | 2026 DFAST results |
+| Bank capital, strict reading | **201.3bn** headroom to the test's projected minimum CET1 of 11.2 percent | 2026 DFAST Table 4 |
+| Agency mortgage | **190.4bn** combined GSE net worth | Fannie Mae 112.7bn at 2026-03-31 and Freddie Mac 77.8bn at 2026-06-30, SEC XBRL from their own 10-Qs |
+| Public budget | **5,926.6bn** annual federal current receipts | FRED FGRECPT |
+| OASDI | **1,323.2bn** annual payroll income | A32, verified |
+| HI | **286.2bn** annual payroll income | 2.9 percent (26 USC 3101(b), 3111(b)) on the 9,870bn wage bill |
+| Landlords and multifamily | not a dollar capacity; breach at **16.7 to 25.9 percent** arrears | 1 - 1/D over the FLAGGED range D = 1.20 to 1.35 |
+
+**BLOCKED, named once: trust fund RESERVES.** SSA.gov returns HTTP 403 on every route and no
+FRED series carries the balance. The reserve column is left EMPTY rather than guessed. The
+exact document is the annual OASDI Trustees Report summary tables.
+
+**FLAGGED: the GSEs are in conservatorship.** Net worth is not loss-absorbing capital of the
+same kind as bank CET1 and the Treasury senior preferred agreements sit behind it. The
+agency row is a scale comparison, not a solvency test.
+
+### The table, 10-year horizon, sourced-mix incidence, upper end of the band
+
+Loss as a percentage of that sheet's own absorbing capacity.
+
+| Exposure | Dose | Public budget | OASDI | HI | Agency mortgage | Bank mortgage | Auto | Card | Student |
+|---|---|---|---|---|---|---|---|---|---|
+| Cognitive AIOE | 5% | 0.70 | 1.62 | 1.79 | 8.38 | 0.25 | 0.13 | 0.30 | 0.27 |
+| | 10% | 1.84 | 4.08 | 4.52 | 16.63 | 0.50 | 0.26 | 0.59 | 0.54 |
+| | 25% | 4.94 | 9.54 | 10.56 | 40.56 | 1.21 | 0.64 | 1.44 | 1.31 |
+| | 50% | 16.69 | 25.92 | 28.68 | 77.72 | 2.33 | 1.23 | 2.77 | 2.51 |
+| Cognitive GPT | 10% | 1.50 | 3.67 | 3.63 | 17.13 | 0.51 | 0.29 | 0.76 | 0.51 |
+| | 25% | 5.92 | 12.45 | 12.32 | 41.76 | 1.25 | 0.72 | 1.86 | 1.24 |
+| | 75% | 22.30 | 36.59 | 36.23 | 114.77 | 3.44 | 1.97 | 5.13 | 3.61 |
+| Embodied | 10% | 2.02 | 4.82 | 4.43 | 9.24 | 0.28 | 0.32 | 0.62 | 0.26 |
+| | 25% | 10.20 | 18.19 | 16.72 | 22.54 | 0.68 | 0.77 | 1.51 | 0.63 |
+
+**THE AGENCY ROW IS THE ONLY PRIVATE SHEET THAT GETS LARGE, and it gets large early.** At 25
+percent of the total wage bill a cognitive shock costs the GSEs 41 percent of their combined
+net worth and at 50 percent it costs 78 percent. Bank-held mortgages, over the same range,
+reach 2.3 percent of bank CET1 surplus. The reason is holder structure, not borrower
+behaviour: the GSEs hold or guarantee most of the national mortgage balance on 190bn of
+capital, while the banks hold about 11.5 percent of it against 1,044bn.
+
+**Bank capital is never the binding constraint in the first round.** The largest bank-held
+figure anywhere in the grid is under 4 percent of the CET1 surplus.
+
+### What the first round holds fixed, and why three columns are zero
+
+Business credit, commercial real estate and aggregate bank capital are reported as **zero**,
+and that zero is a statement about the engine rather than about the world. The household
+engine holds house prices, consumer demand, business revenue and the employment of
+non-displaced workers fixed. Item 4 is what puts numbers in those columns.
+
+### Every row states whether it is inside the observed data range
+
+| Dose | Status |
+|---|---|
+| 5 percent | **FULLY INSIDE**, all exposure types and horizons |
+| 10 percent | **FULLY INSIDE** |
+| 25 percent | **PARTLY INSIDE**: inside for both cognitive indices, OUTSIDE for embodied |
+| 50 percent | **FULLY OUTSIDE** |
+| 75 percent | **FULLY OUTSIDE** |
+
+96 of 180 rows are inside. **Only the 5 and 10 percent doses are fully inside the data for
+every exposure type.** At 25 percent the embodied rows already leave it, because displacing
+that share through embodied occupations requires a terminal prime-age nonemployment rate
+above anything in the fitted sample.
+
+**SATURATION, a second and separate limit.** An exposure type cannot deliver a dose larger
+than its own wage bill. Displacing every worker in the top half of the embodiment index is
+33.7 percent of the total wage bill and no more; cognitive AIOE tops out at 47.4 percent and
+cognitive GPT at 53.6. 60 of 180 rows are SATURATED, meaning the cell reports the loss at the
+largest attainable dose rather than at the target. **No single exposure type reaches 75
+percent of the total wage bill. Only the union of both types does.**
+
+The four invariant orderings from A82 are kept as a footnote and nothing more.
+
+---
+
+## A86. THE UNDER-REPORTING FACTORS ARE A METHODOLOGICAL RESULT, AND A80'S ERROR WAS AN EXACT IDENTITY
+
+`src/under_reporting_impact.py`, and the correction is now applied at source in
+`src/trust_fund_and_benchmark.py` rather than by a patch downstream.
+
+Two different objects were being multiplied into one:
+
+```
+under-reporting factor = official aggregate / FULL survey household universe
+coverage share         = analysis subsample  / FULL survey household universe
+```
+
+A80 used the aggregate over the WORKING-CORE balance, which is exactly the first divided by
+the second:
+
+| Loan | UR factor | / coverage | = A80's factor |
+|---|---|---|---|
+| Mortgage | 1.259 | 0.821 | **1.535** |
+| Card | 2.516 | 0.740 | **3.400** |
+| Auto | 1.743 | 0.774 | **2.253** |
+| Student | 1.423 | 0.883 | **1.612** |
+
+The identity reproduces A80's factors to three decimals, which is the cleanest possible
+demonstration that a coverage adjustment had been embedded inside a survey correction.
+
+### Every credit row, old against new, percent of the Fed severely adverse loss
+
+| Loan | Change | 25 percent dose, old to new |
+|---|---|---|
+| Mortgage | **-17.96%** | 53.56 to **43.94** |
+| Card | **-26.00%** | 11.53 to **8.53** |
+| Auto | **-22.63%** | 17.72 to **13.71** |
+| Student | **-11.68%** | 26.59 to **23.48** |
+
+The change is a constant percentage within each loan, as it must be, since the factor enters
+multiplicatively at every dose.
+
+### Findings affected
+
+| Finding | Was | Now | Status |
+|---|---|---|---|
+| A80 factors | 1.535 / 3.400 / 2.253 / 1.611 | 1.259 / 2.516 / 1.743 / 1.423 | **SUPERSEDED** |
+| A80 cards | cross at 75 percent of the wage bill, 25 to 32 percent of the Fed loss | reach 23.5 percent at 75 percent and do not cross centrally | **WITHDRAWN** |
+| A80 ordering | survives all corrections | not invariant, 4 of 15 comparisons hold | **WITHDRAWN by A82** |
+| A80 mortgage | crosses at 25 percent, 33 to 54 percent of the Fed loss | crosses at 25 percent, 27 to 44 percent | **STANDS, revised down** |
+| A80 student | crosses at 25 percent | reaches 18 to 23 percent at 25 percent, crosses at 50 | **REVISED** |
+| A80 auto | crosses at 50 percent, 24 to 34 percent | 18 to 26 percent at 50 percent | **REVISED** |
+| A76 | the credit channel is 22 times larger than A75 said | unchanged: the 21.7 factor is about LGD against a portfolio loss rate and is independent of the scaling | **STANDS** |
+| A82 | threshold sensitivity, four invariant orderings | recomputed at source rather than by a ratio patch, unchanged | **STANDS** |
+
+**NOT AFFECTED, and why:** every fiscal, trust fund and household-count result. The scaling
+touches SIPP CREDIT BALANCES only. Wage income, the taxable share under the OASDI cap, the
+DSTI crossing rates and rho(slack) use no balance figure at all.
+
+**SIPP under-reports revolving credit by a factor of 2.5** against the aggregate. A survey
+that does that cannot be used for a consumer-credit stress test without the correction, and
+the correction must not be conflated with the survey's population coverage. That is a result
+about the instrument, worth reporting in its own right.
+
+---
+
+## A87. BOTH EXPOSURE-TYPE CONTRASTS ARE ALMOST ENTIRELY ABOUT PAY. THIS IS THE STRONGEST THESIS-WEAKENING RESULT OF THE SESSION
+
+`src/pay_control.py`. The project has been reporting two exposure-type contrasts as two
+findings:
+
+- **A41 result 2**: embodied displacement is about 1.8 times more distress-efficient than
+  cognitive AIOE displacement per dollar of wage income destroyed.
+- **A84**: embodied displacement costs OASDI 17 to 20 percent more per displaced wage dollar.
+
+Both have the same proximate cause, and the owner's instruction was to test how much of each
+survives controlling for wage level. Reweighting one exposure group onto the other's decile
+distribution of individual annual wage income, in both directions:
+
+### The driver
+
+| Dataset | Mean annual wage, embodied | Cognitive AIOE | Cognitive GPT |
+|---|---|---|---|
+| ACS | 47,285 | 110,468 | 77,021 |
+| SIPP | 62,961 | 134,876 | 102,347 |
+
+**Embodied workers earn 43 to 61 percent of what cognitively exposed workers earn.**
+
+### What survives the pay control
+
+| Dataset | Statistic | Index | Raw gap | Gap after reweighting | **Share that is pay** | **Survives** |
+|---|---|---|---|---|---|---|
+| ACS | distress pp per bn | AIOE | +0.00275 | +0.00019 / +0.00009 | 93.0% and 96.8% | **3.2%** |
+| ACS | distress pp per bn | GPT | +0.00195 | +0.00012 / +0.00003 | 94.0% and 98.3% | **1.7%** |
+| ACS | share under OASDI cap | AIOE | +0.16567 | +0.01889 / +0.07630 | 88.6% and 53.9% | **11.4%** |
+| ACS | share under OASDI cap | GPT | +0.06990 | +0.00239 / +0.00775 | 96.6% and 88.9% | **3.4%** |
+| SIPP | share under OASDI cap | AIOE | +0.17926 | +0.00182 / +0.00280 | 99.0% and 98.4% | **1.0%** |
+| SIPP | share under OASDI cap | GPT | +0.05081 | **-0.05062 / -0.10604** | over 100% | **the sign REVERSES** |
+
+**Neither contrast is about exposure type. Both are about pay.** Between 1.0 and 11.4 percent
+of the raw gap survives at the weaker end of the reweighting, and in the SIPP GPT case the
+contrast changes sign once pay is held constant: at equal pay, cognitively exposed work
+under Eloundou GPT has MORE of its wage bill under the OASDI cap than embodied work does.
+
+### What this means for the paper, stated plainly
+
+**A41 result 2 and A84 are one finding, not two, and that finding is about the pay
+distribution.** The correct statement is:
+
+> Displacement concentrated in low-paid work does more balance-sheet damage per dollar and
+> costs the payroll-funded trust funds more per dollar. Embodied exposure matters for both
+> only because embodied work is low paid. On a like-for-like pay comparison the exposure-type
+> contrast is between 1 and 11 percent of its raw size and in one specification it reverses.
+
+The paper must not claim an exposure-type mechanism in either channel. The honest headline
+is a PAY mechanism with an exposure-type CORRELATE, and that is a weaker and more familiar
+claim than the project has been making since A41.
+
+**What the test cannot do**, stated as a limit: reweighting on wage deciles holds pay fixed
+but not what travels with pay, such as education, tenure, household structure or the number
+of earners. A contrast that survived would not thereby be causal in exposure type. But these
+contrasts do not survive, and for a null the limit cuts the other way: the pay channel
+accounts for essentially all of the gap without needing any of those.
+
+**A84 IS DOWNGRADED from standing.** It was promoted last session on C1 and C2, both of which
+it still passes as an arithmetic description of the two groups. What it cannot support is the
+interpretation attached to it, that exposure type drives the fiscal cost. Claim status moves
+to DOWNGRADED with the arithmetic retained and the interpretation withdrawn.

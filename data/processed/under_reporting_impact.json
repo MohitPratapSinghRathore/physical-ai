@@ -1,0 +1,97 @@
+{
+  "factors": [
+    {
+      "loan": "mortgage",
+      "official_aggregate_bn": 13100.0,
+      "sipp_FULL_universe_bn": 10403.2818,
+      "sipp_working_core_bn": 8535.4276,
+      "UNDER_REPORTING_factor": 1.2592,
+      "working_core_share_of_full": 0.8205,
+      "A80_factor_working_core": 1.5348
+    },
+    {
+      "loan": "card",
+      "official_aggregate_bn": 1357.2,
+      "sipp_FULL_universe_bn": 539.4582,
+      "sipp_working_core_bn": 399.1782,
+      "UNDER_REPORTING_factor": 2.5159,
+      "working_core_share_of_full": 0.74,
+      "A80_factor_working_core": 3.4
+    },
+    {
+      "loan": "auto",
+      "official_aggregate_bn": 1568.6,
+      "sipp_FULL_universe_bn": 899.8666,
+      "sipp_working_core_bn": 696.2587,
+      "UNDER_REPORTING_factor": 1.7431,
+      "working_core_share_of_full": 0.7737,
+      "A80_factor_working_core": 2.2529
+    },
+    {
+      "loan": "student",
+      "official_aggregate_bn": 1650.0,
+      "sipp_FULL_universe_bn": 1159.3,
+      "sipp_working_core_bn": 1023.9207,
+      "UNDER_REPORTING_factor": 1.4233,
+      "working_core_share_of_full": 0.8832,
+      "A80_factor_working_core": 1.6115
+    }
+  ],
+  "affected_findings": [
+    {
+      "finding": "A80",
+      "was": "scaling factors 1.535 / 3.400 / 2.253 / 1.611",
+      "now": "1.259 / 2.516 / 1.743 / 1.423",
+      "status": "SUPERSEDED by A83"
+    },
+    {
+      "finding": "A80",
+      "was": "cards cross the 25 percent threshold at 75 percent of the wage bill (25 to 32 percent of the Fed loss)",
+      "now": "cards reach 23.5 percent at 75 percent of the wage bill and do NOT cross at the central threshold",
+      "status": "WITHDRAWN"
+    },
+    {
+      "finding": "A80",
+      "was": "the ordering survives all of it: public budget, then mortgages and student loans, then auto, then cards",
+      "now": "the ordering is not invariant and only 4 of 15 pairwise comparisons hold",
+      "status": "WITHDRAWN by A82"
+    },
+    {
+      "finding": "A80",
+      "was": "mortgage crosses at 25 percent of the wage bill, 33 to 54 percent of the Fed loss",
+      "now": "mortgage crosses at 25 percent, 27 to 44 percent of the Fed loss",
+      "status": "STANDS, magnitude revised down"
+    },
+    {
+      "finding": "A80",
+      "was": "student loans cross at 25 percent, 20 to 27 percent of the Fed loss",
+      "now": "student loans reach 18 to 23 percent at 25 percent of the wage bill and cross at 50 percent",
+      "status": "REVISED, the crossing point moves out one level"
+    },
+    {
+      "finding": "A80",
+      "was": "auto crosses at 50 percent, 24 to 34 percent of the Fed loss",
+      "now": "auto reaches 18 to 26 percent at 50 percent and crosses at 50 percent only at the loose threshold",
+      "status": "REVISED"
+    },
+    {
+      "finding": "A76",
+      "was": "the credit channel is 22 times larger than A75 reported",
+      "now": "unchanged in kind; the 21.7 factor is about applying LGD rather than a portfolio loss rate and is independent of the scaling",
+      "status": "STANDS"
+    },
+    {
+      "finding": "A82",
+      "was": "threshold sensitivity and the four invariant orderings",
+      "now": "recomputed on the corrected factors at source rather than by a ratio patch; the four invariant orderings are unchanged",
+      "status": "STANDS, recomputed"
+    },
+    {
+      "finding": "A75",
+      "was": "no private balance sheet ever crosses",
+      "now": "already withdrawn by A76 for an unrelated reason",
+      "status": "WITHDRAWN"
+    }
+  ],
+  "identity_check": "A80's factor equals the under-reporting factor divided by the working-core coverage share, so it embedded a coverage adjustment inside a survey correction"
+}
