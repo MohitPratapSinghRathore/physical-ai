@@ -62,3 +62,29 @@ Webb, Felten and Eloundou all score what a technology could in principle touch. 
 comparison is about **where wage-backed debt sits**, not about which technology arrives
 first or which causes more displacement. That distinction must be stated wherever the
 result is reported.
+
+---
+
+## AMENDMENT 1 (2026-09-19): H3, geography. Registered BEFORE running.
+
+Added on owner instruction under the scope change (D22). **No geographic analysis of
+cognitive exposure has been run at the time of this amendment.** H1, H2 and H4 below map to
+predictions 1 to 5 in the original registration, which was committed before any results.
+
+**H3. Cognitive exposure is geographically CONCENTRATED** (Gini, p90/p10 and p99/p1 of the
+at-risk rate across PUMAs and counties) **and correlates with local house price levels,
+unlike embodied exposure.**
+
+Directional predictions:
+- Gini and p99/p1 of the cognitive at-risk rate exceed those for all embodied work (which
+  came in at county Gini 0.141, p99/p1 3.85 in A28).
+- The correlation between the county cognitive at-risk rate and local house values is
+  positive and materially larger than for embodied exposure.
+
+Interpretation fixed in advance: if H3 holds, the two exposure types differ not only in
+whose balance sheet they touch but in where, which would make the geographic argument a
+contrast rather than a Physical AI finding. If H3 fails, embodied and cognitive exposure
+share a geography and the geographic result is about employment density, not technology.
+
+House prices: ACS median home value by PUMA from the PUMS housing file (VALP), and FHFA HPI
+by county if the download succeeds. FHFA has failed twice from this environment.

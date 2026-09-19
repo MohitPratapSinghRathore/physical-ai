@@ -1,0 +1,13 @@
+outcome,group,coef,se,t
+under1mo,cognitive_AIOE_top20,-0.08887,0.01598,-5.56291
+under1mo,cognitive_GPT_top20,-0.03798,0.01513,-2.51009
+under1mo,embodied_top20,0.10249,0.01516,6.75989
+dti_mortgage,cognitive_AIOE_top20,1.92401,0.87856,2.18996
+dti_mortgage,cognitive_GPT_top20,1.07364,0.83189,1.29061
+dti_mortgage,embodied_top20,-1.90165,0.83676,-2.27264
+dti_all_debt,cognitive_AIOE_top20,12.0919,26.16221,0.46219
+dti_all_debt,cognitive_GPT_top20,6.20159,24.77259,0.25034
+dti_all_debt,embodied_top20,-15.27518,24.91752,-0.61303
+dti_unsecured_total,cognitive_AIOE_top20,0.07429,0.4154,0.17883
+dti_unsecured_total,cognitive_GPT_top20,0.15573,0.39333,0.39592
+dti_unsecured_total,embodied_top20,-0.12901,0.39563,-0.32608

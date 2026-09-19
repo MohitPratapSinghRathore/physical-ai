@@ -1,0 +1,256 @@
+{
+  "cuts": {
+    "aioe": 1.1426799990622816,
+    "gpt": 0.54899795471872,
+    "P": 0.5281326619778555
+  },
+  "levels": [
+    {
+      "group": "cognitive_AIOE_top20",
+      "n": 1261,
+      "thin": false,
+      "weighted": 14779090.9992,
+      "median_hh_income": 159154.0026,
+      "dti_credit_card": 2.4837,
+      "dti_student": 8.2024,
+      "dti_vehicle": 4.6017,
+      "dti_other": 1.048,
+      "dti_medical": 0.5467,
+      "dti_unsecured_total": 12.2808,
+      "dti_mortgage": 70.4764,
+      "dti_secured_total": 99.1074,
+      "dti_all_debt": 111.3882,
+      "dti_other_real_estate": 5.3659,
+      "dti_business": 11.3234,
+      "dti_rental_property": 7.3468,
+      "med_liquid_bank": 21362.5419,
+      "med_stocks_mutual": 0.0,
+      "med_retirement": 80000.0,
+      "med_vehicles": 21900.0,
+      "med_home": 301234.631,
+      "med_all_assets": 606442.0604,
+      "med_networth": 382249.1288,
+      "buffer_under_1mo": 38.4063,
+      "unable_pay": 2.7225
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "n": 1421,
+      "thin": false,
+      "weighted": 17295075.6873,
+      "median_hh_income": 146519.0743,
+      "dti_credit_card": 3.0,
+      "dti_student": 7.3927,
+      "dti_vehicle": 4.9962,
+      "dti_other": 0.9057,
+      "dti_medical": 0.6575,
+      "dti_unsecured_total": 11.9354,
+      "dti_mortgage": 70.3198,
+      "dti_secured_total": 90.1633,
+      "dti_all_debt": 102.093,
+      "dti_other_real_estate": 2.7319,
+      "dti_business": 4.5696,
+      "dti_rental_property": 7.5503,
+      "med_liquid_bank": 18174.9328,
+      "med_stocks_mutual": 0.0,
+      "med_retirement": 70000.0,
+      "med_vehicles": 20062.9148,
+      "med_home": 275000.0,
+      "med_all_assets": 520019.0115,
+      "med_networth": 325864.2508,
+      "buffer_under_1mo": 42.0075,
+      "unable_pay": 3.69
+    },
+    {
+      "group": "embodied_top20",
+      "n": 1595,
+      "thin": false,
+      "weighted": 17731157.3626,
+      "median_hh_income": 97521.041,
+      "dti_credit_card": 3.6061,
+      "dti_student": 5.4233,
+      "dti_vehicle": 7.8683,
+      "dti_other": 1.4547,
+      "dti_medical": 1.7862,
+      "dti_unsecured_total": 12.2672,
+      "dti_mortgage": 53.8207,
+      "dti_secured_total": 76.6881,
+      "dti_all_debt": 88.9553,
+      "dti_other_real_estate": 3.5847,
+      "dti_business": 6.5769,
+      "dti_rental_property": 4.8375,
+      "med_liquid_bank": 6000.0,
+      "med_stocks_mutual": 0.0,
+      "med_retirement": 5475.7776,
+      "med_vehicles": 18080.3953,
+      "med_home": 120000.0,
+      "med_all_assets": 244642.757,
+      "med_networth": 128291.7932,
+      "buffer_under_1mo": 56.1152,
+      "unable_pay": 6.0376
+    },
+    {
+      "group": "no_top_quintile_exposure",
+      "n": 3179,
+      "thin": false,
+      "weighted": 38444459.8387,
+      "median_hh_income": 88425.4549,
+      "dti_credit_card": 3.7896,
+      "dti_student": 10.1427,
+      "dti_vehicle": 5.9407,
+      "dti_other": 1.4949,
+      "dti_medical": 1.5767,
+      "dti_unsecured_total": 17.0006,
+      "dti_mortgage": 74.2832,
+      "dti_secured_total": 113.0008,
+      "dti_all_debt": 129.9928,
+      "dti_other_real_estate": 5.5331,
+      "dti_business": 18.3998,
+      "dti_rental_property": 8.8549,
+      "med_liquid_bank": 7500.0,
+      "med_stocks_mutual": 0.0,
+      "med_retirement": 14792.2207,
+      "med_vehicles": 15314.1791,
+      "med_home": 140000.0,
+      "med_all_assets": 281029.561,
+      "med_networth": 148437.2607,
+      "buffer_under_1mo": 49.886,
+      "unable_pay": 5.371
+    }
+  ],
+  "adjusted": [
+    {
+      "outcome": "under1mo",
+      "group": "cognitive_AIOE_top20",
+      "coef": -0.08887,
+      "se": 0.01598,
+      "t": -5.56291
+    },
+    {
+      "outcome": "under1mo",
+      "group": "cognitive_GPT_top20",
+      "coef": -0.03798,
+      "se": 0.01513,
+      "t": -2.51009
+    },
+    {
+      "outcome": "under1mo",
+      "group": "embodied_top20",
+      "coef": 0.10249,
+      "se": 0.01516,
+      "t": 6.75989
+    },
+    {
+      "outcome": "dti_mortgage",
+      "group": "cognitive_AIOE_top20",
+      "coef": 1.92401,
+      "se": 0.87856,
+      "t": 2.18996
+    },
+    {
+      "outcome": "dti_mortgage",
+      "group": "cognitive_GPT_top20",
+      "coef": 1.07364,
+      "se": 0.83189,
+      "t": 1.29061
+    },
+    {
+      "outcome": "dti_mortgage",
+      "group": "embodied_top20",
+      "coef": -1.90165,
+      "se": 0.83676,
+      "t": -2.27264
+    },
+    {
+      "outcome": "dti_all_debt",
+      "group": "cognitive_AIOE_top20",
+      "coef": 12.0919,
+      "se": 26.16221,
+      "t": 0.46219
+    },
+    {
+      "outcome": "dti_all_debt",
+      "group": "cognitive_GPT_top20",
+      "coef": 6.20159,
+      "se": 24.77259,
+      "t": 0.25034
+    },
+    {
+      "outcome": "dti_all_debt",
+      "group": "embodied_top20",
+      "coef": -15.27518,
+      "se": 24.91752,
+      "t": -0.61303
+    },
+    {
+      "outcome": "dti_unsecured_total",
+      "group": "cognitive_AIOE_top20",
+      "coef": 0.07429,
+      "se": 0.4154,
+      "t": 0.17883
+    },
+    {
+      "outcome": "dti_unsecured_total",
+      "group": "cognitive_GPT_top20",
+      "coef": 0.15573,
+      "se": 0.39333,
+      "t": 0.39592
+    },
+    {
+      "outcome": "dti_unsecured_total",
+      "group": "embodied_top20",
+      "coef": -0.12901,
+      "se": 0.39563,
+      "t": -0.32608
+    }
+  ],
+  "shares": [
+    {
+      "group": "cognitive_AIOE_top20",
+      "share_mortgage_balance_pct": 27.428,
+      "share_consumer_balance_pct": 23.189,
+      "share_rent_or_mortgage_payment_pct": 19.859
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "share_mortgage_balance_pct": 28.223,
+      "share_consumer_balance_pct": 23.984,
+      "share_rent_or_mortgage_payment_pct": 21.861
+    },
+    {
+      "group": "embodied_top20",
+      "share_mortgage_balance_pct": 14.48,
+      "share_consumer_balance_pct": 19.119,
+      "share_rent_or_mortgage_payment_pct": 19.741
+    }
+  ],
+  "p1r_by_group": [
+    {
+      "group": "cognitive_AIOE_top20",
+      "mean_wage_usd": 93668.2495,
+      "wage_ratio_to_economy": 1.2872,
+      "tau_l_group": 0.3305,
+      "loss_per_dollar_at_s1_tauk10": 0.2305,
+      "loss_per_dollar_at_s0": 0.3305,
+      "rho_star_with_labour_share": 0.6165
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "mean_wage_usd": 63988.3824,
+      "wage_ratio_to_economy": 0.8793,
+      "tau_l_group": 0.2986,
+      "loss_per_dollar_at_s1_tauk10": 0.1986,
+      "loss_per_dollar_at_s0": 0.2986,
+      "rho_star_with_labour_share": 0.588
+    },
+    {
+      "group": "embodied_top20",
+      "mean_wage_usd": 36386.899,
+      "wage_ratio_to_economy": 0.5,
+      "tau_l_group": 0.2368,
+      "loss_per_dollar_at_s1_tauk10": 0.1368,
+      "loss_per_dollar_at_s0": 0.2368,
+      "rho_star_with_labour_share": 0.5106
+    }
+  ]
+}

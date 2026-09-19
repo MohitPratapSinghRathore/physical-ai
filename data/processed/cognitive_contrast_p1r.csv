@@ -1,0 +1,4 @@
+group,mean_wage_usd,wage_ratio_to_economy,tau_l_group,loss_per_dollar_at_s1_tauk10,loss_per_dollar_at_s0,rho_star_with_labour_share
+cognitive_AIOE_top20,93668.2495,1.2872,0.3305,0.2305,0.3305,0.6165
+cognitive_GPT_top20,63988.3824,0.8793,0.2986,0.1986,0.2986,0.588
+embodied_top20,36386.899,0.5,0.2368,0.1368,0.2368,0.5106

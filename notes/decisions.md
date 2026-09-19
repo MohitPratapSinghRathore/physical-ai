@@ -348,3 +348,31 @@ the correct disposal of a pre-registration.
 Owner instruction. The A4 adjudication sample was stratified on S_original; with S closed
 permanently (A27) there is nothing left for a resample to adjudicate. The existing
 `a4_50_for_owner_review.csv` is retained as a record, not as a live work item.
+
+## D22. Scope change: the paper covers AI-driven labour displacement generally (2026-09-19)
+
+Owner decision. The paper is reorganised around two exposure types: embodied (P, validated
+against Webb at +0.708 overall and +0.275 among high-P) and cognitive (Felten AIOE and
+Eloundou, already crosswalked). "Physical AI" becomes one half of a comparison rather than
+the subject.
+
+Why the evidence supports this: the cognitive contrast (A35) shows the household-credit leg
+sits with cognitively exposed workers, and the fiscal wedge per displaced dollar is LARGER
+for cognitive work. A paper framed only on Physical AI would have to either omit or
+under-report both.
+
+Tradeoffs:
+- LOSS. The single most defensible measurement asset, PAEI and its pathway decomposition,
+  becomes one column of a comparison. The geography result (robot-reachable work concentrated
+  at Acemoglu-Restrepo magnitudes, embodied work near-uniform) is specific to Physical AI and
+  is diluted by the broader frame.
+- LOSS. Scope grows again after a freeze, and the cognitive side has no equivalent of the
+  pathway decomposition or the validated embodiment measure.
+- GAIN. The comparison is what the data actually supports, and the contrast is sharper than
+  either half alone.
+- GAIN. The fiscal result (P1r) is exposure-type agnostic and gets stronger, not weaker.
+
+BINDING CONSTRAINT on all cognitive claims: Felten AIOE and Eloundou measure TASK OVERLAP,
+not displacement and not timing. Every claim about cognitive exposure must say so. Unlike P,
+which was validated against Webb's robot score, the cognitive indices are used here as
+published measures of overlap with no independent validation by us.
