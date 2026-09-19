@@ -1,0 +1,42 @@
+{
+  "source": "BLS Employment Projections, Occupational separations and openings, 2025 National Employment Matrix, projections 2025 to 2035",
+  "url": "https://www.bls.gov/emp/tables/occupational-separations-and-openings.htm",
+  "retrieved": "2026-09-19",
+  "total_all_occupations": {
+    "employment_thousands": 170280.8,
+    "exit_rate_pct": 4.2,
+    "transfer_rate_pct": 5.5,
+    "separations_rate_pct": 9.7
+  },
+  "by_group": [
+    {
+      "group": "all_occupations",
+      "employment": 183665726.0,
+      "labour_force_exit_rate_pct": 3.8639,
+      "occupational_transfer_rate_pct": 5.211,
+      "total_separations_rate_pct": 9.0737
+    },
+    {
+      "group": "embodied_top_quintile",
+      "employment": 36933207.0,
+      "labour_force_exit_rate_pct": 3.8527,
+      "occupational_transfer_rate_pct": 5.6477,
+      "total_separations_rate_pct": 9.4947
+    },
+    {
+      "group": "cognitive_AIOE_top_quintile",
+      "employment": 24331895.0,
+      "labour_force_exit_rate_pct": 2.6988,
+      "occupational_transfer_rate_pct": 4.0441,
+      "total_separations_rate_pct": 6.7464
+    },
+    {
+      "group": "cognitive_GPT_top_quintile",
+      "employment": 28250631.0,
+      "labour_force_exit_rate_pct": 3.5569,
+      "occupational_transfer_rate_pct": 4.5837,
+      "total_separations_rate_pct": 8.1576
+    }
+  ],
+  "coverage_share_of_employment": 0.7631903406953565
+}

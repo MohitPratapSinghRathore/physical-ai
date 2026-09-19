@@ -1,0 +1,979 @@
+{
+  "separations_source": "BLS Employment Projections, Occupational separations and openings, 2025 National Employment Matrix, projections 2025 to 2035",
+  "labour_force_exit_rate": 0.038639,
+  "total_separations_rate": 0.09073700000000001,
+  "alpha_ceilings": {
+    "aggregate": 0.038639,
+    "occupation": 0.09073700000000001
+  },
+  "baseline": {
+    "emp_rate": 80.68908,
+    "part_rate": 84.0,
+    "nonemp0": 19.310919999999996,
+    "u0": 3.9415714285714234,
+    "s_other": 0.024630382583432243
+  },
+  "prime_age_nonemployment_max_observed": 24.71,
+  "limits": [
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "aggregate",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.0,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.25,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.5,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 0.75,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 2,
+      "speed_limit": 0.048,
+      "cumulative_ceiling": 0.096
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 5,
+      "speed_limit": 0.0275,
+      "cumulative_ceiling": 0.1375
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 10,
+      "speed_limit": 0.0125,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 2,
+      "speed_limit": 0.0475,
+      "cumulative_ceiling": 0.095
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 5,
+      "speed_limit": 0.026,
+      "cumulative_ceiling": 0.13
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 10,
+      "speed_limit": 0.0115,
+      "cumulative_ceiling": 0.115
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 0.5,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 2,
+      "speed_limit": 0.0465,
+      "cumulative_ceiling": 0.093
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 5,
+      "speed_limit": 0.025,
+      "cumulative_ceiling": 0.125
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 10,
+      "speed_limit": 0.011,
+      "cumulative_ceiling": 0.11
+    },
+    {
+      "alpha_basis": "occupation",
+      "alpha": 1.0,
+      "phi": 1.0,
+      "horizon": 20,
+      "speed_limit": NaN,
+      "cumulative_ceiling": NaN
+    }
+  ]
+}

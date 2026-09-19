@@ -136,6 +136,15 @@ them in the same list.
 | 76 | The speed limit is 1.25 percent a year at a 10-year horizon (1.10 at phi = 1), two and a half times tighter than A56's 3.15 | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
 | 77 | The cumulative ceiling is 11 to 12.5 percent of employment at 10 years, against A61's 31.5, and no 20-year path stays inside the observed range at any flow in the grid | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
 | 78 | The FAST regime is nearly empty on the corrected slack measure: of 120 scenario paths, 58 SLOW, 62 SUDDEN, 0 FAST | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
+| 79 | Attrition absorption is EXACTLY NEUTRAL for prime-age E/P, unemployment, wage income and the speed limit. It transfers the whole burden from laid-off incumbents to lost entrant openings | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
+| 80 | Displacement delivered through attrition is invisible to the Displaced Worker Survey and to every indicator in this project's dashboard, while employment to population falls by the same amount as under mass layoffs | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
+| 81 | The natural separation rate is 3.4x (labour force exit) to 7.9x (total separations) the speed limit | standing, sourced from BLS Employment Projections | A64 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 82 | No 20-year path stays inside the observed range at any alpha, phi, flow or ceiling | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
+| 83 | The speed limit is not a number: 0.05 to 7.15 percent a year on the prime-age specification, median 2.73. The SLACK MEASURE moves it more than every other choice combined (ratio 3.67); attrition moves it by exactly 1.00 | **provisional** | A65 | n/a | n/a | n/a | n/a | n/a | yes |
+| 84 | Acceleration is a structural property of any model in which the reemployment hazard falls with slack; the data identify its strength only inside the observed range | standing (a statement about the model class) | A65 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 85 | No published work links occupational AI exposure to household balance-sheet outcomes (none located, non-systematic search) | **provisional** | A66 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 86 | Acemoglu-Restrepo's increased benefit take-up and falling E/P in exposed areas are settled | **NOT SETTLED** | A66: Altindag, El Cheikh Taha, Nunley and Seals (2026) find SSDI applications FALLING and E/P NOT falling in exposed commuting zones. Different designs, but close enough that the take-up result cannot be leaned on | n/a | n/a | n/a | n/a | n/a | n/a |
+| 87 | phi has independent empirical support: Fan (2025) estimates mobility recovers about 20 percent of losses against 30 percent in standard models, implying phi of about 0.33 | **provisional**, verified | A66 | n/a | n/a | n/a | n/a | n/a | n/a |
 
 ## Engine-based claims, opened this session
 

@@ -4241,7 +4241,7 @@ The mechanism is mundane: as unemployment rises the exit hazard drains the stock
 labour force shrinks, so measured unemployment rises less than proportionally. **A thesis
 that needs a threshold in the household or unemployment channel does not have one here.** The
 nonlinearity, if the paper has one, has to come from the balance-sheet side, which is what
-the order-of-failure work is for.
+the order-of-stress work is for.
 
 ## A63. THE CIRCULARITY WAS REAL. Correcting it reverses the nonlinearity result and cuts the speed limit by a factor of two and a half
 
@@ -4352,3 +4352,200 @@ and 62 are SUDDEN, and NONE are FAST.** On the corrected slack measure the speed
 the edge of the observed data nearly coincide, so the middle regime is almost empty. The
 three-regime structure survives, but the FAST band is much narrower than the SLOW and SUDDEN
 ones and the paper should say so rather than implying three equally populated cases.
+
+## A64. ATTRITION ABSORPTION IS EXACTLY NEUTRAL FOR AGGREGATE EMPLOYMENT. It only moves the burden onto people who never appear in a displacement statistic
+
+`src/separations.py`, `src/stock_flow_v3.py`.
+
+### The sourced rates, and they are better than expected
+
+BLS Employment Projections, "Occupational separations and openings", 2025 National Employment
+Matrix, projections 2025 to 2035, read from bls.gov 2026-09-19. It publishes annual average
+rates per occupation, which gives all three of item 1's inputs from one source. Joined to
+this project's exposure groups through the existing OCCP-to-SOC crosswalk, covering 76.3
+percent of employment.
+
+| Group | Labour force exit | Occupational transfer | **Total separations** |
+|---|---|---|---|
+| All occupations | 3.86% | 5.21% | **9.07%** |
+| Embodied top quintile | 3.85% | 5.65% | **9.49%** |
+| Cognitive AIOE top quintile | 2.70% | 4.04% | **6.75%** |
+| Cognitive GPT top quintile | 3.56% | 4.58% | **8.16%** |
+
+BLS's own economy-wide total row: exit 4.20, transfer 5.50, separations 9.70 percent.
+
+### The comparison the brief asked for
+
+| | Annual rate | Multiple of the A63 speed limit (1.15% at 10 years) |
+|---|---|---|
+| Speed limit | 1.15% | 1.0 |
+| **Labour force exit rate** | **3.86%** | **3.4x** |
+| **Total separations rate** | **9.07%** | **7.9x** |
+
+**The economy vacates positions three to eight times faster than the speed limit.** On the
+face of it that looks like ample room to absorb displacement without layoffs. It is not, and
+the reason is the finding.
+
+### The result: neutral on every aggregate, decisive on composition
+
+At a 2 percent annual flow over ten years, phi 0.5, aggregate ceiling:
+
+| alpha | Share of destruction absorbed | Laid-off incumbents | **Lost entrant openings** | Prime-age E/P | Unemployment | Wage income |
+|---|---|---|---|---|---|---|
+| 0.00 | 0% | **19.05%** | **0.00%** | 72.50 | 6.75% | 0.858 |
+| 0.25 | 48% | 9.85% | 9.20% | 72.50 | 6.75% | 0.859 |
+| 0.50 | 97% | 0.65% | 18.40% | 72.50 | 6.75% | 0.859 |
+| 1.00 | 100% | **0.00%** | **19.05%** | 72.50 | 6.75% | 0.859 |
+
+**Employment to population, unemployment and aggregate wage income are identical to four
+significant figures across the whole range of alpha.** The speed limit is identical too:
+4.75, 2.60 and 1.15 percent a year at 2, 5 and 10 year horizons, at every alpha and on both
+ceilings.
+
+Attrition absorption does not reduce the employment loss. It transfers the entire burden from
+displaced incumbents to people who would have been hired and were not.
+
+**I had this wrong on the first run of this module and the error is worth recording.** I let
+the unfilled position simply remove a worker from employment, without putting the
+would-be entrant into the searching pool. That made attrition look as though it destroyed
+employment permanently while layoffs did not, which is backwards, and it produced a spurious
+result in which attrition TIGHTENED the speed limit from 1.15 to 0.35 percent. The symmetric
+treatment (the entrant enters unemployment and searches at the same hazard) gives the neutral
+result above.
+
+### Why this matters more than the neutrality suggests
+
+**The measurement system goes blind exactly where absorption is highest.** The reemployment
+relationship this whole model rests on, rho(slack), is estimated on the Displaced Worker
+Survey, which surveys people who LOST a job they held for three or more years. A person who
+never got hired is not in it. Neither are they in the displaced-worker share, the
+reemployment rate, or any of the fourteen vintages.
+
+So a labour market absorbing automation through attrition looks unchanged on the unemployment
+rate, unchanged on the displaced-worker statistics, and unchanged on every indicator in this
+project's own dashboard, while employment to population falls by the same amount as under
+mass layoffs. For a supervisor that is the opposite of reassuring: it is the configuration in
+which the standard indicators fail first.
+
+### Item 1 questions answered directly
+
+**Do 20-year paths now stay inside the observed range?** **No.** At every alpha from 0 to 1,
+on both ceilings, at every displacement flow in the grid from 0.5 to 5 percent a year, and at
+every phi, no 20-year path keeps peak prime-age nonemployment at or below the observed
+maximum of 24.71 percent. Adding turnover and attrition does not rescue the long horizon.
+
+**Early retirement variant.** Run at multipliers of 1.0, 1.5 and 2.0 on the exit hazard and
+labelled SCENARIO throughout, because no rate for it is sourced. A65 records why that
+labelling is now doubly justified.
+
+---
+
+## A65. THE SPECIFICATION TABLE. The speed limit is not a number, and the slack measure decides it
+
+`src/specification_table.py`. 2,592 cells, 2,394 with a finite limit, crossing slack measure,
+phi, exit treatment, hazard conversion T, attrition alpha, turnover and horizon.
+
+### The range
+
+| Statistic | Speed limit, percent a year | Cumulative ceiling, percent |
+|---|---|---|
+| Minimum | 0.05 | 0.5 |
+| 25th percentile | 3.60 | 13.6 |
+| **Median** | **6.60** | **25.1** |
+| 75th percentile | 10.00 | 66.0 |
+| Maximum | 10.00 (grid ceiling) | 200.0 |
+
+Restricted to the prime-age nonemployment specification, which is the defensible one:
+**speed limit 0.05 to 7.15 percent a year, median 2.73; cumulative ceiling 0.5 to 21.0
+percent, median 13.4.**
+
+### What moves it, ranked
+
+| Dimension | Levels | Median speed limit, min to max | **Ratio** |
+|---|---|---|---|
+| **Slack measure** | 3 | 2.73 to 10.00 | **3.67** |
+| Horizon | 4 | 4.65 to 6.78 | 1.46 |
+| phi | 3 | 5.08 to 6.65 | 1.31 |
+| Exit treatment | 4 | 5.15 to 6.65 | 1.29 |
+| Hazard conversion T | 3 | 6.20 to 6.65 | 1.07 |
+| Turnover | 2 | 6.60 to 6.65 | 1.01 |
+| **Attrition alpha** | 3 | 6.60 to 6.60 | **1.00** |
+
+**The choice of slack measure moves the answer more than every other modelling choice
+combined, and attrition moves it exactly not at all.** Three sessions have quoted 3.15, then
+1.25, then 1.15 percent a year. None of those movements was a measurement changing. All were
+this one choice changing.
+
+The 16-and-over nonemployment column is reported in the file but must NOT be quoted: the
+model runs on prime-age stocks and pairing them with a 16-and-over threshold is incoherent,
+which is why that column sits at the grid ceiling throughout.
+
+### The structural point, which has to travel with every acceleration result
+
+**In any model where the reemployment hazard falls with slack, the marginal harm of an extra
+unit of displacement rises with the flow**, because the same inflow meets a lower outflow
+rate. A63's acceleration result is therefore a property of the model class, not a discovery
+about AI. What the data identify is the STRENGTH of that feedback, and they identify it only
+inside the observed range of the slack measure. Outside that range the acceleration is an
+extrapolation of a mechanism, not an estimate of one. The paper must say this in the same
+paragraph as the acceleration ratios or it overclaims.
+
+### Regimes redefined, and the release regenerated
+
+The SLOW, FAST and SUDDEN split is retired. A63 found the middle band empty, and naming a
+band after a quantity that moves by a factor of 140 across specifications implies a precision
+the model does not have. Replaced by **INSIDE_DATA, BOUNDARY_BAND and OUTSIDE_DATA** on peak
+prime-age nonemployment against the observed maximum of 24.71 percent, with the boundary band
+being within one point of it. Of 480 published paths: 165 inside, 45 boundary, 270 outside.
+
+`data/release/scenarios/` is at version 0.4.0 with the new dictionary, changelog and a
+`specification_range.csv` carrying the whole table. The dashboard now quotes the speed limit
+as a range and not a point.
+
+---
+
+## A66. LITERATURE AUDIT. Nothing links occupational AI exposure to household balance sheets, and one new paper contradicts Acemoglu and Restrepo
+
+`lit/ai_exposure_household_finance_audit.md`. Searched 2026-09-19.
+
+**No paper was located that measures occupational AI exposure against household
+balance-sheet outcomes.** Exposure indices are mature and are used almost exclusively against
+labour outcomes; household financial outcomes are measured richly and linked to generic
+income shocks, not to occupational exposure. The nearest work reaches PUBLIC balance sheets.
+This is stated as "none located" from a non-systematic search, not as "none exists".
+
+### Two papers found, both verified by reading them
+
+**Altindag, El Cheikh Taha, Nunley and Seals (July 2026), "Robots and the Public Finance of
+Disability Insurance"**, arXiv 2607.02892. Robot exposure LOWERS SSDI applications by about
+8 per 100,000 working-age residents per additional robot per 1,000 workers, largest among
+those aged 55 to 64, worth roughly 3.4bn dollars a year in averted applications. Employment
+to population does NOT fall in exposed commuting zones.
+
+**This contradicts Acemoglu and Restrepo on two points and the project must stop leaning on
+one of them.** A-R (2020) Section V.C find INCREASED take-up of Social Security retirement
+and disability benefits in exposed areas, and employment-to-population ratios that DO fall.
+The designs differ, applications against take-up, different instruments and periods, so it is
+not a clean contradiction of one estimand. It is close enough that the A-R benefit-take-up
+result cannot be treated as settled, which is why the early-retirement variant in A64 stays
+a labelled SCENARIO with no sourced rate.
+
+**Fan (2025), "The Labor Market Incidence of New Technologies"**, Yale job market paper,
+arXiv 2504.04047. Worker mobility between occupations declines with distance in skill space;
+automation and AI cluster within skill-adjacent occupations. Twenty to fifty percent of
+labour demand shocks translate into wages against about thirty percent under standard models,
+and **mobility recovers only about twenty percent of losses against about thirty percent
+under standard estimates**.
+
+**This is an independent, structural, estimated version of the destination-pool parameter
+phi**, which this project imposed by assumption. Its headline implies the pool is about a
+third less effective than a no-clustering model assumes, so **phi of about 0.33**, which sits
+inside the grid already run and close to the employment-share anchors. It is the strongest
+external support the phi mechanism has, and it should be cited wherever phi appears.
+
+### How this project differs, stated for the paper
+
+Existing work establishes that exposure moves LABOUR outcomes. It does not establish what
+that does to household balance sheets, and it does not connect either to supervisory loss
+measurement. **The contribution is the join, not the exposure measure and not the household
+data, both of which are borrowed.**

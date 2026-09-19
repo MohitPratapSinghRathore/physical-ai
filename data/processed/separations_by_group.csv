@@ -1,0 +1,5 @@
+group,employment,labour_force_exit_rate_pct,occupational_transfer_rate_pct,total_separations_rate_pct
+all_occupations,183665726.0,3.8639,5.211,9.0737
+embodied_top_quintile,36933207.0,3.8527,5.6477,9.4947
+cognitive_AIOE_top_quintile,24331895.0,2.6988,4.0441,6.7464
+cognitive_GPT_top_quintile,28250631.0,3.5569,4.5837,8.1576

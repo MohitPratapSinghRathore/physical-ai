@@ -1,6 +1,6 @@
-# Pre-registration: order of failure across three displacement regimes
+# Pre-registration: order of stress across displacement regimes
 
-Registered **before** running the frontier, the sudden-shock module or the order-of-failure
+Registered **before** running the frontier, the sudden-shock module or the order-of-stress
 engine. Written 2026-09-19. Owner-specified.
 
 ## Regimes
@@ -51,3 +51,9 @@ engine. Written 2026-09-19. Owner-specified.
 budget is already failing before any displacement. That is registered here so the result is
 not presented as a discovery. The informative content of the prediction is the ORDER of the
 other two sheets and the metro composition in the sudden regime.
+
+## Amendment, 2026-09-19, owner decision
+
+Renamed from "order of failure" to "order of stress". **The table must allow the outcome that NO balance sheet reaches its materiality threshold.** The registered expectation below is a prediction about ordering CONDITIONAL on any sheet crossing; "none crosses" is a permitted and reportable result, and given A41 and A56 it is a live possibility for the slow regime on every sheet except the public budget.
+
+Regimes are also redefined per the same decision: INSIDE the observed data range, OUTSIDE it, and a BOUNDARY BAND reported as such, replacing the earlier SLOW/FAST/SUDDEN split whose middle band turned out to be nearly empty (A63).

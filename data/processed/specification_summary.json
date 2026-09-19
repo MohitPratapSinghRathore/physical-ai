@@ -1,0 +1,75 @@
+{
+  "n_cells": 2592,
+  "n_finite": 2394,
+  "speed_limit_pct": {
+    "min": 0.05,
+    "p25": 3.6000000000000005,
+    "median": 6.6000000000000005,
+    "p75": 10.0,
+    "max": 10.0
+  },
+  "cumulative_ceiling_pct": {
+    "min": 0.5,
+    "median": 25.124999999999996,
+    "max": 200.0
+  },
+  "drivers_ranked": [
+    {
+      "dimension": "slack",
+      "n_levels": 3,
+      "min_median": 2.725,
+      "max_median": 10.0,
+      "spread_pp": 7.275,
+      "ratio": 3.6697
+    },
+    {
+      "dimension": "horizon",
+      "n_levels": 4,
+      "min_median": 4.65,
+      "max_median": 6.775,
+      "spread_pp": 2.125,
+      "ratio": 1.457
+    },
+    {
+      "dimension": "phi",
+      "n_levels": 3,
+      "min_median": 5.075,
+      "max_median": 6.65,
+      "spread_pp": 1.575,
+      "ratio": 1.3103
+    },
+    {
+      "dimension": "exit",
+      "n_levels": 4,
+      "min_median": 5.15,
+      "max_median": 6.65,
+      "spread_pp": 1.5,
+      "ratio": 1.2913
+    },
+    {
+      "dimension": "T",
+      "n_levels": 3,
+      "min_median": 6.2,
+      "max_median": 6.65,
+      "spread_pp": 0.45,
+      "ratio": 1.0726
+    },
+    {
+      "dimension": "turnover",
+      "n_levels": 2,
+      "min_median": 6.6,
+      "max_median": 6.65,
+      "spread_pp": 0.05,
+      "ratio": 1.0076
+    },
+    {
+      "dimension": "alpha",
+      "n_levels": 3,
+      "min_median": 6.6,
+      "max_median": 6.6,
+      "spread_pp": 0.0,
+      "ratio": 1.0
+    }
+  ],
+  "structural_note": "Acceleration is a property of any model in which the reemployment hazard falls with slack. The data identify its strength only inside the observed range of the slack measure."
+}

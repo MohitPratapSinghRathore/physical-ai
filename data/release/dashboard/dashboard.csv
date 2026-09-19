@@ -1,6 +1,6 @@
 indicator,value,threshold,status,source,date
 Retained wage share R = rho x omega,0.5683,0.1101 required tau_k equivalently R >= 0.722 at the current tau_k,BELOW THRESHOLD,BLS Displaced Workers Summary Jan 2026 Tables 1 and 7; CPS annual averages Tables 37 and 38; FRED ECIWAG,"2026-01 survey, computed 2026-09-19"
-Observed annual displacement flow (DWS long-tenured),0.00679,"speed limit 0.0115 at phi 0.5, 10-year horizon",INSIDE,BLS DWS: 3.324m over 3 years against prime-age employment,2026-01
+Observed annual displacement flow (DWS long-tenured),0.00679,"speed limit RANGE 0.0005 to 0.0715 a year across the full specification table, median 0.0273. Never a single number",INSIDE the median; above the tightest specifications,BLS DWS: 3.324m over 3 years against prime-age employment,2026-01
 "Effective tax rate on AI surplus, current code with shifting",0.0708,0.1101,BELOW THRESHOLD,AMR 2020 effective rates; 26 USC 168(k); Torslov Wier Zucman 48 percent haven share; Barkai rent share 0.351,2026-09-19
 Prime-age nonemployment rate,19.31,24.71,INSIDE,FRED LREM25TTUSM156S,2026-01
 Bank C and I commitments to AI-adjacent industries,"450bn USD, 13 percent of total commitments",25 percent of tier 1 capital committed (current reading),"REPORTED, no threshold set","Cohen, Killen and Lau, Chicago Fed Insights, February 2026",late 2025
