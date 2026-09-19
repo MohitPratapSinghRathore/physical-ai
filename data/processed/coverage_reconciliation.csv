@@ -1,0 +1,5 @@
+step,occupations,employment,wage_bill_usd_bn,employment_pct_of_start,wage_pct_of_start,employment_lost,wage_lost_usd_bn
+0. PUMS persons with an OCCP code,530,203650740,10884.35,100.0,100.0,,
+1. OCCP present in the Census 2018 OCCP-to-SOC crosswalk,491,187875332,10092.45,92.25,92.72,15775408.0,791.9
+2. SOC also present in PAEI (O*NET 31.0),375,140221855,7878.16,68.85,72.38,47653477.0,2214.29
+3. and positive wage income (the Step 2 analysis frame),375,117721836,7878.16,57.81,72.38,22500019.0,-0.0

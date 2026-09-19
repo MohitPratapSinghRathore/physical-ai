@@ -338,10 +338,19 @@ marked refuted in Phase 1 on weaker evidence and a flawed measure. It is now ref
 correct measure with the confound controlled. PROJECT_BRIEF.md Section 3 has been updated
 to move it out of "our hypotheses, unverified" into an explicit REFUTED row.
 
-**What it rules out.** Three things. First, any household-DTI-based story about the
-mortgage channel: there is no concentration to find. Second, the Phase 1 "flatness"
-framing, which was an artifact of share-attribution across mixed-occupation households.
-Third, the retired diversification claim (D9 point 3), which depended on flatness.
+**What it rules out.** Stated precisely, because an earlier version of this entry
+overreached. What is ruled out is **concentration of exposure by household DTI**: high-PAEI
+households are not more housing-burdened than others at the same income, so there is no
+concentration to find at the household level. Also ruled out: the Phase 1 "flatness"
+framing, which was an artifact of share-attribution across mixed-occupation households, and
+the retired diversification claim (D9 point 3), which depended on flatness.
+
+**What it does NOT rule out, corrected 2026-09-19 (A8).** The aggregate mortgage channel is
+NOT ruled out. A shock to the wage bill still flows to mortgage debt service in aggregate
+regardless of how it is distributed across households, and the geographic channel (Step 3)
+is where that shock concentrates. The buffers question is also open: equal debt service can
+hide very unequal default risk if high-PAEI households hold thinner liquid assets, and that
+is untested until Step 5.
 
 **What remains unknown.** Everything that matters now sits elsewhere:
 - The geographic channel. Default needs an income shock PLUS negative equity, and mortgage
@@ -541,3 +550,140 @@ inherits that gap, with an odd consequence worth stating: at high c the index le
 P, which IS externally correlated, so PAEI(c) is better grounded at high c than at low c.
 The economic feasibility filter is not built, because no verified all-in hourly robot cost
 was located and Rule 2 forbids inventing one.
+
+## A13. PART A. A coverage BUG, not a limitation, was hiding a third of the economy
+
+**What was tested (A1).** Reconciliation of 911 O*NET occupations down to the analysis
+frame, and of PUMS wages against NIPA.
+
+**Result: a bug.** The v1 Step 2 build attached PUMS employment by grouping on the
+crosswalk's SOC string and merging onto PAEI's detailed SOC. **100 of the 530 Census OCCP
+codes carry BROAD SOC codes ending in 0** (53-3030 "Driver/sales workers and truck
+drivers", 35-2010 "Cooks") which do not exist in O*NET detailed SOC. Their employment was
+silently dropped. The casualties were among the largest and most embodied occupations in
+the economy: Heavy and Tractor-Trailer Truck Drivers, Light Truck Drivers, Janitors and
+Cleaners, Cooks, Farmworkers.
+
+Fixed by rebuilding on the OCCP spine, the level at which employment is actually observed.
+Tagged `PAEI_C_VERSION = v2-occp-spine`.
+
+| | v1 | v2 |
+|---|---|---|
+| Occupations covered | 375 of 786 (47.7%) | 476 of 512 (93.0%) |
+| Employment covered | 140.2m | 183.7m |
+| Wage bill covered | 7,878.2 USD bn | 9,870.2 USD bn |
+| Wage bill at risk, c = 1 | 2,235.6 USD bn | 2,935.4 USD bn |
+
+**Coverage waterfall.** 530 OCCP codes and 203.7m PUMS employment at the start; 92.25
+percent of employment survives the Census crosswalk; the rest is lost to PAEI matching and
+the positive-wage restriction. Covered wage bill is 58.95 percent of NIPA wages and
+salaries. That gap has two distinct sources which must not be conflated: 3,006 USD bn is
+crosswalk and matching loss, 2,481 USD bn is PUMS undercount and top-coding against NIPA.
+
+**Systematic difference test.** For the 411 v1-uncovered PAEI occupations, P and S are
+known, so the test is direct. Uncovered occupations had HIGHER embodiment (mean P 0.410 vs
+0.368, Cohen's d = -0.223, Welch p = 0.0019). The loss was biased toward exactly the
+occupations the paper is about, so v1 understated exposure. Bounding by assigning uncovered
+occupations the mean covered employment moves employment-weighted mean P from 0.348 to
+0.380. S differed only marginally (Welch p = 0.057, Mann-Whitney p = 0.027).
+
+**Effect on the thesis.** Direction unchanged, magnitude understated in v1. Nothing
+previously reported was too strong; it was too weak.
+
+## A14. A2. The frontier curve is an identity and is not a finding
+
+Embodied work exposed reads 21.0, 48.7 and 80.1 percent at c = 0.2, 0.5 and 0.8. That
+tracks c almost exactly, and it is an artifact of construction: S_rank is an
+employment-weighted percentile rank, so the share of employment crossing the threshold
+equals c by definition, and P and S are near-orthogonal (r = -0.06), so P-weighting does not
+disturb it.
+
+**The frontier curve must not be presented as a result.** Recorded in
+notes/paei_c_method.md beside the employment-share identity. The findings are the ordering
+of occupations, the wage gradient along S_rank, and the empirical anchor in A15.
+
+## A15. A3 GATE: S PASSES its first external validation
+
+**What was tested.** Whether observed robot adoption is concentrated where S says it should
+be. ACES 2022 robotic equipment capital expenditure by NAICS sector, bridged to occupations
+through the PUMS OCCP by INDP employment matrix (86.4 percent of cells, 88.9 percent of
+employment, mapped to NAICS).
+
+**Result.** Among high-P occupations (P >= 0.398, n = 238):
+
+| Group | Spearman with S_rank | p |
+|---|---|---|
+| **High-P occupations (the gate)** | **+0.419** | 1.5e-11 |
+| Low-P occupations (context) | +0.184 | 4.3e-03 |
+| All occupations | +0.293 | 7.4e-11 |
+
+Robot adoption rises significantly in structure, and **the relationship is more than twice
+as strong among occupations that require a body** (+0.419 against +0.184), which is the
+pattern the theory predicts and one a spurious correlation would not produce. Sector
+intensities are plausible on their face: retail trade 611 USD per worker, manufacturing 394,
+wholesale 145, construction 44, transportation and warehousing 22.
+
+**GATE: PASS.** This is the first external evidence of any kind for S, which Step 1 showed
+carries all of PAEI's novelty and had none (A10). The novel half of the index is no longer
+unvalidated.
+
+**c_today is NOT cleanly identified, and this is the honest caveat.** The adoption profile
+across deficit deciles is not monotone: 81, 100, 12, 36, 47, 27, 68, 29, 25, 21 percent of
+peak intensity. Adoption is clearly concentrated at deficit <= 0.2 but recovers at
+(0.6, 0.7], most likely a composition artifact of retail and warehouse occupations. Three
+estimators disagree:
+
+| Estimator | c_today |
+|---|---|
+| First decile below 20 percent of peak intensity | 0.20 |
+| Deficit at 90 percent of cumulative robot spend | 0.79 |
+| Deficit at 95 percent of cumulative robot spend | 0.93 |
+
+Reported range: **c_today is somewhere in 0.2 to 0.4, with low confidence**, on the ground
+that concentration at deficit <= 0.2 is the only feature stable across specifications. The
+cumulative-spend estimators are much higher because robot spend is diffuse rather than
+sharply bounded, which is itself informative: there is no clean capability frontier visible
+in the adoption data.
+
+**Limitation, per owner instruction.** Adoption is observed at NAICS sector level while S is
+occupational, so the identifying variation is each occupation's industry mix. This is a
+convergent test, not a direct one, and occupations concentrated in the same industry receive
+similar intensity, which limits power. Commuting-zone replication awaits the Acemoglu and
+Restrepo package in data/raw/manual/.
+
+## A16. A5. The word "ceiling" is retired. Exposure is a range, not a number
+
+Recomputing the c = 1 exposure with the embodiment gate at the 25th, 40th, 50th and 60th
+percentile of P, with and without P-weighting:
+
+| Quantity at c = 1 | Range across gates |
+|---|---|
+| Share of embodied work exposed | 52.1 to 90.7 percent |
+| Wage bill at risk, P-weighted | 1,221 to 2,439 USD bn |
+| Wage bill at risk, unweighted | 2,147 to 6,203 USD bn |
+
+**This retracts the "28.4 percent ceiling" stated in A12.** That figure was a single
+gate-and-weighting choice reported as though it were a structural bound. It was too
+confident. Exposure at c = 1 is a range conditional on the embodiment gate and the
+weighting, and the unweighted range is very wide. All four gates are in
+`data/processed/a5_gate_sensitivity.csv`.
+
+## A17. A7. Magnitude against three denominators, without adjectives
+
+Wage bill at risk (ungated, P-weighted frontier):
+
+| c | USD bn | % of household debt service | % of labor-linked federal receipts | % of total wages and salaries |
+|---|---|---|---|---|
+| 0.0 | 1.6 | 0.06 | 0.04 | 0.01 |
+| 0.2 | 417.9 | 15.84 | 11.02 | 3.13 |
+| 0.5 | 1,250.2 | 47.38 | 32.98 | 9.35 |
+| 0.8 | 2,261.8 | 85.72 | 59.66 | 16.92 |
+| 1.0 | 2,935.4 | 111.25 | 77.43 | 21.96 |
+
+Denominators: household debt service 2,638.5 USD bn (TDSP applied to DPI); labor-linked
+federal receipts 3,790.9 USD bn (Step 0 SOI-corrected central estimate); total wages and
+salaries 13,365.2 USD bn (NIPA WASCUR).
+
+These are ratios of a flow at risk to flows currently serviced by that same wage bill. They
+are not loss estimates, not probabilities and not forecasts. The gate sensitivity in A16
+applies to every row.

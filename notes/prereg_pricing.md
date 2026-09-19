@@ -112,9 +112,51 @@ A null on Sample C alone will not be reported as evidence of anything.
   Fair Housing Act and disparate impact doctrine) requires legal sourcing and is **not**
   supported by this test. It must not be asserted on the basis of these regressions.
 
-## 9. Deviations
+## 9. Specification audit, run unconditionally (AMENDMENT 1, 2026-09-19)
+
+Amends Section 6. The original text ran a specification audit only if the coefficient came
+back negative and significant. That is conditioning the diagnostics on the result, which is
+exactly the practice the rest of this document exists to prevent: a suspicious result gets
+scrutinised while a convenient one does not.
+
+**The checks below run unconditionally, and they run BEFORE the coefficient of interest is
+viewed.** Their output is written to notes/pricing_results.md before any table containing
+the coefficient on PAEI(c) is produced. The analyst (and the pipeline) must be able to read
+every check without learning the sign of the effect.
+
+Checks, all on the estimation sample:
+
+1. **Collinearity.** Correlation of county PAEI(c) with county median income, county median
+   house value, county unemployment rate, county house price growth, and the share of local
+   employment in manufacturing. Variance inflation factors for every regressor. Flag any
+   |r| above 0.9 or VIF above 10.
+2. **Common support.** Distribution of PAEI(c) across the three samples (portfolio, jumbo,
+   GSE-sold). Report deciles, and flag if any sample occupies less than half the exposure
+   range of the full sample.
+3. **Sample composition.** Row counts at every filter step; share of originations dropped;
+   share of records with missing LTV, DTI, or rate spread; the rate-spread truncation share.
+4. **Fixed-effects absorption.** Number of lenders, number of counties, and the share of
+   lenders and counties that are singletons after fixed effects. Flag if singletons exceed
+   20 percent.
+5. **Outcome distribution.** Rate spread distribution, share at reporting thresholds, share
+   of exact zeros, and denial rate. Reported as distributions of the OUTCOME alone, with no
+   regressor crossed against them, so this does not reveal the effect.
+6. **Geographic coverage.** Counties present, employment covered by PAEI(c), and the share
+   of national originations in counties with no exposure measure.
+7. **Weighting and clustering.** Number of clusters; flag if below 50, where cluster-robust
+   inference is unreliable.
+8. **Placebo geography.** PAEI(c) randomly permuted across counties, specification re-run
+   50 times, and the distribution of the placebo coefficient reported. A real coefficient
+   outside that distribution is the minimum bar. This check is run and reported before the
+   true coefficient is read.
+
+If any check fails, the failure is reported alongside the result rather than used to
+justify dropping the result.
+
+## 10. Deviations
 
 Any deviation from this document is logged here with the date and the reason, and the
 original specification is reported alongside the revised one.
 
-None to date.
+- 2026-09-19, Amendment 1: specification audit made unconditional and moved before the
+  coefficient is viewed. No outcome data had been loaded at the time of this amendment.

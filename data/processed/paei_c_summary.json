@@ -1,4 +1,5 @@
 {
+  "paei_c_version": "v2-occp-spine",
   "c_grid": [
     0.0,
     0.05,
@@ -29,47 +30,47 @@
   },
   "scenario_c_values_are": "STIPULATED MODELLING ASSUMPTION, not estimated",
   "structure_scale_note": "threshold uses S_rank (employment-weighted percentile rank of S); raw-S threshold reported but degenerate",
-  "n_soc_occupations": 786,
-  "n_with_employment": 375,
-  "employment_covered": 140221855.0,
-  "wage_bill_covered_usd_bn": 7878.161494844795,
+  "n_occp_occupations": 512,
+  "n_with_employment": 476,
+  "employment_covered": 183665726.0,
+  "wage_bill_covered_usd_bn": 9870.244390057136,
   "frontier": {
     "c=0.0": {
-      "share_employment_exposed_pct": 0.04845179091376305,
-      "share_embodied_work_exposed_pct": 0.07603834989553568,
+      "share_employment_exposed_pct": 0.036991115043424054,
+      "share_embodied_work_exposed_pct": 0.056941697532112444,
       "wagebill_at_risk_usd_bn": 1.5622887810453308,
-      "mean_paei_smooth_empwt": 0.16722709543700956
+      "mean_paei_smooth_empwt": 0.16922484672251628
     },
     "c=0.2": {
-      "share_employment_exposed_pct": 20.007777674885276,
-      "share_embodied_work_exposed_pct": 19.41905113639708,
-      "wagebill_at_risk_usd_bn": 320.0382512447065,
-      "mean_paei_smooth_empwt": 0.19391464240652426
+      "share_employment_exposed_pct": 20.105727837321155,
+      "share_embodied_work_exposed_pct": 21.00936027526073,
+      "wagebill_at_risk_usd_bn": 417.91406470346124,
+      "mean_paei_smooth_empwt": 0.19651359299486526
     },
     "c=0.5": {
-      "share_employment_exposed_pct": 50.66772508465246,
-      "share_embodied_work_exposed_pct": 47.1649473362552,
-      "wagebill_at_risk_usd_bn": 889.3095989116233,
-      "mean_paei_smooth_empwt": 0.24246548762186693
+      "share_employment_exposed_pct": 51.514522638807414,
+      "share_embodied_work_exposed_pct": 48.73898441105942,
+      "wagebill_at_risk_usd_bn": 1250.1514388312407,
+      "mean_paei_smooth_empwt": 0.24625764078188617
     },
     "c=0.8": {
-      "share_employment_exposed_pct": 80.26292834308889,
-      "share_embodied_work_exposed_pct": 75.95426781070107,
-      "wagebill_at_risk_usd_bn": 1628.8948013266634,
-      "mean_paei_smooth_empwt": 0.3036627149168911
+      "share_employment_exposed_pct": 81.84969742258825,
+      "share_embodied_work_exposed_pct": 80.08362860871246,
+      "wagebill_at_risk_usd_bn": 2261.7633060442404,
+      "mean_paei_smooth_empwt": 0.30911029785636535
     },
     "c=1.0": {
       "share_employment_exposed_pct": 100.0,
       "share_embodied_work_exposed_pct": 100.0,
-      "wagebill_at_risk_usd_bn": 2235.621648253838,
-      "mean_paei_smooth_empwt": 0.3531373650440566
+      "wagebill_at_risk_usd_bn": 2935.409327652253,
+      "mean_paei_smooth_empwt": 0.3600257253571393
     }
   },
   "switchers_medium_to_high": {
-    "embodiment_gate_P_median": 0.41295000000000004,
-    "n_occupations": 27,
-    "employment": 11591709.0,
-    "employment_share_pct": 8.266692093040703,
-    "wage_bill_usd_bn": 400.1815997116014
+    "embodiment_gate_P_median": 0.39875000000000005,
+    "n_occupations": 42,
+    "employment": 21279433.0,
+    "employment_share_pct": 11.585957523724378,
+    "wage_bill_usd_bn": 781.5607021177018
   }
 }

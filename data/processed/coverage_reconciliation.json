@@ -1,0 +1,86 @@
+{
+  "steps": [
+    {
+      "step": "0. PUMS persons with an OCCP code",
+      "occupations": 530,
+      "employment": 203650740,
+      "wage_bill_usd_bn": 10884.351,
+      "employment_pct_of_start": 100.0,
+      "wage_pct_of_start": 100.0,
+      "employment_lost": NaN,
+      "wage_lost_usd_bn": NaN
+    },
+    {
+      "step": "1. OCCP present in the Census 2018 OCCP-to-SOC crosswalk",
+      "occupations": 491,
+      "employment": 187875332,
+      "wage_bill_usd_bn": 10092.451,
+      "employment_pct_of_start": 92.254,
+      "wage_pct_of_start": 92.724,
+      "employment_lost": 15775408.0,
+      "wage_lost_usd_bn": 791.9
+    },
+    {
+      "step": "2. SOC also present in PAEI (O*NET 31.0)",
+      "occupations": 375,
+      "employment": 140221855,
+      "wage_bill_usd_bn": 7878.161,
+      "employment_pct_of_start": 68.854,
+      "wage_pct_of_start": 72.381,
+      "employment_lost": 47653477.0,
+      "wage_lost_usd_bn": 2214.289
+    },
+    {
+      "step": "3. and positive wage income (the Step 2 analysis frame)",
+      "occupations": 375,
+      "employment": 117721836,
+      "wage_bill_usd_bn": 7878.161,
+      "employment_pct_of_start": 57.806,
+      "wage_pct_of_start": 72.381,
+      "employment_lost": 22500019.0,
+      "wage_lost_usd_bn": -0.0
+    }
+  ],
+  "loss2_systematic_difference_tests": {
+    "P": {
+      "mean_covered": 0.36806761788359793,
+      "mean_uncovered": 0.4100581711273317,
+      "difference": -0.0419905532437338,
+      "employment_weighted_mean_covered": 0.34793596383312775,
+      "welch_t": -3.12364050339178,
+      "welch_p": 0.0018527538693174056,
+      "mannwhitney_p": 0.0020815777019179554,
+      "cohens_d": -0.2231457623502781
+    },
+    "S": {
+      "mean_covered": 0.47812276984126995,
+      "mean_uncovered": 0.4683371654501216,
+      "difference": 0.00978560439114834,
+      "employment_weighted_mean_covered": 0.4795787065361878,
+      "welch_t": 1.9043661278487725,
+      "welch_p": 0.0572297434646054,
+      "mannwhitney_p": 0.027013098274503187,
+      "cohens_d": 0.13590568638522946
+    }
+  },
+  "loss2_bias_bound": {
+    "empwt_mean_P_covered_only": 0.34793596383312775,
+    "empwt_mean_P_bounded": 0.38041971344879927,
+    "empwt_mean_S_covered_only": 0.4795787065361878,
+    "empwt_mean_S_bounded": 0.4737004961209548
+  },
+  "nipa_reconciliation": {
+    "nipa_wages_and_salaries_usd_bn": 13365.2,
+    "nipa_series": "WASCUR",
+    "nipa_note": "Compensation of Employees: Wages and Salary Accruals",
+    "pums_total_wage_bill_usd_bn": 10884.35052969218,
+    "pums_covered_wage_bill_usd_bn": 7878.161494844796,
+    "pums_total_as_pct_of_nipa": 81.43799217140169,
+    "covered_as_pct_of_nipa": 58.94533186817104,
+    "gap_from_crosswalk_usd_bn": 3006.1890348473835,
+    "gap_from_pums_vs_nipa_usd_bn": 2480.8494703078213
+  },
+  "n_paei_soc": 786,
+  "n_covered": 375,
+  "n_uncovered": 411
+}

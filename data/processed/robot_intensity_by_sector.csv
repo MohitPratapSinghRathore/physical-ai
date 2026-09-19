@@ -1,0 +1,20 @@
+naics_label,sector,capex_musd,sector_emp,naics2_set,robot_usd_per_worker
+113-115,"Forestry, fishing, and agricultural services",33,2572719,['11'],12.827
+21,Mining,14,753485,['21'],18.58
+22,Utilities,0,1499994,['22'],0.0
+23,Construction,599,13663336,['23'],43.84
+31-33,Manufacturing,7289,18518436,"['31', '32', '33']",393.608
+42,Wholesale trade,550,3786958,['42'],145.235
+44-45,Retail trade,3552,5811653,"['44', '45']",611.186
+48-49,Transportation and warehousing,225,10312869,"['48', '49']",21.817
+51,Information,16,2536381,['51'],6.308
+52,Finance and insurance,11,6407970,['52'],1.717
+53,Real estate and rental and leasing,15,3695213,['53'],4.059
+54,"Professional, scientific and technical services",112,16029116,['54'],6.987
+55,Management of companies and enterprises,3,191038,['55'],15.704
+56,Administrative and support and waste management,77,8877921,['56'],8.673
+61,Educational services,13,19046303,['61'],0.683
+62,Health care and social assistance,304,27296284,['62'],11.137
+71,"Arts, entertainment, and recreation",2,4917246,['71'],0.407
+72,Accommodation and food services,41,14708928,['72'],2.787
+81,Other services (except public administration),106,9725105,['81'],10.9

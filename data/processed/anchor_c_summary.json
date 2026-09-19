@@ -1,0 +1,40 @@
+{
+  "gate": "PASS",
+  "gate_criterion": "among high-P occupations, observed robot adoption must rise in S_rank (equivalently fall in structure deficit), significantly",
+  "P_median_gate": 0.39835,
+  "high_P": {
+    "n": 238,
+    "spearman_S_rank": 0.4193941843172188,
+    "spearman_S_rank_p": 1.4804476293268057e-11,
+    "pearson_S_rank": 0.5247436791355892,
+    "spearman_deficit": -0.4193941843172188,
+    "spearman_deficit_p": 1.4804476293268057e-11,
+    "pearson_S_rank_empwt": 0.3604956326683787
+  },
+  "low_P": {
+    "n": 238,
+    "spearman_S_rank": 0.18445869953298838,
+    "spearman_S_rank_p": 0.004300299536890369,
+    "pearson_S_rank": 0.028909933629068144,
+    "spearman_deficit": -0.18445869953298838,
+    "spearman_deficit_p": 0.004300299536890369,
+    "pearson_S_rank_empwt": 0.017359544232355008
+  },
+  "all": {
+    "n": 476,
+    "spearman_S_rank": 0.2926706970720559,
+    "spearman_S_rank_p": 7.432916607615233e-11,
+    "pearson_S_rank": 0.32421036218458216,
+    "spearman_deficit": -0.2926706970720559,
+    "spearman_deficit_p": 7.432916607615233e-11,
+    "pearson_S_rank_empwt": 0.17465633881864512
+  },
+  "c_today_deficit_scale": {
+    "first_decile_below_20pct_of_peak": 0.2,
+    "deficit_at_90pct_of_cumulative_robot_spend": 0.7921465877254801,
+    "deficit_at_95pct_of_cumulative_robot_spend": 0.9309138456895258
+  },
+  "aces_year": 2022,
+  "aces_total_robotic_capex_musd": 12962.0,
+  "limitation": "convergent not direct: adoption observed at NAICS sector level, S is occupational; identifying variation is each occupation's industry mix"
+}

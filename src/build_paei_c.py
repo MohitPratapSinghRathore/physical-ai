@@ -52,10 +52,23 @@ RAW, OUT = ROOT / "data" / "raw", ROOT / "data" / "processed"
 C_GRID = np.round(np.arange(0.0, 1.0001, 0.05), 3)
 SCENARIOS = {"low": 0.20, "medium": 0.50, "high": 0.80}   # stipulated, see docstring
 
+# Version tag. Step 3 reads this from paei_c_summary.json and records it, so the index can
+# be revised without rewriting anything downstream.
+PAEI_C_VERSION = "v2-occp-spine"
+
+# v2 repair. v1 built the occupation frame on 6-digit SOC and attached PUMS employment by
+# the crosswalk SOC string. 100 of the 530 Census OCCP codes carry BROAD SOC codes ending
+# in 0 (53-3030 "Driver/sales workers and truck drivers", 35-2010 "Cooks") which do not
+# exist in O*NET detailed SOC, so their employment was silently dropped. That removed
+# Heavy and Tractor-Trailer Truck Drivers, Light Truck Drivers, Janitors, Cooks and
+# Farmworkers, which are among the largest and most embodied occupations in the economy,
+# and held coverage to 47.7 percent of occupations and 68.9 percent of employment.
+# v2 builds on the OCCP spine instead, which is the level at which employment is observed
+# and at which occp_to_paei.csv already carries P, S and PAEI via the broad-group fallback.
+
 
 def pums_occupation_stats():
-    """Employment, wage bill and median hourly wage by 6-digit SOC, from ACS PUMS 2023."""
-    occ = pd.read_csv(OUT / "occp_to_paei.csv")[["occp", "soc"]]
+    """Employment, wage bill and median hourly wage by Census OCCP, from ACS PUMS 2023."""
     frames = []
     z = zipfile.ZipFile(RAW / "pums" / "csv_pus.zip")
     for fn in ["psam_pusa.csv", "psam_pusb.csv"]:
@@ -70,8 +83,8 @@ def pums_occupation_stats():
     P["wage"] = (pd.to_numeric(P["WAGP"], errors="coerce").fillna(0)
                  * pd.to_numeric(P["ADJINC"], errors="coerce") / 1e6)
     P["WKHP"] = pd.to_numeric(P["WKHP"], errors="coerce")
-    P = P.merge(occ, left_on="OCCP", right_on="occp", how="inner")
-    P = P[P["PWGTP"].notna()]
+    P = P[P["PWGTP"].notna() & P["OCCP"].notna()]
+    P["occp"] = P["OCCP"].astype(int)
     hrs = P["WKHP"] * 52.0
     P["hourly"] = np.where((hrs > 0) & (P["wage"] > 0), P["wage"] / hrs, np.nan)
 
@@ -88,19 +101,19 @@ def pums_occupation_stats():
                           "wage_bill": float((d["wage"] * d["PWGTP"]).sum()),
                           "median_hourly_wage": med})
 
-    return P.groupby("soc").apply(agg, include_groups=False).reset_index()
+    return P.groupby("occp").apply(agg, include_groups=False).reset_index()
 
 
 def main():
-    paei = pd.read_csv(OUT / "paei_onet.csv")
-    paei["soc"] = paei["onet_soc"].astype(str).str[:7]
-    soc = (paei.groupby("soc")
-           .agg(title=("title", "first"), P=("embodiment_P", "mean"),
-                S=("structure_S", "mean"), PAEI_c0=("PAEI", "mean"))
-           .reset_index())
+    # OCCP spine: one row per Census occupation code, carrying P, S and PAEI already
+    # resolved (exact 6-digit SOC join, else SOC broad-group fallback) by build_dar.py.
+    spine = pd.read_csv(OUT / "occp_to_paei.csv")
+    spine = spine[spine["PAEI"].notna()].copy()
+    spine = spine.rename(columns={"PAEI": "PAEI_c0"})[
+        ["occp", "soc", "title", "P", "S", "PAEI_c0"]]
 
     stats = pums_occupation_stats()
-    df = soc.merge(stats, on="soc", how="left")
+    df = spine.merge(stats, on="occp", how="left")
 
     w = df["employment"].fillna(0.0).to_numpy(float)
     o = np.argsort(df["S"].to_numpy())
@@ -111,7 +124,8 @@ def main():
     df["deficit_rank"] = 1.0 - df["S_rank"]
 
     covered = df["employment"].notna() & (df["employment"] > 0)
-    print(f"SOC occupations: {len(df)}; with PUMS employment: {int(covered.sum())} "
+    print(f"PAEI_C_VERSION = {PAEI_C_VERSION}")
+    print(f"OCCP occupations: {len(df)}; with PUMS employment: {int(covered.sum())} "
           f"({100*covered.mean():.1f}%)")
     E = df[covered].copy()
     emp_tot, wb_tot = E["employment"].sum(), E["wage_bill"].sum()
@@ -121,7 +135,7 @@ def main():
     for _, r in df.iterrows():
         for c in C_GRID:
             recs.append({
-                "soc": r["soc"], "title": r["title"], "c": c,
+                "occp": int(r["occp"]), "soc": r["soc"], "title": r["title"], "c": c,
                 "embodiment_P": r["P"], "structure_S": r["S"],
                 "structure_S_rank": r["S_rank"],
                 "paei_smooth": r["P"] * (r["S"] ** (1.0 - c)),
@@ -138,7 +152,7 @@ def main():
 
     front = []
     for c in C_GRID:
-        g = G[(G["c"] == c) & G["soc"].isin(E["soc"])]
+        g = G[(G["c"] == c) & G["occp"].isin(E["occp"])]
         ex = g["exposed_threshold_rank"] == 1
         embodied_tot = float((g["employment"] * g["embodiment_P"]).sum())
         front.append({
@@ -173,17 +187,18 @@ def main():
     switch["employment_x_P"] = switch["employment"] * switch["P"]
     switch = switch.sort_values("employment_x_P", ascending=False)
     switch["employment_share_pct"] = 100 * switch["employment"] / emp_tot
-    switch[["soc", "title", "P", "S", "S_rank", "deficit", "employment",
+    switch[["occp", "soc", "title", "P", "S", "S_rank", "deficit", "employment",
             "employment_share_pct", "wage_bill", "median_hourly_wage"]] \
         .round(4).to_csv(OUT / "paei_c_switchers_medium_to_high.csv", index=False)
 
     summary = {
+        "paei_c_version": PAEI_C_VERSION,
         "c_grid": [float(x) for x in C_GRID],
         "scenario_c_values": SCENARIOS,
         "scenario_c_values_are": "STIPULATED MODELLING ASSUMPTION, not estimated",
         "structure_scale_note": ("threshold uses S_rank (employment-weighted percentile "
                                  "rank of S); raw-S threshold reported but degenerate"),
-        "n_soc_occupations": int(len(df)),
+        "n_occp_occupations": int(len(df)),
         "n_with_employment": int(covered.sum()),
         "employment_covered": float(emp_tot),
         "wage_bill_covered_usd_bn": float(wb_tot / 1e9),

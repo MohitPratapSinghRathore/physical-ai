@@ -1,0 +1,28 @@
+{
+  "a5_range_at_c1": {
+    "paei_c_version": "v2-occp-spine",
+    "c1_share_embodied_work_Pweighted_pct": [
+      52.099485778095115,
+      90.73371330368838
+    ],
+    "c1_wagebill_Pweighted_usd_bn": [
+      1221.2439865215117,
+      2439.416157238804
+    ],
+    "c1_wagebill_unweighted_usd_bn": [
+      2147.24742728781,
+      6202.535163634532
+    ]
+  },
+  "a5_gates": {
+    "25": 0.19966250000000002,
+    "40": 0.315233,
+    "50": 0.39835,
+    "60": 0.4818
+  },
+  "a7_denominators": {
+    "household_debt_service_usd_bn": 2638.4717520000004,
+    "labor_linked_federal_receipts_central_usd_bn": 3790.9237405927897,
+    "total_wages_and_salaries_nipa_usd_bn": 13365.2
+  }
+}
