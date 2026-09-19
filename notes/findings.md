@@ -5082,3 +5082,132 @@ with mild displacement it UNDERSTATES, because mild displacement produces less s
 terminal R ABOVE the 2026 baseline, so the early years of the path carry a lower R than the
 terminal value. Both effects are small relative to the parameter ranges elsewhere and the
 terminal-R simplification is retained with this bound stated.
+
+## A74. THE SCENARIO AXIS WAS WRONG ALL ALONG. "Ninety percent of exposed" was never majority displacement
+
+`src/scenario_axis.py`. Every scenario in this project has been stated as a share of the
+EXPOSED wage bill, where exposed means the top quintile of an index. That is a moving
+denominator and it is not comparable across constructs.
+
+### What the old headline scenarios actually were
+
+| Group | 90 percent of exposed equals this share of the TOTAL wage bill |
+|---|---|
+| Embodied, top quintile | **12.3%** |
+| Cognitive GPT, top quintile | 16.5% |
+| Cognitive AIOE, top quintile | 20.8% |
+| Both types, top quintile | **33.0%** |
+
+**The owner's majority-displacement hypothesis was not reachable in the old grid at all.**
+The most extreme scenario the project has reported, ninety percent of both exposure types,
+displaces a third of the total wage bill. Every earlier statement of the form "90 percent
+displacement" should be read as "33 percent of the wage bill at most, and 12 percent for
+embodied alone".
+
+### The extended grid
+
+Broader definitions added, the top 30 and top 50 percent of each index by employment plus the
+unions. Share of the TOTAL wage bill now reachable:
+
+| Group | 50% of exposed | 75% | 90% | 100% |
+|---|---|---|---|---|
+| Embodied top 50 | 16.8 | 25.2 | 30.3 | 33.7 |
+| Cognitive AIOE top 50 | 23.7 | 35.6 | 42.7 | 47.5 |
+| Both AIOE top 30 | 25.2 | 37.8 | 45.3 | 50.3 |
+| Both AIOE top 50 | 38.4 | 57.6 | 69.1 | 76.8 |
+| **Both GPT top 50** | 41.9 | 62.8 | **75.4** | **83.7** |
+
+**Maximum reachable: 83.7 percent of the total wage bill.** Majority displacement is now
+expressible.
+
+**Broadening does not make the extrapolation safe, only expressible.** A63 and A65 showed
+measured concentration falls monotonically with group breadth, so a top-50 group is a WEAKER
+claim about who is exposed, not a more aggressive one. Every broad-definition scenario is
+labelled outside the data where it is.
+
+---
+
+## A75. THE ORDER OF STRESS. The public budget crosses first, the trust funds second, and NO PRIVATE BALANCE SHEET EVER CROSSES
+
+`src/order_of_stress.py`. Every scenario expressed against the Federal Reserve's 2026
+severely adverse scenario. **Materiality threshold stated before the result: a balance sheet
+is materially stressed when the scenario's incremental loss reaches 25 percent of what the
+Fed's severely adverse scenario produces for that same sheet.**
+
+### The table
+
+Cognitive AIOE exposure, incumbent incidence, by share of the TOTAL wage bill displaced.
+Columns are the scenario loss as a percent of the corresponding Fed severely adverse loss,
+except the last two which are the fiscal channel.
+
+| Share of total wage bill | Mortgage | Card | Auto and student | Public budget, % of receipts | Trust funds, % of OASDI payroll |
+|---|---|---|---|---|---|
+| 5% | 0.49 | 0.02 | 0.18 | 0.46 | 2.10 |
+| **10%** | 1.13 | 0.05 | 0.41 | **1.01** | 4.54 |
+| **25%** | 2.86 | 0.12 | 1.05 | 2.05 | **9.29** |
+| 50% | 5.62 | 0.24 | 2.06 | 2.05 | 9.29 |
+| 75% | **8.70** | 0.38 | 3.19 | 2.05 | 9.29 |
+
+### The verdict
+
+| Share of total wage bill | What crosses |
+|---|---|
+| 5% | **NO THRESHOLD CROSSED** |
+| 10% | Public budget |
+| 25% | Public budget, **trust funds** |
+| 50% | Public budget, trust funds |
+| 75% | Public budget, trust funds |
+
+**No private balance sheet crosses at any displacement level in the grid, including
+majority displacement of the wage bill.** At 75 percent of the total wage bill displaced,
+household credit losses reach **8.7 percent** of the Fed's severely adverse mortgage loss,
+**0.38 percent** of its credit card loss, and **0.6 percent of the 708 billion dollars the
+Fed's own test absorbs**.
+
+### Against the registered expectation
+
+The prereg (`notes/prereg_order_of_stress.md`) predicted: slow regime, only the public budget;
+fast regime, household distress and rent arrears follow; sudden regime, the double trigger
+reaches bank-held mortgages in cognitive-heavy metros.
+
+- **Slow regime, only the public budget: CONFIRMED.** And as the prereg itself flagged, this
+  half was nearly tautological because the fiscal condition already fails at zero displacement.
+- **Fast regime, household distress follows: REFUTED.** It does not follow at any level. The
+  household channel never approaches the threshold.
+- **Sudden regime, the double trigger reaches bank-held mortgages: REFUTED at this stage.**
+  The mortgage channel peaks at 8.7 percent of the Fed benchmark, a third of the way to
+  materiality, at a displacement level far outside the data.
+
+**The registered expectation was right about the ordering and wrong about whether anything
+else ever arrives.** The order is public budget, then trust funds, then nothing.
+
+### Why this is the most thesis-weakening result in the project
+
+The project began as a financial stability paper about credit. **On the measured numbers
+there is no credit event, at any displacement level this grid can express, even under
+majority displacement of the wage bill.** The mechanism that binds is entirely fiscal, and it
+binds on the payroll-funded trust funds first because they have the smallest denominator and
+the most labour-linked revenue.
+
+That is consistent with everything upstream: A41 found the household channel small, A42 found
+share attribution overstated it fivefold, A56 found the flow effect smaller still, and A67
+found first-lien mortgages are the most loss-resistant asset on the bank balance sheet at 1.5
+percent in the Fed's own severely adverse test. This is where that chain ends.
+
+### Three flagged proxies and one defect, named
+
+- **DSCR**: Freddie Mac's Multifamily Seller/Servicer Guide is a JavaScript application and
+  its product PDFs returned HTTP errors; Fannie Mae Form 4660 sits behind DUS Navigate. A
+  range of 1.20 to 1.35 is used and flagged. The landlord and multifamily row is therefore
+  the weakest in the table.
+- **Auto**: the Fed folds automobile and student loans into "other consumer" at 7.3 percent,
+  and that rate is used for both. Exact document: the New York Fed Household Debt and Credit
+  companion data file.
+- **Agency against bank portfolio**: no verified holder split was obtained; a 60 to 70 percent
+  agency range is carried and flagged. Because no mortgage scenario approaches materiality,
+  the split does not change any verdict.
+- **DEFECT, stated rather than hidden**: the fiscal columns SATURATE above 25 percent of the
+  total wage bill, because the fiscal persistence run was built on top-quintile scenarios
+  that cap at 23.1 percent. The 2.05 and 9.29 figures at 50 and 75 percent are floors, not
+  estimates. The fiscal side must be rerun on the extended axis before those two cells are
+  quoted.

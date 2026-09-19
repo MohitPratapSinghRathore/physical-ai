@@ -1,0 +1,128 @@
+{
+  "total_wage_bill_bn": 9870.244390057136,
+  "total_employment": 183665726.0,
+  "groups": [
+    {
+      "group": "embodied_top20",
+      "n_occupations": 132,
+      "employment": 36933207.0,
+      "employment_share": 0.20109,
+      "wage_bill_bn": 1343.88487,
+      "wage_bill_share": 0.13616
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "n_occupations": 75,
+      "employment": 28250631.0,
+      "employment_share": 0.15382,
+      "wage_bill_bn": 1807.71218,
+      "wage_bill_share": 0.18315
+    },
+    {
+      "group": "embodied_top30",
+      "n_occupations": 180,
+      "employment": 56110205.0,
+      "employment_share": 0.3055,
+      "wage_bill_bn": 2014.9045,
+      "wage_bill_share": 0.20414
+    },
+    {
+      "group": "cognitive_AIOE_top20",
+      "n_occupations": 73,
+      "employment": 24331895.0,
+      "employment_share": 0.13248,
+      "wage_bill_bn": 2279.12601,
+      "wage_bill_share": 0.23091
+    },
+    {
+      "group": "cognitive_AIOE_top30",
+      "n_occupations": 100,
+      "employment": 36926746.0,
+      "employment_share": 0.20105,
+      "wage_bill_bn": 2954.72077,
+      "wage_bill_share": 0.29936
+    },
+    {
+      "group": "cognitive_GPT_top30",
+      "n_occupations": 117,
+      "employment": 42427607.0,
+      "employment_share": 0.231,
+      "wage_bill_bn": 2994.6394,
+      "wage_bill_share": 0.3034
+    },
+    {
+      "group": "both_GPT_top20",
+      "n_occupations": 207,
+      "employment": 65183838.0,
+      "employment_share": 0.3549,
+      "wage_bill_bn": 3151.59705,
+      "wage_bill_share": 0.3193
+    },
+    {
+      "group": "embodied_top50",
+      "n_occupations": 257,
+      "employment": 91902421.0,
+      "employment_share": 0.50038,
+      "wage_bill_bn": 3322.15481,
+      "wage_bill_share": 0.33658
+    },
+    {
+      "group": "both_AIOE_top20",
+      "n_occupations": 205,
+      "employment": 61265102.0,
+      "employment_share": 0.33357,
+      "wage_bill_bn": 3623.01088,
+      "wage_bill_share": 0.36706
+    },
+    {
+      "group": "cognitive_AIOE_top50",
+      "n_occupations": 151,
+      "employment": 62219980.0,
+      "employment_share": 0.33877,
+      "wage_bill_bn": 4683.52002,
+      "wage_bill_share": 0.47451
+    },
+    {
+      "group": "both_AIOE_top30",
+      "n_occupations": 280,
+      "employment": 93036951.0,
+      "employment_share": 0.50656,
+      "wage_bill_bn": 4969.62527,
+      "wage_bill_share": 0.5035
+    },
+    {
+      "group": "both_GPT_top30",
+      "n_occupations": 296,
+      "employment": 97816122.0,
+      "employment_share": 0.53258,
+      "wage_bill_bn": 4985.66778,
+      "wage_bill_share": 0.50512
+    },
+    {
+      "group": "cognitive_GPT_top50",
+      "n_occupations": 162,
+      "employment": 70238782.0,
+      "employment_share": 0.38243,
+      "wage_bill_bn": 5294.11837,
+      "wage_bill_share": 0.53637
+    },
+    {
+      "group": "both_AIOE_top50",
+      "n_occupations": 400,
+      "employment": 148101915.0,
+      "employment_share": 0.80637,
+      "wage_bill_bn": 7581.75299,
+      "wage_bill_share": 0.76814
+    },
+    {
+      "group": "both_GPT_top50",
+      "n_occupations": 405,
+      "employment": 155446011.0,
+      "employment_share": 0.84635,
+      "wage_bill_bn": 8266.23827,
+      "wage_bill_share": 0.83749
+    }
+  ],
+  "max_reachable_share_of_total_wage_bill": 0.8374907388435064,
+  "note": "Broadening the exposure definition makes majority displacement EXPRESSIBLE, not safe. Measured concentration falls monotonically with breadth (A63, A65), so a top-50 group is a weaker claim about who is exposed, not a more aggressive one."
+}

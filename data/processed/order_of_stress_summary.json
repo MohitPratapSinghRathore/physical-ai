@@ -1,0 +1,80 @@
+{
+  "benchmark": {
+    "total_losses_bn": 624.9,
+    "absorbed_bn": 708.0,
+    "cet1_fall_pp": 1.6,
+    "rates": {
+      "first_lien_mortgage": 0.015,
+      "junior_heloc": 0.032,
+      "credit_card": 0.171,
+      "other_consumer": 0.073,
+      "cre": 0.088,
+      "ci": 0.09
+    },
+    "losses_bn": {
+      "first_lien_mortgage": 22.5,
+      "junior_heloc": 5.5,
+      "credit_card": 203.0,
+      "other_consumer": 54.1,
+      "cre": 76.5,
+      "ci": 158.2
+    }
+  },
+  "materiality": 0.25,
+  "flagged_proxies": {
+    "dscr_range": [
+      1.2,
+      1.35
+    ],
+    "dscr_document": "Fannie Mae Form 4660; Freddie Mac Multifamily Seller/Servicer Guide Chapter 8101",
+    "auto_loss_rate": "Fed other-consumer 7.3 percent used for auto AND student",
+    "auto_document": "NY Fed Household Debt and Credit companion data file",
+    "agency_share_range": [
+      0.6,
+      0.7
+    ],
+    "agency_document": "no verified holder split obtained"
+  },
+  "table": [
+    {
+      "share_of_total_wage_bill_pct": 5,
+      "mortgage_pct_of_fed": 0.487,
+      "card_pct_of_fed": 0.0212,
+      "otherconsumer_pct_of_fed": 0.1785,
+      "public_budget_pct_receipts": 0.4645,
+      "trust_fund_pct_OASDI": 2.0996
+    },
+    {
+      "share_of_total_wage_bill_pct": 10,
+      "mortgage_pct_of_fed": 1.1256,
+      "card_pct_of_fed": 0.049,
+      "otherconsumer_pct_of_fed": 0.4126,
+      "public_budget_pct_receipts": 1.0052,
+      "trust_fund_pct_OASDI": 4.5434
+    },
+    {
+      "share_of_total_wage_bill_pct": 25,
+      "mortgage_pct_of_fed": 2.8605,
+      "card_pct_of_fed": 0.1246,
+      "otherconsumer_pct_of_fed": 1.0485,
+      "public_budget_pct_receipts": 2.0544,
+      "trust_fund_pct_OASDI": 9.2856
+    },
+    {
+      "share_of_total_wage_bill_pct": 50,
+      "mortgage_pct_of_fed": 5.6189,
+      "card_pct_of_fed": 0.2448,
+      "otherconsumer_pct_of_fed": 2.0596,
+      "public_budget_pct_receipts": 2.0544,
+      "trust_fund_pct_OASDI": 9.2856
+    },
+    {
+      "share_of_total_wage_bill_pct": 75,
+      "mortgage_pct_of_fed": 8.6998,
+      "card_pct_of_fed": 0.379,
+      "otherconsumer_pct_of_fed": 3.1889,
+      "public_budget_pct_receipts": 2.0544,
+      "trust_fund_pct_OASDI": 9.2856
+    }
+  ]
+}
