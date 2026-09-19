@@ -90,6 +90,20 @@
     "title": "Personal current taxes",
     "leg": "taxbase"
   },
+  "W071RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 692.052,
+    "units": "USD bn",
+    "title": "State and local government current tax receipts: Personal current taxes",
+    "leg": "taxbase"
+  },
+  "W070RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 2830.805,
+    "units": "USD bn",
+    "title": "State and local government current tax receipts",
+    "leg": "taxbase"
+  },
   "GDI": {
     "date": "2026-04-01",
     "value": 32245.142,

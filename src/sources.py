@@ -18,6 +18,8 @@ FRED_SERIES = {
     "W780RC1Q027SBEA": "taxbase", # FEDERAL contributions for govt social insurance
     "W782RC1Q027SBEA": "taxbase", # ALL-GOVERNMENT contributions for social insurance
     "W055RC1Q027SBEA": "taxbase", # personal current taxes, all levels of government
+    "W071RC1Q027SBEA": "taxbase", # STATE AND LOCAL personal current taxes
+    "W070RC1Q027SBEA": "taxbase", # STATE AND LOCAL current tax receipts
     "GDI":             "denom",   # gross domestic income (wage-share denominator)
     "A053RC1Q027SBEA": "taxbase", # corporate profits before tax (non-labor base proxy)
     # --- wage bill and denominators ---
