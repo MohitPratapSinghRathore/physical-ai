@@ -263,3 +263,55 @@ No one can guarantee this. These are the levers that are under our control:
 4. Pull the latest capex and debt figures for the largest hyperscalers and robotics firms from filings. Record funding source splits where disclosed.
 5. Produce a first rough Leg W versus Leg A ratio for the United States only, with the tiered definition, and write `notes/findings.md` stating plainly whether the bet looks two-sided or lopsided.
 6. List every open question and every blocked data source (paywalled: IFR, Scopus, Preqin) for the owner.
+
+# STANDING REQUIREMENTS
+
+Owner decision, 2026-09-19. These apply to EVERY session from now on and override any
+earlier convention they conflict with.
+
+## 1. Audience
+
+Primary: bank supervisors, central bank financial stability teams, finance ministries, the
+IMF and the BIS. Secondary: commercial banks, auto lenders, rating agencies.
+
+**Write results so a stress-test designer can USE them, not only cite them.** That means loss
+rates by loan category, severity expressed against a recognised benchmark scenario, and
+thresholds stated as rules a supervisor could put in a scenario document.
+
+## 2. Three regimes, always reported together
+
+| Regime | Definition |
+|---|---|
+| **SLOW** | Annual displacement flow inside the speed limit |
+| **FAST** | Above the speed limit, implied slack still inside the observed data range |
+| **SUDDEN** | 2 to 5 year horizons, outside the observed range, reported as labelled scenario BANDS |
+
+**No result is ever quoted as a cumulative percentage without its horizon.** A displacement
+level with no horizon attached is uninterpretable, because the frontier showed the annual
+flow is what drives the speed-driven channel.
+
+## 3. Scenario file, a published artifact
+
+`data/release/scenarios/`, in the style of the NGFS climate scenarios. For each regime and
+each exposure type (embodied, cognitive on both indices, both together), machine-readable
+paths for: unemployment, reemployment rate, retained wage share, income loss by occupation
+group, house price change by metro type, and the fiscal position. With a data dictionary, a
+version number, and a plain statement of which values are ESTIMATED and which are SCENARIO
+ASSUMPTIONS. **Every frontier or engine change regenerates it.**
+
+## 4. Trigger dashboard
+
+`data/release/dashboard/`, every trigger indicator computable from public data, with its
+current value, source, date, and threshold where one exists: retained wage share R from the
+latest DWS; annual displacement flow against the speed limit; effective capital tax rate
+against the required rate; payroll share of OASDI income and the trust fund balance; auto
+loan delinquency; driverless fleet counts from company disclosures, labelled as such; bank
+AI-linked lending concentration from the verified Chicago Fed figures. **Regenerated whenever
+an input changes.**
+
+## 5. Bank-relevant breakouts, always explicit even when small
+
+Bank-held against agency mortgages; jumbo exposure in cognitive-heavy high-cost metros under
+the sudden regime; auto credit to the driving pathway; AI-linked lending concentration. These
+are reported even where the measured effect is small, because "small" is itself the finding a
+supervisor needs.

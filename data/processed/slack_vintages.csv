@@ -1,0 +1,15 @@
+rho_percent_stated,release_file,url,release_date,survey_month,total_millions,window_start,window_end,rho,survey_unrate,ep_ratio,nonemployment_rate,prime_ep,prime_nonemployment,unrate,ep_gap
+74.0,disp_08092000.txt,https://www.bls.gov/news.release/history/disp_08092000.txt,2000-08-09,2000-01-01,3.3,1997.0,1999.0,0.74,4.0,64.6,35.4,81.7276,18.2724,4.0,0.0
+65.0,disp_08212002.txt,https://www.bls.gov/news.release/history/disp_08212002.txt,2002-08-21,2002-01-01,4.0,1999.0,2001.0,0.65,5.7,62.7,37.3,79.6074,20.3927,5.7,1.9
+65.0,disp_07302004.txt,https://www.bls.gov/news.release/history/disp_07302004.txt,2004-07-30,2004-01-01,5.3,,,0.65,5.7,62.3,37.7,78.8869,21.1131,5.7,2.3
+70.0,disp_08172006.txt,https://www.bls.gov/news.release/history/disp_08172006.txt,2006-08-17,2006-01-01,3.8,,,0.7,4.7,62.9,37.1,79.4793,20.5207,4.7,1.7
+68.0,disp_08202008.htm,https://www.bls.gov/news.release/archives/disp_08202008.htm,2008-08-20,2008-01-01,,,,0.68,5.0,62.9,37.1,79.8249,20.1751,5.0,1.7
+49.0,disp_08262010.htm,https://www.bls.gov/news.release/archives/disp_08262010.htm,2010-08-26,2010-01-01,6.9,,,0.49,9.8,58.5,41.5,75.2939,24.7061,9.8,6.1
+56.0,disp_08242012.htm,https://www.bls.gov/news.release/archives/disp_08242012.htm,2012-08-24,2012-01-01,6.1,,,0.56,8.3,58.4,41.6,75.533,24.467,8.3,6.2
+61.0,disp_08262014.htm,https://www.bls.gov/news.release/archives/disp_08262014.htm,2014-08-26,2014-01-01,4.3,,,0.61,6.6,58.8,41.2,76.3912,23.6088,6.6,5.8
+66.0,disp_08252016.htm,https://www.bls.gov/news.release/archives/disp_08252016.htm,2016-08-25,2016-01-01,,,,0.66,4.8,59.7,40.3,77.7199,22.2801,4.8,4.9
+66.0,disp_08282018.htm,https://www.bls.gov/news.release/archives/disp_08282018.htm,2018-08-28,2018-01-01,,,,0.66,4.0,60.1,39.9,78.9267,21.0733,4.0,4.5
+70.0,disp_08272020.htm,https://www.bls.gov/news.release/archives/disp_08272020.htm,2020-08-27,2020-01-01,,,,0.7,3.6,61.1,38.9,80.5759,19.4241,3.6,3.5
+65.0,disp_08262022.htm,https://www.bls.gov/news.release/archives/disp_08262022.htm,2022-08-26,2022-01-01,,,,0.65,4.0,59.7,40.3,79.2248,20.7752,4.0,4.9
+65.7,disp_08292024.htm,https://www.bls.gov/news.release/archives/disp_08292024.htm,2024-08-29,2024-01-01,,,,0.657,3.7,60.2,39.8,80.61,19.39,3.7,4.4
+66.1,disp_08272026.htm,https://www.bls.gov/news.release/archives/disp_08272026.htm,2026-08-27,2026-01-01,,,,0.661,4.3,59.4,40.6,80.6891,19.3109,4.3,5.2

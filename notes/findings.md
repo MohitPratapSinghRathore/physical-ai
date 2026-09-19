@@ -4242,3 +4242,113 @@ labour force shrinks, so measured unemployment rises less than proportionally. *
 that needs a threshold in the household or unemployment channel does not have one here.** The
 nonlinearity, if the paper has one, has to come from the balance-sheet side, which is what
 the order-of-failure work is for.
+
+## A63. THE CIRCULARITY WAS REAL. Correcting it reverses the nonlinearity result and cuts the speed limit by a factor of two and a half
+
+`src/slack_reestimate.py`, `src/stock_flow_v2.py`. The owner identified a defect in A56, A61
+and A62 and it is confirmed.
+
+### The defect
+
+The stock-flow model let unemployed workers exit to nonparticipation, which removes them from
+BOTH the numerator and the denominator of the unemployment rate. The reemployment hazard was
+then driven by that same suppressed unemployment rate through `rho = 0.8090 - 0.0304 u`, so
+the model was rewarded for the exits: exits suppress u, suppressed u raises rho, higher rho
+drains the stock faster, which suppresses u further. **A56's speed limit, A61's cumulative
+ceiling and A62's unemployment paths were all too generous.**
+
+Exit to nonparticipation is also not a benign outcome. A displaced worker who stops looking
+has lost their wage income as completely as one counted unemployed.
+
+### The repair, and the measure it settles on
+
+Three slack measures fitted on the same fourteen DWS vintages:
+
+| Measure | Fit | R-squared | t |
+|---|---|---|---|
+| Unemployment rate (original, circular) | rho = 0.8090 - 0.0304 u | 0.812 | -7.20 |
+| Nonemployment 16 and over | rho = 1.5597 - 0.0233 x | 0.540 | -3.76 |
+| **Prime-age nonemployment, 25 to 54** | **rho = 1.2280 - 0.0275 x** | **0.773** | **-6.40** |
+
+The 16-and-over measure is rejected twice over: it fits worst, and it falls secularly with
+population ageing, so it conflates demographics with slack and its observed range at the
+vintage dates is about one point wide, which makes any speed limit computed against it
+degenerate. **Prime-age nonemployment strips the demographic trend, has a 6.4 point observed
+range (18.27 to 24.71) and fits nearly as well as the circular original.** It is also the
+better match to the population being modelled, since DWS displaced workers are long-tenured
+and overwhelmingly prime-age.
+
+### A second casualty: the exit share does not actually depend on slack
+
+A54 fitted exit share on the unemployment rate at R-squared 0.777 and I reported it as a
+finding. **Re-fitted on nonemployment it is R-squared 0.137, t = -1.13, not significant.**
+The original fit was partly mechanical: exit share is NILF over (U plus NILF) and the
+unemployment rate is U over (U plus E), so both move with U by construction. Regressing one
+on the other is partly regressing a ratio on its own component. **Claim 57 is downgraded.**
+The exit share is held at the 2026 value of 0.462 with the observed range 0.296 to 0.643 as
+sensitivity.
+
+### Result 1: the speed limit is two and a half times tighter
+
+Baseline prime-age nonemployment 19.31 percent against a sample maximum of 24.71.
+
+| Horizon | phi = 0 | phi = 0.5 | phi = 1 | A56 and A61 reported |
+|---|---|---|---|---|
+| 2y | 4.80 | 4.75 | 4.65 | 4.50 |
+| 5y | 2.75 | 2.60 | 2.50 | 3.40 |
+| **10y** | **1.25** | **1.15** | **1.10** | **3.15** |
+| 20y | breached at every grid value | | | 3.05 |
+
+### Result 2: the cumulative ceiling is four to five times lower
+
+| Horizon | phi = 0 | phi = 0.5 | phi = 1 | A61 reported |
+|---|---|---|---|---|
+| 2y | 9.6% | 9.5% | 9.3% | 9.0% |
+| 5y | 13.8% | 13.0% | 12.5% | 17.0% |
+| 10y | **12.5%** | 11.5% | **11.0%** | **31.5%** |
+
+A61 put the twenty-year ceiling at 36 to 61 percent of employment. **Corrected, no
+twenty-year path stays inside the observed range at any displacement flow in the grid**, and
+the ten-year ceiling is 11 to 12.5 percent.
+
+### Result 3, and it reverses last session's headline: THE THRESHOLD IS REAL
+
+Quadratic fits at the ten-year horizon, R-squared 0.999 or better:
+
+| phi | Metric | Curvature | **Acceleration ratio** | A62 reported |
+|---|---|---|---|---|
+| 0.0 | Prime-age E/P drop | +0.335 | **2.33** | not measured |
+| 0.5 | Prime-age E/P drop | +0.425 | **2.54** | not measured |
+| 1.0 | Prime-age E/P drop | +0.503 | **2.63** | not measured |
+| 0.0 | Wage income | -0.003 | **1.75** | not measured |
+| 1.0 | Wage income | -0.005 | **2.03** | not measured |
+| 0.0 | Unemployment | +0.185 | **2.39** | **0.742** |
+| 1.0 | Unemployment | +0.280 | **2.55** | **0.494** |
+
+**A62 reported curvature negative in all twelve cells, acceleration ratios of 0.255 to 0.969,
+and concluded there is no tipping point. That result is WITHDRAWN.** It was an artifact of
+the circular hazard, which flattened the paths precisely where they should have steepened.
+On the corrected model the marginal harm **more than doubles** between the lowest and highest
+flows, on every outcome measure and at every phi.
+
+Claim 75 moves from REFUTED back to supported, in a stronger form than originally posed: the
+acceleration is present on employment to population and on aggregate wage income, not only on
+unemployment.
+
+### The consistency check now behaves, with one honest caveat
+
+Realised reemployment share minus the rho implied by the model's own slack runs +0.01 to
++0.59, against gaps above +4 in the uncorrected model. The residual positive gap is a
+path-average artifact: the realised share is cumulative over the whole path, including early
+years when slack was still low, while the implied rho is the terminal value. It is largest
+where implied rho has been clipped at zero. It is not the original defect and it is recorded
+rather than removed.
+
+### Release artifacts regenerated
+
+`data/release/scenarios/` at version 0.3.0 and `data/release/dashboard/`, per the standing
+requirements. **A pooled regime count is worth flagging: of 120 scenario paths, 58 are SLOW
+and 62 are SUDDEN, and NONE are FAST.** On the corrected slack measure the speed limit and
+the edge of the observed data nearly coincide, so the middle regime is almost empty. The
+three-regime structure survives, but the FAST band is much narrower than the SLOW and SUDDEN
+ones and the paper should say so rather than implying three equally populated cases.
