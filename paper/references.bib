@@ -1,0 +1,85 @@
+% Verified references. Nothing enters this file until title, authors, venue and year have
+% been read from the publisher's own page or PDF. Anything short of that lives in
+% lit/unverified.md. See lit/protocol.md.
+
+% ---------------------------------------------------------------------------
+% Household stress-testing method. These are the precedents src/stress/ follows.
+% Verified 2026-09-19 against the publishers' own pages.
+% ---------------------------------------------------------------------------
+
+@techreport{BhuttaBrickerDettlingKelliherLaufer2019,
+  author      = {Bhutta, Neil and Bricker, Jesse and Dettling, Lisa J. and
+                 Kelliher, Jimmy and Laufer, Steven M.},
+  title       = {Stress Testing Household Debt},
+  institution = {Board of Governors of the Federal Reserve System},
+  type        = {Finance and Economics Discussion Series},
+  number      = {2019-008},
+  year        = {2019},
+  month       = feb,
+  doi         = {10.17016/FEDS.2019.008},
+  url         = {https://www.federalreserve.gov/econres/feds/stress-testing-household-debt.htm},
+  note        = {County-level delinquency model driven by CCAR house-price and unemployment
+                 shocks. NOT a household microsimulation: it is cited here for the
+                 scenario-driven stress-test framing, not for the unit of analysis.}
+}
+
+@article{MerikullRoom2020,
+  author  = {Meri{\"k}{\"u}ll, Jaanika and R{\~o}{\~o}m, Tairi},
+  title   = {Stress Tests of the Household Sector Using Microdata from Survey and
+             Administrative Sources},
+  journal = {International Journal of Central Banking},
+  volume  = {16},
+  number  = {2},
+  year    = {2020},
+  month   = mar,
+  url     = {https://www.ijcb.org/journal/v16n2/stress-tests-household-sector-using-microdata-survey-and-administrative-sources},
+  note    = {Microsimulation-based household stress test on the Estonian HFCS, survey data
+             matched to administrative registers. The closest methodological precedent for
+             src/stress/: household-by-household shock, not group-share attribution. Also
+             the source of the warning that survey data understate liabilities and overstate
+             assets relative to registers, which bounds the direction of error in the SIPP
+             balance-sheet figures used here.}
+}
+
+@article{AlbaceteFessler2010,
+  author  = {Albacete, Nicolas and Fessler, Pirmin},
+  title   = {Stress Testing Austrian Households},
+  journal = {Financial Stability Report},
+  publisher = {Oesterreichische Nationalbank},
+  number  = {19},
+  pages   = {72--91},
+  year    = {2010},
+  url     = {https://ideas.repec.org/a/onb/oenbfs/y2010i19b2.html},
+  note    = {Origin of the "financial margin" construction: income minus debt service minus
+             basic consumption, stressed household by household against interest rate,
+             unemployment, asset price and exchange rate shocks. The runway measures in
+             src/stress/sipp_engine.py are deliberately a bounded version of this, because
+             this repository has no measured US consumption floor and will not invent one.}
+}
+
+% ---------------------------------------------------------------------------
+% Leg A: measured bank exposure to AI capital. Verified 2026-09-19 against the
+% Chicago Fed's own page, including every figure quoted in notes/findings.md A45.
+% ---------------------------------------------------------------------------
+
+@article{CohenKillenLau2026,
+  author    = {Cohen, Greg and Killen, Cooper and Lau, Simon},
+  title     = {Tail Risk for Banks Posed by Investments in Generative Artificial
+               Intelligence},
+  journal   = {Chicago Fed Insights},
+  publisher = {Federal Reserve Bank of Chicago},
+  year      = {2026},
+  month     = feb,
+  url       = {https://www.chicagofed.org/publications/chicago-fed-insights/2026/ai-tail-risk-for-banks},
+  note      = {Verified figures: average bank outstanding to AI-adjacent industries about
+               0.8 percent of bank total assets; large-bank C and I commitments to
+               AI-adjacent industries from about 9 percent of total commitments (about
+               250 billion USD) in 2015 to 13 percent (about 450 billion USD) in late 2025;
+               software industry commitments 150 billion USD in early 2022 to 191 billion
+               USD in late 2025; energy and semiconductor commitments combined about 275
+               billion USD; C and I OUTSTANDING exposure to AI-adjacent industries averages
+               9 percent of tier 1 capital and COMMITTED exposure about 25 percent of tier 1
+               capital; about 26 percent (50 billion USD) of software C and I commitments
+               rated B and below, against 15 billion USD for energy and semiconductors
+               combined.}
+}

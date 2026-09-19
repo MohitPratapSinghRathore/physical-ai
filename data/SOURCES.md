@@ -103,6 +103,19 @@ Retrieved 88 of 190 company-concept series.
   limits themselves are not used in any current result. Counties with no CBSA Number are
   non-metro and are pooled into one residual group, which is a stated limitation of A40.
 
+## Federal Reserve Bank of Chicago, bank exposure to AI-adjacent industries (Leg A)
+
+- Reference: Cohen, Killen and Lau, "Tail Risk for Banks Posed by Investments in Generative
+  Artificial Intelligence", Chicago Fed Insights, February 2026
+- URL: https://www.chicagofed.org/publications/chicago-fed-insights/2026/ai-tail-risk-for-banks
+- Retrieved: 2026-09-19, read directly from the publisher page
+- Licence: Federal Reserve Bank of Chicago, publicly available.
+- Notes: Figures transcribed verbatim into paper/references.bib and notes/findings.md A45.
+  This is a SECONDARY source reporting supervisory data (Y-14 style C and I commitments)
+  that this repository cannot access directly. Every figure taken from it is attributed to
+  it and is never presented as this project's own measurement. The owner's manual copy was
+  not needed: the page is reachable from this environment.
+
 ## Blocked or paywalled, not used
 
 | Source | Status | Needed for |

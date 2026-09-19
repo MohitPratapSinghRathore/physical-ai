@@ -124,6 +124,15 @@ def main():
                          + fh["FIPS County Code"].astype(str).str.zfill(3))
     Cty = Cty.merge(fh[["county_fips", "CBSA Number"]].drop_duplicates("county_fips"),
                     on="county_fips", how="left")
+    # REPAIR. The first run pooled every non-metro county into ONE pseudo-group, which put
+    # all rural variation into the "within" term and biased the decomposition. Non-metro
+    # counties now form one group PER STATE (state non-metro remainders), the standard BEA
+    # and BLS treatment, which keeps every group geographically coherent.
+    Cty["state_fips"] = Cty["county_fips"].str[:2]
+    Cty["region_group"] = np.where(
+        Cty["CBSA Number"].notna(),
+        "CBSA_" + Cty["CBSA Number"].astype("Int64").astype(str),
+        "NONMETRO_" + Cty["state_fips"])
 
     rows = []
     for g in groups:
@@ -138,10 +147,13 @@ def main():
                 I, E = morans_i(rate.to_numpy(), Cty["INTPTLAT"].to_numpy(),
                                 Cty["INTPTLONG"].to_numpy(), Cty["wt"].to_numpy())
                 rec["morans_I"] = I; rec["morans_E"] = E
-                t, wi, be = theil(rate, Cty["wt"], Cty["CBSA Number"].fillna(-1))
+                t, wi, be = theil(rate, Cty["wt"], Cty["region_group"])
                 rec["theil_total"] = t
-                rec["theil_within_metro_pct"] = 100 * wi / t if t else np.nan
-                rec["theil_between_metro_pct"] = 100 * be / t if t else np.nan
+                rec["theil_within_abs"] = wi
+                rec["theil_between_abs"] = be
+                rec["theil_within_pct"] = 100 * wi / t if t else np.nan
+                rec["theil_between_pct"] = 100 * be / t if t else np.nan
+                rec["n_region_groups"] = int(Cty["region_group"].nunique())
             rows.append(rec)
     # metro level
     Met = Cty[Cty["CBSA Number"].notna()].groupby("CBSA Number").sum(numeric_only=True).reset_index()
@@ -160,9 +172,43 @@ def main():
     print(T[["group", "level", "n_areas", "national_rate", "gini", "p90_p10", "p99_p1"]]
           .round(3).to_string(index=False))
     print("\n=== Moran's I and Theil, county level ===")
-    print(T[T["level"] == "county"][["group", "morans_I", "morans_E", "theil_total",
-                                     "theil_within_metro_pct",
-                                     "theil_between_metro_pct"]].round(4).to_string(index=False))
+    print(T[T["level"] == "county"][["group", "morans_I", "morans_E", "n_region_groups",
+                                     "theil_total", "theil_within_abs", "theil_between_abs",
+                                     "theil_within_pct",
+                                     "theil_between_pct"]].round(4).to_string(index=False))
+    make_figure(T)
+
+
+def make_figure(T):
+    """One figure: concentration against group breadth, by exposure type and geographic scale."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    fig, axes = plt.subplots(1, 3, figsize=(12.5, 4.0), sharey=True)
+    breadths = [int(b * 100) for b in BREADTHS]
+    styles = {"cognitive": ("#1f4e79", "o", "Cognitive (Felten AIOE)"),
+              "embodied": ("#a6320a", "s", "Embodied (P)")}
+    for ax, lvl, ttl in zip(axes, ["PUMA", "county", "metro_CBSA"],
+                            ["PUMA (n = 2,462)", "County (n = 3,143)",
+                             "Metro CBSA (n = 927)"]):
+        for name, (col, mk, lab) in styles.items():
+            y = [float(T[(T["group"] == name + "_top" + str(b))
+                         & (T["level"] == lvl)]["gini"].iloc[0]) for b in breadths]
+            ax.plot(breadths, y, marker=mk, color=col, lw=1.8, ms=6, label=lab)
+        ax.set_title(ttl, fontsize=10)
+        ax.set_xlabel("Group breadth, percent of employment")
+        ax.grid(alpha=0.25, lw=0.6)
+        ax.set_xticks(breadths)
+    axes[0].set_ylabel("Gini of the local at-risk rate")
+    axes[0].legend(frameon=False, fontsize=9)
+    fig.suptitle("Measured concentration falls with group breadth, and the ordering of the "
+                 "two exposure types reverses between PUMA and county", fontsize=10.5, y=1.03)
+    fig.tight_layout()
+    out = ROOT / "paper" / "figures"
+    out.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out / "fig_concentration_breadth_scale.png", dpi=200, bbox_inches="tight")
+    fig.savefig(out / "fig_concentration_breadth_scale.pdf", bbox_inches="tight")
+    print("figure written to " + str(out / "fig_concentration_breadth_scale.png"))
 
 
 if __name__ == "__main__":

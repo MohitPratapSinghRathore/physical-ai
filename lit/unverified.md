@@ -38,3 +38,25 @@ superseded v1 title. Verified current record:
 - Classifications: econ.GN, math.OC
 
 Do not cite the superseded title.
+
+## Not verified, recorded so it is not used by accident
+
+### Morgan Stanley projection of private-credit data-centre financing
+
+- Claim as encountered: private credit will provide a further 800 billion USD of data-centre
+  financing over the next two years.
+- Encountered in: a web search result summary, 2026-09-19, while verifying the Chicago Fed
+  Leg A article.
+- Status: NOT VERIFIED. No primary Morgan Stanley publication was located or read, no date,
+  no author, no methodology. The figure is a secondary restatement.
+- Use: NONE. It is mentioned in findings A45 only as a named reason why the Chicago Fed
+  bank-channel figure is a LOWER BOUND on Leg A, and no arithmetic anywhere in this
+  repository uses it.
+
+### BLS Displaced Worker Survey, reemployment rate (rho)
+
+- Needed for: P1r break-even comparison, and to replace the gridded rho in
+  src/stress/scenarios.py with an observed value.
+- Status: BLOCKED. Every BLS endpoint returns HTTP 403 to this environment.
+- Consequence: rho is gridded at 0.50, 0.65 and 0.80 throughout and is never asserted as
+  observed. No claim in this repository depends on a particular value of rho.

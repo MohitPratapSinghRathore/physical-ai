@@ -1,0 +1,28 @@
+{
+  "gamma_default": 3.0,
+  "delta_tilt": 2.0,
+  "targets_share_of_total_employment": {
+    "mild_5pct": 0.05,
+    "central_10pct": 0.1,
+    "severe_20pct": 0.2
+  },
+  "incidence_variants": [
+    "uniform",
+    "lowest_wage_first",
+    "highest_wage_first"
+  ],
+  "omega_wage_ratio_on_reemployment": {
+    "low": 0.65,
+    "central": 0.75,
+    "high": 0.82
+  },
+  "omega_source": "Jacobson, LaLonde and Sullivan, as used elsewhere in this repo",
+  "rho_grid": [
+    0.5,
+    0.65,
+    0.8
+  ],
+  "rho_status": "NOT SOURCED. BLS Displaced Worker Survey blocked from this environment. rho is gridded and must never be asserted as observed.",
+  "probability_form": "p(r) = min(1, a * r**gamma), r = employment-weighted percentile rank of the exposure score, a solved so the employment-weighted mean p equals the scenario target",
+  "cognitive_caveat": "AIOE and Eloundou GPT measure TASK OVERLAP, not displacement and not timing; top-quintile occupations include likely-augmented work. Converting that rank to a displacement probability is an assumption, and it is the weakest link in any cognitive number produced by this engine."
+}
