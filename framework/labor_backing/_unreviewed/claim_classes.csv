@@ -9,5 +9,5 @@ multifamily,Multifamily residential mortgages,rent,2493366.0,0.3608445483278304,
 cre_farm,Commercial and farm mortgages,business revenue,4401541.0,0.0,0.0,0.0
 business_other,Other nonfinancial business debt (residual),business revenue,18070722.0,0.0,0.0,0.0
 federal,Federal government debt securities and loans,federal receipts,34756903.0,0.3484525772437453,0.6376191914408028,0.781632156507548
-state_local,State and local government debt securities and loans,state and local receipts,3790546.0,0.14818932651218872,0.1585217219632814,0.1585217219632814
+state_local,State and local government debt securities and loans,state and local receipts,3790546.0,0.14818932651218872,0.1585217219632814,0.2646017204657924
 equity,"Corporate equities, domestic issuers, market value",residual business cash flow,109244695.0,0.0,0.0,0.0

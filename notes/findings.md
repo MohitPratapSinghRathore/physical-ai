@@ -5463,3 +5463,124 @@ Moved to `_unreviewed/` with a README stating that nothing may read from them. F
 
 `framework/labor_backing/feasibility.md` is the reviewed specification and stays outside the
 quarantine. Part B will be rerun from scratch against it.
+
+## A82. THE ORDERING IS NOT INVARIANT, AND "THE PUBLIC BUDGET CROSSES FIRST" IS WITHDRAWN
+
+`src/thresholds.py`. Every materiality threshold now has a stated justification and a source,
+and the order of stress is run at three tightness levels.
+
+### The thresholds
+
+| Sheet | Basis | Loose | Central | Tight |
+|---|---|---|---|---|
+| Bank-type sheets | share of the Fed severely adverse loss for that sheet (2026 DFAST Table 9) | 50% | 25% | 10% |
+| Public budget | share of federal receipts, against the **13.2 percent** fall in receipts from 2008 to 2009, the largest annual fall in the FRED series | 13.2% | 6.6% | 3.3% |
+| Trust funds | share of fund payroll income, against the **12.1 percent** the OASDI combined deficit already represents (160.2bn on 1,323.2bn, A32) | 24.2% | 12.1% | 6.1% |
+| Multifamily | arrears that push coverage below the underwriting minimum, `1 - 1/D` | 25.9% (D=1.35) | 20.0% (D=1.25) | 16.7% (D=1.20) |
+
+**Two precedents are DERIVED rather than cited, and that is weaker.** CBO publication pages
+and SSA.gov both return HTTP 403 to this environment, so the CARES Act scoring and the
+Trustees Report depletion date could not be read. The 2008 to 2009 revenue collapse is
+computed from FRED FGRECPT and the trust fund deficit from A32. Both are verifiable end to
+end; neither is the scoring document. The exact documents remain CBO's Preliminary Estimate
+of the Effects of H.R. 748 and the annual OASDI Trustees Report.
+
+### The ordering, at three tightness levels
+
+| Tightness | Order |
+|---|---|
+| Loose | mortgage, public budget, trust funds, student |
+| Central | mortgage, trust funds, public budget, auto, student |
+| Tight | mortgage, auto, public budget, student, trust funds, card |
+
+**THE ORDERING IS NOT INVARIANT.** Only **4 of 15** pairwise comparisons hold at all three
+levels:
+
+| Robust | Direction |
+|---|---|
+| mortgage vs public budget | mortgage first |
+| mortgage vs student | mortgage first |
+| mortgage vs trust funds | mortgage first |
+| public budget vs student | public budget first |
+
+The other eleven are **FRAGILE and are not ranked**: auto against everything, card against
+everything, public budget against trust funds, and student against trust funds.
+
+### What this overturns
+
+**"The public budget crosses first" is WITHDRAWN.** It survived three separate magnitude
+corrections and does not survive a properly sourced threshold. **Mortgage holders cross first
+at every tightness level**, at 10 percent of the total wage bill under the tight threshold and
+25 to 50 percent under the others.
+
+The earlier result was an artifact of comparing a 25 percent bank threshold with an
+unjustified 1 percent of receipts for the public budget. Anchoring the public budget to an
+actual fiscal event of recognised size (a 13.2 percent revenue fall) raises that bar by a
+factor of three to thirteen, and the public budget stops being first.
+
+**What survives is much narrower than what the project has been saying:** the mortgage sheet
+crosses before the public budget, before student loans and before the trust funds. Nothing
+else can be ranked.
+
+---
+
+## A83. THE SCALING CONFLATED UNDER-REPORTING WITH COVERAGE, and A80's factors were 14 to 26 percent too big
+
+`src/benchmark_and_cap.py`. A80 divided the official aggregate by the WORKING-CORE SIPP
+balance. That mixes two different things: how much the survey under-reports, and how much of
+the national balance sits outside the working-core sample.
+
+| Loan | Official aggregate | SIPP full universe | SIPP working core | **Under-reporting factor** | Working-core share | A80's factor |
+|---|---|---|---|---|---|---|
+| Mortgage | 13,100.0 | 10,403.3 | 8,535.4 | **1.259** | 0.820 | 1.535 |
+| Card | 1,357.2 | 539.5 | 399.2 | **2.516** | 0.740 | 3.400 |
+| Auto | 1,568.6 | 899.9 | 696.3 | **1.743** | 0.774 | 2.253 |
+| Student | 1,650.0 | 1,159.3 | 1,023.9 | **1.423** | 0.883 | 1.611 |
+
+Only the under-reporting factor is a survey correction. The working-core share is a coverage
+fact and belongs in the denominator discussion, not in a scaling.
+
+Every credit row is rescaled by 0.74 to 0.88. **Cards no longer cross at the loose or central
+threshold, and cross only at the tight one, at 50 percent of the wage bill.** A80's statement
+that cards cross at 75 percent is superseded; the honest statement is that the card sheet is
+one of the eleven fragile comparisons and should not be ranked at all.
+
+**SIPP under-reports credit cards by a factor of 2.5** against the revolving credit
+aggregate. That is the largest survey gap in the project and it bears on every consumer-credit
+result computed from SIPP anywhere in this repository.
+
+---
+
+## A84. THE OASDI CAP CONTRAST CLEARS C1 AND C2
+
+`src/benchmark_and_cap.py`, item 3. Share of the wage bill under the 184,500 dollar
+contribution and benefit base:
+
+| Group | ACS | SIPP |
+|---|---|---|
+| All employed | 89.85% | 82.48% |
+| Cognitive AIOE | **81.19%** | **70.44%** |
+| Cognitive GPT | 90.75% | 83.28% |
+| **Embodied** | **97.75%** | **88.37%** |
+
+Implied OASDI loss per displaced wage dollar, relative to embodied:
+
+| Dataset | Embodied | Cognitive AIOE | Cognitive GPT |
+|---|---|---|---|
+| ACS | 1.000 | **0.831** | 0.928 |
+| SIPP | 1.000 | **0.797** | 0.942 |
+
+**C1 passes: both cognitive indices. C2 passes: both datasets. The sign agrees across
+datasets on both indices.** The levels differ because SIPP measures annualised monthly
+earnings and ACS annual wage income, so SIPP shows a lower taxable share throughout; the
+CONTRAST is what is being claimed and it is stable.
+
+**Embodied displacement costs the OASDI trust fund 17 to 20 percent more per displaced wage
+dollar than cognitive AIOE displacement**, because almost the whole embodied wage bill sits
+under the cap and a fifth of the cognitive wage bill sits above it.
+
+This is a genuine exposure-type contrast in the fiscal channel, it is the first one the
+project has found there, and it runs opposite to the household-channel contrast in A41, where
+embodied displacement was more distress-efficient for the same reason: embodied work is
+lower paid. **The same fact drives both, and it is worth stating once and using twice rather
+than presenting them as two findings.**

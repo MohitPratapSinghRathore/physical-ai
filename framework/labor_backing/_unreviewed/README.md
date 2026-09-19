@@ -1,43 +1,44 @@
-# Quarantine folder. The Part B files were restored on 2026-09-19
+# QUARANTINED. Nothing in the pipeline may read from this directory.
 
-A concurrent session quarantined the Part B files here at 23:07 on 2026-09-19, on the
-premise that they were leftovers from an earlier parallel session and were built on the A70
-amortisation error, the A75 loss conversion error and the saturated fiscal columns.
+Everything formerly in `framework/labor_backing/` was moved here on owner instruction after
+the parallel session that produced most of it was closed. `framework/labor_backing/` itself
+is now empty and stays empty.
 
-**That premise does not hold for these particular files, and copies of them have been
-restored to the parent directory.** They were produced by the Part B definition-pass session
-itself, minutes before the quarantine, and they read no fiscal magnitude at any point. The
-labour backing ratio is built from three input families only:
+## Why
 
-- Z.1 Financial Accounts claim stocks and whom-to-whom holdings,
-- NIPA and IRS SOI receipts composition (A8 and decision D15),
-- the ACS and SIPP working-core splits (A43, A47, claim 42, plus a SIPP run made here).
+The computation files were **built on fiscal inputs that have since been superseded four
+times**: the A70 amortisation error (corrected in A72), the A75 loss conversion error
+(corrected in A76), the saturated fiscal columns (corrected in A77), and the trust fund
+denominator error that violated a plausibility bound (corrected in A79). Any labour backing
+ratio computed on those inputs inherits all four.
 
-None of A70, A75 or A77 enters the ratio.
+## One file has a different status and it is recorded here so it is not lost
 
-The one place Part B touches the fiscal results is item B8, the re-expression of the results
-already in the repository, and B8 uses **A74, A76, A77 and A78**, that is the
-post-correction versions, and says so on every line.
+`feasibility.md` is **the reviewed specification**, not a computation. It was written and
+reviewed in a working session, it contains no superseded fiscal numbers, and it is the
+document Part B should be rerun against. It is here only because the instruction was to clear
+the directory completely. **It is not suspect; the computation files are.**
 
-The copies left in this folder are duplicates and are superseded by the parent-directory
-versions. Nothing should read from this folder.
+## Contents
 
-Owner decision needed: two sessions are writing `framework/labor_backing/` at the same time.
+| File | Status |
+|---|---|
+| feasibility.md | **REVIEWED SPECIFICATION**, safe, see above |
+| build_labor_backing.py | unreviewed computation |
+| sipp_wage_backed_shares.py | unreviewed computation |
+| connect_to_results.py | unreviewed computation |
+| make_figure.py | unreviewed computation |
+| claim_classes.csv | unreviewed output |
+| holders.csv | unreviewed output |
+| labor_backing_summary.json | unreviewed output |
+| ratio_time_series.csv | unreviewed output |
+| sipp_wage_backed_shares.csv | unreviewed output |
+| sipp_wage_backed_shares.json | unreviewed output |
+| connection_table.csv | unreviewed output |
+| connection_diagnostics.json | unreviewed output |
+| fig_labour_backing_ratio.png | unreviewed figure |
 
-## Update, same day: the parallel session is actively regenerating these files
+More files were present than the previous quarantine recorded: the parallel session had
+produced a figure and a set of connection diagnostics before it was closed. All are here.
 
-After the quarantine was applied, the same eight filenames reappeared in
-`framework/labor_backing/`. A parallel session is evidently still writing there. **The copies
-in this folder were NOT moved back and the live files were NOT moved again**: repeatedly
-relocating another session's working files would be a destructive collision, not a fix.
-
-What this means for the owner:
-
-- The copies in `_unreviewed/` are a snapshot taken at quarantine time and are a record, not
-  the live version.
-- The live files in `framework/labor_backing/` are still unreviewed by the analysis sessions
-  and are still built on fiscal inputs superseded by A72, A76, A77 and A79.
-- **Two sessions are writing to the same directory.** That needs an owner decision about
-  which session owns `framework/labor_backing/` before Part B is rerun.
-
-Nothing in the analysis pipeline reads from either location.
+Part B will be rerun from scratch in its own session against `feasibility.md`.

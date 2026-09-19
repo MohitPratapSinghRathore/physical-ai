@@ -5,14 +5,14 @@
     "debt_only": {
       "lower": 0.264534696237898,
       "central": 0.5004645808873908,
-      "upper": 0.5594848008872924,
+      "upper": 0.5642260572259925,
       "total_musd": 84808980.0,
       "labour_backed_musd": 42443890.6311871
     },
     "debt_plus_equity": {
       "lower": 0.11561191903500909,
       "central": 0.21872242631419944,
-      "upper": 0.2445165508396291,
+      "upper": 0.24658866369192983,
       "total_musd": 194053675.0,
       "labour_backed_musd": 42443890.6311871
     }
@@ -88,12 +88,13 @@
     "federal": {
       "lower": 0.3484525772437453,
       "central": 0.6376191914408028,
+      "central_tv": 0.6367790734186985,
       "upper": 0.781632156507548
     },
     "state_local": {
       "lower": 0.14818932651218872,
       "central": 0.1585217219632814,
-      "upper": 0.1585217219632814
+      "upper": 0.2646017204657924
     }
   },
   "instrument_backing_used_for_holders": {
@@ -111,13 +112,16 @@
   "federal_labour_linked_share_latest": {
     "lower": 0.3484525772437453,
     "central": 0.6376191914408028,
+    "central_tv": 0.6367790734186985,
     "upper": 0.781632156507548
   },
   "state_local_labour_linked_share_latest": {
     "lower": 0.14818932651218872,
     "central": 0.1585217219632814,
-    "upper": 0.1585217219632814,
-    "own_source_bn": 3037.872499999999
+    "central_tv": 0.15809118635587022,
+    "upper": 0.2646017204657924,
+    "own_source_bn": 3037.872499999999,
+    "sales_tax_bn": 649.7045328629381
   },
   "sipp_shares_used": {
     "mortgage": 0.8517678672491328,

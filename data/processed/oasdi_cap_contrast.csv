@@ -1,0 +1,9 @@
+dataset,group,wage_bn,taxable_bn,share_under_cap
+SIPP,cognitive_AIOE,2489.668,1753.7045,0.7044
+SIPP,cognitive_GPT,2183.3898,1818.4288,0.8328
+SIPP,embodied,1497.7583,1323.5054,0.8837
+SIPP,ALL,13012.1976,10732.747,0.8248
+ACS,cognitive_AIOE,,,0.8119
+ACS,cognitive_GPT,,,0.9075
+ACS,embodied,,,0.9775
+ACS,ALL,,,0.8985

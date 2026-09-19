@@ -1,0 +1,21 @@
+{
+  "status": "PROVISIONAL",
+  "base_mismatch": {
+    "tau_l_bottom_up": 0.301,
+    "base_the_rate_was_built_on": "wages and salary accruals, 13,365.2bn (A32 reproduces federal payroll 15.52 percent as 2,074.4 / 13,365.2 and federal income tax on wages 12.85 percent as 2,571.4 x 0.6675 / 13,365.2)",
+    "base_the_engine_applies_it_to": "compensation of employees, 16,224.3bn",
+    "ratio": 1.2139174079494162,
+    "effect": "If tau_l 0.301 and 0.318 are rates on wages and salaries, applying them to compensation overstates the bottom-up fiscal loss by 21.4 percent. The AMR 0.255 rows are built differently and are not affected in the same way.",
+    "status": "FLAGGED, not asserted as an error in the engine. It is a rate and base pairing to check, and it moves the headline fiscal cell."
+  },
+  "axis_total_wage_bill_bn_ACS": 9870.244390057136,
+  "nipa_compensation_bn": 16224.289,
+  "nipa_wages_bn": 13365.233,
+  "federal_receipts_bn": 5980.631,
+  "inputs": [
+    "A74 scenario_axis",
+    "A76 verify/hand_check_credit",
+    "A77 fiscal_extended_axis",
+    "A78 scope paragraph applies"
+  ]
+}

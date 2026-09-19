@@ -1,0 +1,60 @@
+{
+  "bank": {
+    "loose": 0.5,
+    "central": 0.25,
+    "tight": 0.1
+  },
+  "public_budget": {
+    "loose": 0.13167257960291642,
+    "central": 0.06583628980145821,
+    "tight": 0.032918144900729106
+  },
+  "trust_funds": {
+    "loose": 0.2421402660217654,
+    "central": 0.1210701330108827,
+    "tight": 0.06053506650544135
+  },
+  "dscr": {
+    "loose": 1.35,
+    "central": 1.25,
+    "tight": 1.2
+  },
+  "budget_precedent": {
+    "largest_annual_receipts_fall": 0.13167257960291642,
+    "years": [
+      2008,
+      2009
+    ],
+    "derivation": "FRED FGRECPT annual means; CBO scoring pages return HTTP 403 to this environment"
+  },
+  "trust_precedent": {
+    "oasdi_deficit_bn": 160.2,
+    "oasdi_payroll_bn": 1323.2,
+    "share": 0.1210701330108827,
+    "source": "A32, verified in the repository"
+  },
+  "ordering_invariant": false,
+  "orders": {
+    "loose": [
+      "mortgage",
+      "public_budget",
+      "trust_funds",
+      "student"
+    ],
+    "central": [
+      "mortgage",
+      "trust_funds",
+      "public_budget",
+      "auto",
+      "student"
+    ],
+    "tight": [
+      "mortgage",
+      "auto",
+      "public_budget",
+      "student",
+      "trust_funds",
+      "card"
+    ]
+  }
+}

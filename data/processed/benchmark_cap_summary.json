@@ -1,0 +1,99 @@
+{
+  "under_reporting": [
+    {
+      "loan": "mortgage",
+      "official_aggregate_bn": 13100.0,
+      "sipp_FULL_universe_bn": 10403.2818,
+      "sipp_working_core_bn": 8535.4276,
+      "UNDER_REPORTING_factor": 1.2592,
+      "working_core_share_of_full": 0.8205,
+      "A80_factor_working_core": 1.5348
+    },
+    {
+      "loan": "card",
+      "official_aggregate_bn": 1357.2,
+      "sipp_FULL_universe_bn": 539.4582,
+      "sipp_working_core_bn": 399.1782,
+      "UNDER_REPORTING_factor": 2.5159,
+      "working_core_share_of_full": 0.74,
+      "A80_factor_working_core": 3.4
+    },
+    {
+      "loan": "auto",
+      "official_aggregate_bn": 1568.6,
+      "sipp_FULL_universe_bn": 899.8666,
+      "sipp_working_core_bn": 696.2587,
+      "UNDER_REPORTING_factor": 1.7431,
+      "working_core_share_of_full": 0.7737,
+      "A80_factor_working_core": 2.2529
+    },
+    {
+      "loan": "student",
+      "official_aggregate_bn": 1650.0,
+      "sipp_FULL_universe_bn": 1159.3,
+      "sipp_working_core_bn": 1023.9207,
+      "UNDER_REPORTING_factor": 1.4233,
+      "working_core_share_of_full": 0.8832,
+      "A80_factor_working_core": 1.6115
+    }
+  ],
+  "cap_contrast": [
+    {
+      "dataset": "SIPP",
+      "group": "cognitive_AIOE",
+      "wage_bn": 2489.668,
+      "taxable_bn": 1753.7045,
+      "share_under_cap": 0.7044
+    },
+    {
+      "dataset": "SIPP",
+      "group": "cognitive_GPT",
+      "wage_bn": 2183.3898,
+      "taxable_bn": 1818.4288,
+      "share_under_cap": 0.8328
+    },
+    {
+      "dataset": "SIPP",
+      "group": "embodied",
+      "wage_bn": 1497.7583,
+      "taxable_bn": 1323.5054,
+      "share_under_cap": 0.8837
+    },
+    {
+      "dataset": "SIPP",
+      "group": "ALL",
+      "wage_bn": 13012.1976,
+      "taxable_bn": 10732.747,
+      "share_under_cap": 0.8248
+    },
+    {
+      "dataset": "ACS",
+      "group": "cognitive_AIOE",
+      "wage_bn": NaN,
+      "taxable_bn": NaN,
+      "share_under_cap": 0.8119
+    },
+    {
+      "dataset": "ACS",
+      "group": "cognitive_GPT",
+      "wage_bn": NaN,
+      "taxable_bn": NaN,
+      "share_under_cap": 0.9075
+    },
+    {
+      "dataset": "ACS",
+      "group": "embodied",
+      "wage_bn": NaN,
+      "taxable_bn": NaN,
+      "share_under_cap": 0.9775
+    },
+    {
+      "dataset": "ACS",
+      "group": "ALL",
+      "wage_bn": NaN,
+      "taxable_bn": NaN,
+      "share_under_cap": 0.8985
+    }
+  ],
+  "sign_agreement_across_datasets": true
+}
