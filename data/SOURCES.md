@@ -204,6 +204,25 @@ Retrieved 88 of 190 company-concept series.
   month.
 - URLs: https://fred.stlouisfed.org/graph/fredgraph.csv?id=<SERIES>. Retrieved 2026-09-19.
 
+## BLS Worker Displacement: labour force status of displaced workers (exit share)
+
+- Tables: Table 1 of each biennial release, total row, percent distribution by employment
+  status (Employed / Unemployed / Not in the labor force).
+- URLs: https://www.bls.gov/news.release/archives/disp_MMDDYYYY.htm for 2008 through 2024,
+  and https://www.bls.gov/news.release/disp.t01.htm for 2026.
+- Retrieved: 2026-09-19. TEN vintages, survey years 2008 through 2026.
+- Used for: the exit share, NILF / (unemployed + NILF), in src/displacement_to_slack.py.
+- Observed exit share runs 0.296 (January 2010, unemployment 9.8) to 0.643 (January 2022,
+  unemployment 4.0). It FALLS with slack.
+- NOTE on comparability: the 2008, 2010 and 2012 total rows are "20 years and over"; later
+  rows are the all-ages total. The difference is small and is recorded rather than adjusted.
+
+## FRED series added for the displacement-to-slack fixed point
+
+- CLF16OV, civilian labour force level. UNEMPLOY, unemployed level. Both at January 2026:
+  labour force 170.5 million, unemployed 7.4 million, implied unemployment rate 4.32 percent.
+- URLs: https://fred.stlouisfed.org/graph/fredgraph.csv?id=<SERIES>. Retrieved 2026-09-19.
+
 ## Blocked or paywalled, not used
 
 | Source | Status | Needed for |

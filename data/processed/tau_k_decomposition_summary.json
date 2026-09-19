@@ -1,0 +1,34 @@
+{
+  "tau_normal_sourced_AMR2020": {
+    "post_TCJA_0.05": 0.05,
+    "2010s_0.10": 0.1,
+    "year_2000_0.20": 0.2
+  },
+  "tau_statutory": 0.21,
+  "domestic_share_cases": {
+    "closed_economy_1.00": 1.0,
+    "profit_shifting_0.52": 0.52,
+    "profit_shifting_global_0.60": 0.6,
+    "imported_capital_0.00": 0.0
+  },
+  "sigma_rent_cases": {
+    "barkai_sourced_0.351": 0.351,
+    "scenario_0.50": 0.5,
+    "scenario_0.75": 0.75
+  },
+  "sourced_sigma_rent": "barkai_sourced_0.351",
+  "tau_k_range_sourced_sigma": [
+    0.03245,
+    0.20351
+  ],
+  "tau_k_range_all": [
+    0.0125,
+    0.20750000000000002
+  ],
+  "R_2026": 0.5683157136071341,
+  "tau_k_needed_to_pass": {
+    "AMR_0.255": 0.11007949303018082,
+    "bottom_up_0.301": 0.12993697020425266,
+    "bottom_up_0.318": 0.13727560307293138
+  }
+}

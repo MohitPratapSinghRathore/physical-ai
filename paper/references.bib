@@ -114,3 +114,71 @@
              "relative to counterfactual outcomes under no displacement", the same basis as
              omega_counterfactual in src/omega_blended.py.}
 }
+
+% ---------------------------------------------------------------------------
+% tau_k decomposition. All verified 2026-09-19 against the papers themselves.
+% ---------------------------------------------------------------------------
+
+@article{AcemogluManeraRestrepo2020,
+  author  = {Acemoglu, Daron and Manera, Andrea and Restrepo, Pascual},
+  title   = {Does the {US} Tax Code Favor Automation?},
+  journal = {Brookings Papers on Economic Activity},
+  year    = {2020},
+  note    = {Read from the copy in data/raw/manual/AMR2020_tax_automation.pdf. Verified
+             verbatim: "Effective capital taxes on software and equipment, on the other
+             hand, are much lower, 10 percent in the 2010s and 5 percent after the 2017 tax
+             reforms, though they used to be about 20 percent in 2000." Also "In table 1, we
+             used an effective tax rate on labor of tau_l = 25.5 percent", which is the
+             origin of the AMR_0.255 row in this repository's grid, and "with immediate
+             expensing (alpha_j = 1), we have tau_k,j passthrough,equity = 0".}
+}
+
+@techreport{Auerbach2017,
+  author      = {Auerbach, Alan J.},
+  title       = {Demystifying the Destination-Based Cash-Flow Tax},
+  institution = {National Bureau of Economic Research},
+  type        = {NBER Working Paper},
+  number      = {23881},
+  year        = {2017},
+  month       = sep,
+  url         = {http://www.nber.org/papers/w23881},
+  note        = {Verified verbatim: "Hence, the cash-flow tax acts as a tax on pure profits,
+             exempting only the normal return from taxation." This is the result that makes
+             the normal-return and rent split the right decomposition for tau_k under
+             expensing.}
+}
+
+@article{TorslovWierZucman2023,
+  author  = {T{\o}rsl{\o}v, Thomas R. and Wier, Ludvig S. and Zucman, Gabriel},
+  title   = {The Missing Profits of Nations},
+  journal = {The Review of Economic Studies},
+  volume  = {90},
+  number  = {3},
+  year    = {2023},
+  note    = {Read from NBER Working Paper 24701, June 2018, revised April 2020. Verified
+             verbatim: "we estimate that close to 40% of multinational profits are shifted
+             to tax havens globally"; and for the United States, "In 2016, according to the
+             BEA Value Added tables, 48% of the pre-tax profit (1-p)*rK of majority-owned
+             affiliates of US multinationals were made in tax havens." The 48 percent refers
+             to FOREIGN AFFILIATE profits, not to all profits of US multinationals, and that
+             bound is respected wherever it is used.}
+}
+
+@article{Barkai2020,
+  author  = {Barkai, Simcha},
+  title   = {Declining Labor and Capital Shares},
+  journal = {The Journal of Finance},
+  volume  = {75},
+  number  = {5},
+  pages   = {2421--2463},
+  year    = {2020},
+  month   = oct,
+  doi     = {10.1111/jofi.12909},
+  note    = {Verified verbatim: "the pure profit share (equal to the ratio of pure profits to
+             gross value added) increases by 13.5 percentage points (pp)" from a level that
+             was "very small in the early 1980s"; "the capital share declines from 32% of
+             gross value added in 1984 to 25% of gross value added in 2014". The implied
+             rent share of total capital income, 13.5/(25+13.5) = 0.351, is the ONLY sourced
+             point on sigma_rent in this repository; every higher value is a labelled
+             scenario.}
+}

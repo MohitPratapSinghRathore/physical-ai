@@ -1,0 +1,37 @@
+{
+  "baseline_jan2026": {
+    "labour_force": 170465.0,
+    "unemployed": 7368.0,
+    "employed": 163097.0,
+    "unrate": 4.322294899246179
+  },
+  "exit_share_fit": {
+    "intercept": 0.720591994192231,
+    "slope_per_pp_unrate": -0.04188252880119136,
+    "r_squared": 0.7767802645799327,
+    "n": 10,
+    "observed_range": [
+      0.2962962962962963,
+      0.6426512968299711
+    ]
+  },
+  "rho_fit": {
+    "n_vintages": 14,
+    "intercept": 0.8090059140491526,
+    "slope_per_pp_unrate": -0.030432382704691827,
+    "slope_se": 0.0042283977453779565,
+    "t": -7.197142874734841,
+    "r_squared": 0.8119088812192521,
+    "unrate_range": [
+      3.6,
+      9.8
+    ],
+    "rho_range": [
+      0.49,
+      0.74
+    ]
+  },
+  "rho_valid_to_unrate": 9.8,
+  "acemoglu_restrepo_three_quarters": "NOT VERIFIED, NOT USED. See lit/unverified.md.",
+  "omega_comovement": "NOT estimable from published vintages; omega held constant, which understates deterioration per Huckfeldt (2022)."
+}

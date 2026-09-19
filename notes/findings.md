@@ -3605,3 +3605,191 @@ finds "the cost and incidence of such occupation displacement is higher for work
 their job during a recession", and A49 shows rho itself falls with slack. Both rho and omega
 therefore deteriorate together in the states of the world the frontier is about, which the
 frontier must handle jointly rather than one at a time.
+
+## A52. CLAIM 30 REFRAMED. The fiscal condition has two levers and I overstated one of them
+
+A50 ended with "labour market absorption is second order, the effective tax rate on AI
+capital is first order". **That sentence goes too far and is withdrawn in that form.** What
+A50 actually established is narrower: within the range that OMEGA can take, tau_k decides the
+verdict. It does not follow that the labour market is irrelevant, because rho varies far more
+than omega does.
+
+| Lever | Observed variation | Effect on R |
+|---|---|---|
+| omega, across every case from switcher scenario to full-time nominal | 0.58 to 0.99 | R moves 0.384 to 0.652 |
+| **rho, across 14 DWS vintages** | **0.49 to 0.74** | **R moves 0.421 to 0.636, a span of 0.215** |
+| Required R at tau_k = 0.10 | | 0.608 to 0.686 |
+
+**A swing of 0.215 in R is decisive near tau_k = 0.10**, because the required R there is
+0.608 to 0.686 and the observed R is 0.568. The 2000 vintage, R = 0.636, clears the bar in
+the tau_l = 0.255 cell; the 2010 vintage, R = 0.421, misses it by 0.19. The labour market
+decided the answer in those two cells.
+
+The correct statement, which replaces both A50's closing sentence and the original claim 30:
+
+> The fiscal condition has two levers, R and tau_k. Away from tau_k = 0.10 the tax rate
+> settles it on its own: at 0.21 the condition holds for any R the labour market has ever
+> produced, and at 0.05 it fails for all of them. Near tau_k = 0.10, which is where the
+> sourced estimates actually sit, the condition is decided by R, and R has moved by 0.215
+> across the fourteen observed vintages. Both levers must be reported.
+
+Claim 30 and claim 49 are amended accordingly in `notes/claims_register.md`.
+
+---
+
+## A53. WHICH tau_k. Decomposed, sourced, and the current tax code puts it BELOW the break-even level
+
+`src/tau_k_decomposition.py`. tau_k has been carried as a bare grid of 0.05, 0.10 and 0.21
+with no account of where those numbers come from or what would move them. Decomposed:
+
+    tau_k(AI surplus) = sigma_rent * (domestic share * tau_statutory)
+                        + (1 - sigma_rent) * tau_normal
+
+**Why the split is the right one.** Under full expensing a business-level capital tax becomes
+a cash-flow tax, which falls on rents and exempts the normal return. Auerbach (2017), NBER WP
+23881, verified verbatim: "Hence, the cash-flow tax acts as a tax on pure profits, exempting
+only the normal return from taxation." AMR show the same algebra: "with immediate expensing
+(alpha_j = 1), we have tau_k,j passthrough,equity = 0".
+
+### The sourced inputs, and where the project's own grid came from
+
+| Input | Value | Source, verified verbatim |
+|---|---|---|
+| tau_normal | 0.05 post-2017, **0.10 in the 2010s**, 0.20 in 2000 | AMR (2020): "Effective capital taxes on software and equipment ... are much lower, 10 percent in the 2010s and 5 percent after the 2017 tax reforms, though they used to be about 20 percent in 2000" |
+| tau_l = 0.255 | | AMR (2020): "we used an effective tax rate on labor of tau_l = 25.5 percent" |
+| tau_statutory | 0.21 | US federal statutory corporate rate |
+| Haven share, US affiliates | **0.48** | Torslov, Wier and Zucman: "48% of the pre-tax profit ... of majority-owned affiliates of US multinationals were made in tax havens" (2016) |
+| Haven share, global | 0.40 | Same: "close to 40% of multinational profits are shifted to tax havens globally" |
+| sigma_rent | **0.351** | Barkai (2020): pure profit share rises 13.5pp from near zero; capital share 25 percent of gross value added in 2014. Implied rent share of capital income 13.5/(25+13.5) |
+
+**The 0.05, 0.10 and 0.21 grid this project has used all along is AMR's own series of
+effective rates on software and equipment, plus the statutory rate.** That was never stated
+and is now attributed.
+
+### The implied tau_k, sourced rent share only
+
+| Domestic share | tau_normal 0.05 (now) | tau_normal 0.10 (2010s) | tau_normal 0.20 (2000) |
+|---|---|---|---|
+| Closed economy, 1.00 | 0.1062 | 0.1386 | 0.2035 |
+| Global shifting, 0.60 | 0.0767 | 0.1091 | 0.1740 |
+| **US affiliate shifting, 0.52** | **0.0708** | 0.1032 | 0.1681 |
+| Imported capital, 0.00 | 0.0324 | 0.0649 | 0.1298 |
+
+Sourced-only range **0.032 to 0.204**; including scenario rent shares of 0.50 and 0.75,
+0.013 to 0.208.
+
+### The finding, and it is the sharpest thing in this session
+
+At the observed R = 0.5683, the condition passes only if
+
+| tau_l | tau_k needed |
+|---|---|
+| 0.255 | **0.1101** |
+| 0.301 | 0.1299 |
+| 0.318 | 0.1373 |
+
+**Under the current tax code with profit shifting, tau_k is 0.0708. The condition fails.**
+Under the 2010s code with the same shifting it was 0.1032, which also fails, narrowly. Only
+the closed-economy cases at 2010s or 2000 rates clear the bar.
+
+Two things follow and both are policy-relevant rather than merely descriptive:
+
+1. **Profit shifting alone is enough to push tau_k below break-even.** Closed economy at the
+   2010s rate gives 0.1386, comfortably above the 0.1101 needed. Applying the verified
+   48 percent haven share drops it to 0.1032, below. The gap between passing and failing is
+   roughly the size of the shifting adjustment.
+2. **Raising the rent share does not rescue it under shifting.** At sigma_rent = 0.75 with
+   shifting, tau_k is 0.1069, still short, because a larger rent share puts MORE of the
+   surplus into the component that is being shifted. Rents only help in the closed economy.
+
+Everything above sigma_rent = 0.351 is a scenario with no source and is labelled as such in
+the output.
+
+### The figure
+
+`paper/figures/fig_R_tauk.png`. Break-even lines for the three tau_l values, with and
+without outlays at g = 0.10; the fourteen DWS vintages plotted at tau_k = 0.10; the 2026
+observation and the Huckfeldt switcher scenario; and vertical bands for the sourced and
+scenario tau_k ranges. Points above a line satisfy the condition. Underlying table at
+`data/processed/tau_k_decomposition.csv`.
+
+---
+
+## A54. DISPLACEMENT TO SLACK. Solved as a fixed point, and the suggested exit share is BOTH UNVERIFIED AND BACKWARDS
+
+`src/displacement_to_slack.py`.
+
+### The Acemoglu and Restrepo figure could not be verified and is not used
+
+The brief proposed sourcing the labour-force exit share from Acemoglu and Restrepo's finding
+that roughly three quarters of the nonemployment response was nonparticipation. **I
+downloaded and searched the full NBER Working Paper 23285 text and it contains no such
+decomposition.** The strings "nonparticipation", "not in the labor force", "leaving the
+labor force" and "exit the labor force" do not appear anywhere in it; the unemployment and
+participation results are stated to sit in Table A4 of an online appendix that is not in the
+paper. It may be in the published version. This project has not seen it, so it is recorded
+in `lit/unverified.md` and is not used.
+
+### The DWS measures the same thing directly, on the right population
+
+Exit share = NILF / (unemployed + NILF), read off Table 1 of ten releases.
+
+| Survey | Employed | Unemployed | NILF | **Exit share** | Unemployment |
+|---|---|---|---|---|---|
+| 2008 | 67.1 | 18.0 | 15.0 | 0.455 | 5.0 |
+| **2010** | 48.8 | 36.1 | 15.2 | **0.296** | **9.8** |
+| 2012 | 56.0 | 26.7 | 17.4 | 0.395 | 8.3 |
+| 2014 | 61.3 | 20.8 | 17.9 | 0.463 | 6.6 |
+| 2016 | 65.5 | 15.9 | 18.6 | 0.539 | 4.8 |
+| 2018 | 66.4 | 14.4 | 19.3 | 0.573 | 4.0 |
+| 2020 | 70.1 | 12.4 | 17.5 | 0.585 | 3.6 |
+| **2022** | 65.2 | 12.4 | 22.3 | **0.643** | 4.0 |
+| 2024 | 65.7 | 16.1 | 18.2 | 0.531 | 3.7 |
+| 2026 | 66.1 | 18.3 | 15.7 | 0.462 | 4.3 |
+
+> **exit share = 0.7206 - 0.0419 x unemployment rate**, R-squared 0.777, n = 10
+
+**It is nowhere near three quarters and it moves the wrong way for the suggested
+assumption.** The exit share FALLS with slack: 0.64 in the tight market of January 2022, 0.30
+in the slack market of January 2010. Displaced workers stay in the labour force and keep
+searching when jobs are scarce.
+
+That matters for the frontier in a direction that makes things worse, not better. A fixed
+high exit share would have converted most displacement into quiet nonparticipation. The
+measured behaviour converts it into measured unemployment, which feeds back through A49 into
+a lower rho. **The feedback loop is stronger than the suggested assumption implied.**
+
+### The fixed point
+
+Baseline January 2026: labour force 170.5m, unemployed 7.4m, unemployment 4.32 percent.
+
+| Displacement | Unemployment | rho, fitted | rho, floor at minimum observed | Outside the data? |
+|---|---|---|---|---|
+| 0% | 4.32 | 0.678 | 0.678 | no |
+| 5% | 5.20 | 0.651 | 0.651 | no |
+| **10%** | **6.47** | **0.612** | 0.612 | **no** |
+| 25% | 17.25 | 0.284 | 0.511 | **YES** |
+| 50% | 44.26 | 0.000 | 0.511 | **YES** |
+| 75% | 69.62 | 0.000 | 0.511 | **YES** |
+| 90% | 87.15 | 0.000 | 0.511 | **YES** |
+
+**The honest boundary is around 14 to 15 percent displacement**, which is where implied
+unemployment reaches 9.8 percent, the worst labour market in the fitted sample. Below it the
+mapping is interpolation. Above it, the numbers in the table are arithmetic on an
+extrapolated line and nothing more: a 50 percent displacement implying 44 percent
+unemployment is not a forecast, and I will not present it as one. Beyond 9.8 percent the
+frontier reports a BAND between a flat rho at the minimum ever observed and the extrapolated
+line, labelled outside the data on the figure and in the text.
+
+**At the 10 percent scenario the engine has been running, rho falls from 0.678 to 0.612**,
+entirely inside the observed range. That is a credible, data-supported adjustment and it is
+the one the rerun uses.
+
+### One assumption stated rather than estimated
+
+The comovement of omega with slack cannot be estimated: the pre-2026 releases do not publish
+the Table 7 earnings distribution in a form this project has parsed. Omega is therefore held
+constant across displacement levels. That is conservative in the direction that matters,
+because Huckfeldt (2022) finds the cost and incidence of occupation displacement are higher
+in recessions, so the true omega in slack states is lower than the one used and the frontier
+below **understates** the deterioration.
