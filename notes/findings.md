@@ -485,3 +485,59 @@ It does not preempt PAEI, which targets embodied rather than cognitive automatio
 two-factor and multiplicative. It does mean "we apply Moravec's paradox to occupational
 exposure" is no longer an unclaimed framing and must be written as a contrast, not a
 discovery. See notes/paei_validation.md Section 5.
+
+## A12. STEP 2. PAEI(c) built. Two design flaws found and fixed before any result was taken
+
+**What was tested.** Whether the scenario-conditional index behaves sensibly across the
+capability grid, in both the smooth form P * S^(1-c) and the threshold form.
+
+**Flaw 1, the raw S scale is degenerate under a threshold.** S has sd 0.071 and range 0.29
+to 0.70, because it is a difference of two bounded means recentred on 0.5. Thresholding
+(1 - S) gives a step function: 0 percent of employment exposed below c = 0.30, 37.6 percent
+at c = 0.50, 100 percent by c = 0.70. Everything crosses in a band of width 0.25. That is
+the scale, not robotics. Fixed by thresholding on S_rank, the employment-weighted percentile
+rank of S. The raw version is retained and plotted so the degeneracy stays visible.
+
+**Flaw 2, the threshold rule needed an embodiment gate.** The rule keys only on structure,
+so the first switcher list was led by Lawyers (P = 0.095) and Chief Executives (P = 0.132).
+An occupation that needs no body cannot be displaced by a robot at any capability level.
+Switchers are now gated at the median P and headline measures are weighted by P.
+
+**A tautology that must never be reported as a result.** Because S_rank is a percentile
+rank, the share of employment crossing the threshold equals c by construction (50.7 percent
+at c = 0.50). Only the embodiment-weighted quantities are informative.
+
+**Result.** Embodiment-weighted exposure frontier, 375 SOC occupations, 140.2 million
+workers, 7,878.2 USD bn covered wage bill:
+
+| c | Embodied work exposed | Wage bill at risk (USD bn) | Mean PAEI_smooth |
+|---|---|---|---|
+| 0.00 | 0.0% | 0 | 0.17 |
+| 0.20 (low) | 19.4% | 320.0 | 0.19 |
+| 0.50 (medium) | 47.2% | 889.3 | 0.24 |
+| 0.80 (high) | 76.0% | 1,628.9 | 0.30 |
+| 1.00 | 100.0% | 2,235.6 | 0.35 |
+
+The ceiling matters: at perfect capability the wage bill at risk is 2,235.6 USD bn, 28.4
+percent of the covered wage bill. Exposure is bounded by how much of the wage bill is paid
+for physical work, and that bound is well under a third. This is a restraining result and
+should be used as one.
+
+**The distinctive content.** 27 embodiment-gated occupations switch between medium and high
+capability: 11.6 million workers, 8.3 percent of covered employment, 400.2 USD bn of wage
+bill. Recycling and reclamation workers, landscaping and groundskeeping, industrial truck
+operators, couriers, vehicle cleaners, correctional officers, roofers, transit bus drivers,
+veterinary technologists, structural iron and steel workers, crane operators. Median hourly
+wages 12 to 27 USD. These are physical jobs in semi-structured or outdoor settings that
+current robotics cannot touch and that no cognitive exposure index flags. That is the
+concrete answer to what makes Physical AI different from prior automation.
+
+**Scenario mapping is stipulated, not estimated.** No published robotics benchmark mapping
+onto a normalised structure-tolerance scale was located, so c is a modelling assumption.
+All results are reported across the full grid so a reader can substitute their own mapping.
+
+**What remains unknown.** Whether S predicts anything real (Step 1, unresolved). PAEI(c)
+inherits that gap, with an odd consequence worth stating: at high c the index leans more on
+P, which IS externally correlated, so PAEI(c) is better grounded at high c than at low c.
+The economic feasibility filter is not built, because no verified all-in hourly robot cost
+was located and Rule 2 forbids inventing one.
