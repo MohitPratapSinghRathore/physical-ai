@@ -1,0 +1,10 @@
+group,outcome,n,k_through_origin,k_decile_min,k_decile_max,k_decile_cv,k_decile_ratio_max_min,intercept_share_of_mean_y
+cognitive_AIOE_top20,vehicle,498,0.11406,0.04114,0.39613,0.52881,9.62935,0.87987
+cognitive_AIOE_top20,mortgage,781,1.07892,0.43253,4.06864,0.56415,9.40669,0.78269
+cognitive_AIOE_top20,unsecured_total,771,0.23412,0.08288,0.93328,0.6423,11.26091,0.90498
+cognitive_GPT_top20,vehicle,545,0.12945,0.04781,0.44942,0.56911,9.3992,0.87252
+cognitive_GPT_top20,mortgage,788,1.20273,0.75419,3.15216,0.40045,4.17956,0.65104
+cognitive_GPT_top20,unsecured_total,851,0.21583,0.08377,0.73999,0.56347,8.83407,0.98255
+embodied_top20,vehicle,593,0.18998,0.08421,0.79326,0.67543,9.42055,0.88598
+embodied_top20,mortgage,665,1.18092,0.6578,3.21428,0.4669,4.88639,0.72151
+embodied_top20,unsecured_total,985,0.19411,0.09554,1.08382,0.87227,11.34437,0.80035

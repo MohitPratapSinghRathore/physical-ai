@@ -1352,6 +1352,14 @@ decomposition. The paper's quantities do not depend on S.
 
 ## A28. ITEM 2 GATE. The S-free geography result. Hypothesis SUPPORTED
 
+> **SUPERSEDED IN PART by A40.** The near-uniformity claim in this entry is withdrawn.
+> County Gini falls monotonically with group breadth (0.179, 0.156, 0.134, 0.104 from the
+> top tenth to the top half of employment), so 0.141 on an above-median definition is a
+> fact about the breadth, not about embodied work. Moran's I of 0.44 to 0.54 shows embodied
+> exposure is strongly spatially clustered at every breadth. Use the A40 schedule and the
+> breadth-matched placebo comparison instead.
+
+
 The A25 c-path result is superseded. It was partly mechanical: the c-threshold runs on
 S_rank, and S largely proxies manufacturing, so a c-path necessarily starts in manufacturing
 geography and diffuses out of it. This version uses no S anywhere.
@@ -2181,6 +2189,15 @@ only exceed it after adjustment). No selection.
 
 ## A36. HEADLINE RULE APPLIED. "Mortgage debt leans cognitive" does not survive raw dollar shares
 
+> **SUPERSEDED by A38.** The four-way split here puts working households and households
+> with no employed member into one "neither" residual. Separated, working middle-exposure
+> households lean 0.93 on mortgage like every other working class, and the 1.09 reported
+> here is the non-working tail alone, which leans 1.61 on mortgage and 2.47 on rent. The
+> surviving rent contrast also changes character: embodied rent lean is 0.99, exactly
+> proportional, so the finding is that cognitive leans AWAY from rent, not that embodied
+> leans into it. The two-to-one ratio is AIOE-specific; on Eloundou GPT it is 1.55.
+
+
 The headline rule (raw dollar shares lead every stability claim) was applied and it
 immediately overturned the A35 wording. **A35's "the mortgage channel is a cognitive-exposure
 channel" is withdrawn.**
@@ -2241,6 +2258,15 @@ The overlap is small: only 2.1 to 3.1 percent of households contain both a top-q
 cognitive and a top-quintile embodied worker.
 
 ## A37. H3 GATE. Half refuted, half confirmed more strongly than registered
+
+> **SUPERSEDED IN PART by A40.** The concentration ordering reported here holds at PUMA
+> level only. At county and metro level it REVERSES and cognitive exposure is the more
+> concentrated on the Gini at every breadth but the broadest. The conclusion that embodied
+> exposure is "the more concentrated of the two, hence the more diversifiable" is withdrawn.
+> The Theil decomposition gives the replacement: embodied exposure is concentrated WITHIN
+> metros, cognitive BETWEEN them, and embodied is the more unequal in total at every breadth.
+> The opposite-signs correlation result in this entry is unaffected and stands.
+
 
 Registered prediction 1: cognitive exposure is MORE geographically concentrated than
 embodied. Registered prediction 2: cognitive correlates with local house prices, embodied
@@ -2320,3 +2346,309 @@ undiversifiability.
 
 **Not yet done from this session:** item 4, the runway calculation. Moran's I still not
 computed; centroids not obtained.
+
+## A38. ITEM 1. The five-way table. "Neither" was hiding the largest over-holder in the economy
+
+A36 split households four ways and put two thirds of them in a residual called "neither",
+which leaned 1.09 on mortgage and 1.26 on rent. That residual mixed two completely different
+things: working households whose occupations are not top-quintile exposed, and households
+with no employed member at all. Separating them changes the reading.
+
+Restriction: "working core" means at least one employed member and a reference person aged
+25 to 64. Source ACS PUMS 2023, `src/shares_and_proportionality.py`, output
+`data/processed/shares_fiveway.csv`.
+
+All cognitive figures below: AIOE and Eloundou measure TASK OVERLAP, not displacement and
+not timing, and top-quintile occupations include likely-augmented work.
+
+**Felten AIOE definition. Raw dollar shares, five mutually exclusive classes summing to 100.**
+
+| Class | Households | Wage bill | Mortgage service | Rent | Mortgage lean | Rent lean |
+|---|---|---|---|---|---|---|
+| Cognitive only | 10.21% | 24.15% | 21.66% | 11.95% | 0.90 | **0.49** |
+| Embodied only | 14.19% | 16.93% | 15.15% | 16.81% | 0.90 | **0.99** |
+| Both exposed | 1.79% | 3.56% | 3.16% | 1.53% | 0.89 | 0.43 |
+| Middle exposure, working | 29.50% | 43.17% | 40.33% | 39.62% | 0.93 | 0.92 |
+| **Non working** | **44.31%** | **12.20%** | **19.69%** | **30.09%** | **1.61** | **2.47** |
+
+**Eloundou GPT definition** differs only on the cognitive side: cognitive-only rent lean
+0.64 rather than 0.49, embodied-only 0.99 as above. The non-working row is identical by
+construction.
+
+### Finding 1, which is new and which the paper has to deal with
+
+**Households with no employed member hold 19.7 percent of national mortgage service and
+30.1 percent of national rent on 12.2 percent of the wage bill.** They are 44.3 percent of
+all households. Their leans, 1.61 and 2.47, are far larger than any contrast between the two
+exposure types.
+
+This is a direct qualification of the project's founding framing. Leg W was defined as
+credit underwritten against human labour income. Close to a fifth of mortgage obligations
+and close to a third of rent obligations are serviced out of transfers, pensions and
+drawdown of savings, not out of wages at all. Those obligations are insulated from AI
+displacement in the first round, and the paper cannot treat the household debt stock as if
+it were uniformly wage-backed. The correct denominator for any displacement pass-through is
+the wage-backed portion, not the total.
+
+It also means A36's "the over-holder is the unexposed majority at 1.09" was reading an
+average of two opposite groups. Working households with middle exposure lean 0.93 on
+mortgage, in line with every other working class. The 1.09 was the non-working tail.
+
+### Finding 2, which WEAKENS the surviving A36 contrast in character though not in ratio
+
+A36's surviving claim was "rent leans embodied and leans away from cognitive, by a factor of
+two." Under the working-core restriction the ratio survives almost exactly, 0.99 against
+0.49 on AIOE, essentially the same 2.0 as the unrestricted 1.09 against 0.54. **But its
+character changes.** Embodied rent lean falls from 1.09 to 0.99, which is proportional to
+three digits. Embodied households do not over-hold rent. They hold rent exactly in
+proportion to their wages, and cognitive households hold half as much.
+
+So the defensible sentence is **"cognitive exposure leans away from rent"**, not "embodied
+exposure leans into rent". That is a weaker and less interesting claim, because a group
+holding its proportional share is the null, and the deviation is now located entirely in the
+cognitive group. The stated mechanism has to be about why high-earning cognitively exposed
+households are disproportionately owners rather than renters, which is a tenure-composition
+story of the kind A7 already documented, not a new exposure finding.
+
+**On the GPT definition the contrast is weaker still**, 0.99 against 0.64, a ratio of 1.55
+rather than 2.0. The two-to-one figure is definition-specific and must not be quoted without
+the alternative beside it.
+
+### Finding 3: mortgage leans are now uniform across all four working classes
+
+0.90, 0.90, 0.89, 0.93. There is no mortgage contrast between exposure types of any kind.
+A36's withdrawal of "the mortgage channel is cognitive" is confirmed on the cleaner sample,
+and the positive result is the uniformity itself, which is the next entry.
+
+## A39. ITEM 2 GATE. The proportionality result is REAL IN AGGREGATE AND FALSE AT HOUSEHOLD LEVEL. The k rule is an aggregation artifact
+
+This is the most damaging result of the session and it leads the report.
+
+### The claim, stated precisely for the first time
+
+The project has found the same thing six times. Stated as the paper would state it:
+
+> A group's share of national mortgage debt service is close to its share of the national
+> wage bill, at every level of AI exposure, embodied or cognitive. Therefore a lender cannot
+> reduce displacement exposure by changing the occupational mix of its mortgage book.
+
+### The six places it has been found
+
+| # | Finding | Sample and measure | Result |
+|---|---|---|---|
+| 1 | **A4 and A5** | ACS, PAEI quintiles, service over wage income | Concentration ratio 0.93 to 1.08 across quintiles; service-to-income 7.7 to 9.0 percent. The origin of the claim |
+| 2 | **A6** | ACS, housing cost gradient stratified within income decile | Raw gradient 0.87 to 1.44 was an income effect; within decile it is flat. Strong concentration refuted, proportionality is what remains |
+| 3 | **A29** | ACS, three embodied definitions as bounds | Pathway central figures sum to 21.32 percent of service against an all-embodied 21.32, decomposition additive and tracking the wage share |
+| 4 | **A31** | SIPP 2025, reference-person weights, balances | Two of A30's three claims fail; the surviving pattern is proportionality outside the driving pathway |
+| 5 | **A36** | ACS, four-way raw dollar shares | Cognitive-only lean 0.92, embodied-only 0.91, indistinguishable and both slightly under proportional |
+| 6 | **A38** | ACS, five-way, working core only | Four working classes lean 0.90, 0.90, 0.89, 0.93. The tightest version yet |
+
+Six independent cuts, two source datasets, two exposure constructs. In aggregate the result
+is as solid as anything in the project.
+
+### The test, and it fails
+
+`src/shares_and_proportionality.py`, ACS PUMS 2023, working core, households with positive
+wage income and positive obligation. k is defined as debt service per dollar of annual wage
+income, estimated through the origin, then re-estimated inside each wage decile.
+
+| Definition | Type | Outcome | n | k | k decile min | k decile max | decile CV | OLS intercept as share of mean y |
+|---|---|---|---|---|---|---|---|---|
+| AIOE | Cognitive | Mortgage | 101,963 | 0.1271 | 0.0716 | 0.4242 | 0.542 | **0.639** |
+| AIOE | Cognitive | Rent | 33,297 | 0.2030 | 0.1141 | 0.7780 | 0.618 | **0.670** |
+| AIOE | Embodied | Mortgage | 100,584 | 0.1523 | 0.0898 | 0.6163 | 0.675 | **0.741** |
+| AIOE | Embodied | Rent | 55,494 | 0.2549 | 0.1301 | 1.3070 | 0.807 | **0.823** |
+| GPT | Cognitive | Mortgage | 105,437 | 0.1376 | 0.0829 | 0.4642 | 0.554 | **0.639** |
+| GPT | Cognitive | Rent | 43,506 | 0.2194 | 0.1214 | 0.8987 | 0.666 | **0.684** |
+
+**k varies six to seven fold across wage deciles** and the coefficient of variation is 0.54
+to 0.81. The lowest wage decile carries roughly six times as much mortgage service per
+dollar of wages as the highest. And **the OLS intercept absorbs 64 to 82 percent of mean
+obligation**, which is the same statement in a different form: the relationship is close to
+a constant plus a small slope, not a ray through the origin.
+
+### What this does to the thesis
+
+**The proportionality result is an aggregation property of group shares, not a behavioural
+relationship between household wages and household debt.** The group shares line up because
+the groups have similar wage distributions, not because each household borrows in proportion
+to what it earns.
+
+The consequence is specific and it invalidates a step the project has been taking silently
+throughout. Every "debt at risk" figure in this repository is computed by attributing a
+group's debt share in proportion to its wage share, and that attribution is only valid for a
+displaced population whose wage distribution matches the group average. **It does not hold
+for any realistic displacement scenario**, because displacement is not drawn uniformly from
+within an exposure group, and because the concavity runs the wrong way: low-wage households
+inside an exposed group carry several times more obligation per wage dollar than high-wage
+ones. If displacement hits the lower part of an exposed group first, proportional
+attribution understates the debt at risk, possibly by a large multiple.
+
+The rule `mortgage_service_at_risk = k x displaced_wage_bill` therefore cannot be stated with
+a single k. It needs either a wage-decile-specific k, which the deciles above supply, or an
+explicit assumption that displacement is wage-neutral within the group, stated as an
+assumption and not buried.
+
+**This is not a small caveat and I am not going to file it as one.** It should become a
+labelled section of the paper, because the same error is available to anyone who repeats the
+group-share method, and because the concave k schedule is itself a result: household
+obligations are far less wage-elastic than the aggregate shares suggest.
+
+### Vehicle debt: proportionality fails in the predicted direction, and it is the one place embodied genuinely over-holds
+
+`src/vehicle_proportionality.py`, SIPP 2025, reference-person weights, working core, 6,734
+households, 79.81m weighted. Leans are against the household EARNINGS share.
+
+**NON-COMPARABILITY, stated up front:** SIPP carries debt BALANCES, ACS carries monthly
+SERVICE. Levels of k are not comparable between this table and the one above. Leans and
+decile stability are.
+
+| Group | Earnings share | Vehicle share | **Vehicle lean** | Mortgage share | Mortgage lean | Unsecured lean |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE | 27.85% | 21.96% | **0.79** | 27.43% | 0.99 | 0.85 |
+| Cognitive GPT | 28.84% | 24.58% | **0.85** | 28.22% | 0.98 | 0.82 |
+| **Embodied** | 18.81% | 25.95% | **1.38** | 14.48% | 0.77 | 0.87 |
+
+**Vehicle debt is the only obligation class in the entire project where embodied exposure
+over-holds.** Lean 1.38 against 0.79 and 0.85, a contrast of roughly 1.7 times, and the
+embodied figure is the only lean above 1.0 on any working class in any table. This is
+consistent with A31, which located vehicle debt in the driving pathway, and it is a real
+exposure-type contrast rather than a wage-level artifact, because it is measured against the
+earnings share.
+
+It is also small in stakes. Vehicle balances are 0.11 to 0.19 dollars per dollar of annual
+earnings against 1.08 to 1.20 for mortgage, so the channel where the exposure contrast is
+sharpest is roughly a sixth the size of the channel where there is no contrast at all.
+
+**The household-level non-proportionality replicates in SIPP**, on a different measure, a
+different survey and a different denominator:
+
+| Group | Outcome | n | k | decile min | decile max | max/min | CV | intercept share |
+|---|---|---|---|---|---|---|---|---|
+| Cognitive AIOE | Vehicle | 498 | 0.114 | 0.041 | 0.396 | 9.63 | 0.529 | 0.880 |
+| Cognitive AIOE | Mortgage | 781 | 1.079 | 0.433 | 4.069 | 9.41 | 0.564 | 0.783 |
+| Cognitive GPT | Vehicle | 545 | 0.130 | 0.048 | 0.449 | 9.40 | 0.569 | 0.873 |
+| Cognitive GPT | Mortgage | 788 | 1.203 | 0.754 | 3.152 | 4.18 | 0.400 | 0.651 |
+| Embodied | Vehicle | 593 | 0.190 | 0.084 | 0.793 | 9.42 | 0.675 | 0.886 |
+| Embodied | Mortgage | 665 | 1.181 | 0.658 | 3.214 | 4.89 | 0.467 | 0.722 |
+| Embodied | Unsecured | 985 | 0.194 | 0.096 | 1.084 | 11.34 | 0.872 | 0.800 |
+
+Four to eleven fold variation in k across earnings deciles, CV 0.40 to 0.87, intercept 65 to
+89 percent of mean balance. **The failure is not an ACS artifact.** It is the shape of the
+household balance sheet.
+
+### One discrepancy I am flagging rather than resolving
+
+SIPP puts the embodied mortgage lean at 0.77 against cognitive 0.98, a visible gap. ACS puts
+both at 0.90. The two differ in measure (balance against service), denominator (earnings
+against wage bill) and sample size (665 against 100,584). The ACS figure is the headline
+under the raw-dollar-share rule because it is the larger sample on the stability-relevant
+measure, but the SIPP gap is not explained and should not be presented as agreement. Logged
+as open.
+
+## A40. ITEM 3 GATE. The concentration ordering is an artifact of SCALE, and near-uniformity is an artifact of BREADTH. A28 and A37 both need restating
+
+`src/geo_breadth_scale.py`, ACS PUMS 2023, four breadths by two exposure types by three
+geographic scales, plus Moran's I on 2024 Gazetteer county centroids and a Theil
+decomposition against CBSA. Output `data/processed/geo_breadth_scale.csv`.
+
+Statistic throughout: the at-risk RATE, group wage bill over local wage bill, which
+normalises out area size.
+
+Cognitive here is Felten AIOE. It measures TASK OVERLAP, not displacement and not timing,
+and top-quintile occupations include likely-augmented work.
+
+### Concentration against breadth and scale
+
+| Breadth | Type | PUMA Gini | PUMA p99/p1 | County Gini | County p99/p1 | Metro Gini |
+|---|---|---|---|---|---|---|
+| Top 10% | Cognitive | 0.278 | 11.03 | **0.230** | 7.17 | **0.218** |
+| Top 10% | Embodied | **0.313** | **31.46** | 0.179 | 6.48 | 0.183 |
+| Top 20% | Cognitive | 0.217 | 6.17 | **0.176** | 4.51 | **0.167** |
+| Top 20% | Embodied | **0.285** | **19.41** | 0.156 | 5.65 | 0.161 |
+| Top 30% | Cognitive | 0.176 | 4.30 | **0.143** | 3.37 | **0.137** |
+| Top 30% | Embodied | **0.242** | **11.98** | 0.134 | 4.35 | 0.136 |
+| Top 50% | Cognitive | 0.125 | 2.78 | 0.103 | 2.44 | 0.099 |
+| Top 50% | Embodied | **0.194** | **7.57** | 0.104 | 3.13 | 0.104 |
+
+### Finding 1: the ordering REVERSES between PUMA and county
+
+At PUMA level embodied exposure is more concentrated than cognitive at every breadth, on
+both statistics, and on p99/p1 by a factor of two to three. **At county and metro level the
+ordering flips and cognitive is more concentrated on the Gini at every breadth except the
+broadest.**
+
+A37 reported the PUMA ordering and called prediction 1 refuted. That stands at PUMA level.
+But A37's conclusion, that embodied exposure is "the more concentrated of the two, hence the
+more diversifiable", **does not survive the change of scale** and must be withdrawn as a
+general statement. Which exposure type looks more concentrated depends on the geographic
+unit, and the paper has to say which unit it means every time it says the word.
+
+### Finding 2: the Theil decomposition explains the reversal and gives the honest version
+
+County-level Theil T, decomposed within and between CBSA. Non-metro counties are pooled into
+a single pseudo-group, which inflates the within share and is a known limitation of this
+run.
+
+| Breadth | Type | Moran's I | Theil total | Within metro | **Between metro** |
+|---|---|---|---|---|---|
+| Top 10% | Cognitive | 0.481 | 0.0720 | 33.1% | **66.9%** |
+| Top 10% | Embodied | 0.441 | **0.1228** | 36.6% | 63.4% |
+| Top 20% | Cognitive | 0.483 | 0.0459 | 31.8% | **68.2%** |
+| Top 20% | Embodied | 0.484 | **0.1034** | 34.7% | 65.3% |
+| Top 30% | Cognitive | 0.509 | 0.0302 | 28.8% | **71.2%** |
+| Top 30% | Embodied | 0.501 | **0.0780** | 34.0% | 66.0% |
+| Top 50% | Cognitive | 0.503 | 0.0140 | 28.9% | **71.1%** |
+| Top 50% | Embodied | 0.535 | **0.0541** | 32.4% | 67.6% |
+
+Two things read straight off this.
+
+**Embodied inequality is larger in total at every breadth**, by a factor of 1.7 to 3.9 on
+Theil T, and a larger fraction of it sits inside metros. Embodied exposure clusters at
+sub-metro grain: particular industrial, agricultural and warehouse PUMAs inside otherwise
+ordinary counties. That is why it dominates at PUMA level and washes out by county.
+
+**Cognitive inequality is smaller in total but more between-metro**, 67 to 71 percent
+against 63 to 68. Cognitive exposure is a property of which metro you are in.
+
+The defensible statement, and it replaces both halves of A37's geography paragraph:
+
+> Embodied exposure is concentrated within metropolitan areas and cognitive exposure is
+> concentrated between them. Embodied exposure is the more unequal of the two in total at
+> every group breadth. A lender with a national footprint diversifies embodied exposure by
+> holding many metros; it cannot diversify cognitive exposure that way, because cognitive
+> exposure varies across the metros themselves.
+
+That reverses the direction of the diversifiability claim A37 made, and it is the first
+version of the claim that is supported at both scales rather than at one.
+
+### Finding 3: neither type is spatially random, which kills "near-uniformity" outright
+
+Moran's I is 0.441 to 0.535 for every group at every breadth, against an expectation under
+spatial randomness of -0.0003. **Both exposure types are strongly spatially autocorrelated
+and the two are indistinguishable on this statistic.** Embodied exposure is not diffuse. It
+is clustered and the clusters are contiguous.
+
+### Finding 4: near-uniformity was a breadth artifact and A28 must be annotated
+
+Concentration falls monotonically with breadth for both types, on every statistic, at every
+scale. County Gini for embodied runs 0.179, 0.156, 0.134, 0.104 as the group widens from the
+top tenth to the top half.
+
+A28 reported embodied work as near-uniform at county Gini 0.141 using an above-median
+definition. A37 got 0.156 using top quintile. **Neither is a fact about embodied work. Both
+are facts about how wide a group was drawn.** A broad enough group approaches the whole
+economy and its Gini approaches zero by construction, so "near-uniform" is not a finding at
+any breadth, it is a restatement of the breadth.
+
+**A28's near-uniformity claim is withdrawn as stated.** What replaces it is the schedule
+above, reported as a schedule, with the breadth named in every sentence. The placebo control
+from A37 remains the benchmark for what an unconcentrated group looks like: county Gini
+0.090 at 20 percent of employment, against 0.156 for real embodied exposure at the same
+breadth. Real groups are concentrated relative to the placebo at matched breadth, and that
+comparison, not the raw Gini, is the one the paper should make.
+
+### Not done
+
+The single figure for this item is not drawn. The Theil non-metro pooling should be replaced
+with individual non-metro counties as their own groups before this goes in the paper.

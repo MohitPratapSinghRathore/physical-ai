@@ -81,6 +81,28 @@ All FRED series retrieved as CSV from `https://fred.stlouisfed.org/graph/fredgra
 
 Retrieved 88 of 190 company-concept series.
 
+## Census 2024 Gazetteer, counties (A40 geography)
+
+- File: data/raw/gazetteer/2024_Gaz_counties.zip
+- URL: https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_counties_national.zip
+- Identifier: 2024_Gaz_counties_national.txt; GEOID, INTPTLAT, INTPTLONG, ALAND_SQMI
+- Retrieved: 2026-09-19
+- Licence: US Census Bureau, public domain.
+- Notes: County internal-point latitude and longitude. Used for the k = 8 nearest-neighbour
+  spatial weights behind Moran's I in src/geo_breadth_scale.py. Internal points, not
+  population-weighted centroids, which matters for large western counties.
+
+## FHFA conforming loan limits, calendar year 2025 (county to CBSA map)
+
+- File: data/raw/fhfa/conforming_limits_2025.xlsx
+- URL: https://www.fhfa.gov/sites/default/files/2024-11/FullCountyLoanLimitList2025_HERA-BASED_FINAL_FLAT.xlsx
+- Identifier: header row 2; FIPS State Code, FIPS County Code, CBSA Number, One-Unit Limit
+- Retrieved: 2026-09-19
+- Licence: US federal government, public domain.
+- Notes: Used ONLY for the county-to-CBSA mapping in the A40 Theil decomposition. The loan
+  limits themselves are not used in any current result. Counties with no CBSA Number are
+  non-metro and are pooled into one residual group, which is a stated limitation of A40.
+
 ## Blocked or paywalled, not used
 
 | Source | Status | Needed for |

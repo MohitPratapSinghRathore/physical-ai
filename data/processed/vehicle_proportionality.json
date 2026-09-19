@@ -1,0 +1,150 @@
+{
+  "leans": [
+    {
+      "group": "cognitive_AIOE_top20",
+      "n": 1261,
+      "earnings_share_pct": 27.847,
+      "vehicle_share_pct": 21.955,
+      "vehicle_lean": 0.788,
+      "mortgage_share_pct": 27.428,
+      "mortgage_lean": 0.985,
+      "unsecured_total_share_pct": 23.688,
+      "unsecured_total_lean": 0.851,
+      "credit_card_share_pct": 20.669,
+      "credit_card_lean": 0.742,
+      "unsecured_plus_veh_share_pct": 23.189,
+      "unsecured_plus_veh_lean": 0.833
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "n": 1421,
+      "earnings_share_pct": 28.838,
+      "vehicle_share_pct": 24.582,
+      "vehicle_lean": 0.852,
+      "mortgage_share_pct": 28.223,
+      "mortgage_lean": 0.979,
+      "unsecured_total_share_pct": 23.742,
+      "unsecured_total_lean": 0.823,
+      "credit_card_share_pct": 25.746,
+      "credit_card_lean": 0.893,
+      "unsecured_plus_veh_share_pct": 23.984,
+      "unsecured_plus_veh_lean": 0.832
+    },
+    {
+      "group": "embodied_top20",
+      "n": 1595,
+      "earnings_share_pct": 18.805,
+      "vehicle_share_pct": 25.951,
+      "vehicle_lean": 1.38,
+      "mortgage_share_pct": 14.48,
+      "mortgage_lean": 0.77,
+      "unsecured_total_share_pct": 16.357,
+      "unsecured_total_lean": 0.87,
+      "credit_card_share_pct": 20.745,
+      "credit_card_lean": 1.103,
+      "unsecured_plus_veh_share_pct": 19.119,
+      "unsecured_plus_veh_lean": 1.017
+    }
+  ],
+  "proportionality": [
+    {
+      "group": "cognitive_AIOE_top20",
+      "outcome": "vehicle",
+      "n": 498,
+      "k_through_origin": 0.11406,
+      "k_decile_min": 0.04114,
+      "k_decile_max": 0.39613,
+      "k_decile_cv": 0.52881,
+      "k_decile_ratio_max_min": 9.62935,
+      "intercept_share_of_mean_y": 0.87987
+    },
+    {
+      "group": "cognitive_AIOE_top20",
+      "outcome": "mortgage",
+      "n": 781,
+      "k_through_origin": 1.07892,
+      "k_decile_min": 0.43253,
+      "k_decile_max": 4.06864,
+      "k_decile_cv": 0.56415,
+      "k_decile_ratio_max_min": 9.40669,
+      "intercept_share_of_mean_y": 0.78269
+    },
+    {
+      "group": "cognitive_AIOE_top20",
+      "outcome": "unsecured_total",
+      "n": 771,
+      "k_through_origin": 0.23412,
+      "k_decile_min": 0.08288,
+      "k_decile_max": 0.93328,
+      "k_decile_cv": 0.6423,
+      "k_decile_ratio_max_min": 11.26091,
+      "intercept_share_of_mean_y": 0.90498
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "outcome": "vehicle",
+      "n": 545,
+      "k_through_origin": 0.12945,
+      "k_decile_min": 0.04781,
+      "k_decile_max": 0.44942,
+      "k_decile_cv": 0.56911,
+      "k_decile_ratio_max_min": 9.3992,
+      "intercept_share_of_mean_y": 0.87252
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "outcome": "mortgage",
+      "n": 788,
+      "k_through_origin": 1.20273,
+      "k_decile_min": 0.75419,
+      "k_decile_max": 3.15216,
+      "k_decile_cv": 0.40045,
+      "k_decile_ratio_max_min": 4.17956,
+      "intercept_share_of_mean_y": 0.65104
+    },
+    {
+      "group": "cognitive_GPT_top20",
+      "outcome": "unsecured_total",
+      "n": 851,
+      "k_through_origin": 0.21583,
+      "k_decile_min": 0.08377,
+      "k_decile_max": 0.73999,
+      "k_decile_cv": 0.56347,
+      "k_decile_ratio_max_min": 8.83407,
+      "intercept_share_of_mean_y": 0.98255
+    },
+    {
+      "group": "embodied_top20",
+      "outcome": "vehicle",
+      "n": 593,
+      "k_through_origin": 0.18998,
+      "k_decile_min": 0.08421,
+      "k_decile_max": 0.79326,
+      "k_decile_cv": 0.67543,
+      "k_decile_ratio_max_min": 9.42055,
+      "intercept_share_of_mean_y": 0.88598
+    },
+    {
+      "group": "embodied_top20",
+      "outcome": "mortgage",
+      "n": 665,
+      "k_through_origin": 1.18092,
+      "k_decile_min": 0.6578,
+      "k_decile_max": 3.21428,
+      "k_decile_cv": 0.4669,
+      "k_decile_ratio_max_min": 4.88639,
+      "intercept_share_of_mean_y": 0.72151
+    },
+    {
+      "group": "embodied_top20",
+      "outcome": "unsecured_total",
+      "n": 985,
+      "k_through_origin": 0.19411,
+      "k_decile_min": 0.09554,
+      "k_decile_max": 1.08382,
+      "k_decile_cv": 0.87227,
+      "k_decile_ratio_max_min": 11.34437,
+      "intercept_share_of_mean_y": 0.80035
+    }
+  ]
+}

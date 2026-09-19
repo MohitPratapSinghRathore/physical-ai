@@ -1,0 +1,9 @@
+cognitive_definition,exposure_type,outcome,n,k_through_origin,k_decile_min,k_decile_max,k_decile_cv,ols_intercept,ols_slope,intercept_share_of_mean_y
+cognitive_AIOE,cognitive,mortgage,101963,0.12709,0.07156,0.42416,0.54155,15923.62839,0.04551,0.63914
+cognitive_AIOE,cognitive,rent,33297,0.20301,0.11408,0.77796,0.61818,17404.93703,0.06535,0.66946
+cognitive_AIOE,embodied,mortgage,100584,0.15234,0.08977,0.61634,0.67524,12857.78053,0.04308,0.74105
+cognitive_AIOE,embodied,rent,55494,0.25485,0.13011,1.30702,0.80661,15361.61658,0.04821,0.82313
+cognitive_GPT,cognitive,mortgage,105437,0.13762,0.08287,0.46424,0.5541,14225.63225,0.05004,0.63895
+cognitive_GPT,cognitive,rent,43506,0.21941,0.12137,0.89871,0.66593,16089.87024,0.06721,0.68372
+cognitive_GPT,embodied,mortgage,100584,0.15234,0.08977,0.61634,0.67524,12857.78053,0.04308,0.74105
+cognitive_GPT,embodied,rent,55494,0.25485,0.13011,1.30702,0.80661,15361.61658,0.04821,0.82313

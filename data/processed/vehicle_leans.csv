@@ -1,0 +1,4 @@
+group,n,earnings_share_pct,vehicle_share_pct,vehicle_lean,mortgage_share_pct,mortgage_lean,unsecured_total_share_pct,unsecured_total_lean,credit_card_share_pct,credit_card_lean,unsecured_plus_veh_share_pct,unsecured_plus_veh_lean
+cognitive_AIOE_top20,1261,27.847,21.955,0.788,27.428,0.985,23.688,0.851,20.669,0.742,23.189,0.833
+cognitive_GPT_top20,1421,28.838,24.582,0.852,28.223,0.979,23.742,0.823,25.746,0.893,23.984,0.832
+embodied_top20,1595,18.805,25.951,1.38,14.48,0.77,16.357,0.87,20.745,1.103,19.119,1.017

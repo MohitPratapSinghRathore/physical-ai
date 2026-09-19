@@ -1,0 +1,210 @@
+{
+  "fiveway": [
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "cognitive_only",
+      "households_pct": 10.2052,
+      "wage_bill_pct": 24.1464,
+      "mortgage_service_pct": 21.6617,
+      "rent_pct": 11.9473,
+      "mortgage_lean": 0.8971,
+      "rent_lean": 0.4948
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "embodied_only",
+      "households_pct": 14.1938,
+      "wage_bill_pct": 16.9257,
+      "mortgage_service_pct": 15.1491,
+      "rent_pct": 16.8092,
+      "mortgage_lean": 0.895,
+      "rent_lean": 0.9931
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "both",
+      "households_pct": 1.7945,
+      "wage_bill_pct": 3.5583,
+      "mortgage_service_pct": 3.1626,
+      "rent_pct": 1.5318,
+      "mortgage_lean": 0.8888,
+      "rent_lean": 0.4305
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "middle_exposure_working",
+      "households_pct": 29.5012,
+      "wage_bill_pct": 43.1651,
+      "mortgage_service_pct": 40.3317,
+      "rent_pct": 39.6248,
+      "mortgage_lean": 0.9344,
+      "rent_lean": 0.918
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "class": "non_working",
+      "households_pct": 44.3053,
+      "wage_bill_pct": 12.2045,
+      "mortgage_service_pct": 19.6949,
+      "rent_pct": 30.0869,
+      "mortgage_lean": 1.6137,
+      "rent_lean": 2.4652
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "cognitive_only",
+      "households_pct": 10.9474,
+      "wage_bill_pct": 21.1721,
+      "mortgage_service_pct": 19.3406,
+      "rent_pct": 13.6364,
+      "mortgage_lean": 0.9135,
+      "rent_lean": 0.6441
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "embodied_only",
+      "households_pct": 13.4297,
+      "wage_bill_pct": 16.168,
+      "mortgage_service_pct": 14.4894,
+      "rent_pct": 15.9965,
+      "mortgage_lean": 0.8962,
+      "rent_lean": 0.9894
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "both",
+      "households_pct": 2.5586,
+      "wage_bill_pct": 4.316,
+      "mortgage_service_pct": 3.8223,
+      "rent_pct": 2.3445,
+      "mortgage_lean": 0.8856,
+      "rent_lean": 0.5432
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "middle_exposure_working",
+      "households_pct": 28.759,
+      "wage_bill_pct": 46.1394,
+      "mortgage_service_pct": 42.6528,
+      "rent_pct": 37.9356,
+      "mortgage_lean": 0.9244,
+      "rent_lean": 0.8222
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "class": "non_working",
+      "households_pct": 44.3053,
+      "wage_bill_pct": 12.2045,
+      "mortgage_service_pct": 19.6949,
+      "rent_pct": 30.0869,
+      "mortgage_lean": 1.6137,
+      "rent_lean": 2.4652
+    }
+  ],
+  "proportionality": [
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "exposure_type": "cognitive",
+      "outcome": "mortgage",
+      "n": 101963,
+      "k_through_origin": 0.12709,
+      "k_decile_min": 0.07156,
+      "k_decile_max": 0.42416,
+      "k_decile_cv": 0.54155,
+      "ols_intercept": 15923.62839,
+      "ols_slope": 0.04551,
+      "intercept_share_of_mean_y": 0.63914
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "exposure_type": "cognitive",
+      "outcome": "rent",
+      "n": 33297,
+      "k_through_origin": 0.20301,
+      "k_decile_min": 0.11408,
+      "k_decile_max": 0.77796,
+      "k_decile_cv": 0.61818,
+      "ols_intercept": 17404.93703,
+      "ols_slope": 0.06535,
+      "intercept_share_of_mean_y": 0.66946
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "exposure_type": "embodied",
+      "outcome": "mortgage",
+      "n": 100584,
+      "k_through_origin": 0.15234,
+      "k_decile_min": 0.08977,
+      "k_decile_max": 0.61634,
+      "k_decile_cv": 0.67524,
+      "ols_intercept": 12857.78053,
+      "ols_slope": 0.04308,
+      "intercept_share_of_mean_y": 0.74105
+    },
+    {
+      "cognitive_definition": "cognitive_AIOE",
+      "exposure_type": "embodied",
+      "outcome": "rent",
+      "n": 55494,
+      "k_through_origin": 0.25485,
+      "k_decile_min": 0.13011,
+      "k_decile_max": 1.30702,
+      "k_decile_cv": 0.80661,
+      "ols_intercept": 15361.61658,
+      "ols_slope": 0.04821,
+      "intercept_share_of_mean_y": 0.82313
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "exposure_type": "cognitive",
+      "outcome": "mortgage",
+      "n": 105437,
+      "k_through_origin": 0.13762,
+      "k_decile_min": 0.08287,
+      "k_decile_max": 0.46424,
+      "k_decile_cv": 0.5541,
+      "ols_intercept": 14225.63225,
+      "ols_slope": 0.05004,
+      "intercept_share_of_mean_y": 0.63895
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "exposure_type": "cognitive",
+      "outcome": "rent",
+      "n": 43506,
+      "k_through_origin": 0.21941,
+      "k_decile_min": 0.12137,
+      "k_decile_max": 0.89871,
+      "k_decile_cv": 0.66593,
+      "ols_intercept": 16089.87024,
+      "ols_slope": 0.06721,
+      "intercept_share_of_mean_y": 0.68372
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "exposure_type": "embodied",
+      "outcome": "mortgage",
+      "n": 100584,
+      "k_through_origin": 0.15234,
+      "k_decile_min": 0.08977,
+      "k_decile_max": 0.61634,
+      "k_decile_cv": 0.67524,
+      "ols_intercept": 12857.78053,
+      "ols_slope": 0.04308,
+      "intercept_share_of_mean_y": 0.74105
+    },
+    {
+      "cognitive_definition": "cognitive_GPT",
+      "exposure_type": "embodied",
+      "outcome": "rent",
+      "n": 55494,
+      "k_through_origin": 0.25485,
+      "k_decile_min": 0.13011,
+      "k_decile_max": 1.30702,
+      "k_decile_cv": 0.80661,
+      "ols_intercept": 15361.61658,
+      "ols_slope": 0.04821,
+      "intercept_share_of_mean_y": 0.82313
+    }
+  ]
+}
