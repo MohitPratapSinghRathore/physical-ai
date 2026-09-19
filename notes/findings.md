@@ -2054,3 +2054,118 @@ news release, series "Worker Displacement" (biennial, from the CPS Displaced Wor
 Supplement), Table 1, "Displaced workers by selected characteristics and employment status",
 which gives the share of displaced workers reemployed at the survey date. Drop it in
 `data/raw/manual/`. Until then rho is labelled stipulated everywhere it appears.
+
+## A35. PART 2 GATE. The result the pre-registration named as most damaging has occurred
+
+**Registered in `notes/prereg_cognitive_contrast.md` before running, with the interpretation
+of each outcome fixed in advance. The pre-registration stated: "If the fiscal wedge is also
+larger for cognitive work, the fiscal channel is also predominantly a cognitive-AI channel,
+which weakens the framing further. This is the single most damaging possible result for the
+current paper and will be reported first if it occurs."**
+
+**It occurred.** It is reported first.
+
+All cognitive claims below carry the binding caveat from D22: Felten AIOE and Eloundou
+measure TASK OVERLAP, not displacement and not timing.
+
+### H4 CONFIRMED. The labour tax wedge is larger for cognitively exposed work
+
+P1r repeated by exposure type, with the federal income component scaled by the group's wage
+ratio to the economy-wide mean and payroll capped:
+
+| Exposure type | Mean wage | tau_l | Loss per displaced dollar at s = 1 | rho* (with robot-sector labour share) |
+|---|---|---|---|---|
+| Cognitive, AIOE top quintile | $93,668 | **0.331** | **0.231** | 0.617 |
+| Cognitive, GPT top quintile | $63,988 | 0.299 | 0.199 | 0.588 |
+| **Embodied, top quintile** | $36,387 | **0.237** | **0.137** | 0.511 |
+
+**The fiscal loss per dollar of displaced wages is 1.7 times larger for cognitively exposed
+work than for embodied work** (0.231 against 0.137). Labour taxation is progressive, so
+displacing a high-wage worker removes more tax per dollar than displacing a low-wage one.
+
+The fiscal channel, which A32 and A33 established as the dominant channel overall, is
+therefore **not primarily a Physical AI channel**. Per dollar displaced it is larger for
+cognitive exposure. This is the clearest evidence yet for the scope change in D22.
+
+One qualification that runs the other way and must travel with this: the embodied
+top-quintile group has a LARGER wage bill base (36.9m workers) than the AIOE top quintile
+(24.3m workers), though a smaller total wage bill ($1,343.9bn against $2,279.1bn). Per
+dollar the cognitive wedge is larger; in aggregate the cognitive wage bill at stake is also
+larger. Both point the same way.
+
+### H1 PARTIALLY CONFIRMED. Mortgage debt concentrates in cognitive households; total debt does not
+
+Restricted sample, n = 6,734, same weights and adjustment set as A31.
+
+| Group | n | Median income | Mortgage DTI | All-debt DTI | Unsecured DTI | Vehicle DTI |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE top 20% | 1,261 | $159,154 | 70.48 | 111.39 | 12.28 | 4.60 |
+| Cognitive GPT top 20% | 1,421 | $146,519 | 70.32 | 102.09 | 11.94 | 5.00 |
+| Embodied top 20% | 1,595 | $97,521 | **53.82** | 88.96 | 12.27 | **7.87** |
+| No top-quintile exposure | 3,179 | $88,425 | 74.28 | 129.99 | 17.00 | 5.94 |
+
+Adjusted, against households with no top-quintile exposure:
+
+| Outcome | Cognitive AIOE | Cognitive GPT | Embodied |
+|---|---|---|---|
+| Mortgage DTI | **+1.92 (t = 2.19)** | +1.07 (t = 1.29) | **-1.90 (t = -2.27)** |
+| All-debt DTI | +12.09 (t = 0.46) | +6.20 (t = 0.25) | -15.28 (t = -0.61) |
+| Unsecured DTI | +0.07 (t = 0.18) | +0.16 (t = 0.40) | -0.13 (t = -0.33) |
+
+Mortgage DTI: **confirmed** for AIOE, significant and opposite in sign to embodied.
+Total debt and unsecured debt: **null for every group**. H1 is confirmed on mortgages only.
+
+### H2 CONFIRMED, and it is the sharpest result in the comparison
+
+| Group | Under 1 month liquid | Median liquid | Median net worth |
+|---|---|---|---|
+| Cognitive AIOE top 20% | **38.41%** | $21,363 | $382,249 |
+| Cognitive GPT top 20% | 42.01% | $18,175 | $325,864 |
+| **Embodied top 20%** | **56.12%** | **$6,000** | **$128,292** |
+| No top-quintile exposure | 49.89% | $7,500 | $148,437 |
+
+Adjusted buffer coefficients: cognitive AIOE **-0.0889 (t = -5.56)**, cognitive GPT -0.0380
+(t = -2.51), embodied **+0.1025 (t = +6.76)**.
+
+**Cognitively exposed households hold 3.6 times the liquid assets and 3.0 times the net
+worth of embodied households, and the buffer gap survives adjustment with the largest
+t-statistics in the project.** The two exposure types are mirror images on the balance
+sheet.
+
+### Shares of the restricted-sample totals (partial item 3; PUMS version still to run)
+
+| Group | Mortgage balance | Consumer balance | Rent or mortgage payment |
+|---|---|---|---|
+| Cognitive AIOE top 20% | **27.43%** | 23.19% | 19.86% |
+| Cognitive GPT top 20% | 28.22% | 23.98% | 21.86% |
+| Embodied top 20% | **14.48%** | 19.12% | 19.74% |
+
+**Top-quintile cognitively exposed households hold roughly twice the mortgage balance share
+of top-quintile embodied households** (27 to 28 percent against 14.5 percent). On consumer
+credit the gap is much smaller (23 to 24 against 19), and on housing payments the two are
+essentially equal (about 20 to 22 against 19.7).
+
+So the mortgage channel is a cognitive-exposure channel; the rent channel is shared.
+
+### What this does to the thesis
+
+The household-credit leg of the two-sided bet is **predominantly a cognitive-AI exposure**,
+and the fiscal channel is **larger per displaced dollar for cognitive work too**. On the two
+channels the project has measured most carefully, Physical AI is the smaller half.
+
+What survives as specifically Physical AI:
+- the vulnerability asymmetry: embodied households are under-buffered (56.1 percent under
+  one month against 38.4) and asset-poor, so the same displacement causes more distress per
+  worker even though it threatens less debt;
+- the vehicle-debt concentration in the driving pathway (A31, adjusted +13.39, t = 3.50);
+- the geography result, that robot-reachable work is concentrated at Acemoglu and Restrepo
+  magnitudes while embodied work overall is near-uniform (A28). **Whether this is a contrast
+  or a shared feature is exactly H3, which is registered and NOT YET RUN.**
+
+### Full disclosure
+
+Every measure in the levels table and every adjusted coefficient is in
+`data/processed/cognitive_contrast_levels.csv` and `cognitive_contrast_adjusted.csv`,
+including the nulls (all-debt, unsecured) and the wrong-signed level results (cognitive
+households have LOWER mortgage and total DTI than the no-exposure base in raw levels, and
+only exceed it after adjustment). No selection.
