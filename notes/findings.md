@@ -1453,3 +1453,80 @@ median income, lowest homeownership, lowest mortgaged ownership, and the only pa
 the exposed worker is usually NOT the primary earner (56.4 percent). Manipulation exposure
 sits disproportionately in secondary earners of lower-income renting households, which is
 precisely where mortgage credit is not and where consumer credit and rent are.
+
+## A30. ITEM 4 GATE. The concentration hypothesis SURVIVES outside mortgages
+
+Step 0 refuted the concentration hypothesis on mortgages (A6: the gradient reversed in 10 of
+10 income deciles). This is the test of whether it survives on non-mortgage credit and
+liquid buffers. **It does, on three measures.**
+
+SIPP 2025, December reference month, 13,918 households, 89.7 percent of records with an
+occupation matched to the pathway spine.
+
+### Debt to income by type, percent of annual household income
+
+| Group | Credit card | Student | **Vehicle** | Medical | Unsecured total | Non-mortgage total | Mortgage |
+|---|---|---|---|---|---|---|---|
+| Driving | 4.7 | 6.1 | **11.1** | 1.8 | 14.2 | **25.3** | 52.1 |
+| Gated | 3.8 | 7.5 | 6.7 | 1.6 | 14.7 | 21.4 | 59.9 |
+| Manipulation | 3.8 | 5.6 | 6.0 | 1.5 | 11.8 | 17.8 | 51.2 |
+| All embodied | 3.9 | 7.1 | 7.0 | 1.7 | 14.2 | 21.2 | 58.1 |
+| **No embodied worker** | **3.2** | 7.1 | **4.8** | 1.3 | 13.1 | **17.9** | **65.7** |
+
+**Vehicle debt is the standout. The driving pathway carries 11.1 percent vehicle
+debt-to-income against 4.8 percent for households with no embodied worker, a ratio of 2.3
+to 1.** 44.1 percent of driving households hold vehicle debt against 26.7 percent of
+non-embodied households. This is the sharpest concentration result anywhere in the project,
+and it sits in exactly the pathway with the fastest observable clock.
+
+Mortgage DTI runs the other way, 58.1 against 65.7. Embodied households are LESS
+mortgage-leveraged relative to income, which is now the fifth independent confirmation of
+that pattern.
+
+### Liquid buffers and hardship
+
+| Group | Median income | Median liquid assets | Median net worth | **Under 1 month of income in liquid** | Under 1 month of housing | **Unable to pay rent or mortgage** |
+|---|---|---|---|---|---|---|
+| Driving | $90,615 | $6,448 | $156,552 | 53.7% | 23.3% | **7.4%** |
+| Gated | $104,177 | $8,000 | $176,059 | 52.0% | 22.2% | 4.6% |
+| Manipulation | $96,634 | $6,100 | $151,529 | **54.2%** | 24.6% | 6.1% |
+| All embodied | $96,136 | $6,800 | $164,327 | **53.0%** | 24.0% | 5.4% |
+| **No embodied worker** | $72,265 | **$10,500** | **$242,425** | **40.9%** | 25.1% | **4.0%** |
+
+**Households with an embodied worker hold less liquid wealth than households without one,
+despite having HIGHER median income** ($6,800 against $10,500 in liquid assets, on
+$96,136 against $72,265 of income). 53.0 percent have under one month of income in liquid
+assets, against 40.9 percent, a 12 point gap. Median net worth is $164,327 against $242,425.
+
+The hardship indicator moves the same way: 5.4 percent of embodied households report being
+unable to pay rent or mortgage, against 4.0 percent, and the driving pathway is highest at
+7.4 percent.
+
+### What this does to the thesis
+
+**It relocates the household channel rather than removing it, and this is the first
+unambiguously supportive household result in the project.** The exposure is not in mortgage
+stocks, where it was looked for and not found. It is in:
+
+1. **Vehicle credit**, concentrated in the driving pathway at more than twice the
+   non-embodied rate. Note the compounding: autonomous vehicles displace the income that
+   services the vehicle loan.
+2. **Thin liquid buffers**, which is what converts an income shock into a default. Equal
+   debt service can hide very unequal default risk, and it does: embodied households have
+   12 percentage points more of them sitting under one month of buffer.
+3. **Existing hardship**, already 35 percent higher before any displacement.
+
+The stock-versus-flow point in the brief sharpens here. These households are not
+over-borrowed relative to income; they are under-buffered. That is a different vulnerability
+with a different remedy, and it is one that flow-side instruments (income support) address
+better than stock-side ones (debt restructuring).
+
+### Limitation that must be fixed before publication
+
+I used the maximum person weight in each household as the household weight. That yields
+153.8 million weighted households against roughly 131 million actual US households, so it
+overstates. Ratios and weighted shares are largely robust to a proportional inflation, but
+household size correlates with both income and pathway membership, so the group comparisons
+carry an unquantified bias. The correct weight is the household reference person's. **This
+needs a rerun with the proper household weight before any of these figures are published.**
+Recorded rather than quietly carried.
