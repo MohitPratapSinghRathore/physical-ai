@@ -1,0 +1,5 @@
+loan,sipp_working_core_bn,official_aggregate_bn,scaling_factor,source
+mortgage,8535.428,13100.0,1.535,"NY Fed HHDC 2026Q2, mortgage balances"
+card,399.178,1357.221,3.4,"FRED REVOLSL revolving consumer credit, millions (2026-07-01)"
+auto,696.259,1568.619,2.253,"FRED MVLOAS motor vehicle loans owned and securitized, millions (2024-10-01). NOTE: this series is STALE relative to the others and is flagged."
+student,1023.921,1650.0,1.611,"NY Fed HHDC 2026Q2, outstanding student debt"

@@ -1,0 +1,9 @@
+{
+  "source": "SIPP 2025 panel, person file pu2025_csv.zip, MONTHCODE 12",
+  "weights": "WPFINWGT from the household reference person (ERELRPE in (1,2)), per src/sipp_buffers_v2.py",
+  "working_core_definition": "at least one member employed (RMESR in 1..5) and aged 25 to 64",
+  "households_weighted_m": 134.98171885208885,
+  "working_core_households_weighted_m": 84.81717397593391,
+  "working_core_share_of_households": 0.6283604527875025,
+  "status": "PROVISIONAL, produced this session, no second-dataset check (C2 outstanding)"
+}

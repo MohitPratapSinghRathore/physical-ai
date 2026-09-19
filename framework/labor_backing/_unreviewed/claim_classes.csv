@@ -1,0 +1,13 @@
+class,label,servicing_flow,level_musd,lower,central,upper
+home_mortgage,"Home mortgages, one to four family (households)",household income,13976938.0,0.4167444529278943,0.8402,0.8402
+cc_auto,"Consumer credit, automobile loans",household income,1574750.0,0.40701596038916266,0.8205863509793216,0.8205863509793216
+cc_student,"Consumer credit, student loans",household income,1858181.0,0.45626185849737755,0.9198711844062014,0.9198711844062014
+cc_revolving,"Consumer credit, revolving",household income,1308976.0,0.39429565121983534,0.7949408896204923,0.7949408896204923
+cc_other,"Consumer credit, other non-revolving",household income,378351.0,0.3403125072931818,0.6861052777520795,0.6861052777520795
+hh_other,Other household and nonprofit debt (residual),household income and nonprofit revenue,2198706.0,0.4111015051231036,0.8288232325054955,0.8288232325054955
+multifamily,Multifamily residential mortgages,rent,2493366.0,0.3608445483278304,0.7275,0.7275
+cre_farm,Commercial and farm mortgages,business revenue,4401541.0,0.0,0.0,0.0
+business_other,Other nonfinancial business debt (residual),business revenue,18070722.0,0.0,0.0,0.0
+federal,Federal government debt securities and loans,federal receipts,34756903.0,0.3484525772437453,0.6376191914408028,0.781632156507548
+state_local,State and local government debt securities and loans,state and local receipts,3790546.0,0.14818932651218872,0.1585217219632814,0.1585217219632814
+equity,"Corporate equities, domestic issuers, market value",residual business cash flow,109244695.0,0.0,0.0,0.0

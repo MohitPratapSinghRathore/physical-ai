@@ -5289,6 +5289,13 @@ bill, and the card book is the only sheet that never crosses.
 
 ## A77. FISCAL SATURATION REMOVED, and the extended axis is far worse than the saturated one
 
+> **THE OASDI AND HI COLUMNS ARE WITHDRAWN by A79.** They divided a GENERAL revenue loss
+> by a PAYROLL-ONLY denominator, which is two different taxes, and produced 107.4 and 214.8
+> percent of OASDI payroll income, violating the bound that a loss on a tax cannot exceed the
+> tax. Rebuilt with the OASDI cap and a payroll numerator, the figures are 4.2 percent at 10
+> percent of the wage bill and 11.9 at 25. The federal-receipts column stands.
+
+
 `src/fiscal_extended_axis.py`. A75 flagged that the fiscal columns saturated above 25 percent
 of the total wage bill because the persistence run was built on top-quintile scenarios capping
 at 23.1 percent. Rebuilt on the extended axis with rho solved as a fixed point in prime-age
@@ -5330,3 +5337,129 @@ LOWER BOUND on bank losses, not an estimate.**
 
 That paragraph is now attached to A75, A76, A77 and to the release artifacts, and it is why
 the second-round module (item 4) is not optional. Everything above is the floor.
+
+## A79. THE PLAUSIBILITY RULE CAUGHT FOUR VIOLATIONS, AND THE TRUST FUND FIGURES WERE THE WORST OF THEM
+
+`src/verify/plausibility_audit.py`. The rule, standing from now on: before any headline
+number is reported, state the physical or accounting bound it must respect and confirm it
+does. Run retroactively: **32 checks, 4 violations.**
+
+| Quantity | Value | Bound it violated |
+|---|---|---|
+| A77 fiscal loss as percent of OASDI payroll income | **236.4** | a loss on a payroll tax cannot exceed that tax |
+| A77 fiscal loss as percent of HI Part A revenue | **676.4** | same |
+| Implied bank share of card balances | **2.97** | a subset cannot exceed its total |
+| Implied bank share of auto balances | **1.06** | same |
+
+Everything else passed, including the one that mattered most: the terminal fiscal loss as a
+percent of federal receipts peaks at **52.3 percent against a labour-linked share of receipts
+of about 65 percent**, so it is inside its bound but not by much.
+
+### Why the trust fund figures were wrong
+
+**A77 divided a GENERAL revenue loss, computed with an economy-wide labour tax rate of about
+0.30, by a PAYROLL-ONLY denominator.** Those are two different taxes. The numerator included
+income tax, the denominator did not.
+
+Correct construction, with numerator and denominator stated:
+
+    numerator   = payroll tax rate x displaced TAXABLE wages x (1 - R)
+    denominator = that fund's payroll income
+
+The rate cancels, leaving `(taxable wages displaced / total taxable wages) x (1 - R) x
+payroll share of fund income`, which is bounded by the payroll share and cannot exceed 1.
+
+**OASDI cap applied by exposure type**, which matters because the groups differ sharply:
+
+| Group | Wage bill | OASDI-taxable portion | Share under the cap |
+|---|---|---|---|
+| All employed | 10,595.6bn | 9,519.8bn | 89.8% |
+| Cognitive AIOE | 2,233.9bn | 1,813.6bn | **81.2%** |
+| Cognitive GPT | 1,767.3bn | 1,603.8bn | 90.8% |
+| Embodied | 1,292.9bn | 1,263.8bn | **97.7%** |
+
+**Cognitive displacement is partly shielded from OASDI by the cap and embodied displacement
+is not.** Almost the whole embodied wage bill is below the 184,500 dollar base; a fifth of
+the cognitive wage bill is above it. That is a genuine exposure-type contrast in the fiscal
+channel and it has been invisible until now.
+
+Source for the base: 184,500 dollars for 2026, up from 176,100. Verified through The Tax
+Adviser (AICPA), 24 October 2025, reporting the SSA announcement. **SSA.gov returns HTTP 403
+to this environment on every route attempted**, including the COLA fact sheet and the
+contribution base page, which is why a secondary source is named.
+
+### The corrected trust fund table
+
+| Share of total wage bill | OASDI | HI | Inside data? |
+|---|---|---|---|
+| **10%** | **4.21%** | **4.15%** | **yes, 0 of 20 outside** |
+| 25% | 11.92% | 12.13% | mixed, 6 of 15 outside |
+| 50% | 36.89% | 37.31% | no |
+| 75% | 69.47% | 69.47% | no |
+
+Maximum across the whole grid **76.46 percent. The bound is respected.** A77's 107.4 and
+214.8 percent are **WITHDRAWN**, as are the HI figures of 307 and 614 percent.
+
+**This is a large downward revision of the fiscal headline.** At 25 percent of the wage bill
+the trust fund loss is 12 percent of fund payroll income, not the 27.6 percent A77 reported
+and nothing like the 107 percent it reported at 50 percent.
+
+---
+
+## A80. SURVEY BALANCES BENCHMARKED, AND CARDS DO CROSS AFTER ALL
+
+`src/trust_fund_and_benchmark.py`, item 2. The implied-bank-share violations were a symptom
+of SIPP under-reporting. Household balances scaled to official aggregates:
+
+| Loan | SIPP working core | Official aggregate | Scaling factor | Source |
+|---|---|---|---|---|
+| Mortgage | 8,535.4bn | 13,100.0bn | **1.54** | NY Fed HHDC 2026Q2 |
+| Card | 399.2bn | 1,357.2bn | **3.40** | FRED REVOLSL |
+| Auto | 696.3bn | 1,568.6bn | **2.25** | FRED MVLOAS, STALE at 2024-10, flagged |
+| Student | 1,023.9bn | 1,650.0bn | **1.61** | NY Fed HHDC 2026Q2 |
+
+**A units error was caught by this same rule.** The first run treated REVOLSL and MVLOAS as
+billions when the provider states millions, producing scaling factors in the thousands. That
+is decision D1 doing its job.
+
+**The SIPP figure is working-core households only, so part of each gap is coverage rather
+than under-reporting. The scaling factor is an upper bound on under-reporting**, and the
+benchmarked credit rows are correspondingly an upper bound.
+
+### The corrected order of stress, bank-held basis, caps removed
+
+| Balance sheet | Crosses 25 percent materiality at |
+|---|---|
+| **Public budget** | about **10 percent** of the total wage bill |
+| **Mortgage holders** | **25 percent** (33 to 54 percent of the Fed loss) |
+| **Student loan holders** | **25 percent** (20 to 27 percent) |
+| Trust funds | 25 percent, at 12 percent of fund payroll income |
+| Auto lenders | **50 percent** (24 to 34 percent) |
+| **Card and consumer lenders** | **75 percent** (25 to 32 percent) |
+
+**Cards no longer never cross.** A76 reported a maximum of 10.7 percent of the Fed loss and
+concluded cards never cross. Benchmarked, cards reach **25 to 32 percent at 75 percent of the
+total wage bill** and do cross. The claim that cards never cross is **WITHDRAWN**.
+
+**The ordering survives all of it.** Public budget, then mortgages and student loans, then
+auto, then cards. Every correction this session has changed magnitudes and left the ordering
+intact, which is the one thing about the order of stress that has now survived three separate
+errors.
+
+---
+
+## A81. QUARANTINE
+
+`framework/labor_backing/_unreviewed/`. Eight files appeared in `framework/labor_backing/`
+that the working sessions did not create. They are from a parallel session and **they were
+built on fiscal inputs that have since been superseded three times**: the A70 amortisation
+error (corrected in A72), the A75 loss conversion error (corrected in A76), and the saturated
+fiscal columns (corrected in A77, then corrected again in A79).
+
+Moved to `_unreviewed/` with a README stating that nothing may read from them. Files:
+`build_labor_backing.py`, `claim_classes.csv`, `holders.csv`, `labor_backing_summary.json`,
+`ratio_time_series.csv`, `sipp_wage_backed_shares.csv`, `sipp_wage_backed_shares.json`,
+`sipp_wage_backed_shares.py`.
+
+`framework/labor_backing/feasibility.md` is the reviewed specification and stays outside the
+quarantine. Part B will be rerun from scratch against it.

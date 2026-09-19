@@ -1,0 +1,918 @@
+{
+  "status": "PROVISIONAL. Produced in the Part B definition pass. Not a standing claim.",
+  "latest_quarter": "2026-06-30",
+  "headline_direct": {
+    "debt_only": {
+      "lower": 0.264534696237898,
+      "central": 0.5004645808873908,
+      "upper": 0.5594848008872924,
+      "total_musd": 84808980.0,
+      "labour_backed_musd": 42443890.6311871
+    },
+    "debt_plus_equity": {
+      "lower": 0.11561191903500909,
+      "central": 0.21872242631419944,
+      "upper": 0.2445165508396291,
+      "total_musd": 194053675.0,
+      "labour_backed_musd": 42443890.6311871
+    }
+  },
+  "indirect_B2": {
+    "labour_share_of_personal_income_wages": 0.49600625199701776,
+    "compensation_over_gdp": 0.5020340926973792,
+    "consumption_share_of_gdp": 0.6796248564161863,
+    "indirect_labour_funding_of_business_revenue_wages": 0.3370981777950039,
+    "indirect_labour_funding_of_business_revenue_compensation": 0.34119484816548673,
+    "note": "B2. Reported as a SECOND ratio. Never blended into the headline.",
+    "extended_ratio_debt_only": 0.5908726999594499,
+    "extended_ratio_debt_plus_equity": 0.45031375013545555
+  },
+  "social_insurance_memo": {
+    "note": "B1 memo item, deliberately NOT in the headline. A43 forbids folding the payroll-funded share of transfers into any total that also counts the fiscal channel, because the same payroll dollar would be counted twice.",
+    "oasdi_payroll_share_of_trust_fund_income": 0.913,
+    "oasdi_payroll_share_source": "A32, repository",
+    "non_working_share_of_mortgage_service": 0.15980000000000005,
+    "non_working_share_of_rent": 0.27249999999999996
+  },
+  "cells": {
+    "home_mortgage": {
+      "lower": 0.4167444529278943,
+      "central": 0.8402,
+      "upper": 0.8402
+    },
+    "cc_auto": {
+      "lower": 0.40701596038916266,
+      "central": 0.8205863509793216,
+      "upper": 0.8205863509793216
+    },
+    "cc_student": {
+      "lower": 0.45626185849737755,
+      "central": 0.9198711844062014,
+      "upper": 0.9198711844062014
+    },
+    "cc_revolving": {
+      "lower": 0.39429565121983534,
+      "central": 0.7949408896204923,
+      "upper": 0.7949408896204923
+    },
+    "cc_other": {
+      "lower": 0.3403125072931818,
+      "central": 0.6861052777520795,
+      "upper": 0.6861052777520795
+    },
+    "hh_other": {
+      "lower": 0.4111015051231036,
+      "central": 0.8288232325054955,
+      "upper": 0.8288232325054955
+    },
+    "multifamily": {
+      "lower": 0.3608445483278304,
+      "central": 0.7275,
+      "upper": 0.7275
+    },
+    "cre_farm": {
+      "lower": 0.0,
+      "central": 0.0,
+      "upper": 0.0
+    },
+    "business_other": {
+      "lower": 0.0,
+      "central": 0.0,
+      "upper": 0.0
+    },
+    "equity": {
+      "lower": 0.0,
+      "central": 0.0,
+      "upper": 0.0
+    },
+    "federal": {
+      "lower": 0.3484525772437453,
+      "central": 0.6376191914408028,
+      "upper": 0.781632156507548
+    },
+    "state_local": {
+      "lower": 0.14818932651218872,
+      "central": 0.1585217219632814,
+      "upper": 0.1585217219632814
+    }
+  },
+  "instrument_backing_used_for_holders": {
+    "home_mortgage": 0.8402,
+    "multifamily": 0.7275,
+    "cre_farm": 0.0,
+    "consumer_credit": 0.8288232325054955,
+    "federal": 0.6376191914408028,
+    "state_local": 0.1585217219632814,
+    "corp_bonds": 0.0,
+    "equity": 0.0,
+    "agency_pools": 0.8402,
+    "mutual_fund_shares": 0.0
+  },
+  "federal_labour_linked_share_latest": {
+    "lower": 0.3484525772437453,
+    "central": 0.6376191914408028,
+    "upper": 0.781632156507548
+  },
+  "state_local_labour_linked_share_latest": {
+    "lower": 0.14818932651218872,
+    "central": 0.1585217219632814,
+    "upper": 0.1585217219632814,
+    "own_source_bn": 3037.872499999999
+  },
+  "sipp_shares_used": {
+    "mortgage": 0.8517678672491328,
+    "vehicle": 0.8205863509793216,
+    "student": 0.9198711844062014,
+    "credit_card": 0.7949408896204923,
+    "other_unsecured": 0.6861052777520795,
+    "medical": 0.6401185518217846,
+    "all_debt": 0.8288232325054955,
+    "unsecured_total": 0.8332518754400084,
+    "secured_total": 0.8282061490704177
+  },
+  "series_first_year": 1952,
+  "z1_series_meta": {
+    "FL383061105": {
+      "description": "Domestic nonfinancial sectors; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL383061705": {
+      "description": "Domestic nonfinancial sectors; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL383062005": {
+      "description": "Domestic nonfinancial sectors; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL383063005": {
+      "description": "Domestic nonfinancial sectors; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL383064105": {
+      "description": "Domestic nonfinancial sectors; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL383064205": {
+      "description": "Domestic nonfinancial sectors; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153166000": {
+      "description": "Households and nonprofit organizations; consumer credit; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153061105": {
+      "description": "Households and nonprofit organizations; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153061705": {
+      "description": "Households and nonprofit organizations; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153062005": {
+      "description": "Households and nonprofit organizations; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153063005": {
+      "description": "Households and nonprofit organizations; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153064105": {
+      "description": "Households and nonprofit organizations; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153064205": {
+      "description": "Households and nonprofit organizations; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153165105": {
+      "description": "Households and nonprofit organizations; one-to-four-family residential mortgages; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143061105": {
+      "description": "Nonfinancial business; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143062005": {
+      "description": "Nonfinancial business; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL313063005": {
+      "description": "Federal government; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL313064105": {
+      "description": "Federal government; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793061105": {
+      "description": "Domestic financial sectors; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793061705": {
+      "description": "Domestic financial sectors; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793062005": {
+      "description": "Domestic financial sectors; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793063005": {
+      "description": "Domestic financial sectors; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793064105": {
+      "description": "Domestic financial sectors; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793064205": {
+      "description": "Domestic financial sectors; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL713061705": {
+      "description": "Central bank; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703061105": {
+      "description": "Private depository institutions; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703061705": {
+      "description": "Private depository institutions; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703062005": {
+      "description": "Private depository institutions; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703063005": {
+      "description": "Private depository institutions; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703064105": {
+      "description": "Private depository institutions; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703064205": {
+      "description": "Private depository institutions; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL633061105": {
+      "description": "Money market funds; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL633063005": {
+      "description": "Money market funds; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL673066000": {
+      "description": "Issuers of asset-backed securities; consumer credit; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL673065105": {
+      "description": "Issuers of asset-backed securities; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL673065405": {
+      "description": "Issuers of asset-backed securities; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL673065505": {
+      "description": "Issuers of asset-backed securities; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL663061105": {
+      "description": "Security brokers and dealers; Treasury securities (net); asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL663061705": {
+      "description": "Security brokers and dealers; agency- and GSE-backed securities (net); asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL663062005": {
+      "description": "Security brokers and dealers; municipal securities (net) ; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL663063005": {
+      "description": "Security brokers and dealers; corporate and foreign bonds (net); asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL663064105": {
+      "description": "Security brokers and dealers; corporate equities (net); asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL503063005": {
+      "description": "Other financial business; corporate and foreign bonds, including financial stabilization programs; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL503064105": {
+      "description": "Other financial business; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL593061105": {
+      "description": "Pension funds; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL593061705": {
+      "description": "Pension funds; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL593063005": {
+      "description": "Pension funds; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL593064105": {
+      "description": "Pension funds; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL593064205": {
+      "description": "Pension funds; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL343061105": {
+      "description": "Federal government pension funds; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL343061705": {
+      "description": "Federal government pension funds; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL343063005": {
+      "description": "Federal government pension funds; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL343064105": {
+      "description": "Federal government pension funds; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL223064205": {
+      "description": "State and local government employee pension funds; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL263061105": {
+      "description": "Rest of the world; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL263061705": {
+      "description": "Rest of the world; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL263063005": {
+      "description": "Rest of the world; corporate bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL263064105": {
+      "description": "Rest of the world; U.S. corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893061105": {
+      "description": "All sectors; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893061705": {
+      "description": "All sectors; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893062005": {
+      "description": "All sectors; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893063005": {
+      "description": "All sectors; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893065105": {
+      "description": "All sectors; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893065405": {
+      "description": "All sectors; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893065505": {
+      "description": "All sectors; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893065603": {
+      "description": "All sectors; farm mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153166100": {
+      "description": "Households and nonprofit organizations; revolving consumer credit; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153166400": {
+      "description": "Households and nonprofit organizations; consumer credit, automobile loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153166220": {
+      "description": "Households and nonprofit organizations; consumer credit, student loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153166205": {
+      "description": "Households and nonprofit organizations; other non-revolving consumer credit; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL313065105": {
+      "description": "Federal government; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL613065105": {
+      "description": "Finance companies; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL313065405": {
+      "description": "Federal government; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL153065505": {
+      "description": "Households and nonprofit organizations; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL313065505": {
+      "description": "Federal government; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL893064105": {
+      "description": "All sectors; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523061105": {
+      "description": "Insurance companies; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523061705": {
+      "description": "Insurance companies; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523062005": {
+      "description": "Insurance companies; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523063005": {
+      "description": "Insurance companies; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523064105": {
+      "description": "Insurance companies; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL523064205": {
+      "description": "Insurance companies; mutual fund shares; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL154104005": {
+      "description": "Households and nonprofit organizations; debt securities and loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL144104005": {
+      "description": "Nonfinancial business; debt securities and loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL314104005": {
+      "description": "Federal government; debt securities and loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL214104005": {
+      "description": "State and local governments; debt securities and loans; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "LM883164105": {
+      "description": "All domestic sectors; corporate equities; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL693064105": {
+      "description": "Non-MMF investment funds; corporate equities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143065105": {
+      "description": "Nonfinancial business; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143065405": {
+      "description": "Nonfinancial business; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143065505": {
+      "description": "Nonfinancial business; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143165405": {
+      "description": "Nonfinancial business; multifamily residential mortgages; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL143165505": {
+      "description": "Nonfinancial business; commercial mortgages; liability",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL423065105": {
+      "description": "GSEs and agency- and GSE-backed mortgage pools; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL423065405": {
+      "description": "GSEs and agency- and GSE-backed mortgage pools; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL693061105": {
+      "description": "Non-MMF investment funds; Treasury securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL693061705": {
+      "description": "Non-MMF investment funds; agency- and GSE-backed securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL693062005": {
+      "description": "Non-MMF investment funds; municipal securities; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL693063005": {
+      "description": "Non-MMF investment funds; corporate and foreign bonds; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703065105": {
+      "description": "Private depository institutions; one-to-four-family residential mortgages, including farm houses; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703065405": {
+      "description": "Private depository institutions; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL703065505": {
+      "description": "Private depository institutions; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793065105": {
+      "description": "Domestic financial sectors; one-to-four-family residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793065405": {
+      "description": "Domestic financial sectors; multifamily residential mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL793065505": {
+      "description": "Domestic financial sectors; commercial mortgages; asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    },
+    "FL613066000": {
+      "description": "Finance companies; consumer credit, including captive retail finance companies (since 1992); asset",
+      "unit": "Currency",
+      "unit_mult": "Millions",
+      "frequency": "Quarterly"
+    }
+  },
+  "fred_meta": {
+    "A074RC1Q027SBEA": {
+      "title": "Federal government current tax receipts: Personal current taxes",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:50 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A074RC1Q027SBEA"
+    },
+    "W780RC1Q027SBEA": {
+      "title": "Federal government current receipts: Contributions for government social insurance",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W780RC1Q027SBEA"
+    },
+    "FGRECPT": {
+      "title": "Federal Government Current Receipts",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:49 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FGRECPT"
+    },
+    "W070RC1Q027SBEA": {
+      "title": "State and local government current tax receipts",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W070RC1Q027SBEA"
+    },
+    "W071RC1Q027SBEA": {
+      "title": "State and local government current tax receipts: Personal current taxes",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W071RC1Q027SBEA"
+    },
+    "W072RC1Q027SBEA": {
+      "title": "State and local government current tax receipts: Taxes on production and imports",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W072RC1Q027SBEA"
+    },
+    "W074RC1Q027SBEA": {
+      "title": "State and local government current receipts: Income receipts on assets",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W074RC1Q027SBEA"
+    },
+    "W076RC1Q027SBEA": {
+      "title": "State and local government current transfer receipts: from business (net)",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-07-30 10:07 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W076RC1Q027SBEA"
+    },
+    "W077RC1Q027SBEA": {
+      "title": "State and local government total receipts",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W077RC1Q027SBEA"
+    },
+    "W782RC1Q027SBEA": {
+      "title": "Government current receipts: Contributions for government social insurance",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:47 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W782RC1Q027SBEA"
+    },
+    "WASCUR": {
+      "title": "Compensation of Employees: Wages and Salary Accruals",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WASCUR"
+    },
+    "PI": {
+      "title": "Personal Income",
+      "units": "Billions of Dollars",
+      "freq": "Monthly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Personal Income and Outlays",
+      "last_updated": "2026-08-26 7:43 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PI"
+    },
+    "PCEC": {
+      "title": "Personal Consumption Expenditures",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:48 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEC"
+    },
+    "GDP": {
+      "title": "Gross Domestic Product",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:49 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GDP"
+    },
+    "COE": {
+      "title": "National Income: Compensation of Employees, Paid",
+      "units": "Billions of Dollars",
+      "freq": "Quarterly",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-08-26 7:49 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=COE"
+    },
+    "ASLSTAX": {
+      "title": "State and Local Government: Taxes on production and imports: Sales Taxes",
+      "units": "Billions of Dollars",
+      "freq": "Annual",
+      "source": "U.S. Bureau of Economic Analysis",
+      "release": "Gross Domestic Product",
+      "last_updated": "2026-04-09 7:55 AM CDT",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ASLSTAX"
+    }
+  }
+}

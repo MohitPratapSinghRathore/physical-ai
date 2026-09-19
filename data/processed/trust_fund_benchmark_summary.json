@@ -1,0 +1,61 @@
+{
+  "oasdi_cap_2026": 184500.0,
+  "cap_source": "The Tax Adviser, AICPA, 24 October 2025, reporting the SSA announcement. SSA.gov returns HTTP 403 to this environment.",
+  "payroll_share_of_oasdi_income": 0.913,
+  "taxable_shares": {
+    "cognitive_AIOE": 0.8118500384374082,
+    "cognitive_GPT": 0.9075355156808844,
+    "embodied": 0.9774501958045473,
+    "ALL": 0.8984587294017198
+  },
+  "max_trust_fund_pct": 76.46375000000002,
+  "bound_respected": true,
+  "aggregates": {
+    "mortgage": {
+      "value": 13100.0,
+      "source": "NY Fed HHDC 2026Q2, mortgage balances"
+    },
+    "student": {
+      "value": 1650.0,
+      "source": "NY Fed HHDC 2026Q2, outstanding student debt"
+    },
+    "card": {
+      "value": 1357.22144,
+      "source": "FRED REVOLSL revolving consumer credit, millions (2026-07-01)"
+    },
+    "auto": {
+      "value": 1568.61945,
+      "source": "FRED MVLOAS motor vehicle loans owned and securitized, millions (2024-10-01). NOTE: this series is STALE relative to the others and is flagged."
+    }
+  },
+  "scaling": [
+    {
+      "loan": "mortgage",
+      "sipp_working_core_bn": 8535.4276,
+      "official_aggregate_bn": 13100.0,
+      "scaling_factor": 1.5348,
+      "source": "NY Fed HHDC 2026Q2, mortgage balances"
+    },
+    {
+      "loan": "card",
+      "sipp_working_core_bn": 399.1782,
+      "official_aggregate_bn": 1357.2214,
+      "scaling_factor": 3.4,
+      "source": "FRED REVOLSL revolving consumer credit, millions (2026-07-01)"
+    },
+    {
+      "loan": "auto",
+      "sipp_working_core_bn": 696.2587,
+      "official_aggregate_bn": 1568.6194,
+      "scaling_factor": 2.2529,
+      "source": "FRED MVLOAS motor vehicle loans owned and securitized, millions (2024-10-01). NOTE: this series is STALE relative to the others and is flagged."
+    },
+    {
+      "loan": "student",
+      "sipp_working_core_bn": 1023.9207,
+      "official_aggregate_bn": 1650.0,
+      "scaling_factor": 1.6115,
+      "source": "NY Fed HHDC 2026Q2, outstanding student debt"
+    }
+  ]
+}

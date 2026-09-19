@@ -1,0 +1,33 @@
+quantity,value,bound,verdict,detail
+CORRECTED OASDI loss as percent of that fund's payroll income,76.4638,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
+CORRECTED HI loss as percent of that fund's payroll income,76.4638,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
+CORRECTED implied bank share after benchmarking,0.875,a subset cannot exceed its total: 0 to 1,OK,survey balances scaled to official aggregates in A79
+terminal fiscal loss as percent of OASDI payroll income,236.3878,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
+terminal fiscal loss as percent of HI Part A revenue,676.4455,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
+terminal fiscal loss as percent of federal receipts,52.3002,"cannot exceed the labour-linked share of receipts, about 65%, so 0 to 65 percent",OK,"a displacement shock removes labour-linked revenue, not capital or excise revenue"
+rho on the extended axis,0.0,a reemployment share is a probability: 0 to 1,OK,
+R = rho x omega,0.5968,a retained wage share is 0 to 1 unless reemployment raises wages,OK,
+implied bank share of mortgage balances,0.1757,a subset cannot exceed its total: 0 to 1,OK,above 1 means the survey under-reports that balance relative to the aggregate
+implied bank share of card balances,2.9739,a subset cannot exceed its total: 0 to 1,VIOLATION,above 1 means the survey under-reports that balance relative to the aggregate
+implied bank share of auto balances,1.0644,a subset cannot exceed its total: 0 to 1,VIOLATION,above 1 means the survey under-reports that balance relative to the aggregate
+implied bank share of student balances,0.7238,a subset cannot exceed its total: 0 to 1,OK,above 1 means the survey under-reports that balance relative to the aggregate
+"mortgage loss at 10% of wage bill, as a share of the national balance",0.0032945742519097693,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"card loss at 10% of wage bill, as a share of the national balance",0.008075841817013053,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"auto loss at 10% of wage bill, as a share of the national balance",0.005301764990512865,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"student loss at 10% of wage bill, as a share of the national balance",0.007947685792464201,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"mortgage loss at 25% of wage bill, as a share of the national balance",0.008034149337755496,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"card loss at 25% of wage bill, as a share of the national balance",0.019708992124319414,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"auto loss at 25% of wage bill, as a share of the national balance",0.012933841975690932,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"student loss at 25% of wage bill, as a share of the national balance",0.01940863193800067,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"mortgage loss at 50% of wage bill, as a share of the national balance",0.0153940383724888,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"card loss at 50% of wage bill, as a share of the national balance",0.03781569233991235,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"auto loss at 50% of wage bill, as a share of the national balance",0.02479897199130151,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"student loss at 50% of wage bill, as a share of the national balance",0.037281988732135216,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"mortgage loss at 75% of wage bill, as a share of the national balance",0.022079678820074576,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"card loss at 75% of wage bill, as a share of the national balance",0.05432085219082606,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"auto loss at 75% of wage bill, as a share of the national balance",0.03559553367160798,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+"student loss at 75% of wage bill, as a share of the national balance",0.05362007038240364,a loss cannot exceed the balance it sits on: 0 to 1,OK,
+maximum share of the total wage bill displaced,0.83749,a share of the wage bill is 0 to 1,OK,
+terminal prime-age nonemployment,64.8446,a nonemployment rate is 0 to 100 percent,OK,
+stock-flow unemployment rate,0.218862,0 to 1.0,OK,
+"stock-flow prime-age E/P ratio, percent",80.240483,0 to 100.0,OK,
