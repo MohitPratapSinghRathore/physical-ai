@@ -83,7 +83,7 @@ def main():
             for inc in SC.INCIDENCE:
                 pwk = SC.apply_incidence(p_occ, wq, pw, inc)
                 sb = share_based(H, hh_idx, wage, pwk, n_hh)
-                acc = AE.simulate(P, H, hh_idx, pwk, SC.RHO_GRID[1], SC.OMEGA["central"])
+                acc = AE.simulate(P, H, hh_idx, pwk, SC.RHO_OBSERVED, SC.OMEGA["central"])
                 r = {"construct": c, "target": tname, "incidence": inc,
                      "share_based_mortgage": sb["share_based_mortgage"],
                      "share_based_rent": sb["share_based_rent"]}

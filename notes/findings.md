@@ -3097,6 +3097,11 @@ recorded as an open question and nothing is built on it.
 
 ## A45. ITEM 6 PARTIAL. The Chicago Fed Leg A figures are obtained and verified, and they make Leg A roughly one fiftieth of Leg W
 
+> **The rho and omega status in this entry is superseded.** BLS became reachable and both
+> parameters are now sourced (A48), corrected (A48) and restated as R (A50). The Leg A
+> figures in this entry are unaffected.
+
+
 The owner offered to place this article in `data/raw/manual/`. It was not needed: the
 Chicago Fed page is reachable from this environment and was read directly.
 
@@ -3343,3 +3348,260 @@ working classes against A38's 0.90, 0.90, 0.89, 0.93. Claim 14 is unaffected in 
 
 Claim 18 superseded by claim 42. Claim 15a amended: the embodied rent lean is 0.93 and not
 proportional. Claim 44 recorded. A38 is annotated in place as superseded by A47.
+
+## A48. OMEGA REPAIRED. My own sourced value from the last session was too high, and the corrected one puts the fiscal condition back where it was
+
+Last session I replaced the stipulated omega of 0.75 with 0.9554 from DWS Table 7 and
+reported that this pulled the break-even reemployment share down far enough that the observed
+rho met it in 12 of 27 cells. **That figure of 0.9554 was wrong on two counts and the
+conclusion drawn from it is withdrawn.**
+
+### Error 1: it priced only full-time to full-time moves
+
+DWS Table 7 covers reemployment into full-time wage and salary work. Of 1,942 thousand
+long-tenured workers who lost full-time jobs and were employed at the survey date:
+
+| Destination | Thousands | Share | Earnings ratio |
+|---|---|---|---|
+| Full-time wage and salary | 1,593 | 82.03% | 0.960 to 1.010, Table 7 bands |
+| Part-time | 197 | 10.14% | **0.3206**, CPS Table 38 over Table 37, 2025 |
+| Self-employed or unpaid family | 152 | 7.83% | 0.70 to 1.00, STATED, not sourced |
+
+The part-time ratio is sourced: median usual weekly earnings, 386 against 1,204 USD in 2025
+(380 against 1,159 in 2024). I had stipulated 0.50 as a placeholder. The sourced value is
+**a third, not a half**, so a tenth of the reemployed were being credited with fifty percent
+more income than the data support.
+
+**Blended omega, nominal: 0.9073 central, range 0.8750 to 0.9577.**
+
+Caveat that travels with the part-time leg: it is a ratio of medians across two different
+populations, not what a displaced full-time worker gets on moving to part-time. Displaced
+long-tenured workers are older and more experienced than the median part-time worker, so
+0.32 is a floor and an upper case of 0.50 is carried as a labelled assumption. The
+self-employed leg is not sourced at all and is flagged wherever it appears.
+
+### Error 2, which is conceptual: nominal against counterfactual
+
+Table 7 compares nominal earnings on the new job with nominal earnings on a job lost up to
+three years earlier. **The fiscal condition does not need that ratio.** The condition
+tau_k*s + tau_l*rho*omega >= tau_l compares tax raised after displacement against tax that
+WOULD have been raised on the same workers absent displacement, and the counterfactual wage
+bill grows with economy-wide wages. Using the nominal ratio credits displacement with general
+wage growth that would have happened anyway.
+
+Survey window January 2023 to December 2025, status measured January 2026, so mean elapsed
+time is 18 months on a uniform-displacement assumption, reported across 1.0 to 2.0 years.
+Employment Cost Index, wages and salaries, private industry: 159.4 to 177.5 over three years,
+**3.65 percent a year**. CPI: 300.4 to 326.6, 2.82 percent a year.
+
+| Concept | Value | Is it what the condition needs? |
+|---|---|---|
+| omega nominal | 0.9073 | No. Credits displacement with general wage growth |
+| omega real | 0.8702 | No. Measures the worker's purchasing power |
+| **omega counterfactual** | **0.8598** | **Yes** |
+
+Range over every case and elapsed assumption: **0.8292 to 0.9076**.
+
+### Net effect, and it runs AGAINST last session's report
+
+| Version | omega | Status |
+|---|---|---|
+| Stipulated JLS | 0.75 | Wrong estimand: long-run loss including non-employment |
+| Last session, full-time only, nominal | 0.9554 | Too high on both counts. **Withdrawn** |
+| **This session, blended, counterfactual** | **0.8598** | The one the condition needs |
+
+The correction moves omega back most of the way toward the stipulated value. Last session I
+reported that sourcing omega weakened P1r substantially. **That report was premature and is
+corrected below in A50.**
+
+---
+
+## A49. rho IS NOT A CONSTANT. Fourteen survey vintages give it as a function of labour slack, and the relationship is strong
+
+`src/bls_dws_history.py`. Every reachable Worker Displacement vintage, read from the BLS
+archive, with the civilian unemployment rate in the survey month.
+
+| Release | rho | Survey unemployment |
+|---|---|---|
+| 2000-08-09 | **0.740** | 4.0 |
+| 2002-08-21 | 0.650 | 5.7 |
+| 2004-07-30 | 0.650 | 5.7 |
+| 2006-08-17 | 0.700 | 4.7 |
+| 2008-08-20 | 0.680 | 5.0 |
+| 2010-08-26 | **0.490** | **9.8** |
+| 2012-08-24 | 0.560 | 8.3 |
+| 2014-08-26 | 0.610 | 6.6 |
+| 2016-08-25 | 0.660 | 4.8 |
+| 2018-08-28 | 0.660 | 4.0 |
+| 2020-08-27 | 0.700 | 3.6 |
+| 2022-08-26 | 0.650 | 4.0 |
+| 2024-08-29 | 0.657 | 3.7 |
+| 2026-08-27 | 0.661 | 4.3 |
+
+**Ordinary least squares, 14 vintages:**
+
+> **rho = 0.8090 - 0.0304 x unemployment rate**,
+> slope standard error 0.0042, t = -7.20, **R-squared 0.812**
+
+Every extra percentage point of unemployment costs **3.04 percentage points** of the
+reemployment rate. Observed rho spans **0.49 to 0.74** over an unemployment range of 3.6 to
+9.8 percent.
+
+**This replaces the stipulated functional form the previous prompt asked for.** The frontier
+does not need an invented rule for how absorption falls with displacement: the relationship
+is measured, on fourteen observations, with an R-squared of 0.81.
+
+**The limit, stated plainly: 9.8 percent is the worst labour market in the sample.** A
+displacement scenario that pushes unemployment beyond that is outside the fitted range and
+the line must not be extrapolated there without saying so on the figure and in the text.
+Nothing in these data speaks to reemployment when a tenth of all employment is displaced at
+once.
+
+### Eight vintages are missing and I am naming them
+
+The survey has run biennially since 1984. The BLS archived-release index lists 2008 onward;
+the historical text path yielded 2000, 2002, 2004 and 2006. **Absent: the January reference
+years 1984, 1986, 1988, 1990, 1992, 1994, 1996 and 1998.** An exhaustive scan of every date
+from June to December of 1990, 1992, 1994, 1996 and 1998 at the historical path returned
+nothing. The fit therefore covers 2000 onward, and the 1980s recessions, which would have
+extended the slack range, are not in it.
+
+## A50. THE FISCAL CONDITION IN ONE STATISTIC. R = rho x omega, and the verdict turns on the capital tax rate, not on the labour market
+
+`src/retained_wage_share.py`. The retained wage share R is the fraction of the displaced wage
+bill that survives as taxable labour income: the share reemployed times the wage they earn
+against what they would otherwise have earned.
+
+    without outlays, at s = 1:   R >= 1 - tau_k/tau_l
+    with outlays g:              R >= 1 - (tau_k*s)/tau_l + g*(1 - rho)/tau_l
+
+The outlay term is not a constant. It contains the same rho that is inside R, so a labour
+market that reemploys fewer workers is penalised twice, once through a smaller R and once
+through a larger outlay bill. The rho* formulation hid that interaction, which is the reason
+for restating the condition this way.
+
+### Observed R at the 2026 survey
+
+| omega case | omega | **R** |
+|---|---|---|
+| **Counterfactual blended (the one the condition needs)** | **0.8598** | **0.5689** |
+| Counterfactual blended, low to high | 0.8292 to 0.9076 | 0.5486 to 0.6005 |
+| Nominal blended | 0.9073 | 0.6003 |
+| Full-time only nominal (last session, withdrawn) | 0.9853 | 0.6519 |
+| Stipulated JLS | 0.75 | 0.4962 |
+| Switcher scenario, Huckfeldt | 0.58 | 0.3837 |
+
+### Required R, and this is the finding
+
+| tau_l | tau_k = 0.05 | tau_k = 0.10 | tau_k = 0.21 |
+|---|---|---|---|
+| AMR 0.255 | 0.8039 | **0.6078** | 0.1765 |
+| Bottom-up 0.301 | 0.8339 | **0.6678** | 0.3023 |
+| Bottom-up 0.318 | 0.8428 | **0.6855** | 0.3396 |
+
+Observed R = 0.5689 against those:
+
+| tau_l | tau_k = 0.05 | tau_k = 0.10 | tau_k = 0.21 |
+|---|---|---|---|
+| AMR 0.255 | -0.236 NOT MET | **-0.040 NOT MET** | +0.392 MET |
+| Bottom-up 0.301 | -0.266 NOT MET | **-0.100 NOT MET** | +0.266 MET |
+| Bottom-up 0.318 | -0.275 NOT MET | **-0.117 NOT MET** | +0.229 MET |
+
+**The verdict is decided entirely by tau_k.** At the statutory upper rate of 21 percent the
+condition passes in every cell, at every omega case in the table above, including the
+switcher scenario. At the equipment and software rate of 5 percent it fails in every cell by
+a wide margin. At the net capital rate of 10 percent it fails, but narrowly: the gap is
+0.040 in the most permissive cell.
+
+**This reframes P1r and it weakens the version the project has been telling.** The
+proposition has been presented as a statement about whether displaced workers can be
+reabsorbed fast enough. It is not. Moving omega from 0.75 to 0.9554 and back to 0.8598,
+across the entire plausible range, never changes the verdict in any cell: the tau_k = 0.21
+column always passes and the tau_k = 0.05 column never does. **Labour market absorption is
+second order. The effective tax rate on AI capital is first order.**
+
+That is a better paper than the one about reemployment speed, but it is a different one, and
+it puts the weight on a parameter this repository has bounded rather than measured.
+
+### Outlays
+
+| g | Cells met, of 9 | Infeasible cells |
+|---|---|---|
+| 0.00 | 3 | 0 |
+| 0.10 | 3 | 0 |
+| 0.25 | 1 | 3 |
+
+At g = 0.25 the condition becomes infeasible, requiring R above 1, in three of nine cells.
+Outlays matter more than omega does.
+
+### Historical vintages, and how many met the condition
+
+omega held at the 2026 counterfactual value, rho varying by vintage. This is an assumption
+and it is stated: if omega is procyclical, historical R in slack years is overstated here.
+
+R ranges from **0.4213** (2010, unemployment 9.8) to **0.6362** (2000, unemployment 4.0).
+
+| Cell | Vintages meeting the condition |
+|---|---|
+| tau_l 0.255, tau_k 0.10 | **1 of 14** (2000 only, R = 0.636 against 0.608) |
+| tau_l 0.301, tau_k 0.10 | **0 of 14** |
+| tau_l 0.318, tau_k 0.10 | **0 of 14** |
+| any tau_l, tau_k 0.21 | 14 of 14 |
+| any tau_l, tau_k 0.05 | 0 of 14 |
+
+**In the tau_k = 0.10 column, one labour market out of fourteen cleared the bar, and it was
+the tightest on record.** Under the switcher scenario, none do. The summary statistic "14 of
+14 met the condition in at least one cell" is technically true and useless, because the
+tau_k = 0.21 column passes unconditionally; it is reported here only so nobody quotes it.
+
+---
+
+## A51. POPULATION CAVEAT, SOURCED. DWS displaced workers mostly are not occupation switchers, and AI displacement is switching by construction
+
+Verified against the AEA article page and the author's PDF: Christopher Huckfeldt,
+"Understanding the Scarring Effect of Recessions", American Economic Review 112(4),
+1273 to 1310, April 2022, doi 10.1257/aer.20160449. Entered in `paper/references.bib` with
+the passages quoted verbatim.
+
+Quoted exactly:
+
+> "Workers who switch occupations subsequent to job displacement experience a 42 percent drop
+> in earnings, twice as large as the 21 percent drop in earnings for workers who remain in
+> the same occupation."
+
+> "While occupation switchers continue to face markedly lower earnings a full decade after
+> job loss, the wage and earnings losses of occupation stayers recover within four years."
+
+Stayers recover "to 6.4 percent one year after displacement, and thereafter are not
+significantly different from zero"; switchers show "relative losses remaining around 10
+percent ten years after job displacement".
+
+**These are measured "relative to counterfactual outcomes under no displacement", the same
+basis as omega_counterfactual.** The two are directly comparable, which is unusual and worth
+stating.
+
+### Why this is the binding caveat on both parameters
+
+The DWS population is workers displaced by plant closings, insufficient work and position
+abolishment. Most can be and are reemployed in the same occupation, and Huckfeldt's stayers
+recover fully within four years. **Displacement that eliminates an occupation forces
+switching by construction.** A truck driver displaced because driving is automated cannot be
+reemployed as a truck driver. The switcher end of Huckfeldt's distribution is therefore the
+right analogue for the scenarios this paper is about, and the DWS average is the wrong one.
+
+| Scenario | omega | **R at rho = 0.6616** | Met at tau_k = 0.10? |
+|---|---|---|---|
+| DWS average, counterfactual blended | 0.8598 | 0.5689 | No, gap 0.040 to 0.117 |
+| Huckfeldt stayers, 21 percent loss | 0.79 | 0.5227 | No |
+| **Huckfeldt switchers, 42 percent loss** | **0.58** | **0.3837** | **No, gap 0.224 to 0.302** |
+
+Under switcher-level losses the gap at tau_k = 0.10 widens by a factor of three to five and
+no historical vintage comes close. **This is the scenario the paper's own subject matter
+implies**, and it is labelled as a scenario rather than a measurement because Huckfeldt's
+population is recession-displaced workers, not workers whose occupation ceased to exist.
+
+There is a second-order effect in the same direction that is NOT quantified here: Huckfeldt
+finds "the cost and incidence of such occupation displacement is higher for workers who lose
+their job during a recession", and A49 shows rho itself falls with slack. Both rho and omega
+therefore deteriorate together in the states of the world the frontier is about, which the
+frontier must handle jointly rather than one at a time.

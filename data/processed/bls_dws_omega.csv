@@ -1,0 +1,7 @@
+open_band_case,non_full_time_bound,omega_full_time_only,omega_all_reemployed
+conservative,lower,0.96028,0.90496
+conservative,upper,0.96028,0.96028
+central,lower,0.98528,0.92547
+central,upper,0.98528,0.98528
+generous,lower,1.01028,0.94597
+generous,upper,1.01028,1.01028

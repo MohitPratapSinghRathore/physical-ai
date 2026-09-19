@@ -70,11 +70,11 @@ def main():
             for inc in SC.INCIDENCE:
                 pw_worker = SC.apply_incidence(p_occ_worker, wq, pw, inc)
                 acc = AE.simulate(P, H, hh_idx, pw_worker,
-                                  SC.RHO_GRID[1], SC.OMEGA["central"])
+                                  SC.RHO_OBSERVED, SC.OMEGA["central"])
                 for lab, mask in [("all", None), ("working_core", core.astype(float))]:
                     s = AE.weighted_stats(H, acc, mask)
                     rows.append({"construct": construct, "target": tname,
-                                 "incidence": inc, "rho": SC.RHO_GRID[1],
+                                 "incidence": inc, "rho": SC.RHO_OBSERVED,
                                  "omega": SC.OMEGA["central"], "sample": lab, **s})
                 print(f"  {construct:16s} {tname:14s} {inc:18s} "
                       f"dsti50 {rows[-1]['share_dsti_50']*100:5.2f}%  "
@@ -86,7 +86,7 @@ def main():
         pm = dict(zip(PO["occp"].astype(int), PO["p_occ"]))
         p_occ_worker = pd.Series(occ).map(pm).fillna(0.0).to_numpy(np.float64)
         pw_worker = SC.apply_incidence(p_occ_worker, wq, pw, "uniform")
-        for rho in SC.RHO_GRID:
+        for rho in SC.RHO_GRID_STIPULATED + (SC.RHO_OBSERVED,):
             for oname, om in SC.OMEGA.items():
                 acc = AE.simulate(P, H, hh_idx, pw_worker, rho, om)
                 s = AE.weighted_stats(H, acc, core.astype(float))
@@ -107,7 +107,7 @@ def main():
         pm = dict(zip(PO["occp"].astype(int), PO["p_occ"]))
         p_occ_worker = pd.Series(occ).map(pm).fillna(0.0).to_numpy(np.float64)
         pw_worker = SC.apply_incidence(p_occ_worker, wq, pw, inc)
-        acc = AE.simulate(P, H, hh_idx, pw_worker, SC.RHO_GRID[1], SC.OMEGA["central"])
+        acc = AE.simulate(P, H, hh_idx, pw_worker, SC.RHO_OBSERVED, SC.OMEGA["central"])
         for t in AE.DSTI_THRESHOLDS:
             k = f"dsti_{int(t*100)}"
             ind = acc[k]

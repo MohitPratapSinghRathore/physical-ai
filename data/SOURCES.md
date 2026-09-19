@@ -116,12 +116,101 @@ Retrieved 88 of 190 company-concept series.
   it and is never presented as this project's own measurement. The owner's manual copy was
   not needed: the page is reachable from this environment.
 
+## BLS Worker Displacement: rho and omega (the two engine parameters)
+
+- Reference: "Displaced Workers Summary", US Bureau of Labor Statistics, USDL news release.
+- URL: https://www.bls.gov/news.release/disp.nr0.htm
+- Table list: https://www.bls.gov/news.release/disp.toc.htm
+- Retrieved: 2026-09-19, read directly from the BLS site. BLS was returning HTTP 403 to this
+  environment for the whole of the earlier work and is now reachable; the owner's manual
+  copy was therefore not required.
+- SURVEY REFERENCE PERIOD: job losses January 2023 through December 2025.
+- STATUS MEASURED: January 2026.
+- UNIVERSE: LONG-TENURED displaced workers, defined by BLS as three or more years on the
+  lost job. This is the principal external validity limitation on both parameters and is
+  restated wherever they are used.
+
+### rho, taken directly, no assumption
+
+- **Table 1**, "Long-tenured displaced workers by age, sex, race, Hispanic or Latino
+  ethnicity, and employment status in January 2026", TOTAL row.
+- Total 3,324 thousand. Employed 2,199 thousand. Unemployed 609 thousand. Not in the labour
+  force 522 thousand.
+- **rho = 2,199 / 3,324 = 0.6616.**
+- The release text states the same figure: "In January 2026, 66.1 percent of the 3.3 million
+  long-tenured displaced workers were reemployed", little different from 65.7 percent in
+  January 2024.
+
+### omega, DERIVED, with every assumption stated
+
+- **Table 7**, "Long-tenured displaced workers who lost full-time wage and salary jobs and
+  were reemployed in January 2026 by industry of lost job and characteristics of new job",
+  TOTAL row.
+- Reemployed total 1,942 thousand: 1,593 to full-time wage and salary work, 197 to
+  part-time, 152 to self-employment or unpaid family work.
+- Earnings on the new job against the lost job, full-time to full-time, among the 1,342
+  thousand who reported earnings on the lost job:
+  20 percent or more below 369; below but within 20 percent 317; equal or above but within
+  20 percent 354; 20 percent or more above 302.
+- Table 7 publishes BANDS, not a mean, and the two outer bands are open-ended, so a mean
+  requires midpoint assumptions. Those assumptions, and the separate assumption needed to
+  price reemployment into part-time and self-employment (which Table 7 does not cover), are
+  written out in `src/bls_dws.py` and varied across three cases and two bounds.
+- **omega = 0.9554 central, range 0.9050 to 1.0103** over all reemployed;
+  0.9603 to 1.0103 restricted to full-time to full-time moves.
+- This REPLACES the stipulated 0.75 from Jacobson, LaLonde and Sullivan, which was the wrong
+  estimand: JLS measures long-run earnings loss including spells of non-employment, while
+  the engine and the P1r formula both need the ratio CONDITIONAL ON REEMPLOYMENT.
+
+## CPS annual averages: part-time against full-time weekly earnings (blended omega)
+
+- Reference: Labor Force Statistics from the Current Population Survey, annual averages.
+  Table 37, "Median weekly earnings of full-time wage and salary workers by selected
+  characteristics". Table 38, "Median weekly earnings of part-time wage and salary workers
+  by selected characteristics".
+- URLs: https://www.bls.gov/cps/cpsaat37.htm and https://www.bls.gov/cps/cpsaat38.htm
+- Retrieved: 2026-09-19. Data cover annual averages for 2024 and 2025.
+- Total, 16 years and over. 2025: part-time 386 USD, full-time 1,204 USD, ratio 0.3206.
+  2024: part-time 380 USD, full-time 1,159 USD, ratio 0.3279.
+- Used for: the part-time leg of blended omega in src/omega_blended.py.
+- CAVEAT carried wherever used: this is a ratio of medians across two DIFFERENT populations,
+  not the ratio a displaced full-time worker obtains on moving to part-time. Displaced
+  long-tenured workers are older and more experienced than the median part-time worker, so
+  0.32 is treated as a floor and an upper case of 0.50 is carried as a STATED assumption.
+
+## BLS Worker Displacement: historical vintages (endogenous rho)
+
+- Reference: the biennial Worker Displacement news releases, read from the BLS archive.
+- Index: https://www.bls.gov/bls/news-release/home.htm (lists 2008 through 2026)
+- Archive path: https://www.bls.gov/news.release/archives/disp_MMDDYYYY.htm
+- Historical text path: https://www.bls.gov/news.release/history/disp_MMDDYYYY.txt
+- Retrieved: 2026-09-19. FOURTEEN vintages obtained, survey years 2000 through 2026.
+- MISSING, and listed rather than dropped: the surveys with January reference years 1984,
+  1986, 1988, 1990, 1992, 1994, 1996 and 1998. The BLS archived-release index does not list
+  them, the historical text path returns HTTP errors for them, and an exhaustive scan of
+  every date in June through December of 1990, 1992, 1994, 1996 and 1998 at that path found
+  nothing. Eight vintages are therefore absent and the fitted relationship covers 2000
+  onward only.
+- Used for: the rho against labour slack calibration in src/bls_dws_history.py.
+
+## FRED series added this session
+
+- ECIWAG, Employment Cost Index, wages and salaries, private industry workers. Used for the
+  counterfactual wage path in src/omega_blended.py, chosen because it holds occupation and
+  industry composition fixed.
+- CPIAUCSL, Consumer Price Index for All Urban Consumers. Used ONLY for the real-terms
+  variant of omega, which the fiscal condition does not use.
+- UNRATE, civilian unemployment rate. Used as the labour slack measure at each DWS survey
+  month.
+- URLs: https://fred.stlouisfed.org/graph/fredgraph.csv?id=<SERIES>. Retrieved 2026-09-19.
+
 ## Blocked or paywalled, not used
 
 | Source | Status | Needed for |
 |---|---|---|
 | SEC EDGAR XBRL | HTTP 403, undeclared automated tool | Leg A Tier 2 |
 | BLS OES employment and wages | HTTP 403 to this environment | employment weights for PAEI |
+| BLS Displaced Worker Survey | NO LONGER BLOCKED, retrieved 2026-09-19, see the Worker Displacement section above | rho and omega |
 | Census API (PUMS) | requires free API key | not needed, bulk files used instead |
 | IFR World Robotics | paid | robot stock and shipments |
 | Scopus / Web of Science | subscription | WS0 systematic coverage |

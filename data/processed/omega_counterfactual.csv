@@ -1,0 +1,4 @@
+elapsed_case,elapsed_years,omega_nominal,omega_real,omega_counterfactual
+low,1.0,0.90727,0.88236,0.87533
+central,1.5,0.90727,0.87017,0.85978
+high,2.0,0.90727,0.85814,0.84451

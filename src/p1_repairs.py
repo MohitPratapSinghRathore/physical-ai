@@ -87,7 +87,13 @@ OUT = ROOT / "data" / "processed"
 
 TAU_L = {"AMR": 0.255, "bottom_up_low": 0.301, "bottom_up_high": 0.318}
 TAU_K = {"net_capital": 0.10, "equipment_software": 0.05}
-OMEGA = {"low": 0.65, "central": 0.75, "high": 0.82}
+# OMEGA IS NOW SOURCED from the BLS Displaced Workers Summary Table 7, see src/bls_dws.py.
+# The stipulated Jacobson, LaLonde and Sullivan values are retained as sensitivity only:
+# JLS measures long-run earnings loss INCLUDING non-employment, while this formula needs
+# the ratio CONDITIONAL ON REEMPLOYMENT, which is what DWS Table 7 prices.
+OMEGA = {"low": 0.9050, "central": 0.9554, "high": 1.0103}
+OMEGA_STIPULATED = {"low": 0.65, "central": 0.75, "high": 0.82}
+RHO_OBSERVED = 0.6616
 RHO = [0.0, 0.5, 0.7, 0.9]
 G = [0.0, 0.10, 0.25]
 

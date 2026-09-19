@@ -42,7 +42,13 @@ RAW, OUT = ROOT / "data" / "raw", ROOT / "data" / "processed"
 
 TAU_L = {"AMR_0.255": 0.255, "bottom_up_0.301": 0.301, "bottom_up_0.318": 0.318}
 TAU_K = {"equipment_0.05": 0.05, "net_capital_0.10": 0.10, "statutory_upper_0.21": 0.21}
-OMEGA = {"JLS_central_0.75": 0.75, "JLS_low_loss_0.82": 0.82}
+# OMEGA IS NOW SOURCED, see src/bls_dws.py. The JLS values are the wrong estimand for
+# this formula (long-run total loss rather than conditional on reemployment) and are
+# retained only so the superseded grid stays reproducible.
+OMEGA = {"DWS_low_0.905": 0.9050, "DWS_central_0.955": 0.9554,
+         "DWS_high_1.010": 1.0103,
+         "JLS_central_0.75_SUPERSEDED": 0.75, "JLS_low_loss_0.82_SUPERSEDED": 0.82}
+RHO_OBSERVED = 0.6616
 DISCOUNT = 0.03
 HORIZONS = (10, 20)
 DISPLACEMENTS = (0.10, 0.25, 0.50)

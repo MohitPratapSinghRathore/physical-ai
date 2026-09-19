@@ -53,10 +53,11 @@ Do not cite the superseded title.
   bank-channel figure is a LOWER BOUND on Leg A, and no arithmetic anywhere in this
   repository uses it.
 
-### BLS Displaced Worker Survey, reemployment rate (rho)
+### BLS Displaced Worker Survey, reemployment rate (rho) -- RESOLVED 2026-09-19
 
-- Needed for: P1r break-even comparison, and to replace the gridded rho in
-  src/stress/scenarios.py with an observed value.
-- Status: BLOCKED. Every BLS endpoint returns HTTP 403 to this environment.
-- Consequence: rho is gridded at 0.50, 0.65 and 0.80 throughout and is never asserted as
-  observed. No claim in this repository depends on a particular value of rho.
+- Status: NO LONGER BLOCKED and NO LONGER UNVERIFIED. BLS became reachable from this
+  environment and the release was read directly. rho = 0.6616 and omega = 0.9554 (range
+  0.9050 to 1.0103) are sourced in data/SOURCES.md with table numbers, reference period and
+  every derivation assumption, and computed in src/bls_dws.py.
+- This entry is kept only so the earlier "blocked" statements in findings A41 and A45 can be
+  traced to their resolution.

@@ -60,11 +60,33 @@ DELTA_TILT = 2.0
 TARGETS = {"mild_5pct": 0.05, "central_10pct": 0.10, "severe_20pct": 0.20}
 INCIDENCE = ("uniform", "lowest_wage_first", "highest_wage_first")
 
-# Reemployment. omega from Jacobson, LaLonde and Sullivan as used throughout this
-# repository (central 0.75, range 0.65 to 0.82). rho is NOT yet sourced: the BLS Displaced
-# Worker Survey is blocked from this environment, so it is gridded and never asserted.
-OMEGA = {"low": 0.65, "central": 0.75, "high": 0.82}
-RHO_GRID = (0.50, 0.65, 0.80)
+# Reemployment. BOTH PARAMETERS ARE NOW SOURCED, see src/bls_dws.py and data/SOURCES.md.
+#
+#   rho    0.6616. BLS "Displaced Workers Summary", Table 1 total row: 2,199 of 3,324
+#          thousand long-tenured displaced workers employed in January 2026. Job losses
+#          January 2023 through December 2025. Taken directly, no assumption.
+#
+#   omega  0.9554 central, range 0.9050 to 1.0103. BLS Table 7 total row, banded earnings
+#          distribution on the new job against the lost job, with STATED midpoint
+#          assumptions for the two open-ended bands and for reemployment into part-time and
+#          self-employment, which Table 7 does not price. See src/bls_dws.py for every
+#          assumption.
+#
+# The previous omega of 0.75 came from Jacobson, LaLonde and Sullivan and was the WRONG
+# ESTIMAND for this parameter: JLS measures long-run earnings losses including spells of
+# non-employment, while the engine needs the ratio CONDITIONAL ON REEMPLOYMENT. The
+# stipulated values are retained below purely as sensitivity and are no longer the default.
+#
+# LIMITATION on both: the DWS universe is LONG-TENURED displaced workers, three or more
+# years on the lost job. There is no evidence that AI displacement resembles that population.
+OMEGA_OBSERVED = {"low": 0.9050, "central": 0.9554, "high": 1.0103}
+RHO_OBSERVED = 0.6616
+OMEGA_STIPULATED = {"low": 0.65, "central": 0.75, "high": 0.82}
+RHO_GRID_STIPULATED = (0.50, 0.65, 0.80)
+
+# defaults used by every runner unless a sensitivity is explicitly requested
+OMEGA = OMEGA_OBSERVED
+RHO_GRID = (RHO_OBSERVED,)
 
 
 def _h3():
@@ -194,10 +216,17 @@ def describe():
         "targets_share_of_total_employment": TARGETS,
         "incidence_variants": list(INCIDENCE),
         "omega_wage_ratio_on_reemployment": OMEGA,
-        "omega_source": "Jacobson, LaLonde and Sullivan, as used elsewhere in this repo",
+        "omega_source": "BLS Displaced Workers Summary Table 7, banded, with stated "
+                        "midpoint assumptions. See src/bls_dws.py.",
+        "omega_stipulated_retained_as_sensitivity": OMEGA_STIPULATED,
         "rho_grid": list(RHO_GRID),
-        "rho_status": "NOT SOURCED. BLS Displaced Worker Survey blocked from this "
-                      "environment. rho is gridded and must never be asserted as observed.",
+        "rho_observed": RHO_OBSERVED,
+        "rho_source": "BLS Displaced Workers Summary Table 1 total row, 2,199 of 3,324 "
+                      "thousand employed in January 2026, job losses January 2023 to "
+                      "December 2025. Taken directly.",
+        "rho_stipulated_retained_as_sensitivity": list(RHO_GRID_STIPULATED),
+        "universe_limitation": "DWS covers LONG-TENURED displaced workers only, three or "
+                               "more years on the lost job.",
         "probability_form": "p(r) = min(1, a * r**gamma), r = employment-weighted "
                             "percentile rank of the exposure score, a solved so the "
                             "employment-weighted mean p equals the scenario target",

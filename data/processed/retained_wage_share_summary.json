@@ -1,0 +1,26 @@
+{
+  "rho_2026": 0.6609999999999999,
+  "omegas": {
+    "counterfactual_blended_central": 0.8597817149881001,
+    "counterfactual_blended_low": 0.8292218615797637,
+    "counterfactual_blended_high": 0.9075879113547929,
+    "nominal_blended_central": 0.907267703570703,
+    "full_time_only_nominal_0.985": 0.9853,
+    "stipulated_JLS_0.75": 0.75,
+    "switcher_scenario_0.58": 0.5800000000000001,
+    "stayer_scenario_0.79": 0.79
+  },
+  "huckfeldt_2022": {
+    "switcher_initial_loss": 0.42,
+    "stayer_initial_loss": 0.21,
+    "switcher_loss_10y": 0.1,
+    "stayer_loss_1y": 0.064
+  },
+  "R_2026_central": 0.5683157136071341,
+  "R_vintage_range": [
+    0.42129304034416903,
+    0.6362384690911941
+  ],
+  "vintages_meeting_any_cell": 14,
+  "vintages_total": 14
+}

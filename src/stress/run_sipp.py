@@ -49,7 +49,7 @@ def main():
             p_occ = pd.Series(occ).map(pm).fillna(0.0).to_numpy(float)
             for inc in SC.INCIDENCE:
                 pwk = SC.apply_incidence(p_occ, wq, pw, inc)
-                acc = SE.simulate(P, hh, pwk, SC.RHO_GRID[1], SC.OMEGA["central"])
+                acc = SE.simulate(P, hh, pwk, SC.RHO_OBSERVED, SC.OMEGA["central"])
                 rows.append({"construct": c, "target": tname, "incidence": inc,
                              "sample": "working_core", **SE.stats(hh, acc, w0 * core)})
             print(f"  {c:16s} {tname:14s} dsti50 {rows[-1]['share_dsti_50']*100:5.2f}%  "
@@ -67,7 +67,7 @@ def main():
         pm = dict(zip(PO["occp"].astype(int), PO["p_occ"]))
         p_occ = pd.Series(occ).map(pm).fillna(0.0).to_numpy(float)
         pwk = SC.apply_incidence(p_occ, wq, pw, "uniform")
-        acc = SE.simulate(P, hh, pwk, SC.RHO_GRID[1], SC.OMEGA["central"])
+        acc = SE.simulate(P, hh, pwk, SC.RHO_OBSERVED, SC.OMEGA["central"])
         housing = hh["housing_m"].to_numpy(float) * 12.0
         has = housing > 0
         for key in ["dsti_50", "runway_short_under_3", "runway_house_under_3"]:

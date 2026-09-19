@@ -1,0 +1,39 @@
+{
+  "reemployment_destination_shares": {
+    "full_time": 0.8202883625128733,
+    "part_time": 0.10144181256436663,
+    "self_employed": 0.07826982492276004
+  },
+  "part_time_ratio_sourced": {
+    "2025": 0.32059800664451826,
+    "2024": 0.32786885245901637
+  },
+  "part_time_upper_assumed": 0.5,
+  "self_employed_assumed": {
+    "low": 0.7,
+    "central": 0.85,
+    "high": 1.0
+  },
+  "omega_full_time_only": {
+    "conservative": 0.9602831594634875,
+    "central": 0.9852831594634873,
+    "generous": 1.0102831594634873
+  },
+  "omega_blended_nominal": {
+    "low": 0.8750200207694673,
+    "central": 0.907267703570703,
+    "high": 0.9577142497555794
+  },
+  "eci_wages_growth_annual_2023_2026": 0.03648931909954012,
+  "cpi_growth_annual_2023_2026": 0.028223919485339533,
+  "omega_blended_counterfactual": {
+    "low": 0.8292218615797637,
+    "central": 0.8597817149881001,
+    "high": 0.9075879113547929
+  },
+  "elapsed_years": {
+    "low": 1.0,
+    "central": 1.5,
+    "high": 2.0
+  }
+}
