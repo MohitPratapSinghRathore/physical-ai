@@ -1,0 +1,184 @@
+{
+  "CMDEBT": {
+    "date": "2026-04-01",
+    "value": 21377.787,
+    "units": "USD bn",
+    "title": "Households and Nonprofit Organizations; Debt Securities and Loans; Liability, Level",
+    "leg": "legW"
+  },
+  "HHMSDODNS": {
+    "date": "2026-04-01",
+    "value": 14010.942000000001,
+    "units": "USD bn",
+    "title": "Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level",
+    "leg": "legW"
+  },
+  "CCLBSHNO": {
+    "date": "2026-04-01",
+    "value": 5120.258,
+    "units": "USD bn",
+    "title": "Households and Nonprofit Organizations; Consumer Credit; Liability, Level",
+    "leg": "legW"
+  },
+  "FGCCSAQ027S": {
+    "date": "2026-04-01",
+    "value": 1605.134,
+    "units": "USD bn",
+    "title": "Federal Government; Consumer Credit, Student Loans; Asset, Level",
+    "leg": "legW"
+  },
+  "TDSP": {
+    "date": "2026-01-01",
+    "value": 11.164138,
+    "units": "Percent",
+    "title": "Household Debt Service Payments as a Percent of Disposable Personal Income",
+    "leg": "legW"
+  },
+  "HDTGPDUSQ163N": {
+    "date": "2025-04-01",
+    "value": 68.54846214249969,
+    "units": "Ratio",
+    "title": "Household Debt to GDP for United States",
+    "leg": "legW"
+  },
+  "GFDEBTN": {
+    "date": "2026-01-01",
+    "value": 39065.421,
+    "units": "USD bn",
+    "title": "Federal Debt: Total Public Debt",
+    "leg": "legW_sov"
+  },
+  "FGRECPT": {
+    "date": "2026-04-01",
+    "value": 5980.631,
+    "units": "USD bn",
+    "title": "Federal Government Current Receipts",
+    "leg": "taxbase"
+  },
+  "W006RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 3736.828,
+    "units": "USD bn",
+    "title": "Federal government current tax receipts",
+    "leg": "taxbase"
+  },
+  "A074RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 2571.417,
+    "units": "USD bn",
+    "title": "Federal government current tax receipts: Personal current taxes",
+    "leg": "taxbase"
+  },
+  "W780RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 2074.353,
+    "units": "USD bn",
+    "title": "Federal government current receipts: Contributions for government social insurance",
+    "leg": "taxbase"
+  },
+  "W782RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 2106.06,
+    "units": "USD bn",
+    "title": "Government current receipts: Contributions for government social insurance",
+    "leg": "taxbase"
+  },
+  "W055RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 3263.468,
+    "units": "USD bn",
+    "title": "Personal current taxes",
+    "leg": "taxbase"
+  },
+  "GDI": {
+    "date": "2026-04-01",
+    "value": 32245.142,
+    "units": "USD bn",
+    "title": "Gross Domestic Income",
+    "leg": "denom"
+  },
+  "A053RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 5208.36,
+    "units": "USD bn",
+    "title": "National income: Corporate profits before tax (without IVA and CCAdj)",
+    "leg": "taxbase"
+  },
+  "WASCUR": {
+    "date": "2026-04-01",
+    "value": 13365.233,
+    "units": "USD bn",
+    "title": "Compensation of Employees: Wages and Salary Accruals",
+    "leg": "wagebill"
+  },
+  "COE": {
+    "date": "2026-04-01",
+    "value": 16224.289,
+    "units": "USD bn",
+    "title": "National Income: Compensation of Employees, Paid",
+    "leg": "wagebill"
+  },
+  "W270RE1A156NBEA": {
+    "date": "2024-01-01",
+    "value": 42.7,
+    "units": "Percent",
+    "title": "Shares of gross domestic income: Compensation of employees, paid: Wage and salary accruals: Disbursements: to persons",
+    "leg": "wagebill"
+  },
+  "GDP": {
+    "date": "2026-04-01",
+    "value": 32486.066,
+    "units": "USD bn",
+    "title": "Gross Domestic Product",
+    "leg": "denom"
+  },
+  "DPI": {
+    "date": "2026-04-01",
+    "value": 23642.22,
+    "units": "USD bn",
+    "title": "Disposable Personal Income",
+    "leg": "denom"
+  },
+  "Y033RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 1864.836,
+    "units": "USD bn",
+    "title": "Gross Private Domestic Investment: Fixed Investment: Nonresidential: Equipment",
+    "leg": "legA_ctx"
+  },
+  "B985RC1Q027SBEA": {
+    "date": "2026-04-01",
+    "value": 816.63,
+    "units": "USD bn",
+    "title": "Private fixed investment: Nonresidential: Intellectual property products: Software",
+    "leg": "legA_ctx"
+  },
+  "PNFI": {
+    "date": "2026-04-01",
+    "value": 4623.356,
+    "units": "USD bn",
+    "title": "Private Nonresidential Fixed Investment",
+    "leg": "legA_ctx"
+  },
+  "TCMILBSNNCB": {
+    "date": "2026-04-01",
+    "value": 15707.842,
+    "units": "USD bn",
+    "title": "Nonfinancial Corporate Business; Debt Securities and Loans; Liability, Level",
+    "leg": "legA_ctx"
+  },
+  "CORCACBS": {
+    "date": "2026-04-01",
+    "value": 2.66,
+    "units": "Percent",
+    "title": "Charge-Off Rate on Consumer Loans, All Commercial Banks",
+    "leg": "stress"
+  },
+  "DRSFRMACBS": {
+    "date": "2026-04-01",
+    "value": 1.86,
+    "units": "Percent",
+    "title": "Delinquency Rate on Single-Family Residential Mortgages, Booked in Domestic Offices, All Commercial Banks",
+    "leg": "stress"
+  }
+}

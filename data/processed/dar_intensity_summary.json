@@ -1,0 +1,55 @@
+{
+  "paei_quintile_cutpoints": [
+    0.08885,
+    0.12,
+    0.1851,
+    0.2556
+  ],
+  "rows": [
+    {
+      "paei_quintile": "q1",
+      "wage_income_usd_bn": 3277.1364,
+      "share_of_wage_income_pct": 33.2022,
+      "mortgage_service_usd_bn": 264.4346,
+      "share_of_mortgage_service_pct": 32.2256,
+      "concentration_ratio": 0.9706,
+      "service_to_income_pct": 8.0691
+    },
+    {
+      "paei_quintile": "q2",
+      "wage_income_usd_bn": 2314.2854,
+      "share_of_wage_income_pct": 23.4471,
+      "mortgage_service_usd_bn": 199.4375,
+      "share_of_mortgage_service_pct": 24.3047,
+      "concentration_ratio": 1.0366,
+      "service_to_income_pct": 8.6177
+    },
+    {
+      "paei_quintile": "q3",
+      "wage_income_usd_bn": 1749.7658,
+      "share_of_wage_income_pct": 17.7277,
+      "mortgage_service_usd_bn": 157.5994,
+      "share_of_mortgage_service_pct": 19.206,
+      "concentration_ratio": 1.0834,
+      "service_to_income_pct": 9.0069
+    },
+    {
+      "paei_quintile": "q4",
+      "wage_income_usd_bn": 1340.5043,
+      "share_of_wage_income_pct": 13.5813,
+      "mortgage_service_usd_bn": 107.3814,
+      "share_of_mortgage_service_pct": 13.0862,
+      "concentration_ratio": 0.9635,
+      "service_to_income_pct": 8.0105
+    },
+    {
+      "paei_quintile": "q5",
+      "wage_income_usd_bn": 1188.5524,
+      "share_of_wage_income_pct": 12.0418,
+      "mortgage_service_usd_bn": 91.7195,
+      "share_of_mortgage_service_pct": 11.1775,
+      "concentration_ratio": 0.9282,
+      "service_to_income_pct": 7.7169
+    }
+  ]
+}

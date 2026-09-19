@@ -1,0 +1,13 @@
+economy,leg,component,series,value_usd_bn,pct_gdp,asof,tier,source_title
+US,W,"Household debt, total (Z.1)",CMDEBT,21377.8,65.8,2026-04-01,1,"Households and Nonprofit Organizations; Debt Securities and Loans; Liability, Level"
+US,W,of which: home mortgages 1-4 family,HHMSDODNS,14010.9,43.1,2026-04-01,1,"Households and Nonprofit Organizations; One-to-Four-Family Residential Mortgages; Liability, Level"
+US,W,of which: consumer credit,CCLBSHNO,5120.3,15.8,2026-04-01,1,"Households and Nonprofit Organizations; Consumer Credit; Liability, Level"
+US,W,of which: federal student loans held,FGCCSAQ027S,1605.1,4.9,2026-04-01,1,"Federal Government; Consumer Credit, Student Loans; Asset, Level"
+US,W,"Federal public debt, total",GFDEBTN,39065.4,120.3,2026-01-01,1,Federal Debt: Total Public Debt
+US,W,Wage and salary accruals (annual rate),WASCUR,13365.2,41.1,2026-04-01,flow,Compensation of Employees: Wages and Salary Accruals
+US,W,Compensation of employees (annual rate),COE,16224.3,49.9,2026-04-01,flow,"National Income: Compensation of Employees, Paid"
+US,W,"Personal current taxes, federal (annual rate)",A074RC1Q027SBEA,2571.4,7.9,2026-04-01,flow,Federal government current tax receipts: Personal current taxes
+US,W,"Social insurance contributions, federal (annual rate)",W780RC1Q027SBEA,2074.4,6.4,2026-04-01,flow,Federal government current receipts: Contributions for government social insurance
+US,W,Federal current tax receipts (annual rate),W006RC1Q027SBEA,3736.8,11.5,2026-04-01,flow,Federal government current tax receipts
+US,W,Corporate profits before tax (annual rate),A053RC1Q027SBEA,5208.4,16.0,2026-04-01,flow,National income: Corporate profits before tax (without IVA and CCAdj)
+US,W,GDP (annual rate),GDP,32486.1,100.0,2026-04-01,denom,Gross Domestic Product

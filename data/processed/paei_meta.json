@@ -1,0 +1,42 @@
+{
+  "onet_version": "31.0",
+  "n_occupations": 911,
+  "elements": {
+    "embodiment": [
+      "1.A.2.a.1",
+      "1.A.2.a.2",
+      "1.A.2.a.3",
+      "1.A.2.b.2",
+      "1.A.3.a.1",
+      "1.A.3.a.4",
+      "1.A.3.b.1",
+      "1.A.3.c.3",
+      "4.A.3.a.1",
+      "4.A.3.a.2",
+      "4.A.3.a.3",
+      "4.A.3.a.4",
+      "4.C.2.d.1.b",
+      "4.C.2.d.1.g",
+      "4.C.2.d.1.h"
+    ],
+    "enablers": [
+      "4.C.3.b.2",
+      "4.C.3.b.7",
+      "4.C.3.d.3",
+      "4.C.2.a.1.a",
+      "4.C.2.d.1.i",
+      "4.C.3.b.4"
+    ],
+    "frictions": [
+      "4.C.3.a.4",
+      "4.C.3.b.8",
+      "4.C.2.a.1.c",
+      "4.C.2.b.1.e",
+      "4.C.1.a.4",
+      "4.C.1.b.1.f",
+      "4.C.3.a.1"
+    ]
+  },
+  "normalisation": "published O*NET scale anchors (Scales Reference.txt)",
+  "formula": "PAEI = P * S ; S = ((mean(enablers) - mean(frictions)) + 1)/2"
+}

@@ -1,0 +1,17 @@
+{
+  "pums_year": 2023,
+  "onet_version": "31.0",
+  "mortgage_households_weighted": 50231926.0,
+  "total_mortgage_service_usd_bn": 1007.486631984,
+  "wage_financed_share_pct": 81.4474799935739,
+  "paei_quintile_cutpoints": [
+    0.08885,
+    0.12,
+    0.1851,
+    0.2556
+  ],
+  "wage_coverage_by_paei_match_pct": 90.68289709277009,
+  "occp_codes_matched_pct": 96.60377358490567,
+  "top_quintile_share_pct": 9.103795478377283,
+  "top_two_quintile_share_pct": 19.76214248330654
+}
