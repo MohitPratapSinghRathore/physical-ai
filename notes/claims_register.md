@@ -145,6 +145,14 @@ them in the same list.
 | 85 | No published work links occupational AI exposure to household balance-sheet outcomes (none located, non-systematic search) | **provisional** | A66 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 86 | Acemoglu-Restrepo's increased benefit take-up and falling E/P in exposed areas are settled | **NOT SETTLED** | A66: Altindag, El Cheikh Taha, Nunley and Seals (2026) find SSDI applications FALLING and E/P NOT falling in exposed commuting zones. Different designs, but close enough that the take-up result cannot be leaned on | n/a | n/a | n/a | n/a | n/a | n/a |
 | 87 | phi has independent empirical support: Fan (2025) estimates mobility recovers about 20 percent of losses against 30 percent in standard models, implying phi of about 0.33 | **provisional**, verified | A66 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 88 | The Fed's 2026 severely adverse scenario (u to 10 percent, house prices -30, CRE -39) produces a 1.5 percent loss rate on first-lien mortgages and a 1.6pp fall in aggregate CET1 | standing, read from the source | A67 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 89 | A displacement story routed through mortgages is routed through the most loss-resistant asset on the bank balance sheet: 1.5 percent against 17.1 for credit cards and 9.0 for C and I | **provisional** | A67 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 90 | Within-household correlated displacement is SUPERADDITIVE but not double: both earners unemployed gives more than +8pp of default probability against +5pp for one | standing, Gerardi et al. | A67 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 91 | Job loss is equivalent to a 35 percent equity decline for default, so a job loss is slightly more potent than the entire severely adverse house price shock | standing, Gerardi et al. | A67 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 92 | This project's DSTI engine captures at most a third of the default mechanism: only 30 percent of defaulters would have to go below subsistence to stay current, and 38 percent could pay without cutting consumption | **provisional**, a limitation of A41 | A67 | n/a | n/a | yes | n/a | n/a | yes |
+| 93 | The entry-level attrition channel is already measured and operating: employment of 22 to 25 year olds in AI-exposed occupations is 19 percent below counterfactual and widening, operating through REDUCED HIRING not separations | standing, Brynjolfsson, Chandar and Chen (2026) | A68 | yes | n/a | n/a | n/a | n/a | n/a |
+| 94 | A64's blind-spot deduction is confirmed by independent data | standing | A68 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 95 | The channel already operating is the one this project's household engine measures WORST, because 22 to 25 year olds mostly do not hold mortgages | **provisional** | A68 | n/a | n/a | n/a | n/a | n/a | yes |
 
 ## Engine-based claims, opened this session
 

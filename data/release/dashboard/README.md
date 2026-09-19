@@ -1,6 +1,6 @@
 # Trigger dashboard
 
-Version 0.4.0, generated 2026-09-19.
+Version 0.5.0, generated 2026-09-19.
 
 Every indicator computable from public data, with its current value, source, date and threshold where one exists. Regenerated whenever an input changes.
 

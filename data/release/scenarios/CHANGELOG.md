@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 (2026-09-19)
+- Supervisory conversion layer added: Federal Reserve 2026 DFAST severely adverse scenario
+  and Table 9 loss rates, Gerardi et al. conditional default, NY Fed household debt.
+- Five dashboard rows filled, including three ENTRY-LEVEL indicators that detect
+  attrition-led automation, which A64 showed the existing indicator set cannot see.
+
 ## 0.4.0 (2026-09-19)
 - REGIMES REDEFINED. The SLOW / FAST / SUDDEN split is replaced by INSIDE_DATA,
   BOUNDARY_BAND and OUTSIDE_DATA. The old middle regime was nearly empty (A63 found 0 of 120

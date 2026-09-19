@@ -1,0 +1,9 @@
+loan_type,losses_usd_bn,loss_rate_pct,bank_range_pct
+TOTAL loan losses,624.9,6.9,0.7 to 20.7
+"First-lien mortgages, domestic",22.5,1.5,
+"Junior liens and HELOCs, domestic",5.5,3.2,
+Commercial and industrial,158.2,9.0,3.4 to 48.5
+"Commercial real estate, domestic",76.5,8.8,
+Credit cards,203.0,17.1,9.5 to 22.7
+Other consumer (INCLUDES student loans AND automobile loans),54.1,7.3,
+Other loans (includes international real estate),105.0,3.8,

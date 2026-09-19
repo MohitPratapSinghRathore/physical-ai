@@ -4549,3 +4549,157 @@ Existing work establishes that exposure moves LABOUR outcomes. It does not estab
 that does to household balance sheets, and it does not connect either to supervisory loss
 measurement. **The contribution is the join, not the exposure measure and not the household
 data, both of which are borrowed.**
+
+## A67. THE CONVERSION LAYER. Sourced, and the benchmark scenario is milder on housing than the project has been assuming
+
+`src/conversion_layer.py`, `data/processed/conversion_layer.json`. Every factor read from the
+document itself, not from a summary.
+
+### A. Federal Reserve 2026 Dodd-Frank Act stress test
+
+Downloaded to `data/raw/manual/FRB_2026_DFAST_results.pdf`, 68 pages, published June 2026,
+32 banks, nine quarters 2026:Q1 to 2028:Q1.
+
+**Severely adverse scenario, Table 2:**
+
+| Variable | 2026 | 2025, for comparison |
+|---|---|---|
+| Unemployment | **rises 5.5pp to 10.0%** | rises 5.9pp to 10.0% |
+| Real GDP, peak to trough | -4.6% | -7.8% |
+| **House prices** | **-30%** | -33% |
+| **CRE prices** | **-39%** | -30% |
+| Equity prices | -58% | -50% |
+
+**Table 9, projected loss rates by loan category:**
+
+| Loan type | Losses, USD bn | **Loss rate** | Range across banks |
+|---|---|---|---|
+| TOTAL | 624.9 | **6.9%** | 0.7 to 20.7 |
+| **First-lien mortgages, domestic** | 22.5 | **1.5%** | |
+| Junior liens and HELOCs | 5.5 | 3.2% | |
+| Commercial and industrial | 158.2 | 9.0% | 3.4 to 48.5 |
+| Commercial real estate | 76.5 | 8.8% | |
+| **Credit cards** | 203.0 | **17.1%** | 9.5 to 22.7 |
+| **Other consumer** (student AND auto together) | 54.1 | **7.3%** | |
+| Other loans | 105.0 | 3.8% | |
+
+**Capital:** aggregate CET1 falls from 12.8 percent (2025:Q4) to a minimum of **11.2
+percent**, recovering to 12.7. Total losses absorbed about **708bn dollars**. All 32 banks
+stay above their minimums.
+
+**The first thing this does is discipline the project's own severity language.** A scenario
+in which unemployment reaches 10 percent and house prices fall 30 percent produces a
+**1.5 percent** loss rate on first-lien mortgages and a 1.6 percentage point fall in
+aggregate CET1. That is the supervisory benchmark for "severely adverse", and every sudden
+scenario this project produces must be expressed against it rather than described with
+adjectives.
+
+It also says where bank pain actually comes from: credit cards at 17.1 percent and C and I at
+9.0 percent dwarf first-lien mortgages at 1.5. **A displacement story routed through
+mortgages is routed through the most loss-resistant asset on the bank balance sheet.**
+
+### B. Gerardi, Herkenhoff, Ohanian and Willen: the double trigger, quantified
+
+`data/raw/manual/GHOW2018_cant_pay.pdf`, NBER Working Paper 21630, October 2015, published in
+the Review of Financial Studies. Panel Study of Income Dynamics. Read directly.
+
+| Factor | Value |
+|---|---|
+| Unemployed household head, effect on default probability | **+5 percentage points** |
+| **BOTH head and spouse unemployed** | **more than +8 percentage points** |
+| Job loss expressed as an equity equivalent | **a 35 percent decline in equity** |
+| Unemployed share of the full sample | 5% |
+| Unemployed share of defaulters | 20% |
+| Defaulters who could pay without cutting consumption (strategic) | 38% |
+| Defaulters who would have to go below subsistence to stay current | 30% |
+
+Three things this settles that the project had been carrying as assumptions.
+
+**The within-household correlation factor is superadditive and now has a number.** Both
+earners unemployed gives more than 8 percentage points against 5 for one: **not 10**. The
+sudden-shock module's correlated-displacement term is 8/5 = 1.6 times the single-earner
+effect, not 2.
+
+**The double trigger has an exchange rate.** Job loss is worth a 35 percent equity decline.
+Against the Fed's 30 percent house price fall, a job loss is slightly MORE potent than the
+entire severely adverse house price shock.
+
+**Default is mostly not a liquidity failure.** Only 30 percent of defaulters would have to
+drop below subsistence to stay current; 38 percent could pay without reducing consumption at
+all. A model that converts income loss into default purely through a payment-affordability
+threshold, which is what this project's DSTI engine does, is capturing at most a third of the
+mechanism. That is a real limitation of A41 and it is recorded here rather than buried.
+
+### C. New York Fed Household Debt and Credit, 2026:Q2
+
+`data/raw/manual/NYFed_HHDC_2026Q2.pdf`, released August 2026. Total household debt **18.8
+trillion**, mortgages 13.1 trillion, HELOC 459bn. **4.7 percent of outstanding debt in some
+stage of delinquency**, down 0.1 points on the quarter. Transition into early delinquency
+upticked slightly for auto loans and mortgages.
+
+### D. Not obtained, named once
+
+1. **Auto loan loss rate separately from student loans.** The Fed folds both into "Other
+   consumer" at 7.3 percent. The order-of-stress table needs them apart, because the driving
+   pathway sits in auto and the entrant incidence case sits in student loans. The exact
+   documents: the FR Y-14M auto loan schedule aggregates; or the NY Fed companion data file
+   behind chart 25 of the 2026:Q2 report; or a rating agency US auto loan ABS loss index.
+2. **Agency multifamily debt service coverage standards.** Needed to set the materiality
+   threshold for the landlord and multifamily lender sheet. The exact document: Fannie Mae
+   Multifamily Selling and Servicing Guide, Part III underwriting, minimum DSCR table.
+   `mfguide.fanniemae.com` is reachable; the table was not extracted this session.
+
+---
+
+## A68. THE ENTRY-LEVEL BLIND SPOT IS NOT HYPOTHETICAL. It is already measured, and it confirms the A64 mechanism
+
+A64 argued that displacement delivered through attrition is invisible to the Displaced Worker
+Survey and to every indicator in this project's dashboard. That was a deduction from the
+model. **It is now an observation from someone else's data.**
+
+**Brynjolfsson, Chandar and Chen (August 2026), "Canaries in the Coal Mine? Six Facts about
+the Recent Employment Effects of Artificial Intelligence."** ADP administrative payroll
+microdata covering millions of US workers through June 2026. Downloaded to
+`data/raw/manual/Brynjolfsson_Canaries_Aug2026.pdf`, 140 pages, read directly.
+
+Their six facts, in this project's words, with the ones that bear on A64 marked:
+
+1. No evidence of widespread, economy-wide job displacement.
+2. **Employment of workers aged 22 to 25 in AI-exposed occupations stands 19 percent below
+   where it would be had it kept pace with less-exposed peers. Experienced workers show no
+   comparable gap.**
+3. The divergence has widened steadily since first documented in August 2025, when it was 13
+   percent.
+4. **It operates primarily through REDUCED HIRING of young workers rather than increased
+   separations.**
+5. Declines concentrate where AI usage substitutes for human tasks; where it complements,
+   employment is flat or rising, especially for experienced workers.
+
+**Fact 4 is the A64 mechanism, measured.** Fact 1 and fact 2 together are the blind spot: the
+aggregate looks fine, and the harm is entirely in a group that a displaced-worker survey
+cannot see because they were never displaced. They were never hired.
+
+This is the strongest external validation any mechanism in this project has received, and it
+arrives with an uncomfortable implication for the paper's framing: **the channel that is
+already operating is the one the household stress engine measures worst.** The engine works
+on households with mortgages and debt service; 22-to-25 year olds mostly do not have those.
+Item 3's incidence work is therefore not a robustness check, it is the main event.
+
+### Dashboard, five rows filled
+
+`data/release/dashboard/` at version 0.5.0 now carries, with sources and dates:
+
+| Indicator | Current value | Source |
+|---|---|---|
+| Recent college graduate unemployment | **5.6%** | NY Fed, 2026:Q2 |
+| Recent college graduate underemployment | **42%** | NY Fed, 2026:Q2 |
+| **Employment gap, ages 22 to 25 in AI-exposed occupations** | **19% below counterfactual, widening** | Brynjolfsson, Chandar and Chen, through June 2026 |
+| Household debt in any delinquency | 4.7% | NY Fed HHDC 2026:Q2 |
+| Aggregate CET1 under severely adverse | 12.8 to 11.2% minimum | Federal Reserve 2026 DFAST |
+
+The auto-specific loss rate row stays empty, with the exact document named in A67.
+
+**The entry-level indicators are the dashboard's most important rows and they were absent
+until this session.** A trigger dashboard built on unemployment, displaced-worker
+reemployment and household delinquency would currently read as benign while the measured
+19 percent gap widens.

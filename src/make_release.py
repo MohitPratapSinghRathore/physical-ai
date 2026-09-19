@@ -17,10 +17,16 @@ ROOT = pathlib.Path(__file__).parents[1]
 OUT = ROOT / "data" / "processed"
 REL = ROOT / "data" / "release"
 SCEN, DASH = REL / "scenarios", REL / "dashboard"
-VERSION = "0.4.0"
+VERSION = "0.5.0"
 TODAY = "2026-09-19"
 
 CHANGELOG = """# Changelog
+
+## 0.5.0 (2026-09-19)
+- Supervisory conversion layer added: Federal Reserve 2026 DFAST severely adverse scenario
+  and Table 9 loss rates, Gerardi et al. conditional default, NY Fed household debt.
+- Five dashboard rows filled, including three ENTRY-LEVEL indicators that detect
+  attrition-led automation, which A64 showed the existing indicator set cannot see.
 
 ## 0.4.0 (2026-09-19)
 - REGIMES REDEFINED. The SLOW / FAST / SUDDEN split is replaced by INSIDE_DATA,
@@ -174,6 +180,40 @@ def build_dashboard():
          "status": "REPORTED, no threshold set",
          "source": "Cohen, Killen and Lau, Chicago Fed Insights, February 2026",
          "date": "late 2025"},
+        {"indicator": "Recent college graduate unemployment rate",
+         "value": 5.6,
+         "threshold": "no threshold set; entry-level blind-spot indicator",
+         "status": "ELEVATED per the source",
+         "source": "Federal Reserve Bank of New York, The Labor Market for Recent College "
+                   "Graduates",
+         "date": "2026:Q2"},
+        {"indicator": "Recent college graduate underemployment rate",
+         "value": 42.0,
+         "threshold": "no threshold set; entry-level blind-spot indicator",
+         "status": "REPORTED, edged up per the source",
+         "source": "Federal Reserve Bank of New York, The Labor Market for Recent College "
+                   "Graduates",
+         "date": "2026:Q2"},
+        {"indicator": "Employment gap, workers aged 22 to 25 in AI-exposed occupations",
+         "value": "19 percent below the less-exposed counterfactual",
+         "threshold": "no threshold set; this is the attrition blind-spot indicator",
+         "status": "WIDENING since first documented August 2025",
+         "source": "Brynjolfsson, Chandar and Chen, Canaries in the Coal Mine?, August "
+                   "2026, ADP payroll microdata. Operates through REDUCED HIRING, not "
+                   "increased separations",
+         "date": "through June 2026"},
+        {"indicator": "Household debt in any stage of delinquency",
+         "value": 4.7,
+         "threshold": "no threshold set",
+         "status": "REPORTED, down 0.1pp on the quarter",
+         "source": "New York Fed Household Debt and Credit 2026:Q2",
+         "date": "2026-06"},
+        {"indicator": "Aggregate CET1 under the Fed severely adverse scenario",
+         "value": "12.8 falling to a minimum of 11.2 percent",
+         "threshold": "regulatory minimums; all 32 banks remain above",
+         "status": "REPORTED, the capacity benchmark",
+         "source": "Federal Reserve 2026 Dodd-Frank Act stress test results, June 2026",
+         "date": "2026-06"},
         {"indicator": "Payroll share of OASDI trust fund income",
          "value": 0.913,
          "threshold": "n/a, context for the fiscal channel",
