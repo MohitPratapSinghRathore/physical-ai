@@ -224,13 +224,63 @@ economists, genetic counselors, therapists. Face validity holds at both ends.
 Status: this is the strongest candidate for the paper's one citable artifact. See
 notes/decisions.md D5 for why it was pulled forward from WS7.
 
+### B4. Leg A is small, but concentrated and levered where it exists (US, Tier 2)
+
+SEC access resolved 2026-09-19 (owner supplied a declared contact address). Tier 2 built
+from 10-K filings for 10 firms; 9 have current facts.
+
+| Firm | Capex (USD bn) | OCF (USD bn) | Self-funding | LT debt | Finance leases |
+|---|---|---|---|---|---|
+| Amazon | 131.8 | 139.5 | 1.06 | 65.7 | 10.7 |
+| Microsoft | 116.0 | 182.9 | 1.58 | 31.1 | 66.6 |
+| Alphabet | 91.5 | 164.7 | 1.80 | 46.6 | 2.1 |
+| Meta | 69.7 | 115.8 | 1.66 | 58.7 | 0.9 |
+| Oracle | 55.7 | 32.0 | 0.57 | 129.5 | 7.1 |
+| CoreWeave | 10.3 | 3.1 | 0.30 | 14.7 | 0.2 |
+| Tesla | 8.5 | 14.8 | 1.73 | 6.6 | 0.2 |
+| Equinix | 4.3 | 3.9 | 0.91 | 15.3 | 2.2 |
+| Digital Realty | 3.2 | 2.4 | 0.76 | n/a | 0.3 |
+| **Total** | **490.9** | **659.1** | **1.34** | **368.1** | **90.2** |
+
+The headline comparison, on Tier 2 alone:
+
+| Comparison | Value |
+|---|---|
+| Leg A debt and leases / US household debt | 2.14% |
+| Leg A debt and leases / Leg W broad | 0.76% |
+| Leg A capex / GDP | 1.51% |
+
+2.14 percent is below the brief's 5 percent WS1 kill threshold. Per decision D4 this does
+NOT trigger the reframing, because Tier 2 excludes exactly the off-balance-sheet structures
+that BIS identifies as dominant (finding A2). Leg A has so far been measured only in the
+place it is least likely to be found. Tier 1 and Tier 2b must be built before the criterion
+is evaluated. No "the bet is lopsided" conclusion should be drawn or quoted yet.
+
+What Tier 2 does establish, independent of the size question, is the shape of Leg A:
+
+    The hyperscalers fund AI capex from operating cash flow and are not adding credit
+    exposure at the margin. The firms that cannot self-fund are Oracle (0.57), CoreWeave
+    (0.30) and the data-centre REITs (0.76 to 0.91). Leg A credit risk is concentrated
+    there.
+
+This is a different financial-stability object from the brief's "overinvestment bust"
+language, which implicitly treats Leg A as a large diffuse exposure. A small, concentrated,
+levered exposure held by identifiable non-bank lenders maps to a different regime in WS4
+and raises the value of the holder map (WS2) for Leg A as well as for Leg W.
+
+Data-quality note: a first build read Amazon capex as 6.7 USD bn and Equinix as 0.01 USD bn
+because both firms changed us-gaap tags and the build had taken the latest fact under a
+single tag. The build now searches candidate tags per concept, takes the most recent fiscal
+year across them, rejects facts older than 2024, and records the chosen tag for every cell.
+See notes/sizing_method.md.
+
 ---
 
 ## C. Open, not yet evidence either way
 
-- Relative size of Leg A versus Leg W: NOT yet measured. SEC EDGAR blocked this session
-  (see notes/open_questions.md Q1). No Leg A number has been produced, and none should be
-  quoted until it is.
+- Relative size of Leg A versus Leg W: Tier 2 measured (B4), Tiers 1 and 2b not. The
+  ratio is therefore a lower bound of unknown tightness and must not be quoted as the
+  answer.
 - Holder map (WS2): not started.
 - The tau*s threshold: not yet checked or tightened. No derivation work done this session.
 - Whether high-PAEI households hold disproportionate CONSUMER credit, auto debt or rent

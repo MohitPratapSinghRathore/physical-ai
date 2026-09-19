@@ -49,11 +49,40 @@ SEC_COMPANIES = {
     "TSLA":  ("0001318605", "Tesla Inc", "robotics"),
 }
 
+# Concept -> ordered list of candidate us-gaap tags. Filers use different tags for the
+# same economic quantity (Amazon books capex as PaymentsToAcquireProductiveAssets, REITs
+# as real-estate development outlays), so each concept needs fallbacks. The build takes
+# the candidate with the most recent full fiscal year, not the first that exists.
 SEC_TAGS = {
-    "capex":       "PaymentsToAcquirePropertyPlantAndEquipment",
-    "ocf":         "NetCashProvidedByUsedInOperatingActivities",
-    "lt_debt":     "LongTermDebtNoncurrent",
-    "debt_issued": "ProceedsFromIssuanceOfLongTermDebt",
-    "fin_lease":   "FinanceLeaseLiabilityNoncurrent",
-    "ppe_net":     "PropertyPlantAndEquipmentNet",
+    "capex": [
+        "PaymentsToAcquirePropertyPlantAndEquipment",
+        "PaymentsToAcquireProductiveAssets",
+        "PaymentsToDevelopRealEstateAssets",
+        "PaymentsToAcquireRealEstate",
+        "PaymentsForCapitalImprovements",
+        "PaymentsToAcquireOtherPropertyPlantAndEquipment",
+    ],
+    "ocf": [
+        "NetCashProvidedByUsedInOperatingActivities",
+        "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+    ],
+    "lt_debt": [
+        "LongTermDebtNoncurrent",
+        "LongTermDebt",
+        "DebtLongtermAndShorttermCombinedAmount",
+    ],
+    "debt_issued": [
+        "ProceedsFromIssuanceOfLongTermDebt",
+        "ProceedsFromIssuanceOfSeniorLongTermDebt",
+        "ProceedsFromNotesPayable",
+    ],
+    "fin_lease": [
+        "FinanceLeaseLiabilityNoncurrent",
+        "FinanceLeaseLiability",
+        "CapitalLeaseObligationsNoncurrent",
+    ],
+    "ppe_net": [
+        "PropertyPlantAndEquipmentNet",
+        "RealEstateInvestmentPropertyNet",
+    ],
 }

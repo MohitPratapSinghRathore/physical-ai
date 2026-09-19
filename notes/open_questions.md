@@ -8,7 +8,7 @@ Last updated: 2026-09-19.
 
 ## DECISION NEEDED
 
-### Q1. SEC EDGAR access, and which identity to declare
+### Q1. RESOLVED 2026-09-19: SEC EDGAR access
 
 SEC returns HTTP 403 to this environment: "Your Request Originates from an Undeclared
 Automated Tool". SEC's fair-access policy asks automated users to declare themselves with a
@@ -25,15 +25,14 @@ Options:
 3. Download filings manually and drop them in `data/raw/sec/`.
 4. Use a commercial data provider instead.
 
-Recommendation: option 1 or 2. Nothing in Leg A can proceed until this is resolved.
+RESOLVED: the owner supplied `team@oviguide.in` as the declared contact address. It is set
+in `src/fetch_sec.py` and Leg A Tier 2 is built (findings B4). Tiers 1 and 2b remain open.
 
-### Q2. The GitHub account does not match the project owner
+### Q2. CLOSED: repository ownership
 
-The repository was created under the GitHub account `MohitPratapSinghRathore`, which is the
-account authenticated in this environment. The project owner is Gunveer Kalsi. If the
-repository should live under the owner's own account, it needs to be moved before any
-public working paper or Zenodo DOI is minted from it, because the DOI and the replication
-package will inherit that account's identity.
+The repository lives under `MohitPratapSinghRathore`. Owner decision 2026-09-19: leave it
+there. Noted so that the Zenodo DOI and replication package inherit that identity
+deliberately rather than by accident.
 
 ### Q3. Co-author recruitment (brief Section 8.7)
 
@@ -47,7 +46,7 @@ has completed only the first query batch.
 
 | Source | Status | Blocks | Workaround |
 |---|---|---|---|
-| SEC EDGAR XBRL | HTTP 403, undeclared tool | Leg A Tier 2 | Q1 above |
+| SEC EDGAR XBRL | RESOLVED, contact address declared | - | - |
 | BLS OES | HTTP 403 to this environment | employment and wage weights for PAEI | ACS PUMS used instead; OES still wanted for occupation-level wage bills |
 | IFR World Robotics | paid | robot stock and shipments, WS1 | ask owner whether to purchase |
 | Scopus / Web of Science | subscription | strict PRISMA coverage in WS0 | audit currently documented as a structured search, declared as a limitation |
@@ -79,7 +78,10 @@ has completed only the first query batch.
    worth getting right (Section 8.3). Derivation must be checked, assumptions stated, and
    the open-economy leakage case written out.
 
-5. **Leg A sizing**, blocked on Q1.
+5. **Leg A Tiers 1 and 2b.** Tier 2 is built. Tier 1 (GPU-backed lending, data-centre ABS
+   and CMBS) and Tier 2b (off-balance-sheet SPV debt, from BIS and private-credit
+   aggregates) are what the kill criterion actually needs. Until they exist the 2.14
+   percent ratio is a lower bound and must not be reported as the answer.
 
 6. **Holder map (WS2)**, not started. Note that findings A5 raises its value: if mortgage
    exposure cannot be diversified by occupation, the question of which institutions hold

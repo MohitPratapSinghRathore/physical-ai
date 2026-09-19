@@ -6,8 +6,9 @@ thesis, the rules, and the workstreams. The brief is the source of truth.
 
 ## Status
 
-Session 1 complete (2026-09-19). WS0 first query batch and WS1 US Leg W are done. Leg A is
-blocked, see `notes/open_questions.md` Q1.
+Session 1 complete (2026-09-19). WS0 first query batch done; WS1 US Leg W done; Leg A
+Tier 2 done. Leg A Tiers 1 and 2b remain open, which is why no Leg W to Leg A verdict
+should be quoted yet.
 
 Read [`notes/findings.md`](notes/findings.md) first. Results that weaken the thesis are at
 the top, per brief Rule 5, and one of the brief's central hypotheses did not survive
@@ -22,10 +23,11 @@ testing this session.
 | US federal public debt | 39,065.4 USD bn (120.3% of GDP) | findings B2 |
 | Physical AI Exposure Index | 911 occupations, O*NET 31.0 | findings B3 |
 | Mortgage debt service by PAEI quintile | concentration ratio flat, 0.93 to 1.08 | findings A4 |
-| Leg A | NOT YET MEASURED | open question Q1 |
+| Leg A Tier 2 capex (9 US firms) | 490.9 USD bn, self-funding 1.34 | findings B4 |
+| Leg A debt and leases / household debt | 2.14% (LOWER BOUND) | sizing_method.md |
 
-The last row matters: there is no Leg A number yet, so no Leg W to Leg A ratio should be
-quoted from this repository.
+The last row is a lower bound, not a verdict. It excludes the off-balance-sheet structures
+BIS identifies as dominant, so the WS1 kill criterion is NOT yet evaluable (decision D4).
 
 ## The two original artifacts
 

@@ -1,0 +1,12 @@
+{
+  "n_companies": 10,
+  "n_with_capex": 9,
+  "min_fy_end": "2024-01-01",
+  "total_capex_usd_bn": 490.89617899999996,
+  "total_ocf_usd_bn": 659.067136,
+  "aggregate_self_funding_ratio": 1.3425794785010947,
+  "total_capex_less_ocf_usd_bn": -168.17095700000004,
+  "total_lt_debt_usd_bn": 368.13,
+  "total_finance_leases_usd_bn": 90.24763,
+  "note": "LOWER BOUND. Excludes off-balance-sheet and SPV-financed data-centre debt (Tier 2b), which BIS QR March 2026 documents as the dominant structure. Capex is total company capex, not AI-attributable capex: no filing discloses an AI split, so this OVERSTATES the AI share of capex while UNDERSTATING AI-linked debt."
+}
