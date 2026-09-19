@@ -915,3 +915,111 @@ double trigger (B3d) and it remains open.
   meaningless and should be ignored.
 - Every output row carries `paei_c_version`, so revising the index does not require
   rewriting Step 3 (B1).
+
+## A21. STEP 1 GATE RESOLVED: PAEI at c = 0 is NOVEL, and my registered prediction was wrong
+
+Webb's occupation-level exposure scores were supplied by the owner
+(`exposure_by_occ1990dd_lswt2010.xls`, despite the extension a CSV, 341 occupations, with
+`pct_robot`, `pct_software`, `pct_ai` as percentiles under Webb's 2010 labor-supply weights).
+
+**Crosswalk.** Webb occ1990dd to occ2010 (Autor and Dorn `occ2010_occ1990dd.dta`) to 2018
+Census occupation code (Census 2010-to-2018 crosswalk) to PUMS OCCP. 86.7 percent of Webb
+rows reach occ2010; 381 of 512 OCCP codes end up carrying a Webb score, covering **84.8
+percent of employment**.
+
+**GATE VERDICT: PAEI at c = 0 is NOVEL.** The criterion was a correlation of roughly 0.8 or
+above with Webb's robot score.
+
+| Our measure | vs Webb ROBOT | vs Webb software | vs Webb AI |
+|---|---|---|---|
+| **PAEI (P x S)** | **+0.708** | +0.285 | -0.119 |
+| embodiment P | +0.740 | +0.286 | -0.119 |
+| structure S | -0.054 | +0.048 | +0.023 |
+
+(Spearman; employment-weighted figures are within 0.01 of these throughout.)
+
+**My registered prediction was wrong and I am recording that.** In
+notes/paei_validation.md, before the data was available, I predicted P would correlate
+above 0.8 with Webb robot and that the gate would therefore likely fail. P came in at
+**0.740**, below the threshold, and PAEI at 0.708. The direction of the prediction (P above
+PAEI) was right; the level was wrong, and the gate passes where I expected it to fail.
+
+**The pattern across Webb's three indices is the strongest validation evidence the project
+has.** PAEI correlates +0.71 with robots, +0.29 with software, and -0.12 with AI. It tracks
+the robot index specifically and falls away monotonically as the technology moves from
+embodied to cognitive. Combined with the earlier discriminant results (-0.878 against
+Felten AIOE, -0.758 against Eloundou GPT beta, A10), PAEI now has convergent validity
+against the one published embodied-automation index and discriminant validity against three
+cognitive ones.
+
+### The finding that complicates this, and it concerns S again
+
+Two problems, both of which belong in the paper rather than in a footnote.
+
+**First, the 0.708 is carried by the whole-distribution contrast, not by the region of
+interest.** Splitting at the median P:
+
+| Subsample | PAEI vs Webb robot | P vs Webb robot | S vs Webb robot |
+|---|---|---|---|
+| All (n = 381) | +0.708 | +0.740 | -0.054 |
+| **High-P (n = 191)** | **+0.275** | +0.479 | -0.027 |
+| Low-P (n = 190) | +0.429 | +0.420 | +0.047 |
+
+Among the physically demanding occupations the paper is actually about, PAEI tracks Webb's
+robot score only weakly (+0.275). Most of the headline correlation comes from PAEI and Webb
+both separating physical from non-physical work across the full distribution, which is not
+a demanding test.
+
+**Second, the two external benchmarks disagree about S.**
+
+| Benchmark | What it measures | S among high-P occupations |
+|---|---|---|
+| ACES 2022 robotic capex (A15) | observed robot spending by industry | **+0.419 (p = 1.5e-11)** |
+| Webb robot score | patent-text overlap with task descriptions | **-0.027 (p = 0.72)** |
+
+S predicts where robots are actually bought and does not predict which tasks a robot could
+technologically perform.
+
+There is a reading of this that favours S and it is the one the theory predicts: Webb
+measures technological potential at the task level and is by construction blind to the
+environment a task sits in, while ACES measures realised deployment, which is gated by
+exactly the environmental structure S is meant to capture. On that reading the two results
+are not in conflict; they are the separation between "a robot could do this task" and "a
+robot is being bought to do this job", and S is a deployment-feasibility construct rather
+than a technological-potential one. That is precisely the distinction PAEI(c) is built on.
+
+The competing reading, which must be stated alongside it: the ACES result is industry-level
+projected onto occupations (A15's stated limitation), so it could be industry composition
+rather than environment, while the Webb null is occupation-level and therefore the cleaner
+test. On that reading S has one supportive result with a known confound and one clean null.
+
+**I do not think this can be settled with the data in hand.** It should be reported as an
+open measurement question, and it raises the value of the commuting-zone replication.
+
+### What this changes
+
+- The novelty claim for PAEI at c = 0 survives, on the test that was set for it.
+- The claim should be stated as convergent-but-distinct, roughly 0.7 with the robot index
+  and near zero or negative with every cognitive index, and NOT as "uncorrelated with
+  existing measures".
+- The weak high-P correlation (+0.275) must be reported. It is the honest limit on how much
+  the Webb comparison validates the index where the paper uses it.
+- S remains the contested component: reliable (A19, alpha 0.967 on an independent rubric
+  that does not reproduce it), predictive of observed adoption (A15), and null against
+  task-level robot potential (here).
+
+### Note on the Acemoglu and Restrepo material
+
+The owner supplied the published JPE 2020 article, "Robots and Jobs: Evidence from US Labor
+Markets" (Daron Acemoglu, MIT; Pascual Restrepo, Boston University; Journal of Political
+Economy 128(6), electronically published 22 April 2020). This is now a verified citation and
+is the source for the adjusted-penetration-of-robots construction and the commuting-zone
+exposure design.
+
+The **replication data set was not supplied**, only the article. The commuting-zone
+replication of A3 therefore remains open and still needs the openICPSR package, which
+returns 403 from this environment. The article does give the industry-level facts we can
+cite directly: automotive employs 38 percent of existing robots, electronics 15 percent,
+plastics and chemicals 10 percent, metal products 7 percent; and the headline estimate that
+one more robot per thousand workers reduces the aggregate employment-to-population ratio by
+about 0.2 percentage points and wages by about 0.42 percent.

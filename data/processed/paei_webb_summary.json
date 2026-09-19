@@ -1,0 +1,40 @@
+{
+  "paei_c_version": "v2-occp-spine",
+  "gate_criterion": "PAEI vs Webb robot correlation >= ~0.8 means not novel",
+  "n_matched_occupations": 381,
+  "employment_coverage_pct": 84.8202184440226,
+  "webb_rows_reaching_occ2010_pct": 86.70886075949366,
+  "PAEI_vs_webb_robot": {
+    "our_measure": "PAEI (P x S)",
+    "webb_index": "Webb ROBOT (the gate)",
+    "n": 381,
+    "pearson": 0.7071368699840644,
+    "spearman": 0.7082215505523808,
+    "pearson_empwt": 0.7044254153612022,
+    "spearman_empwt": 0.7040123422588083,
+    "spearman_webbwt": 0.7428044497734875
+  },
+  "P_vs_webb_robot": {
+    "our_measure": "embodiment P",
+    "webb_index": "Webb ROBOT (the gate)",
+    "n": 381,
+    "pearson": 0.7440416127537638,
+    "spearman": 0.7398148538149434,
+    "pearson_empwt": 0.7420893255256584,
+    "spearman_empwt": 0.7435906013625367,
+    "spearman_webbwt": 0.760823852015958
+  },
+  "S_vs_webb_robot": {
+    "our_measure": "structure S",
+    "webb_index": "Webb ROBOT (the gate)",
+    "n": 381,
+    "pearson": -0.02531907354223907,
+    "spearman": -0.05385514432102311,
+    "pearson_empwt": -0.026866922439193853,
+    "spearman_empwt": -0.04983031405631505,
+    "spearman_webbwt": 0.00680584654007862
+  },
+  "max_abs_PAEI_vs_robot": 0.7082215505523808,
+  "GATE_VERDICT": "NOVEL at c=0: PAEI is distinct from Webb robot",
+  "registered_prediction": "P correlates above 0.8 with Webb robot; PAEI as a whole lower. Recorded in notes/paei_validation.md before the data was available."
+}

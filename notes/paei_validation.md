@@ -1,7 +1,9 @@
 # Step 1: PAEI validation
 
-Status: **partially complete. The acceptance gate cannot be resolved with the data
-available.** Read Section 4 before using any of this.
+Status: **RESOLVED 2026-09-19. The gate PASSES: PAEI at c = 0 is novel.** Sections 4 and 5
+below were written before Webb's data was available and are retained unedited as the
+record of what was predicted in advance. Section 8 has the resolution and supersedes
+Section 4.
 
 Date: 2026-09-19.
 
@@ -152,3 +154,39 @@ would produce a lot of numbers and no additional confidence.
 3. Whether to proceed to Step 2 (PAEI(c)) with the gate unresolved. My recommendation is
    yes: the prompt already anticipates that the novelty may rest on PAEI(c), and Step 2
    does not depend on the answer.
+
+
+---
+
+## 8. GATE RESOLVED (supersedes Section 4)
+
+Webb's scores were supplied by the owner. Crosswalk: occ1990dd to occ2010 (Autor and Dorn)
+to 2018 Census code to PUMS OCCP. 381 of 512 OCCP codes matched, covering 84.8 percent of
+employment.
+
+| Our measure | Webb ROBOT | Webb software | Webb AI |
+|---|---|---|---|
+| **PAEI (P x S)** | **+0.708** | +0.285 | -0.119 |
+| embodiment P | +0.740 | +0.286 | -0.119 |
+| structure S | -0.054 | +0.048 | +0.023 |
+
+**VERDICT: PAEI at c = 0 is NOVEL.** 0.708 is below the roughly 0.8 threshold, so PAEI is
+not Webb's robot score under a new name.
+
+**The prediction in Section 4 was wrong.** I predicted P above 0.8 and a likely gate
+failure. P came in at 0.740 and the gate passes. The ordering (P above PAEI) was right, the
+level was not.
+
+**Two qualifications that must travel with the verdict:**
+
+1. Among high-P occupations, which is where the paper uses the index, PAEI correlates only
+   +0.275 with Webb robot (P +0.479). The headline 0.708 is largely the whole-distribution
+   contrast between physical and non-physical work.
+2. S is null against Webb robot in every subsample (-0.05 overall, -0.03 high-P) while it
+   correlated +0.419 with observed ACES robot capex among high-P occupations (A15). The two
+   external benchmarks disagree about S. See notes/findings.md A21 for both readings; this
+   is an open measurement question, not a settled one.
+
+The convergent and discriminant pattern taken together is now the strongest validation
+evidence in the project: +0.71 robots, +0.29 software, -0.12 AI, -0.88 Felten AIOE, -0.76
+Eloundou GPT beta.

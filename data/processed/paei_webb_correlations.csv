@@ -1,0 +1,13 @@
+our_measure,webb_index,n,pearson,spearman,pearson_empwt,spearman_empwt,spearman_webbwt
+PAEI (P x S),Webb ROBOT (the gate),381,0.7071,0.7082,0.7044,0.704,0.7428
+embodiment P,Webb ROBOT (the gate),381,0.744,0.7398,0.7421,0.7436,0.7608
+structure S,Webb ROBOT (the gate),381,-0.0253,-0.0539,-0.0269,-0.0498,0.0068
+structure S_rank,Webb ROBOT (the gate),381,-0.0689,-0.0538,-0.0675,-0.0498,0.0068
+PAEI (P x S),Webb software,381,0.2916,0.2849,0.2279,0.2193,0.1195
+embodiment P,Webb software,381,0.2814,0.2859,0.2724,0.2881,0.1814
+structure S,Webb software,381,0.0638,0.0475,-0.0503,-0.0674,-0.1024
+structure S_rank,Webb software,381,0.0355,0.0475,-0.0797,-0.0675,-0.1025
+PAEI (P x S),Webb AI,381,-0.111,-0.1193,-0.2121,-0.2108,-0.3374
+embodiment P,Webb AI,381,-0.1281,-0.119,-0.1585,-0.1368,-0.2776
+structure S,Webb AI,381,0.0414,0.0234,-0.1592,-0.1706,-0.1552
+structure S_rank,Webb AI,381,0.023,0.0234,-0.1676,-0.1707,-0.1553
