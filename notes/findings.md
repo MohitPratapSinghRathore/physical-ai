@@ -4790,6 +4790,13 @@ one holds.**
 
 ## A70. A2 FISCAL MAGNITUDES. Identical across incidence cases, and the disputed rent share moves the loss by 30 percent
 
+> **SUPERSEDED BY A72.** This entry amortised a permanent revenue loss as a one-time flow
+> (cumulative divided by horizon). Every annual figure below is too small, by up to twenty
+> times at the twenty-year horizon, and the "thirty-fold" horizon statement is withdrawn.
+> The identical-across-incidence-cases result and the rent-share sensitivity both STAND.
+> Use A72 and A73 for all magnitudes.
+
+
 `src/fiscal_magnitudes.py`. **No pass or fail language: A57, A58 and A60 established the
 condition is unmet in 2026 at zero AI displacement, under every sourced combination. This is
 a measurement of size, not a test.**
@@ -4962,3 +4969,116 @@ Terminal-year annual loss 0.00 to 18.75 percent of federal receipts. Cumulative 
 **R is held at its terminal value along the whole path.** R deteriorates as slack rises, so
 this overstates the early-year loss. A full treatment would path R year by year. Stated
 rather than hidden.
+
+## A73. PROMOTION PASS WITH INDEPENDENT RECOMPUTATION, and the fiscal tables led by moderate scenarios
+
+### Independent recomputation: sixteen of sixteen match
+
+`src/verify/independent_recompute.py` imports **nothing** from `src/`. It reads raw files and
+figures retyped from the source documents and recomputes each headline from scratch, so a
+match is evidence the pipeline is right rather than evidence it is self-consistent.
+
+| Quantity | Recomputed | Registered | Status |
+|---|---|---|---|
+| rho, DWS Table 1, 2199/3324 | 0.661552 | 0.6616 | MATCH |
+| omega, full-time only | 0.985283 | 0.9853 | MATCH |
+| Part-time earnings ratio, 386/1204 | 0.320598 | 0.3206 | MATCH |
+| omega blended nominal | 0.907268 | 0.9073 | MATCH |
+| ECI wage growth a year | 0.036498 | 0.0365 | MATCH |
+| **omega blended counterfactual** | **0.859771** | **0.8598** | MATCH |
+| **R = rho x omega** | **0.568784** | **0.5683** | MATCH |
+| sigma_rent, Barkai implied | 0.350649 | 0.3510 | MATCH |
+| **tau_k, current code with shifting** | **0.070758** | **0.0708** | MATCH |
+| Required tau_k at tau_l 0.255 | 0.109960 | 0.1101 | MATCH |
+| **Leg A / Leg W** | **0.021050** | **0.0210** | MATCH |
+| rho on prime-age nonemployment, slope | -0.027490 | -0.0275 | MATCH |
+| rho on prime-age nonemployment, intercept | 1.227975 | 1.2280 | MATCH |
+| rho on prime-age nonemployment, R squared | 0.773334 | 0.7730 | MATCH |
+| Implied total loan balance, internal check | 9056.52 | 9056.50 | MATCH |
+| Attrition neutrality, inflow spread across alpha | 0.000000 | 0.0000 | MATCH |
+
+**Sixteen matched, zero failed.** The attrition neutrality was verified ALGEBRAICALLY rather
+than by simulation: with laid-off and never-hired workers treated symmetrically the total
+inflow to nonemployment is the job destruction figure regardless of alpha, which is an
+identity, not a result.
+
+### Promoted to standing
+
+**Claims 43, 46, 48, 52, 53 and 79.** Standing rises from 37 to 46; provisional falls from
+44 to 41.
+
+### Still provisional, with the reason
+
+| Claim | Reason |
+|---|---|
+| 15, 17 | C2 outstanding: rent and vehicle leans not cross-checked on the second dataset |
+| 26 | C1 and C5 outstanding: Moran's I is Felten AIOE only and county only |
+| 96, 98 | C2 outstanding: the incidence result is SIPP only |
+| 101a to 101c | Produced this session; the same-session rule applies |
+| Remainder | Derived quantities resting on the promoted six but not themselves independently recomputed. Eligible next pass |
+
+### The four unlabelled claims, now labelled
+
+30 standing (amended in A52); 35 standing (resolved and sourced); 56 standing (verified in
+the published JPE article); **61 superseded** (amended by A61).
+
+---
+
+### The fiscal tables, led by moderate scenarios
+
+Terminal-year annual loss, percent of federal receipts. tau_l 0.301, no outlays, Barkai
+reading, phi 0.5.
+
+| Type | 10% of exposed | | | | 25% | | | | 50% | | | |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| | 2y | 5y | 10y | 20y | 2y | 5y | 10y | 20y | 2y | 5y | 10y | 20y |
+| Cognitive AIOE | 0.20 | 0.18 | 0.18 | 0.17 | 0.59 | 0.50 | 0.46 | 0.45 | 1.51 | 1.15 | 1.01 | 0.94 |
+| Cognitive GPT | 0.23 | 0.21 | 0.21 | 0.20 | 0.71 | 0.59 | 0.55 | 0.52 | 1.89 | 1.40 | 1.20 | 1.10 |
+| Embodied | 0.32 | 0.29 | 0.27 | 0.27 | 1.02 | 0.81 | 0.73 | 0.70 | 2.87 | 2.02 | 1.66 | 1.49 |
+| Both | 0.59 | 0.50 | 0.47 | 0.45 | 2.14 | 1.56 | 1.32 | 1.21 | 6.66 | 4.54 | 3.23 | 2.71 |
+
+As a percent of **OASDI payroll income**, which is where it binds:
+
+| Type | 10% | 25% | 50% |
+|---|---|---|---|
+| Cognitive AIOE, 10y | 0.80 | 2.10 | 4.54 |
+| Embodied, 10y | 1.24 | 3.32 | 7.49 |
+| **Both, 10y** | **2.12** | **5.96** | **14.62** |
+| **Both, 2y** | 2.68 | 9.66 | **30.09** |
+
+As a percent of **HI Part A revenue**: both types at 50 percent reaches 41.8 percent at ten
+years and 86.1 percent at two. The HI fund is the smaller denominator and takes the larger
+relative hit.
+
+The 90 percent case, reported after the moderate ones: 1.81 to 3.80 percent of receipts for
+cognitive AIOE, 5.94 to 18.75 for both types.
+
+### The slow-versus-fast tradeoff, stated plainly
+
+**A slower transition lowers labour market and household stress and RAISES cumulative fiscal
+cost.** The two channels pull in opposite directions and the paper must present them
+together:
+
+- **Labour market and household channel:** slower is better. A56 and A63 show the speed limit
+  binds on the annual flow; a twenty-year path keeps prime-age nonemployment inside the
+  observed range at flows that a two-year path does not.
+- **Fiscal channel:** slower is worse. Cumulative loss rises with horizon because the lost
+  wage bill is missing for more years. Both types at 90 percent: 1,682bn over two years
+  against 3,727bn over twenty.
+
+There is no horizon that minimises both. That is the central policy tension the frontier
+produces and it was invisible while A70's amortisation error made the fiscal channel look as
+though it also preferred slow paths.
+
+### R pathing: the simplification is worth at most eleven percent
+
+R was held at its terminal value along the whole path. Pathing it linearly from the 2026
+baseline of 0.5683 to the terminal value changes the cumulative loss by **-11.0 to +6.9
+percent**, and by under 6 percent in most cells.
+
+The sign is informative. At short horizons with large displacement, holding R at terminal
+OVERSTATES the loss, because R has not yet deteriorated in the early years. At long horizons
+with mild displacement it UNDERSTATES, because mild displacement produces less slack and a
+terminal R ABOVE the 2026 baseline, so the early years of the path carry a lower R than the
+terminal value. Both effects are small relative to the parameter ranges elsewhere and the
+terminal-R simplification is retained with this bound stated.

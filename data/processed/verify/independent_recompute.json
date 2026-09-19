@@ -1,0 +1,117 @@
+{
+  "results": [
+    {
+      "name": "rho (DWS Table 1, 2199/3324)",
+      "recomputed": 0.6615523465703971,
+      "registered": 0.6616,
+      "rel_diff": 7.202755381331568e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "omega full-time only",
+      "recomputed": 0.9852831594634873,
+      "registered": 0.9853,
+      "rel_diff": 1.709178576335133e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "part-time earnings ratio (386/1204)",
+      "recomputed": 0.32059800664451826,
+      "registered": 0.3206,
+      "rel_diff": 6.217577921812453e-06,
+      "status": "MATCH"
+    },
+    {
+      "name": "omega blended nominal",
+      "recomputed": 0.907267703570703,
+      "registered": 0.9073,
+      "rel_diff": 3.559619673429911e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "ECI wage growth a year",
+      "recomputed": 0.03649779440260814,
+      "registered": 0.0365,
+      "rel_diff": 6.042732580428451e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "omega blended counterfactual",
+      "recomputed": 0.859771169530478,
+      "registered": 0.8598,
+      "rel_diff": 3.353159981618581e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "R = rho x omega",
+      "recomputed": 0.5687836347164624,
+      "registered": 0.5683,
+      "rel_diff": 0.0008510200887953545,
+      "status": "MATCH"
+    },
+    {
+      "name": "sigma_rent (Barkai implied)",
+      "recomputed": 0.35064935064935066,
+      "registered": 0.351,
+      "rel_diff": 0.0009990009990009218,
+      "status": "MATCH"
+    },
+    {
+      "name": "tau_k, current code with shifting",
+      "recomputed": 0.07075844155844156,
+      "registered": 0.0708,
+      "rel_diff": 0.000586983637831069,
+      "status": "MATCH"
+    },
+    {
+      "name": "required tau_k at tau_l 0.255",
+      "recomputed": 0.10996017314730208,
+      "registered": 0.1101,
+      "rel_diff": 0.0012699986621064652,
+      "status": "MATCH"
+    },
+    {
+      "name": "Leg A / Leg W",
+      "recomputed": 0.021049886969123605,
+      "registered": 0.021,
+      "rel_diff": 0.0023755699582668223,
+      "status": "MATCH"
+    },
+    {
+      "name": "rho on prime-age nonemployment, slope",
+      "recomputed": -0.027490328792045014,
+      "registered": -0.0275,
+      "rel_diff": 0.00035168028927221295,
+      "status": "MATCH"
+    },
+    {
+      "name": "rho on prime-age nonemployment, intercept",
+      "recomputed": 1.2279753939570808,
+      "registered": 1.228,
+      "rel_diff": 2.0037494233881365e-05,
+      "status": "MATCH"
+    },
+    {
+      "name": "rho on prime-age nonemployment, R squared",
+      "recomputed": 0.7733336447041167,
+      "registered": 0.773,
+      "rel_diff": 0.00043162316185857137,
+      "status": "MATCH"
+    },
+    {
+      "name": "implied total loan balance, USD bn (internal check)",
+      "recomputed": 9056.521739130434,
+      "registered": 9056.5,
+      "rel_diff": 2.400389823228712e-06,
+      "status": "MATCH"
+    },
+    {
+      "name": "attrition neutrality: spread of total inflow across alpha",
+      "recomputed": 0.0,
+      "registered": 0.0,
+      "rel_diff": 0.0,
+      "status": "MATCH"
+    }
+  ],
+  "n_fail": 0
+}

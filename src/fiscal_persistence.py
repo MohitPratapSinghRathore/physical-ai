@@ -34,7 +34,17 @@ LARGER for the longer horizon, not smaller, because the loss accrues for more ye
 The speed result in A56 stands on its own terms: speed drives the LABOUR MARKET channel,
 through slack and reemployment. It does not drive the fiscal channel the way A70 implied.
 
-R IS HELD AT ITS TERMINAL VALUE throughout the path. R deteriorates as slack rises, so using
+TWO R TREATMENTS, both reported.
+
+    R_terminal   R held at its terminal value for every year of the path. Simple, and it
+                 OVERSTATES the early-year loss, because R starts at its 2026 value of
+                 0.5683 and only deteriorates as displacement accumulates.
+    R_pathed     R interpolated linearly from the 2026 baseline to the terminal value over
+                 the horizon, so year t carries R(t) = R0 + (R_term - R0) * t / H. This is
+                 an approximation to a full year-by-year solve and is labelled as one; it
+                 captures the direction and most of the magnitude of the difference.
+
+R held at terminal value throughout the path. R deteriorates as slack rises, so using
 the terminal value overstates the early-year loss and understates nothing. Stated rather than
 hidden; a full treatment would path R year by year.
 """
@@ -89,6 +99,16 @@ def main():
                     cum = k * D * (H + 1) / 2
                     pv = sum((k * D * (t / H)) / (1 + DISCOUNT) ** t
                              for t in range(1, H + 1))
+                    # R pathed: R deteriorates from the 2026 baseline to the terminal value
+                    R0 = 0.5683
+                    cum_p, pv_p = 0.0, 0.0
+                    for tt in range(1, H + 1):
+                        R_t = R0 + (R - R0) * tt / H
+                        k_t = tl * (1 - R_t) - tk * 1.0 + g * (1 - rho_t)
+                        yr = k_t * D * (tt / H)
+                        cum_p += yr
+                        pv_p += yr / (1 + DISCOUNT) ** tt
+                    k_term_p = tl * (1 - R) - tk * 1.0 + g * (1 - rho_t)
                     rows.append({
                         "type": r["type"], "level_of_exposed": r["level_of_exposed"],
                         "horizon": H, "tau_k_reading": tkname, "tau_l": lname,
@@ -99,6 +119,9 @@ def main():
                         "average_annual_loss_bn": avg,
                         "cumulative_loss_bn": cum,
                         "present_value_bn": pv,
+                        "cumulative_loss_bn_R_pathed": cum_p,
+                        "present_value_bn_R_pathed": pv_p,
+                        "R_path_effect_pct": 100 * (cum_p - cum) / cum if cum else 0.0,
                         "terminal_pct_federal_receipts": 100 * terminal / receipts,
                         "average_pct_federal_receipts": 100 * avg / receipts,
                         "terminal_pct_OASDI_payroll": 100 * terminal / OASDI_PAYROLL_INCOME_BN,
@@ -113,10 +136,31 @@ def main():
     base = M[(M.tau_l == "bottom_up_0.301") & (M.outlays == "no_outlays")
              & (M.tau_k_reading == "barkai_rent_0.351")]
 
-    print("\n=== THE CORRECTION. Terminal-year annual loss, percent of federal receipts ===")
-    print("    (identical across horizons for the same cumulative displacement, by construction)")
-    print(base.pivot_table(index=["type", "level_of_exposed"], columns="horizon",
-                           values="terminal_pct_federal_receipts").round(2).to_string())
+    MOD = [0.10, 0.25, 0.50]
+    print("\n=== LEAD: MODERATE SCENARIOS. Terminal-year annual loss, "
+          "percent of federal receipts ===")
+    print("    10, 25 and 50 percent of the exposed wage bill. tau_l 0.301, no outlays, "
+          "Barkai reading.")
+    m = base[base.level_of_exposed.isin(MOD)]
+    print(m.pivot_table(index=["type", "level_of_exposed"], columns="horizon",
+                        values="terminal_pct_federal_receipts").round(2).to_string())
+    print("\n    as a percent of OASDI payroll income:")
+    print(m.pivot_table(index=["type", "level_of_exposed"], columns="horizon",
+                        values="terminal_pct_OASDI_payroll").round(2).to_string())
+    print("\n    as a percent of HI Part A revenue:")
+    print(m.pivot_table(index=["type", "level_of_exposed"], columns="horizon",
+                        values="terminal_pct_HI_revenue").round(1).to_string())
+
+    print("\n=== the 90 percent case, reported AFTER the moderate ones ===")
+    print(base[base.level_of_exposed == 0.90].pivot_table(
+        index="type", columns="horizon",
+        values="terminal_pct_federal_receipts").round(2).to_string())
+
+    print("\n=== R PATHED against R held at terminal, effect on cumulative loss ===")
+    print(base[base.level_of_exposed.isin(MOD)].pivot_table(
+        index=["type", "level_of_exposed"], columns="horizon",
+        values="R_path_effect_pct").round(1).to_string())
+    print("    percent difference; negative means holding R at terminal OVERSTATES the loss")
 
     print("\n=== what A70 reported instead (cumulative divided by horizon) ===")
     try:

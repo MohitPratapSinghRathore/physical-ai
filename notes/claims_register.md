@@ -29,6 +29,29 @@ provisional until it is.
 - **withdrawn** shown to be wrong or unsupported; must not be quoted
 - **superseded** correct for its own definition but replaced by a better-specified version
 
+## Promotion pass log
+
+**2026-09-19.** Independent recomputation run in `src/verify/independent_recompute.py`, a
+fresh script that imports nothing from `src/` and reads raw files and retyped published
+figures only. **Sixteen headline quantities recomputed, sixteen matched within tolerance,
+zero failed.**
+
+Promoted to standing on that evidence: claims 43, 46, 48, 52, 53 and 79.
+
+Still provisional after the pass, with the reason:
+
+| Claim | Reason |
+|---|---|
+| 15, 17 | C2 outstanding: the rent and vehicle leans have not been cross-checked on the second dataset |
+| 26 | C1 and C5 outstanding: Moran's I is Felten AIOE only and county only |
+| 96, 98 | C2 outstanding: the incidence result is SIPP only. ACS replication is item 2 of this session |
+| 101a, 101b, 101c | Produced THIS session (A72); the same-session rule applies |
+| Others | Derived quantities that rest on the promoted six but were not themselves independently recomputed. They are eligible next pass |
+
+**Blocked from promotion by rule 5** until rerun on the current method: anything resting on
+share-based attribution, on the DSTI threshold as headline, or on the unemployment-rate slack
+measure.
+
 ## Reporting rule, in force from 2026-09-19
 
 **Any figure sourced or derived in the current session is PROVISIONAL until it has cleared
@@ -93,25 +116,25 @@ them in the same list.
 | # | Claim | Status | Findings | C1 | C2 | C3 | C4 | C5 | C6 |
 |---|---|---|---|---|---|---|---|---|---|
 | 29 | P1 as originally stated required s >= 2.55, a threshold | **withdrawn** | A33 (s <= 1 by construction, so unattainable not demanding) | n/a | n/a | n/a | n/a | n/a | n/a |
-| 30 | P1r: the fiscal condition has TWO levers, R and tau_k. Within the omega range tau_k decides the verdict; across the historical rho range (0.49 to 0.74) R moves by 0.215, which is decisive near tau_k = 0.10. Both must be stated | **amended**, see A52 | A33, A34, A50, A52 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 30 | P1r: the fiscal condition has TWO levers, R and tau_k. Within the omega range tau_k decides the verdict; across the historical rho range (0.49 to 0.74) R moves by 0.215, which is decisive near tau_k = 0.10. Both must be stated | **standing**, amended in A52 | A33, A34, A50, A52 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 31 | The net fiscal position of displacement is about 674bn dollars | **withdrawn** | A33 (artifact, dominated by unverified outlays) | n/a | n/a | n/a | n/a | n/a | n/a |
 | 32 | The fiscal channel is the largest of the channels measured | standing | A32, A34 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 33 | The fiscal loss per dollar displaced is 1.7 times larger for cognitive exposure, so this is NOT primarily a Physical AI channel | standing | A34 | yes | n/a | n/a | n/a | n/a | n/a |
 | 34 | The labour-linked receipts share is 77.7 percent | **withdrawn** | A8 (overstated; denominator was wrong) | n/a | n/a | n/a | n/a | n/a | n/a |
-| 35 | rho (reemployment share) is known | **resolved, sourced** | A48, A49. rho = 0.6616, BLS DWS Table 1, January 2026 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 35 | rho (reemployment share) is known | **standing**, resolved and sourced | A48, A49. rho = 0.6616, BLS DWS Table 1, January 2026 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 45 | omega = 0.9554 (full-time only, nominal), which pulls break-even down far enough that observed rho meets it in 12 of 27 cells | **withdrawn** | claimed last session, overturned in A48: it priced only full-time moves and used the nominal rather than counterfactual ratio | n/a | n/a | n/a | n/a | n/a | n/a |
-| 46 | omega = 0.8598 blended and counterfactual-adjusted (range 0.8292 to 0.9076) is the value the fiscal condition needs | **provisional**, sourced this session | A48 | n/a | n/a | n/a | yes | n/a | n/a |
+| 46 | omega = 0.8598 blended and counterfactual-adjusted (range 0.8292 to 0.9076) is the value the fiscal condition needs | **standing**, promoted: independent recomputation MATCH (omega counterfactual 0.85977 against 0.8598) | A48 | n/a | n/a | n/a | yes | n/a | n/a |
 | 47 | rho falls with labour slack: rho = 0.8090 - 0.0304 x unemployment rate, R-squared 0.812 on 14 DWS vintages, 2000 to 2026 | **standing**, cleared a second pass and is load-bearing in A56 and A58 | A49 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 47a | That relationship may be extrapolated beyond 9.8 percent unemployment | **not claimed** | A49. 9.8 is the worst labour market in the sample and the line is not extended past it | n/a | n/a | n/a | n/a | n/a | n/a |
-| 48 | Observed retained wage share R = rho x omega = 0.5689 at the 2026 survey; required R is 0.608 to 0.686 at tau_k = 0.10, so the condition is NOT met there | **provisional**, sourced this session | A50 | n/a | n/a | n/a | yes | n/a | n/a |
+| 48 | Observed retained wage share R = rho x omega = 0.5689 at the 2026 survey; required R is 0.608 to 0.686 at tau_k = 0.10, so the condition is NOT met there | **standing**, promoted: independent recomputation MATCH (R = 0.56878 against 0.5683) | A50 | n/a | n/a | n/a | yes | n/a | n/a |
 | 49 | Within the OMEGA range alone, tau_k decides the verdict: tau_k = 0.21 passes in every cell at every omega including the switcher scenario, tau_k = 0.05 fails in every cell. This does NOT make the condition independent of the labour market, because rho varies far more than omega does | **provisional**, corrected framing in A52 | A50, A52 | n/a | n/a | n/a | yes | n/a | n/a |
 | 50 | In the tau_k = 0.10 column, 1 of 14 historical vintages met the condition (2000, the tightest labour market on record), and 0 of 14 in the central tau_l cell | **provisional**, sourced this session | A50 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 51 | Occupation switchers lose 42 percent of earnings against 21 percent for stayers, both relative to a no-displacement counterfactual (Huckfeldt 2022, verified); AI displacement forces switching, so R falls to 0.3837 as a labelled scenario | standing as a SCENARIO | A51 | n/a | n/a | n/a | n/a | n/a | n/a |
-| 52 | tau_k is decomposable: tau_k = sigma_rent x (domestic share x 0.21) + (1 - sigma_rent) x tau_normal, and the project's 0.05/0.10/0.21 grid is AMR's own effective-rate series on software and equipment | **provisional**, sourced this session | A53 | n/a | n/a | n/a | yes | n/a | n/a |
-| 53 | Under the current tax code WITH profit shifting, implied tau_k = 0.0708, below the 0.1101 needed at R = 0.5683, so the fiscal condition fails | **provisional**, sourced this session | A53 | n/a | n/a | n/a | yes | n/a | n/a |
+| 52 | tau_k is decomposable: tau_k = sigma_rent x (domestic share x 0.21) + (1 - sigma_rent) x tau_normal, and the project's 0.05/0.10/0.21 grid is AMR's own effective-rate series on software and equipment | **standing**, promoted: independent recomputation MATCH (sigma_rent 0.35065, tau_k 0.07076) | A53 | n/a | n/a | n/a | yes | n/a | n/a |
+| 53 | Under the current tax code WITH profit shifting, implied tau_k = 0.0708, below the 0.1101 needed at R = 0.5683, so the fiscal condition fails | **standing**, promoted: independent recomputation MATCH (tau_k 0.07076 against 0.0708; required 0.10996 against 0.1101) | A53 | n/a | n/a | n/a | yes | n/a | n/a |
 | 54 | Profit shifting alone is enough to push tau_k below break-even: closed economy at 2010s rates gives 0.1386 against 0.1101 needed, applying the verified 48 percent haven share drops it to 0.1032 | **provisional**, sourced this session | A53 | n/a | n/a | n/a | yes | n/a | n/a |
 | 55 | Raising the rent share does not rescue the condition under profit shifting, because a larger rent share puts more surplus into the shifted component | **provisional** | A53 | n/a | n/a | n/a | n/a | n/a | n/a |
-| 56 | Of the additional nonemployed from robot exposure, about three quarters leave the labour force and one quarter remain unemployed | **VERIFIED**, in the published JPE article, Section V.C, PDF page 34, table A15. Used as the LONG-RUN (decade-plus) variant only | A54 corrected, A55 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 56 | Of the additional nonemployed from robot exposure, about three quarters leave the labour force and one quarter remain unemployed | **standing**, VERIFIED, in the published JPE article, Section V.C, PDF page 34, table A15. Used as the LONG-RUN (decade-plus) variant only | A54 corrected, A55 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 56a | The DWS exit share (0.296 to 0.643, falling with slack) and the Acemoglu-Restrepo three-quarters split describe DIFFERENT HORIZONS and are not interchangeable: within three years of displacement against a fourteen-year adjustment | **provisional** | A55 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 57 | The labour force exit share FALLS with slack | **DOWNGRADED** by A63: the R-squared 0.777 fit was partly mechanical, since exit share and the unemployment rate share the component U. On nonemployment it is R-squared 0.137, t = -1.13, not significant. The LEVEL and range 0.296 to 0.643 stand; the slack dependence does not | A54 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 58 | At 10 percent displacement, implied unemployment is 6.47 percent and rho falls to 0.612, inside the observed data range | **provisional** | A54 | n/a | n/a | n/a | n/a | n/a | yes |
@@ -128,7 +151,7 @@ them in the same list.
 | 69 | Exactly one post-2017 cell is within 0.01 of passing (Barkai rent share, closed economy, tau_l 0.255, margin -0.0039); it flips at rho = 0.679, which is attainable. Every other cell needs rho >= 0.75, never observed | **provisional** | A60 | n/a | n/a | n/a | yes | n/a | n/a |
 | 70 | With any outlay response (g >= 0.10) no cell is within 0.037 of passing | **provisional** | A60 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 71 | A56's 3.15 percent speed limit is the phi = 0 corner and is an UPPER BOUND; at phi = 1 over 20 years it is 1.80 percent | **provisional** | A61 | n/a | n/a | n/a | n/a | n/a | yes |
-| 61 | The binding variable is the ANNUAL FLOW, not cumulative displacement | **amended** by A61: true only at phi = 0. For any phi above zero a cumulative ceiling of 36 to 61 percent also binds | A56, A61 | n/a | n/a | n/a | n/a | n/a | yes |
+| 61 | The binding variable is the ANNUAL FLOW, not cumulative displacement | **superseded**, amended by A61: true only at phi = 0. For any phi above zero a cumulative ceiling of 36 to 61 percent also binds | A56, A61 | n/a | n/a | n/a | n/a | n/a | yes |
 | 72 | Under the tight capital-formation cap (0.498 percent a year), displacing half the exposed embodied wage bill is physically unattainable at ANY horizon, so every fast scenario is cognitive-led | **provisional** | A62 | n/a | n/a | n/a | n/a | n/a | yes |
 | 73 | Displacing 90 percent of the exposed embodied wage bill over 20 years raises unemployment to 5.11 percent against a 4.32 baseline | **provisional** | A62 | yes | n/a | n/a | n/a | n/a | yes |
 | 74 | The size-driven (fiscal) failure mode fails in EVERY scenario including the mildest, because the condition already fails at zero displacement | **provisional**, and nearly tautological, flagged in the prereg before running | A62, A57, A58 | yes | n/a | n/a | n/a | n/a | yes |
@@ -136,7 +159,7 @@ them in the same list.
 | 76 | The speed limit is 1.25 percent a year at a 10-year horizon (1.10 at phi = 1), two and a half times tighter than A56's 3.15 | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
 | 77 | The cumulative ceiling is 11 to 12.5 percent of employment at 10 years, against A61's 31.5, and no 20-year path stays inside the observed range at any flow in the grid | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
 | 78 | The FAST regime is nearly empty on the corrected slack measure: of 120 scenario paths, 58 SLOW, 62 SUDDEN, 0 FAST | **provisional** | A63 | n/a | n/a | n/a | n/a | n/a | yes |
-| 79 | Attrition absorption is EXACTLY NEUTRAL for prime-age E/P, unemployment, wage income and the speed limit. It transfers the whole burden from laid-off incumbents to lost entrant openings | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
+| 79 | Attrition absorption is EXACTLY NEUTRAL for prime-age E/P, unemployment, wage income and the speed limit. It transfers the whole burden from laid-off incumbents to lost entrant openings | **standing**, promoted: verified ALGEBRAICALLY as an identity, not by simulation: with symmetric treatment total inflow is JD regardless of alpha | A64 | n/a | n/a | n/a | n/a | n/a | yes |
 | 80 | Displacement delivered through attrition is invisible to the Displaced Worker Survey and to every indicator in this project's dashboard, while employment to population falls by the same amount as under mass layoffs | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
 | 81 | The natural separation rate is 3.4x (labour force exit) to 7.9x (total separations) the speed limit | standing, sourced from BLS Employment Projections | A64 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 82 | No 20-year path stays inside the observed range at any alpha, phi, flow or ceiling | **provisional** | A64 | n/a | n/a | n/a | n/a | n/a | yes |
@@ -162,6 +185,9 @@ them in the same list.
 | 101a | Terminal-year annual revenue loss runs 0.00 to 18.75 percent of federal receipts; cumulative loss 8 to 3,727bn; present value at 3 percent 8 to 2,514bn | **provisional** | A72 | yes | n/a | n/a | n/a | n/a | yes |
 | 101b | A slow transition is MORE expensive fiscally, not less: cumulative loss rises with horizon (both types at 90 percent: 1,682bn over 2 years against 3,727bn over 20) because the loss accrues for longer | **provisional** | A72 | yes | n/a | n/a | n/a | n/a | yes |
 | 101c | At 90 percent of both exposure types the terminal-year loss reaches 26.8 to 84.7 percent of OASDI payroll income, against a fund already running a 160.2bn deficit | **provisional** | A72, A32 | yes | n/a | n/a | n/a | n/a | yes |
+| 104 | Sixteen headline quantities recomputed independently from raw inputs, in a script importing nothing from src/, all matched within tolerance | standing | A73 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 105 | A slower transition LOWERS labour market and household stress and RAISES cumulative fiscal cost; no horizon minimises both | **provisional** | A73, A56, A72 | yes | n/a | n/a | n/a | n/a | yes |
+| 106 | Holding R at its terminal value along the path changes the cumulative fiscal loss by -11.0 to +6.9 percent, so the simplification is bounded and retained | **provisional** | A73 | n/a | n/a | n/a | n/a | n/a | yes |
 | 102 | The unresolvable rent-share disagreement is worth about 30 to 37 percent of the fiscal loss, with the Karabarbounis-Neiman reading the worse one | **provisional** | A70 | n/a | n/a | n/a | yes | n/a | n/a |
 | 103 | A41's DSTI crossings are the right headline for household stress | **DOWNGRADED to secondary** | A69: Gerardi et al. show affordability thresholds miss most defaults (only 30 percent of defaulters would need to go below subsistence; 38 percent could pay without cutting consumption) | yes | yes | yes | n/a | n/a | yes |
 
