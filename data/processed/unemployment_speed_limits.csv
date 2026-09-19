@@ -1,0 +1,7 @@
+T_case,exit_mode,s_other,max_d_within_observed_u,max_d_bounded
+T_1.0y,short_run,0.038121,0.0435,0.12
+T_1.0y,long_run,0.044505,0.083,0.12
+T_1.5y_central,short_run,0.029397,0.0315,0.12
+T_1.5y_central,long_run,0.035857,0.065,0.12
+T_2.0y,short_run,0.023345,0.025,0.12
+T_2.0y,long_run,0.029491,0.0535,0.12

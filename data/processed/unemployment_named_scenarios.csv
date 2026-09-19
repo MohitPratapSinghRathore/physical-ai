@@ -1,0 +1,11 @@
+scenario,total_displacement,years,d_annual,u_terminal,rho_terminal,steady_state_u,within_observed_range,bounded
+10pct_over_10y,0.1,10,0.01,0.04835,0.66187,0.0479,True,True
+10pct_over_20y,0.1,20,0.005,0.041,0.68424,0.04071,True,True
+25pct_over_10y,0.25,10,0.025,0.07698,0.57513,0.07536,True,True
+25pct_over_20y,0.25,20,0.0125,0.05229,0.64986,0.05174,True,True
+50pct_over_10y,0.5,10,0.05,0.15657,0.33962,0.15,False,True
+50pct_over_20y,0.5,20,0.025,0.0772,0.57406,0.07536,True,True
+75pct_over_10y,0.75,10,0.075,0.35641,0.0,0.33328,False,True
+75pct_over_20y,0.75,20,0.0375,0.11775,0.45072,0.11341,False,True
+90pct_over_10y,0.9,10,0.09,0.4371,0.0,0.36374,False,True
+90pct_over_20y,0.9,20,0.045,0.14273,0.37498,0.13351,False,True

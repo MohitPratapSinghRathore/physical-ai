@@ -1,0 +1,27 @@
+{
+  "clausing_receipts_2012_bn": 274.7,
+  "clausing_loss_bn": [
+    77.0,
+    111.0
+  ],
+  "domestic_share_clausing": [
+    0.7122115633912367,
+    0.7810634063121978
+  ],
+  "domestic_share_TWZ": 0.52,
+  "sigma_rent_sourced_range": [
+    0.0,
+    0.351
+  ],
+  "tau_k_sourced_range": [
+    0.03245,
+    0.20351
+  ],
+  "required_tau_k": {
+    "AMR_0.255": 0.11007949303018082,
+    "bottom_up_0.301": 0.12993697020425266,
+    "bottom_up_0.318": 0.13727560307293138
+  },
+  "R_2026": 0.5683157136071341,
+  "shifting_held_constant_in_trajectory": true
+}

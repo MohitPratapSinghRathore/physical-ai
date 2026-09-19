@@ -3793,3 +3793,260 @@ constant across displacement levels. That is conservative in the direction that 
 because Huckfeldt (2022) finds the cost and incidence of occupation displacement are higher
 in recessions, so the true omega in slack states is lower than the one used and the frontier
 below **understates** the deterioration.
+
+## A55. CORRECTION. The Acemoglu and Restrepo nonparticipation split IS in the published article, and A54's non-verification was searching the wrong document
+
+A54 recorded the three-quarters nonparticipation finding as unverified after searching NBER
+Working Paper 23285 in full. **The owner was right and I was looking in the wrong version.**
+
+- Confirmed in the published article, consulted as
+  `data/raw/manual/AcemogluRestrepo2020_JPE_robots_and_jobs.pdf`.
+- Location: **Section V.C, "Other Labor Market Outcomes", PDF page 34**, discussing
+  **appendix table A15**.
+- Finding, in this project's words: robot exposure raises both the nonparticipation rate and
+  the unemployment rate, and the estimates imply that of the additional nonemployed, about
+  three quarters leave the labour force and about one quarter remain unemployed. The same
+  section reports increased take-up of Social Security retirement and disability benefits and
+  other transfers (table A17), consistent with the participation margin doing the work.
+- The passage is absent from the working paper. The earlier non-verification was accurate
+  about the document searched and wrong about the claim. Removed from `lit/unverified.md`,
+  recorded in the new `lit/verified_findings.md`, added to `paper/references.bib`.
+
+### The two exit measures are different horizons and are now used as such
+
+| Measure | Horizon | Value | Depends on slack? |
+|---|---|---|---|
+| **DWS exit share** | within three years of displacement | 0.296 to 0.643 | **yes**, falls with slack |
+| **Acemoglu and Restrepo** | long differences 1990 to 2007, fourteen-year equivalent | about 0.75 | not estimated |
+
+These are not rival estimates of one number and neither is "the" exit rate. The DWS measures
+who has left the labour force within three years; Acemoglu and Restrepo measure where
+displaced workers settle over a decade or more. **They are consistent with each other**: an
+exit share around 0.46 at three years rising toward 0.75 over fourteen is a plausible single
+path, and the gap between them is the drift of long-term unemployed into nonparticipation.
+
+Both are carried as variants throughout, with the horizon named. A higher exit share LOWERS
+measured unemployment and RAISES the drop in participation, so the long-run variant is
+optimistic for the unemployment path and pessimistic for the tax base. Neither is uniformly
+the conservative choice, which is why both are reported.
+
+---
+
+## A56. THE SPEED LIMIT. A dynamic model replaces the static fixed point, and the static version OVERSTATED the damage
+
+`src/unemployment_stock_flow.py`. A54 displaced d percent of employment instantaneously and
+read off the implied unemployment. That is the wrong object for an adoption path, which
+arrives as a flow. The minimal stock-flow replacement is stated in full in the module
+docstring.
+
+### Calibration, and the one conversion that carries the most weight
+
+The DWS reports status at a survey date for workers displaced over a three-year window.
+Taking displacement as uniform, mean elapsed time is T = 1.5 years. Splitting the survey
+shares into two competing risks and treating each as a constant annual hazard:
+
+    h(u) = 1 - (1 - rho_cond)**(1/T),  rho_cond = rho / (rho + (1-rho)(1-e))
+    a(u) = 1 - (1 - (1-rho)e)**(1/T)
+
+At the January 2026 baseline: **h = 0.681, a = 0.120 per year.** T is varied over 1.0, 1.5
+and 2.0 years and that variation is the single largest modelling choice in the file; the
+speed limit moves by a factor of 1.7 across it.
+
+Observed baseline displacement flow, DWS long-tenured: **0.679 percent of employment a
+year**. A residual inflow of **2.94 percent a year** is calibrated once so the model
+reproduces the observed 4.32 percent unemployment at that baseline. It is a reduced-form
+residual standing for quits, short-tenure layoffs and entrants, and it is not a measured
+separation rate.
+
+### Steady-state unemployment by annual displacement flow
+
+| d, percent a year | Short-run exit (DWS) | Long-run exit (0.75) |
+|---|---|---|
+| 0.5 | 4.07 | 4.15 |
+| 1.0 | 4.79 | 4.64 |
+| 2.0 | **6.47** | 5.60 |
+| 3.0 | **9.00** | 6.55 |
+| 4.0 | 11.97 | 7.49 |
+| 5.0 | 15.00 | 8.42 |
+
+Terminal values at 10 and 20 years are within 0.2 to 1.8 points of the steady state at every
+d, because the hazards clear the stock quickly (h + a is about 0.8 a year). **The horizon
+barely matters once the annual flow is fixed; the annual flow is the whole story.**
+
+### The speed limits
+
+| T | Exit variant | Max d keeping u inside the observed range (9.8 percent) |
+|---|---|---|
+| 1.0y | short run | 4.35% a year |
+| **1.5y central** | **short run** | **3.15% a year** |
+| 2.0y | short run | 2.50% a year |
+| 1.0y | long run | 8.30% a year |
+| 1.5y | long run | 6.50% a year |
+| 2.0y | long run | 5.35% a year |
+
+**"Bounded at all" is not a binding constraint in this model and I am reporting that rather
+than a number.** Because labour force exit continues even when the reemployment hazard goes
+to zero, the unemployment stock always drains eventually. The scan reached the top of its
+grid at 12 percent a year without finding an unbounded case. The limit that matters is the
+first column: the flow at which the model leaves the range where its own hazards were fitted.
+
+### Named adoption scenarios, central case
+
+| Scenario | Annual flow | Terminal u | Terminal rho | Inside the data? |
+|---|---|---|---|---|
+| 10% over 20y | 0.50% | 4.10 | 0.684 | yes |
+| **10% over 10y** | **1.00%** | **4.84** | **0.662** | **yes** |
+| 25% over 20y | 1.25% | 5.23 | 0.650 | yes |
+| 25% over 10y | 2.50% | 7.70 | 0.575 | yes |
+| 50% over 20y | 2.50% | 7.72 | 0.574 | yes |
+| 50% over 10y | 5.00% | 15.66 | 0.340 | **no** |
+| 75% over 20y | 3.75% | 11.78 | 0.451 | **no** |
+| 75% over 10y | 7.50% | 35.64 | 0.000 | **no** |
+| 90% over 20y | 4.50% | 14.27 | 0.375 | **no** |
+| 90% over 10y | 9.00% | 43.71 | 0.000 | **no** |
+
+### What this does to the thesis, and it weakens it further
+
+**The static fixed point overstated the slack response at the scenario the engine has been
+running.** A54 put 10 percent displacement at 6.47 percent unemployment with rho falling to
+0.612. Spread over ten years as a flow, the same 10 percent gives **4.84 percent unemployment
+and rho 0.662**, barely distinguishable from the 4.32 percent baseline. A54's figure treated
+a decade of adoption as a single instant.
+
+**Half of all US employment can be displaced over twenty years without leaving the observed
+labour market range.** 50 percent over 20 years is a 2.5 percent annual flow and lands at 7.7
+percent unemployment, inside the range the DWS relationships were fitted on. That is a
+striking result and it runs directly against a disruption thesis: on these relationships, the
+economy absorbs very large cumulative displacement provided it arrives slowly enough.
+
+**The binding variable is speed, not size.** 50 percent over 20 years (u = 7.7) and 25
+percent over 10 years (u = 7.7) are the same outcome because they are the same annual flow.
+The paper's scenarios must be stated as annual flows, and any scenario quoted as a
+cumulative percentage without a horizon is uninterpretable.
+
+**Where it breaks is above about 3 percent a year**, which is roughly four and a half times
+the observed long-tenured displacement rate. Above that the model leaves the range where its
+hazards were estimated, and the 35 and 44 percent unemployment figures in the table are
+arithmetic on extrapolated relationships, not forecasts.
+
+## A57. tau_k SECOND PASS. Both unknowns now have a verified alternative pointing the other way, and one of them is not a range but a disagreement
+
+`src/tau_k_second_pass.py`. A53 rested each unknown on a single source. Both now have a
+second.
+
+### The rent share is not a range, it is two incompatible readings of one residual
+
+| Reading | sigma_rent | Source |
+|---|---|---|
+| Economic profits | **0.351** | Barkai (2020), JF 75(5). Pure profit share up 13.5pp from near zero; capital share 25 percent of gross value added in 2014 |
+| Rental-rate mismeasurement | **~0.00** | Karabarbounis and Neiman (2019), NBER Macroeconomics Annual 33, 167 to 228 |
+
+Karabarbounis and Neiman analyse the same accounting residual and label the profits reading
+Case Pi. Verified: they are "skeptical of Case Pi", finding it "reveals a tight negative
+relationship between real interest rates and economic profits", produces "large fluctuations
+in inferred factor-augmenting technologies", and implies profits "remain lower today than in
+the 1960s and 1970s". They "view Case R as most promising", Case R attributing the residual
+to deviations of the rental rate of capital. **Under Case R the rent share of capital income
+is approximately zero**, because what Barkai reads as profit is read as mismeasured cost of
+capital.
+
+**These are not endpoints of a confidence interval and must not be averaged.** They are two
+credible readings of the same data that disagree about whether the object exists. The paper
+has to carry both and say which results depend on which.
+
+### The domestically taxed share: two sources, and they disagree by 20 points
+
+| Source | Implied domestic share | Basis |
+|---|---|---|
+| Torslov, Wier and Zucman | **0.52** | 48 percent of pre-tax profits of majority-owned FOREIGN AFFILIATES of US multinationals made in tax havens, 2016. **Confirmed to be the US-multinational figure, not the global one** |
+| Clausing (2016) | **0.712 to 0.781** | 77 to 111bn USD of US corporate revenue lost to shifting by 2012, against 274.7bn USD of federal corporate receipts in 2012Q4 |
+
+The Clausing conversion is a derivation of this project, not a figure Clausing reports:
+domestic share = receipts / (receipts + loss). The two measure different objects, TWZ a
+profit share of foreign affiliates and Clausing a revenue loss against actual receipts, and
+the gap between them is interpretation, not sampling error.
+
+### tau_k on AI surplus, sourced rent shares only (0.00 to 0.351)
+
+| Domestic share | tau_normal 0.05 (now) | 0.10 (2010s) | 0.20 (2000) |
+|---|---|---|---|
+| Imported capital, 0.00 | 0.032 to 0.050 | 0.065 to 0.100 | 0.130 to 0.200 |
+| TWZ, 0.52 | **0.050 to 0.071** | 0.100 to 0.103 | 0.168 to 0.200 |
+| Clausing, 0.71 to 0.78 | 0.050 to 0.090 | 0.100 to 0.123 | 0.182 to 0.200 |
+| Closed economy, 1.00 | 0.050 to **0.106** | 0.100 to **0.139** | 0.200 to 0.204 |
+
+Full sourced range **0.032 to 0.204**.
+
+### Required tau_k at R = 0.5683, at EVERY labour tax rate
+
+| tau_l | Required tau_k | Cells passing, of 30 |
+|---|---|---|
+| 0.255 (AMR) | **0.1101** | 13 |
+| 0.301 | **0.1299** | 10 |
+| 0.318 | **0.1373** | 10 |
+
+**Every passing cell sits in the year-2000 tau_normal column**, plus one half-cell at
+closed-economy 2010s rates. **Not a single post-2017 cell passes at any labour tax rate,
+under any rent share, under any shifting assumption, including the closed economy.** The
+highest post-TCJA value obtainable is 0.1062, from the closed economy with the Barkai rent
+share, and the lowest requirement is 0.1101.
+
+That is the most robust statement this project has about the fiscal condition, and it does
+not depend on which side of the Barkai against Karabarbounis and Neiman disagreement one
+takes.
+
+---
+
+## A58. THE TRAJECTORY. The US crossed from met to unmet somewhere between 2008 and 2022, and the date is NOT robust
+
+`src/tau_k_second_pass.py`, figure at `paper/figures/fig_trajectory_R_tauk.png`.
+
+Each DWS vintage is assigned its observed R and the tax regime in force that year: AMR's own
+tau_normal series interpolated between the anchors it states (0.20 in 2000, 0.10 through the
+2010s, 0.05 from 2018), the statutory rate (0.35 through 2017, 0.21 from 2018), and the
+shifting share **held constant**, because no verified time series of the US haven share was
+obtained. The path's horizontal movement is therefore driven by expensing and statutory
+changes only, and that is a limitation rather than a finding.
+
+### The path, Barkai rent share with TWZ shifting
+
+| Year | rho | R | tau_normal | tau_stat | tau_k | Met at 0.255 | Met at 0.301 |
+|---|---|---|---|---|---|---|---|
+| 2000 | 0.740 | 0.636 | 0.20 | 0.35 | **0.194** | yes | yes |
+| 2004 | 0.650 | 0.559 | 0.16 | 0.35 | 0.168 | yes | yes |
+| 2008 | 0.680 | 0.585 | 0.12 | 0.35 | 0.142 | yes | yes |
+| **2010** | **0.490** | **0.421** | 0.10 | 0.35 | 0.129 | **no** | **no** |
+| 2014 | 0.610 | 0.525 | 0.10 | 0.35 | 0.129 | yes | no |
+| 2016 | 0.660 | 0.568 | 0.10 | 0.35 | 0.129 | yes | no |
+| **2018** | 0.660 | 0.568 | **0.05** | **0.21** | **0.071** | **no** | no |
+| 2026 | 0.661 | 0.568 | 0.05 | 0.21 | 0.071 | no | no |
+
+### Both levers are visible in the path, which settles A52
+
+**2010 is a labour market failure.** tau_k is unchanged at 0.129; R collapses from 0.585 to
+0.421 because the reemployment rate fell to 0.49. The condition fails on R alone and
+recovers by 2014 as R recovers.
+
+**2018 is a tax failure.** R is unchanged at 0.568; tau_k falls from 0.129 to 0.071 as
+expensing and the statutory cut take effect together, a 45 percent cut. The condition fails
+on tau_k alone and does not recover, because R has not been above 0.64 since 2000.
+
+That is the concrete vindication of A52's reframing: each lever has independently decided the
+answer once in the observed record.
+
+### The crossing date, and its robustness
+
+| Rent share | Shifting | tau_l 0.255 | tau_l 0.301 | tau_l 0.318 |
+|---|---|---|---|---|
+| Barkai 0.351 | Closed | 2022 | 2018 | 2018 |
+| Barkai 0.351 | TWZ 0.52 | 2018 | 2010 | 2010 |
+| KN Case R 0.00 | Closed | 2010 | 2008 | 2008 |
+| KN Case R 0.00 | TWZ 0.52 | 2010 | 2008 | 2008 |
+
+**The crossing date spans 2008 to 2022 and is not robust.** Anyone quoting a single year for
+when the US fiscal condition on automation stopped holding is quoting their choice of rent
+share and labour tax rate, not a measurement. The paper must give the range or give none.
+
+**What IS robust across all twelve combinations: the condition is unmet in 2026, and has
+been unmet continuously since 2018 in every one of them.** The disagreement is entirely
+about how long before 2018 it had already failed.

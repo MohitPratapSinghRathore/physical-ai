@@ -1,0 +1,61 @@
+{
+  "baseline": {
+    "labour_force": 170465.0,
+    "unemployed": 7368.0,
+    "employed": 163097.0,
+    "unrate": 4.322294899246179
+  },
+  "d0_observed_annual": 0.006793503252665592,
+  "hazard_conversion": "h = 1 - (1 - rho_cond)**(1/T), rho_cond = rho/(rho+(1-rho)(1-e))",
+  "T_cases": {
+    "T_1.0y": 1.0,
+    "T_1.5y_central": 1.5,
+    "T_2.0y": 2.0
+  },
+  "long_run_exit_source": 0.75,
+  "limits": [
+    {
+      "T_case": "T_1.0y",
+      "exit_mode": "short_run",
+      "s_other": 0.038121,
+      "max_d_within_observed_u": 0.0435,
+      "max_d_bounded": 0.12
+    },
+    {
+      "T_case": "T_1.0y",
+      "exit_mode": "long_run",
+      "s_other": 0.044505,
+      "max_d_within_observed_u": 0.083,
+      "max_d_bounded": 0.12
+    },
+    {
+      "T_case": "T_1.5y_central",
+      "exit_mode": "short_run",
+      "s_other": 0.029397,
+      "max_d_within_observed_u": 0.0315,
+      "max_d_bounded": 0.12
+    },
+    {
+      "T_case": "T_1.5y_central",
+      "exit_mode": "long_run",
+      "s_other": 0.035857,
+      "max_d_within_observed_u": 0.065,
+      "max_d_bounded": 0.12
+    },
+    {
+      "T_case": "T_2.0y",
+      "exit_mode": "short_run",
+      "s_other": 0.023345,
+      "max_d_within_observed_u": 0.025,
+      "max_d_bounded": 0.12
+    },
+    {
+      "T_case": "T_2.0y",
+      "exit_mode": "long_run",
+      "s_other": 0.029491,
+      "max_d_within_observed_u": 0.0535,
+      "max_d_bounded": 0.12
+    }
+  ],
+  "rho_valid_to_unrate": 9.8
+}

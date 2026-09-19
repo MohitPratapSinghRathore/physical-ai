@@ -223,6 +223,17 @@ Retrieved 88 of 190 company-concept series.
   labour force 170.5 million, unemployed 7.4 million, implied unemployment rate 4.32 percent.
 - URLs: https://fred.stlouisfed.org/graph/fredgraph.csv?id=<SERIES>. Retrieved 2026-09-19.
 
+## Acemoglu and Restrepo (2020), Journal of Political Economy: robots and jobs
+
+- File: data/raw/manual/AcemogluRestrepo2020_JPE_robots_and_jobs.pdf
+- Reference: Journal of Political Economy 128(6), 2188 to 2244, 2020.
+- Placed manually by the owner. 57 pages, publisher typeset version with placeholder folios.
+- Used for: the long-run split of additional nonemployment between labour force exit and
+  unemployment, Section V.C, PDF page 34, appendix table A15. Recorded in
+  lit/verified_findings.md.
+- NOTE: this finding is NOT in NBER Working Paper 23285, which is why an earlier session
+  recorded it as unverified. Only the published article carries it.
+
 ## Blocked or paywalled, not used
 
 | Source | Status | Needed for |

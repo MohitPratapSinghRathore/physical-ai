@@ -61,21 +61,3 @@ Do not cite the superseded title.
   every derivation assumption, and computed in src/bls_dws.py.
 - This entry is kept only so the earlier "blocked" statements in findings A41 and A45 can be
   traced to their resolution.
-
-### Acemoglu and Restrepo, "roughly three quarters of the nonemployment response was nonparticipation"
-
-- Claim as put to this project: that Acemoglu and Restrepo found roughly three quarters of
-  the nonemployment response to robot exposure was nonparticipation rather than unemployment.
-- Status: **NOT VERIFIED, NOT USED.**
-- What was checked: the full NBER Working Paper 23285 text of "Robots and Jobs: Evidence
-  from US Labor Markets" was downloaded and searched. It contains no such decomposition. The
-  strings "nonparticipation", "non-participation", "not in the labor force", "leaving the
-  labor force" and "exit the labor force" do not occur anywhere in it. The unemployment-rate
-  and participation-rate results are stated to be in Table A4, which is in an online appendix
-  not contained in the paper and not retrieved.
-- It may well be true, in the published Journal of Political Economy version or in the
-  appendix. This project has not seen it and therefore does not use it.
-- Replaced by: the Displaced Worker Survey's own labour force status tables, which measure
-  the same quantity on exactly the relevant population, for ten vintages. See
-  data/SOURCES.md and src/displacement_to_slack.py. The DWS exit share is 0.296 to 0.643 and
-  falls with slack, which is materially different from a fixed three quarters.
