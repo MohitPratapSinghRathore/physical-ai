@@ -1,0 +1,13 @@
+row,source,measure,denominator,group,obligation_share_pct,earnings_share_pct,lean,n_households_unweighted
+A_acs_service_vs_earnings,ACS,annual mortgage service,household wage earnings,embodied,19.41156,21.11518,0.91932,
+D_acs_service_mortgage_holders_only,ACS,annual mortgage service,household wage earnings,embodied,19.41156,19.23653,1.0091,
+A_acs_service_vs_earnings,ACS,annual mortgage service,household wage earnings,cognitive_AIOE,28.47412,30.18194,0.94342,
+D_acs_service_mortgage_holders_only,ACS,annual mortgage service,household wage earnings,cognitive_AIOE,28.47412,33.71569,0.84454,
+A_acs_service_vs_earnings,ACS,annual mortgage service,household wage earnings,cognitive_GPT,26.36545,27.34406,0.96421,
+D_acs_service_mortgage_holders_only,ACS,annual mortgage service,household wage earnings,cognitive_GPT,26.36545,28.65805,0.92,
+B_sipp_payment_vs_earnings,SIPP,annual mortgage payment,household earnings,embodied,19.61764,18.64627,1.05209,6734.0
+C_sipp_balance_vs_earnings,SIPP,mortgage balance,household earnings,embodied,14.1411,18.64627,0.75839,6734.0
+B_sipp_payment_vs_earnings,SIPP,annual mortgage payment,household earnings,cognitive_AIOE,20.17576,27.68719,0.7287,6734.0
+C_sipp_balance_vs_earnings,SIPP,mortgage balance,household earnings,cognitive_AIOE,27.04885,27.68719,0.97694,6734.0
+B_sipp_payment_vs_earnings,SIPP,annual mortgage payment,household earnings,cognitive_GPT,22.09782,28.65324,0.77122,6734.0
+C_sipp_balance_vs_earnings,SIPP,mortgage balance,household earnings,cognitive_GPT,27.69064,28.65324,0.96641,6734.0

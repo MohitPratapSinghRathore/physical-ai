@@ -2349,6 +2349,17 @@ computed; centroids not obtained.
 
 ## A38. ITEM 1. The five-way table. "Neither" was hiding the largest over-holder in the economy
 
+> **SUPERSEDED IN FULL by A47.** Four separate errors: vacant housing units counted as
+> households, a wider "employed" test than the engine uses, leans built from two weight
+> systems (household weight on the numerator, person weight on the denominator), and a
+> working core defined by the reference person's age. Corrected, non-working households
+> hold 16.0 percent of mortgage service and 27.3 percent of rent on 6.30 percent of wages,
+> leans 2.53 and 4.32, and are 34.2 percent of households rather than 44.3. The embodied
+> rent lean is 0.93, not 0.99, so the "exactly proportional" reading below is withdrawn.
+> The 2:1 rent RATIO survives at 1.98 on AIOE and 1.50 on GPT. No number in this entry
+> should be quoted.
+
+
 A36 split households four ways and put two thirds of them in a residual called "neither",
 which leaned 1.09 on mortgage and 1.26 on rent. That residual mixed two completely different
 things: working households whose occupations are not top-quintile exposed, and households
@@ -2421,6 +2432,17 @@ A36's withdrawal of "the mortgage channel is cognitive" is confirmed on the clea
 and the positive result is the uniformity itself, which is the next entry.
 
 ## A39. ITEM 2 GATE. The proportionality result is REAL IN AGGREGATE AND FALSE AT HOUSEHOLD LEVEL. The k rule is an aggregation artifact
+
+> **The central finding STANDS and one inference drawn from it is WITHDRAWN, see A42.**
+> Household-level proportionality does fail, and the k rule is an aggregation artifact.
+> But the speculation below that low-wage-first displacement would cause share attribution
+> to UNDERSTATE the damage by a large multiple is wrong in direction. Share attribution
+> OVERSTATES, by about five times at DSTI 50, and overstates MOST under low-wage-first
+> incidence. The magnitude concern was justified: incidence moves the dollar figure by up
+> to three times. The ACS against SIPP gap logged as open at the end of this entry is
+> resolved in A44: it was a service against balance comparison, and SIPP is too imprecise
+> to settle it either way.
+
 
 This is the most damaging result of the session and it leads the report.
 
@@ -2548,6 +2570,14 @@ as open.
 
 ## A40. ITEM 3 GATE. The concentration ordering is an artifact of SCALE, and near-uniformity is an artifact of BREADTH. A28 and A37 both need restating
 
+> **EXTENDED by A46.** The Theil decomposition here pooled all non-metro counties into one
+> pseudo-group; A46 repairs it with state non-metro remainders (973 groups) and the
+> percentages move by under 1.5 points, so nothing below is materially distorted. A46 adds
+> the ABSOLUTE decomposition, which reverses the institutional reading: between-region
+> inequality in embodied exposure is 1.6 to 3.7 times LARGER than in cognitive exposure.
+> The figure is at paper/figures/fig_concentration_breadth_scale.png.
+
+
 `src/geo_breadth_scale.py`, ACS PUMS 2023, four breadths by two exposure types by three
 geographic scales, plus Moran's I on 2024 Gazetteer county centroids and a Theil
 decomposition against CBSA. Output `data/processed/geo_breadth_scale.csv`.
@@ -2652,3 +2682,664 @@ comparison, not the raw Gini, is the one the paper should make.
 
 The single figure for this item is not drawn. The Theil non-metro pooling should be replaced
 with individual non-metro counties as their own groups before this goes in the paper.
+
+## A41. THE HOUSEHOLD STRESS ENGINE. Distress is far smaller than share attribution implied, and the exposure-type contrast survives in a form the project had not measured
+
+`src/stress/`, four modules. ACS PUMS 2023 for payments (1,479,320 workers, 1,343,045
+households, 131.33m weighted), SIPP 2025 for balances and buffers. Method documented in the
+module docstrings, scenario grid in `data/processed/stress/scenario_definition.json`.
+
+Precedents, all three verified against the publisher on 2026-09-19 and entered in
+`paper/references.bib`: Meriküll and Rõõm (2020), microsimulation household stress test on
+matched survey and register microdata, the closest methodological precedent; Albacete and
+Fessler (2010), origin of the financial-margin construction; Bhutta, Bricker, Dettling,
+Kelliher and Laufer (2019), cited for the scenario-driven framing and explicitly NOT for the
+unit of analysis, which is county-level there and household-level here.
+
+Cognitive rows throughout: AIOE and Eloundou GPT measure TASK OVERLAP, not displacement and
+not timing. The engine converts that rank into a displacement probability BY ASSUMPTION.
+That assumption is the weakest link in every cognitive number below and is not a measurement.
+
+### The baseline, which has to come first
+
+| Sample | Households | With an obligation | DSTI over 30 | DSTI over 40 | **DSTI over 50** |
+|---|---|---|---|---|---|
+| All | 131.33m | 93.66m | 33.5% | 23.2% | **17.6%** |
+| Working core | 86.45m | 69.20m | 24.9% | 15.0% | **10.1%** |
+| Non working | 44.89m | 24.46m | 58.0% | 46.3% | **38.9%** |
+
+One in ten working-core households with a mortgage or rent is ALREADY above a 50 percent
+debt-service-to-income ratio with no shock at all. Any post-shock level read without this
+line is the same class of error as A6.
+
+**A38 IS SUPERSEDED, see A47.** Building this engine turned up four separate errors in
+A38's five-way table, not one, and the decomposition is reported in full in A47 rather than
+asserted here. In short: vacant housing units were counted as households, the "employed"
+test was wider than the engine's, the leans mixed two weight systems, and the working core
+was defined by the reference person's age rather than by whether any member aged 25 to 64
+is employed. **A38's dollar shares do NOT stand**, contrary to what I said when the vacancy
+bug was first found and before the other three were isolated. The household total, 131.33m,
+now matches the published benchmark of roughly 131m, which A31 could not reach.
+
+### Result 1, and it weakens the thesis: a 10 percent displacement shock moves very little
+
+Share of obligated working-core households crossing DSTI 50, uniform incidence, rho 0.65,
+omega 0.75. Baseline 10.08 percent.
+
+| Construct | 5 percent | 10 percent | 20 percent | Increment at 10 percent |
+|---|---|---|---|---|
+| Cognitive AIOE | 11.24% | **12.43%** | 14.93% | **+2.35pp** |
+| Cognitive GPT | 11.23% | 12.42% | 14.90% | +2.34pp |
+| Embodied | 11.03% | **12.00%** | 14.00% | **+1.92pp** |
+| Robot reachable | 11.03% | 11.99% | 13.99% | +1.91pp |
+| Gated | 11.14% | 12.19% | 14.34% | +2.11pp |
+| Manipulation | 10.93% | 11.73% | 12.54% | +1.65pp |
+| Driving | 10.75% | 10.75% | 10.75% | +0.67pp |
+
+Replicate intervals are tight and simulation noise is negligible. Cognitive AIOE at the
+central target: estimate 0.12432, ACS successive-difference standard error 0.00055, 95
+percent interval [0.12325, 0.12538], simulation standard deviation across draws 0.00012.
+
+**Displacing a tenth of all US employment, concentrated in the most exposed occupations,
+raises the share of obligated working households above a 50 percent DSTI by 2.35 percentage
+points.** It does not double it, or move it by half. The household balance sheet absorbs the
+shock through non-wage income, second earners and reemployment. This is the single most
+thesis-damaging number the project has produced, and it is the number the paper has to open
+with rather than bury.
+
+Driving is **capped**: all six driving occupations together are 6.04m workers, 3.29 percent
+of employment, so even total displacement of every driver cannot reach a 5 percent scenario.
+The engine reports this rather than scaling an impossible shock, and the 0.67pp is the
+ceiling of the entire driving channel.
+
+### Result 2, which is new and which is a genuine exposure-type contrast
+
+Increment in DSTI-50 crossings per billion dollars of wage income actually lost:
+
+| Construct | Wage loss (USD bn) | Increment (pp) | **pp per USD bn** |
+|---|---|---|---|
+| Manipulation | 202.8 | 1.65 | **0.00813** |
+| Driving | 101.8 | 0.67 | **0.00658** |
+| Gated | 338.6 | 2.11 | 0.00623 |
+| Embodied | 312.5 | 1.92 | **0.00613** |
+| Robot reachable | 322.0 | 1.91 | 0.00593 |
+| Cognitive GPT | 604.0 | 2.34 | 0.00387 |
+| Cognitive AIOE | 687.9 | 2.35 | **0.00342** |
+
+**Embodied displacement is 1.8 times more distress-efficient than cognitive displacement per
+dollar of wage income destroyed, and general-purpose manipulation is 2.4 times.** A cognitive
+shock destroys 688bn dollars of wages and produces 2.35 percentage points of crossings; an
+embodied shock destroys 313bn, less than half, and produces 1.92.
+
+This is the contrast the project has been looking for and could not find in the lean tables.
+It is not about who holds more debt. It is about how close to the threshold the debt-holding
+households already sit. Cognitive exposure concentrates in households with income to spare;
+embodied exposure concentrates in households without it. **The same dollar of destroyed wages
+does roughly twice as much balance-sheet damage when it is embodied.**
+
+It also survives the check that the lean tables failed: it is a household-level result, not
+an aggregation of group shares, and it holds on both cognitive definitions.
+
+### Result 3: incidence barely moves household COUNTS. It moves DOLLARS by three times
+
+Share of obligated working-core households crossing DSTI 50 at the central target:
+
+| Construct | Lowest wage first | Uniform | Highest wage first | Max over min |
+|---|---|---|---|---|
+| Cognitive AIOE | 12.01% | 12.43% | 12.78% | 1.064 |
+| Cognitive GPT | 11.95% | 12.42% | 12.80% | 1.071 |
+| Embodied | 11.42% | 12.00% | 12.47% | 1.092 |
+| Robot reachable | 11.43% | 11.99% | 12.45% | 1.089 |
+| Gated | 11.88% | 12.19% | 12.51% | 1.053 |
+| Manipulation | 11.47% | 11.73% | 12.02% | 1.049 |
+
+On household counts the spread is 5 to 9 percent. **On the dollars those households owe it
+is 1.75 to 3.01 times**, reported in full in A42. Displacing the highest earners inside an
+occupation produces slightly more distressed households and far more distressed dollars,
+because they carry more of their household's income and sit on larger obligations.
+
+A financial-stability claim is about dollars. **No dollar figure from this engine may be
+quoted without naming the incidence assumption.** The household-count figures are robust to
+it and can stand alone.
+
+### Result 3b: SIPP INDEPENDENTLY REPRODUCES the result, which is the first clean C2 pass in the project
+
+`src/stress/run_sipp.py`, SIPP 2025, reference-person weights, working core. A different
+survey, a different sample size, a different occupation coding and a different income
+concept.
+
+| | ACS baseline | ACS at 10 percent | ACS increment | SIPP baseline | SIPP at 10 percent | SIPP increment |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE | 10.08% | 12.43% | **+2.35pp** | 12.74% | 15.07% | **+2.33pp** |
+| Cognitive GPT | 10.08% | 12.42% | +2.34pp | 12.74% | 15.27% | +2.53pp |
+| Embodied | 10.08% | 12.00% | **+1.92pp** | 12.74% | 14.58% | **+1.84pp** |
+| Manipulation | 10.08% | 11.73% | +1.65pp | 12.74% | 14.22% | +1.48pp |
+| Driving | 10.08% | 10.75% | +0.67pp | 12.74% | 13.49% | +0.75pp |
+
+The LEVELS differ, as they should: SIPP's baseline DSTI-50 share is 12.74 percent against
+ACS's 10.08, because SIPP measures the housing payment and the income concept differently.
+**The INCREMENTS agree to within 0.2 percentage points on every construct**, and the ordering
+is identical. Claim 38 clears C2.
+
+### Result 3c: buffers confirm Result 2 on a measure ACS cannot see at all
+
+Share of working-core households with under three and under six months of runway, where
+runway is liquid plus non-retirement financial assets divided by the monthly income
+SHORTFALL the shock creates. Central target, uniform incidence.
+
+| Construct | Wage loss (ACS, USD bn) | Under 3 months | Under 6 months |
+|---|---|---|---|
+| **Embodied** | 312.5 | **5.01%** | **6.40%** |
+| Cognitive GPT | 604.0 | 4.45% | 6.12% |
+| Manipulation | 202.8 | 4.50% | 5.65% |
+| Cognitive AIOE | 687.9 | **4.06%** | **5.69%** |
+| Driving | 101.8 | 2.05% | 2.50% |
+
+**Embodied displacement puts MORE households under three months of runway than cognitive
+displacement does, from less than half the wage loss.** On the buffer measure the embodied
+figure exceeds the cognitive one outright, not merely per dollar. This is Result 2 confirmed
+on an independent survey and on a completely different quantity, and it is the strongest
+form the exposure-type contrast has taken anywhere in this project.
+
+**The runway contrast is statistically significant and the DSTI contrast is not.** SIPP Fay
+intervals, 240 replicates, rho 0.5, on the restricted sample:
+
+| Statistic | Cognitive AIOE | Embodied | Overlap |
+|---|---|---|---|
+| Runway under 3 months | 0.04065 [0.03765, 0.04364] | 0.05013 [0.04755, 0.05270] | **none** |
+| Share crossing DSTI 50 | 0.15071 [0.13967, 0.16174] | 0.14579 [0.13488, 0.15669] | substantial |
+
+So in SIPP the exposure-type difference is demonstrable on BUFFERS and not on DSTI, which is
+what a sample of 6,734 households can and cannot support. In ACS, where the replicate
+standard error on the DSTI share is 0.00055, the DSTI difference (0.12432 against 0.11996)
+is far outside sampling error. **Taken together: the contrast is real on both measures, but
+the SIPP DSTI figure on its own does not establish it and must not be quoted as if it did.**
+
+For scale, the baseline is severe on its own terms: **26.8 percent of working-core households
+could not pay three months of housing costs out of liquid and non-retirement financial assets
+with no income at all**, before any shock. That is the bounded upper-bound runway definition;
+the shortfall-based definition above is the one used for the shock comparison. Both are
+reported because neither can be made realistic without a measured consumption floor, which
+this repository does not have and will not invent.
+
+### Result 4: rho dominates every other uncertainty, so the blocked BLS series is the binding constraint
+
+Increment in DSTI-50 crossings, central target, working core, percentage points:
+
+| Construct | rho | omega 0.65 | omega 0.75 | omega 0.82 |
+|---|---|---|---|---|
+| Cognitive AIOE | 0.50 | 3.37 | 3.19 | 3.10 |
+| | 0.65 | 2.58 | **2.35** | 2.23 |
+| | 0.80 | 1.79 | 1.53 | 1.39 |
+| Embodied | 0.50 | 2.67 | 2.50 | 2.40 |
+| | 0.65 | 2.14 | **1.92** | 1.78 |
+| | 0.80 | 1.60 | 1.33 | 1.17 |
+
+Across the plausible range the headline moves by a factor of 2.2 for cognitive and 2.1 for
+embodied, and rho moves it far more than omega does. **rho is not a nuisance parameter here,
+it is the parameter**, and the Displaced Worker Survey that would pin it down is the one
+series still blocked. Until then every engine figure is reported across the rho grid and
+none is quoted at a single value.
+
+Note that the exposure-type ORDERING is unchanged at every cell of the grid, so Result 2 does
+not depend on rho.
+
+## A42. ITEM 3. The retired method OVERSTATES the distress-relevant figure by about five times, and incidence moves DOLLARS by three times while barely moving household counts
+
+`src/stress/run_compare.py` runs the retired rule and the engine on the same households, the
+same scenario and the same exposure construct.
+
+    SHARE-BASED (retired)  household obligation multiplied by the fraction of household wage
+                           income earned in exposed occupations, times displacement intensity
+    ENGINE                 obligations owed by households the shock actually pushes across a
+                           DSTI threshold, NET of the baseline that already crosses it
+
+Cognitive rows carry the task-overlap caveat.
+
+### Annual mortgage service, USD billions, UNIFORM incidence
+
+| Construct | Target | Share-based | Engine DSTI 30 | Engine DSTI 50 | Ratio at 30 | **Ratio at 50** |
+|---|---|---|---|---|---|---|
+| Cognitive AIOE | 5% | 59.5 | 18.2 | 12.0 | 0.306 | 0.202 |
+| Cognitive AIOE | 10% | 119.0 | 36.7 | 24.5 | 0.309 | **0.206** |
+| Cognitive AIOE | 20% | 237.1 | 75.1 | 51.2 | 0.317 | 0.216 |
+| Cognitive GPT | 10% | 104.7 | 32.6 | 21.6 | 0.312 | 0.207 |
+| Embodied | 5% | 27.2 | 8.1 | 5.5 | 0.299 | 0.203 |
+| Embodied | 10% | 54.3 | 16.3 | 11.1 | 0.300 | **0.204** |
+| Embodied | 20% | 108.7 | 33.0 | 22.8 | 0.303 | 0.210 |
+| Robot reachable | 10% | 54.8 | 16.3 | 11.1 | 0.297 | 0.203 |
+| Gated | 10% | 58.4 | 18.3 | 12.8 | 0.313 | 0.219 |
+| Manipulation | 10% | 33.6 | 9.1 | 6.3 | 0.271 | 0.187 |
+| Driving | capped | 17.4 | 5.2 | 3.6 | 0.300 | 0.207 |
+
+Across all 21 cells: ratio at DSTI 50 runs **0.185 to 0.219, mean 0.205**; at DSTI 30,
+**0.264 to 0.318, mean 0.301**. Rent behaves the same way, 0.287 to 0.314 at DSTI 50.
+
+### What this says
+
+**1. The retired method overstates by about five times at DSTI 50 and three and a third
+times at DSTI 30.** Every superseded dollar figure produced by share attribution and then
+read as an amount at risk is too large by roughly that factor. The figures were never wrong
+as statements about which obligations sit on exposed wages. They were wrong every time the
+text went on to call them obligations at risk.
+
+**2. The overstatement is close to uniform across constructs and scenario sizes**, which
+partly rehabilitates the old numbers for one purpose: **as a RANKING they hold, as LEVELS
+they do not.** That is why A36 and A38's ordering of the exposure types survives the method
+change while their magnitudes do not.
+
+### 3. The incidence result, which corrects what I wrote in A39 AND what I first read here
+
+Central target, mortgage service in USD billions:
+
+| Construct | Lowest wage first | Uniform | Highest wage first | Max over min |
+|---|---|---|---|---|
+| **Engine dollars** | | | | |
+| Cognitive AIOE | 13.7 | 24.5 | 36.5 | **2.66** |
+| Embodied | 5.7 | 11.1 | 17.1 | **3.01** |
+| Manipulation | 4.3 | 6.3 | 7.5 | 1.75 |
+| **Share-based dollars** | | | | |
+| Cognitive AIOE | 74.8 | 119.0 | 165.4 | 2.21 |
+| Embodied | 34.4 | 54.3 | 77.3 | 2.25 |
+| **Engine household share crossing DSTI 50** | | | | |
+| Cognitive AIOE | 12.01% | 12.43% | 12.78% | 1.064 |
+| Embodied | 11.42% | 12.00% | 12.47% | 1.092 |
+
+**Who inside an exposed occupation loses the job barely changes how many households fall
+into distress, and changes by three times how many dollars of mortgage those households
+owe.** The two statistics point the same way and differ in sensitivity by a factor of thirty.
+A financial-stability claim is about dollars, so the dollar sensitivity is the one that
+binds, and no dollar figure from this engine should be quoted without the incidence
+assumption named beside it.
+
+**A39's speculation is withdrawn, and so is my first reading of this table.** A39 said that
+if displacement hit the lower part of an exposed group first, proportional attribution would
+understate the damage, possibly by a large multiple. The direction is wrong: low-wage-first
+displacement produces FEWER distressed dollars on both methods, because low earners inside an
+occupation are disproportionately secondary earners whose loss the household absorbs. The
+attribution error also runs the other way, and gets worse rather than better under
+low-wage-first: the engine-to-share ratio falls from 0.206 to 0.183 for cognitive AIOE and
+from 0.204 to 0.165 for embodied, so share attribution overstates MOST when displacement is
+concentrated on low earners.
+
+Earlier in this session I reported the incidence spread as 5 to 9 percent and called A39's
+concern unfounded. That was the household-count statistic. On dollars the spread is 1.75 to
+3.01 times, and A39's concern about magnitude was justified even though its direction was
+not.
+
+### Superseded in place
+
+Marked in `notes/findings.md` as share-attributed LEVELS that must be recomputed through the
+engine before use, rankings unaffected: A17, A29, and the pathway dollar tables in A24 and
+A32.
+
+## A43. ITEM 2. The wage-backed denominator, and the second-round link to OASDI that must not be double counted
+
+Every pass-through figure in the paper now uses the WAGE-BACKED portion of obligations as
+its denominator. The non-wage-backed portion is reported separately and never folded in.
+
+### The split, ACS PUMS 2023, occupied units only
+
+| Sample | Households | Weighted | Share of mortgage service | Share of rent |
+|---|---|---|---|---|
+| Working core (an employed member aged 25 to 64) | 86.45m | 65.8% | 84.0% | 72.8% |
+| Non working | 44.89m | 34.2% | **16.0%** | **27.3%** |
+
+The working-core definition is "contains at least one employed member aged 25 to 64", not
+"the reference person is aged 25 to 64", which is the definition A38 used and which is wrong
+for a displacement question: a household where a forty-year-old works and the reference
+person is sixty-eight has prime-age wage income to lose.
+
+**Sixteen percent of national mortgage service and twenty-seven percent of national rent is
+paid by households with no prime-age employed member.** In the first round those obligations
+are insulated from AI displacement entirely. They are serviced out of Social Security,
+pensions, disability payments, investment income and drawdown of savings.
+
+These households are also the most stressed group in the data by a wide margin: 38.9 percent
+of them with an obligation are already above a 50 percent debt-service-to-income ratio,
+against 10.1 percent for working-core households. Their fragility is real and it is not an
+AI story.
+
+### The second round, stated and deliberately NOT added
+
+Their transfer income is not independent of the wage bill. A32 established the link and the
+arithmetic is already in the repository:
+
+- Payroll taxes are **91.3 percent** of OASDI trust fund income.
+- At 25 percent displacement of embodied work, payroll tax at stake is **7.9 percent of OASDI
+  payroll income**, 104.6bn dollars.
+- The combined OASDI funds already ran a **160.2bn dollar deficit** in 2025.
+
+So a displacement shock that leaves non-working households untouched in the first round
+erodes, in the second round, the earmarked revenue that funds the transfers those households
+service their obligations from. The 16 percent of mortgage service and 27 percent of rent
+that looks insulated is insulated only for as long as the trust funds are.
+
+**This is stated as a mechanism and is NOT added to any total.** The payroll tax loss is
+already counted once, in A32 and A34, as part of the fiscal channel. Adding the obligations
+of non-working households to a displacement total would count the same wage loss twice: once
+as lost payroll tax and again as the transfer income that payroll tax funds. Any figure in
+the paper that combines the household channel and the fiscal channel must therefore either
+exclude non-working households from the household side or exclude the OASDI component from
+the fiscal side, and must say which it did.
+
+### Consequence for the thesis
+
+The original framing treated Leg W as credit underwritten against human labour income. On the
+measured split, **about a sixth of mortgage obligations and over a quarter of rent are not
+underwritten against current labour income at all.** Leg W is smaller than the household debt
+stock, and the paper must size it as the wage-backed portion. The insulated remainder is not
+a safety margin, because the second-round channel above runs straight through it, but the two
+effects operate on different timescales and through different institutions and cannot be
+summed.
+
+## A44. ITEM 5. The ACS against SIPP gap is BOUNDED, not resolved, and holding the measure fixed produces a selection-versus-intensity decomposition that explains the engine result
+
+`src/stress/reconcile_acs_sipp.py`. A39 reported embodied mortgage lean 0.90 in ACS and 0.77
+in SIPP. The two differed on three things at once. Held fixed:
+
+| Row | Source | Measure | Denominator | Embodied | Cognitive AIOE | Cognitive GPT |
+|---|---|---|---|---|---|---|
+| A | ACS | Annual mortgage SERVICE | Household earnings | **0.919** | 0.943 | 0.964 |
+| B | SIPP | Annual mortgage PAYMENT | Household earnings | **1.052** | 0.729 | 0.771 |
+| C | SIPP | Mortgage BALANCE | Household earnings | 0.758 | 0.977 | 0.966 |
+| D | ACS | Annual mortgage SERVICE, MORTGAGE HOLDERS ONLY | Household earnings | **1.009** | 0.845 | 0.920 |
+
+### Answer 1: SIPP cannot settle it, and that is the honest resolution
+
+The Fay interval on the SIPP embodied payment lean is **1.052 with a standard error of
+0.249, 95 percent interval [0.565, 1.540]**. ACS's 0.919 sits comfortably inside it. On 6,734
+households SIPP cannot distinguish a lean of 0.6 from a lean of 1.5, so it can neither
+confirm nor contradict ACS on this quantity.
+
+**The gap A39 reported was not a disagreement between two measurements. It was a comparison
+of a service figure with a balance figure, plus a denominator difference, wrapped around a
+SIPP estimate too imprecise to carry either.** ACS is the headline under the raw-dollar-share
+rule: 100,584 households against 6,734, and a replicate standard error three orders of
+magnitude smaller. SIPP is reported as consistent and uninformative, not as agreement.
+
+Claim 16 ("ACS and SIPP agree on the embodied mortgage lean") stays withdrawn. It is replaced
+by "ACS measures it; SIPP cannot."
+
+### Answer 2, which is the substantive finding: SELECTION and INTENSITY run in opposite directions
+
+Compare rows A and D, both ACS, both service, both earnings, differing only in whether the
+sample is conditioned on actually holding a mortgage:
+
+| | All working-core households | Mortgage holders only | Direction |
+|---|---|---|---|
+| Embodied | 0.919 | **1.009** | rises |
+| Cognitive AIOE | 0.943 | **0.845** | falls |
+| Cognitive GPT | 0.964 | 0.920 | falls |
+
+**Cognitive households are more likely to hold a mortgage at all; conditional on holding one,
+embodied households carry MORE mortgage service per dollar earned.** Unconditionally the two
+look alike, which is what A36 and A38 found and reported as "indistinguishable". Conditionally
+they separate, and they separate in the direction the stress engine independently found.
+
+This is the mechanism behind A41 Result 2. Embodied displacement is more distress-efficient
+per wage dollar because, among households that actually carry a mortgage, embodied households
+carry a proportionally heavier one. The lean tables could not see it because they averaged
+owners and renters together, and the selection effect and the intensity effect cancelled.
+
+**Claim 14 is amended rather than withdrawn.** "Mortgage leans are indistinguishable across
+exposure types" is true unconditionally and false conditional on tenure. Both halves must be
+stated together, because quoting only the first is what produced A35's error and quoting only
+the second would reintroduce it with the sign flipped.
+
+### The SIPP balance against payment reversal, flagged and not explained
+
+Within SIPP, embodied households have the LOWEST balance lean (0.758) and the HIGHEST payment
+lean (1.052), while cognitive households show the reverse. A high payment on a low balance
+implies shorter remaining term, higher rate, or a larger principal component, and this
+repository has no data that distinguishes those. It is also inside the interval noise. It is
+recorded as an open question and nothing is built on it.
+
+## A45. ITEM 6 PARTIAL. The Chicago Fed Leg A figures are obtained and verified, and they make Leg A roughly one fiftieth of Leg W
+
+The owner offered to place this article in `data/raw/manual/`. It was not needed: the
+Chicago Fed page is reachable from this environment and was read directly.
+
+**Source, verified against the publisher page on 2026-09-19:** Greg Cohen, Cooper Killen and
+Simon Lau, "Tail Risk for Banks Posed by Investments in Generative Artificial Intelligence",
+Chicago Fed Insights, Federal Reserve Bank of Chicago, February 2026. Entered in
+`paper/references.bib` with every figure transcribed, and in `data/SOURCES.md`.
+
+### The measured Leg A figures, quoted as the article states them
+
+| Measure | Figure |
+|---|---|
+| Average bank outstanding to AI-adjacent industries | about 0.8 percent of bank total assets |
+| Large-bank C and I commitments to AI-adjacent industries, 2015 | about 9 percent of total commitments, about 250bn USD |
+| Large-bank C and I commitments to AI-adjacent industries, late 2025 | about 13 percent of total commitments, about 450bn USD |
+| Software industry commitments | 150bn USD early 2022 to 191bn USD late 2025 |
+| Energy and semiconductor commitments combined | about 275bn USD |
+| C and I OUTSTANDING exposure to AI-adjacent industries | averages 9 percent of tier 1 capital |
+| C and I COMMITTED exposure to AI-adjacent industries | about 25 percent of tier 1 capital |
+| Software commitments rated B and below | about 26 percent, 50bn USD |
+| Energy and semiconductor commitments rated B and below | 15bn USD |
+
+This is a SECONDARY source reporting supervisory data this repository cannot access. Every
+figure above is attributed to it and none is presented as this project's own measurement.
+
+### The rebuilt Leg A to Leg W ratio, and it damages the two-sided framing
+
+Both sides as STOCKS, which is the only comparison that is not a category error. The earlier
+repository figures compared a stock to an annual service flow in places and must not be
+reused.
+
+Leg W, Financial Accounts of the United States via FRED, 2026 Q2:
+
+| Series | Level |
+|---|---|
+| CMDEBT, households and nonprofits, debt securities and loans | 21,377.8bn USD |
+| HHMSDODNS, one-to-four family residential mortgages | 14,010.9bn USD |
+
+Leg A, bank channel, Chicago Fed, late 2025: **450bn USD committed**.
+
+| Ratio | Value |
+|---|---|
+| Leg A committed / Leg W total household debt | **2.1 percent** |
+| Leg A committed / Leg W residential mortgages | **3.2 percent** |
+
+**The measured bank channel of Leg A is roughly one fiftieth the size of Leg W.** A framing
+that presents the two as comparable sides of one bet is not supported by the only measured
+figures either side has. The asymmetry is the finding.
+
+### Three reasons this is a LOWER BOUND on Leg A, stated so the ratio is not over-read
+
+1. It is the bank channel only. A9 verified the BIS on off-balance-sheet AI financing
+   through special purpose vehicles, minority stakes and long-term leases, none of which
+   appears in C and I commitments.
+2. It excludes corporate bond issuance and private credit. Search results reported a Morgan
+   Stanley projection of a further 800bn USD of private-credit data-centre financing over
+   two years; that figure is SECONDARY, UNVERIFIED and is recorded in `lit/unverified.md`,
+   not used.
+3. Commitments are not the same as drawn exposure. Outstanding is materially smaller: 9
+   percent of tier 1 capital against 25 percent committed.
+
+Even at three times the measured figure, Leg A would remain under a tenth of Leg W. The
+direction of the conclusion is robust to the bound; the exact ratio is not, and only the
+bound should be quoted.
+
+### What this does to the thesis
+
+The original brief set up a symmetric two-sided bet. **The sides are not symmetric in size,
+and the paper cannot claim they are.** What survives is a claim about DIFFERENCE IN KIND
+rather than in magnitude: Leg W is large, diffuse across 131m households, and slow to
+enforce; Leg A is small, concentrated in a handful of large banks at 25 percent of tier 1
+capital committed, and fast to enforce. Concentration relative to capital, not absolute
+size, is the channel through which Leg A could matter, and the 25 percent of tier 1 figure
+is the number that carries that argument.
+
+## A46. ITEM 4. Geography repaired, figure drawn, and the proposed institutional reading is NOT what the numbers support
+
+The Theil decomposition no longer pools every non-metro county into one pseudo-group. Metro
+counties group by CBSA and non-metro counties form STATE NON-METRO REMAINDERS, giving 973
+geographically coherent groups. Figure at
+`paper/figures/fig_concentration_breadth_scale.png`, data at
+`data/processed/geo_breadth_scale.csv`.
+
+Cognitive here is Felten AIOE, which measures task overlap, not displacement or timing.
+
+### The repaired decomposition
+
+County-level Theil T of the local at-risk rate, decomposed within and between region groups.
+
+| Breadth | Type | Moran's I | **Theil total** | Within, abs | **Between, abs** | Within % | Between % |
+|---|---|---|---|---|---|---|---|
+| Top 10% | Cognitive | 0.481 | 0.0720 | 0.0236 | 0.0484 | 32.8% | 67.2% |
+| Top 10% | Embodied | 0.441 | **0.1228** | 0.0443 | **0.0785** | 36.1% | 63.9% |
+| Top 20% | Cognitive | 0.483 | 0.0459 | 0.0144 | 0.0316 | 31.3% | 68.7% |
+| Top 20% | Embodied | 0.484 | **0.1034** | 0.0354 | **0.0681** | 34.2% | 65.8% |
+| Top 30% | Cognitive | 0.509 | 0.0302 | 0.0085 | 0.0217 | 28.2% | 71.8% |
+| Top 30% | Embodied | 0.501 | **0.0780** | 0.0262 | **0.0518** | 33.6% | 66.4% |
+| Top 50% | Cognitive | 0.503 | 0.0140 | 0.0039 | 0.0100 | 28.3% | 71.7% |
+| Top 50% | Embodied | 0.535 | **0.0541** | 0.0174 | **0.0367** | 32.1% | 67.9% |
+
+The repair barely moved the percentages, by under 1.5 points anywhere, so the earlier A40
+figures were not materially distorted by the pooling. The repair is kept because the earlier
+grouping was indefensible, not because it changed the answer.
+
+### The proposed reading, tested, and it FAILS
+
+The reading to be checked was: diversification addresses idiosyncratic regional shocks, not
+a common one; a SMALL between-metro share for embodied means near-equal exposure across
+lenders and a uniform systemic load, while a LARGE between-metro share for cognitive means
+exposure concentrated in lenders to specific high-cost metros and institution-specific
+concentration risk.
+
+**The first half of the premise holds and the conclusion does not follow from it.**
+
+The percentage split is directionally as proposed: embodied between-region share is 63.9 to
+67.9 percent, cognitive 67.2 to 71.8. But the gap is **3 to 5 percentage points**, and a
+difference that small cannot carry an institutional distinction between "uniform systemic
+load" and "institution-specific concentration".
+
+More decisively, the percentage split is the wrong statistic for the question. What
+determines how much a lender's exposure varies with its regional footprint is the ABSOLUTE
+between-region variation, not its share of that type's own total. On the absolute
+decomposition the ordering is the opposite of the proposed reading:
+
+> **Between-region inequality in embodied exposure is 1.6 to 3.7 times larger than in
+> cognitive exposure at every breadth** (0.0785 against 0.0484 at the top tenth; 0.0367
+> against 0.0100 at the top half).
+
+A lender with a regionally concentrated book faces MORE dispersion in embodied exposure than
+in cognitive exposure, not less. The proposed institutional reading has it backwards.
+
+### What the numbers DO support
+
+1. **Neither exposure type is diversifiable within a metro.** Both are two-thirds to
+   three-quarters between-region at every breadth. Spreading a book across neighbourhoods or
+   counties inside one metropolitan area removes at most a third of the geographic variation
+   for either type. This is the part of the proposed reading that survives, and it applies
+   equally to both types rather than distinguishing them.
+
+2. **Embodied exposure is the more geographically unequal of the two in total**, by 1.7 to
+   3.9 times on Theil T, and that holds at every breadth.
+
+3. **Neither is spatially random.** Moran's I runs 0.441 to 0.535 against an expectation of
+   -0.0003 under spatial randomness. The two types are indistinguishable on this statistic,
+   so "embodied exposure is diffuse" is false in every sense the data can test.
+
+4. **The Gini ordering reverses with scale**, and the figure shows it: embodied is more
+   concentrated at PUMA, cognitive at county and metro, converging at the broadest
+   definition. Any sentence using the word "concentrated" must name the scale.
+
+### The defensible sentence, replacing both A37's and A40's
+
+> Both exposure types are predominantly between-region phenomena, so within-metro
+> diversification is not available for either. Embodied exposure is the more unequal of the
+> two in total and across regions, and is additionally clustered at sub-metro grain in a way
+> cognitive exposure is not. A lender diversifies neither by geography alone; the difference
+> between the two is that an embodied book is more sensitive to WHICH regions it is in.
+
+This is weaker than "Physical AI adds the undiversifiable geography" and it is the version
+the measurements support. Claim 24 is amended: the between-region share is only marginally
+higher for cognitive, and in absolute terms it is higher for embodied.
+
+### Remaining gap
+
+Moran's I and the Theil decomposition are computed for Felten AIOE only, not for Eloundou
+GPT, so claims 24 and 26 remain provisional on C1. Moran's I is county-level only, so claim
+26 remains provisional on C5.
+
+## A47. A38 CORRECTED, with the correction decomposed. Four things were wrong, not one, and the rent contrast is the casualty
+
+`src/stress/decompose_a38.py`. A38's five-way table is superseded. Reporting the new numbers
+without saying which change caused what would be the same silent substitution this project
+keeps catching, so each fix is applied cumulatively.
+
+### Felten AIOE. A38 as published, then each fix
+
+| Stage | Class | Households | Wage bill | Mortgage | Rent | Mortgage lean | Rent lean |
+|---|---|---|---|---|---|---|---|
+| **A38 as published** | Cognitive only | 10.21 | 24.15 | 21.66 | 11.95 | 0.90 | **0.49** |
+| | Embodied only | 14.19 | 16.93 | 15.15 | 16.81 | 0.90 | **0.99** |
+| | Non working | **44.31** | 12.20 | 19.69 | 30.09 | 1.61 | 2.47 |
+| **1. Vacancy and employment definition** | Cognitive only | 10.83 | 23.77 | 20.77 | 11.38 | 0.87 | 0.48 |
+| | Embodied only | 13.59 | 15.49 | 13.06 | 14.70 | 0.84 | **0.95** |
+| | Non working | 40.15 | 12.25 | 21.25 | 32.28 | 1.73 | 2.64 |
+| **2. Plus one weight system** | Cognitive only | 10.83 | 24.26 | 20.77 | 11.38 | 0.86 | 0.47 |
+| | Embodied only | 13.59 | 15.62 | 13.06 | 14.70 | 0.84 | 0.94 |
+| | Non working | 40.15 | 10.98 | 21.25 | 32.28 | 1.94 | 2.94 |
+| **3. Plus engine working-core definition** | Cognitive only | 11.43 | 25.26 | 21.50 | 11.80 | **0.85** | **0.47** |
+| | Embodied only | 14.71 | 16.77 | 13.89 | 15.59 | **0.83** | **0.93** |
+| | Non working | 34.18 | 6.30 | 15.98 | 27.25 | **2.53** | **4.32** |
+
+### The four errors
+
+**1. VACANT UNITS.** ACS carries vacant housing records with a positive housing weight,
+14.0m weighted, 9.6 percent of records. They have no occupants, no income and no tenure.
+A38 counted them as households and they all fell into the non-working class. This is why
+A38's household total implied 145.33m rather than the published benchmark of about 131m,
+and why non-working looked like 44.3 percent of households.
+
+**2. THE "EMPLOYED" TEST, which I did not isolate separately and am reporting as such.**
+Stage 1 applies the vacancy fix AND a narrower employment test at the same time: A38 counted
+anyone with ESR in (1, 2, 4, 5); the engine counts a person only if they are employed, have
+positive wage income, and have a codable occupation. Vacant units contribute zero dollars, so
+they CANNOT move a dollar share. **Therefore every dollar-share movement between the A38 row
+and stage 1 is attributable to the employment test alone**, and it is not small: non-working
+mortgage share rises 19.69 to 21.25, rent 30.09 to 32.28. Households with an employed member
+who reports no wage income, mostly self-employment, move out of the working class.
+
+**3. TWO WEIGHT SYSTEMS.** A38 weighted the mortgage and rent numerators by the household
+weight WGTP and the wage denominator by the person weight PWGTP. A lean built that way is
+not a ratio of two shares of the same universe. Fixing it moves the non-working wage share
+from 12.25 to 10.98 and its mortgage lean from 1.73 to 1.94.
+
+**4. WORKING-CORE DEFINITION.** A38 required an employed member AND a reference person aged
+25 to 64. That excludes a household where a forty-year-old works and the reference person is
+sixty-eight, which is the wrong test for a displacement question. The engine requires an
+employed member AGED 25 to 64. This is the largest single fix: non-working falls from 40.15
+to 34.18 percent of households and its wage share from 10.98 to 6.30.
+
+### What changes substantively
+
+**The non-working over-holding result gets STRONGER, not weaker.** A38 said 19.7 percent of
+mortgage service and 30.1 percent of rent on 12.2 percent of wages, leans 1.61 and 2.47.
+Corrected: **16.0 percent of mortgage service and 27.3 percent of rent on 6.30 percent of
+wages, leans 2.53 and 4.32.** Both dollar shares fall and both leans rise sharply, because
+the corrected working-core definition moves prime-age earners out of the non-working class.
+
+**The rent contrast is the casualty and claim 15 must be downgraded again.** A38's surviving
+headline was that rent leans embodied at 0.99 against cognitive 0.49, a ratio of 2.0, and
+A38 made much of embodied being "exactly proportional". Corrected, the embodied rent lean is
+**0.93**, not 0.99. It is under-proportional like everything else, and the "exactly
+proportional" reading was an artifact of the two-weight-system error. The RATIO survives at
+0.93 / 0.47 = **1.98**, essentially unchanged, and on Eloundou GPT it is 0.93 / 0.62 = 1.50.
+
+So the sentence that survives is the one A38 already narrowed to, and it narrows once more:
+**every working class under-holds rent relative to its wages, and cognitive households
+under-hold it about twice as much as embodied households do.** There is no group that
+over-holds rent except the non-working, at 4.32.
+
+**Mortgage leans stay uniform and drift down**: 0.85, 0.83, 0.80, 0.95 across the four
+working classes against A38's 0.90, 0.90, 0.89, 0.93. Claim 14 is unaffected in substance.
+
+### Consequence for the register
+
+Claim 18 superseded by claim 42. Claim 15a amended: the embodied rent lean is 0.93 and not
+proportional. Claim 44 recorded. A38 is annotated in place as superseded by A47.

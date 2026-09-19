@@ -14,7 +14,7 @@ sentence wherever the claim appears.
 |---|---|---|
 | **C1** | Run on BOTH cognitive indices, Felten AIOE and Eloundou GPT | any claim mentioning cognitive exposure |
 | **C2** | Measured in BOTH ACS and SIPP | any claim about household obligations that both surveys carry |
-| **C3** | Run on the working-household restricted sample (an employed member, reference person 25 to 64) | any claim about exposed households |
+| **C3** | Run on the working-household restricted sample. DEFINITION as of the engine: the household contains at least one EMPLOYED MEMBER AGED 25 TO 64. The earlier definition (any employed member, plus a REFERENCE PERSON aged 25 to 64) is wrong for a displacement question and is superseded; findings A38 and earlier use it and are marked where it matters | any claim about exposed households |
 | **C4** | Reported RAW and ADJUSTED, with raw leading | any claim comparing groups |
 | **C5** | Run at PUMA, county AND metro scale | any geographic claim |
 | **C6** | Run through the household stress engine, not share attribution | any "at risk" dollar or household count |
@@ -51,14 +51,15 @@ provisional until it is.
 |---|---|---|---|---|---|---|---|---|---|
 | 10 | Mortgage debt service is CONCENTRATED in high-exposure households | **withdrawn** | A4, A6 | n/a | n/a | n/a | yes | n/a | n/a |
 | 11 | Mortgage debt service is close to PROPORTIONAL to the wage bill in aggregate, at every exposure level | standing | A5, A6, A29, A31, A36, A38 | yes | yes | yes | yes | n/a | n/a |
-| 12 | That proportionality also holds at HOUSEHOLD level, so `at_risk = k x displaced_wage_bill` | **withdrawn** | A39 | yes | yes | yes | yes | n/a | yes |
+| 12 | That proportionality also holds at HOUSEHOLD level, so `at_risk = k x displaced_wage_bill` | **withdrawn**, and replaced by the engine | A39, A42 | yes | yes | yes | yes | n/a | yes |
 | 13 | The mortgage channel is a cognitive-exposure channel | **withdrawn** | A35 claimed, A36 overturned | yes | no | yes | yes | n/a | n/a |
-| 14 | Mortgage leans are indistinguishable across exposure types (0.89 to 0.93) | standing | A36, A38 | yes | no (SIPP disagrees, claim 16) | yes | yes | n/a | n/a |
+| 14 | Mortgage leans are indistinguishable across exposure types UNCONDITIONALLY (0.80 to 0.95) and SEPARATE conditional on holding a mortgage (embodied 1.009, cognitive 0.845). Both halves must be stated together | standing, amended | A36, A38, A44, A47 | yes | yes | yes | yes | n/a | n/a |
+| 14a | Cognitive households are more likely to hold a mortgage; conditional on holding one, embodied households carry more service per dollar earned. This is the mechanism behind claim 39 | standing | A44 | yes | no | yes | yes | n/a | n/a |
 | 15 | Rent leans embodied and away from cognitive by a factor of two | **provisional** | A36, A38 | yes (ratio is 2.0 AIOE, 1.55 GPT) | no (SIPP has no rent measure of this form) | yes | yes | n/a | n/a |
-| 15a | Under the working-core restriction the embodied rent lean is 0.99, so the deviation is cognitive leaning AWAY from rent, not embodied leaning INTO it | standing | A38 | yes | n/a | yes | yes | n/a | n/a |
-| 16 | ACS and SIPP agree on the embodied mortgage lean | **withdrawn** | A39 | yes | yes | yes | yes | n/a | n/a |
+| 15a | The embodied rent lean is 0.93 and the cognitive 0.47, so EVERY working class under-holds rent and cognitive households under-hold it about twice as much. The A38 reading of embodied as "exactly proportional" is withdrawn | standing | A38, corrected in A47 | yes | n/a | yes | yes | n/a | n/a |
+| 16 | ACS and SIPP agree on the embodied mortgage lean | **withdrawn**, replaced by "ACS measures it, SIPP cannot" (Fay CI [0.565, 1.540]) | A39, A44 | yes | yes | yes | yes | n/a | n/a |
 | 17 | Vehicle debt leans embodied (lean 1.38 against 0.79 and 0.85) and is the only obligation class where embodied over-holds | **provisional** | A39 | yes | no (ACS has no vehicle debt) | yes | no | n/a | no |
-| 18 | Non-working households hold 19.7 percent of mortgage service and 30.1 percent of rent on 12.2 percent of the wage bill | standing | A38 | n/a | no | yes (as the complement) | yes | n/a | n/a |
+| 18 | Non-working households hold 19.7 percent of mortgage service and 30.1 percent of rent on 12.2 percent of the wage bill | **superseded** by claim 42 | A38, corrected in A47 | n/a | no | yes | yes | n/a | no |
 | 19 | Vehicle debt generalises to all embodied exposure | **withdrawn** | A30 claimed, A31 overturned (manipulation is negative) | n/a | yes | yes | yes | n/a | n/a |
 | 20 | High-PAEI households hold disproportionate consumer credit | **withdrawn** | A30 claimed, A31 overturned | n/a | yes | yes | yes | n/a | n/a |
 
@@ -69,7 +70,7 @@ provisional until it is.
 | 21 | Embodied work is near-uniform geographically | **withdrawn** | A28 claimed, A40 overturned (breadth artifact) | n/a | n/a | n/a | n/a | yes | n/a |
 | 22 | Cognitive exposure is MORE geographically concentrated than embodied | **provisional, scale-dependent** | A37 refuted at PUMA, A40 confirms at county and metro | yes | n/a | n/a | n/a | yes | n/a |
 | 23 | Embodied exposure is more concentrated, hence more diversifiable | **withdrawn** | A37 claimed, A40 overturned | n/a | n/a | n/a | n/a | yes | n/a |
-| 24 | Embodied inequality is WITHIN metros, cognitive inequality is BETWEEN metros | **provisional** | A40 | no (AIOE only) | n/a | n/a | n/a | yes | n/a |
+| 24 | Embodied inequality is WITHIN metros, cognitive BETWEEN them | **withdrawn as stated** | A40 claimed, A46 overturned: both are 64 to 72 percent between-region, and embodied between-region inequality is 1.6 to 3.7 times LARGER in absolute terms | no (AIOE only) | n/a | n/a | n/a | yes | n/a |
 | 25 | Cognitive and embodied exposure correlate with local home values and wages with OPPOSITE signs | standing | A37 | yes | n/a | n/a | yes (placebo control) | partial (PUMA, county; no metro) | n/a |
 | 26 | Neither exposure type is spatially random (Moran's I 0.44 to 0.54) | **provisional** | A40 | no (AIOE only) | n/a | n/a | n/a | no (county only) | n/a |
 | 27 | Concentration falls monotonically with group breadth for both types | standing | A40 | no (AIOE only) | n/a | n/a | n/a | yes | n/a |
@@ -91,8 +92,19 @@ provisional until it is.
 
 | # | Claim | Status | Findings | C1 | C2 | C3 | C4 | C5 | C6 |
 |---|---|---|---|---|---|---|---|---|---|
-| 36 | Share-based attribution overstates or understates household distress by a large factor | **under test** | A41 (this session) | | | | | | |
-| 37 | Within-group incidence (who loses the job) materially changes the distress result | **under test** | A41 | | | | | | |
+| 36 | Share-based attribution OVERSTATES the distress-relevant obligation by about five times at DSTI 50 (ratio 0.185 to 0.219, mean 0.205) and about three and a third times at DSTI 30 | standing | A42 | yes | no (ACS only) | yes | n/a | n/a | yes |
+| 36a | The overstatement is near-uniform across constructs and scenario sizes, so share-attributed RANKINGS hold and LEVELS do not | standing | A42 | yes | no | yes | n/a | n/a | yes |
+| 37 | Within-group incidence materially changes the distress result | **split** | A42 | yes | no | yes | n/a | n/a | yes |
+| 37a | On HOUSEHOLD COUNTS incidence changes the result by only 5 to 9 percent | standing | A41, A42 | yes | no | yes | n/a | n/a | yes |
+| 37b | On DOLLARS incidence changes the result by 1.75 to 3.01 times, so no dollar figure may be quoted without naming the incidence assumption | standing | A42 | yes | no | yes | n/a | n/a | yes |
+| 37c | Displacement concentrated on low earners within an occupation would cause share attribution to UNDERSTATE the damage by a large multiple | **withdrawn** | A39 claimed, A42 overturned (direction is reversed: it overstates, and overstates more) | yes | no | yes | n/a | n/a | yes |
+| 38 | A 10 percent displacement shock raises the share of obligated working-core households above DSTI 50 by 2.35pp (cognitive AIOE) or 1.92pp (embodied), from a baseline of 10.08 percent | standing | A41 | yes | yes (SIPP increments agree to within 0.2pp) | yes | n/a | n/a | yes |
+| 39 | Embodied displacement is about 1.8 times more distress-efficient than cognitive displacement per dollar of wage income destroyed; manipulation is 2.4 times | standing | A41, A44 | yes | yes (SIPP runway 5.01 against 4.06 percent, Fay intervals do not overlap) | yes | n/a | n/a | yes |
+| 40 | rho (reemployment) moves the headline by a factor of about 2.2 and dominates omega, so it is the binding unknown | standing | A41 | yes | n/a | yes | n/a | n/a | yes |
+| 41 | The driving channel is capped at 3.29 percent of employment, so its entire ceiling is +0.67pp of DSTI-50 crossings | standing | A41 | n/a | n/a | yes | n/a | n/a | yes |
+| 42 | Non-working households hold 16.0 percent of mortgage service and 27.3 percent of rent, and 38.9 percent of those with an obligation are already above DSTI 50 | standing | A41, A43 | n/a | no | yes (as the complement) | yes | n/a | yes |
+| 43 | Leg A (bank channel, 450bn USD committed) is about 2.1 percent of Leg W (21.38tn USD household debt), so the two-sided framing is not symmetric in size | **provisional, lower bound** | A45 | n/a | n/a | n/a | n/a | n/a | n/a |
+| 44 | A38's table was wrong on four counts (vacant units, a wider employed test, two weight systems, a reference-person-age working core), and its DOLLAR shares do not stand either | standing | A47 | yes | n/a | yes | yes | n/a | n/a |
 
 ---
 

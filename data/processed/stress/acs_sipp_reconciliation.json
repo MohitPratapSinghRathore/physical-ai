@@ -1,0 +1,144 @@
+{
+  "rows": [
+    {
+      "row": "A_acs_service_vs_earnings",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "embodied",
+      "obligation_share_pct": 19.41156,
+      "earnings_share_pct": 21.11518,
+      "lean": 0.91932,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "D_acs_service_mortgage_holders_only",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "embodied",
+      "obligation_share_pct": 19.41156,
+      "earnings_share_pct": 19.23653,
+      "lean": 1.0091,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "A_acs_service_vs_earnings",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "cognitive_AIOE",
+      "obligation_share_pct": 28.47412,
+      "earnings_share_pct": 30.18194,
+      "lean": 0.94342,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "D_acs_service_mortgage_holders_only",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "cognitive_AIOE",
+      "obligation_share_pct": 28.47412,
+      "earnings_share_pct": 33.71569,
+      "lean": 0.84454,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "A_acs_service_vs_earnings",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "cognitive_GPT",
+      "obligation_share_pct": 26.36545,
+      "earnings_share_pct": 27.34406,
+      "lean": 0.96421,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "D_acs_service_mortgage_holders_only",
+      "source": "ACS",
+      "measure": "annual mortgage service",
+      "denominator": "household wage earnings",
+      "group": "cognitive_GPT",
+      "obligation_share_pct": 26.36545,
+      "earnings_share_pct": 28.65805,
+      "lean": 0.92,
+      "n_households_unweighted": NaN
+    },
+    {
+      "row": "B_sipp_payment_vs_earnings",
+      "source": "SIPP",
+      "measure": "annual mortgage payment",
+      "denominator": "household earnings",
+      "group": "embodied",
+      "obligation_share_pct": 19.61764,
+      "earnings_share_pct": 18.64627,
+      "lean": 1.05209,
+      "n_households_unweighted": 6734.0
+    },
+    {
+      "row": "C_sipp_balance_vs_earnings",
+      "source": "SIPP",
+      "measure": "mortgage balance",
+      "denominator": "household earnings",
+      "group": "embodied",
+      "obligation_share_pct": 14.1411,
+      "earnings_share_pct": 18.64627,
+      "lean": 0.75839,
+      "n_households_unweighted": 6734.0
+    },
+    {
+      "row": "B_sipp_payment_vs_earnings",
+      "source": "SIPP",
+      "measure": "annual mortgage payment",
+      "denominator": "household earnings",
+      "group": "cognitive_AIOE",
+      "obligation_share_pct": 20.17576,
+      "earnings_share_pct": 27.68719,
+      "lean": 0.7287,
+      "n_households_unweighted": 6734.0
+    },
+    {
+      "row": "C_sipp_balance_vs_earnings",
+      "source": "SIPP",
+      "measure": "mortgage balance",
+      "denominator": "household earnings",
+      "group": "cognitive_AIOE",
+      "obligation_share_pct": 27.04885,
+      "earnings_share_pct": 27.68719,
+      "lean": 0.97694,
+      "n_households_unweighted": 6734.0
+    },
+    {
+      "row": "B_sipp_payment_vs_earnings",
+      "source": "SIPP",
+      "measure": "annual mortgage payment",
+      "denominator": "household earnings",
+      "group": "cognitive_GPT",
+      "obligation_share_pct": 22.09782,
+      "earnings_share_pct": 28.65324,
+      "lean": 0.77122,
+      "n_households_unweighted": 6734.0
+    },
+    {
+      "row": "C_sipp_balance_vs_earnings",
+      "source": "SIPP",
+      "measure": "mortgage balance",
+      "denominator": "household earnings",
+      "group": "cognitive_GPT",
+      "obligation_share_pct": 27.69064,
+      "earnings_share_pct": 28.65324,
+      "lean": 0.96641,
+      "n_households_unweighted": 6734.0
+    }
+  ],
+  "sipp_embodied_payment_lean": {
+    "estimate": 1.052094278587026,
+    "fay_se": 0.24865246526211626,
+    "ci95": [
+      0.5647354466732781,
+      1.5394531105007738
+    ]
+  }
+}

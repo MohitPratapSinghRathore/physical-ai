@@ -10,8 +10,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top10",
@@ -24,8 +27,11 @@
     "morans_I": 0.4806,
     "morans_E": -0.0003,
     "theil_total": 0.072,
-    "theil_within_metro_pct": 33.0831,
-    "theil_between_metro_pct": 66.9169
+    "theil_within_abs": 0.0236,
+    "theil_between_abs": 0.0484,
+    "theil_within_pct": 32.7501,
+    "theil_between_pct": 67.2499,
+    "n_region_groups": 973.0
   },
   {
     "group": "cognitive_top20",
@@ -38,8 +44,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top20",
@@ -52,8 +61,11 @@
     "morans_I": 0.483,
     "morans_E": -0.0003,
     "theil_total": 0.0459,
-    "theil_within_metro_pct": 31.7503,
-    "theil_between_metro_pct": 68.2497
+    "theil_within_abs": 0.0144,
+    "theil_between_abs": 0.0316,
+    "theil_within_pct": 31.3123,
+    "theil_between_pct": 68.6877,
+    "n_region_groups": 973.0
   },
   {
     "group": "cognitive_top30",
@@ -66,8 +78,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top30",
@@ -80,8 +95,11 @@
     "morans_I": 0.5093,
     "morans_E": -0.0003,
     "theil_total": 0.0302,
-    "theil_within_metro_pct": 28.7824,
-    "theil_between_metro_pct": 71.2176
+    "theil_within_abs": 0.0085,
+    "theil_between_abs": 0.0217,
+    "theil_within_pct": 28.1731,
+    "theil_between_pct": 71.8269,
+    "n_region_groups": 973.0
   },
   {
     "group": "cognitive_top50",
@@ -94,8 +112,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top50",
@@ -108,8 +129,11 @@
     "morans_I": 0.5026,
     "morans_E": -0.0003,
     "theil_total": 0.014,
-    "theil_within_metro_pct": 28.8632,
-    "theil_between_metro_pct": 71.1368
+    "theil_within_abs": 0.0039,
+    "theil_between_abs": 0.01,
+    "theil_within_pct": 28.2596,
+    "theil_between_pct": 71.7404,
+    "n_region_groups": 973.0
   },
   {
     "group": "embodied_top10",
@@ -122,8 +146,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top10",
@@ -136,8 +163,11 @@
     "morans_I": 0.4406,
     "morans_E": -0.0003,
     "theil_total": 0.1228,
-    "theil_within_metro_pct": 36.5731,
-    "theil_between_metro_pct": 63.4269
+    "theil_within_abs": 0.0443,
+    "theil_between_abs": 0.0785,
+    "theil_within_pct": 36.0659,
+    "theil_between_pct": 63.9341,
+    "n_region_groups": 973.0
   },
   {
     "group": "embodied_top20",
@@ -150,8 +180,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top20",
@@ -164,8 +197,11 @@
     "morans_I": 0.4842,
     "morans_E": -0.0003,
     "theil_total": 0.1034,
-    "theil_within_metro_pct": 34.7019,
-    "theil_between_metro_pct": 65.2981
+    "theil_within_abs": 0.0354,
+    "theil_between_abs": 0.0681,
+    "theil_within_pct": 34.1787,
+    "theil_between_pct": 65.8213,
+    "n_region_groups": 973.0
   },
   {
     "group": "embodied_top30",
@@ -178,8 +214,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top30",
@@ -192,8 +231,11 @@
     "morans_I": 0.501,
     "morans_E": -0.0003,
     "theil_total": 0.078,
-    "theil_within_metro_pct": 34.0213,
-    "theil_between_metro_pct": 65.9787
+    "theil_within_abs": 0.0262,
+    "theil_between_abs": 0.0518,
+    "theil_within_pct": 33.6285,
+    "theil_between_pct": 66.3715,
+    "n_region_groups": 973.0
   },
   {
     "group": "embodied_top50",
@@ -206,8 +248,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top50",
@@ -220,8 +265,11 @@
     "morans_I": 0.5353,
     "morans_E": -0.0003,
     "theil_total": 0.0541,
-    "theil_within_metro_pct": 32.4165,
-    "theil_between_metro_pct": 67.5835
+    "theil_within_abs": 0.0174,
+    "theil_between_abs": 0.0367,
+    "theil_within_pct": 32.1304,
+    "theil_between_pct": 67.8696,
+    "n_region_groups": 973.0
   },
   {
     "group": "cognitive_top10",
@@ -234,8 +282,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top20",
@@ -248,8 +299,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top30",
@@ -262,8 +316,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "cognitive_top50",
@@ -276,8 +333,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top10",
@@ -290,8 +350,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top20",
@@ -304,8 +367,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top30",
@@ -318,8 +384,11 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   },
   {
     "group": "embodied_top50",
@@ -332,7 +401,10 @@
     "morans_I": NaN,
     "morans_E": NaN,
     "theil_total": NaN,
-    "theil_within_metro_pct": NaN,
-    "theil_between_metro_pct": NaN
+    "theil_within_abs": NaN,
+    "theil_between_abs": NaN,
+    "theil_within_pct": NaN,
+    "theil_between_pct": NaN,
+    "n_region_groups": NaN
   }
 ]
