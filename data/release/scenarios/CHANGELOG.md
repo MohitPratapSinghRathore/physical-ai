@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.0 (2026-09-20)
+- THE TABLE IS REORGANISED BY WAGE QUINTILE. Exposure type turned out to be a pay proxy in
+  three independent tests, so the organising dimension is now where in the wage distribution
+  displacement falls, and the exposure indices are named scenarios for that.
+- CASE A AND CASE B. Every fiscal number now carries its case: output preserved with income
+  redistributed to capital (A), or output falling with demand so the taxable surplus falls
+  too (B). Case B raises the fiscal loss by 25 to 44 percent and the break-even capital tax
+  rate from 0.21 to 0.38 up to 0.56 to 0.86.
+- DEBT PATHS ARE INCREMENTS over a no-displacement baseline under the same interest rate and
+  growth assumptions. The earlier 389 percent emerging-market figure is WITHDRAWN as a
+  statement about automation: it was almost entirely baseline compounding.
+- SECOND-ROUND SENSITIVITY across sourced ranges for the marginal propensity to consume, the
+  income elasticity of house prices, the Okun coefficient and the loss mapping. The bank-loss
+  headline spans a factor of nine, and "a demand event first" survives only conditionally.
+
 ## 0.6.0 (2026-09-20)
 - THE ORDER OF STRESS IS RETIRED AND REPLACED BY A DOSE-RESPONSE TABLE. Ranking balance
   sheets by which crosses its materiality threshold first is not meaningful when each sheet

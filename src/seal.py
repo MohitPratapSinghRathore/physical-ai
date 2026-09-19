@@ -168,6 +168,93 @@ def main():
         "percent of the raw gap remains at the weaker end, and the SIPP Eloundou GPT cap "
         "contrast reverses sign. Report a PAY mechanism with an exposure-type CORRELATE.")
 
+
+    # ---- sections 10 to 13, added in the closing session
+    try:
+        K = pd.read_csv(OUT / "sovereign_consolidation.csv")
+        sealed["sovereign"] = {
+            "federal_share_first_round_min": v(float(K["federal_share_first_round"].min()),
+                                               "share_absolute",
+                                               "federal over federal plus private, "
+                                               "first-round column"),
+            "federal_share_first_round_max": v(float(K["federal_share_first_round"].max()),
+                                               "share_absolute", ""),
+            "federal_share_with_second_round_min": v(
+                float(K["federal_share_with_second_round"].min()), "share_absolute",
+                "the second round raises the total and LOWERS the federal share"),
+            "federal_share_with_second_round_max": v(
+                float(K["federal_share_with_second_round"].max()), "share_absolute", ""),
+            "federal_student_share": v(1605.134 / 1650.0, "share_absolute",
+                                       "FRED FGCCSAQ027S over the NY Fed total"),
+            "_ordering": "CRT and private mortgage insurance are LOSS TRANSFERS taken "
+                         "BEFORE Enterprise capital, not additions to it",
+        }
+    except FileNotFoundError:
+        pass
+    try:
+        V = pd.read_csv(OUT / "second_round_sensitivity.csv")
+        cs = json.loads((OUT / "consistency_summary.json").read_text())
+        sealed["second_round"] = {
+            "bank_losses_bn_min": v(float(V["bank_losses_bn"].min()), "survey_relative",
+                                    "50 percent cognitive AIOE dose, across all sourced "
+                                    "input combinations"),
+            "bank_losses_bn_max": v(float(V["bank_losses_bn"].max()), "survey_relative", ""),
+            "bank_losses_bn_median": v(float(V["bank_losses_bn"].median()),
+                                       "survey_relative", ""),
+            "house_price_fall_pct_min": v(float(V["house_price_fall_pct"].min()),
+                                          "share_absolute", "income elasticity 0.21"),
+            "house_price_fall_pct_max": v(float(V["house_price_fall_pct"].max()),
+                                          "share_absolute", "income elasticity 1.50"),
+            "demand_event_first_share": v(float(V["demand_event_first"].mean()),
+                                          "share_absolute",
+                                          "share of combinations in which demand severity "
+                                          "exceeds house price severity"),
+            "_verdict": cs["demand_event_first_verdict"],
+            "_dominant_input": "the MPC gap explains about 0.95 of the variance of the "
+                               "demand severity; the house price elasticity explains 0.998 "
+                               "of the variance of the house price fall",
+        }
+        sealed["cases"] = {
+            "case_B_over_A_min": v(cs["case_B_over_A_range"][0], "share_absolute",
+                                   "fiscal loss under case B over case A"),
+            "case_B_over_A_max": v(cs["case_B_over_A_range"][1], "share_absolute", ""),
+            "break_even_tau_k_case_A_min": v(cs["break_even_tau_k_case_A"][0],
+                                             "share_absolute", "tau_l times (1 - R)"),
+            "break_even_tau_k_case_A_max": v(cs["break_even_tau_k_case_A"][1],
+                                             "share_absolute", ""),
+            "break_even_tau_k_case_B_min": v(cs["break_even_tau_k_case_B"][0],
+                                             "share_absolute",
+                                             "loss B over a surplus reduced by the demand "
+                                             "shortfall"),
+            "break_even_tau_k_case_B_max": v(cs["break_even_tau_k_case_B"][1],
+                                             "share_absolute", ""),
+            "_rule": "every fiscal figure published before the closing session is a CASE A "
+                     "figure; case B is the internally consistent one whenever the "
+                     "second-round module is quoted",
+        }
+        D = pd.read_csv(OUT / "debt_increments.csv")
+        em = D[(D.regime == "emerging_market") & (D.horizon == 20)]
+        sealed["debt"] = {
+            "debt_to_gdp_start": v(cs["debt_to_gdp_start"], "share_absolute",
+                                   "FRED GFDEBTN over GDP"),
+            "baseline_20y_emerging_market": v(float(em["baseline_debt_to_gdp"].iloc[0]),
+                                              "share_absolute",
+                                              "NO DISPLACEMENT, r 9 percent against g 3"),
+            "increment_pp_at_10pct_reserve_currency_20y": v(float(
+                D[(D.regime == "reserve_currency") & (D.horizon == 20)
+                  & np.isclose(D.dose, 0.10) & (D.case == "B")]["INCREMENT_pp_of_gdp"].mean()),
+                "survey_relative", "case B"),
+            "increment_pp_at_10pct_emerging_market_20y": v(float(
+                D[(D.regime == "emerging_market") & (D.horizon == 20)
+                  & np.isclose(D.dose, 0.10) & (D.case == "B")]["INCREMENT_pp_of_gdp"].mean()),
+                "survey_relative", "case B"),
+            "_withdrawn": "A91's 389 percent at a 10 percent dose is WITHDRAWN as a "
+                          "statement about automation: it is almost entirely the "
+                          "no-displacement baseline compounding at r above g",
+        }
+    except FileNotFoundError:
+        pass
+
     p = REL / "sealed_expected_values.json"
     p.write_text(json.dumps(sealed, indent=2, default=str))
     n = json.dumps(sealed).count('"expected"')
@@ -177,7 +264,10 @@ def main():
           "only after.")
     for sec in ["rho_slack", "fiscal", "fiscal_magnitudes", "trust_funds",
                 "under_reporting", "household_first_round", "cap_contrast",
-                "pay_control", "incidence"]:
+                "pay_control", "incidence", "sovereign", "second_round", "cases",
+                "debt"]:
+        if sec not in sealed:
+            continue
         print(f"    {sec}")
 
 

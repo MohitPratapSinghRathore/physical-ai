@@ -6283,3 +6283,227 @@ version, the two policy worlds, the severity mapping and the sourced absorbing c
 Its README carries the six statements that must travel with every number, including that only
 the 5 and 10 percent doses are fully inside the data and that no single exposure type can
 deliver a 75 percent dose.
+
+---
+
+## A96. THE TWO WORLDS WERE INCONSISTENT. Case B raises the break-even capital tax rate to between 56 and 86 percent
+
+`src/consistency.py`, item 1. The fiscal channel has always assumed output is preserved and
+the surplus shifts to capital. The second-round module has consumption and business revenue
+falling, which means output is not preserved, which means the surplus the fiscal channel
+taxes is smaller than the fiscal channel assumes. Both cannot be true at once, and the
+project has been quoting numbers from both.
+
+| | Case A, output preserved | Case B, output falls with demand |
+|---|---|---|
+| capital income change | +dW | +dW - dC |
+| fiscal loss | tau_l·dW - tau_k·dW | case A + tau_k·dC + tau_l·(W/Y)·dC |
+| break-even tau_k | tau_l·(1 - R) | loss B / (dW - dC) |
+
+Wage share of output 0.307, tau_l 0.301, tau_k 0.118 at the midpoint of the sourced range.
+
+| Exposure | Dose | R | Case A loss | **Case B loss** | B/A | Case A break-even tau_k | **Case B break-even tau_k** |
+|---|---|---|---|---|---|---|---|
+| Cognitive AIOE | 10% | 0.571 | 109.2 | **155.4** | 1.42 | 0.224 | **0.579** |
+| Cognitive AIOE | 25% | 0.504 | 342.9 | **467.6** | 1.36 | 0.260 | **0.645** |
+| Embodied | 25% | 0.274 | 604.4 | **775.4** | 1.28 | 0.334 | **0.780** |
+| Cognitive GPT | 50% | 0.260 | 1,321.5 | **1,692.1** | 1.28 | 0.337 | **0.786** |
+| Embodied | 50% | 0.000 | 1,257.1 | **1,571.5** | 1.25 | 0.378 | **0.860** |
+
+**Case B raises the fiscal loss by 25 to 44 percent.** That is the smaller half of the
+result. The larger half is what happens to the instrument:
+
+**THE BREAK-EVEN CAPITAL TAX RATE GOES FROM 21 TO 38 PERCENT UNDER CASE A TO 56 TO 86 PERCENT
+UNDER CASE B.** A93 reported that the break-even rate at a 50 percent embodied dose was 30.1
+percent, above the statutory 21 and far above the sourced 3.2 to 20.4 percent effective
+range, and called that "outside the range of anything currently observed". Under the
+internally consistent case it is **86 percent**. There is no reading of the corporate tax
+literature in which that is an available instrument.
+
+**Every fiscal number published by this project before this session is a CASE A number**, and
+that includes the headline fiscal magnitudes, the trust fund ratios and the 4j policy
+response. Case A is the right case only if the demand shortfall is offset, which is what the
+policy response is for, so the two are not independent: **the response has to work in order
+for the numbers that say how big the response must be to be correct.** That circularity is
+now visible and is stated rather than hidden in the case labels.
+
+---
+
+## A97. THE 389 PERCENT EMERGING-MARKET FIGURE IS WITHDRAWN. It was the baseline, not the displacement
+
+`src/consistency.py`, item 2. A91 reported that an emerging market reaches 389 percent of
+GDP at a 10 percent dose. Recomputed as a difference from a no-displacement baseline under
+the same interest rate and growth assumptions:
+
+| Regime | 10 years | 20 years | Baseline explodes? |
+|---|---|---|---|
+| Reserve currency, r = g = 4.0 | 121.4% | 121.4% | no |
+| Reserve currency adverse, r 5.0 g 3.5 | 140.2% | 161.9% | no |
+| **Emerging market, r 9.0 g 3.0** | **213.9%** | **376.7%** | **YES** |
+
+**With no displacement at all, the emerging-market baseline reaches 377 percent of GDP in
+twenty years.** A91's 389 percent was that baseline plus a small increment. **The figure is
+WITHDRAWN as a statement about automation.**
+
+The displacement increment, which is the quantity that was actually wanted, case B:
+
+| Dose | Horizon | Reserve currency | Adverse | Emerging market |
+|---|---|---|---|---|
+| 10% | 20y | **10.6pp** | 12.2pp | **19.2pp** |
+| 25% | 20y | 35.6pp | 41.0pp | 64.3pp |
+| 50% | 20y | 94.2pp | 108.4pp | **170.0pp** |
+
+**The contrast survives and is much smaller than reported.** The emerging market's increment
+is 1.8 times the reserve currency's, not the four-to-one gap the level paths implied. The
+correct sentence is: **the same displacement shock adds about twice as much to debt for an
+issuer facing r above g, and that issuer is on an unsustainable path before the shock
+arrives.** The second clause is the more important one and it is not about AI.
+
+**Plausibility bound:** the increment cannot exceed the cumulative fiscal loss compounded at
+r, and cannot be negative for a positive loss. Both hold in every row.
+
+---
+
+## A98. SENSITIVITY. The second-round headline spans a factor of nine, and "a demand event first" survives only conditionally
+
+`src/consistency.py`, item 3. 648 combinations of sourced inputs at a 50 percent cognitive
+AIOE dose.
+
+### The sourced ranges, each verified this session
+
+| Input | Range | Source |
+|---|---|---|
+| MPC out of labour income | 0.70 to 1.00 | Mian, Straub and Sufi (NBER WP 26941); Fagereng, Holm and Natvik, AEJ Macro 13(4) 2021: low-liquidity winners of small prizes "spend all within the year", high-liquidity winners of large prizes "slightly below one-half" |
+| MPC out of capital income | 0.35 to 0.55 | the same two |
+| **Income elasticity of house prices** | **0.21 to 1.50** | Harter-Dreiman OFHEO WP 03-2 (0.21, 0.27, 0.38); Duca, Muellbauer and Murphy JEL 59(3) 2021: "most long-run income elasticities of house prices exceed one", with a low modern estimate of "only 0.81" |
+| Okun coefficient | 0.372 to 0.421 | Ball, Leigh and Loungani JMCB 49(7) 2017, Table 1, US annual 1948 to 2013 |
+| Loss mapping beyond Fed severity | linear, capped, convex | no source exists; all three are stated assumptions |
+
+**The earlier run's Okun assumption of 0.5 is above the entire sourced range** and overstated
+second-round job losses by about a fifth.
+
+### The headline range
+
+| Quantity | Min | Max | Median |
+|---|---|---|---|
+| Severity against the Fed, demand | 0.31 | 1.36 | 0.94 |
+| House price fall, percent | 6.6 | **47.1** | 18.7 |
+| **Second-round bank losses, bn** | **110** | **993** | **572** |
+| Second-round job losses, percent | 0.11 | 0.68 | 0.38 |
+
+**The bank-loss headline spans a factor of nine.** A91 reported 851bn; that sits in the upper
+third of the range and was produced by the combination of a high MPC gap with a linear
+mapping.
+
+### What moves it
+
+| Target | Dominant input | Share of variance |
+|---|---|---|
+| Second-round bank losses | **MPC out of labour income** | **0.649** |
+| | MPC out of capital income | 0.257 |
+| Demand severity | the MPC gap | 0.999 combined |
+| House price fall | **income elasticity** | **0.998** |
+
+**The MPC gap is the whole of the demand channel and the house price elasticity is the whole
+of the housing channel.** Nothing else in the module matters. A reader who disagrees with one
+number can move the answer by a factor of three without touching anything else.
+
+### Does "a demand event first, the opposite of 2008" survive?
+
+**SURVIVES ONLY CONDITIONALLY.** Demand severity exceeds house price severity in 63 percent
+of combinations, and the split is entirely along one input:
+
+| Income elasticity | Share of combinations where demand leads |
+|---|---|
+| Harter-Dreiman 0.21 | **100%** |
+| Harter-Dreiman 0.27 | **100%** |
+| Harter-Dreiman 0.38 | 89% |
+| DMM low 0.81 | 56% |
+| DMM unity 1.00 | 33% |
+| **DMM above unity 1.50** | **0%** |
+
+**A91's claim was an artefact of using a 2003 estimate that the modern survey explicitly
+identifies as too low.** Duca, Muellbauer and Murphy say most long-run income elasticities of
+house prices exceed one, and at an elasticity above one the housing channel dominates and the
+shock looks much more like 2008 than A91 said. **The claim is DOWNGRADED to conditional and
+the condition must be stated whenever it is used.**
+
+---
+
+## A99. THE DOSE-RESPONSE TABLE IS REORGANISED BY WAGE QUINTILE, and what that costs
+
+`src/wage_dose_response.py`, item 4. The decision and its cost are recorded in the module
+docstring and in `data/processed/wage_quintile_summary.json`.
+
+### What a quintile can deliver
+
+| Quintile | Share of the total wage bill | Saturates at |
+|---|---|---|
+| Q1 bottom | 3.24% | a 3.24% dose |
+| Q2 | 8.95% | 8.95% |
+| Q3 middle | 14.26% | 14.26% |
+| Q4 | 22.33% | 22.33% |
+| Q5 top | **51.22%** | 51.22% |
+
+### The fiscal composition flips across the distribution
+
+| Quintile | Payroll share of the fiscal loss | Effective income tax rate |
+|---|---|---|
+| Q2 | **62.1%** | 9.3% |
+| Q3 | 59.1% | 10.6% |
+| Q4 | 56.3% | 11.9% |
+| **Q5** | **43.2%** | **16.9%** |
+
+### Who bears it, at a 5 percent dose
+
+| Quintile | Federal bn | Private bn | **Federal share** | Total as a share of GDP |
+|---|---|---|---|---|
+| Q2 | 153.6 | 19.1 | **89.0%** | 0.54% |
+| Q3 | 158.4 | 14.7 | **91.5%** | 0.54% |
+| Q4 | 161.7 | 12.3 | **92.9%** | 0.54% |
+| Q5 | 167.7 | 7.2 | **95.9%** | 0.54% |
+
+**The federal share RISES with the wage quintile**, from 89 to 96 percent, because a
+high-earner's fiscal loss is large and their credit exposure per displaced dollar is small.
+A92's sovereign result is therefore not driven by low-paid households at all: **it is
+strongest exactly where the paper's original framing expected the private channel to be.**
+
+### The cost of the reorganisation, stated
+
+1. **The embodied versus cognitive framing is demoted** from a mechanism to a mapping.
+2. **PAEI is no longer a contribution in its own right.** It is a measurement instrument this
+   paper uses, not a finding it reports. **Its one surviving independent use is the driving
+   pathway**, a concentrated identifiable vehicle-credit-relevant group that no wage quintile
+   picks out.
+3. **The comparative thesis goes.** "Physical AI and cognitive AI stress different balance
+   sheets" is not supported once pay is controlled.
+
+**What is gained** is that the wage quintile is observable in every household survey and
+every administrative record, needs no index and no assumption about task overlap, and lets a
+supervisor ask "what if 10 percent of the wage bill goes, concentrated in the third quintile"
+without adopting any view about AI at all.
+
+---
+
+## A100. ITEMS 5 TO 7
+
+**Item 5.** A provisional thesis sentence is in `notes/thesis_sentence.md` with its claim
+IDs, separated into what is measured and what is scenario, and with its four known weak
+points named. **It is not to be used until the owner approves it, and `paper/outline.md` is
+untouched.**
+
+**Item 6.** `notes/replication_brief.md` gains four sections: the sovereign share, the
+second-round headline and its range, case A against case B, and debt paths as increments.
+`data/release/sealed_expected_values.json` now carries **87 sealed quantities** across
+thirteen sections. `data/release/` is regenerated at **0.7.0** with the wage-quintile table,
+cases A and B, the debt increments and the sensitivity grid.
+
+**Item 7.** **The owner's files are not in `data/raw/manual/`.** The OASDI Trustees Report
+summary tables and CBO's Preliminary Estimate of the Effects of H.R. 748 were not placed
+there, so the trust fund reserve column stays empty and the derived thresholds stand. Said
+once.
+
+**Promotion pass.** `src/verify/independent_recompute.py`, which imports nothing from `src/`:
+**16 quantities, 16 matched, 0 failed.** The plausibility audit reports 36 checks and 4
+violations, all four being the A77 and A79 errors retained as a regression record and now
+labelled SUPERSEDED in the output.

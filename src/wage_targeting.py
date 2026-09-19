@@ -61,7 +61,10 @@ sys.path.insert(0, str(ROOT))
 OASDI_RATE, OASDI_CAP = 0.124, 184_500.0
 HI_RATE = 0.029
 WB_LEVELS = [0.05, 0.10, 0.25, 0.50, 0.75]
-QUINTILE_TARGETS = {"bottom_Q1": 0, "middle_Q3": 2, "top_Q5": 4}
+# All five quintiles, so the wage-organised dose-response table has a fiscal column
+# for every row. The first version ran only Q1, Q3 and Q5, which left Q2 and Q4 with
+# a credit loss and no fiscal loss and made their "who bears it" shares incomparable.
+QUINTILE_TARGETS = {"bottom_Q1": 0, "Q2": 1, "middle_Q3": 2, "Q4": 3, "top_Q5": 4}
 
 PCOLS = ["SERIALNO", "OCCP", "WAGP", "ADJINC", "PWGTP", "ESR"]
 HCOLS = ["SERIALNO", "WGTP", "TEN", "MRGP", "GRNTP", "ADJHSG", "ADJINC", "HINCP", "NP",

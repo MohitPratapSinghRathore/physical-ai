@@ -1,0 +1,44 @@
+{
+  "tau_k_used": 0.11798,
+  "case_B_over_A_range": [
+    1.2501291822322655,
+    1.4425919665659954
+  ],
+  "break_even_tau_k_case_A": [
+    0.21383466373775378,
+    0.37837050239019443
+  ],
+  "break_even_tau_k_case_B": [
+    0.5608657601480448,
+    0.8600218304252096
+  ],
+  "debt_to_gdp_start": 1.21412078269093,
+  "baseline_explodes": {
+    "reserve_currency_10": false,
+    "reserve_currency_20": false,
+    "reserve_currency_adverse_10": false,
+    "reserve_currency_adverse_20": false,
+    "emerging_market_10": true,
+    "emerging_market_20": true
+  },
+  "sensitivity_ranges": {
+    "severity_vs_fed_on_demand": [
+      0.3142610247330307,
+      1.3617977738431337
+    ],
+    "house_price_fall_pct": [
+      6.5974954499999985,
+      47.12496749999999
+    ],
+    "bank_losses_bn": [
+      110.0896036421444,
+      993.0690674517388
+    ],
+    "second_round_job_losses_pct": [
+      0.5377634655231621,
+      3.1321348798392075
+    ]
+  },
+  "demand_event_first_share": 0.6296296296296297,
+  "demand_event_first_verdict": "SURVIVES ONLY CONDITIONALLY"
+}

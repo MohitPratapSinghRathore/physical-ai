@@ -228,3 +228,100 @@ Every sealed value carries a tolerance. Survey-based quantities are given a 2 pe
 relative tolerance to allow for weight and vintage differences; fitted coefficients a 5
 percent tolerance; ratios and shares an absolute tolerance of 0.01. A rebuilt value outside
 its tolerance means the claim resting on it does not stand until the difference is explained.
+
+---
+
+## 10. The sovereign share of losses
+
+**Construction.** At each dose, sum every loss that ultimately lands on the federal
+government and compare it with the sum landing on private balance sheets.
+
+**Federal:** general revenue; OASDI and HI; the federal share of the student loan book;
+FHA; and GSE losses beyond their absorbing capacity, since the Enterprises are in
+conservatorship.
+
+**Private:** bank mortgage portfolios; credit risk transfer and private mortgage insurance
+investors; residual mortgage holders; auto and card lenders; the private slice of the
+student book.
+
+**The ordering on the agency book matters and is easy to get wrong.** Credit risk transfer
+and private mortgage insurance are LOSS TRANSFERS taken BEFORE Enterprise capital, not
+additions to it. Apply them on the loss side, then Enterprise capital and one year of
+pre-provision pre-tax earnings, and only then does the federal layer bind.
+
+**The federal student share is 97.3 percent** (FRED FGCCSAQ027S against the NY Fed total).
+That single fact moves the largest consumer credit book in the scenario onto the
+government's side of the ledger, and a replicator who uses a bank-held share for student
+loans will get a materially lower federal share.
+
+**Sealed:** `sovereign.federal_share_first_round_min` and `_max`, and the same with
+second-round effects.
+
+---
+
+## 11. The second-round headline, and its range
+
+**The headline:** at a large dose, bank losses with second-round effects are comparable to or
+beyond the Federal Reserve's severely adverse scenario, and roughly nine tenths of them
+arrive through consumer spending, house prices and business credit rather than through
+displaced borrowers' own loans.
+
+**The ratio is robust. The level is not.** Across the sourced ranges for every input the
+second-round bank loss at a 50 percent cognitive dose spans a factor of nine.
+
+**Inputs and their sourced ranges.** A replicator must carry all of them, not one.
+
+| Input | Range | Source |
+|---|---|---|
+| MPC out of labour income | 0.70 to 1.00 | Mian, Straub and Sufi (NBER WP 26941); Fagereng, Holm and Natvik (AEJ Macro 13(4), 2021) |
+| MPC out of capital income | 0.35 to 0.55 | the same two |
+| Income elasticity of house prices | **0.21 to 1.50** | Harter-Dreiman (OFHEO WP 03-2, 2003) at the bottom; Duca, Muellbauer and Murphy (JEL 59(3), 2021) at the top |
+| Okun coefficient | 0.37 to 0.42 | Ball, Leigh and Loungani (JMCB 49(7), 2017), Table 1 |
+| Loss mapping beyond the Fed's severity | linear, capped, convex | no source exists; all three are stated assumptions |
+
+**Sealed:** `second_round.bank_losses_bn_min` and `_max` at the headline scenario, the share
+of variance explained by each input, and the share of combinations in which the demand
+severity exceeds the house price severity.
+
+**The one result to check hardest.** "A demand event first, the opposite of 2008" holds at
+every Harter-Dreiman elasticity and fails entirely at an elasticity of 1.5. A replicator who
+uses only the 2003 estimate will confirm it; one who uses the modern survey will not.
+
+---
+
+## 12. Case A and case B
+
+**They are not interchangeable and every number must carry its case.**
+
+**Case A, output preserved.** Displacement moves income from labour to capital; the taxable
+surplus rises by the full wage loss.
+
+    fiscal loss      = tau_l * dW - tau_k * dW
+    break-even tau_k = tau_l * (1 - R)
+
+**Case B, output falls with demand.** The demand shortfall is not offset, so output falls by
+it, the surplus rises by less, and a second round of wage income goes with the output fall.
+
+    dC               = (mpc_L - mpc_K) * dW
+    fiscal loss      = case A loss + tau_k * dC + tau_l * (W / Y) * dC
+    break-even tau_k = fiscal loss B / (dW - dC)
+
+**Every fiscal figure published by this project before the closing session is a CASE A
+figure.** Case B is the internally consistent one whenever the second-round module is quoted.
+
+**Sealed:** `cases.case_B_over_A_min` and `_max`, and the break-even tau_k range under each.
+
+---
+
+## 13. Debt paths
+
+**Report increments, never levels.** A debt-to-GDP path under r above g compounds the
+EXISTING debt whether or not anything is displaced. Compute a no-displacement baseline under
+the same r and g and report the difference.
+
+**The trap:** under r = 9 percent against g = 3 percent, a starting ratio of 121.4 percent
+reaches about 377 percent in twenty years with no displacement at all. A level path presented
+as a result about automation is almost entirely that baseline.
+
+**Sealed:** `debt.baseline_20y_emerging_market`, and the displacement increment in percentage
+points of GDP at a 10 percent dose for each regime.

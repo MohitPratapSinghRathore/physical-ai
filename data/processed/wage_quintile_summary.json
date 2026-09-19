@@ -1,0 +1,18 @@
+{
+  "quintile_wage_bill_shares": {
+    "0": 0.0324,
+    "1": 0.0895,
+    "2": 0.1426,
+    "3": 0.2233,
+    "4": 0.5122
+  },
+  "total_wage_bill_bn": 10567.67719192453,
+  "case_B_multiplier": 1.3446266666666666,
+  "decision": "The dose-response table is organised by wage quintile. Exposure indices are named scenarios for where in the distribution displacement falls.",
+  "cost": [
+    "the embodied versus cognitive framing is demoted to a mapping",
+    "PAEI is a measurement instrument this paper uses, not a finding it reports; the driving pathway is its one surviving independent use",
+    "the comparative thesis that the two exposure types stress different balance sheets is not supported once pay is controlled"
+  ],
+  "gain": "the wage quintile is observable in every household survey and every administrative record, needs no index and no assumption about task overlap, and is directly usable by a supervisor"
+}
