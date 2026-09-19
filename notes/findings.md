@@ -441,7 +441,9 @@ lit/unverified.md as a partial verification, not a failure.
 Eloundou et al. GPT exposure (100 percent match), unweighted and employment-weighted.
 
 **Result 1, discriminant validity, passes.** PAEI correlates -0.878 with AIOE and -0.758
-with Eloundou GPT beta. PAEI is close to the mirror image of cognitive AI exposure, so it
+with Eloundou GPT beta. (Reporting rule, item 9: wherever PAEI's Webb correlation is
+quoted it must be given together with the high-P split, +0.708 overall and +0.275 among
+high-P occupations. Neither number travels alone.) PAEI is close to the mirror image of cognitive AI exposure, so it
 is not a relabelling of an existing index.
 
 **Result 2, which is the finding that matters and weakens the claim.** Decomposed:
@@ -1146,3 +1148,137 @@ The Acemoglu and Restrepo commuting-zone design does not provide this either: th
 also industry-level (19 IFR industries) interacted with local employment shares, so their
 exposure measure has the same property. Settling this needs either establishment-level or
 occupation-level deployment data, which no public US source currently provides.
+
+## A24. ITEM 3. Pathway decomposition, now the primary structure
+
+Pathways are mutually exclusive by priority: driving, then gated, then manipulation. Scope
+is occupations at or above the median embodiment P (0.398); below that, exposure runs
+through cognitive AI and is out of scope.
+
+**A second flag error found and fixed.** The A6 driving flag was built on the O*NET
+descriptor "Operating Vehicles, Mechanized Devices, or Equipment", which captures forklifts,
+power tools and construction plant. It therefore flagged electricians, carpenters,
+construction labourers, maintenance workers and agricultural workers as driving-exposed.
+**113 in-scope occupations would have been wrongly assigned to the driving pathway.**
+Driving is now defined by SOC major group 53-3, Motor Vehicle Operators. The descriptor
+version is retained in `a6_occupation_flags.csv` as a sensitivity.
+
+| Pathway | Occupations | Employment | Wage bill (USD bn) | Embodiment-weighted (USD bn) | Mortgage at risk (USD bn) | % of national mortgage service | Rent at risk (USD bn) | % of national rent |
+|---|---|---|---|---|---|---|---|---|
+| Driving | 6 | 6.04m | 226.9 | 126.4 | 9.9 | **0.98%** | 10.7 | **1.30%** |
+| Gated | 154 | 44.49m | 1,780.4 | 975.2 | 78.9 | **7.83%** | 76.0 | **9.22%** |
+| Manipulation | 78 | 29.47m | 688.5 | 361.8 | 27.6 | **2.74%** | 47.0 | **5.70%** |
+
+The manipulation pathway, which is the one PAEI was built for and the one the paper's
+framing is about, carries 2.74 percent of national mortgage debt service and 5.70 percent of
+national rent. Driving carries about 1 percent of each. The gated pathway is the largest on
+every measure, and it is the pathway where substitution is constrained by liability and
+interpersonal content rather than by manipulation capability.
+
+All six driving occupations also carry an accountability or interpersonal flag (passenger
+safety), so the priority rule matters for them; the assignment is recorded so it can be
+undone.
+
+### Owner-operators carrying equipment debt
+
+PUMS class of worker (COW) does size this group.
+
+| | Employment | Share |
+|---|---|---|
+| Driving pathway, total | 6,037,238 | |
+| of which self-employed (COW 6 or 7) | 953,112 | **15.8%** |
+| Truck and driver/sales workers (OCCP 9130), total | 4,666,861 | |
+| of which self-employed | 666,070 | **14.3%** |
+
+Self-employed driving wage bill is 20.8 USD bn. These roughly 0.95 million workers, of whom
+0.67 million are truck drivers, are the group that carries tractor and trailer finance in
+addition to household debt. PUMS cannot see the equipment loan itself, so the debt stock is
+not measurable here; what is established is the size of the exposed group.
+
+### The driving clock, from public deployment data
+
+Reported as an observable clock rather than a forecast. These are press and company sources
+(Tier D and company IR), not official statistics, and are labelled as such.
+
+- Waymo: about 500,000 paid driverless rides per week as of March 2026, across 14 US cities
+  as of 1 September 2026, on a fleet of over 4,000 vehicles; up roughly tenfold from about
+  50,000 per week in May 2024.
+- Aurora: commercial driverless Class 8 trucking in Texas from April 2025; 10 driverless
+  routes across the Sun Belt by February 2026; over 250,000 driverless miles; a validated
+  1,000-mile Fort Worth to Phoenix lane; a stated target of more than 200 driverless trucks.
+- Kodiak: driverless Class 8 operations in the Permian Basin with Atlas Energy Solutions,
+  over 750 hours of commercial driverless operation.
+
+**The calibration this gives is the point, and it cuts against alarm.** Robotaxi deployment
+is real and scaling fast, but it bears on taxi drivers and chauffeurs, who are 681,000
+workers in PUMS. Driverless trucking bears on 4.67 million truck and driver/sales workers,
+and the deployed fleet is in the low hundreds of vehicles. The driving pathway has a
+genuinely observable clock, and as of late 2026 that clock reads early.
+
+## A25. ITEM 4 GATE: the registered hypothesis is SUPPORTED
+
+Registered before running: geographic concentration of the at-risk RATE declines as c rises,
+because exposure shifts from tradable manufacturing to nontradable local services.
+
+### (a) Concentration of the at-risk rate falls monotonically in c
+
+| c | PUMA Gini (mortgage rate) | PUMA p90/p10 | County Gini | County p90/p10 |
+|---|---|---|---|---|
+| 0.2 | 0.2199 | 2.75 | 0.1766 | 2.24 |
+| 0.3 | 0.1715 | 2.18 | | |
+| 0.5 | 0.1228 | 1.76 | | |
+| 0.8 | 0.0972 | 1.55 | | |
+| 1.0 | **0.0938** | **1.54** | **0.0652** | **1.44** |
+
+Slope of Gini on c is negative in all four series tested (PUMA and county, wage and
+mortgage): -0.118, -0.147, -0.093, -0.131. **Hypothesis supported, consistently.**
+
+### (b) The proposed mechanism is confirmed
+
+Tradable share of the embodiment-weighted wage bill at risk:
+
+| c | Tradable % | Nontradable % | Mixed % |
+|---|---|---|---|
+| 0.05 | **33.5** | 38.8 | 27.7 |
+| 0.20 | 20.2 | 49.5 | 30.4 |
+| 0.50 | 15.4 | 47.2 | 37.4 |
+| 1.00 | **12.9** | 39.7 | 47.5 |
+
+Exposure starts concentrated in tradable manufacturing and shifts out of it as capability
+rises, which is exactly the mechanism the hypothesis proposed. (Classification is a coarse
+NAICS sector rule, not Mian and Sufi's import/export-per-worker measure; Mian and Sufi
+(2014), Econometrica 82(6) is cited as the methodological precedent for the split, not as
+the source of this rule.)
+
+### (c) Benchmark against Acemoglu and Restrepo, made comparable
+
+They report their commuting-zone robot exposure spanning about 9 robots per thousand
+workers from p1 to p99, roughly a ninefold spread, with an interquartile range of about 1.
+Computing the same p1-to-p99 ratio on our at-risk rate:
+
+| c | PUMA mortgage rate p99/p1 | County mortgage rate p99/p1 |
+|---|---|---|
+| **0.2** | **8.15x** | 4.83x |
+| 0.5 | 2.97x | 2.54x |
+| 0.8 | 2.36x | 1.83x |
+| 1.0 | 2.23x | 1.69x |
+
+**At low capability our measure reproduces their concentration almost exactly** (8.15x at
+PUMA level against their roughly 9x), which is a meaningful external check on the geographic
+build. It then collapses to about 2x as capability rises.
+
+### What this means, and it is the most useful structural result in the block
+
+The geography of Physical AI exposure is **not** the geography of industrial robots, except
+at the very start. At c near 0 the exposure is a rust-belt and manufacturing-corridor
+phenomenon with an 8-to-1 spread, which is the world Acemoglu and Restrepo measured. As
+capability rises the exposure becomes a local-services phenomenon, spread almost evenly
+across the country at roughly 2-to-1.
+
+This has a direct implication for the paper's financial argument. A regionally concentrated
+shock is one a diversified national lender can survive and a regional lender cannot. A
+near-uniform shock is the opposite: it is survivable by no one through geographic
+diversification, but it is also far less likely to produce the localised negative-equity
+spirals that turn income shocks into mortgage losses. **The two halves of the double trigger
+move in opposite directions as c rises**, and the paper should say so rather than assuming
+higher capability is monotonically worse for financial stability.

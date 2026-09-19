@@ -1,0 +1,219 @@
+{
+  "overlap": {
+    "driving_definition": "SOC 53-3 Motor Vehicle Operators",
+    "driving_and_gated": 6,
+    "driving_occupations_in_scope": 6,
+    "driving_occupations_out_of_scope_low_P": 0,
+    "descriptor_flag_would_have_included": 113,
+    "P_median_scope_gate": 0.39835
+  },
+  "owner_operators": {
+    "driving_employment": 6037238.0,
+    "driving_self_employed_employment": 953112.0,
+    "driving_self_employed_pct": 15.787219254897687,
+    "driving_self_employed_wage_bill_usd_bn": 20.78310199049567,
+    "cow_codes_used": "6 = self-employed not incorporated, 7 = self-employed incorporated",
+    "truck_occp9130_employment": 4666861.0,
+    "truck_occp9130_self_employed": 666070.0,
+    "truck_occp9130_self_employed_pct": 14.27233423065311
+  },
+  "totals": [
+    {
+      "pathway": "driving",
+      "n_occupations": 6,
+      "employment": 6037238.0,
+      "wage_bill_usd_bn": 226.8606,
+      "embodiment_weighted_wage_bill_usd_bn": 126.4264,
+      "mortgage_at_risk_usd_bn": 9.8807,
+      "mortgage_share_of_national_pct": 0.9807,
+      "rent_at_risk_usd_bn": 10.7216,
+      "rent_share_of_national_pct": 1.3006
+    },
+    {
+      "pathway": "gated",
+      "n_occupations": 154,
+      "employment": 44488304.0,
+      "wage_bill_usd_bn": 1780.4046,
+      "embodiment_weighted_wage_bill_usd_bn": 975.2058,
+      "mortgage_at_risk_usd_bn": 78.8802,
+      "mortgage_share_of_national_pct": 7.8294,
+      "rent_at_risk_usd_bn": 76.0173,
+      "rent_share_of_national_pct": 9.2217
+    },
+    {
+      "pathway": "manipulation",
+      "n_occupations": 78,
+      "employment": 29469580.0,
+      "wage_bill_usd_bn": 688.5035,
+      "embodiment_weighted_wage_bill_usd_bn": 361.7665,
+      "mortgage_at_risk_usd_bn": 27.6064,
+      "mortgage_share_of_national_pct": 2.7401,
+      "rent_at_risk_usd_bn": 46.9506,
+      "rent_share_of_national_pct": 5.6956
+    }
+  ],
+  "top_occupations": {
+    "driving": [
+      {
+        "title": "Driver/sales workers and truck drivers",
+        "embodiment_P": 0.576,
+        "employment": 4666861.0,
+        "wage_bill": 191749903529.307
+      },
+      {
+        "title": "Taxi drivers",
+        "embodiment_P": 0.453,
+        "employment": 568633.0,
+        "wage_bill": 10938123332.317
+      },
+      {
+        "title": "Bus drivers, school",
+        "embodiment_P": 0.426,
+        "employment": 351857.0,
+        "wage_bill": 8880735985.888
+      },
+      {
+        "title": "Bus drivers, transit and intercity",
+        "embodiment_P": 0.461,
+        "employment": 322215.0,
+        "wage_bill": 11918665177.528
+      },
+      {
+        "title": "Shuttle drivers and chauffeurs",
+        "embodiment_P": 0.473,
+        "employment": 112789.0,
+        "wage_bill": 2917158333.173
+      },
+      {
+        "title": "Ambulance drivers and attendants, except emergency medical technicians",
+        "embodiment_P": 0.584,
+        "employment": 14883.0,
+        "wage_bill": 456030095.545
+      }
+    ],
+    "gated": [
+      {
+        "title": "Laborers and freight, stock, and material movers, hand",
+        "embodiment_P": 0.612,
+        "employment": 3408226.0,
+        "wage_bill": 92769387500.13
+      },
+      {
+        "title": "Cashiers",
+        "embodiment_P": 0.402,
+        "employment": 4341146.0,
+        "wage_bill": 60194732682.252
+      },
+      {
+        "title": "Construction laborers",
+        "embodiment_P": 0.658,
+        "employment": 2436476.0,
+        "wage_bill": 74063830804.702
+      },
+      {
+        "title": "Personal care aides",
+        "embodiment_P": 0.487,
+        "employment": 2025577.0,
+        "wage_bill": 45756727721.429
+      },
+      {
+        "title": "Carpenters",
+        "embodiment_P": 0.641,
+        "employment": 1466865.0,
+        "wage_bill": 46852843532.016
+      },
+      {
+        "title": "Nursing assistants",
+        "embodiment_P": 0.508,
+        "employment": 1570871.0,
+        "wage_bill": 43646130148.288
+      },
+      {
+        "title": "Electricians",
+        "embodiment_P": 0.679,
+        "employment": 1157113.0,
+        "wage_bill": 63516346951.69
+      },
+      {
+        "title": "Maintenance and repair workers, general",
+        "embodiment_P": 0.658,
+        "employment": 1020806.0,
+        "wage_bill": 47819884870.935
+      },
+      {
+        "title": "Industrial truck and tractor operators",
+        "embodiment_P": 0.64,
+        "employment": 831387.0,
+        "wage_bill": 30901916040.731
+      },
+      {
+        "title": "Hairdressers, hairstylists, and cosmetologists",
+        "embodiment_P": 0.542,
+        "employment": 965342.0,
+        "wage_bill": 17482454663.346
+      }
+    ],
+    "manipulation": [
+      {
+        "title": "Cooks",
+        "embodiment_P": 0.493,
+        "employment": 2864163.0,
+        "wage_bill": 52438973742.275
+      },
+      {
+        "title": "Stockers and order fillers",
+        "embodiment_P": 0.571,
+        "employment": 2396951.0,
+        "wage_bill": 54400860398.957
+      },
+      {
+        "title": "Waiters and waitresses",
+        "embodiment_P": 0.503,
+        "employment": 2668996.0,
+        "wage_bill": 47280834802.744
+      },
+      {
+        "title": "Maids and housekeeping cleaners",
+        "embodiment_P": 0.52,
+        "employment": 1751946.0,
+        "wage_bill": 27252979424.754
+      },
+      {
+        "title": "Landscaping and groundskeeping workers",
+        "embodiment_P": 0.486,
+        "employment": 1525107.0,
+        "wage_bill": 29273309948.747
+      },
+      {
+        "title": "Automotive service technicians and mechanics",
+        "embodiment_P": 0.654,
+        "employment": 1043466.0,
+        "wage_bill": 40634789435.547
+      },
+      {
+        "title": "Fast food and counter workers",
+        "embodiment_P": 0.438,
+        "employment": 1384857.0,
+        "wage_bill": 15976668781.313
+      },
+      {
+        "title": "Miscellaneous agricultural workers",
+        "embodiment_P": 0.607,
+        "employment": 968718.0,
+        "wage_bill": 22546515000.046
+      },
+      {
+        "title": "Food preparation workers",
+        "embodiment_P": 0.454,
+        "employment": 1254931.0,
+        "wage_bill": 18597430720.928
+      },
+      {
+        "title": "Childcare workers",
+        "embodiment_P": 0.423,
+        "employment": 1339118.0,
+        "wage_bill": 17119629943.269
+      }
+    ]
+  }
+}

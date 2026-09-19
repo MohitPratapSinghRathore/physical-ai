@@ -173,6 +173,11 @@ employment.
 **VERDICT: PAEI at c = 0 is NOVEL.** 0.708 is below the roughly 0.8 threshold, so PAEI is
 not Webb's robot score under a new name.
 
+**REPORTING RULE (item 9).** The headline +0.708 and the high-P figure +0.275 must always
+be reported together, in findings, in the outline and in the paper. Quoting +0.708 alone
+overstates the validation, because the paper uses the index on high-P occupations where the
+correlation is +0.275.
+
 **The prediction in Section 4 was wrong.** I predicted P above 0.8 and a likely gate
 failure. P came in at 0.740 and the gate passes. The ordering (P above PAEI) was right, the
 level was not.

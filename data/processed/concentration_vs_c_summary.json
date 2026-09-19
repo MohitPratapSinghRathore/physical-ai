@@ -1,0 +1,39 @@
+{
+  "a_concentration": {
+    "PUMA_wage_at_risk_share": {
+      "gini_at_lowest_c": 0.20360925733246762,
+      "gini_at_c1": 0.09844004691653101,
+      "slope_gini_on_c": -0.1181361538436136,
+      "direction": "DECLINES (hypothesis supported)"
+    },
+    "PUMA_mortgage_at_risk_share": {
+      "gini_at_lowest_c": 0.21993399671671182,
+      "gini_at_c1": 0.09382216982810374,
+      "slope_gini_on_c": -0.14715320952019798,
+      "direction": "DECLINES (hypothesis supported)"
+    },
+    "county_wage_at_risk_share": {
+      "gini_at_lowest_c": 0.1384260323572284,
+      "gini_at_c1": 0.058663150166226044,
+      "slope_gini_on_c": -0.09251586648878136,
+      "direction": "DECLINES (hypothesis supported)"
+    },
+    "county_mortgage_at_risk_share": {
+      "gini_at_lowest_c": 0.17662063025029323,
+      "gini_at_c1": 0.06523711114112295,
+      "slope_gini_on_c": -0.13133145360301549,
+      "direction": "DECLINES (hypothesis supported)"
+    }
+  },
+  "b_tradable": {
+    "tradable_pct_at_c0.2": 20.16810257898516,
+    "tradable_pct_at_c1.0": 12.878129806157268,
+    "slope_tradable_on_c": -6.9972513143682615
+  },
+  "ar_benchmark": {
+    "source": "Acemoglu and Restrepo (2020) JPE 128(6)",
+    "iqr_robots_per_thousand": 1.0,
+    "p1_to_p99_robots_per_thousand": 9.0,
+    "note": "roughly a ninefold spread between extreme percentiles of their exposure"
+  }
+}
