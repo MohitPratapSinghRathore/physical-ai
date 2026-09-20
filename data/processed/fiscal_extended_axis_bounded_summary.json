@@ -1,0 +1,46 @@
+{
+  "pole_at_d_emp": 0.6761418073753354,
+  "observed_rho_range": [
+    0.49,
+    0.74
+  ],
+  "extrapolation_band": [
+    0.0,
+    0.49
+  ],
+  "rows_total": 2520,
+  "rows_point_withdrawn": 672,
+  "share_of_rows_withdrawn": 0.2667,
+  "withdrawn_by_group": {
+    "both_AIOE_top20": 48,
+    "both_AIOE_top30": 72,
+    "both_AIOE_top50": 96,
+    "both_GPT_top20": 48,
+    "both_GPT_top30": 72,
+    "both_GPT_top50": 96,
+    "cognitive_AIOE_top50": 48,
+    "cognitive_GPT_top50": 72,
+    "embodied_top30": 48,
+    "embodied_top50": 72
+  },
+  "old_point_inside_new_band_where_withdrawn": 568,
+  "of_which_rows": 672,
+  "plausibility": [
+    {
+      "check": "rho in [0, 1]",
+      "where": "bounded extended axis",
+      "n": 6384,
+      "violations": 0,
+      "worst": null,
+      "passes": true
+    },
+    {
+      "check": "rho in [0, 1]",
+      "where": "superseded extended axis",
+      "n": 15120,
+      "violations": 0,
+      "worst": null,
+      "passes": true
+    }
+  ]
+}

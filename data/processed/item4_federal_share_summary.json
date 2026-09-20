@@ -1,0 +1,62 @@
+{
+  "headline_depends_on_the_dose": true,
+  "by_dose_narrow": {
+    "0.05": [
+      0.7588,
+      0.8525
+    ],
+    "0.1": [
+      0.7853,
+      0.8697
+    ],
+    "0.25": [
+      0.8101,
+      0.9227
+    ],
+    "0.5": [
+      0.8551,
+      0.9251
+    ],
+    "0.75": [
+      0.8086,
+      0.8972
+    ]
+  },
+  "by_dose_conservatorship": {
+    "0.05": [
+      0.8574,
+      0.901
+    ],
+    "0.1": [
+      0.8763,
+      0.9125
+    ],
+    "0.25": [
+      0.8782,
+      0.9481
+    ],
+    "0.5": [
+      0.8972,
+      0.9485
+    ],
+    "0.75": [
+      0.8587,
+      0.9244
+    ]
+  },
+  "inside_data_doses": [
+    0.05,
+    0.1,
+    0.25
+  ],
+  "single_range_that_hides_it_narrow": [
+    0.7588,
+    0.9251
+  ],
+  "replicator_by_dose": {
+    "0.10": 0.8373,
+    "0.25": 0.8792,
+    "0.50": 0.8956
+  },
+  "gse_rebuild_effect_on_narrow_reading": "none. The beyond layer is zero before and after, so reallocating the GSE loss between private cover and Enterprise capital leaves both on the private side under the narrow reading. The rebuild changes the CONSERVATORSHIP reading."
+}

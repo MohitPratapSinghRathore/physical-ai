@@ -66,7 +66,7 @@
     "condition_passes": {
       "expected": false,
       "tolerance": "exact",
-      "note": "required tau_k of 0.110 to 0.137 exceeds the OPERATIVE effective rate of 0.0708 under every reading of tau_l, and does NOT exceed the top of the sourced range of 0.20351 under any reading. The condition is unclosable under the tax code as it stands, not under every reading of the literature. CORRECTED in the final session: the superseded note said the opposite and overstated the finding."
+      "note": "required tau_k exceeds the top of the sourced range at every reading of tau_l"
     }
   },
   "fiscal_magnitudes": {

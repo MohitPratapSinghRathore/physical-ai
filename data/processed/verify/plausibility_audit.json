@@ -1,5 +1,5 @@
 {
-  "n_checks": 43,
+  "n_checks": 53,
   "n_violations": 4,
   "checks": [
     {
@@ -302,6 +302,76 @@
       "bound": "0 to 100.0",
       "verdict": "OK",
       "detail": ""
+    },
+    {
+      "quantity": "rho, superseded extended axis, rho",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15120 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded extended axis, rho",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "6384 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_clamped",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "101 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_band_lo",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "105 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_band_hi",
+      "value": 0.6941170006801652,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "105 values, min 0.4900, max 0.6941"
+    },
+    {
+      "quantity": "rho raw fixed point, bounded scenario axis, DIAGNOSTIC",
+      "value": 6,
+      "bound": "breaches expected past the pole, must be caught and banded",
+      "verdict": "OK",
+      "detail": "6 of 101 raw values outside [0, 1]"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_clamped",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "13 values, min 0.0000, max 0.6815"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_band_lo",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15 values, min 0.0000, max 0.6815"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_band_hi",
+      "value": 0.6814569491733323,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15 values, min 0.4900, max 0.6815"
+    },
+    {
+      "quantity": "rho raw fixed point, bounded dose grid, DIAGNOSTIC",
+      "value": 2,
+      "bound": "breaches expected past the pole, must be caught and banded",
+      "verdict": "OK",
+      "detail": "2 of 13 raw values outside [0, 1]"
     }
   ]
 }

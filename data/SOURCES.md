@@ -120,3 +120,77 @@ Retrieved 88 of 190 company-concept series.
 | IFR World Robotics | paid | robot stock and shipments |
 | Scopus / Web of Science | subscription | WS0 systematic coverage |
 | Preqin | paid | private credit to AI infrastructure |
+
+---
+
+## Retrieved in the final analysis session, 2026-09-20 (A103)
+
+`data/raw/` is gitignored as re-downloadable source cache, so provenance is recorded here.
+
+### GSE Form 10-K filings, for the agency waterfall rebuild (item 1)
+
+Retrieved from EDGAR with the declared User-Agent required by the SEC fair access policy
+(decision D8), saved to `data/raw/gse/` as both the original `.htm` and a tag-stripped
+`.txt`.
+
+| file | source | retrieved |
+|---|---|---|
+| `fnma_10k.htm` | Fannie Mae 2025 Form 10-K, accession **0000310522-26-000015**, https://www.sec.gov/Archives/edgar/data/310522/000031052226000015/fnm-20251231.htm | 2026-09-20 |
+| `fmcc_10k.htm` | Freddie Mac 2025 Form 10-K, accession **0001026214-26-000021**, https://www.sec.gov/Archives/edgar/data/1026214/000102621426000021/fmcc-20251231.htm | 2026-09-20 |
+
+Every figure taken from them is quoted inline in `src/gse_waterfall.py` next to the constant
+it defines, so each can be checked against the filing text without re-downloading. The
+load-bearing ones: Fannie's "Single-Family Loans with Credit Enhancement" table and its
+"approximately $39 billion" back-end CRT risk in force; Freddie's "Table 23 - Single-Family
+Mortgage Portfolio Credit Enhancement Coverage Outstanding"; both charters' above-80-LTV
+credit enhancement requirement; Fannie's CIRT attachment and detachment example; Freddie's
+"retain the initial loss position and at least 5% of the credit risk of all the positions
+sold"; and the senior preferred funding commitment language defining the draw trigger.
+
+### RAND RR-A4980-1, for the related-work boundary (item 9)
+
+| file | source | retrieved |
+|---|---|---|
+| `data/raw/manual/RAND_RRA4980-1_PriceSuresh2026.pdf` | Price, Carter C. and Suresh, Akshaya (2026), "Federal Revenue When AI Replaces Labor", RAND Research Report RR-A4980-1. Landing page https://www.rand.org/pubs/research_reports/RRA4980-1.html, PDF https://www.rand.org/content/dam/rand/pubs/research_reports/RRA4900/RRA4980-1/RAND_RRA4980-1.pdf | 2026-09-20 |
+
+Read in full. Upgrades that row from verification level B to F. Now in
+`paper/references.bib` as `PriceSuresh2026`.
+
+### FRED series used as Treasury cross-checks (item 3)
+
+Annual means of the published series, 2025.
+
+| series | description | 2025 mean, bn |
+|---|---|---|
+| `GFDEBTN` | Federal Debt: Total Public Debt | 37,144.3 |
+| `FYGFDPUN` | Federal Debt Held by the Public | 29,769.5 |
+| `TREAST` | Assets: Securities Held Outright: US Treasury Securities | 4,219.6 |
+
+Used only to verify that the Z.1 Treasury class (FL313161105 + FL313169205 = 33,887.1bn)
+sits between gross federal debt and debt held by the public, as a consolidated measure must.
+No project figure is derived from them.
+
+### Legal sources, for the fair lending constraint (item 11f)
+
+Verified against the eCFR renderer API on 2026-09-20. No file cached; the citations are
+stable and the text is quoted in `framework/architecture.md` section 6.
+
+| citation | what it establishes |
+|---|---|
+| **12 CFR 1002.2(z)** (Regulation B, ECOA) | the list of prohibited bases. **Occupation is not among them** |
+| **12 CFR 1002.6(a)** | a creditor may consider any information not used to discriminate on a prohibited basis; the Act does not provide that the effects test applies |
+| **24 CFR 100.500** (Fair Housing Act) | discriminatory-effect liability without discriminatory intent, and the legally sufficient justification defence with its burden-shifting framework |
+
+### Not retrieved, and recorded as such
+
+**IMF Notes 2026/002.** `imf.org` returns HTTP 403 on every route attempted and the eLibrary
+issue returns 404. The owner reported placing a copy in `data/raw/manual/`; it is not there
+and a search of the machine found none. The related-work row stands at verification level B
+and says explicitly that its boundary has not been redrawn from the full text. Recorded in
+`lit/unverified.md`.
+
+**Congressional Budget Office (2024)**, "Artificial Intelligence and Its Potential Effects on
+the Economy and the Federal Budget". `cbo.gov` returns HTTP 403 on every route, including the
+direct PDF path; the block is a DataDome bot challenge. Crossref has no record, which is
+expected for a CBO report. **It does not enter `references.bib` and no claim depends on it.**
+Recorded in `lit/unverified.md`.

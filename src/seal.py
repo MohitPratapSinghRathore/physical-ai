@@ -107,9 +107,19 @@ def main():
                 "tau_k such that R = 1 - tau_k / tau_l holds with equality"),
             "tau_k_needed_AMR_0.255": v(tk["tau_k_needed_to_pass"]["AMR_0.255"],
                                         "share_absolute", "at the AMR reading of tau_l"),
+            # CORRECTED in the final analysis session, item 5.1. The superseded note said
+            # the required rate exceeds the TOP OF THE SOURCED RANGE at every reading. It
+            # does not, and this project's own replication_r_sensitivity.json says so in
+            # all five cells: the required rate maxes at 0.137276 against a sourced top of
+            # 0.20351. The boolean is correct; the note overstated the finding.
             "condition_passes": {"expected": False, "tolerance": "exact",
-                                 "note": "required tau_k exceeds the top of the sourced "
-                                         "range at every reading of tau_l"},
+                                 "note": "required tau_k of 0.110 to 0.137 exceeds the "
+                                         "OPERATIVE effective rate of 0.0708 under every "
+                                         "reading of tau_l, and does NOT exceed the top of "
+                                         "the sourced range of 0.20351 under any reading. "
+                                         "The condition is unclosable under the tax code "
+                                         "as it stands, not under every reading of the "
+                                         "literature."},
         },
         "fiscal_magnitudes": {
             "terminal_year_loss_bn_at_10pct": v(

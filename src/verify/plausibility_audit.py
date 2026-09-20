@@ -122,6 +122,42 @@ def main():
     except FileNotFoundError:
         pass
 
+    # ---- rho in [0, 1]. ADDED in the final analysis session, item 2. The independent
+    # replicator found that the section 3a fixed-point construction returns rho = 4.39 at
+    # the headline embodied dose, which is not a rate, and that no bound in this audit
+    # covered it. The bound is now enforced in src/rho_bounded.py and checked here on both
+    # the superseded and the bounded extended axis, so the fix stays fixed.
+    try:
+        import numpy as _np
+        for fn, lab in [("fiscal_extended_axis.csv", "superseded extended axis"),
+                        ("fiscal_extended_axis_bounded.csv", "bounded extended axis"),
+                        ("rho_bounded_axis.csv", "bounded scenario axis"),
+                        ("rho_bounded_dose_grid.csv", "bounded dose grid")]:
+            f = OUT / fn
+            if not f.exists():
+                continue
+            d = pd.read_csv(f)
+            for col in ("rho", "rho_clamped", "rho_band_lo", "rho_band_hi"):
+                if col not in d.columns:
+                    continue
+                v = pd.to_numeric(d[col], errors="coerce").dropna()
+                if not len(v):
+                    continue
+                worst = float(v.min()) if abs(v.min() - 0.5) > abs(v.max() - 0.5)                     else float(v.max())
+                chk(f"rho, {lab}, {col}", worst, "rho in [0, 1], it is a rate",
+                    bool((v >= 0.0).all() and (v <= 1.0).all()),
+                    f"{len(v)} values, min {v.min():.4f}, max {v.max():.4f}")
+            # the raw fixed point is expected to BREACH the bound past the pole. That is
+            # the finding, so it is recorded as a diagnostic rather than as a violation.
+            if "rho_fixed_point_raw" in d.columns:
+                v = pd.to_numeric(d["rho_fixed_point_raw"], errors="coerce").dropna()
+                bad = int(((v < 0.0) | (v > 1.0)).sum())
+                chk(f"rho raw fixed point, {lab}, DIAGNOSTIC",
+                    bad, "breaches expected past the pole, must be caught and banded",
+                    True, f"{bad} of {len(v)} raw values outside [0, 1]")
+    except Exception as e:
+        chk("rho in [0, 1]", str(e), "rho in [0, 1]", False, "audit could not run")
+
     A = pd.DataFrame(CHECKS)
     OUTD = OUT / "verify"; OUTD.mkdir(parents=True, exist_ok=True)
     A.to_csv(OUTD / "plausibility_audit.csv", index=False)

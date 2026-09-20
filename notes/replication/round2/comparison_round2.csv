@@ -1,0 +1,128 @@
+quantity_id,my_value,sealed_expected,abs_diff,rel_diff,verdict,tolerance
+rho_slack.intercept,1.21969,1.227975,0.008285,0.67%,MATCH (within tolerance),rel 5%
+rho_slack.slope,-0.02717,-0.02749,0.00032,1.16%,MATCH (within tolerance),rel 5%
+rho_slack.r_squared,0.76318,0.773334,0.010154,1.31%,MATCH (within tolerance),rel 5%
+rho_slack.n,14.0,14.0,0.0,0.00%,MATCH (within tolerance),abs 0.01
+rho_slack.x_range_low,18.27241,18.27241,0.0,0.00%,MATCH (within tolerance),rel 5%
+rho_slack.x_range_high,24.70612,24.70612,0.0,0.00%,MATCH (within tolerance),rel 5%
+rho_slack.x_2026_vintage,19.31092,,,,NOT SEALED,
+rho_slack.ALT_unrate.intercept,0.80770,,,,NOT SEALED,
+rho_slack.ALT_unrate.r_squared,0.82175,,,,NOT SEALED,
+rho_slack.POST2008.intercept,1.17818,,,,NOT SEALED,
+rho_slack.POST2008.slope,-0.02541,,,,NOT SEALED,
+rho_slack.POST2008.r_squared,0.73199,,,,NOT SEALED,
+omega.full_time_only_central,0.985283,,,,NOT SEALED,
+omega.blended_nominal_LITERAL_BRIEF,0.925467,,,,NOT SEALED,
+omega.blended_nominal_AS_PROJECT,0.907268,,,,NOT SEALED,
+omega.blended_counterfactual_central,0.859781,,,,NOT SEALED,
+fiscal.rho_2026,0.661552,,,,NOT SEALED,
+fiscal.R_2026,0.568315,0.568316,1e-06,0.00%,MATCH (within tolerance),rel 5%
+fiscal.tau_l.bottom_up_0.301,0.300914,,,,NOT SEALED,
+fiscal.tau_l.bottom_up_0.318,0.318198,,,,NOT SEALED,
+fiscal.tau_k_sourced_low,0.03245,0.03245,0.0,0.00%,MATCH (within tolerance),abs 0.01
+fiscal.tau_k_sourced_high,0.20351,0.20351,0.0,0.00%,MATCH (within tolerance),abs 0.01
+fiscal.tau_k_operative,0.070779,,,,NOT SEALED,
+fiscal.tau_k_needed_AMR_0.255,0.107049,0.110079,0.00303,2.75%,MATCH (within tolerance),abs 0.01
+fiscal.tau_k_needed_bottom_up_0.301,0.126283,0.129937,0.003654,2.81%,MATCH (within tolerance),abs 0.01
+fiscal.condition_passes,False,,,,NOT SEALED,
+fiscal_magnitudes.terminal_year_loss_bn_at_10pct,85.01,85.168033,0.158033,0.19%,MATCH (within tolerance),rel 2%
+fiscal_magnitudes.terminal_year_loss_bn_at_25pct,338.17,301.891733,36.278267,12.02%,MISMATCH,rel 2%
+fiscal_magnitudes.pct_of_receipts_at_10pct,1.4215,1.424073,0.002573,0.18%,MATCH (within tolerance),abs 0.01
+fiscal_magnitudes.pct_of_receipts_at_25pct,5.6545,5.047817,0.606683,12.02%,MISMATCH,abs 0.01
+DIAGNOSTIC.stock_flow_pole_d_emp,0.676150,,,,NOT SEALED,
+trust_funds.OASDI_payroll_share,0.912647,,,,NOT SEALED,
+trust_funds.OASDI_pct_of_payroll_income_at_10pct,4.1278,4.069493,0.058307,1.43%,WITHIN 5 PERCENT,abs 0.01
+trust_funds.HI_pct_of_payroll_income_at_10pct,3.8932,3.85822,0.03498,0.91%,WITHIN 5 PERCENT,abs 0.01
+under_reporting.mortgage,1.2647,1.2592,0.0055,0.44%,MATCH (within tolerance),rel 2%
+under_reporting.coverage_share.mortgage,0.8238,0.8205,0.0033,0.40%,MATCH (within tolerance),abs 0.01
+under_reporting.card,2.5225,2.5159,0.0066,0.26%,MATCH (within tolerance),rel 2%
+under_reporting.coverage_share.card,0.7403,0.74,0.0003,0.04%,MATCH (within tolerance),abs 0.01
+under_reporting.auto,1.9121,1.9036,0.0085,0.45%,MATCH (within tolerance),rel 2%
+under_reporting.coverage_share.auto,0.7765,0.7737,0.0028,0.36%,MATCH (within tolerance),abs 0.01
+under_reporting.student,1.4278,1.4233,0.0045,0.32%,MATCH (within tolerance),rel 2%
+under_reporting.coverage_share.student,0.8818,0.8832,0.0014,0.16%,MATCH (within tolerance),abs 0.01
+household_first_round.mortgage_bank_loss_hi_bn_at_10pct,4.208,4.055,0.153,3.77%,WITHIN 5 PERCENT,rel 2%
+household_first_round.mortgage_pct_of_fed_at_10pct,18.7,18.02,0.68,3.77%,WITHIN 5 PERCENT,abs 0.01
+household_first_round.mortgage_bank_held_share,0.1145,,,,NOT SEALED,
+household_first_round.card_bank_loss_hi_bn_at_10pct,7.61,7.094,0.516,7.27%,MISMATCH,rel 2%
+household_first_round.card_pct_of_fed_at_10pct,3.75,3.495,0.255,7.30%,MISMATCH,abs 0.01
+household_first_round.card_bank_held_share,0.8747,,,,NOT SEALED,
+household_first_round.auto_bank_loss_hi_bn_at_10pct,3.226,3.04,0.186,6.12%,MISMATCH,rel 2%
+household_first_round.auto_pct_of_fed_at_10pct,5.96,5.619,0.341,6.07%,MISMATCH,abs 0.01
+household_first_round.auto_bank_held_share,0.4326,,,,NOT SEALED,
+household_first_round.student_bank_loss_hi_bn_at_10pct,5.395,5.202,0.193,3.71%,WITHIN 5 PERCENT,rel 2%
+household_first_round.student_pct_of_fed_at_10pct,9.97,9.616,0.354,3.68%,WITHIN 5 PERCENT,abs 0.01
+household_first_round.student_bank_held_share,0.4492,,,,NOT SEALED,
+cap_contrast.ACS.embodied,0.979401,0.9775,0.001901,0.19%,MATCH (within tolerance),abs 0.01
+cap_contrast.ACS.cognitive_AIOE,0.850592,0.8119,0.038692,4.77%,WITHIN 5 PERCENT,abs 0.01
+cap_contrast.ACS.cognitive_GPT,0.893912,0.9075,0.013588,1.50%,WITHIN 5 PERCENT,abs 0.01
+cap_contrast.SIPP.embodied,0.882958,0.8837,0.000742,0.08%,MATCH (within tolerance),abs 0.01
+cap_contrast.SIPP.cognitive_AIOE,0.752911,0.7044,0.048511,6.89%,MISMATCH,abs 0.01
+cap_contrast.SIPP.cognitive_GPT,0.828244,0.8328,0.004556,0.55%,MATCH (within tolerance),abs 0.01
+pay_control.ACS_cap_AIOE.raw_gap,0.128809,0.165674,0.036865,22.25%,MISMATCH,rel 2%
+pay_control.ACS_cap_AIOE.share_of_gap_that_is_pay_a,0.926119,0.885952,0.040167,4.53%,WITHIN 5 PERCENT,abs 0.01
+pay_control.ACS_cap_AIOE.share_of_gap_that_is_pay_b,0.672783,0.539456,0.133327,24.72%,MISMATCH,abs 0.01
+pay_control.ACS_cap_GPT.raw_gap,0.08549,0.069899,0.015591,22.31%,MISMATCH,rel 2%
+pay_control.ACS_cap_GPT.share_of_gap_that_is_pay_a,0.942746,0.965798,0.023052,2.39%,WITHIN 5 PERCENT,abs 0.01
+pay_control.ACS_cap_GPT.share_of_gap_that_is_pay_b,0.785459,0.889061,0.103602,11.65%,MISMATCH,abs 0.01
+pay_control.SIPP_cap_AIOE.raw_gap,0.130047,0.179265,0.049218,27.46%,MISMATCH,rel 2%
+pay_control.SIPP_cap_AIOE.share_of_gap_that_is_pay_a,1.142177,0.989861,0.152316,15.39%,MISMATCH,abs 0.01
+pay_control.SIPP_cap_AIOE.share_of_gap_that_is_pay_b,1.297445,0.984356,0.313089,31.81%,MISMATCH,abs 0.01
+pay_control.SIPP_cap_GPT.raw_gap,0.054714,0.050811,0.003903,7.68%,MISMATCH,rel 2%
+pay_control.SIPP_cap_GPT.share_of_gap_that_is_pay_a,1.64084,1.99627,0.35543,17.80%,MISMATCH,abs 0.01
+pay_control.SIPP_cap_GPT.share_of_gap_that_is_pay_b,2.174707,3.086923,0.912216,29.55%,MISMATCH,abs 0.01
+incidence.household_count_spread_low,1.5877,1.049,0.5387,51.35%,MISMATCH,abs 0.01
+incidence.household_count_spread_high,1.594,1.092,0.502,45.97%,MISMATCH,abs 0.01
+incidence.dollar_spread_low,1.5885,1.75,0.1615,9.23%,MISMATCH,abs 0.01
+incidence.dollar_spread_high,2.1427,3.01,0.8673,28.81%,MISMATCH,abs 0.01
+sovereign.federal_share_first_round_min,0.779178,0.759,0.020178,2.66%,WITHIN 5 PERCENT,abs 0.01
+sovereign.federal_share_first_round_max,0.837215,0.916,0.078785,8.60%,MISMATCH,abs 0.01
+sovereign.federal_student_share,0.972808,0.972808,0.0,0.00%,MATCH (within tolerance),abs 0.01
+gse.transferred_bn_at_10pct_LGDhi,18.779,,,,NOT SEALED,
+gse.retained_bn_at_10pct,0.000,,,,NOT SEALED,
+gse.beyond_capacity_federal_bn_at_10pct,0.000,,,,NOT SEALED,
+mortgage_holder_split.residual,0.249,,,,NOT SEALED,
+sovereign.federal_share_first_round_by_wage_quintile.q1,0.732751,,,,NOT SEALED,
+sovereign.federal_share_first_round_by_wage_quintile.q2,0.770102,,,,NOT SEALED,
+sovereign.federal_share_first_round_by_wage_quintile.q3,0.747532,,,,NOT SEALED,
+sovereign.federal_share_first_round_by_wage_quintile.q4,0.753436,,,,NOT SEALED,
+sovereign.federal_share_first_round_by_wage_quintile.q5,0.809393,,,,NOT SEALED,
+second_round.demand_event_first_share,0.740741,0.740741,0.0,0.00%,MATCH (within tolerance),abs 0.01
+second_round.grid_size,648,,,,NOT SEALED,
+second_round.bank_losses_max_over_min,9.021,,,,NOT SEALED,
+second_round.variance_share_mpc_labour,0.6679,,,,NOT SEALED,
+second_round.variance_share_mpc_capital,0.2716,,,,NOT SEALED,
+second_round.variance_share_loss_mapping,0.0047,,,,NOT SEALED,
+second_round.dW_over_W_at_headline,0.326137,,,,NOT SEALED,
+second_round.bank_losses_bn_min,183.4754,173.4673,10.0081,5.77%,MISMATCH,rel 2%
+second_round.bank_losses_bn_median,644.1182,624.9,19.2182,3.08%,WITHIN 5 PERCENT,rel 2%
+second_round.bank_losses_bn_max,1655.0498,1564.771,90.2788,5.77%,MISMATCH,rel 2%
+second_round.house_price_fall_pct_min,6.8489,6.5975,0.2514,3.81%,WITHIN 5 PERCENT,abs 0.01
+second_round.house_price_fall_pct_max,48.9205,47.125,1.7955,3.81%,WITHIN 5 PERCENT,abs 0.01
+cases.break_even_tau_k_case_A_min,0.109395,0.124614,0.015219,12.21%,MISMATCH,abs 0.01
+cases.break_even_tau_k_case_A_max,0.226448,0.301,0.074552,24.77%,MISMATCH,abs 0.01
+cases.break_even_tau_k_case_B_min,0.124204,0.181771,0.057567,31.67%,MISMATCH,abs 0.01
+cases.break_even_tau_k_case_B_max,0.535411,0.649569,0.114158,17.57%,MISMATCH,abs 0.01
+cases.case_B_over_A_min,1.139203,1.382834,0.243631,17.62%,MISMATCH,abs 0.01
+cases.case_B_over_A_max,2.275973,1.677406,0.598567,35.68%,MISMATCH,abs 0.01
+cases.hedge_ratio_at_break_even,1.000000,identity,,,IDENTITY CHECK,
+w_s.wage_share_of_output,0.415379,,,,NOT SEALED,
+debt.debt_to_gdp_start,1.214121,1.214121,0.0,0.00%,MATCH (within tolerance),abs 0.01
+debt.baseline_20y_emerging_market,3.76745,3.7674,5e-05,0.00%,MATCH (within tolerance),abs 0.01
+debt.increment_pp_at_10pct_emerging_market_20y,15.001,18.196033,3.195033,17.56%,MISMATCH,rel 2%
+debt.increment_pp_at_10pct_reserve_currency_20y,8.3103,10.080367,1.770067,17.56%,MISMATCH,rel 2%
+labour_backing.sovereign_union,0.77781,0.793592,0.015782,1.99%,WITHIN 5 PERCENT,abs 0.01
+labour_backing.sovereign_union_pure_Z1,0.7655,0.793592,0.028092,3.54%,WITHIN 5 PERCENT,abs 0.01
+labour_backing.obligor_leg,0.514819,0.552012,0.037193,6.74%,MISMATCH,abs 0.01
+labour_backing.holder_leg,0.335435,0.321479,0.013956,4.34%,WITHIN 5 PERCENT,abs 0.01
+labour_backing.overlap,0.072444,,,,NOT SEALED,
+labour_backing.total_labour_backed_bn,35721.4,40380.5,4659.1,11.54%,MISMATCH,rel 2%
+labour_backing.backing.home_mortgage,0.840223,,,,NOT SEALED,
+labour_backing.backing.multifamily_rent,0.727540,,,,NOT SEALED,
+labour_backing.backing.treasury,0.633842,,,,NOT SEALED,
+labour_backing.backing.state_local,0.163185,,,,NOT SEALED,
+labour_backing.sensitivity_drop_agency_pools,0.702408,,,,NOT SEALED,
+labour_backing.sensitivity_drop_obligor_leg,0.335435,,,,NOT SEALED,
+labour_backing.zero_rule_claims_excluded_bn,156618,,,,NOT SEALED,
+households_occupied,131.33,,,,NOT SEALED,
+two_sided_bet.AI_leg_holder_shares,BLOCKED,,,,NOT SEALED,

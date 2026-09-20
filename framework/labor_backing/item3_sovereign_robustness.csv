@@ -1,0 +1,18 @@
+central_sovereign_union,family,judgement_call,treasury_level_bn,labour_backed_bn,direct_ratio,sovereign_union,sovereign_obligor,sovereign_held_or_guaranteed,move_from_central,move_pct
+0.793593,Treasury class level,"CENTRAL: Z.1 marketable plus nonmarketable, FL313161105 + FL313169205",33887.1,40380.423912,0.270271,0.793593,0.552013,0.32148,0.0,0.0
+0.793593,Treasury class level,"Z.1 marketable only, FL313161105",30069.6,37869.318222,0.26011,0.789504,0.522307,0.342797,-0.004089,-0.51524
+0.793593,Treasury class level,"Z.1 all-sector Treasury securities asset, FL893061105",28481.0,36824.356206,0.255723,0.787638,0.508752,0.352525,-0.005955,-0.750355
+0.793593,Treasury class level,"Treasury gross federal debt, FRED GFDEBTN 2025 mean",37144.3,42522.970986,0.278539,0.7967,0.574585,0.305282,0.003107,0.391506
+0.793593,Treasury class level,"Treasury debt held by the public, FRED FYGFDPUN 2025 mean",29769.5,37671.916044,0.259289,0.78916,0.519804,0.344594,-0.004433,-0.558656
+0.793593,Treasury class level,"CENTRAL net of Federal Reserve holdings, FRED TREAST 2025 mean 4219.6",29667.5,37604.821668,0.259009,0.789042,0.518947,0.345208,-0.004551,-0.573516
+0.793593,holder leg,central bank NOT federal (Fed Treasury holdings out of the held-or-guaranteed leg),33887.1,40380.423912,0.270271,0.793593,0.552013,0.252744,0.0,0.0
+0.793593,backing share,federal receipts: SOI-split 0.657788 (central) vs the 77.7 percent upper bound,33887.1,44413.395458,0.297264,0.799193,0.592693,0.292288,0.005599,0.705575
+0.793593,backing share,mortgage backing: ACS service 0.8402 (central) vs SIPP balances 0.8205,33887.1,40108.477271,0.268451,0.798974,0.555756,0.32366,0.005381,0.678028
+0.793593,backing share,mortgage backing: ACS service vs the superseded A38 definition 0.80305,33887.1,39867.871436,0.266841,0.803796,0.55911,0.325613,0.010203,1.285628
+0.793593,backing share,rent backing: engine core 0.7275 (central) vs the A38 definition 0.69913,33887.1,40310.856345,0.269805,0.794963,0.552966,0.322035,0.00137,0.172578
+0.793593,backing share,state and local: wage-split central vs all personal current taxes,33887.1,40682.287382,0.272292,0.787705,0.547917,0.319095,-0.005888,-0.742002
+0.793593,backing share,other consumer: blend 0.815554 (central) vs the card share alone,33887.1,40351.894722,0.27008,0.794154,0.552403,0.321707,0.000561,0.070701
+0.793593,backing share,commercial mortgage treated like multifamily rather than zero,33887.1,43256.680548,0.289522,0.740825,0.515308,0.300104,-0.052768,-6.649277
+0.793593,backing share,THE ONE-STEP RULE: business classes zero (central) vs the B2 indirect share,33887.1,70948.125936,0.474864,0.451677,0.314181,0.182972,-0.341916,-43.08458
+0.793593,holder leg,agency pools NOT federal (guarantee ignored),33887.1,40380.423912,0.270271,0.586537,0.552013,0.114424,-0.207056,-26.091009
+0.793593,holder leg,obligor leg EXCLUDED (holder and guarantor only),33887.1,40380.423912,0.270271,0.32148,0.0,0.32148,-0.472113,-59.490574

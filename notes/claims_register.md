@@ -491,3 +491,57 @@ the Age of AI: A Primer", Brookings working paper, 8 January 2026, and NBER Work
 34873. Also newly located and NOT previously in the audit: Congressional Budget Office
 (2024), "Artificial Intelligence and Its Potential Effects on the Economy and the Federal
 Budget", December 2024. **Both are audit gaps and are recorded as such.**
+
+---
+
+## Claims amended by the final analysis session, 2026-09-20 (A103)
+
+Gate report: `notes/GATE_REPORT_final_session.md`. Clearing pass:
+`data/release/headline_clearing_pass.csv`.
+
+| # | Claim | Amendment |
+|---|---|---|
+| 133, 148 | Agency mortgage reaches 41 percent of GSE net worth at a 25 percent cognitive dose (A85), corrected to 29.7 percent (A90) | **SUPERSEDED AND REFRAMED.** Both figures were the GROSS GSE loss over net worth, struck before any risk transfer; the waterfall never touched them. Rebuilt loan class by loan class from the 2025 Form 10-Ks (`src/gse_waterfall.py`), the RETAINED agency loss at that dose is **11.9 to 29.2 percent** of Enterprise net worth. Three input errors found: CRT risk in force of 210.0bn was the FHFA CUMULATIVE since-2013 figure against an outstanding **79.0bn**; the PMI-covered share of the book is **21 to 22 percent**, not 6; and **39 to 53 percent of each single-family book carries no credit enhancement at all**. **standing** |
+| new 196 | The federal `beyond` layer on the agency book is zero at every dose from 5 to 75 percent | **NEW, and now a result rather than dead code.** 179.4bn of Enterprise capital against a maximum retained first-round loss of 109.0bn, on the STATUTORY negative-net-worth trigger of the senior preferred agreements rather than the looser capital-plus-earnings trigger we had used. FIRST ROUND ONLY, house prices fixed. **standing** |
+| 115, 101b, 101c, and every extended-axis figure | Terminal and cumulative fiscal losses on the extended displacement axis | **POINT ESTIMATES WITHDRAWN IN 672 OF 2,520 CELLS, 26.7 percent.** The reemployment rate is a fixed point with a pole at an employment dose of 0.676142, a wage-bill dose of 0.459 for the embodied group. The superseded code enforced the [0,1] bound ACCIDENTALLY, through an in-loop clip, and published the clip boundary as an estimate. Replaced by a bounded treatment (`src/rho_bounded.py`): a point estimate only inside the observed rho range [0.49, 0.74], otherwise the band [0, 0.49] labelled outside the data. The old point lies inside the new band in 568 of 672 cases; where it does not, the old value WAS the boundary, so the superseded embodied figures at large doses OVERSTATED the loss. **The 10 percent dose figures are unaffected.** |
+| new 197 | At a 50 percent dose no exposure type has a reemployment-rate point estimate, and the embodied group has no admissible fixed point at all | **NEW. withdrawn** as a quantity, **standing** as a finding about the limit of the data |
+| 118 | PLAUSIBILITY RULE: 43 checks, 4 violations | **EXTENDED to 53 checks.** The bound `rho in [0, 1], it is a rate` is added and applied to every rho column on the superseded axis, the bounded axis, the bounded scenario axis and the bounded dose grid, with a diagnostic counting raw fixed-point breaches. Still 4 violations, all deliberately retained superseded rows. **The replicator found this from the formula alone, with no code access. Second time a bound caught what a tolerance could not** |
+| 159, 195 | The sovereign share is the central result | **CONFIRMED AND RANGED, and recorded as the paper's central object.** The Treasury class is **FL313161105 + FL313169205 = 33,887.1bn at the 2025 Z.1 annual vintage**, verified against three external cross-checks. The level was right and the DOCUMENTATION was wrong. **Agreed sovereign share 0.778 to 0.804, centred on 0.794**, containing our 0.793592, the replicator's independent 0.777810 and every measurement variant. **No measurement call moves it by more than 1.3 percent**, and whether the central bank counts as federal moves it by EXACTLY ZERO. **NOT robust to four structural calls**, the one-step rule worst at -43 percent. **standing, with the convention stated** |
+| 157 | The federal government bears 75.9 to 91.6 percent of first-round losses | **REPORTED BY DOSE, not as one range.** Narrow reading: 0.759 to 0.853 at 5 percent, **0.785 to 0.870 at 10**, 0.810 to 0.923 at 25, 0.855 to 0.925 at 50, falling back to 0.809 to 0.897 at 75. Conservatorship reading 8 to 10 points higher. **It is NOT monotone**: it peaks at 50 percent. The replicator's independent by-dose result sits inside our range at both ends. **standing** |
+| 168 | The capital tax verdict, and its sealed note | **NOTE CORRECTED.** The sealed `condition_passes` note said the required rate exceeds the top of the sourced range at every reading. Our own `replication_r_sensitivity.json` says the opposite in all five cells: the required rate maxes at **0.137276** against a sourced top of **0.20351**. The boolean is right; **the note overstated the finding and is fixed** |
+| new 198 | The part-time wage parameter is the sourced BLS ratio 0.3206, not the assumed 0.50 | **BRIEF CORRECTED.** 386 over 1,204 dollars of median usual weekly earnings, 2025. 0.50 does not reproduce our own omega; 0.3206 does, and always did in the code. **standing** |
+| new 199 | The mortgage holder shares sum to 100.1 at one decimal | **PRESENTATION DEFECT, FIXED.** Published to two decimals, 51.10 / 12.57 / 11.45 / 24.88, summing to exactly 100.00. The replicator's proposed remainder of 24.8 was also wrong: the exact residual is 24.878. No downstream number moves |
+| 85, and the novelty statement for the labour backing ratio | No published work links occupational AI exposure to household balance-sheet outcomes | **RAND (Price and Suresh 2026) NOW READ IN FULL** and retained at `data/raw/manual/`. Confirms the boundary: the report contains **no household debt, no mortgages, no bank balance sheets and no financial stability content**. Upgraded from verification level B to F. **Two independent corroborations found**: their 66 percent of federal revenue directly from labour against our 63.4 percent, and their "corporate tax rates roughly doubled" against our 1.55 to 1.94 times operative. **provisional**, pending the systematic search (limitation L3) |
+| 80, 93, 94, and the Manning comparison | The hiring-freeze blind spot is cautioned because Manning and others cut against it | **CORRECTED: OVERLAP, NOT CONTRADICTION.** Manning and others find exposure and adaptive capacity positively correlated, which is the same conclusion as our claim 145 (buffers are not monotonic in pay) on a different object, and is what you get when the exposed group is higher paid, which our cognitive groups are. **What remains ours is the pay-level buffer finding**, which an occupation-level index cannot produce. The blind spot itself is unaffected: never-hired entrants are outside both sample frames |
+| new 200 | The fair lending constraint on occupation-based underwriting | **NOW LEGALLY SOURCED, and the sourcing makes the claim more careful.** Occupation is **NOT** a prohibited basis under ECOA (12 CFR 1002.2(z)), and 12 CFR 1002.6(a) permits a creditor to consider any information not used to discriminate on a prohibited basis. The exposure is a **discriminatory-effects claim under the Fair Housing Act** (24 CFR 100.500), lawful if supported by a legally sufficient justification under a burden-shifting framework. All three verified against eCFR on 2026-09-20. **standing**. This clears the PROJECT_BRIEF condition that gated the claim |
+| Replication protocol | The round two replication was blind | **QUALIFIED, and it must be stated this way in the paper.** Blind **by protocol, not by isolation**: same machine, sealed file reachable at a path the brief names, reported unopened until the rebuild was final. Supporting evidence is internal and circumstantial. **The claim is "independently rebuilt under a reported blind protocol", not "independently verified"** |
+
+### Removed from the headline set by the clearing pass
+
+Five, each with the reason recorded in `data/release/headline_clearing_pass.csv`: the
+incidence count-robustness claim (not reproducible, the alternative reading gives 59 percent
+not 5 to 9); the 50 percent reemployment rate (no such number); the hedge ratio at the
+operative tau_k (its input `surplus` is undefined in our own brief); the bottom-quintile
+labour-backed ratio of 4.1489 (the rebuild lands 2.5 to 3.4 times away and we never defined
+the universe; **the gradient survives, the magnitude does not**); and the two cognitive index
+scores by occupation (eleven mismatches in opposite directions).
+
+### Headline set after the pass
+
+**9 REPLICATED, 10 STANDING, 5 SCENARIO, 5 REMOVED. Headline set size 24.**
+
+### Stated limitations, carried without further work
+
+L1 off-balance-sheet and GPU-backed AI financing unmeasured; L2 capital gains receipts
+unsourced; L3 the labour backing ratio's novelty is "none located" pending a systematic
+PRISMA search; L4 the holder proxy residual; L5 effective labour tax rates by income not
+taken from CBO. Full text in `data/release/stated_limitations.csv` and in the gate report.
+
+### One item not completed, and why
+
+**IMF Note 2026/002 was not read in full.** The owner reported placing it and the RAND report
+in `data/raw/manual/`; neither was there and a search of the whole machine found neither. The
+RAND report was obtained directly from the publisher and read. **`imf.org` returns HTTP 403
+on every route and the eLibrary issue returns 404**, so that row stands at verification level
+B and the related-work table says explicitly that its boundary has NOT been redrawn from the
+full text. Recorded in `lit/unverified.md`.

@@ -81,3 +81,31 @@ internally consistent figure. This is a consistency check, not a verification.
 **The exact document is the FHA Annual Report to Congress on the Financial Status of the
 MMI Fund, FY2025, and the accompanying Annual Actuarial Review.** If the owner places
 either in `data/raw/manual/`, the flag is removed and the figure is cited.
+
+---
+
+## Added in the final analysis session, 2026-09-20
+
+### Congressional Budget Office (2024), "Artificial Intelligence and Its Potential Effects on the Economy and the Federal Budget", December 2024
+
+- **NOT VERIFIED FROM THIS ENVIRONMENT.** `cbo.gov` returns HTTP 403 on every route
+  attempted, including the publication page and the direct PDF path; the block is a
+  DataDome bot challenge rather than a missing page. Crossref has no record, which is
+  expected: CBO reports carry no DOI.
+- It was named as a bibliography gap and located by title in a secondary search only.
+  **It does NOT enter `paper/references.bib` and no claim in this project depends on it.**
+- Recorded in the related-work table at verification level U, not B.
+- To clear: read the PDF from a network that CBO does not block, confirm the title, the
+  publication number and the December 2024 date, then move the entry into
+  `references.bib` and upgrade the related-work row.
+
+### IMF Notes 2026/002, "Global Economic and Financial Implications of Artificial Intelligence"
+
+- Previously carried at level B on a bibliographic record. **The full text remains
+  unreadable from this environment:** `imf.org` returns HTTP 403 and the eLibrary route
+  returns 404 for the issue.
+- The owner reported placing it in `data/raw/manual/`. **It is not there**, and a search of
+  the whole machine finds no copy.
+- The related-work row therefore stands at level B, unchanged, and the boundary with this
+  project has NOT been redrawn from the full text. The row says so explicitly.
+- To clear: place the PDF in `data/raw/manual/` and the boundary can be redrawn in one pass.

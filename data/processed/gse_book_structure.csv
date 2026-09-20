@@ -1,0 +1,11 @@
+enterprise,loan_class,upb_bn,share_of_book
+Fannie Mae,pmi_only,358.0,0.1012
+Fannie Mae,pmi_and_crt,398.0,0.1125
+Fannie Mae,crt_only,879.0,0.2484
+Fannie Mae,other_only,28.0,0.0079
+Fannie Mae,none,1875.3,0.53
+Freddie Mac,pmi_only,128.6,0.0407
+Freddie Mac,pmi_and_crt,552.4,0.175
+Freddie Mac,crt_only,1207.4,0.3825
+Freddie Mac,other_only,38.4,0.0122
+Freddie Mac,none,1229.5,0.3896

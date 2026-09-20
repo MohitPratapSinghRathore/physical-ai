@@ -220,9 +220,12 @@ mean. Two assumption layers, both stated:
 2. **Destination blending.** The engine applies omega to EVERY reemployed worker, while Table
    7 prices only full-time moves. Of 1,942 thousand reemployed: 1,593 to full-time wage and
    salary (share **0.82029**), 197 to part time (**0.10144**), 152 to self-employment or
-   unpaid family work (**0.07827**). Part time is assigned **0.50** of the prior wage (the
-   sourced part-time to full-time earnings ratio is 0.3206 in 2025, so 0.50 is an upper
-   bound); self-employment **0.85** central, 0.70 low, 1.00 high. This yields
+   unpaid family work (**0.07827**). **CORRECTED in the final analysis session, item 5.2:
+   part time is assigned 0.3206 of the prior wage**, the SOURCED BLS ratio of median usual
+   weekly earnings, 386 dollars part time over 1,204 dollars full time in 2025 (2024: 380 /
+   1,159 = 0.3279). The superseded prose said 0.50 and called it an upper bound; 0.50 does
+   NOT reproduce this brief's own omega and 0.3206 does, which is what the engine has always
+   used. Self-employment **0.85** central, 0.70 low, 1.00 high. This yields
    `omega_blended_nominal` = **0.907268** central.
 3. **The counterfactual adjustment, and it is what makes 0.8598 rather than 0.9073.** The
    condition compares tax raised after displacement against tax that WOULD have been raised
@@ -801,10 +804,10 @@ weakest sourced number in the section.
 
 | Holder | Share of the 13,100bn book | Basis |
 |---|---|---|
-| GSE (agency) | **51.1 percent** | 6,694bn |
-| FHA | **12.6 percent** | 1,647bn |
-| bank portfolio | **11.5 percent** | 1,500bn, the DFAST implied first-lien balance |
-| **residual** | **24.9 percent** | the remainder |
+| GSE (agency) | **51.10 percent** | 6,694bn |
+| FHA | **12.57 percent** | 1,647bn |
+| bank portfolio | **11.45 percent** | 1,500bn, the DFAST implied first-lien balance |
+| **residual** | **24.88 percent** | the remainder, 3,259bn. Two decimals so the four shares sum to exactly 100.00; at one decimal four correct roundings summed to 100.1 |
 
 **The residual is treated as PRIVATE in full.** That is a stated choice and it is the
 conservative one for the sovereign claim, because any federal fraction inside the residual
@@ -1040,6 +1043,53 @@ fraction of the cash flow that DIRECTLY services it which is labour income. One 
 **If you disagree with the zero rule, say so, because it moves the headline by
 76 percent and nothing else moves it by more than 10.**
 
+#### 14.2a THE THIRTEEN CLASSES, enumerated, with the Z.1 series and the vintage
+
+**ADDED in the final analysis session, item 3.** The superseded text listed the zero-rule
+classes in prose and never enumerated the table, so the round two replicator built eleven
+classes, omitted `other_consumer` entirely and could not reproduce the Treasury level.
+
+**VINTAGE: Z.1 ANNUAL, 2025, the latest complete year.** Every level in this table is that
+vintage. This was stated only inside the sealed file, which a replicator is not supposed to
+open first.
+
+| # | class | Z.1 liability series | level bn | backing |
+|---|---|---|---|---|
+| 1 | home_mortgage | FL153165105 | 13,788.3 | 0.840223 |
+| 2 | credit_card | FL153166100 | 1,324.3 | 0.740 |
+| 3 | auto_loan | FL153166400 | 1,562.2 | 0.7737 |
+| 4 | student_loan | FL153166220 | 1,834.7 | 0.8832 |
+| 5 | **other_consumer** | **FL153166205** | **377.6** | **0.815554** |
+| 6 | multifamily_mortgage | FL103165405 + FL113165405 + FL313165403 | 2,448.7 | 0.72754 |
+| 7 | **treasury** | **FL313161105 + FL313169205** | **33,887.1** | **0.657788** |
+| 8 | state_local_debt | FL213162005 + FL213168003 + FL214141005 | 3,803.9 | 0.159338 |
+| 9 | corporate_bonds | FL103163005 | 8,075.3 | 0 by rule |
+| 10 | corporate_loans | FL103168005 + FL103169005 + FL103169100 | 3,903.7 | 0 by rule |
+| 11 | noncorporate_business_debt | FL113168005 + FL113169005 + FL113169535 + FL113167205 | 2,453.0 | 0 by rule |
+| 12 | commercial_mortgage | FL103165505 + FL113165505 + FL163165505 | 3,953.4 | 0 by rule |
+| 13 | corporate_equity | LM103164105 | 71,994.9 | 0 by rule |
+
+**The Treasury class is TWO series summed, and that is what a replicator cannot guess:**
+
+| series | description | 2025, mn |
+|---|---|---|
+| FL313161105 | Federal government; total **marketable** Treasury securities; liability | 30,069,641 |
+| FL313169205 | Federal government; total **nonmarketable** Treasury securities; liability | 3,817,450 |
+| | sum | **33,887,091 = 33,887.1bn** |
+
+What that definition includes, which was also never stated: **all marketable and all
+nonmarketable debt; Federal Reserve holdings in full**, because the monetary authority is a
+separate Z.1 sector; and **intragovernmental holdings only partly**, because Z.1
+consolidates the federal government sector so the trust funds' Government Account Series
+holdings net out. Three cross-checks at the same 2025 annual mean: Treasury gross federal
+debt (FRED GFDEBTN) 37,144.3bn, debt held by the public (FYGFDPUN) 29,769.5bn, Federal
+Reserve holdings outright (TREAST) 4,219.6bn. Our figure sits between the first two, which is
+where a consolidated measure must sit.
+
+**`other_consumer` carries a PROXY backing share**, the balance-weighted mean of the card,
+auto and student working-core shares, because no separate survey measure exists for this
+residual. Flagged as a proxy wherever it appears.
+
 ### 14.3 Holders, and the two legs of the sovereign
 
 Ultimate holder, so **agency and GSE mortgage pools, the GSEs and the central bank count
@@ -1138,14 +1188,15 @@ specification on R squared will select the circular one on either window, and th
 be making an arithmetic error; they will be making a mechanism error. Say which you chose and
 why.
 
-The full coefficients:
+**The coefficients are NOT printed here.** They were, in the superseded version, and the
+section 1 full-sample fit is itself a sealed value, so this appendix was handing a replicator
+three sealed values in advance. The round two replicator raised that before opening the
+sealed file and declined to use them. Removed in the final analysis session, item 5.4.
 
-| Window | specification | intercept | slope |
-|---|---|---|---|
-| full | prime-age nonemployment | 1.22798 | -0.02749 |
-| full | unemployment rate | 0.80901 | -0.03043 |
-| post-2008 | prime-age nonemployment | 1.17818 | -0.02541 |
-| post-2008 | unemployment rate | 0.77942 | -0.02784 |
+The argument above does not need the coefficients: it rests entirely on the R squared
+comparison, which is printed. **The fourteen DWS y values are published in section 1
+instead**, so a replicator can fit either specification themselves, which is what the round
+two replicator asked for.
 
 The related claim in version 1's error table, that the circular fit gives "a speed limit about
 2.5 times larger", is **withdrawn**: the slope ratio between the two specifications is

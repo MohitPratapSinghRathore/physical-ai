@@ -1,0 +1,77 @@
+{
+  "fit": {
+    "intercept": 1.2279753939570808,
+    "slope": -0.027490328792045014,
+    "nonemp0": 19.310919999999996,
+    "rho_obs_lo": 0.49,
+    "rho_obs_hi": 0.74,
+    "nonemp_obs_lo": 18.272409999999994,
+    "nonemp_obs_hi": 24.70612
+  },
+  "pole_at_d_emp": 0.6761418073753354,
+  "pole_in_wage_bill_terms": {
+    "embodied": 0.45903267302711515,
+    "cognitive_GPT": 0.8110997121274522,
+    "cognitive_AIOE": 1.017390577557667
+  },
+  "observed_rho_range": [
+    0.49,
+    0.74
+  ],
+  "extrapolation_band": [
+    0.0,
+    0.49
+  ],
+  "scenario_axis_status_counts": {
+    "inside": 77,
+    "outside_range": 24,
+    "no_solution": 4
+  },
+  "dose_grid_status_counts": {
+    "inside": 8,
+    "outside_range": 5,
+    "no_solution": 2
+  },
+  "plausibility_checks": [
+    {
+      "check": "rho in [0, 1]",
+      "where": "scenario axis, clamped",
+      "n": 101,
+      "violations": 0,
+      "worst": null,
+      "passes": true
+    },
+    {
+      "check": "rho in [0, 1]",
+      "where": "scenario axis, raw fixed point",
+      "n": 101,
+      "violations": 6,
+      "worst": -3.948922039400033,
+      "passes": false
+    },
+    {
+      "check": "rho in [0, 1]",
+      "where": "dose grid, clamped",
+      "n": 13,
+      "violations": 0,
+      "worst": null,
+      "passes": true
+    },
+    {
+      "check": "rho in [0, 1]",
+      "where": "dose grid, raw fixed point",
+      "n": 13,
+      "violations": 2,
+      "worst": -3.020845263757024,
+      "passes": false
+    },
+    {
+      "check": "rho in [0, 1]",
+      "where": "reported bands",
+      "n": 240,
+      "violations": 0,
+      "worst": null,
+      "passes": true
+    }
+  ]
+}

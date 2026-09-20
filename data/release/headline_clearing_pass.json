@@ -1,0 +1,43 @@
+{
+  "counts": {
+    "STANDING": 10,
+    "REPLICATED": 9,
+    "SCENARIO": 5,
+    "REMOVED": 5
+  },
+  "headline_set_size": 24,
+  "removed": [
+    {
+      "id": "incidence_count_spread",
+      "claim": "Incidence moves household counts by 5 to 9 percent, so the count figures are robust to it",
+      "basis": "NOT REPRODUCIBLE. The replicator's most natural reading of case (c) gives a spread of 59 percent, which removes the robustness the claim rests on. The brief does not say which reading is intended. Until it does, the sentence must not be published"
+    },
+    {
+      "id": "rho_50pct",
+      "claim": "The reemployment rate at the 50 percent dose",
+      "basis": "THERE IS NO SUCH NUMBER. Item 2: at a 50 percent dose no exposure type has a fixed point inside the observed range of rho, and the embodied group has no admissible fixed point at all. Only the band 0 to 0.49 can be reported"
+    },
+    {
+      "id": "hedge_ratio_at_operative",
+      "claim": "Share of the federal wage loss hedged at the operative tau_k",
+      "basis": "the input `surplus` is UNDEFINED in the brief. The replicator computed 0.5447 from a self-consistent reading that satisfies our own stated check, and back-solving from 0.36 implies a surplus we never defined. Insufficiency I-12. Cannot be a headline until `surplus` is defined"
+    },
+    {
+      "id": "quintile_labour_backed_Q1",
+      "claim": "Bottom-quintile labour-backed claims per wage dollar",
+      "basis": "the replicator's independent rebuild lands at 1.21 to 1.64, a factor of 2.5 to 3.4 away. The universe and normalisation of this object are defined nowhere in the brief. The Q5 figure is within 13 to 18 percent and survives; Q1 does not"
+    },
+    {
+      "id": "exposure_index_scores",
+      "claim": "The two cognitive index scores by occupation",
+      "basis": "eleven mismatches, the replicator's largest unexplained cluster, running in OPPOSITE directions on the two indices so it is not a single weighting error. Two strong controls pass, so the wage machinery is right and the index scores are not settled. Cannot be a headline until the occupation-level index table is published and checked"
+    }
+  ],
+  "limitations": [
+    "L1: Off-balance-sheet and GPU-backed AI financing is unmeasured",
+    "L2: Capital gains receipts are unsourced",
+    "L3: The labour backing ratio's novelty is 'none located', pending a systematic search",
+    "L4: The holder proxy residual",
+    "L5: Effective labour tax rates by income are not taken from CBO"
+  ]
+}
