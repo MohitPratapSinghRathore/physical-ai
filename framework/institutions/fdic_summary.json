@@ -1,0 +1,37 @@
+{
+  "source": "FDIC BankFind Suite public API, banks.data.fdic.gov/api/financials",
+  "report_date": "20260630",
+  "retrieved": "2026-09-20",
+  "n_institutions_financials": 4313,
+  "n_institutions_matched": 4221,
+  "total_assets_bn": 26753.0,
+  "total_tier1_bn": 2332.3,
+  "total_net_loans_bn": 13854.9,
+  "loans_by_category_bn": {
+    "LNRERES": 2956.3,
+    "LNREMULT": 670.3,
+    "LNRENRES": 1951.9,
+    "LNRECONS": 458.9,
+    "LNREAG": 124.4,
+    "LNCI": 2617.7,
+    "LNCRCD": 1189.6,
+    "LNAUTO": 551.9,
+    "LNCONOTH": 320.4
+  },
+  "size_class_counts": {
+    "community (under 1bn)": 3246,
+    "midsize (1 to 10bn)": 902,
+    "regional (10 to 100bn)": 133,
+    "large (100 to 700bn)": 26,
+    "largest (over 700bn)": 6
+  },
+  "business_model_counts": {
+    "diversified": 2674,
+    "commercial real estate heavy": 785,
+    "mortgage portfolio lender": 702,
+    "C and I heavy": 109,
+    "auto-heavy": 25,
+    "card-heavy": 18
+  },
+  "KNOWN_GAP": "LNRERES combines first-lien and home equity; the API exposes no revolving open-end split, so the two cannot be separated from this source. Treated as one residential book and recorded as a limitation."
+}

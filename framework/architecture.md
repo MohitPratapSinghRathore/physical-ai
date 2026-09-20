@@ -117,7 +117,7 @@ not, the row says what would make it computable rather than guessing.
 | 6 | Federal government holds 97.3 pct of the student book **[R]** and student labour backing is 0.8832 **[M]** | Student loan system (Education, servicers) | Income-driven repayment with an automatic displacement trigger; the claim already flexes with income | contract | Income-Driven Repayment is established US law, 20 USC 1087e(e). This instrument already exists and needs only a trigger | Recent graduate unemployment **5.6 pct**, underemployment **42.0 pct**; employment gap for workers aged 22 to 25 in AI-exposed occupations **19 pct below counterfactual and widening** | all regimes, and it is the CHEAPEST row here because the instrument exists | Converts a default loss into a deferred claim. The book is already 97.3 pct federal, so this moves timing, not incidence |
 | 7 | Auto is the one household credit channel with a real pathway-specific contrast: A31 adjusted +13.39, t = 3.50 **[M]** | Auto lenders and ABS investors; supervisors for the bank-held slice | Displacement-contingent payment holiday in auto contracts; ABS documentation that anticipates it | contract | CARES Act forbearance is the model; auto has no statutory analogue, so this is contractual rather than legislative | Auto loan balance 90+ days delinquent **5.49 pct** | larger and sudden displacement | Removes the auto component of first-round private loss. Sized in the dose-response table |
 | 8 | Demand leads the other channels in **20 of 27 grid cells**, 0.7407 exactly **[R]**. SEPARATELY and with a different status: roughly **nine tenths of bank losses arrive through the second round** rather than through displaced borrowers' own loans, and second-round bank losses span 173 to 1,565bn, both **[S]**. The two are different quantities and the earlier text merged them | Bank supervisors and the central bank | An automation scenario in the supervisory stress test, routed through spending, house prices and business credit, reported as a BAND | buffer | The Federal Reserve's 2026 Dodd-Frank Act stress test is the existing vehicle; the climate scenario analysis pilot is the precedent for adding a non-traditional scenario | Aggregate CET1 **12.8 pct** falling to a minimum of **11.2 pct** under the Fed severely adverse scenario; all 32 banks above minimums | larger and sudden displacement | Not a closure. It makes the exposure visible and prices the buffer |
-| 9 | Bank C and I commitments to AI-adjacent industries 450bn, 13 pct of total commitments, 25 pct of tier 1 committed **[M]** | Bank supervisors | Concentration limits or a supervisory add-on for AI-linked lending | buffer | 12 CFR 32, the national bank lending limit, is the existing concentration instrument | **450bn, 13 pct of commitments**, no threshold set | the AI-fails case above all; also larger displacement | Reduces the correlated loss where a holder is on BOTH legs. That is the hedge failure population |
+| 9 | Bank C and I commitments to AI-adjacent industries 450bn, 13 pct of total commitments, 25 pct of tier 1 committed **[M]**. MODULE A: C and I heavy banks breach at 33.0 pct at a 50 pct dose, and card-heavy at 77.8 pct, so the AI-lending concentration sits on models that are already the most wage-exposed | Bank supervisors | Concentration limits or a supervisory add-on for AI-linked lending | buffer | 12 CFR 32, the national bank lending limit, is the existing concentration instrument | **450bn, 13 pct of commitments**, no threshold set | the AI-fails case above all; also larger displacement | Reduces the correlated loss where a holder is on BOTH legs. That is the hedge failure population |
 | 10 | The exposure is unpriced and uniformly spread, so the system in aggregate cannot rotate out of it **[M]**. The flat debt-service result is partly mechanical because underwriting caps DTI | Bank supervisors, statistical agencies | **NOT wholesale mortgage underwriting change.** Instead: disclosure of occupational exposure concentration at portfolio level | statistics | HMDA (12 CFR 1003) is the existing portfolio-disclosure vehicle | County at-risk-rate dispersion, p99/p1 | larger displacement only | Not a closure. See the fair lending constraint in section 6 |
 | 11 | Prime-age nonemployment 19.31 against an observed maximum of 24.71, and rho has no point estimate outside [0.49, 0.74] **[M]** | Statistical agencies (BLS, Census, BEA) | Measure reemployment, destination wages and never-hired entry directly and at higher frequency | statistics | The Displaced Worker Survey exists biennially; the instrument is frequency and destination detail, not a new survey | Prime-age nonemployment **19.31**, threshold **24.71**, **INSIDE** | all regimes; it is the precondition for every trigger below | **The binding constraint on this whole architecture.** Item 2 shows the reemployment rate has no admissible estimate past a 45.9 pct embodied dose |
 | 12 | India-type case: AI capital imported, surplus accrues abroad, so domestic tau_k is effectively lower **[M, open-economy derivation]**; 20-year emerging-market debt baseline 376.7 pct **[R]** | Emerging-market fiscal authorities; IMF surveillance | Source-based taxation of imported AI services; reserve and debt-path buffers built before the dose | tax | The OECD/G20 Inclusive Framework Pillar One and Pillar Two are the existing source-taxation instruments | Emerging-market baseline **376.7 pct of GDP over 20 years** | all regimes, and it binds HARDEST because the instruments above are unavailable | Not computable for these economies: B6 finds the ratio not computable to a publishable standard for India |
@@ -352,41 +352,79 @@ standing structural exposure whatever the dose.
 
 ---
 
-## 6. Banks and lenders
+## 6. Banks and lenders, REWRITTEN FROM MODULE A
 
-### What the evidence supports **[M]**
+Superseded: the previous version of this section reasoned from system aggregates and paired
+each household exposure with a household-facing instrument. **Module A tested that at
+institution level across 4,313 banks and 4,299 credit unions and it does not hold.** Full
+result: `notes/GATE_REPORT_module_A.md`.
 
-1. **An automation scenario in supervisory stress tests, routed through spending, house
-   prices and business credit, and reported as a band.** Demand leads the other channels in
-   **20 of 27 grid cells, 0.7407 exactly [R]**. Separately, and with a different status,
-   roughly **nine tenths of bank losses arrive through the second round [S]**. A scenario
-   routed through household default alone measures the wrong tenth. The band is **173bn to
-   1,565bn [S]**, a factor of nine, and reporting a point estimate inside that band would be
-   false precision.
-2. **AI-lending concentration limits.** 450bn of C and I commitments, 13 percent of the
-   total, 25 percent of tier 1 capital committed. This is the failure-state indicator and it
-   identifies the holders who sit on both legs.
-3. **Displacement-contingent payment clauses**, in auto contracts and in ABS documentation.
-4. **Auto and student exposure specifically.** Auto is the one pathway-specific household
-   credit contrast that survives controlling for pay (A31, adjusted +13.39, t = 3.50).
-   Student is 97.3 percent federal **[R]** and already has the contingent instrument.
+### 6.0 The finding that reorganises this section
 
-### What the evidence does NOT support **[M]**
+**Household-facing instruments cannot protect bank capital.** Forbearance, income-driven
+repayment and wage insurance, all together, remove **under 10 percent of system losses at
+every displacement level**: 9.61 percent at 10 percent, 8.91 at 25, 7.59 at 50.
+
+The reason is structural. These instruments act on the FIRST round, displaced borrowers
+defaulting on their own loans. At the 10 percent dose that is about 27bn of a 205bn total.
+**The other 178bn is the second round**, arriving through spending, house prices and business
+credit from people who were never displaced. Eliminating household default entirely would
+remove at most about a seventh.
+
+> **Therefore: judge rows 5, 6 and 7 on household outcomes, not on bank capital. Judged on
+> bank capital they are close to useless. What protects bank capital is an instrument that
+> acts on the second round, on demand, or on the buffer itself.**
+
+Enhanced wage insurance costs **314bn to remove 12.9bn of bank losses** at the 10 percent
+dose. That ratio is absurd as bank protection and is the point of the programme as income
+protection. **The paper states which reading applies.**
+
+**But the instruments do reshape the distribution, and that is the case for them.** At the 25
+percent dose the combined package takes assets in breach from **4.02 to 1.48 percent** and
+stops **123 institutions** breaching; at 50 percent it stops 547. **They change who fails,
+not how much is lost.**
+
+### 6.1 What each TYPE of institution should change, tied to its measured exposure
+
+| institution type | measured exposure | what it should change | what the evidence does NOT support |
+|---|---|---|---|
+| **Card-heavy lenders** (18 banks, 1,257.6bn) | **The most exposed model by a distance: 38.9 pct breach at a 25 pct dose, 77.8 pct at 50** | Hold capital against the card book explicitly for a displacement scenario; card losses are 17.1 pct in the Fed's own severely adverse test and this shock is larger on that book | Any claim that this is a tail risk. It is the first model to break and it breaks inside the range the paper models |
+| **Credit unions** (4,299, 2,522.6bn) | **The only class showing stress at the 10 pct dose**, 1.12 pct of them; 28.1 pct at 50 | Recognise the concentration: a book that is almost entirely household credit has no C and I or commercial real estate to dilute a wage shock. NCUA stress expectations should reflect that | Treating them as small and therefore safe. They are undiversified by design, not by accident |
+| **Large and regional banks** | 23.1 and 15.0 pct breach at 50 pct; **0.0 pct at 10 pct** | The supervisory scenario in row 8, routed through the second round | That household underwriting change helps them. It does not: their exposure is the second round |
+| **Community banks** (3,246, 1,064.2bn) | 4.0 pct at 50 pct, near zero below | Nothing specific. They are not the exposed population | Imposing the same requirements as on card-heavy lenders |
+| **Auto lenders and ABS investors** | 36.0 pct breach at 50 pct; auto is the one pathway-specific household contrast that survives pay controls | Displacement-contingent payment clauses in contracts and ABS documentation | Wholesale change at moderate displacement: 0.0 pct breach at 25 pct |
+| **Mortgage portfolio lenders** (702, 522.0bn) | **Among the LEAST exposed: 0.1 pct at 25 pct, 3.9 pct at 50** | Portfolio disclosure of occupational concentration, per row 10 | **Underwriting change of any kind.** This is now measured at institution level and it closes the question the retired claim left open |
+| **Housing agencies** | Section 5; zero Treasury draw at any dose | Pre-authorised forbearance and enhancement on the unenhanced book | Recapitalisation |
+| **Insurers** (820.6bn labour-backed held) | Holders on both legs; matched long liabilities | Report the AI-linked and wage-linked holdings together, because the hedge failure applies to them | Forced-sale style rules. They hold to maturity against matched liabilities |
+| **Private credit** (inside 6,186.9bn other-financial, an UPPER bound) | Cannot be separated from the Z.1 aggregate | Disclosure sufficient to separate it. **This is a measurement instrument, not a prudential one** | Any sizing claim. We do not know the number |
+| **Pension funds** (444.6bn held) | Contributions are a share of covered payroll; benefits are nominally fixed | Report the funding gap against a displacement path, not only against asset returns | Treating this as an asset-return problem |
+| **State and local governments** | **424.1bn of wage-linked income tax, 15.93 pct of own tax receipts**, under a balanced-budget constraint in every state but Vermont | Build the rainy day fund against a wage-displacement path specifically | Assuming the federal pattern. **Their procyclical spending cut feeds the second round, and that loop is NOT in our engine** |
+| **Bank supervisors and the central bank** | Second round is nine tenths of the bank channel **[S]**; demand leads in 20 of 27 cells **[R]** | The automation scenario of row 8, routed through spending, house prices and business credit, reported as a band. Plus AI-lending concentration limits, row 9 | A scenario routed through household default. It measures the wrong seventh |
+
+### 6.2 The earnings offset, which is the largest single sensitivity
+
+Every figure above is struck with losses hitting capital directly. **Allowing one year of
+annualised net income to absorb losses first cuts the asset share in breach at the 50 percent
+dose from 28.2 to 9.9 percent.** Both are reported everywhere; neither is "the" answer. A
+supervisor reading only the first number would over-tighten, and one reading only the second
+would assume earnings survive a scenario that is partly about earnings.
+
+### 6.3 What the evidence does NOT support, unchanged in substance and now measured
 
 **Wholesale changes to household mortgage underwriting at moderate displacement.** Three
-measured reasons:
+measured reasons, the third new from Module A:
 
-- The flat debt-service-to-income result is **partly mechanical**: underwriting caps DTI, so
-  proportionality is produced by construction and cannot be presented as a discovery.
-- Embodied households are **LESS indebted on seven of twelve debt measures** (A31), and the
+- The flat debt-service-to-income result is **partly mechanical**: underwriting caps DTI.
+- Embodied households are **less indebted on seven of twelve debt measures** (A31), and the
   unsecured concentration result is null.
-- **The retired claim.** "Occupational diversification does not hedge a mortgage book" is
-  withdrawn. A flat distribution does not stop an individual lender from selecting
-  low-exposure borrowers. What survives is that the risk is **unpriced and uniformly spread,
-  so the system in aggregate cannot rotate out of it**, which is an argument for disclosure,
-  not for underwriting.
+- **Mortgage portfolio lenders are among the least exposed institution types**, 0.1 percent
+  breaching at a 25 percent dose against 38.9 percent of card-heavy banks.
 
-### The fair lending constraint, now legally sourced
+**The retired claim stays retired.** "Occupational diversification does not hedge a mortgage
+book" is withdrawn. What survives is that the risk is unpriced and uniformly spread, so the
+system in aggregate cannot rotate out of it, which is an argument for disclosure.
+
+### The fair lending constraint, legally sourced
 
 The project brief made this binding: the claim does not enter the paper without ECOA, Fair
 Housing Act and disparate impact sourcing. **It had never been sourced. It is now, and the
@@ -484,6 +522,7 @@ Rule (a) of the instruction. These were considered and are not in the table.
 | General unsecured-credit instruments | **Rule 2.** The unsecured concentration result is null |
 | Occupation-based underwriting or pricing rules | Rests on the **retired** claim that occupational diversification does not hedge a mortgage book, and collides with the fair lending analysis in section 6. Replaced by row 10, disclosure |
 | The trigger dashboard as a contribution | **Priority claim dropped** in the related-work audit. An indicator list is not a research contribution and both the IMF note and the Windfall Trust report effectively propose monitoring. The dashboard stays as an artifact and is used above; it is not claimed as novel |
+| Pairing every household exposure with a household-facing instrument to protect banks | **REJECTED BY MODULE A.** All such instruments together remove under 10 pct of system losses at every dose, because they act on the first round and the bank channel is the second. They are kept in the table, judged on HOUSEHOLD outcomes, and the architecture no longer implies they protect bank capital |
 | Any instrument sized on the hedge ratio at the operative tau_k (0.36) | **REMOVED by the clearing pass.** Its input, `surplus`, is undefined in the brief; the replicator computed 0.5447 from a self-consistent alternative reading. **No instrument may be sized on it until `surplus` is defined** |
 
 ---

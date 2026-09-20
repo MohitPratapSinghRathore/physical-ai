@@ -1,0 +1,16 @@
+{
+  "source": "NCUA quarterly Call Report data, 2026-06 cycle",
+  "file": "ncua_2026-06.zip",
+  "n_credit_unions": 4299,
+  "total_assets_bn": 2522.7,
+  "total_net_worth_bn": 288.3,
+  "loans_bn": {
+    "residential_first_lien": 651.0,
+    "residential_junior_lien": 189.5,
+    "auto": 489.7,
+    "credit_card": 87.7,
+    "other_unsecured": 71.6
+  },
+  "net_worth_ratio_system": 0.1143,
+  "note": "Credit unions report the junior-lien (home equity) split separately, which the FDIC API does not expose for banks."
+}
