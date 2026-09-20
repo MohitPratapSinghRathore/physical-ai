@@ -1,0 +1,19 @@
+\begin{tabular}{p{2.2cm}p{3.5cm}p{2.6cm}p{2.4cm}p{3.0cm}}
+\toprule
+Class & Numerator & Denominator & Source & Proxy assumption and alternative \\
+\midrule
+Home mortgage & mortgage service paid by households with an employed member aged 25 to 64 & mortgage service paid by all households & American Community Survey 2023 & who pays the service stands in for what income pays it. Alternative: 0.8104 (wage share of servicing income) \\
+Credit card & card balances owed by working-core households & card balances owed by all households & Survey of Income and Program Participation 2025 & who owes stands in for what income services the balance. Alternative: 0.7302 (wage share of servicing income) \\
+Auto loan & vehicle loan balances owed by working-core households & vehicle loan balances owed by all households & Survey of Income and Program Participation 2025 & who owes stands in for what income services the balance. Alternative: 0.7783 (wage share of servicing income) \\
+Student loan & student loan balances owed by working-core households & student loan balances owed by all households & Survey of Income and Program Participation 2025 & who owes stands in for what income services the balance. Alternative: 0.8822 (wage share of servicing income) \\
+Other non-revolving consumer credit & balance-weighted mean of the card, auto and student coefficients & the same three classes & derived from the three above & the residual consumer class is assumed to resemble the three measured ones \\
+Multifamily mortgage & gross rent paid by households with an employed member aged 25 to 64 & gross rent paid by all renter households & American Community Survey 2023 & rent is assumed to service the mortgage on the building one for one. Alternative: acs_a38_definition=0.69913 \\
+Treasury debt & social insurance contributions in full plus the wage share of the individual income tax & federal current receipts & national accounts and Statistics of Income & receipts composition stands in for the composition of debt service \\
+State and local debt & the wage-linked share of state and local own receipts & state and local own receipts & national accounts and Statistics of Income & as for Treasury debt \\
+Corporate bonds, nonfinancial corporate & zero by the one-step rule & n/a & convention & business revenue is not traced further. Alternative: one_step_traced_to_demand=see B2, never blended \\
+Corporate loans, nonfinancial corporate & zero by the one-step rule & n/a & convention & business revenue is not traced further. Alternative: one_step_traced_to_demand=see B2, never blended \\
+Nonfinancial noncorporate business loans & zero by the one-step rule & n/a & convention & business revenue is not traced further. Alternative: one_step_traced_to_demand=see B2, never blended \\
+Commercial mortgages, excluding multifamily & zero by the one-step rule & n/a & convention & rent from business tenants is not traced further. Alternative: one_step_traced_to_demand=see B2, never blended \\
+Corporate equities, nonfinancial corporate & zero by the one-step rule & n/a & convention & excluded from the debt-only denominator in any case. Alternative: one_step_traced_to_demand=see B2, never blended \\
+\bottomrule
+\end{tabular}

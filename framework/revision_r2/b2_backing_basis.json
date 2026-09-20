@@ -1,0 +1,51 @@
+{
+  "status": "MEASURED from the survey; the mapping to claim classes and the proportional-servicing assumption are stated assumptions.",
+  "definitions": {
+    "coverage_share_published_basis": "share of the class's balances owed by working-core households, which is who owes rather than which income services the debt",
+    "wage_share_of_servicing_income": "debt-weighted share of total household income that is wages, among households owing the class, which is what the paper's definition asks for"
+  },
+  "plausibility_bounds_checked": [
+    "both quantities in [0, 1] for every class, asserted in code",
+    "per-household wage ratio clipped to [0, 1] before weighting",
+    "wage share computed only over households with positive income and balance"
+  ],
+  "households_weighted_millions": 134.98,
+  "by_class": [
+    {
+      "claim_class": "credit_card",
+      "coverage_share_published_basis": 0.739784,
+      "wage_share_of_servicing_income": 0.730185,
+      "wage_share_within_working_core": 0.893768,
+      "difference_wage_minus_coverage": -0.009598,
+      "weighted_balances_bn": 536.5,
+      "debtor_households_millions": 51.46
+    },
+    {
+      "claim_class": "auto_loan",
+      "coverage_share_published_basis": 0.776132,
+      "wage_share_of_servicing_income": 0.778349,
+      "wage_share_within_working_core": 0.915755,
+      "difference_wage_minus_coverage": 0.002217,
+      "weighted_balances_bn": 893.9,
+      "debtor_households_millions": 39.51
+    },
+    {
+      "claim_class": "student_loan",
+      "coverage_share_published_basis": 0.883073,
+      "wage_share_of_servicing_income": 0.882183,
+      "wage_share_within_working_core": 0.952392,
+      "difference_wage_minus_coverage": -0.00089,
+      "weighted_balances_bn": 1157.8,
+      "debtor_households_millions": 23.49
+    },
+    {
+      "claim_class": "home_mortgage",
+      "coverage_share_published_basis": 0.823269,
+      "wage_share_of_servicing_income": 0.810358,
+      "wage_share_within_working_core": 0.921959,
+      "difference_wage_minus_coverage": -0.012911,
+      "weighted_balances_bn": 10347.6,
+      "debtor_households_millions": 48.1
+    }
+  ]
+}

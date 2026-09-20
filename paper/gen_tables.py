@@ -521,6 +521,31 @@ def tab_removed():
 
 
 
+def tab_bridge():
+    """B1: from income sources to backing coefficients, one row per claim class."""
+    rs = rows("data/release/revision_r2/b1_bridge.csv")
+    short = {"Home mortgages, one to four family": "Home mortgage",
+             "Revolving consumer credit": "Credit card",
+             "Consumer credit, automobile loans": "Auto loan",
+             "Consumer credit, student loans": "Student loan",
+             "Other consumer credit": "Other consumer",
+             "Multifamily residential mortgages": "Multifamily mortgage",
+             "Treasury securities": "Treasury debt",
+             "State and local government debt": "State and local debt"}
+    lines = [r"\begin{tabular}{p{2.2cm}p{3.5cm}p{2.6cm}p{2.4cm}p{3.0cm}}", r"\toprule",
+             r"Class & Numerator & Denominator & Source & Proxy assumption and alternative \\",
+             r"\midrule"]
+    for r in rs:
+        label = short.get(r["label"], r["label"])
+        alt = r["alternative_estimate"]
+        proxy = r["proxy_assumption"]
+        cell = proxy if alt in ("n/a", "") else proxy + ". Alternative: " + alt
+        lines.append(" & ".join([label, r["numerator"], r["denominator"], r["source"],
+                                 cell]) + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_bridge.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -541,3 +566,4 @@ if __name__ == "__main__":
     tab_tiers()
     tab_instruments()
     tab_removed()
+    tab_bridge()

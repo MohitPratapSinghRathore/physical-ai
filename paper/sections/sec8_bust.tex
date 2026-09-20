@@ -71,32 +71,29 @@ concentration that makes the capital tax base hard to reach makes the wealth cha
 caveats: that propensity is sourced and checked against two episodes rather than estimated here,
 and the output path does not feed bank-channel damage back into itself.
 
-\subsection{The payoff by holder, and what a holdings table cannot show}
+\subsection{Composition, and why we do not net the two sides}
 
-Figure~\ref{fig:payoff} scores each holder by its share of the two sides and reports the net
-position in three outcomes. Only the federal government and banks lose in every column; everyone
-else holds enough of the AI side to offset what they lose on the wage side if AI succeeds.
-Households in particular hold \result{HouseholdsAISide} percent of the AI side against six percent
-of the wage side, gaining \result{HouseholdPayoffSuccess} under success where the federal
-government loses \result{FedPayoffSuccess}.
+A reader will want a single number per holder: what it gains or loses across the two states. We
+do not report one, and the reason is worth stating rather than working around. Netting requires a
+dollar base on each side. The wage side has one, the measured claim stock of
+Section~\ref{sec:accounts}. The AI side does not: its equity tier is a swept scenario share of
+corporate equity rather than a measurement, and its debt tier is a lower bound from company
+filings. Differences between shares of two differently sized and differently observed pools are
+not gains, losses or offsets, and we do not describe them as such.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.82\textwidth]{fig6_payoff.pdf}
-\caption{Net position of each holder across three outcomes, scored on holdings. The wage side is
-measured; the AI side is a lower bound built from on-balance-sheet filings, so positions in the
-AI-fails column are correspondingly bounded. A holdings score cannot see a tax claim, which is why
-the federal row understates the state's fiscal position.}
-\label{fig:payoff}
-\end{figure}
+What can be said is a composition contrast, and Figure~\ref{fig:holders} already carries it. The
+federal government is the largest single holder or guarantor on the wage side and close to absent
+on the AI side. Households are the reverse, holding \result{HouseholdsAISide} percent of the
+observed AI side against six percent of the wage side. Banks hold
+\result{BanksAISide} percent of the AI side against eighteen percent of the wage side. Those are
+statements about where each pool sits, not about anyone's net position.
 
-The figure understates the federal position in the first column, and the reason matters more than
-the figure. It scores holders by what they hold, so a government holding about
-\result{AIFederalShareRounded} percent of the AI side scores as barely exposed when AI fails, at
-\result{FedPayoffFails}. But federal receipts fall \result{BustReceiptsLow} to
-\result{BustReceiptsHigh} billion dollars in exactly that case. The state's claim on AI capital
-income is fiscal rather than proprietary: it is the capital tax of Section~\ref{sec:fiscal}, not a
-portfolio, and a table scored on holdings cannot see it.
+One consequence of the same point runs the other way, and it matters for the federal row. A
+composition contrast scored on holdings cannot see a tax claim at all, and the state's claim on AI
+capital income is fiscal rather than proprietary: it is the capital tax of
+Section~\ref{sec:fiscal}. Federal receipts fall \result{BustReceiptsLow} to
+\result{BustReceiptsHigh} billion dollars if AI capital income falls, and none of that appears in
+a holdings comparison.
 
 \subsection{Two directions, two tax bases}
 

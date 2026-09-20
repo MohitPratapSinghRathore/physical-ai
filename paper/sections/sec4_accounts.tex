@@ -56,6 +56,44 @@ the home mortgage and multifamily coefficients were rebuilt independently.}
 \input{tables/tab_claim_classes.tex}
 \end{table}
 
+Each coefficient is a ratio of two measured quantities with a proxy assumption between them, and
+Table~\ref{tab:bridge} sets out all three for every class, together with an alternative estimate
+where one exists. One consolidation rule applies throughout and is worth stating on its own,
+because it decides what the holder map means. A claim is assigned to the party that bears the
+credit risk rather than to the party holding legal title: an agency-guaranteed mortgage sits
+inside a security owned by a pension fund or a foreign investor, but the credit loss falls on the
+guarantor, so the claim is federal. A loan sold into a private securitization carries no such
+guarantee and is assigned to the holders of the securities. Treasury debt is assigned by the
+income that services it rather than by who owns the paper, which is the receipts convention above.
+The one place the rule cannot be applied from the data is the private mortgage remainder, which is
+an arithmetic residual treated as private in full.
+
+\begin{table}[htbp]
+\centering\footnotesize
+\caption{From income sources to backing coefficients: the numerator, the denominator, the source
+and the proxy assumption for each class, with an alternative estimate where one exists. Measured;
+the proxy assumptions are stated assumptions.}
+\label{tab:bridge}
+\input{tables/tab_bridge.tex}
+\end{table}
+
+\paragraph{What the household coefficients measure, and the alternative.} The four household
+coefficients are coverage shares: the share of a class's balances owed by, or of mortgage service
+paid by, households with an employed member aged 25 to 64. That is a statement about who owes
+rather than about which income services the debt, and the definition asks for the second. We
+therefore compute it directly, as the debt-weighted share of total household income that is wages
+among the households owing each class, and adopt it as the headline basis because it is what the
+definition says. The two agree closely. The largest move is the mortgage coefficient, from
+\result{MortgageCoverage} on the coverage basis to \result{MortgageWageShare} on the wage basis;
+cards move from \result{CardCoverage} to \result{CardWageShare} and student debt from
+\result{StudentCoverage} to \result{StudentWageShare}. Every headline built on them survives the
+change: the debt-only direct ratio is \result{DebtOnlyDirectCoverageBasis} percent on the first
+basis and \result{DebtOnlyDirectWageBasisOneDP} on the second, the federal exposure share is
+\result{SovereignUnionCoverageBasis} and \result{SovereignUnionWageBasis} percent, and the
+quintile gradient changes level by a common factor while its shape, which is what we report, is
+identical. The agreement is a fact about these data rather than a justification of the coverage
+construction, and the definitional basis is the one adopted.
+
 \subsection{Two conventions, stated because they are contestable}
 
 \paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is
@@ -179,8 +217,15 @@ contributes nothing to our total.
 
 The federal share of that side is \result{AIFederalShareLow} to \result{AIFederalShareHigh}
 percent across a threefold variation in the assumed scale, about
-\result{AIFederalShareRounded} percent at the central value. Because the unmeasured tier would
-enlarge the denominator, the level is a lower bound and the share an upper bound.
+\result{AIFederalShareRounded} percent at the central value. The level is a lower bound, since
+the unmeasured tier would enlarge it. The share is an upper bound only under a stated assumption:
+that the federal government's share of the omitted assets does not exceed its share of the
+observed ones. That is plausible because the omitted financing is private credit, securitizations
+and vendor finance, which the federal sector holds and guarantees far less of than it does the
+claims it already holds here, but it is an assumption and not a measurement. If instead the
+federal share of the omitted assets equalled its share of the observed ones, the federal share of
+the whole AI side would stay at about \result{AIFederalShareRounded} percent rather than falling
+below it.
 Figure~\ref{fig:holders} puts the two sides beside each other.
 
 What the comparison does and does not say is worth stating carefully, because the two numbers are

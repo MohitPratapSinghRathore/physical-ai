@@ -206,25 +206,47 @@ def fig_breach():
     finish(fig, "fig5_breach.pdf")
 
 
-def fig_payoff():
-    rs = rows("data/release/ai_bust/b4_payoff_by_holder.csv")
-    rs = sorted(rs, key=lambda r: float(r["net_success"]))
-    names = [HOLDER_NAME[r["holder"]] for r in rs]
-    cols = [("net_ai_fails", "AI fails"), ("net_partial", "Partial"),
-            ("net_success", "AI succeeds")]
-    fig, ax = plt.subplots(figsize=(6.3, 3.8))
-    w = 0.26
-    for j, (key, lab) in enumerate(cols):
-        vals = [float(r[key]) for r in rs]
-        ax.barh([i + (j - 1) * w for i in range(len(rs))], vals, height=w,
-                color=GREY[j], edgecolor="black", lw=0.5, hatch=HATCH[j], label=lab)
-    ax.axvline(0, color="black", lw=0.8)
-    ax.set_yticks(range(len(rs)))
-    ax.set_yticklabels(names)
-    ax.set_xlabel("Net position, scored on holdings")
-    ax.legend(loc="lower right", fontsize=8)
-    ax.grid(axis="y", visible=False)
-    finish(fig, "fig6_payoff.pdf")
+def fig_boundary():
+    """The fiscal balance over the retained wage share and the pass-through coefficient."""
+    import numpy as np
+    c = load("data/release/revision_r2/c_jurisdiction_boundary.json")
+    juris = c["C1_jurisdiction"]
+    Rs = np.linspace(0.0, 1.0, 201)
+    gs = np.linspace(0.25, 4.0, 201)
+    RR, GG = np.meshgrid(Rs, gs)
+
+    fig, ax = plt.subplots(figsize=(6.3, 4.0))
+    styles = {("federal only", "easier"): ("0.10", "-"),
+              ("federal only", "harder"): ("0.10", "--"),
+              ("all government", "easier"): ("0.45", "-."),
+              ("all government", "harder"): ("0.45", ":")}
+    for name, d in juris.items():
+        tk = d["assembled_tau_k"]
+        for reading, key in (("easier", "labor_tax_easier"), ("harder", "labor_tax_harder")):
+            bal = tk * GG - d[key] * (1 - RR)
+            colour, ls = styles[(name, reading)]
+            ax.contour(RR, GG, bal, levels=[0.0], colors=colour, linestyles=ls,
+                       linewidths=1.4)
+            ax.plot([], [], color=colour, ls=ls, lw=1.4,
+                    label=f"{name}, {reading} labor tax reading")
+    # the region the paper's conclusion occupies, on the headline federal-only easier reading
+    fed = juris["federal only"]
+    fails = fed["assembled_tau_k"] * GG - fed["labor_tax_easier"] * (1 - RR) < 0
+    ax.contourf(RR, GG, fails.astype(float), levels=[0.5, 1.5], colors=["0.92"], zorder=0)
+    ax.axhline(1.0, color="0.55", lw=0.9)
+    ax.text(0.98, 1.08, "output preserved: $g \\leq 1$", fontsize=8, color="0.35",
+            ha="right")
+    Rv = float(c["retained_wage_share_R"])
+    ax.axvline(Rv, color="0.55", lw=0.9)
+    ax.text(Rv + 0.012, 0.35, "measured $R$", fontsize=8, color="0.35")
+    ax.text(0.10, 0.55, "the condition fails", fontsize=9, color="0.25")
+    ax.text(0.06, 3.55, "the condition closes", fontsize=9, color="0.25")
+    ax.set_xlabel("Retained wage share $R$")
+    ax.set_ylabel("Taxable capital income per displaced wage dollar, $g$")
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0.25, 4.0)
+    ax.legend(loc="upper right", fontsize=7.5)
+    finish(fig, "fig6_boundary.pdf")
 
 
 if __name__ == "__main__":
@@ -233,4 +255,4 @@ if __name__ == "__main__":
     fig_tau_k()
     fig_federal_share()
     fig_breach()
-    fig_payoff()
+    fig_boundary()

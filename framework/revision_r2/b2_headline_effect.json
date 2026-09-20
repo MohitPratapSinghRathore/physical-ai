@@ -1,0 +1,81 @@
+{
+  "status": "MEASURED, conditional on the coefficient set.",
+  "coefficients": {
+    "credit_card": {
+      "published": 0.74,
+      "alternative": 0.730185,
+      "change": -0.009815
+    },
+    "auto_loan": {
+      "published": 0.7737,
+      "alternative": 0.778349,
+      "change": 0.004649
+    },
+    "student_loan": {
+      "published": 0.8832,
+      "alternative": 0.882183,
+      "change": -0.001017
+    },
+    "home_mortgage": {
+      "published": 0.840223,
+      "alternative": 0.810358,
+      "change": -0.029865
+    },
+    "other_consumer": {
+      "published": 0.815554,
+      "alternative": 0.80519,
+      "change": -0.010364
+    }
+  },
+  "published": {
+    "ratios": {
+      "all_claims_direct": 0.270271,
+      "all_claims_incl_indirect": 0.474864,
+      "debt_only_direct": 0.521629,
+      "debt_only_incl_indirect": 0.601954
+    },
+    "exposure": {
+      "W_bn": 40380.423912,
+      "creditor": 0.321479,
+      "debtor": 0.552013,
+      "union": 0.793592
+    }
+  },
+  "alternative": {
+    "ratios": {
+      "all_claims_direct": 0.267438,
+      "all_claims_incl_indirect": 0.472031,
+      "debt_only_direct": 0.516161,
+      "debt_only_incl_indirect": 0.596486
+    },
+    "exposure": {
+      "W_bn": 39957.121574,
+      "creditor": 0.318153,
+      "debtor": 0.557861,
+      "union": 0.795268
+    }
+  },
+  "quintile_gradient": {
+    "published": {
+      "Q1_bottom": 4.1489,
+      "Q2": 1.4112,
+      "Q3_middle": 1.2031,
+      "Q4": 1.0403,
+      "Q5_top": 0.6548
+    },
+    "alternative": {
+      "Q1_bottom": 4.0359,
+      "Q2": 1.3728,
+      "Q3_middle": 1.1703,
+      "Q4": 1.012,
+      "Q5_top": 0.637
+    },
+    "common_scale_factor": 0.972757,
+    "note": "the household coefficients enter every quintile in the same proportion, so the alternative set scales the level of the gradient and leaves its shape unchanged; the ratio between any two quintiles is identical under both."
+  },
+  "headline_changes": {
+    "debt_only_direct": -0.005468,
+    "federal_union": 0.001676
+  },
+  "verdict": "The published coefficients are coverage shares, which is not what the definition asks for. Computing the definitional quantity moves each of them by at most 1.3 percentage points, and the headline ratios by less than that. The alternative set measures what the definition says and is adopted; the published figures were close to it, which is a fact about the data rather than a justification of the construction."
+}

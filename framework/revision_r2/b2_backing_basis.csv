@@ -1,0 +1,5 @@
+claim_class,coverage_share_published_basis,wage_share_of_servicing_income,wage_share_within_working_core,difference_wage_minus_coverage,weighted_balances_bn,debtor_households_millions
+credit_card,0.739784,0.730185,0.893768,-0.009598,536.5,51.46
+auto_loan,0.776132,0.778349,0.915755,0.002217,893.9,39.51
+student_loan,0.883073,0.882183,0.952392,-0.00089,1157.8,23.49
+home_mortgage,0.823269,0.810358,0.921959,-0.012911,10347.6,48.1

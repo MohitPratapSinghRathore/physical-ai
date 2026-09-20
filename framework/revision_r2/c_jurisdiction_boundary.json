@@ -1,0 +1,79 @@
+{
+  "status": "SCENARIO on the assembled rate and on every C2 variant; the retained wage share and the labor tax readings are as published.",
+  "plausibility_bounds_checked": [
+    "federal-only assembled rate below the all-government rate, asserted",
+    "federal-only required band below the all-government band, asserted",
+    "g at which the condition closes positive, asserted"
+  ],
+  "retained_wage_share_R": 0.568316,
+  "labor_tax_readings_are": "FEDERAL. The bottom-up readings are federal taxes over wages and salaries; the automation-literature reading is a federal effective labor tax rate. The published capital rate, by contrast, includes an effective state corporate tax, so the published comparison mixes jurisdictions.",
+  "C1_jurisdiction": {
+    "federal only": {
+      "assembled_tau_k": 0.078485,
+      "labor_tax_easier": 0.254999,
+      "labor_tax_harder": 0.318001,
+      "required_easier": 0.110079,
+      "required_harder": 0.137276,
+      "state_local_labor_add_on": 0.0
+    },
+    "all government": {
+      "assembled_tau_k": 0.085118,
+      "labor_tax_easier": 0.286731,
+      "labor_tax_harder": 0.349733,
+      "required_easier": 0.123777,
+      "required_harder": 0.150974,
+      "state_local_labor_add_on": 0.031732
+    }
+  },
+  "C2_variants": [
+    {
+      "variant": "published central, all government",
+      "assembled_tau_k": 0.085118,
+      "closes_against_easier_all_government": false,
+      "note": "as published"
+    },
+    {
+      "variant": "withholding tax on foreign holders at 15 percent",
+      "assembled_tau_k": 0.092784,
+      "closes_against_easier_all_government": false,
+      "note": "the foreign-held share treated as bearing a 15 percent treaty rate at the owner level, which is a stated assumption and not a measurement"
+    },
+    {
+      "variant": "debt share from the filers' own books",
+      "assembled_tau_k": 0.0923,
+      "closes_against_easier_all_government": false,
+      "note": "raises the rate, because the debt-financed term is negative"
+    },
+    {
+      "variant": "second rent reading",
+      "assembled_tau_k": 0.015032,
+      "closes_against_easier_all_government": false,
+      "note": "already carried in the paper"
+    },
+    {
+      "variant": "all three together, excluding the second rent reading",
+      "assembled_tau_k": 0.100799,
+      "closes_against_easier_all_government": false,
+      "note": "withholding and the lower debt share applied jointly"
+    }
+  ],
+  "C2_labor_tax_matched_to_the_displaced": {
+    "effective_labor_tax_by_quintile_low": 0.23695,
+    "effective_labor_tax_by_quintile_high": 0.29702,
+    "required_if_displacement_hits_the_bottom_quintile": 0.102288,
+    "required_if_displacement_hits_the_top_quintile": 0.128219,
+    "note": "the payroll and income tax rates by wage quintile already in the release; displacement concentrated low in the distribution lowers the required rate, and this is the one assumption in this set that works in the paper's favour"
+  },
+  "C3_g_at_which_the_condition_closes": {
+    "federal only": {
+      "g_closing_easier": 1.4025,
+      "g_closing_harder": 1.7491
+    },
+    "all government": {
+      "g_closing_easier": 1.4542,
+      "g_closing_harder": 1.7737
+    }
+  },
+  "C4_boundary": "grid written to c4_boundary_grid.csv",
+  "headline_recommendation": "the federal-only version, because the paper's claim is about the federal balance sheet"
+}
