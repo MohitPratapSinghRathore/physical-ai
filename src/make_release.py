@@ -260,11 +260,11 @@ def build_dashboard():
          "date": "2026-01"},
         {"indicator": "Effective tax rate on AI surplus, assembled from components, "
                       "all tax layers counted once, Barkai rent reading",
-         "value": "0.086 central, 0.070 to 0.102 (Barkai); 0.015 (Karabarbounis-Neiman)",
+         "value": "0.086 central, 0.073 to 0.099 (Barkai); 0.015 (Karabarbounis-Neiman)",
          "threshold": f'{round(tks["required_tau_k"]["AMR_0.255"], 4)} to 0.1373',
          "status": "BELOW THRESHOLD under BOTH rent readings, and ROBUST: passes in under "
                    "1 percent of the remaining parameter space against the easier "
-                   "labour-tax reading and NOWHERE against the harder. No single unsourced "
+                   "labour-tax reading and NOWHERE against the harder. No single remaining "
                    "parameter can cross a threshold alone",
          "source": "framework/tau_k/. AMR 2020 expensing algebra; 26 USC 11(b); 26 USC "
                    "250(a)(1) as amended by Pub. L. 119-21 of 2025, giving 14.0 and 12.6 "
@@ -274,9 +274,11 @@ def build_dashboard():
                    "CRS R47113, cross-checked against CBO 2014). The bondholder rate "
                    "A116 sourced the bondholder rate (0.143 to 0.175, CBO 2014 Tables A-3 "
                    "and A-4, cross-checked against CBO Table 2 measured -6 percent). The "
-                   "debt share of AI capex remains unsourced at 37 percent of residual "
-                   "variance",
-         "date": "2026-09-20, sourced A115 and A116"},
+                   "A117 sourced the debt share from Fed Z.1 2026Q2 (0.141 at market to "
+                   "0.259 at book, an economy-wide stock proxy for a marginal flow). Three "
+                   "components remain swept: shareholder rate, state corporate rate, "
+                   "shifted share",
+         "date": "2026-09-20, sourced A115 to A117"},
         {"indicator": "Effective tax rate on AI surplus, entity level only, SUPERSEDED",
          "value": 0.0708,
          "threshold": round(tks["required_tau_k"]["AMR_0.255"], 4),

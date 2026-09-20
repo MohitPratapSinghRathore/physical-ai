@@ -85,10 +85,12 @@ def draw(n, sourced=True):
                                            K.DEFERRAL_FACTOR["high"], n)
         r["bondholder_rate"] = RNG.uniform(K.BONDHOLDER_RATE["low"],
                                            K.BONDHOLDER_RATE["high"], n)
+        r["debt_share"] = RNG.uniform(K.DEBT_SHARE["low"], K.DEBT_SHARE["high"], n)
     else:
         r["theta_taxable"] = RNG.uniform(*K.SUPERSEDED_SWEEP["theta_taxable"], n)
         r["deferral_factor"] = RNG.uniform(*K.SUPERSEDED_SWEEP["deferral_factor"], n)
         r["bondholder_rate"] = RNG.uniform(*K.SUPERSEDED_SWEEP["bondholder_rate"], n)
+        r["debt_share"] = RNG.uniform(*K.SUPERSEDED_SWEEP["debt_share"], n)
     return r
 
 
@@ -98,6 +100,7 @@ def ranges(sourced=True):
         d["theta_taxable"] = [K.THETA_TAXABLE["low"], K.THETA_TAXABLE["high"]]
         d["deferral_factor"] = [K.DEFERRAL_FACTOR["low"], K.DEFERRAL_FACTOR["high"]]
         d["bondholder_rate"] = [K.BONDHOLDER_RATE["low"], K.BONDHOLDER_RATE["high"]]
+        d["debt_share"] = [K.DEBT_SHARE["low"], K.DEBT_SHARE["high"]]
     else:
         d.update(K.SUPERSEDED_SWEEP)
     return d
@@ -180,6 +183,7 @@ def main():
     mid["theta_taxable"] = K.THETA_TAXABLE["central"]
     mid["deferral_factor"] = K.DEFERRAL_FACTOR["central"]
     mid["bondholder_rate"] = K.BONDHOLDER_RATE["central"]
+    mid["debt_share"] = K.DEBT_SHARE["central"]
     g = 120
     A = np.linspace(*RNG_ALL[ax_names[0]], g)
     B = np.linspace(*RNG_ALL[ax_names[1]], g)
@@ -201,7 +205,7 @@ def main():
             cs = ax.contour(GA, GB, Z, levels=[lev], colors=col,
                             linewidths=2.0, linestyles="--")
             ax.clabel(cs, fmt={lev: lab}, fontsize=8)
-    SRC = {"theta_taxable", "deferral_factor", "bondholder_rate"}
+    SRC = {"theta_taxable", "deferral_factor", "bondholder_rate", "debt_share"}
     lab = lambda n: n + ("  (SOURCED range)" if n in SRC else "  (NOT VERIFIED, swept)")
     ax.set_xlabel(lab(ax_names[0]))
     ax.set_ylabel(lab(ax_names[1]))

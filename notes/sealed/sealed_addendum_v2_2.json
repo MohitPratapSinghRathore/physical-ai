@@ -1,0 +1,62 @@
+{
+  "part_A_debt_only_labour_backing_ratio": {
+    "2025_pair": {
+      "direct": 0.5216,
+      "including_indirect": 0.602
+    },
+    "2025_all_claims_comparator": {
+      "direct": 0.2703,
+      "including_indirect": 0.4749
+    },
+    "2000_direct": {
+      "debt_only": 0.4687,
+      "all_claims": 0.2705
+    },
+    "2008_direct": {
+      "debt_only": 0.5006,
+      "all_claims": 0.3772
+    },
+    "1952_direct": {
+      "debt_only": 0.5208,
+      "all_claims": 0.3942
+    },
+    "equity_share_of_all_claims_denominator_2025": 0.4819,
+    "coefficient_of_variation_1952_2025": {
+      "debt_only": 0.0506,
+      "all_claims": 0.0942
+    },
+    "largest_judgement_call": "THE ONE-STEP RULE: business classes take the indirect share",
+    "largest_move_pct": 15.4
+  },
+  "part_B_assembled_capital_tax_rate_on_AI_surplus": {
+    "central_at_sourced_centrals": {
+      "Barkai": 0.0864,
+      "Karabarbounis_Neiman_case_R": 0.015
+    },
+    "range_and_pass_shares": {
+      "Barkai": {
+        "p05": 0.0726,
+        "median": 0.0851,
+        "p95": 0.0993,
+        "min": 0.0593,
+        "max": 0.1166,
+        "pass_share_vs_required_low": 0.0013,
+        "pass_share_vs_required_high": 0.0
+      },
+      "Karabarbounis_Neiman_case_R": {
+        "p05": 0.004,
+        "median": 0.0137,
+        "p95": 0.0255,
+        "min": -0.0048,
+        "max": 0.0385,
+        "pass_share_vs_required_low": 0.0,
+        "pass_share_vs_required_high": 0.0
+      }
+    },
+    "shareholder_layer_at_centrals": 0.0386,
+    "no_single_parameter_crosses_a_threshold_alone": true
+  },
+  "_instructions": "DO NOT OPEN until your rebuild is written down. Tolerances: Part A to within 0.002 absolute on every ratio and 0.005 on the coefficient of variation. Part B to within 0.004 absolute on the central rates and 0.01 on the pass shares, because the pass shares are Monte Carlo over a seeded draw of 200,000 and a different seed moves them slightly.",
+  "_provenance": "Sealed 2026-09-20 for A117. Z.1 vintage 2026-09-10, latest observation 2026Q2. Built by framework/labor_backing/build_debt_only.py and framework/tau_k/assemble.py.",
+  "_leak_check": "Run 2026-09-20 against the addendum. No sealed value and no path to this file appears in it. One string match was flagged and dismissed: the addendum quotes CRS R47113 Table 5 published band of 0.045 to 0.085 as a required check on the SHAREHOLDER LAYER, and 0.085 coincidentally rounds the same as the Barkai median assembled rate. They are different quantities on different scales and the CRS figure is a necessary input."
+}

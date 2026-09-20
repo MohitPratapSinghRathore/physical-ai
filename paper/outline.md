@@ -13,12 +13,12 @@ measurement. Owner to choose.
 
 | # | claim | tag |
 |---|---|---|
-| 1 | **Labour backing accounts**: about 52 pct of US debt is serviced directly from wages, 60 including indirectly; the federal government is exposed on about 79 pct of directly wage-backed claims, 32 as creditor or guarantor and 55 as debtor; the series is a U from 1952 | **[M]**; sovereign share agreed within 0.016 by independent rebuild; debt-only ratio **provisional** |
+| 1 | **Labour backing accounts**: **about half of all US debt, public and private, is serviced directly from wages** (52 pct), 60 including indirectly, with **government debt entering by the labour-linked share of the receipts that service it, not because a household owes it**; the federal government is exposed on about 79 pct of directly wage-backed claims, 32 as creditor or guarantor and 55 as debtor; the series is a U from 1952 | **[M]**; sovereign share agreed within 0.016 by independent rebuild; debt-only ratio **provisional** |
 | 2 | **Displacement is fiscal before it is financial.** 80 to 90 pct of first-round losses federal at the 10 pct level; attrition-led automation leaves the fiscal loss unchanged | **[M]** |
-| 3 | **The budget condition FAILS, and the verdict is robust to every parameter still unsourced.** Needs 11 to 14 pct. Assembled from components, AI capital bears **8.6** (7.0 to 10.2) under Barkai and **1.5** under Karabarbounis and Neiman; against the harder labour reading it cannot pass anywhere in the space. The decisive parameters are the tax BASE, all now sourced: 27 pct of US corporate equity is taxable, 47 pct of gains escape at death, 33 pct of corporate interest is sheltered and the rest of the world holds 29 pct of the bonds. Sourcing them moved the rate down 3.1 points against 1.2 from profit shifting. The earlier 7 and the economy-wide 20 to 22 are marked points | **[R]** on rent share and expensing, **[M]** on the three base parameters, **[S]** on the assembled rate |
+| 3 | **The budget condition FAILS, and the verdict is robust to every parameter still unsourced.** Needs 11 to 14 pct. Assembled from components, AI capital bears **8.6** (7.3 to 9.9) under Barkai and **1.5** under Karabarbounis and Neiman; against the harder labour reading it cannot pass anywhere in the space. The decisive parameters are the tax BASE, all now sourced: 27 pct of US corporate equity is taxable, 47 pct of gains escape at death, 33 pct of corporate interest is sheltered and the rest of the world holds 29 pct of the bonds. Sourcing them moved the rate down 3.1 points against 1.2 from profit shifting. The earlier 7 and the economy-wide 20 to 22 are marked points | **[R]** on rent share and expensing, **[M]** on the three base parameters, **[S]** on the assembled rate |
 | 4 | **Banks are reached indirectly and concentrated**, card-heavy lenders most exposed; **household relief does not protect bank capital** | balance sheets **[M]**, losses above the inside-data level **[S]** |
 | 5 | **An AI bust is a fiscal event**, 569 to 955bn of capital gains and corporate receipts; the financing verdict is **conditional** on unseen off-balance-sheet debt | **[S]**, receipts falls **[M]** |
-| 6 | **One tax rate, two opposite jobs**: the state loses in both directions through different tax bases | **[S]** |
+| 6 | **One tax rate, two opposite jobs.** *A structural observation, not a forecast.* The state loses in both directions through different tax bases: wage taxes if AI succeeds, capital gains and corporate taxes if it fails | **[S]** |
 | 7 | **What each institution type should do**, by regime and by type, with what the evidence does not support | mixed, tagged per row |
 
 **Demoted deliberately**: the speed limit to an appendix; physical versus cognitive exposure
@@ -220,8 +220,9 @@ valuation.** It is markedly more stable (coefficient of variation 0.051 against 
 1952 to 2025) and markedly more robust to the largest judgement call (the one-step rule moves
 it **15 percent** against **76**).
 
-> **The abstract figure is the debt-only direct ratio: about 52 percent of US debt is
-> serviced directly out of wages.** Status **[M], provisional** until the next promotion
+> **The abstract figure is the debt-only direct ratio: about half of all US debt, public
+> and private, is serviced directly from wages** (52 percent), **government debt entering by
+> the labour-linked share of the receipts that service it, not because a household owes it.** Status **[M], provisional** until the next promotion
 > pass: it is a new construction and has not been independently rebuilt.
 
 **4.2 Full sensitivity, kept in the section.** All-claims central 0.270271, one-at-a-time
@@ -298,7 +299,7 @@ defensible measurements of tau_k fall on opposite sides of it:**
 | rate | value | condition |
 |---|---|---|
 | ours, the operative rate on the **AI surplus**, entity level only, SUPERSEDED | **0.0708** | **FAILS** |
-| assembled from components, all layers, base parameters SOURCED, Barkai | **0.086** central, **0.070 to 0.102** | **FAILS**; passes in 0.9 pct of the remaining space against the easier labour reading and **nowhere** against the harder |
+| assembled from components, all layers, base parameters SOURCED, Barkai | **0.086** central, **0.073 to 0.099** | **FAILS**; passes in 0.1 pct of the remaining space against the easier labour reading and **nowhere** against the harder |
 | assembled from components, Karabarbounis and Neiman rent reading | **0.015** central | **FAILS** everywhere |
 | A113 blind sweep, SUPERSEDED by sourcing the two shareholder parameters | 0.087 to 0.156, median 0.116 | straddled; the straddle was an artefact of sweeping two parameters that are published |
 | our own sourced maximum | 0.20351 | PASSES |
@@ -617,7 +618,9 @@ Three sentences.
 
 1. **The federal government is exposed, as holder, guarantor or debtor, on about four fifths
    of the claims paid directly from wages, and holds about one percent of the claims on AI
-   capital.** About 52 percent of US debt is serviced directly out of wages, and the state
+   capital.** About half of all US debt, public and private, is serviced directly from
+   wages, government debt entering by the labour-linked share of the receipts that service
+   it, and the state
    stands behind most of it.
 2. **Displacement is a fiscal event before it is a financial one.** At the one level fully
    inside the observed data the federal government bears 80 to 90 percent of first-round

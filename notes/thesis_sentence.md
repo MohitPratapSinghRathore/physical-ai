@@ -29,7 +29,9 @@ OWNER APPROVAL.** Four changes, each marked in place below:
 Amended to follow the claim order, to carry the union wording, and to end on the organising
 conclusion rather than on the method boundary.
 
-> In the United States, about **52 percent of all debt is serviced directly out of wages**,
+> In the United States, **about half of all debt, public and private, is serviced directly
+> from wages** (52 percent), **government debt entering by the labour-linked share of the
+> receipts that service it rather than because a household owes it**,
 > and the federal government is exposed, as holder, guarantor or debtor, on about **four
 > fifths** of those claims: roughly a third as creditor or guarantor, through mortgage
 > guarantees and student loans, and about **55 percent as the debtor** on Treasury debt

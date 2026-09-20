@@ -823,3 +823,45 @@ A103: a string replacement that cannot fail loudly will fail quietly.
 **What is left.** The debt share of AI capital spending, 37 percent of residual variance and
 unsourced. Module B reading of the nine filers own books points to the all-equity end, which
 would harden the verdict further. The open question is no longer a parameter; it is the base.
+
+## A117. Closing pass before the independent rebuild
+
+**Replication addendum.** `notes/replication_brief_v2_2_addendum.md` covers only the two
+constructions a rebuilder needs: the debt-only labour backing ratio and the assembled capital
+tax rate. Expected values are sealed separately, outside `data/release/`. A leak check was run
+programmatically against every sealed value; one string match was flagged and dismissed,
+because the addendum quotes CRS Table 5's published 0.045 to 0.085 as a required check on the
+shareholder layer and 0.085 coincidentally rounds the same as one sealed output. The check and
+the dismissal are recorded inside the sealed file.
+
+**Debt share sourced.** Fed Z.1 2026Q2, nonfinancial corporate business: debt over debt plus
+equity is 0.1412 at market value and 0.2589 at book net worth. The basis is the whole of the
+difference and is stated everywhere the number appears. The central is unchanged because the
+sourced midpoint happens to equal the blind midpoint, so the verdict does not move; the range
+tightens and the pass share falls to 0.1 percent.
+
+**The caveat that matters more than the number.** This is an economy-wide STOCK ratio standing
+in for a MARGINAL FLOW. Module B's reading of the nine filers' own books is that AI financing
+is predominantly equity, which is below the sourced range. Because the AMR debt-financed
+normal return is negative, a lower debt share RAISES the assembled rate. So the sourced range
+is generous to the fiscal condition, and correcting it properly would harden the verdict.
+
+**Items 2 and 3 were already done and are confirmed, not redone.** Capital gains inside the
+receipts split were sourced in A112 from IRS SOI Table 1.4 (realised gains 6.19 to 15.36
+percent of AGI, labour-linked receipts share bounded 0.6339 to 0.6528, sovereign share moving
+under 1 percent). The MPC out of stock wealth was verified in A112 at 3.2 cents
+(Chodorow-Reich, Nenov and Simsek 2021, AER 111(5)). Both limitation wordings are current.
+
+**Two stale passages found by the wording pass.** The dossier's claim 2 cell still carried an
+A113 tail asserting 0.052 for the Karabarbounis-Neiman reading, contradicting the 0.015 stated
+earlier in the same cell. The architecture's row 1 still said the condition "fails at 0.0708
+and passes at 0.20 to 0.22". Both struck. **Every replacement in this pass asserted on its
+match and the script raises if any fails**, which is the fix for the A115 silent-failure
+error.
+
+**The one-page summary is 1348 words after two trim passes**, down from 1460. That is roughly
+one dense page at small type but not comfortably one page at normal type. Getting to about 900
+words would require dropping content the owner has specifically asked to keep across several
+sessions: the household findings, the U-shape, the three stated conventions, the status tags,
+the MPC verification and the bust numbers. **That is the owner's call, not ours**, so the
+content stands and the length is reported honestly rather than cut unilaterally.

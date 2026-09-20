@@ -88,6 +88,27 @@ DEFERRAL_FACTOR = {"low": 0.4118, "central": 0.6008, "high": 0.7899,
                    "high_source": "CRS R47113 Table 5, 4 percent dividend stock",
                    "cross_check_cbo_2014": 0.488}
 
+# THE DEBT SHARE, sourced in A117 from the Federal Reserve Z.1 at 2026Q2, nonfinancial
+# corporate business (sector 10), read from this project own Z.1 cache. Debt is bonds
+# (FL103163005, 8,278.0bn) plus loans (FL103168005, FL103169005, FL103169100) plus
+# commercial mortgages (FL103165505), totalling 13,658.2bn.
+#   against EQUITY AT MARKET VALUE, LM103164105 = 83,050.8bn -> 0.1412
+#   against NET WORTH AT BOOK,      FL102090005 = 39,097.6bn -> 0.2589
+# The basis is stated because it is the whole of the difference between the two ends.
+#
+# THE CAVEAT, which is load-bearing and is stated wherever this number is used. This is the
+# economy-wide STOCK ratio for all nonfinancial corporations. What the assembly needs is the
+# MARGINAL debt share of AI capital spending, a flow. Module B reading of the nine filers own
+# books is that AI financing is predominantly EQUITY, which is BELOW this range. So the
+# sourced range is, if anything, generous to the fiscal condition: a lower debt share raises
+# the assembled rate, because AMR debt-financed normal return is negative.
+DEBT_SHARE = {"low": 0.1412, "central": 0.2001, "high": 0.2589,
+              "low_source": "Fed Z.1 2026Q2, debt over debt plus equity at MARKET value",
+              "central_source": "midpoint of the two valuation bases",
+              "high_source": "Fed Z.1 2026Q2, debt over debt plus net worth at BOOK value",
+              "caveat": "economy-wide stock ratio used as a proxy for the marginal flow; "
+                        "Module B points below this range, which would raise the rate"}
+
 # The superseded blind sweeps, RETAINED as a sensitivity so the effect of sourcing is visible.
 # THE BONDHOLDER RATE, sourced in A116 the same way as the shareholder layer: a taxable
 # share of the instrument times a marginal rate on the income for taxable holders.
@@ -120,7 +141,8 @@ BONDHOLDER_RATE = {"low": 0.523 * 0.274,
 
 # The superseded blind sweeps, RETAINED as a sensitivity so the effect of sourcing is visible.
 SUPERSEDED_SWEEP = {"theta_taxable": [0.20, 0.60], "deferral_factor": [0.40, 1.00],
-                    "bondholder_rate": [0.15, 0.37]}
+                    "bondholder_rate": [0.15, 0.37],
+                    "debt_share": [0.00, 0.40]}
 
 U = {
     "shareholder_rate": {
@@ -136,12 +158,6 @@ U = {
                  "digits; the upper end is a ceiling, not an estimate.",
         "sought": "a verified apportioned effective state rate.",
     },
-    "debt_share": {
-        "range": [0.00, 0.40],
-        "bound": "a share. Zero is all-equity, which is the reported AI financing structure "
-                 "on the nine filers own books in this project Module B.",
-        "sought": "a verified marginal debt share for AI capital spending.",
-    },
     "shifted_share": {
         "range": [0.30, 0.60],
         "bound": "a share. Centred on the one verified value, 0.48 (Torslov, Wier and "
@@ -154,7 +170,7 @@ U = {
 }
 
 CEILINGS = {"shareholder_rate": 0.238, "state_cit_effective": 0.095,
-            "debt_share": 1.0, "shifted_share": 1.0,
+            "shifted_share": 1.0, "debt_share": 1.0,
             "theta_taxable": 1.0, "deferral_factor": 1.0,
             "bondholder_rate": 0.434}   # CBO: top ordinary rate incl. the 3.8 pct NIIT
 
@@ -180,11 +196,11 @@ def dump():
         "SOURCED_A115": {"theta_taxable": THETA_TAXABLE,
                          "deferral_factor": DEFERRAL_FACTOR,
                          "bondholder_rate": BONDHOLDER_RATE,
+                         "debt_share": DEBT_SHARE,
                          "superseded_blind_sweep": SUPERSEDED_SWEEP},
         "not_verified_swept": U,
         "the_main_result_of_this_module":
-            "A116: the bondholder rate, which carried 44 percent of the residual variance, is "
-            "now SOURCED too. Eight components verified, four still swept.",
+            "A117: the debt share is sourced too. Nine components verified, three swept.",
     }
     (HERE / "components.json").write_text(json.dumps(out, indent=2))
     return out
