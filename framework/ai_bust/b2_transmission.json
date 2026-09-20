@@ -1,0 +1,62 @@
+{
+  "status": "SCENARIO. Wealth distribution and anchors MEASURED; bust size, MPC and investment share are stated assumptions",
+  "equity_by_wealth_percentile_bn": {
+    "TopPt1": 16153.9,
+    "RemainingTop1": 16735.6,
+    "Next9": 24014.4,
+    "Next40": 7362.1,
+    "Bottom50": 374.2
+  },
+  "equity_share_by_wealth_percentile": {
+    "TopPt1": 0.2499,
+    "RemainingTop1": 0.2589,
+    "Next9": 0.3715,
+    "Next40": 0.1139,
+    "Bottom50": 0.0058
+  },
+  "top1_share_of_corporate_equity": 0.5088,
+  "bottom50_share": 0.0058,
+  "mpc_wealth_range_STATED": {
+    "low": 0.01,
+    "central": 0.03,
+    "high": 0.05
+  },
+  "mpc_check_against_verified_episodes": [
+    {
+      "episode": "2000_to_2002_equity_financed",
+      "household_equity_fall_bn": -2560.0,
+      "gdp_peak_bn": 10251.0,
+      "equity_fall_pct_of_gdp": -39.9,
+      "consumption_fall_implied_at_mpc_0.03_bn": -76.8,
+      "as_pct_of_gdp": -0.75
+    },
+    {
+      "episode": "2007_to_2009_debt_financed",
+      "household_equity_fall_bn": -2770.0,
+      "gdp_peak_bn": 14474.2,
+      "equity_fall_pct_of_gdp": -22.4,
+      "consumption_fall_implied_at_mpc_0.03_bn": -83.1,
+      "as_pct_of_gdp": -0.57
+    }
+  ],
+  "okun_range": {
+    "BLL_hp1000": 0.372,
+    "BLL_firstdiff": 0.402,
+    "BLL_hp100": 0.421,
+    "earlier_assumption": 0.5
+  },
+  "ai_inv_share_of_growth_STATED": {
+    "low": 0.1,
+    "central": 0.25,
+    "high": 0.4
+  },
+  "gdp_fall_pct_range": [
+    -1.685,
+    -0.336
+  ],
+  "unemployment_rise_pp_range": [
+    0.125,
+    0.843
+  ],
+  "the_distribution_point": "Corporate equity is extraordinarily concentrated: the top 1 percent hold 50.9 percent and the bottom half 0.6 percent. An equity shock therefore lands on the households with the LOWEST marginal propensity to consume, which is why the equity-led path transmits weakly to demand."
+}

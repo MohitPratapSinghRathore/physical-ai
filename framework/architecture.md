@@ -287,9 +287,28 @@ income they are contingent on has gone. **This regime is where the architecture 
 financial regulation and becomes a question about ownership, and the paper should say so and
 stop there.**
 
-### (e) The AI-fails case **[S]**
+### (e) The AI-fails case **[S]**, REWRITTEN FROM MODULE B
 
-The wage leg pays, the AI leg does not. Anchored on two verified historical analogues:
+The wage leg pays, the AI leg does not. **Module B ran this through the same engine
+displacement uses, and the result changes what this regime needs.**
+
+**An AI bust is a LARGE FISCAL event and a SMALL CREDIT event.** It is equivalent to **0.12
+to 0.84 percent of the wage bill**, 12 to 80 times weaker than the 10 percent displacement
+case, and produces household credit losses of **0.8 to 5.4bn** against 30.7bn. But federal
+receipts fall **569 to 955bn** on the verified historical episodes, through **capital gains
+and corporate tax**: corporate tax receipts fell 35.1 percent in 2000 to 2002 and 53.4
+percent in 2007 to 2009.
+
+**Why it transmits weakly to demand is measured.** The top 1 percent hold **50.9 percent** of
+corporate equity and the bottom half **0.58 percent**, so the shock lands where the
+propensity to consume is lowest. GDP falls 0.34 to 1.69 percent against the Fed severely
+adverse scenario's 4.6.
+
+**The verdict on the financing structure is now CONDITIONAL, not a finding.** The
+debt-financed share of AI capex is 0.0654 on the nine filers' books, but it leaves the 2000
+pattern at **66.1bn** of additional debt-financed capex and reaches the 2008 pattern at
+**213.4bn**. 66.1bn is **14.7 percent** of the 450bn of identified bank commitments, of which
+roughly **162bn is already drawn**. Tier 4, which BIS calls dominant, is unsourced.
 
 | | equity financed, 2000 to 2002 | debt financed, 2007 to 2009 |
 |---|---|---|
@@ -297,19 +316,22 @@ The wage leg pays, the AI leg does not. Anchored on two verified historical anal
 | federal receipts fall | **-9.5 pct** | **-16.0 pct** |
 | corporate tax receipts fall | -35.1 pct | -53.4 pct |
 
-**[M] The current structure resembles 2000, not 2008.** The debt-financed share of AI capex
-is **0.0654**, well below the 0.20 boundary, and the aggregate self-funding ratio is
-**1.3426**. **LOWER BOUND, and this is the one place where limitation L1 could change the
-answer**: the measure excludes off-balance-sheet and SPV financing, which BIS QR March 2026
-identifies as dominant.
+**Minimum sufficient set: row 9, and NOW ALSO row 1 for the opposite reason.** Concentration
+limits on AI-linked bank lending remain the instrument for the credit channel. But the
+fiscal channel is the larger one here, and the state's exposure to it **is** the capital tax
+rate: a state that taxes little of the AI surplus loses little when that surplus vanishes,
+and gains little when it does not. **Row 1 is therefore in the minimum set in BOTH failure
+directions, doing opposite jobs**, which is the sharpest single conclusion of the whole
+architecture.
 
-**Minimum sufficient set: row 9 only.** Concentration limits on AI-linked bank lending, aimed
-precisely at holders who are on both legs.
+**Unnecessary: rows 3, 5, 6, 7.** Every household-facing instrument is unnecessary here, and
+Module A shows they would barely help even in the regime they were built for.
 
-**Unnecessary: rows 1, 3, 4, 5, 6, 7.** Every wage-leg instrument is unnecessary here, and
-that is the point of the two-sided bet: **the instrument set is nearly disjoint across the
-two failure directions, which is why a single institution cannot prepare for both with one
-policy.**
+**The disjointness claim, narrowed.** The instrument sets are nearly disjoint across the two
+failure directions, but **not** because a bust leaves the wage side untouched. It does touch
+it, and Module B sizes that. It is that **the two directions hit the same institution through
+DIFFERENT TAX BASES**: displacement erodes the wage tax base, a bust erodes the capital gains
+and corporate tax base.
 
 **The watch item is composition, not level.** Four of nine named filers (ORCL, CRWV, DLR,
 EQIX) are already below a self-funding ratio of 1.0 individually while the aggregate is 1.34.

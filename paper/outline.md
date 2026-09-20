@@ -362,11 +362,68 @@ criterion is not evaluable.
 both legs: banks (18.4 pct of the wage leg, 3.2 pct of the AI leg), insurers, pensions, rest
 of world. **The state is on one leg only, at 79.4 and 1.0 percent.**
 
-**8.3 Two historical anchors, verified.** 2000 to 2002 equity-financed: receipts fell 9.5
-percent. 2007 to 2009 debt-financed: receipts fell 16.0 percent, corporate tax receipts 53.4
-percent. The current debt-financed share of AI capex, 0.0654, sits near the 2000 pattern.
-**Watch composition, not level:** four of nine filers are already below a self-funding ratio
-of 1.0 while the aggregate is 1.34.
+**8.3 Two historical anchors, verified, and the verdict restated as CONDITIONAL.** 2000 to
+2002 equity-financed: receipts fell 9.5 percent, corporate tax 35.1. 2007 to 2009
+debt-financed: receipts fell 16.0 percent, corporate tax 53.4. The debt-financed share of AI
+capex is **0.0654** on the nine filers' own books, which sits near the 2000 pattern.
+
+**But the verdict flips on a quantity we have not measured, and the paper must say so.**
+Solving for the threshold: **66.1bn** of additional debt-financed capex leaves the 2000
+pattern and **213.4bn** reaches the 2008 pattern. 66.1bn is **14.7 percent** of the 450bn of
+AI-adjacent bank commitments the Chicago Fed has already identified, and the same source
+implies **162bn already drawn**, which is 2.5 times the threshold. Tier 4, the
+off-balance-sheet vehicles that BIS calls dominant, is **not sourced at all**.
+
+> **Therefore: "on the nine filers' own balance sheets the structure resembles 2000" is
+> defensible. "The structure resembles 2000" is not.** Module B1.
+
+**8.4 THE BUST RUN THROUGH THE ENGINE, so both failure directions get the same treatment.**
+Module B2 and B3. Previously the AI-fails case was assessed against historical analogues
+while displacement went through a household engine, a fiscal module and 8,612 balance sheets.
+That asymmetry flattered the AI-fails case.
+
+| | AI bust | 10 pct displacement |
+|---|---|---|
+| wage-bill equivalent | **0.12 to 0.84 pct** | 10 pct |
+| household credit losses | **0.8 to 5.4bn** | 30.7bn |
+| federal receipts fall | **569 to 955bn**, verified episodes | 85.2bn terminal-year |
+
+**An AI bust is a LARGE FISCAL event and a SMALL CREDIT event, which inverts the displacement
+case.** It reaches the wage side 12 to 80 times more weakly and the federal budget through a
+different door: capital gains and corporate tax rather than wages.
+
+**Why it transmits weakly is measured, not assumed.** Corporate equity is extraordinarily
+concentrated: the top 1 percent hold **50.9 percent** and the bottom half **0.58 percent**
+(Distributional Financial Accounts, 2026Q2). The shock lands on the households with the
+lowest propensity to consume. GDP falls 0.34 to 1.69 percent against the Fed severely
+adverse scenario's 4.6.
+
+**8.5 The payoff table by holder, three outcomes. Figure 6.** Module B4.
+
+| holder | wage leg | AI leg | AI fails | partial | success |
+|---|---|---|---|---|---|
+| **federal government** | 0.3215 | 0.0100 | -0.013 | -0.166 | **-0.312** |
+| banks | 0.1844 | 0.0318 | -0.034 | -0.108 | -0.153 |
+| **households** | 0.0607 | **0.3842** | -0.385 | -0.222 | **+0.324** |
+| rest of world | 0.1801 | 0.1808 | -0.183 | -0.180 | +0.001 |
+
+**Only the federal government and banks lose in every column.** Everyone else holds enough of
+the AI leg to offset. **This is the hedge failure proposition as a table rather than an
+assertion, and it confirms that partial success is not the only regime in which the state
+loses**, which is why section 1 cuts the "only regime" sentence.
+
+**The correction that must sit beside the table.** It scores holders by what they HOLD, so
+the state scores as barely exposed when AI fails. B3 shows federal receipts falling 569 to
+955bn in a bust. **The state's claim on the AI upside is FISCAL, not proprietary: it is the
+capital tax of section 5.1. Being barely exposed to the bust and being unhedged on the upside
+are the same fact.**
+
+**8.6 The disjointness claim, narrowed.** The instrument sets are nearly disjoint across the
+two failure directions, but not because a bust leaves the wage side untouched. **The two
+directions hit the same institution through DIFFERENT TAX BASES**: displacement erodes the
+wage tax base, a bust erodes the capital gains and corporate tax base. **The same capital tax
+rate is both the state's only claim on the AI upside and the thing that would have to rise to
+close the fiscal condition after displacement. It is being asked to do two opposite jobs.**
 
 ---
 
@@ -474,6 +531,9 @@ Three sentences, and no more:
 | Figure 3 | Debt paths, reserve-currency issuer against emerging market | 5 |
 | Figure 4 | Liquid buffers against pay, showing non-monotonicity | 6.1 |
 | Figure 5 | The exposure frontier: share of the wage bill exposed as a function of capability c | 3.2 |
+| **Figure 6** | **The payoff table by holder across three outcomes, with the federal row highlighted** | **8.5** |
+| Figure 7 | The debt-financed share of AI capex against the 2000 and 2008 boundaries, with the flip thresholds marked | 8.3 |
+| Table 16 | Institution-level distribution: share of institutions and assets breaching by size class and business model | 9.3 |
 | **Table 1** | **The two-sided bet by holder: wage leg share, AI leg share, gap** | 1 |
 | Table 2 | Under-reporting factors and coverage shares | 3 |
 | Table 3 | The thirteen claim classes, levels, backing shares, Z.1 series | 4.1 |

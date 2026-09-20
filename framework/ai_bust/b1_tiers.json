@@ -1,0 +1,67 @@
+{
+  "status": "Tier 1 MEASURED; Tier 2 verified secondary; Tier 3 SCENARIO; Tier 4 NOT SOURCED",
+  "nine_filers": {
+    "capex_bn": 490.9,
+    "ocf_bn": 659.1,
+    "debt_financed_capex_bn": 32.1,
+    "on_balance_sheet_debt_bn": 458.4,
+    "debt_financed_share_of_capex": 0.0654,
+    "self_funding_ratio": 1.3426
+  },
+  "tiers": [
+    {
+      "tier": "1 HARD",
+      "what": "on-balance-sheet AI debt, nine named SEC filers",
+      "size_bn": 458.4,
+      "confidence": "hard, us-gaap facts",
+      "in_verdict": "yes, via capex in excess of operating cash flow"
+    },
+    {
+      "tier": "2 VERIFIED SECONDARY",
+      "what": "large bank C and I commitments to AI-adjacent industries",
+      "size_bn": 450.0,
+      "confidence": "verified secondary, Chicago Fed Insights Feb 2026 (A45)",
+      "in_verdict": "NO. Committed, not drawn, and not attributed to capex"
+    },
+    {
+      "tier": "2b VERIFIED SECONDARY, drawn",
+      "what": "the drawn share of those commitments, implied by the same source",
+      "size_bn": 162.0,
+      "confidence": "implied from outstanding 9 pct vs committed 25 pct of tier 1",
+      "in_verdict": "NO"
+    },
+    {
+      "tier": "3 SCENARIO",
+      "what": "listed AI-exposed equity, swept share of US nonfinancial corporate equity",
+      "size_bn": {
+        "10 pct": 7199.5,
+        "20 pct": 14399.0,
+        "30 pct": 21598.5
+      },
+      "confidence": "SCENARIO. No defensible selection rule computable from our data",
+      "in_verdict": "no, it is the equity side"
+    },
+    {
+      "tier": "4 NOT SOURCED",
+      "what": "off-balance-sheet data centre vehicles, GPU-backed loans, private credit to data centres, data centre ABS and CMBS, vendor financing",
+      "size_bn": null,
+      "confidence": "NOT SOURCED. BIS QR March 2026 calls SPV structures dominant and we have no verified total",
+      "in_verdict": "NO, and this is the hole the verdict turns on"
+    },
+    {
+      "tier": "MEMO",
+      "what": "chip supply chain",
+      "size_bn": null,
+      "confidence": "named, deliberately not sized: an input market, not a claim",
+      "in_verdict": "no"
+    }
+  ],
+  "verdict_now": "resembles 2000, not 2008",
+  "flip_thresholds": {
+    "additional_debt_financed_capex_to_reach_0.20_bn": 66.1,
+    "as_share_of_identified_bank_commitments": 0.1468,
+    "additional_to_reach_0.50_bn": 213.3,
+    "as_share_of_identified_bank_commitments_0.50": 0.4741
+  },
+  "the_point": "The verdict flips out of the 2000 pattern on 66.1bn of additional debt-financed capex, which is 14.7 percent of the bank commitments the Chicago Fed has ALREADY identified, and it reaches the 2008 pattern on 213.3bn, which is 47.4 percent of them. Tier 4 is unmeasured and BIS calls it dominant. **The verdict is therefore fragile to a quantity we have not measured, and it should be reported as conditional on Tier 1 rather than as a finding about the AI financing structure.**"
+}

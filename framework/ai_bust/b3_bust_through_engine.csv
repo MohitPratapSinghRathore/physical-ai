@@ -1,0 +1,5 @@
+scenario,band,unemployment_rise_pp,wage_bill_dose_equivalent,wage_bill_dose_equivalent_pct,wage_income_loss_bn,household_credit_loss_bn,mortgage_bn,card_bn,auto_bn,student_bn,federal_receipts_fall_pct_VERIFIED,federal_receipts_fall_bn,corporate_tax_fall_pct_VERIFIED,ai_debt_impaired_bn
+"credit-led, bounded by 2007 to 2009",low,0.125,0.00125,0.125,16.7,0.8,0.57,0.09,0.04,0.09,-15.97,-955.1,-53.4,160.4
+"credit-led, bounded by 2007 to 2009",high,0.714,0.00714,0.714,95.4,4.55,3.25,0.54,0.23,0.54,-15.97,-955.1,-53.4,160.4
+"equity-led, bounded by 2000 to 2002",low,0.144,0.00144,0.144,19.2,0.92,0.65,0.11,0.05,0.11,-9.52,-569.4,-35.1,0.0
+"equity-led, bounded by 2000 to 2002",high,0.843,0.00843,0.843,112.7,5.37,3.83,0.64,0.27,0.64,-9.52,-569.4,-35.1,0.0
