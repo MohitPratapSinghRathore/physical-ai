@@ -1,5 +1,32 @@
 # Paper outline: a measurement paper
 
+## Working titles
+
+1. **Labour Backing Accounts: Who Holds the Claims That Wages Pay**
+2. **One Tax Rate, Two Opposite Jobs: The Fiscal Position in Both AI Outcomes**
+3. **Wage-Backed Debt and the Sovereign Balance Sheet, 1952 to 2025**
+
+The first names the method contribution, the second the organising conclusion, the third the
+measurement. Owner to choose.
+
+## The seven headline claims, in order, with tags
+
+| # | claim | tag |
+|---|---|---|
+| 1 | **Labour backing accounts**: about 52 pct of US debt is serviced directly from wages, 60 including indirectly; the federal government is exposed on about 79 pct of directly wage-backed claims, 32 as creditor or guarantor and 55 as debtor; the series is a U from 1952 | **[M]**; sovereign share agreed within 0.016 by independent rebuild; debt-only ratio **provisional** |
+| 2 | **Displacement is fiscal before it is financial.** 80 to 90 pct of first-round losses federal at the 10 pct level; attrition-led automation leaves the fiscal loss unchanged | **[M]** |
+| 3 | **The budget condition is a function of the capital tax rate.** Needs 11 to 14 pct; AI capital bears 7; economy-wide 20 to 22; so a quarter to a half of AI profits at the ordinary rate, no statutory rise needed | **[R]** on inputs, **provisional** on the verdict |
+| 4 | **Banks are reached indirectly and concentrated**, card-heavy lenders most exposed; **household relief does not protect bank capital** | balance sheets **[M]**, losses above the inside-data level **[S]** |
+| 5 | **An AI bust is a fiscal event**, 569 to 955bn of capital gains and corporate receipts; the financing verdict is **conditional** on unseen off-balance-sheet debt | **[S]**, receipts falls **[M]** |
+| 6 | **One tax rate, two opposite jobs**: the state loses in both directions through different tax bases | **[S]** |
+| 7 | **What each institution type should do**, by regime and by type, with what the evidence does not support | mixed, tagged per row |
+
+**Demoted deliberately**: the speed limit to an appendix; physical versus cognitive exposure
+to a reported pay effect inside claim 2; emerging markets to a short subsection of 9.
+**No collapse language anywhere in this paper.**
+
+---
+
 **Target journal: OPEN, for the co-author to decide.** The centre of the paper has moved from
 bank-facing to fiscal and sovereign, so a public finance or macro outlet may now fit better
 than the Journal of Financial Stability, which was the original target. Journal of Public
@@ -170,12 +197,39 @@ mismatches.
 | new | The Treasury class is FL313161105 + FL313169205 = 33,887.1bn, 2025 vintage, verified against three external cross-checks | **[M]** | Table 3 note |
 | new | Whether the central bank counts as federal moves the share by **exactly zero** | **[M]** | Table 4 |
 
-**4.1 The ratio and its full sensitivity.** Central 0.270271; one-at-a-time range 0.267 to
-0.475. **Two things said plainly:** the one-step rule moves it **76 percent** and nothing
-else moves it by more than 10; and **it is partly an asset-price series**, reading 0.376 in
-2008 because equity fell, which is the wrong sign for an indicator.
+**4.0 LABOUR BACKING ACCOUNTS ARE THE PAPER'S NAMED METHOD CONTRIBUTION.** Not scaffolding.
+We introduce a decomposition of all US financial claims by **the income that services them**
+and by **who ultimately holds them**. Its outputs are the ratio, the sovereign share, the
+holder map, the 1952 to 2025 series and the wage-quintile breakdown, and every later section
+is built on it.
 
-**4.2 The 1952 to present series. This is Figure 1 and it is the paper's best single image.
+**4.1 The ratio, reported as a PAIR on the same first-round boundary as the sovereign share.**
+
+| denominator | direct | including indirect |
+|---|---|---|
+| **all claims** | **0.270** | **0.475** |
+| **DEBT ONLY**, excluding market-valued equity | **0.522** | **0.602** |
+
+**Why the debt-only pair exists, and it is a correction to our own headline.** Corporate
+equity at market value is **48 percent** of the all-claims denominator, so that ratio falls
+when equity rises and rises when it falls, independently of labour. It read **0.271 at the
+2000 equity peak and 0.377 in 2008 after the crash**: anyone using it as a risk indicator
+would have read the economy as least risky in 2000 and most risky in 2009. **Debt is carried
+at par or amortised cost, so the debt-only ratio measures composition rather than
+valuation.** It is markedly more stable (coefficient of variation 0.051 against 0.094 over
+1952 to 2025) and markedly more robust to the largest judgement call (the one-step rule moves
+it **15 percent** against **76**).
+
+> **The abstract figure is the debt-only direct ratio: about 52 percent of US debt is
+> serviced directly out of wages.** Status **[M], provisional** until the next promotion
+> pass: it is a new construction and has not been independently rebuilt.
+
+**4.2 Full sensitivity, kept in the section.** All-claims central 0.270271, one-at-a-time
+range 0.267 to 0.475. Debt-only central 0.5216, and its own table. **The one-step rule is the
+largest judgement in the project** on both, and nothing else moves either by more than 10
+percent.
+
+**4.3 The 1952 to present series. This is Figure 1 and it is the paper's best single image.
 It is a U, and reporting it from 1970 would misdescribe it.**
 
 | year | ratio | **sovereign union share** | held or guaranteed | obligor |
@@ -199,14 +253,19 @@ in federal debt itself rather than new exposure to households.** The held-or-gua
 peaked at 0.392 in 2020 and has since fallen to 0.321; the whole net increase since 2008 sits
 in the obligor leg.
 
-**4.3 The holder map.** Federal 32.1 pct held or guaranteed, 55.2 pct as obligor, 79.4 pct
+**4.4 The holder map.** Federal 32.1 pct held or guaranteed, 55.2 pct as obligor, 79.4 pct
 union. Banks 18.4, rest of world 18.0, other financial 15.3.
 
-**4.4 Robustness, Table 4.** Every measurement call under 1.3 percent. The four structural
+**4.5 Robustness, Table 4.** Every measurement call under 1.3 percent. The four structural
 calls that move it, with the one-step rule at -43 percent stated first.
 
-**Placement decision, stated:** the ratio is the accounting scaffold, not the headline, and
-it does not appear in the abstract as a number.
+**Placement decision, restated.** The ALL-CLAIMS ratio is scaffolding and does not appear in
+the abstract. **The DEBT-ONLY ratio does**, beside the sovereign share, because it is stable,
+robust to the largest judgement call, and answers a question a reader can check.
+
+**Three honest statements that travel with this section.** The one-step rule is the largest
+judgement in the project. Novelty is **"none located", not "none exists"**, pending a
+systematic search. **The bottom-quintile magnitude is withdrawn and the gradient stands.**
 
 ---
 
@@ -338,7 +397,56 @@ paid and the payroll and benefit channels follow head counts rather than dollars
 **7.3 Second round, scenario.** Nine tenths of the bank channel. Reported as a band of 173bn
 to 1,565bn; a point estimate inside that band would be false precision.
 
-**7.4 Two non-monotonicities that a single range concealed.** The federal share **peaks at the
+**7.4 INSTITUTION LEVEL, from Module A. Table 16.** The losses above are applied across
+**8,612 real balance sheets**: 4,313 FDIC-insured banks and 4,299 credit unions at
+2026-06-30, with loan book by category and capital for each. **Balance sheets [M]; loss
+application [S] above the inside-data level.**
+
+**The baseline is reported first**, because a capital test only means something if almost
+nobody fails it before any loss. 17 banks report neither tier 1 nor equity and are **insured
+US branches of foreign chartered institutions** whose capital sits at the parent; they are
+excluded, with the exclusion stated (24 institutions, 263.2bn). Baseline after exclusion:
+**29 institutions, 0.029 percent of assets.**
+
+| dose | institutions breaching | pct of assets | with one year of earnings |
+|---|---|---|---|
+| baseline | 29 | 0.03 | |
+| **10 pct** | **54** | **0.04** | 0.04 |
+| 25 pct | 246 | 4.02 | 1.55 |
+| 50 pct | 1,448 | 28.20 | **9.93** |
+
+**At the level inside the data the banking system barely moves.** Breaches open above 25
+percent. **One year of earnings cuts the 50 percent figure to about a third**, the largest
+single sensitivity.
+
+**By business model:** card-heavy lenders most exposed by a distance (38.9 percent breaching
+at 25 percent, 77.8 at 50), then credit unions (the only class with stress at 10 percent,
+because their book is almost entirely household credit), then auto-heavy and C and I heavy.
+**Mortgage portfolio lenders are among the LEAST exposed, 0.1 percent at 25 percent**, which
+closes at institution level the question the retired occupational-diversification claim left
+open.
+
+**7.5 HOUSEHOLD RELIEF DOES NOT PROTECT BANK CAPITAL, and this is a headline result.**
+Forbearance, income-driven student repayment and wage insurance **all together remove under
+10 percent of system losses at every level**: 9.61 at 10 percent, 8.91 at 25, 7.59 at 50.
+They act on the first round, and at the 10 percent level that is **27bn of a 205bn total**.
+Enhanced wage insurance costs **314bn to remove 12.9bn** of bank losses.
+
+> **These instruments must be judged on household outcomes, not on bank capital.** They do
+> reshape the distribution, taking assets in breach from **4.02 to 1.48 percent** at the 25
+> percent level and stopping 123 institutions breaching. **They change who fails, not how
+> much is lost.**
+
+**7.6 Institutions the engine had omitted.** **State and local government**: 424.1bn of
+wage-linked income tax, 15.93 percent of its own tax receipts, under a balanced-budget
+requirement in every state but Vermont, so a revenue fall becomes a procyclical spending cut
+feeding the same demand channel. **That loop is not in the engine and is named, not
+estimated.** **Pension funds**: contributions are a share of covered payroll while benefits
+are nominally fixed. **Insurers and private credit**: the population to which hedge failure
+most directly applies; private credit cannot be separated from the Z.1 other-financial
+aggregate, so 6,186.9bn is an upper bound by an unknown margin.
+
+**7.7 Two non-monotonicities that a single range concealed.** The federal share **peaks at the
 50 percent dose and falls back at 75**, because the fiscal component saturates while credit
 losses keep growing. And the exposure type matters as much as the dose.
 
@@ -502,22 +610,21 @@ the economy-wide average, and both are correctly computed.
 
 ## 11. Conclusion
 
-Three sentences, and no more:
+Three sentences.
 
 1. **The federal government is exposed, as holder, guarantor or debtor, on about four fifths
-   of the claims paid directly from wages, about a third as creditor or guarantor and about
-   fifty-five percent as the debtor, and holds about one percent of the claims on AI capital.**
-   It bears the exposure that fails if AI succeeds and has almost no stake in the one that pays.
-2. **At the one dose fully inside the observed data, ten percent of the wage bill, the federal
-   government bears roughly four fifths of first-round losses**, and closing the fiscal
-   condition would require between a quarter and a half of the AI surplus to bear the
-   economy-wide capital rate rather than the much lower rate AI capital actually faces.
-3. **Who bears the loss depends on how automation arrives, and the budget does not notice
-   the difference.** Savings buffers are thinnest in the second wage quintile, not the first;
-   the gap between physically and cognitively exposed households is a pay effect rather than
-   an exposure effect; and when automation works through non-hiring rather than layoffs the
-   losses move onto younger borrowers with student and car debt while the fiscal loss is
-   unchanged.
+   of the claims paid directly from wages, and holds about one percent of the claims on AI
+   capital.** About 52 percent of US debt is serviced directly out of wages, and the state
+   stands behind most of it.
+2. **Displacement is a fiscal event before it is a financial one.** At the one level fully
+   inside the observed data the federal government bears 80 to 90 percent of first-round
+   losses while banks barely move, and whether the budget absorbs that depends on which
+   capital tax rate reaches AI profits: the condition needs 11 to 14 percent, AI capital
+   bears about 7, and capital economy-wide bears 20 to 22.
+3. **The state loses in both failure directions, through different tax bases: wage taxes if
+   AI succeeds, capital gains and corporate taxes if it fails. So the same capital tax rate
+   is being asked to do two opposite jobs, and that, rather than any single loss estimate, is
+   what the measurement is for.**
 
 ---
 

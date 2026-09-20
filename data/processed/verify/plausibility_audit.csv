@@ -52,3 +52,9 @@ stock-flow unemployment rate,0.218862,0 to 1.0,OK,
 "rho, bounded dose grid, rho_band_lo",0.0,"rho in [0, 1], it is a rate",OK,"15 values, min 0.0000, max 0.6815"
 "rho, bounded dose grid, rho_band_hi",0.6814569491733323,"rho in [0, 1], it is a rate",OK,"15 values, min 0.4900, max 0.6815"
 "rho raw fixed point, bounded dose grid, DIAGNOSTIC",2.0,"breaches expected past the pole, must be caught and banded",OK,"2 of 13 raw values outside [0, 1]"
+"DEBT_ONLY_ratio_direct in [0, 1]",0.5217,a share: 0 to 1,OK,"74 years, min 0.4364, max 0.5217"
+"DEBT_ONLY_ratio_incl_indirect in [0, 1]",0.602,a share: 0 to 1,OK,"74 years, min 0.5523, max 0.6020"
+"all_claims_ratio_direct in [0, 1]",0.402,a share: 0 to 1,OK,"74 years, min 0.2513, max 0.4020"
+"equity_share_of_all_claims in [0, 1]",0.4819,a share: 0 to 1,OK,"74 years, min 0.2078, max 0.4819"
+debt-only denominator <= all-claims denominator,0.792188858423059,excluding equity cannot enlarge the denominator,OK,
+debt-only ratio >= all-claims ratio,0.09360000000000002,removing an unbacked class from the denominator must RAISE the ratio,OK,

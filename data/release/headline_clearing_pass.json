@@ -1,11 +1,11 @@
 {
   "counts": {
-    "STANDING": 10,
+    "STANDING": 13,
+    "SCENARIO": 11,
     "REPLICATED": 9,
-    "SCENARIO": 5,
     "REMOVED": 5
   },
-  "headline_set_size": 24,
+  "headline_set_size": 33,
   "removed": [
     {
       "id": "incidence_count_spread",

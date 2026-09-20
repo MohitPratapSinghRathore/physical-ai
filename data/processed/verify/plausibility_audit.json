@@ -1,5 +1,5 @@
 {
-  "n_checks": 53,
+  "n_checks": 59,
   "n_violations": 4,
   "checks": [
     {
@@ -372,6 +372,48 @@
       "bound": "breaches expected past the pole, must be caught and banded",
       "verdict": "OK",
       "detail": "2 of 13 raw values outside [0, 1]"
+    },
+    {
+      "quantity": "DEBT_ONLY_ratio_direct in [0, 1]",
+      "value": 0.5217,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.4364, max 0.5217"
+    },
+    {
+      "quantity": "DEBT_ONLY_ratio_incl_indirect in [0, 1]",
+      "value": 0.602,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.5523, max 0.6020"
+    },
+    {
+      "quantity": "all_claims_ratio_direct in [0, 1]",
+      "value": 0.402,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.2513, max 0.4020"
+    },
+    {
+      "quantity": "equity_share_of_all_claims in [0, 1]",
+      "value": 0.4819,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.2078, max 0.4819"
+    },
+    {
+      "quantity": "debt-only denominator <= all-claims denominator",
+      "value": 0.792188858423059,
+      "bound": "excluding equity cannot enlarge the denominator",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "debt-only ratio >= all-claims ratio",
+      "value": 0.09360000000000002,
+      "bound": "removing an unbacked class from the denominator must RAISE the ratio",
+      "verdict": "OK",
+      "detail": ""
     }
   ]
 }

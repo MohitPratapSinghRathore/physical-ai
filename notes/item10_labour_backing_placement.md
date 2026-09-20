@@ -1,4 +1,26 @@
-# Item 10. The labour backing ratio: one section, not the headline
+# Labour backing accounts: the paper's named method contribution
+
+**SUPERSEDES the previous framing of this note, which called the ratio "scaffolding".** It is
+not scaffolding. **We introduce labour backing accounts: a decomposition of all US financial
+claims by the income that services them and by who ultimately holds them.** Its outputs are
+the ratio, the sovereign share, the holder map, the 1952 to 2025 series and the wage-quintile
+breakdown.
+
+**The ratio is reported as a PAIR, on the same first-round boundary as the sovereign share,
+and the DEBT-ONLY pair is the one that goes in the abstract:**
+
+| denominator | direct | including indirect |
+|---|---|---|
+| all claims | 0.270 | 0.475 |
+| **DEBT ONLY**, excluding market-valued equity | **0.522** | **0.602** |
+
+**About 52 percent of US debt is serviced directly out of wages.** The debt-only ratio exists
+because the all-claims denominator is 48 percent corporate equity at market value, so the
+all-claims ratio is partly an asset-price series. Debt-only is more stable (coefficient of
+variation 0.051 against 0.094) and more robust to the one-step rule (15 percent against 76).
+Code: `framework/labor_backing/build_debt_only.py`. **[M], provisional.**
+
+
 
 Inputs: `framework/labor_backing/direct_ratio_latest.json`, `direct_ratio_timeseries.csv`,
 `sensitivity.csv`, `quintile_labour_backing.csv` (B5), `cross_country_feasibility.md` (B6),
@@ -157,8 +179,9 @@ income. It says nothing about what happens when that income falls.
 
 ## 4. The placement decision
 
-**The labour backing ratio is section 4's accounting scaffold. It is not the headline and it
-does not go in the abstract as a number.**
+**The ALL-CLAIMS ratio is scaffolding and does not go in the abstract. The DEBT-ONLY ratio
+does**, beside the sovereign share, because it is stable, robust to the largest judgement
+call, and answers a question a reader can check.
 
 Reasons, in order:
 

@@ -150,6 +150,65 @@ HEADLINE = [
     dict(id="break_even_case_B", label="Break-even capital tax rate, case B, 0.182 to 0.650",
          value="0.182 to 0.650", sealed_id=None, section="9", tag_override="SCENARIO",
          why="same construction, output falling. All eight bounds hold, zero breaches"),
+    # ---- MODULE A and MODULE B, added in the promotion pass. NOTHING here is REPLICATED:
+    # neither module existed when either replication round ran.
+    dict(id="debt_only_ratio", label="About 52 percent of US debt is serviced directly from "
+         "wages (60 including indirectly); all-claims pair 27 and 47",
+         value="0.522 / 0.602", sealed_id=None, section="4",
+         tag_override="STANDING",
+         why="MEASURED from Z.1, new construction this session, PROVISIONAL until the next "
+             "promotion pass because it has not been independently rebuilt. More stable "
+             "(cv 0.051 vs 0.094) and more robust to the one-step rule (15 pct vs 76) than "
+             "the all-claims ratio it supplements"),
+    dict(id="institution_panel", label="8,612 institution balance sheets: 4,313 banks and "
+         "4,299 credit unions, loan book by category and capital",
+         value="26,753 + 2,523bn assets", sealed_id=None, section="7",
+         tag_override="STANDING",
+         why="MEASURED from FDIC and NCUA at 2026-06-30. Cross-checks against Z.1 hold: "
+             "bank card share 89.8 pct against the benchmarked 0.875"),
+    dict(id="institution_distribution", label="At the 10 pct dose 0.04 pct of system assets "
+         "breach against a 0.03 baseline; 4.02 pct at 25; 28.20 at 50, or 9.93 with one "
+         "year of earnings", value="by dose", sealed_id=None, section="7",
+         tag_override="SCENARIO",
+         why="balance sheets measured, loss application conditional on a dose. Dispersion "
+             "is business mix only, so it is a LOWER bound on true dispersion"),
+    dict(id="household_relief_does_not_protect_banks",
+         label="Forbearance, IDR and wage insurance together remove under 10 pct of system "
+         "bank losses at every dose; enhanced wage insurance costs 314bn to remove 12.9bn",
+         value="under 10 pct", sealed_id=None, section="7",
+         tag_override="SCENARIO",
+         why="follows structurally from the first-round share of losses, which is measured, "
+             "but the instrument effects rest on a linear pass-through assumption"),
+    dict(id="card_heavy_most_exposed", label="Card-heavy lenders most exposed (38.9 pct "
+         "breaching at 25 pct); mortgage portfolio lenders among the least (0.1 pct)",
+         value="by business model", sealed_id=None, section="7",
+         tag_override="SCENARIO",
+         why="business models measured; the breach rates are conditional on a dose"),
+    dict(id="ai_bust_is_fiscal", label="An AI bust costs 569 to 955bn in capital gains and "
+         "corporate receipts while its wage-side effect is 12 to 80 times weaker than "
+         "displacement", value="569 to 955bn", sealed_id=None, section="8",
+         tag_override="SCENARIO",
+         why="the receipts falls are MEASURED historical episodes; the wage-side conversion "
+             "rests on a stated MPC and an unemployment-to-wage-bill mapping"),
+    dict(id="equity_concentration", label="The top 1 percent hold 50.9 percent of corporate "
+         "equity and the bottom half 0.58, which is why a bust transmits weakly to spending",
+         value="50.9 pct", sealed_id=None, section="8",
+         tag_override="STANDING",
+         why="MEASURED from the Distributional Financial Accounts, 2026Q2"),
+    dict(id="financing_verdict_conditional",
+         label="The 'resembles 2000, not 2008' verdict flips on 66bn of additional "
+         "debt-financed capex against about 162bn of AI-linked bank lending already drawn",
+         value="conditional", sealed_id=None, section="8",
+         tag_override="SCENARIO",
+         why="PROVISIONAL. Off-balance-sheet financing is unsourced and BIS calls it "
+             "dominant, so the verdict is conditional on Tier 1 rather than a finding"),
+    dict(id="two_opposite_jobs", label="The state loses in both failure directions through "
+         "different tax bases, so one capital tax rate is asked to do two opposite jobs",
+         value="organising conclusion", sealed_id=None, section="11",
+         tag_override="SCENARIO",
+         why="follows from two measured holder shares and two scenario loss paths. It is "
+             "the paper's organising conclusion and is tagged by its weakest input"),
+
     # ---- what the replicator could not attempt
     dict(id="hedge_ratio_at_operative", label="Share of the federal wage loss hedged at the "
          "operative tau_k", value="0.36", sealed_id=None, section="8",

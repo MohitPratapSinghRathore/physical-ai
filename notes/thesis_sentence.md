@@ -21,43 +21,43 @@ OWNER APPROVAL.** Four changes, each marked in place below:
    (both the 2024 SDN and the 2026 Note), the Windfall Trust, Korinek and Lockwood, and Casas
    and Torres all have it. What is ours is the measured liability side.
 
-## The sentence, rewritten plainly. OWNER'S WORDING, 2026-09-20.
+## The sentence, matched to the seven-claim order. AWAITING OWNER APPROVAL.
 
-Same numbers, readable on a first pass. Replaces the previous version, which was accurate but
-carried project jargon (dose, leg, tau_k) and three-decimal figures into a sentence meant to
-be read aloud.
+Amended to follow the claim order, to carry the union wording, and to end on the organising
+conclusion rather than on the method boundary.
 
-> In the United States, the federal government is exposed, as holder, guarantor or debtor, on
-> about four fifths of the financial claims that are paid directly out of wages: about a third
-> as creditor or guarantor, through mortgage guarantees and student loans, and about
-> fifty-five percent as the debtor on Treasury debt serviced from income and payroll taxes.
-> It holds about one percent of the claims on AI capital. It is the main holder of the exposure that loses if AI replaces labor and has
-> almost no stake in the exposure that gains. So displacement is a fiscal event before it is a
-> banking event: at ten percent of wages displaced, the only level inside observed data, the
-> federal government bears roughly 80 to 90 percent of first-round losses, and direct
-> household credit losses are small. Banks are reached mainly at large displacement, and then
-> mostly through falling spending, house prices and business credit rather than displaced
-> borrowers' own loans; that part is scenario, not measurement. Whether the budget can absorb
-> the loss depends on which capital tax rate reaches AI profits: the condition needs about 11
-> to 14 percent, AI capital after expensing and profit shifting bears about 7, and capital
-> economy-wide bears 20 to 22, so between a quarter and a half of AI profits would need to be
-> taxed at the ordinary rate. Above roughly 25 percent displacement our estimates become
-> bands, and the conventions behind the four-fifths figure matter: setting aside what the
-> government owes and counting only what it holds or guarantees gives about 32 percent, not
-> treating agency mortgage pools as federal gives about 59, and counting claims backed only
-> indirectly by wages gives about 45.
+> In the United States, about **52 percent of all debt is serviced directly out of wages**,
+> and the federal government is exposed, as holder, guarantor or debtor, on about **four
+> fifths** of those claims: roughly a third as creditor or guarantor, through mortgage
+> guarantees and student loans, and about **55 percent as the debtor** on Treasury debt
+> serviced from income and payroll taxes. It holds about **one percent** of the claims on AI
+> capital. So displacement is a fiscal event before it is a financial one: at ten percent of
+> wages displaced, the only level inside observed data, the federal government bears roughly
+> **80 to 90 percent** of first-round losses while the banking system barely moves, and when
+> automation works through non-hiring rather than layoffs the losses shift onto younger
+> borrowers while **the fiscal loss is unchanged**. Banks are reached mainly at larger
+> displacement and mostly indirectly, through falling spending, house prices and business
+> credit rather than displaced borrowers' own loans, which is why **household relief does not
+> protect bank capital**: forbearance, income-driven repayment and wage insurance together
+> remove under a tenth of bank losses. Whether the budget can absorb the loss depends on
+> which capital tax rate reaches AI profits: the condition needs about **11 to 14 percent**,
+> AI capital after expensing and profit shifting bears about **7**, and capital economy-wide
+> bears **20 to 22**, so between a quarter and a half of AI profits would need to be taxed at
+> the ordinary rate. **And if AI fails instead, the state still loses: a bust costs 569 to
+> 955bn in capital gains and corporate receipts while barely touching wages. The state loses
+> in both directions, through different tax bases, so the same capital tax rate is being
+> asked to do two opposite jobs.**
 
-## The one-line version, unchanged
+## The one-line version
 
-> Wage-based public finance makes the state the residual claimant on labour income, so
-> displacement lands on the sovereign first and on the banks second, and the terms on which a
-> sovereign borrows decide whether that is an accounting problem or a crisis.
+> The state is the residual claimant on labour income and holds almost none of the capital
+> that would replace it, so it loses whether AI succeeds or fails, and the one instrument
+> that could hedge either is the same rate pulled in opposite directions.
 
-**Note on the closing clause.** "The terms on which a sovereign borrows decide whether that is
-an accounting problem or a crisis" **rests on scenario arithmetic**, not measurement: the
-emerging-market debt path, the 376.7 percent twenty-year baseline and the 1.8 ratio of
-displacement increments are projections on assumed paths. The clause is worth keeping because
-it is the paper's reach, but it must not be read as a measured result.
+**Note on the previous one-liner.** The earlier closing clause, "the terms on which a
+sovereign borrows decide whether that is an accounting problem or a crisis", **rested on
+scenario arithmetic**, not measurement: the emerging-market debt path and the 376.7 percent
+baseline are projections. It is dropped from the headline version and kept in section 9.
 
 ---
 

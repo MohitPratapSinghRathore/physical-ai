@@ -53,6 +53,38 @@ replicated fiscal condition with sourced parameters; and the public claims regis
 
 ---
 
+## The debt-only labour backing ratio, NEW this session
+
+The all-claims ratio has corporate equity at market value at **48.2 percent** of its
+denominator, so it is partly an asset-price series: **0.271 at the 2000 equity peak, 0.377 in
+2008 after the crash**. The debt-only ratio excludes market-valued equity classes and asks
+the cleaner question.
+
+| denominator | direct | including indirect |
+|---|---|---|
+| all claims | 0.270 | 0.475 |
+| **DEBT ONLY** | **0.522** | **0.602** |
+
+**It is the better statistic on both tests.** Stability over 1952 to 2025: coefficient of
+variation **0.051 against 0.094**. Robustness to the largest judgement call: the one-step
+rule moves it **15.4 percent against 75.7**.
+
+| year | debt-only direct | all-claims direct | equity share of all claims |
+|---|---|---|---|
+| 1952 | 0.5208 | 0.3942 | 0.243 |
+| 1970 | 0.4520 | 0.2996 | 0.337 |
+| 1990 | 0.4600 | 0.3608 | 0.216 |
+| 2000 | 0.4687 | **0.2705** | 0.423 |
+| 2008 | 0.5006 | **0.3772** | 0.246 |
+| 2020 | 0.5037 | 0.2895 | 0.425 |
+| 2025 | **0.5216** | 0.2703 | 0.482 |
+
+**Status [M], PROVISIONAL** until the next promotion pass: a new construction, not
+independently rebuilt. Code `framework/labor_backing/build_debt_only.py`; six new bounds
+added to the plausibility audit, all passing.
+
+---
+
 ## Seven supporting results
 
 | # | Result | Status |
@@ -142,6 +174,67 @@ be "roughly doubled"; we get **1.55 to 1.94 times** the operative rate. Neither 
    fails at our 0.0708 and passes at the IMF's measured 0.20 to 0.22. Both are correctly
    computed on different bases. This is limitation and open question at once, and it is the
    first thing a public finance co-author should attack.
+
+---
+
+## Module A: institutions, from 8,612 balance sheets
+
+**MEASURED**: 4,313 FDIC-insured banks and 4,299 credit unions at 2026-06-30, loan book by
+category and capital for each. 26,753.0bn and 2,522.7bn of assets. **SCENARIO**: every loss
+application above the inside-data level.
+
+**Plausibility violation, caught by the baseline check.** 53 institutions breached with zero
+losses applied; 17 banks report neither tier 1 nor equity and are insured US branches of
+foreign chartered institutions whose capital sits at the parent. Excluded, exclusion stated
+(24 institutions, 263.2bn). **Baseline now 29 institutions, 0.029 percent of assets.**
+
+| dose | breaching | pct of assets | with one year of earnings |
+|---|---|---|---|
+| baseline | 29 | 0.03 | |
+| **10 pct** | **54** | **0.04** | 0.04 |
+| 25 pct | 246 | 4.02 | 1.55 |
+| 50 pct | 1,448 | 28.20 | **9.93** |
+
+**Card-heavy lenders most exposed** (38.9 pct breaching at 25 pct, 77.8 at 50); credit unions
+the only class with stress at 10 pct; **mortgage portfolio lenders among the least, 0.1 pct
+at 25 pct.**
+
+**Household relief does not protect bank capital.** Forbearance, IDR and wage insurance
+together remove under 10 percent of system losses at every level, because at the 10 percent
+level only 27bn of 205bn is first-round. Enhanced wage insurance costs 314bn to remove 12.9bn
+of bank losses. **They still cut assets in breach from 4.02 to 1.48 percent at 25 percent.**
+
+**Institutions previously omitted.** State and local government, 424.1bn of wage-linked income
+tax, 15.93 percent of own receipts, balanced-budget constrained, **and its procyclical
+spending cut feeds the same demand channel, a loop not in the engine.** Pension funds,
+contributions a share of covered payroll against nominally fixed benefits. Insurers and
+private credit, the latter inseparable from the Z.1 aggregate so 6,186.9bn is an upper bound.
+
+---
+
+## Module B: the AI bust
+
+**A large fiscal event and a small credit event.** Wage-bill equivalent 0.12 to 0.84 percent,
+**12 to 80 times weaker** than the 10 percent displacement case; household credit losses 0.8
+to 5.4bn against 30.7bn. But federal receipts fall **569 to 955bn** on the verified episodes,
+through capital gains and corporate tax.
+
+**Why it transmits weakly is measured**: the top 1 percent hold **50.9 percent** of corporate
+equity and the bottom half 0.58, so the shock lands where the propensity to consume is
+lowest. GDP falls 0.34 to 1.69 percent against the Fed severely adverse 4.6.
+
+**The financing verdict is CONDITIONAL.** 0.0654 on the nine filers' books, but it leaves the
+2000 pattern at **66.1bn** of additional debt-financed capex, which is 14.7 percent of the
+450bn of identified bank commitments, of which roughly **162bn is already drawn**.
+Off-balance-sheet financing is unsourced and BIS calls it dominant.
+
+**The payoff table.** Only the federal government and banks lose in every column; households
+gain 0.324 under success. **But the table scores HOLDINGS and so understates the state,
+whose claim on the AI upside is fiscal, not proprietary.**
+
+**Two caveats stated.** The marginal propensity to consume out of wealth is an assumption
+checked against two episodes, not a sourced parameter. The credit-led GDP path is understated
+because bank-channel damage is not fed back into it.
 
 ---
 

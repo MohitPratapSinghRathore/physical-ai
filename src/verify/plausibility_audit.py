@@ -158,6 +158,29 @@ def main():
     except Exception as e:
         chk("rho in [0, 1]", str(e), "rho in [0, 1]", False, "audit could not run")
 
+    # ---- the debt-only labour backing ratio, added this session. A share must lie in
+    # [0, 1], and the debt-only denominator must be SMALLER than the all-claims one.
+    try:
+        f = ROOT / "framework" / "labor_backing" / "debt_only_ratio_timeseries.csv"
+        if f.exists():
+            d = pd.read_csv(f)
+            for col in ["DEBT_ONLY_ratio_direct", "DEBT_ONLY_ratio_incl_indirect",
+                        "all_claims_ratio_direct", "equity_share_of_all_claims"]:
+                v = pd.to_numeric(d[col], errors="coerce").dropna()
+                chk(f"{col} in [0, 1]", float(v.max()), "a share: 0 to 1",
+                    bool((v >= 0).all() and (v <= 1).all()),
+                    f"{len(v)} years, min {v.min():.4f}, max {v.max():.4f}")
+            ok = bool((d.total_debt_only_bn <= d.total_all_claims_bn).all())
+            chk("debt-only denominator <= all-claims denominator",
+                float((d.total_debt_only_bn / d.total_all_claims_bn).max()),
+                "excluding equity cannot enlarge the denominator", ok)
+            chk("debt-only ratio >= all-claims ratio",
+                float((d.DEBT_ONLY_ratio_direct - d.all_claims_ratio_direct).min()),
+                "removing an unbacked class from the denominator must RAISE the ratio",
+                bool((d.DEBT_ONLY_ratio_direct >= d.all_claims_ratio_direct).all()))
+    except Exception as e:
+        chk("debt-only ratio bounds", str(e), "share in [0, 1]", False, "audit failed")
+
     A = pd.DataFrame(CHECKS)
     OUTD = OUT / "verify"; OUTD.mkdir(parents=True, exist_ok=True)
     A.to_csv(OUTD / "plausibility_audit.csv", index=False)
