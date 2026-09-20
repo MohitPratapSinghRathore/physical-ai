@@ -337,7 +337,7 @@ base and the formal credit system, which is the variable the statistic turns on.
 Instruments are more useful attached to a trigger carrying its current value and a label saying
 whether the threshold sits inside the range of the data behind it. The capital tax trigger is already tripped:
 the assembled rate is \result{TauKBarkai} percent against a threshold of \result{RequiredEasy}
-percent, both sides observed today. Prime-age nonemployment stands at \result{PrimeAgeNonemp}
+percent, whose components differ in status on the two sides. Prime-age nonemployment stands at \result{PrimeAgeNonemp}
 against the observed maximum of \result{PrimeAgeMax}, where the reemployment fit leaves the data,
 so crossing it is the moment the rest of this architecture can no longer be sized. The
 debt-financed share of AI capital spending is \result{DebtFinancedShare} percent against the
@@ -352,6 +352,133 @@ economy. Past a displacement level of about forty-six percent of the physically 
 the reemployment construction has no admissible solution and no reemployment-based instrument can
 be sized from these data. The architecture does not become wrong there; it becomes unsizeable.
 Appendix~\ref{app:instruments} gives the full instrument table.
+
+\subsection{Breaches above the least-extrapolated level}
+
+\emph{Supporting Section~\ref{sec:banks}, on what the capital tests give at larger displacement.}
+
+At twenty-five percent of the wage bill displaced, \result{BreachTwentyFiveN} institutions fall
+below their capital threshold, holding \result{BreachTwentyFiveAssets} percent of system assets;
+at fifty percent, \result{BreachFiftyN} institutions holding \result{BreachFiftyAssets} percent,
+against system losses of \result{SysLossFifty} billion dollars. Allowing one year of earnings to
+absorb losses first cuts those asset shares to \result{BreachTwentyFiveAssetsEarnings} and
+\result{BreachFiftyAssetsEarnings} percent. Both levels extrapolate the reemployment relationship
+beyond its observed range, so the counts are shape rather than level.
+
+\subsection{The pass-through decomposition}
+
+\emph{Supporting Section~\ref{sec:fiscal}, on the taxable capital income generated per displaced wage dollar.}
+
+The condition in Definition~\ref{def:condition} carries a coefficient that the headline
+comparison sets to one. Written as $\tau_k \ge \tau_\ell (1 - R)$, it assumes that every dollar of
+displaced wages reappears as a dollar of taxable US capital income. Making that explicit,
+\begin{equation}
+\tau_k \, g \;\ge\; \tau_\ell\,(1 - R), \qquad
+\tau_k^{\ast} = \frac{\tau_\ell\,(1 - R)}{g},
+\label{eq:passthrough}
+\end{equation}
+with $g$ the taxable US capital income generated per dollar of displaced wages, bounded in
+$[0,1]$ with output preserved. Everything reported above is the case $g = 1$, and it stays the
+headline because $g$ cannot be sourced. What follows is a sensitivity, and its only purpose is to
+show the direction: incomplete pass-through can only widen the shortfall, never close it.
+
+A displaced wage dollar splits into the cost of the AI capital and services that replace the work,
+a share $c$, and the surplus the adopting firm keeps, $1 - c$. The second is the adopting firm's
+capital income. Only the first is revenue to the suppliers of AI capital, and only there does our
+decomposition of a dollar of AI capital spending apply: \result{CapexDomesticLabor} percent
+domestic labor, which is already inside $\tau_\ell (1 - R)$ and must not be counted twice,
+\result{CapexImported} percent imported and never entering the US tax base, and
+\result{CapexDomesticSurplus} percent domestic producer surplus. So
+$g = (1 - c) + c \, s$, with $s$ that surplus share. Taking $c = \result{CapitalCostShare}$
+percent gives $g = \result{GCentral}$ and a required rate of \result{RequiredPTEasy} to
+\result{RequiredPTHarder} percent, against \result{RequiredEasy} to \result{RequiredHard} at
+$g = 1$; across the swept range of $c$, $g$ runs from \result{GLow} to \result{GHigh}.
+
+A second channel is reported separately because it is a different mechanism. If a share of the
+adopting firm's retained surplus is competed away to consumers in lower prices, it is never taxed
+as capital income. At \result{PriceThrough} percent of the retained surplus, $g$ falls to
+\result{GWithPrice} and the required rate rises to \result{RequiredPriceEasy} to
+\result{RequiredPriceHarder} percent.
+
+Three statements about this sensitivity, since it is the weakest thing in the section. It is
+scenario arithmetic: $c$ has no verified estimate here or, so far as we located, anywhere, and the
+shares behind $s$ are swept ranges rather than sourced values. It does not double count the
+profit shifting already inside the assembled rate: the import share removed here is payment that
+never enters the US base, while shifted profit does enter it and is taxed at the lower rate the
+assembly already applies, and the one case where the two could touch, an intra-firm import priced
+as a transfer, would make $g$ too low and so runs against this correction. And it changes what can
+be said about the economy-wide rate only conditionally: at the central case of the base
+construction, an economy-wide rate of twenty to twenty-two percent still clears the required band;
+it stops clearing once a price pass-through term is added. That is a reason to report the two
+terms separately, not to fold either into the headline.
+
+\subsection{What ownership would cost}
+
+\emph{Supporting Section~\ref{sec:institutions}, on the price of a direct claim on the AI side.}
+
+Because ownership is the instrument whose case strengthens as displacement rises, its price is
+worth stating, and stating correctly. On an AI side worth about \result{AISideTotalBn} billion
+dollars, a federal position of \result{AIFederalShareRounded} percent is already about
+\result{StakeHeldNowBn} billion dollars. Taking that share to ten percent means holding
+\result{StakeForTenPctBn} billion, so the purchase required is the difference,
+\result{AdditionalPurchaseBn} billion, not the whole position. That is still about
+\result{PurchaseVersusAgencyCapital} times the entire capital of the housing agencies, and it
+would move the federal share of the AI side by nine percentage points against a difference between
+the two sides of about \result{HolderGap} points. Prices are the other half of it: the cost of
+acquiring a position rises with the price of the asset, which is what a successful transition does
+to it. Most instruments in Appendix~\ref{app:instruments} are therefore not ownership instruments,
+and at near-total displacement ownership and direct-claim instruments become the more plausible
+channel rather than the only conceivable one.
+
+\subsection{The transition path under expensing}
+
+\emph{Supporting Section~\ref{sec:fiscal}, on revenue during an investment boom.}
+
+While investment grows, current deductions exceed the tax on income from a capital stock built
+when investment was smaller, so net revenue from the sector is below the steady-state figure and
+can be negative. An illustrative path, using the tax parameters of Section~\ref{sec:fiscal} and a
+geometric investment series that is chosen rather than estimated, makes the size of that visible:
+with investment growing at \result{TransitionGrowthRate} percent a year, net entity-level tax is
+negative at \result{TransitionYearFive} per unit of investment in year five and still negative in
+year twenty-five, while at zero growth it turns positive in year
+\result{TransitionPositiveYear}. That path illustrates a mechanism and is not a forecast of
+revenue. The mechanism itself is not in doubt: during an investment boom the revenue actually
+collected is lower than the assembled rate implies, not higher.
+
+\subsection{The financing mix inside the measured tier}
+
+\emph{Supporting Section~\ref{sec:bust}, on how the observed AI investment is funded.}
+
+The nine filers report \result{FilerCapexBn} billion dollars of capital spending against
+\result{FilerOCFBn} billion of operating cash flow, a self-funding ratio of
+\result{SelfFunding}, and a debt-financed share of capital spending of
+\result{DebtFinancedShare} percent on those books, which is a lower bound because financing held
+off those balance sheets does not appear in it. Of the bank commitments in the second tier,
+roughly \result{AIDrawnBn} billion appears drawn \citep{CohenKillenLau2026}.
+
+\subsection{Reading the lever ranking}
+
+\emph{Supporting Section~\ref{sec:fiscal}, on the table of levers.}
+
+One line of Table~\ref{tab:levers} is easy to read backwards. The taxable-holder share appears
+last, with a swing of \result{SwingTheta}, because it is pinned to a narrow sourced range and not
+because it does not matter: it is the largest single determinant of the level of the assembled
+rate and the smallest remaining source of uncertainty in it.
+
+\subsection{The four method limitations}
+
+\emph{Supporting Section~\ref{sec:limitations}, on the limitations that belong to the method.}
+
+of Section~\ref{sec:displacement}: above about a quarter of the wage bill displaced
+there are no point estimates, only bands, which is a limit of the specification and not a fact
+about the economy. The \emph{first-round scope} of the credit engine, which holds house prices,
+spending, business revenue and the employment of everyone not displaced fixed, so every credit
+loss is a floor. The \emph{procedural blind} in the rebuild protocol described in
+Section~\ref{sec:rebuild}, which is why this paper says quantities were independently rebuilt
+under a reported blind protocol and never that they were independently verified. And
+\emph{foreign withholding}: dividends to foreign holders bear US withholding tax at treaty rates
+and we treat them as untaxed at the owner level, which biases the assembled capital tax rate
+downward by an amount we have not quantified, running against our own finding.
 
 \subsection{Avenues for further work}
 

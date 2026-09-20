@@ -2,12 +2,11 @@
 \label{sec:banks}
 
 This module tests the last clause of the central claim, that household and lender outcomes vary
-with income, debt composition and the mechanism of displacement rather than moving with aggregate
-bank capital. Displacement reaches banks mostly through what lost spending does to everyone else,
-not through the borrowers who lose their jobs. We apply the loss across
-\result{NInstitutions} individual balance sheets, ask which are short of capital afterwards, and
-then ask what household relief does once its effect on spending is allowed for. The balance sheets
-are measured; every loss applied to them is scenario, conditional on a displacement level.
+with income, debt composition and the mechanism of displacement rather than with aggregate bank
+capital. Displacement reaches banks mostly through what lost spending does to everyone else, not
+through the borrowers who lose their jobs. We apply the loss across \result{NInstitutions}
+individual balance sheets and ask which are short of capital afterwards. The balance sheets are
+measured; every loss applied to them is scenario.
 
 \subsection{Little happens at the least-extrapolated level}
 
@@ -18,11 +17,10 @@ dollars, of which \result{SysFirstTen} billion is first round and \result{SysSec
 \result{BreachTenAssets} percent of system assets, against a baseline of
 \result{BaselineBreaches} institutions and \result{BaselinePctAssets} percent before any loss.
 
-Breaches open above that level: \result{BreachTwentyFiveN} institutions holding
-\result{BreachTwentyFiveAssets} percent of assets at twenty-five percent displacement, and
-\result{BreachFiftyN} holding \result{BreachFiftyAssets} percent at fifty. Allowing one year of
-earnings to absorb losses first cuts those to \result{BreachTwentyFiveAssetsEarnings} and
-\result{BreachFiftyAssetsEarnings} percent, the largest single sensitivity in this module.
+Breaches open above that level, and how far they open depends heavily on whether a year of
+earnings is allowed to absorb losses first, which is the largest single sensitivity in this
+module; Appendix~\ref{app:detail} gives the counts at the larger displacement levels under both
+treatments.
 
 \subsection{Which institutions}
 
@@ -52,14 +50,13 @@ beyond its observed range.}
 \label{fig:breach}
 \end{figure}
 
-\subsection{What household relief does, bounded from both sides}
+\subsection{What household relief does, under two treatments}
 
 Whether relief reaches bank capital turns on one modeling choice, so we report the result under
-both settings of it rather than picking one. Hold the second round fixed and an instrument can only
-reach the first, which at the ten percent level is about a ninth of the total; let income
-replacement raise the share of the displaced wage bill that households actually receive, and it
-also reduces the demand shortfall that drives the second round, since that shortfall is a function
-of the same quantity.
+both settings of it. Hold the second round fixed and an instrument can only reach the first, which
+at the ten percent level is about a ninth of the total; let income replacement raise the share of
+the displaced wage bill that households actually receive, and it also reduces the demand shortfall
+that drives the second round, since that shortfall is a function of the same quantity.
 
 With the propensities the second-round module already carries, the combined package of
 forbearance, automatic income-driven student repayment and enhanced wage insurance removes
@@ -68,13 +65,15 @@ forbearance, automatic income-driven student repayment and enhanced wage insuran
 at fifty. With the second round held fixed it removes \result{ReliefNoFeedbackTen},
 \result{ReliefNoFeedbackTwentyFive} and \result{ReliefNoFeedbackFifty} percent.
 
-\begin{quote}
-Those two figures are bounds, not competing estimates. The fixed-second-round treatment is a lower
-bound, because relief cannot touch demand by construction. The full-feedback treatment is an upper
-bound, because the instrument runs for a year while the loss path does not, so income replacement
-cannot hold the demand shortfall down over the whole path. The honest statement is the pair, with
-the duration mismatch named.
-\end{quote}
+These are two treatments of one modeling choice and not bounds on a single quantity, because
+their horizons do not match: the instrument as costed runs for one year, while the loss path it is
+set against runs for several. The fixed-second-round treatment asks what relief does if demand
+never responds, and the feedback treatment asks what it does if a year of income replacement holds
+the demand shortfall down over the whole path. Neither question is the one a designer needs
+answered, and the gap between the two figures is mostly the horizon rather than the mechanism. A
+duration-matched experiment, in which the instrument and the loss path run over the same years, is
+future work, and until it is run this result carries less weight than the incidence results around
+it.
 
 The effect on the institutions that actually fail is large under both treatments, and that is the
 more stable finding. At the twenty-five percent level, assets in breach fall from
@@ -91,18 +90,17 @@ Table~\ref{tab:relief} gives the instruments one at a time.
 \begin{table}[htbp]
 \centering
 \caption{Relief instruments against system bank losses, with the second round held fixed and with
-demand feedback, by displacement level. The pair brackets the effect; cells with no sourced fiscal
-cost read n/a. Scenario.}
+demand feedback, by displacement level. Two treatments of one modeling choice with mismatched
+horizons, not bounds; cells with no sourced fiscal cost read n/a. Scenario.}
 \label{tab:relief}
 \input{tables/tab_relief.tex}
 \end{table}
 
-Two conclusions hold across the pair. The first is about design: relief reaches bank capital
-mainly by supporting spending, not by curing the defaults of displaced borrowers, so an instrument
-that replaces income does far more for the banking system than one that reschedules a claim, and
-the two should not be priced as though they were the same kind of policy. The second is about
-incidence: under either treatment, relief protects the institutions whose books are concentrated
-in household credit, which are the ones that fail first.
+Two conclusions hold under both treatments. Relief reaches bank capital mainly by supporting
+spending rather than by curing the defaults of displaced borrowers, so an instrument that replaces
+income does more for the banking system than one that reschedules a claim. And relief protects the
+institutions whose books are concentrated in household credit, which are the ones that fail
+first.
 
 \subsection{The exposures this engine does not reach}
 

@@ -1,11 +1,10 @@
 \section{Displacement, measured}
 \label{sec:displacement}
 
-This module supports the incidence half of the central claim. It asks where the loss lands when
-wage income is removed, at the calibrated scenario with the least extrapolation used to calibrate reemployment. The
-answer is that the burden is fiscal well before it is financial, and that the composition of the
-private part depends on how the displacement happens rather than only on how much of it there is.
-Everything here is conditional on the displacement level, which is an input.
+This module supports the incidence half of the central claim, asking where the loss lands when
+wage income is removed. The burden is fiscal well before it is financial, and the composition of
+the private part depends on how the displacement happens rather than only on how much of it there
+is. Everything here is conditional on the displacement level, which is an input.
 
 \subsection{The boundary, stated before any number}
 
@@ -17,11 +16,10 @@ otherwise. The physically exposed group leaves that range first, above the ten p
 two cognitively exposed groups stay inside it to twenty-five percent; above about a quarter of the
 wage bill, no group has a point estimate.
 
-This is a limit of our specification, not a fact about the economy. It is also easy to conceal:
-an iterative solver that clips at zero will return the clipping boundary as though it were an
-estimate, and about a quarter of the cells in the response surface have no admissible solution to
-return. We report those cells as bands, which lowers rather than raises the loss at large
-displacement.
+This is a limit of our specification, not a fact about the economy, and it is easy to conceal: a
+solver that clips at zero returns the clipping boundary as though it were an estimate, and about a
+quarter of the cells in the response surface have no admissible solution. We report those cells as
+bands, which lowers rather than raises the loss at large displacement.
 
 \subsection{First-round incidence by holder}
 
@@ -76,10 +74,10 @@ thinnest are in the \emph{second} quintile, a median of \result{QTwoRunway} mont
 against \result{QOneUnderOne} percent. From the second quintile upward the gradient is monotonic,
 reaching \result{QFiveRunway} months and \result{QFiveUnderOne} percent at the top.
 
-The explanation matters for design: households in the bottom quintile hold little debt and few of
-the commitments a runway is measured against, while households in the second have taken on the
-commitments of those above them without the income or assets to carry them. Relief targeted at the
-bottom of the distribution misses the households with the least room.
+The explanation matters for design: bottom-quintile households hold little debt and few of the
+commitments a runway is measured against, while second-quintile households carry the commitments
+of those above them without the income or assets to service them. Relief targeted at the bottom of
+the distribution misses the households with the least room.
 
 \begin{table}[htbp]
 \centering
@@ -100,17 +98,14 @@ confirmed in every cell by the independent rebuild; the magnitudes were not, and
 direction as the finding.
 
 Automation can also work through hiring that does not happen rather than through layoffs. Running
-the first round three ways, incumbents only, non-hiring only, and a sourced mix, student loan
+the first round three ways, incumbents only, non-hiring only and a sourced mix, student loan
 losses rise by \result{AttritionStudentLow} to \result{AttritionStudentHigh} percent under the
-non-hiring case against the sourced mix while mortgage losses fall by
-\result{AttritionMortgageLow} to \result{AttritionMortgageHigh} percent, because entrants carry
-student debt and rarely carry mortgages. Auto losses barely move. The private loss is the same
-size and lands on different people and different lenders.
-
-The federal column does not move at all: it is identical across the three cases, to the cent, in
-every exposure group, because a wage that is never earned costs the same in tax whether it was
-never offered to an entrant or taken from an incumbent. Appendix Table~\ref{tab:attrition} gives
-the nine cells. One gap belongs with them: people who are never hired at all are invisible to this
-engine, and external indicators for recent graduates have moved in ways consistent with that
-channel operating \citep{BrynjolfssonChandarChen2026}, which we report as a gap in our measurement
-rather than as a finding of ours.
+non-hiring case while mortgage losses fall by \result{AttritionMortgageLow} to
+\result{AttritionMortgageHigh} percent, because entrants carry student debt and rarely carry
+mortgages. The private loss is the same size and lands on different people and different lenders,
+while the federal column is identical across the three cases to the cent, because a wage that is
+never earned costs the same in tax however it was lost. Appendix Table~\ref{tab:attrition} gives
+the nine cells. People never hired at all are invisible to this engine, and external indicators
+for recent graduates have moved in ways consistent with that channel operating
+\citep{BrynjolfssonChandarChen2026}, which we report as a gap in our measurement rather than as a
+finding of ours.
