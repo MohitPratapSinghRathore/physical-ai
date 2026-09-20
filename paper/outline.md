@@ -403,8 +403,12 @@ what was cut: the incidence count-robustness claim, the 50 percent reemployment 
 hedge ratio at the operative rate, the bottom-quintile magnitude, and the two cognitive index
 scores.
 
-**Plus two method limitations.** The replication blind was procedural, not enforced. And the
-IMF note's boundary has not been redrawn from its full text.
+**Plus two method limitations.** The replication blind was **procedural, not enforced**: the
+replicator worked on the same machine with the sealed file reachable at a path the brief
+names, so the claim is "independently rebuilt under a reported blind protocol", not
+"independently verified". And **the capital tax base is contested**, which is what section 5.1
+sets out: the fiscal verdict turns on whether the rate is the marginal one on AI surplus or
+the economy-wide average, and both are correctly computed.
 
 ---
 
@@ -416,8 +420,9 @@ Three sentences, and no more:
    It is the residual holder of the exposure that fails if AI succeeds and holds almost none
    of the exposure that pays if it does.
 2. **At the one dose fully inside the observed data, ten percent of the wage bill, the federal
-   government bears roughly four fifths of first-round losses**, and the fiscal condition
-   cannot be closed under the tax code as it stands.
+   government bears roughly four fifths of first-round losses**, and closing the fiscal
+   condition would require between a quarter and a half of the AI surplus to bear the
+   economy-wide capital rate rather than the much lower rate AI capital actually faces.
 3. **Past a displacement dose of about forty-six percent for the embodied group, this data
    cannot say what happens**, because the reemployment rate has no admissible estimate there.
    That boundary is a finding about the limits of the measurement, and it is where the paper

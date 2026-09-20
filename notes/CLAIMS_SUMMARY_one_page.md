@@ -116,8 +116,13 @@ be "roughly doubled"; we get **1.55 to 1.94 times** the operative rate. Neither 
 5. **Effective labour tax rates by income are not from CBO.** A single economy-wide rate,
    flat across the wage distribution. We have not signed or bounded the net effect.
 6. **First round only, house prices fixed.** Every credit loss is a floor, not an estimate.
-7. **The IMF note's boundary has not been redrawn from its full text**, which is unreachable
-   from this environment.
+7. **The replication blind was procedural, not enforced.** The replicator worked on the same
+   machine with the sealed file reachable at a path the brief names. The claim is
+   "independently rebuilt under a reported blind protocol", not "independently verified".
+8. **The capital tax base is contested and the fiscal verdict turns on it.** The condition
+   fails at our 0.0708 and passes at the IMF's measured 0.20 to 0.22. Both are correctly
+   computed on different bases. This is limitation and open question at once, and it is the
+   first thing a public finance co-author should attack.
 
 ---
 
