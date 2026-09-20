@@ -99,7 +99,7 @@ correct as modelling and is exactly what makes the row-4 comparison invalid.
   and 0.0238 to 0.0524 across our theta range. 0.0386 is inside throughout. Passes.
 
 **Withdrawn:** "Our construction reproduces the published figure" in
-`data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`, and "Two published-figure checks, both
+`notes/sources/SHAREHOLDER_PARAMS_extracted.md`, and "Two published-figure checks, both
 passed" in the A116 gate report. Both were true of the text figure and false of the Table 5
 band, and should never have been asserted of both at once. The word "reproduces" is gone from
 every passage that referred to the band.

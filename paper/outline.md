@@ -608,7 +608,9 @@ replicator worked on the same machine with the sealed file reachable at a path t
 names, so the claim is "independently rebuilt under a reported blind protocol", not
 "independently verified". And **the capital tax base is contested**, which is what section 5.1
 sets out: the fiscal verdict turns on whether the rate is the marginal one on AI surplus or
-the economy-wide average, and both are correctly computed.
+the economy-wide average, and both are correctly computed. **Foreign holders are treated as
+untaxed at shareholder level, though dividends to them bear US withholding tax at treaty
+rates; the effect on the assembled rate is not quantified.**
 
 ---
 

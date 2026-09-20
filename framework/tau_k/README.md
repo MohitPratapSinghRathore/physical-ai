@@ -7,7 +7,7 @@ and the case against ours).
 
 Rebuild: `python components.py && python labor_component.py && python assemble.py`. Figure at
 `paper/figures/tau_k_map.png`. The A115 source extraction, with tables and page references,
-is in `data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`.
+is in `notes/sources/SHAREHOLDER_PARAMS_extracted.md`.
 
 ## Gate report, A118. THESIS-WEAKENING FIRST.
 
@@ -22,7 +22,7 @@ rises from **0.0013 to 0.2832**. The centre still fails under both rent readings
 everywhere under Karabarbounis and Neiman. But **"nowhere in the parameter space" is now a
 statement that must carry the base of theta in the same sentence.** Full run in
 `tau_k_crs_theta_sensitivity.csv`; the base argument is in
-`data/raw/manual/SHAREHOLDER_PARAMS_extracted.md` section 3.
+`notes/sources/SHAREHOLDER_PARAMS_extracted.md` section 3.
 
 **2. Our own published cross-check was wrong, and our construction failed it.** B6.2 of the
 addendum required the shareholder layer to land in CRS Table 5's published 0.045 to 0.085.

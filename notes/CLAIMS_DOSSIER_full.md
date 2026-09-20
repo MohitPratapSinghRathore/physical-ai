@@ -174,6 +174,9 @@ be "roughly doubled"; we get **1.55 to 1.94 times** the operative rate. Neither 
    fails at our 0.0708 and passes at the IMF's measured 0.20 to 0.22. Both are correctly
    computed on different bases. This is limitation and open question at once, and it is the
    first thing a public finance co-author should attack.
+9. **Foreign holders are treated as untaxed at shareholder level, though dividends to them
+   bear US withholding tax at treaty rates; the effect on the assembled rate is not
+   quantified.**
 
 ---
 

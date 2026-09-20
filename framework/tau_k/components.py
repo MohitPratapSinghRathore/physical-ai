@@ -54,7 +54,7 @@ RENT_READINGS = {"Barkai": 0.351, "Karabarbounis_Neiman_case_R": 0.00}
 
 # ------------------------------------------ SOURCED IN A115, no longer swept blind
 # Both were verified from the documents the owner supplied. Full extraction, with tables,
-# page references and the method, is in data/raw/manual/SHAREHOLDER_PARAMS_extracted.md.
+# page references and the method, is in notes/sources/SHAREHOLDER_PARAMS_extracted.md.
 
 # THETA, the share of US corporate equity held in TAXABLE accounts.
 # Rosenthal and Austin (Tax Notes, 16 May 2016, p. 923) Table 2: 0.242 of C corporation

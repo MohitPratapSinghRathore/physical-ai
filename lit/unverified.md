@@ -172,7 +172,7 @@ the A113 table above and now carry dependent claims.
 | deferral factor on capital gains | **0.412 to 0.790, central 0.601** | CRS R47113 Table 5, third row, before its taxable-share adjustment so theta is not double counted. Cross-checked at 0.488 from CBO 2014 Tables A-3 and A-4 (46.9 percent of gains held until death and untaxed) |
 
 Full extraction, with the method and the holder breakdown, is in
-`data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`. **The four source PDFs were supplied in
+`notes/sources/SHAREHOLDER_PARAMS_extracted.md`. **The four source PDFs were supplied in
 session and are named there for placement on disk.**
 
 ### A116: the bondholder rate is CLEARED
