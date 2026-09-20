@@ -30,9 +30,14 @@ BANNED_PHRASES = [
 
 
 def main():
-    t = (HERE / "main.tex").read_text(encoding="utf-8")
+    main_tex = (HERE / "main.tex").read_text(encoding="utf-8")
+    t = main_tex
+    main_body = main_tex.split("\\appendix")[0]
     for sec in sorted((HERE / "sections").glob("*.tex")):
-        t += "\n" + sec.read_text(encoding="utf-8")
+        text = sec.read_text(encoding="utf-8")
+        t += "\n" + text
+        if not sec.stem.startswith("appendix"):
+            main_body += "\n" + text
     tables = ""
     for tab in sorted((HERE / "tables").glob("*.tex")):
         tables += "\n" + tab.read_text(encoding="utf-8")
@@ -72,6 +77,16 @@ def main():
         fails.append(f"internal vocabulary in the manuscript: {hits}")
     if anums:
         fails.append(f"internal session identifiers in the manuscript: {anums}")
+
+    # ---- the main text states results, not the history of its own drafts. The appendices
+    # may describe what the rebuild rounds caught; the body may not narrate earlier versions.
+    SELF_NARRATION = ["earlier version", "was wrong", "withdrawn", "this project",
+                      "we have tested it", "for most of this project", "has been replaced",
+                      "a looser version"]
+    narr = sorted({s for s in SELF_NARRATION if s.lower() in main_body.lower()})
+    print(f"self-narration in the main text: {narr or 'none'}")
+    if narr:
+        fails.append(f"the main text narrates its own earlier drafts: {narr}")
 
     ti = re.search(r"\\title\{(.+?)\}\s*\n", t, re.S).group(1)
     ti = re.sub(r"\\\\|\\bfseries|[{}]", " ", ti)

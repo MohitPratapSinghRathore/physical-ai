@@ -17,10 +17,11 @@ otherwise. The physically exposed group leaves that range first, above the ten p
 two cognitively exposed groups stay inside it to twenty-five percent; above about a quarter of the
 wage bill, no group has a point estimate.
 
-This is a limit of our specification, not a fact about the economy. An earlier version of the code
-enforced the bound accidentally, through an iteration that clipped at zero, and published the
-clipping boundary as an estimate; correcting it removed the point estimate from about a quarter of
-the response surface and lowered, rather than raised, the loss at large displacement.
+This is a limit of our specification, not a fact about the economy. It is also easy to conceal:
+an iterative solver that clips at zero will return the clipping boundary as though it were an
+estimate, and about a quarter of the cells in the response surface have no admissible solution to
+return. We report those cells as bands, which lowers rather than raises the loss at large
+displacement.
 
 \subsection{First-round incidence by holder}
 

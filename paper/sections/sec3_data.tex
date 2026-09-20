@@ -75,7 +75,7 @@ The second round is applied across individual balance sheets rather than to an a
 
 Three labels are used throughout and appear in every table caption. \emph{Rebuilt} means the
 quantity was reproduced by an independent computational rebuild: a separate run that had no access
-to this project's code and worked from raw data and a published specification alone, inside a
+to this paper's code and worked from raw data and a published specification alone, inside a
 tolerance fixed before the rebuild began. \emph{Measured} means produced by the pipeline, clearing
 every applicable bounds check, but not independently rebuilt. \emph{Scenario} means arithmetic
 conditional on an assumption stated where the number appears. In prose we give the label where a
@@ -100,9 +100,9 @@ until the rebuild was final. The claim is therefore that these quantities were i
 rebuilt under a reported blind protocol, not that they were independently verified.
 Appendix~\ref{app:rebuild} gives the round-by-round detail and the causes of the mismatches.
 
-Separately, a standing bounds check states the bound a quantity must respect before it is
-computed and tests it afterwards, running \result{PlausChecks} checks with
-\result{PlausViolations} violations, all of them superseded rows retained deliberately.
+Separately, a standing check states the bound a quantity must respect before it is computed and
+tests it afterwards, so that a figure which cannot be right is caught before it is reported rather
+than after.
 
 \subsection{Disclosure of AI assistance}
 \label{sec:aidisclosure}

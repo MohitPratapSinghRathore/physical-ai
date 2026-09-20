@@ -433,6 +433,13 @@ def tab_tiers():
 def _clean(s, limit=None):
     s = s.replace("**", "").replace("&", "and").replace("_", " ")
     s = re.sub(r"\bdoses?\b", "displacement level", s)
+    # the architecture note uses British spelling and capitalised emphasis; the paper does not
+    for a, b in (("labour", "labor"), ("Labour", "Labor"), ("pre-fund", "pre-fund"),
+                 ("BEFORE", "before"), ("NOT", "not"), ("SOONEST", "soonest"),
+                 ("CHEAPEST", "cheapest"), ("HARDEST", "hardest"), ("ALL", "all"),
+                 ("BAND", "band"), ("MEASURED", "measured"), ("SCENARIO", "scenario"),
+                 ("REPLICATED", "rebuilt"), ("STANDING", "measured")):
+        s = re.sub(r"\b%s\b" % a, b, s)
     s = s.replace("inside the data and larger displacement level",
                   "inside the data and at larger displacement")
     s = s.split(";")[0].split(",")[0] if limit == "short" else s
