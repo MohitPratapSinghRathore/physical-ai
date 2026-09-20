@@ -1,0 +1,3 @@
+anchor,peak_year,trough_year,nfc_equity_peak_bn,nfc_equity_trough_bn,nfc_equity_fall_pct,federal_receipts_peak_bn,federal_receipts_trough_bn,federal_receipts_fall_pct,corporate_tax_peak_bn,corporate_tax_trough_bn,corporate_tax_fall_pct,gdp_peak_bn,equity_fall_pct_of_gdp,household_equity_peak_tn,household_equity_trough_tn,household_equity_fall_pct
+2000_to_2002_equity_financed,2000,2002,13360.9,9268.9,-30.63,2067.8,1870.9,-9.52,194.1,126.0,-35.1,10251.0,-39.9,8.99,6.43,-28.44
+2007_to_2009_debt_financed,2007,2009,16914.4,13674.0,-19.16,2668.3,2242.1,-15.97,328.2,153.0,-53.4,14474.2,-22.4,13.43,10.66,-20.62

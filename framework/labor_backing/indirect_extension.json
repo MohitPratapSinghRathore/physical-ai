@@ -1,0 +1,20 @@
+{
+ "status": "PROVISIONAL, reported SEPARATELY, never blended into the B1 headline",
+ "latest_year": 2025,
+ "consumption_share_of_final_demand": 0.681191,
+ "labour_share_of_personal_income": 0.496502,
+ "indirect_labour_backing_of_business_revenue": 0.338212,
+ "business_revenue_serviced_classes": [
+  "corporate_bonds",
+  "corporate_loans",
+  "noncorporate_business_debt",
+  "commercial_mortgage",
+  "corporate_equity"
+ ],
+ "business_revenue_serviced_bn": 90380.3,
+ "direct_labour_backed_bn": 40380.5,
+ "direct_ratio": 0.270271,
+ "combined_first_and_second_round_bn": 70948.2,
+ "combined_first_and_second_round_ratio": 0.474865,
+ "reading": "The direct ratio is the first round. The combined ratio adds the second round and is NOT the headline. The gap between them is the size of the demand channel on the liability side."
+}

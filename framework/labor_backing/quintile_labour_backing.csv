@@ -1,0 +1,6 @@
+wage_quintile,q,quintile_wage_bill_share,quintile_labour_backed_bn,share_of_household_labour_backed,labour_backed_per_unit_wage_bill
+Q1_bottom,0,0.0324,2110.79,0.134425,4.1489
+Q2,1,0.0895,1983.2700000000002,0.126304,1.4112
+Q3_middle,2,0.1426,2693.92,0.171561,1.2031
+Q4,3,0.2233,3647.64,0.232298,1.0403
+Q5_top,4,0.5122,5266.78,0.335412,0.6548

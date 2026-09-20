@@ -3,3 +3,7 @@ __pycache__/
 .venv/
 data/raw/
 !data/raw/.gitkeep
+
+# labour backing module: re-downloadable source caches, not committed
+framework/labor_backing/_z1_cache.zip
+framework/labor_backing/_dfa_cache.zip

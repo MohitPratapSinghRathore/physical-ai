@@ -1,0 +1,175 @@
+{
+ "status": "PROVISIONAL. AI equity SCALE is SCENARIO; AI debt and bank commitments are sourced; off-balance-sheet financing is NOT sourced and every failure-state figure is a LOWER BOUND.",
+ "latest_year": 2025,
+ "wage_leg": {
+  "labour_backed_bn": 40380.5,
+  "by_holder_share": {
+   "banks": 0.184371,
+   "federal_government": 0.321479,
+   "households": 0.060699,
+   "insurers": 0.020323,
+   "nonfinancial_business": 0.006224,
+   "other_financial": 0.153214,
+   "pensions": 0.01101,
+   "residual_unallocated": 0.016378,
+   "rest_of_world": 0.180065,
+   "state_local_government": 0.046237
+  },
+  "sovereign_union_share": 0.793592,
+  "sovereign_held_or_guaranteed_share": 0.321479,
+  "sovereign_obligor_share": 0.552012
+ },
+ "ai_leg": {
+  "equity_scale_is_scenario": true,
+  "ai_equity_share_grid": [
+   0.1,
+   0.2,
+   0.3
+  ],
+  "ai_equity_share_central": 0.2,
+  "nonfinancial_corporate_equity_bn": 71994.9,
+  "ai_equity_central_bn": 14399.0,
+  "ai_onbalancesheet_debt_bn": 458.4,
+  "ai_bank_commitments_bn": 450.0,
+  "chicago_fed": {
+   "large_bank_ci_commitments_ai_bn": 450.0,
+   "large_bank_ci_commitments_ai_share_of_total": 0.13,
+   "commitments_2015_bn": 250.0,
+   "commitments_2015_share": 0.09,
+   "outstanding_share_of_bank_total_assets": 0.008,
+   "outstanding_share_of_tier1": 0.09,
+   "committed_share_of_tier1": 0.25,
+   "software_commitments_bn": 191.0,
+   "energy_and_semis_commitments_bn": 275.0,
+   "software_rated_b_and_below_bn": 50.0,
+   "energy_semis_rated_b_and_below_bn": 15.0,
+   "source": "Chicago Fed Insights, February 2026, verified A45"
+  },
+  "federal_share_of_ai_leg": 0.01001
+ },
+ "government_implicit_claim": {
+  "tau_k_operative": 0.0708,
+  "tau_k_sourced_max": 0.20351,
+  "pv_horizon_years": 10,
+  "pv_rate": 0.03,
+  "share_of_federal_wage_loss_hedged_at_operative_10pct_dose": 0.36,
+  "share_of_federal_wage_loss_hedged_at_break_even_10pct_dose": 0.6863
+ },
+ "financing_structure": {
+  "n_companies": 9,
+  "total_capex_bn": 490.9,
+  "total_ocf_bn": 659.1,
+  "aggregate_self_funding_ratio": 1.3426,
+  "capex_in_excess_of_ocf_bn": 32.1,
+  "debt_financed_share_of_capex": 0.065403,
+  "companies_with_capex_above_ocf": [
+   "CRWV",
+   "DLR",
+   "EQIX",
+   "ORCL"
+  ],
+  "by_company": {
+   "AMZN": {
+    "self_funding_ratio": 1.058,
+    "capex_bn": 131.819,
+    "ocf_bn": 139.514
+   },
+   "MSFT": {
+    "self_funding_ratio": 1.578,
+    "capex_bn": 115.948,
+    "ocf_bn": 182.935
+   },
+   "GOOGL": {
+    "self_funding_ratio": 1.801,
+    "capex_bn": 91.447,
+    "ocf_bn": 164.713
+   },
+   "META": {
+    "self_funding_ratio": 1.662,
+    "capex_bn": 69.691,
+    "ocf_bn": 115.8
+   },
+   "ORCL": {
+    "self_funding_ratio": 0.574,
+    "capex_bn": 55.663,
+    "ocf_bn": 31.977
+   },
+   "CRWV": {
+    "self_funding_ratio": 0.297,
+    "capex_bn": 10.309,
+    "ocf_bn": 3.058
+   },
+   "TSLA": {
+    "self_funding_ratio": 1.729,
+    "capex_bn": 8.527,
+    "ocf_bn": 14.747
+   },
+   "EQIX": {
+    "self_funding_ratio": 0.907,
+    "capex_bn": 4.311,
+    "ocf_bn": 3.911
+   },
+   "DLR": {
+    "self_funding_ratio": 0.758,
+    "capex_bn": 3.181,
+    "ocf_bn": 2.412
+   }
+  },
+  "reading": "In AGGREGATE the named AI capital spenders fund capex out of operating cash flow, which is the 2000 structure and not the 2008 structure. The marginal dollar is not: Oracle, CoreWeave and the two data centre REITs all spend above operating cash flow, and the Chicago Fed commitments and the off-balance-sheet vehicles sit outside these filings entirely.",
+  "off_balance_sheet": "NOT SOURCED. BIS Quarterly Review March 2026 documents SPV and lease structures as the dominant data centre financing form; no dollar total is carried here because none was verified. Any failure-state figure below is a LOWER BOUND for that reason."
+ },
+ "households_by_wealth_percentile": {
+  "TopPt1": {
+   "equity_share": 0.249905,
+   "household_debt_share": 0.008882,
+   "equity_bn": 16153.9,
+   "household_debt_bn": 169.6
+  },
+  "RemainingTop1": {
+   "equity_share": 0.258904,
+   "household_debt_share": 0.029548,
+   "equity_bn": 16735.6,
+   "household_debt_bn": 564.3
+  },
+  "Next9": {
+   "equity_share": 0.371508,
+   "household_debt_share": 0.206059,
+   "equity_bn": 24014.4,
+   "household_debt_bn": 3935.1
+  },
+  "Next40": {
+   "equity_share": 0.113893,
+   "household_debt_share": 0.451582,
+   "equity_bn": 7362.1,
+   "household_debt_bn": 8624.0
+  },
+  "Bottom50": {
+   "equity_share": 0.005789,
+   "household_debt_share": 0.303929,
+   "equity_bn": 374.2,
+   "household_debt_bn": 5804.2
+  }
+ },
+ "equity_share_over_debt_share": {
+  "TopPt1": 28.136,
+  "RemainingTop1": 8.762,
+  "Next9": 1.803,
+  "Next40": 0.252,
+  "Bottom50": 0.019
+ },
+ "B11_verdict": {
+  "claim": "The federal government holds or owes the majority of the wage leg and a negligible share of the AI leg, so it is the least hedged holder.",
+  "federal_wage_leg_union_share": 0.793592,
+  "federal_ai_leg_share": 0.01001,
+  "federal_ai_leg_claim_is_tax_only": true,
+  "hedge_ratio_ai_over_wage": 0.0126,
+  "verdict": "CONFIRMED"
+ },
+ "B12_verdict": {
+  "claim": "The federal government loses in all three states and holds almost none of the upside in the success state.",
+  "failure_state": "loses: receipts fall. MEASURED anchors, corporate tax receipts fell -35.1 percent after 2000 and -53.4 percent after 2007",
+  "partial_state": "loses: wage leg share 0.3215, AI leg share 0.01, net -0.3115",
+  "success_state": "loses on the wage leg and recovers only 36.0% of that loss through capital tax at the operative rate",
+  "verdict": "CONFIRMED"
+ }
+}

@@ -1,0 +1,5 @@
+claim_class,n,n_inside_band,n_inside_band_no_R,implied_rate_min,implied_rate_max,implied_no_R_min,implied_no_R_max,benchmark_lo,benchmark_hi
+auto_loan,8,0,7,0.044724,0.063452,0.022174,0.027525,0.0225,0.0325
+credit_card,8,0,0,0.124025,0.196746,0.061492,0.081886,0.04,0.05
+home_mortgage,8,0,0,0.045853,0.097838,0.021799,0.04072,0.0125,0.02
+student_loan,8,1,0,0.034713,0.084025,0.016503,0.034786,0.0375,0.05

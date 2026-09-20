@@ -1,0 +1,15 @@
+check,verdict,detail
+AI leg shares sum to 1 (scenario 0.1),OK,1.00000200
+wage leg shares sum to 1 (scenario 0.1),OK,1.00000000
+"all shares in [0,1] (scenario 0.1)",OK,
+AI leg shares sum to 1 (scenario 0.2),OK,1.00000100
+wage leg shares sum to 1 (scenario 0.2),OK,1.00000000
+"all shares in [0,1] (scenario 0.2)",OK,
+AI leg shares sum to 1 (scenario 0.3),OK,1.00000000
+wage leg shares sum to 1 (scenario 0.3),OK,1.00000000
+"all shares in [0,1] (scenario 0.3)",OK,
+"break-even rate exactly covers the GROSS fiscal loss by construction, case A",OK,mean 0.9999
+DFA equity shares sum to 1,OK,
+DFA household debt shares sum to 1,OK,
+"debt-financed share of AI capex in [0,1]",OK,0.0654
+both anchors show a fall in corporate tax receipts,OK,"[-35.1, -53.4]"

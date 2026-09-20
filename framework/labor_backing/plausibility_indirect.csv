@@ -1,0 +1,7 @@
+check,verdict,detail
+"consumption share in [0,1]",OK,0.6812
+"labour share of personal income in [0,1]",OK,0.4965
+"indirect share in [0,1]",OK,0.3382
+indirect share below each component,OK,0.3382
+combined ratio >= direct ratio,OK,0.4749 >= 0.2703
+"combined ratio in [0,1]",OK,0.4749

@@ -1,0 +1,26 @@
+z1_code,description,first_year,last_year,value_latest_mn
+FL103163005,Nonfinancial corporate business; corporate bonds; liability,1945,2025,8075320.0
+FL103165405,Nonfinancial corporate business; multifamily residential mortgages; liability,1945,2025,143401.0
+FL103165505,Nonfinancial corporate business; commercial mortgages; liability,1945,2025,1179629.0
+FL103168005,Nonfinancial corporate business; depository institution loans n.e.c.; liability,1945,2025,1256418.0
+FL103169005,Nonfinancial corporate business; other loans and advances; liability,1945,2025,2436402.0
+FL103169100,Nonfinancial corporate business; commercial paper; liability,1945,2025,210884.0
+FL113165405,Nonfinancial noncorporate business; multifamily residential mortgages; liability,1945,2025,2305292.0
+FL113165505,Nonfinancial noncorporate business; commercial mortgages; liability,1945,2025,2193498.0
+FL113167205,Nonfinancial noncorporate business; private credit loans; liability,1945,2025,222743.0
+FL113168005,Nonfinancial noncorporate business; depository institution loans n.e.c.; liability,1945,2025,1611841.0
+FL113169005,Nonfinancial noncorporate business; other loans and advances; liability,1945,2025,541763.0
+FL113169535,Nonfinancial noncorporate business; finance companies loans; liability,1945,2025,76684.0
+FL153165105,Households and nonprofit organizations; one-to-four-family residential mortgages; liability,1945,2025,13788341.0
+FL153166100,Households and nonprofit organizations; revolving consumer credit; liability,1945,2025,1324322.0
+FL153166205,Households and nonprofit organizations; other non-revolving consumer credit; liability,1945,2025,377629.0
+FL153166220,"Households and nonprofit organizations; consumer credit, student loans; liability",1945,2025,1834690.0
+FL153166400,"Households and nonprofit organizations; consumer credit, automobile loans; liability",1945,2025,1562180.0
+FL163165505,Nonprofit organizations; commercial mortgages; liability,1945,2025,580281.0
+FL213162005,State and local governments; municipal securities; liability,1945,2025,3527013.0
+FL213168003,State and local governments; depository institution loans n.e.c.; liability,1945,2025,125352.0
+FL214141005,State and local governments; short-term loans; liability,1945,2025,151553.0
+FL313161105,Federal government; total marketable Treasury securities; liability,1945,2025,30069641.0
+FL313165403,Federal government; multifamily residential mortgages; liability,1945,2025,0.0
+FL313169205,Federal government; total nonmarketable Treasury securities; liability,1945,2025,3817450.0
+LM103164105,Nonfinancial corporate business; corporate equities; liability,1945,2025,71994893.0

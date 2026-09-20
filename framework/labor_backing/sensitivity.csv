@@ -1,0 +1,10 @@
+judgement_call,ratio,move_from_central,move_pct
+CENTRAL CASE,0.270271,0.0,0.0
+THE ONE-STEP RULE: business classes zero (central) vs the B2 indirect share,0.474864,0.204593,75.7
+federal receipts: SOI-split central vs the 77.7 percent upper bound,0.297264,0.026993,9.99
+commercial mortgage treated like multifamily rather than zero,0.289522,0.019251,7.12
+mortgage backing: ACS service vs the superseded A38 definition 0.80305,0.26684,-0.003431,-1.27
+state and local: wage-split central vs all personal current taxes,0.272291,0.00202,0.75
+mortgage backing: ACS service 0.8402 (central) vs SIPP balances 0.8205,0.268451,-0.00182,-0.67
+rent backing: engine core 0.7275 (central) vs the A38 definition 0.69913,0.269805,-0.000466,-0.17
+other consumer: blend (central) vs the card share alone,0.27008,-0.000191,-0.07

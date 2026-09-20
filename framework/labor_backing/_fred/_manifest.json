@@ -1,0 +1,20 @@
+{
+ "PCEC": {
+  "title": "Personal Consumption Expenditures",
+  "units": "Billions of Dollars",
+  "freq": "Quarterly",
+  "source": "U.S. Bureau of Economic Analysis",
+  "last_updated": "2026-08-26 7:48 AM CDT",
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCEC",
+  "retrieved": "2026-09-20"
+ },
+ "PI": {
+  "title": "Personal Income",
+  "units": "Billions of Dollars",
+  "freq": "Monthly",
+  "source": "U.S. Bureau of Economic Analysis",
+  "last_updated": "2026-08-26 7:43 AM CDT",
+  "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PI",
+  "retrieved": "2026-09-20"
+ }
+}

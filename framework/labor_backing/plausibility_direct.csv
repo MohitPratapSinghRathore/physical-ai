@@ -1,0 +1,48 @@
+check,verdict,detail
+"backing share in [0,1]: home_mortgage",OK,0.8402
+labour-backed <= total: corporate_equity,OK,0.0 <= 71994.9
+holder shares sum to 1: auto_loan,OK,1.00000000
+holder shares sum to 1: commercial_mortgage,OK,1.00000000
+holder shares sum to 1: corporate_bonds,OK,1.00000000
+holder shares sum to 1: corporate_equity,OK,1.00000200
+holder shares sum to 1: corporate_loans,OK,1.00000000
+holder shares sum to 1: credit_card,OK,1.00000000
+holder shares sum to 1: home_mortgage,OK,0.99999900
+holder shares sum to 1: multifamily_mortgage,OK,1.00000000
+"backing share in [0,1]: corporate_equity",OK,0.0000
+holder shares sum to 1: noncorporate_business_debt,OK,1.00000000
+holder shares sum to 1: state_local_debt,OK,1.00000100
+holder shares sum to 1: student_loan,OK,0.99999900
+holder shares sum to 1: treasury,OK,0.99999900
+"aggregate ratio in [0,1]",OK,0.2703
+aggregate ratio between smallest and largest class share,OK,0.0000 <= 0.2703 <= 0.8832
+"sovereign share of labour-backed in [0,1]",OK,0.3215
+time series is monotonic in year,OK,1947 to 2025
+"sovereign share_held_or_guaranteed in [0,1]",OK,0.3215
+"sovereign share_obligor in [0,1]",OK,0.5520
+holder shares sum to 1: other_consumer,OK,1.00000000
+"sovereign share_union in [0,1]",OK,0.7936
+labour-backed <= total: commercial_mortgage,OK,0.0 <= 3953.4
+labour-backed <= total: noncorporate_business_debt,OK,0.0 <= 2453.0
+labour-backed <= total: home_mortgage,OK,11585.3 <= 13788.3
+"backing share in [0,1]: credit_card",OK,0.7400
+labour-backed <= total: credit_card,OK,980.0 <= 1324.3
+"backing share in [0,1]: auto_loan",OK,0.7737
+labour-backed <= total: auto_loan,OK,1208.7 <= 1562.2
+"backing share in [0,1]: student_loan",OK,0.8832
+labour-backed <= total: student_loan,OK,1620.4 <= 1834.7
+"backing share in [0,1]: other_consumer",OK,0.8156
+labour-backed <= total: other_consumer,OK,308.0 <= 377.6
+"backing share in [0,1]: commercial_mortgage",OK,0.0000
+"backing share in [0,1]: multifamily_mortgage",OK,0.7275
+"backing share in [0,1]: treasury",OK,0.6578
+labour-backed <= total: treasury,OK,22290.5 <= 33887.1
+"backing share in [0,1]: state_local_debt",OK,0.1593
+labour-backed <= total: state_local_debt,OK,606.1 <= 3803.9
+"backing share in [0,1]: corporate_bonds",OK,0.0000
+labour-backed <= total: corporate_bonds,OK,0.0 <= 8075.3
+"backing share in [0,1]: corporate_loans",OK,0.0000
+labour-backed <= total: corporate_loans,OK,0.0 <= 3903.7
+"backing share in [0,1]: noncorporate_business_debt",OK,0.0000
+labour-backed <= total: multifamily_mortgage,OK,1781.5 <= 2448.7
+sovereign union >= each leg,OK,0.7936

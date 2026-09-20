@@ -436,3 +436,58 @@ relitigates them.
   total income, 0.9126 and 0.8720, and neither may be used for the other.
 - **Auto and student are scored against the SAME Federal Reserve "Other consumer" line.**
   Say so wherever either appears; the two percentages cannot be summed.
+
+---
+
+## New claims, labour backing session, 2026-09-20. ALL PROVISIONAL by the same-session rule.
+
+Every claim below is **R-pending-2**: sealed under `labour_backing` and `two_sided_bet` in
+`notes/sealed/sealed_expected_values_round2.json`, mechanics in section 14 of
+`notes/replication_brief_v2.md`, and **none has ever been checked by anything that did not
+build it.** Bounds were stated before the numbers throughout: 75 plausibility checks across
+the four builds, 0 violations.
+
+| # | Claim | Status | Findings | Replication flag |
+|---|---|---|---|---|
+| 194 | The DIRECT labour backing ratio of the US claim stock is 0.270 in 2025: 40,380bn of 149,407bn dollars of claims are serviced in the first round out of wages. First round only, one step, business-revenue-serviced classes zero by rule | **provisional** | this session, B1 and B3 | R-pending-2 |
+| 195 | **The federal government holds, guarantees or owes 79.4 percent of all labour-backed claims**, in two legs: 32.6 percent as holder or guarantor and 54.3 percent as obligor, less the overlap. **This was produced from the Financial Accounts with no reference to the dose-response table and lands inside the independently derived 75.9 to 91.6 percent federal share of first-round losses** | **provisional**, and it is the strongest result of the session | this session, B3; claim 157 | R-pending-2 |
+| 196 | The sovereign share roughly DOUBLED in fifty years: 0.336 in 1970, 0.564 in 1990, 0.649 in 2010, 0.794 in 2025. The drivers are visible in the series: the GSEs and the 2008 conservatorship, federal student lending after 2010, and the growth of Treasury debt, which is the obligor leg | **provisional** | this session, B4 | R-pending-2 |
+| 197 | The RATIO itself is nearly trendless and cyclical (0.288 in 1947, 0.376 at the 2008 peak, 0.270 in 2025). It falls when equity is expensive, because equity is the largest zero-by-rule class. **It is as much an asset price series as a labour series and must not be read as a measure of labour dependence** | **provisional**, and it is a warning about the headline | this session, B4 | R-pending-2 |
+| 198 | **The one-step tracing rule moves the headline by 76 percent and no other judgement call moves it by more than 10.** The household and fiscal cells, which is where this project's own measurement sits, are robust. The definition is the whole argument | **provisional**, and it was predicted in `feasibility.md` before being computed | this session, B9 | R-pending-2 |
+| 199 | The INDIRECT (second-round) labour backing of business revenue is 0.338, the product of consumption's share of final demand (0.681) and labour's share of personal income (0.497). Combined with the direct ratio it gives 0.475. **This is never blended into the headline; it is the paper's first-round versus second-round distinction expressed as a ratio** | **provisional** | this session, B2 | R-pending-2 |
+| 200 | **The bottom wage quintile carries 4.15 times more labour-backed claim per dollar of wage bill than its wage share implies, and the top quintile 0.65, a factor of 6.3.** Q1 holds 13.4 percent of household labour-backed claims on 3.2 percent of the wage bill | **provisional**, SIPP only | this session, B5; claim 175 | R-pending-2 |
+| 201 | **The obvious connection formula is wrong for credit claims.** Applying `(1 - R)` to a credit class assumes only the lost-income fraction of a balance is at risk, when a displaced borrower's whole balance is. Removing it moves auto loans from 0 of 8 to 7 of 8 rows inside the benchmark loss band. `(1 - R)` belongs in the fiscal channel and nowhere else | **provisional**, a method finding | this session, B8 | R-pending-2 |
+| 202 | **The fiscal loss this project publishes is already NET of capital tax at the operative rate**, so any calculation of how much a capital tax hedges the federal position must use the GROSS loss or it counts the tax twice. The check is that the break-even rate recovers exactly 1.000 of the gross fiscal loss by construction | **provisional**, arithmetic, and it extends claim 179 | this session, B11 | R-pending-2 |
+| 203 | **The federal government is the least hedged holder in the economy**: 79.4 percent of the wage leg against 1.0 percent of the AI leg, a cover ratio of 0.03, lowest of any holder class by a factor of five against banks at 0.17 | **provisional**, CONFIRMED as registered | this session, B11 | R-pending-2 |
+| 204 | The mirror holds. **Households hold 38.4 percent of the AI leg and 6.1 percent of the wage leg**, a ratio of 6.33; pensions 3.97; nonfinancial business 5.02. The rest of the world (1.00), other financial (1.07) and insurers (1.02) are almost exactly hedged, which is unforced and striking | **provisional** | this session, B11 | R-pending-2 |
+| 205 | **The ratio of equity share to household debt share runs from 28.1 at the top 0.1 percent of the wealth distribution to 0.019 at the bottom half, a factor of about 1,480.** The bottom 50 percent hold 0.6 percent of household equity and 30.4 percent of household debt | **provisional**, Fed Distributional Financial Accounts | this session, B12 | R-pending-2 |
+| 206 | **The current AI financing structure resembles the 2000 equity-financed bust and not the 2008 debt-financed crisis**: aggregate operating cash flow over capex is 1.343 and capex in excess of operating cash flow is 6.5 percent of capex. **The marginal dollar does not: Oracle, CoreWeave, Equinix and Digital Realty each spend above operating cash flow, and off-balance-sheet financing is not sourced at all, so 6.5 percent is a LOWER BOUND** | **provisional** | this session, B12 | R-pending-2 |
+| 207 | The two historical anchors MEASURED from Z.1 and NIPA rather than cited: **the equity bust was the larger asset-price event and the smaller fiscal and banking event.** Nonfinancial corporate equity fell 39.9 percent of peak GDP in 2000 to 2002 against 22.4 in 2007 to 2009, while federal receipts fell 9.5 percent against 16.0 and corporate tax receipts 35.1 percent against 53.4 | **provisional**, measured | this session, B12 | R-pending-2 |
+| 208 | **The federal government loses in all three AI states.** CONFIRMED, with one qualification that weakens it and must be stated whenever the claim is used: at the operative tau_k of 0.0708 the capital tax recovers **36 percent** of the gross federal first-round loss at a 10 percent dose, so "holds almost none of the upside" is too strong. The recovery share FALLS as the dose rises, because the break-even rate rises with the dose and the operative rate does not | **provisional**, CONFIRMED with a stated qualification | this session, B12 | R-pending-2 |
+| 209 | A labour decomposition of the claim stock by the income TYPE that services it was not located in any prior work, including the Federal Reserve DSR, whose denominator is explicitly all income, and the Distributional Financial Accounts, which distribute by wealth percentile and not by income type. **The search is now systematic for this question; the claim remains "none located", not "none exists", and a direct approach to the Financial Accounts team has still not been made** | **provisional**, and the novelty gate is narrow | this session, B7 | n/a |
+
+---
+
+## Priority claims amended by the B7 related-work search, 2026-09-20
+
+**This section exists because the owner's own search found works this project's literature
+audit had missed, and it REMOVES a priority claim rather than adding one.** The full table,
+with a verification level on every row, is in `lit/related_work_labour_backing.md`.
+
+| # | Claim | Amendment |
+|---|---|---|
+| 85 | No published work links occupational AI exposure to household balance-sheet outcomes (none located, non-systematic search) | **NARROWED AND PARTLY SUPERSEDED.** True as written for the household half. Misleading by omission for the fiscal half: Chen (2026, arXiv 2603.09209) is explicitly a macro-financial stress test of rapid AI adoption that reaches private credit and mortgage markets, close to this project's second-round module. The claim must not be used as a general novelty statement |
+| **THE FISCAL MECHANISM** | That wage-based public finance makes labour displacement a revenue event before it is a credit event | **PRIORITY RETIRED. This project did not discover it and must not imply that it did.** Casas and Torres (2024, International Tax and Public Finance 31(3), 780 to 807), Korinek and Lockwood (2026, Brookings and NBER 34873), **Price and Suresh (2026, RAND RR-A4980-1), whose two scenario axes are this project's rho and tau_k and whose headline is that 84 percent of 2024 federal revenue came from individual or payroll taxes**, the Windfall Trust (2026), and IMF Notes 2026/002 all have the mechanism. What survives is the calibrated US measurement and the liability side |
+| **THE STRESS-TEST FRAMING** | That this is a stress test of AI displacement | **NARROWED.** Chen (2026) is a macro-financial stress test of rapid AI adoption with eleven testable predictions. What remains this project's own is severity expressed against the **Federal Reserve 2026 severely adverse scenario**, loss rates by loan category, and the decomposition by holder, none of which Chen has |
+| 168 | The capital tax verdict | **NARROWED FURTHER, on top of the replication repair.** Falk and Tsoukalas (2026, arXiv 2603.20617) show by theory that capital income taxes cannot resolve the automation externality and that a Pigouvian automation tax can. They have the result first and in more general form. This project's contribution is the calibration, not the verdict |
+| 80, 93, 94 | The hiring-freeze blind spot | **PRIORITY HELD, and the claim is now CAUTIONED.** The deduction is still this project's own. It has NOT been tested against Manning, Aguirre, Muro and Methkupally (2026, Brookings and NBER 34705), who find **AI exposure and adaptive capacity POSITIVELY correlated**, with 26.5m of the 37.1m workers in the top exposure quartile in occupations of above-median adaptive capacity. **That is thesis-weakening and cuts against the implicit direction of the buffer work.** Treat the blind spot as provisional until the comparison is done |
+| **THE EARLY-WARNING DASHBOARD** | That the trigger dashboard is a contribution | **PRIORITY CLAIM DROPPED.** An indicator list is not a research contribution, and the IMF note and the Windfall Trust report both effectively propose monitoring. The dashboard stays as a useful artifact and stops being claimed as novel |
+| 159 | The concentration of wage risk on the sovereign is the project's central result | **STRENGTHENED, and it is now the recommended lead.** Claim 195 measures the same concentration from the Financial Accounts by a completely different route and agrees. With the fiscal-mechanism priority retired, the holder result is what remains distinctively this project's own |
+
+**Citation hygiene, found during the same search.** The repository carries
+`data/raw/manual/KorinekLockwood2025_public_finance_AI.pdf`. That is the **superseded
+title**. `paper/references.bib` must be updated to Korinek and Lockwood, "Public Finance in
+the Age of AI: A Primer", Brookings working paper, 8 January 2026, and NBER Working Paper
+34873. Also newly located and NOT previously in the audit: Congressional Budget Office
+(2024), "Artificial Intelligence and Its Potential Effects on the Economy and the Federal
+Budget", December 2024. **Both are audit gaps and are recorded as such.**

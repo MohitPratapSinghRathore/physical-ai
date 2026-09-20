@@ -999,6 +999,110 @@ presented as a result about automation is almost entirely that baseline.
 
 ---
 
+<!-- LABOUR_BACKING_BLOCK_START -->
+
+## 14. The labour backing ratio, and the two-sided bet by holder
+
+**Everything in this section is PROVISIONAL and none of it has ever been checked from
+outside.** Appendix C item 2 said these quantities were the subject of a separate pass.
+This is that pass. Sealed under `labour_backing` and `two_sided_bet`.
+
+### 14.1 Data you need
+
+| Source | What | How |
+|---|---|---|
+| Federal Reserve Z.1, **the CSV package, not FRED** | every claim level and every holder sector, annual from 1945 | `https://www.federalreserve.gov/releases/z1/current/z1_csv_files.zip`. Series are keyed `FL`/`LM` + 2-digit sector + 7-digit instrument. The `data_dictionary/` folder maps every code to the Fed's own description. **Do not use per-series FRED calls: they are rate limited and you will silently lose whole holder classes** |
+| `data/processed/under_reporting_factors.csv` | working-core share of balances by loan | column `working_core_share_of_full`. These are the CORRECTED factors |
+| `data/processed/stress/a38_correction_decomposition.csv` | working-core share of mortgage SERVICE and of RENT | stage `3_plus_engine_core_definition`, class `non_working`, take one minus |
+| `data/processed/labor_tax_share.json` | SOI wage share of AGI | 2021 to 2023 ONLY |
+| FRED `FGRECPT`, `A074RC1Q027SBEA`, `W780RC1Q027SBEA`, `W070RC1Q027SBEA`, `W071RC1Q027SBEA`, `PCEC`, `PI`, `WASCUR`, `GDP`, `FCTAX` | receipts, consumption, personal income, corporate tax | annual means of quarterly series |
+| Fed Distributional Financial Accounts | household equity and debt by wealth percentile | `https://www.federalreserve.gov/releases/z1/dataviz/download/zips/dfa.zip`, file `dfa-networth-levels.csv` |
+| `data/processed/legA_tier2.csv` | AI capital spenders' capex, operating cash flow, debt | already in the repository |
+
+### 14.2 The definition, which is the whole argument
+
+**FIRST-ROUND servicing only.** For each claim class the labour backing share is the
+fraction of the cash flow that DIRECTLY services it which is labour income. One step.
+
+- Household claims: the working-core share (an employed member aged 25 to 64), **by claim
+  type**. Mortgages use the ACS share of mortgage SERVICE; card, auto and student use the
+  SIPP share of BALANCES.
+- Multifamily mortgages: the working-core share of RENT. One intermediary.
+- Treasury: social insurance contributions in full, plus the SOI wage share of the
+  individual income tax, over federal current receipts.
+- State and local: the wage share of personal current taxes over total state and local tax
+  receipts. Property tax is a capital levy; sales tax is a SECOND-round channel.
+- **Corporate bonds, corporate and noncorporate business loans, non-multifamily commercial
+  mortgages and corporate equity: ZERO BY RULE.** They are serviced from business revenue.
+- Social insurance: a MEMO ITEM outside the ratio, at the payroll share of each fund's own
+  income (OASI 0.9054, DI 0.9571, HI 0.8720).
+
+**If you disagree with the zero rule, say so, because it moves the headline by
+76 percent and nothing else moves it by more than 10.**
+
+### 14.3 Holders, and the two legs of the sovereign
+
+Ultimate holder, so **agency and GSE mortgage pools, the GSEs and the central bank count
+as federal government**: the guarantee and not the pool investor bears the loss, the GSEs
+are in conservatorship, and the Federal Reserve remits to the Treasury.
+
+**The sovereign has two distinct legs and confusing them is the trap in this section:**
+
+- **holder or guarantor**: a credit loss on a claim it owns or guarantees. 0.3215
+- **obligor**: a revenue shortfall on a claim it OWES and services from labour-linked
+  receipts, which is Treasury debt. 0.5520
+- **union**, less the overlap where it holds its own debt: **0.7936**
+
+The union is the quantity that compares with the 75.9 to 91.6 percent federal share of
+first-round losses, because that figure is itself the union of a revenue loss and a credit
+loss.
+
+### 14.4 The connection test, and the error it caught
+
+The obvious formula is `impaired_stock = labour_backing x dose x (1 - R)`. **It is wrong
+for credit claims.** `(1 - R)` is the fraction of wage income actually lost after
+reemployment, which is right for a REVENUE claim and wrong for a CREDIT claim: a displaced
+borrower's whole balance is at risk of default, not the lost-income fraction of it.
+
+With `(1 - R)` in, 0 of 8 auto rows sit inside the benchmark loss band. With it out, 7 of 8
+do. **Use `(1 - R)` for the fiscal class and not for the household classes.** Card and
+mortgage remain above the band and student below it; those gaps are real and are reported
+rather than tuned away.
+
+### 14.5 The gross-versus-net trap in the hedging calculation
+
+The published fiscal loss **already nets out capital tax at the operative rate of 0.0708**
+(claim 179). If you ask how much a capital tax hedges the federal loss and divide by the
+published figure, **you count the tax twice**. Use the gross loss,
+`published_loss + 0.0708 x surplus`. The check that you have it right: at the break-even
+rate the hedged share is exactly 1.000 by construction. If it is not, something upstream is
+wrong.
+
+### 14.6 Plausibility bounds, stated before the numbers
+
+Every backing share and every holder share in [0, 1]. Holder shares sum to 1 within each
+claim class and within each leg. Labour-backed claims at or below total claims in every
+class. The aggregate ratio between the smallest and largest class share. The indirect
+share below each of its two components. The combined ratio at or above the direct ratio.
+The sovereign union at or above each of its legs. The break-even hedge ratio exactly 1.
+
+Checks run in this session: 47 direct, 6 indirect, 8 quintile and connection, 14
+two-sided bet. **Zero violations.**
+
+### 14.7 What to attack
+
+1. **The one-step rule.** It is the headline.
+2. **Treating agency pools as federal.** Drop it and the sovereign share falls from
+   0.794 to 0.587.
+3. **Including the obligor leg.** Drop it and the sovereign share falls to 0.321.
+4. **Holding the labour shares constant before 2021.** The pre-2021 series is a claim stock
+   and a holder map with fixed labour shares. Say whether that is a series worth having.
+5. **The AI equity scale in B11**, which is a scenario and not a measurement.
+
+<!-- LABOUR_BACKING_BLOCK_END -->
+
+---
+
 ## Appendix A. The slack measure, and the limit of the instruction in section 1
 
 **This appendix exists because version 1 stated a preference as though it were unconditional

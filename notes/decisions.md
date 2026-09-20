@@ -549,3 +549,141 @@ independently replicated without the second.
 **Why.** The promotion pass gave sixteen matches and zero failures and missed an error an
 outsider caught immediately. Self-checking and outside checking are different evidence and
 collapsing them into one word overstates what has been established.
+
+---
+
+# DECISIONS, labour backing session, 2026-09-20
+
+## D-LB1. The labour backing ratio is FIRST-ROUND only, and business-revenue classes are zero by rule
+
+**Decision.** For each claim class the direct labour backing share is the fraction of the
+cash flow that DIRECTLY services it which is labour income. One step. Corporate bonds,
+corporate and noncorporate business loans, non-multifamily commercial mortgages and
+corporate equity are **zero**. Multifamily mortgages are the one exception among property
+claims, because the rent that services them is paid out of wages directly.
+
+**Why.** It is the paper's own first-round versus second-round distinction applied to the
+liability side. The alternative, tracing through business revenue, is what
+`feasibility.md` predicted would make the headline an artifact of the corporate
+assumption, and it was right: the second-round version is 0.475 against 0.270.
+
+**TRADEOFF, and it is the largest in the session.** The rule moves the headline by 76
+percent and every other judgement call moves it by under 10. A reader who rejects the rule
+gets a different number, and the number they get is reported (B2) rather than hidden. The
+gain is that the two cells this project actually measured, households and the federal
+budget, carry the result instead of being swamped by two cells it did not.
+
+**COST.** The ratio covers about 27 percent of the claim stock by value rather than 100
+percent, and says so. `feasibility.md` recommended exactly this and the recommendation is
+adopted.
+
+## D-LB2. The Z.1 CSV package, not per-series FRED calls
+
+**Decision.** All claim levels and all holder shares come from the Federal Reserve Z.1 CSV
+package, read locally. FRED is used only for NIPA series already in `data/raw/fred/` plus
+PCEC and PI.
+
+**Why.** Two reasons and the second is the important one. FRED rate limited this
+environment during the session and returned HTTP 403 for a period. More seriously, **Z.1
+does not carry the same instrument suffix for every sector**: bank Treasury holdings sit
+under a different suffix from insurer Treasury holdings, and the central bank under
+another again. Matching on an exact suffix silently dumped whole holder classes into the
+residual, which is how the first run produced a 32.6 percent Treasury residual. Matching
+on the instrument FAMILY and taking the closest suffix per sector cut the aggregate
+residual from 20.9 percent to 1.6 percent.
+
+**GAIN.** One download gives 2,901 level series and the Federal Reserve's own data
+dictionary, so every series used is identified by the publisher's own description and
+recorded in `z1_extract.csv`.
+
+## D-LB3. The sovereign has TWO legs and the union is the comparator
+
+**Decision.** Report the federal government as **holder or guarantor** (0.326) and as
+**obligor** (0.543) separately, and use the **union** (0.794) wherever the figure is
+compared with the dose-response table.
+
+**Why.** For a mortgage the federal government bears a credit loss. For Treasury debt it
+bears a revenue shortfall on a claim it OWES. Both are ways displacement reaches it, and
+the paper's 75.9 to 91.6 percent federal share of first-round losses is itself the union
+of the two. Reporting only the holder leg would have understated the concentration by a
+factor of two and a half and would not have been comparable with anything.
+
+**COST.** The union is not a portfolio share and must never be described as one. A reader
+who sees 79.4 percent and thinks "the government owns four fifths of the claim stock" has
+it wrong.
+
+## D-LB4. Agency pools, the GSEs and the central bank count as federal
+
+**Decision.** Z.1 sectors 41 (agency and GSE backed mortgage pools), 40 (GSEs), 31
+(federal government), 34 (federal pension funds) and 71 (monetary authority) all map to
+the federal government.
+
+**Why.** The guarantee and not the pool investor bears the credit loss; the GSEs are in
+conservatorship; the Federal Reserve remits net income to the Treasury.
+
+**TRADEOFF, stated because it is large.** Dropping the pools takes the sovereign share
+from 0.794 to 0.587. That is the second largest single judgement call in the session after
+the one-step rule, and it is carried in `sensitivity_holder.csv` rather than buried.
+**Cross-check:** this mapping gives a federal share of home mortgages of 64.9 percent
+against the 63.7 percent (GSE 51.1 plus FHA 12.6) read from the Enterprises' own filings
+in claim 147. Two independent routes, 1.2 points apart.
+
+## D-LB5. (1 - R) is applied to the fiscal channel and never to credit classes
+
+**Decision.** The connection test uses `labour_backing x dose x (1 - R)` for revenue
+claims and `labour_backing x dose` for credit claims.
+
+**Why.** `(1 - R)` is the fraction of wage income actually lost after reemployment. That
+is the right adjustment for a claim serviced out of that income stream. It is the wrong
+adjustment for a credit claim, because a displaced borrower's WHOLE balance is at risk of
+default, not the lost-income fraction of it.
+
+**GAIN.** With `(1 - R)` in, 0 of 8 auto rows sat inside the benchmark loss band. With it
+out, 7 of 8 do. The formula as first written was wrong and the bound caught it.
+
+**COST.** Card and mortgage remain above the band and student below it. Those gaps are
+real, are reported, and are not tuned away.
+
+## D-LB6. Hedging is computed on the GROSS loss
+
+**Decision.** Any calculation of how much a capital tax hedges the federal position uses
+`published_loss + tau_k_operative x surplus`, not the published loss.
+
+**Why.** The published fiscal loss already nets out capital tax at the operative rate
+(claim 179). Dividing a tax claim by it counts the tax twice. The check that the treatment
+is right: at the break-even rate the hedged share of the gross fiscal loss is exactly
+1.000 by construction. It is.
+
+**COST.** The headline moves from an apparent 56 percent to 36 percent. The lower number
+is the correct one.
+
+## D-LB7. The AI equity scale is a SCENARIO and is never asserted
+
+**Decision.** The AI share of US nonfinancial corporate equity is swept over 0.10, 0.20
+and 0.30, central 0.20, and labelled a scenario parameter at every appearance. AI debt and
+bank commitments are sourced and reported in dollars.
+
+**Why.** No filing discloses an AI-attributable market value. Asserting one would be an
+invented number under hard rule 2.
+
+**COST.** The B11 holder shares of the AI leg depend on it. They are reported at all three
+points so the dependence is visible. Off-balance-sheet and GPU-backed financing is not
+sourced at all, so every failure-state figure is a stated lower bound.
+
+## D-LB8. The priority claim on the fiscal mechanism is RETIRED
+
+**Decision.** This project stops claiming the fiscal mechanism as its own finding. The
+claims register records the retirement and `lit/related_work_labour_backing.md` carries
+the evidence.
+
+**Why.** The owner's own search located five works that have it: Casas and Torres (2024),
+Korinek and Lockwood (2026), Price and Suresh (2026) at RAND, the Windfall Trust (2026)
+and IMF Notes 2026/002. **The RAND report varies reemployment and AI pricing, which are
+this project's rho and tau_k, and leads with 84 percent of federal revenue coming from
+individual or payroll taxes.** That is the mechanism, published first.
+
+**COST, and it is real.** The paper loses its most quotable framing sentence. **GAIN.**
+What remains is defensible and was always the stronger half: the liability side, the
+holder map, and the finding that the federal government holds, guarantees or owes about
+four fifths of the labour-backed claim stock while holding 1.0 percent of the AI leg. The
+literature audit is also now honest, which it was not before.

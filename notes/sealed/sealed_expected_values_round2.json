@@ -505,5 +505,271 @@
     "wage_bill_base_bn": 13365.2,
     "wage_bill_base": "FRED WASCUR, national wages and salaries",
     "not_in": "this file must never be placed in notes/replication/, which is the replicator's own folder"
+  },
+  "labour_backing": {
+    "_definition": "FIRST-ROUND servicing only. Business-revenue-serviced classes are ZERO BY RULE. Social insurance is a memo item OUTSIDE the ratio. All values are for the latest complete Z.1 year, 2025. Every quantity is PROVISIONAL and none has ever been checked from outside.",
+    "total_claims_bn": {
+      "expected": 149407.2,
+      "tolerance": "survey_relative",
+      "note": "sum of the 13 class levels"
+    },
+    "labour_backed_bn": {
+      "expected": 40380.5,
+      "tolerance": "survey_relative",
+      "note": "sum of level x backing share"
+    },
+    "direct_labour_backing_ratio": {
+      "expected": 0.270271,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1], and between the smallest and largest class backing share"
+    },
+    "indirect_backing_of_business_revenue": {
+      "expected": 0.338212,
+      "tolerance": "share_absolute",
+      "note": "B2, (PCE/GDP) x (WASCUR/PI). BOUND: below each of its two components. NEVER blended into the direct ratio"
+    },
+    "combined_first_and_second_round_ratio": {
+      "expected": 0.474865,
+      "tolerance": "share_absolute",
+      "note": "B2, NOT the headline. BOUND: at or above the direct ratio"
+    },
+    "sovereign_share_held_or_guaranteed": {
+      "expected": 0.321479,
+      "tolerance": "share_absolute",
+      "note": "federal government as HOLDER or GUARANTOR. Agency and GSE pools, the GSEs and the central bank count as federal"
+    },
+    "sovereign_share_obligor": {
+      "expected": 0.552012,
+      "tolerance": "share_absolute",
+      "note": "federal government as OBLIGOR, that is Treasury debt serviced from labour-linked receipts"
+    },
+    "sovereign_share_union": {
+      "expected": 0.793592,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1] and at or above each leg. THE HEADLINE HOLDER RESULT. Compare with the 75.9 to 91.6 percent federal share of first-round losses"
+    },
+    "series_first_year": {
+      "expected": 1947.0,
+      "tolerance": "share_absolute",
+      "note": "Z.1 levels begin 1945"
+    },
+    "series_last_year": {
+      "expected": 2025.0,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "sovereign_share_union_1970": {
+      "expected": 0.335628,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "sovereign_share_union_2008": {
+      "expected": 0.558197,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "one_step_rule_move_pct": {
+      "expected": 75.7,
+      "tolerance": "survey_relative",
+      "note": "the single largest judgement call, by a factor of seven over the next one"
+    },
+    "sensitivity_range_low": {
+      "expected": 0.26684,
+      "tolerance": "share_absolute",
+      "note": "one at a time"
+    },
+    "sensitivity_range_high": {
+      "expected": 0.474864,
+      "tolerance": "share_absolute",
+      "note": "one at a time"
+    },
+    "quintile_labour_backed_per_wage_dollar_Q1": {
+      "expected": 4.1489,
+      "tolerance": "survey_relative",
+      "note": "B5. BOUND: quintile shares sum to 1"
+    },
+    "quintile_labour_backed_per_wage_dollar_Q5": {
+      "expected": 0.6548,
+      "tolerance": "survey_relative",
+      "note": "B5"
+    },
+    "class_home_mortgage_level_bn": {
+      "expected": 13788.3,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_home_mortgage_backing": {
+      "expected": 0.840223,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_credit_card_level_bn": {
+      "expected": 1324.3,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_credit_card_backing": {
+      "expected": 0.74,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_auto_loan_level_bn": {
+      "expected": 1562.2,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_auto_loan_backing": {
+      "expected": 0.7737,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_student_loan_level_bn": {
+      "expected": 1834.7,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_student_loan_backing": {
+      "expected": 0.8832,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_other_consumer_level_bn": {
+      "expected": 377.6,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_other_consumer_backing": {
+      "expected": 0.815554,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_multifamily_mortgage_level_bn": {
+      "expected": 2448.7,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_multifamily_mortgage_backing": {
+      "expected": 0.72754,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_treasury_level_bn": {
+      "expected": 33887.1,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_treasury_backing": {
+      "expected": 0.657788,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_state_local_debt_level_bn": {
+      "expected": 3803.9,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_state_local_debt_backing": {
+      "expected": 0.159338,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_corporate_bonds_level_bn": {
+      "expected": 8075.3,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_corporate_bonds_backing": {
+      "expected": 0.0,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_corporate_loans_level_bn": {
+      "expected": 3903.7,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_corporate_loans_backing": {
+      "expected": 0.0,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_noncorporate_business_debt_level_bn": {
+      "expected": 2453.0,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_noncorporate_business_debt_backing": {
+      "expected": 0.0,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_commercial_mortgage_level_bn": {
+      "expected": 3953.4,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_commercial_mortgage_backing": {
+      "expected": 0.0,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    },
+    "class_corporate_equity_level_bn": {
+      "expected": 71994.9,
+      "tolerance": "survey_relative",
+      "note": "Z.1 liability level"
+    },
+    "class_corporate_equity_backing": {
+      "expected": 0.0,
+      "tolerance": "share_absolute",
+      "note": "BOUND: in [0,1]"
+    }
+  },
+  "two_sided_bet": {
+    "_definition": "B11 and B12. The AI EQUITY SCALE is a SCENARIO parameter, swept over 0.10, 0.20, 0.30 of US nonfinancial corporate equity. The central case is 0.20. AI DEBT and bank commitments are sourced. Off-balance-sheet financing is NOT sourced, so every failure-state figure is a LOWER BOUND.",
+    "federal_share_of_ai_leg_central": {
+      "expected": 0.01001,
+      "tolerance": "share_absolute",
+      "note": "BOUND: holder shares sum to 1 within the leg"
+    },
+    "federal_share_of_wage_leg_union": {
+      "expected": 0.793592,
+      "tolerance": "share_absolute",
+      "note": "the same quantity as above, restated"
+    },
+    "ai_onbalancesheet_debt_bn": {
+      "expected": 458.4,
+      "tolerance": "survey_relative",
+      "note": "SEC XBRL, long term debt plus finance leases, 9 named filers"
+    },
+    "ai_bank_commitments_bn": {
+      "expected": 450.0,
+      "tolerance": "survey_relative",
+      "note": "Chicago Fed, late 2025, SECONDARY source"
+    },
+    "debt_financed_share_of_ai_capex": {
+      "expected": 0.065403,
+      "tolerance": "share_absolute",
+      "note": "capex in excess of operating cash flow, over capex, across the named filers. BOUND: in [0,1]. THE FAILURE-STATE INDICATOR"
+    },
+    "aggregate_self_funding_ratio": {
+      "expected": 1.3426,
+      "tolerance": "survey_relative",
+      "note": "operating cash flow over capex. Above 1 is the 2000 structure, below 1 the 2008 structure"
+    },
+    "share_of_federal_wage_loss_hedged_at_operative_tau_k": {
+      "expected": 0.36,
+      "tolerance": "share_absolute",
+      "note": "10 percent dose, case A, GROSS of capital tax. The published fiscal loss is already NET of tax at the operative rate, so the gross basis is required or the tax is counted twice"
+    },
+    "anchor_2000_corporate_tax_fall_pct": {
+      "expected": -35.1,
+      "tolerance": "survey_relative",
+      "note": "measured from FRED FCTAX, 2000 to 2002"
+    },
+    "anchor_2008_corporate_tax_fall_pct": {
+      "expected": -53.4,
+      "tolerance": "survey_relative",
+      "note": "measured from FRED FCTAX, 2007 to 2009"
+    }
   }
 }

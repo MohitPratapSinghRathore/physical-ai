@@ -1,0 +1,9 @@
+check,verdict,detail
+quintile shares sum to 1: auto_loan,OK,1.00000000
+quintile shares sum to 1: credit_card,OK,1.00000000
+quintile shares sum to 1: home_mortgage,OK,1.00000100
+quintile shares sum to 1: other_consumer,OK,1.00000000
+quintile shares sum to 1: student_loan,OK,1.00000100
+quintile wage bill shares sum to 1,OK,1.000000
+impaired stock <= class labour-backed stock,OK,0 rows above
+"implied loss rates in [0,1]",OK,min 0.0148 max 0.1967

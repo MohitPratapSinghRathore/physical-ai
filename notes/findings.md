@@ -6776,3 +6776,161 @@ under both cases.
 
 **Provisional, produced this session and blocked from promotion by the same-session rule:**
 179 to 193.
+
+---
+
+## A102. THE LABOUR BACKING RATIO IS BUILT, THE SOVEREIGN RESULT IS CONFIRMED BY A SECOND ROUTE, AND THE PRIORITY CLAIM ON THE FISCAL MECHANISM IS RETIRED
+
+**Everything in this entry is PROVISIONAL.** Produced in one session, so the same-session
+rule applies and nothing may be promoted to standing here. Nothing has been independently
+replicated; all of it is sealed for round two under `labour_backing` and `two_sided_bet`.
+
+Bounds were stated before the numbers throughout, per the standing rule. **75 plausibility
+checks across four builds, 0 violations.**
+
+---
+
+### WHAT WEAKENS THE THESIS, first and prominently
+
+**1. The priority claim on the fiscal mechanism does not survive, and it is retired.**
+
+The owner's search located five works that already have it: Casas and Torres (2024) in
+International Tax and Public Finance, Korinek and Lockwood (2026) at Brookings and NBER,
+**Price and Suresh (2026) at RAND, whose two scenario axes are reemployment and AI pricing,
+which are this project's rho and tau_k, and whose headline is that 84 percent of 2024
+federal revenue came from individual or payroll taxes**, the Windfall Trust (2026), and IMF
+Notes 2026/002. This project did not discover that wage-based public finance makes
+displacement a revenue event and must stop implying that it did.
+
+**2. The stress-test framing is not ours either.** Chen (2026, arXiv 2603.09209) is
+explicitly "a macro-financial stress test of rapid AI adoption", runs displacement into
+demand and then into private credit and mortgage markets, and notes that high earners drive
+47 to 65 percent of US consumption. That is close to this project's second-round module and
+to claim 144.
+
+**3. The capital tax verdict was reached first in theory by someone else.** Falk and
+Tsoukalas (2026, arXiv 2603.20617) show that capital income taxes cannot resolve the
+automation externality and that a Pigouvian automation tax can. Our contribution is the
+calibration, not the verdict. This compounds the softening already forced by item 0a.
+
+**4. An external result cuts against the direction of the buffer work.** Manning, Aguirre,
+Muro and Methkupally (2026) find **AI exposure and adaptive capacity POSITIVELY
+correlated**: 26.5m of the 37.1m workers in the top exposure quartile are in occupations
+with above-median adaptive capacity. The hiring-freeze blind spot (claims 80, 93, 94) has
+not been tested against it and is cautioned until it is.
+
+**5. The headline ratio is an artifact of its own definition.** The one-step rule moves it
+by **76 percent**; every other judgement call moves it by under 10. A statistic whose
+central value is set by a contestable definitional choice cannot carry a paper.
+
+**6. The ratio is partly an asset price series.** It falls when equity is expensive,
+because equity is the largest zero-by-rule class. 0.288 in 1947, 0.376 at the 2008 peak,
+0.270 in 2025. Anyone reading the level as a measure of labour dependence will misread it.
+
+**7. One B12 sub-claim is too strong as registered.** "The federal government holds almost
+none of the upside" is not right: at the operative tau_k the capital tax recovers **36
+percent** of the gross federal first-round loss at a 10 percent dose. The qualification is
+carried with the claim.
+
+---
+
+### WHAT THE SESSION ESTABLISHED
+
+**The sovereign concentration is confirmed by a completely independent route.**
+
+Built from the Federal Reserve Z.1 Financial Accounts with **no reference to the
+dose-response table**, the federal government holds, guarantees or owes **79.4 percent of
+all labour-backed claims**: 32.6 percent as holder or guarantor, 54.3 percent as obligor,
+less the overlap. The paper's independently derived federal share of first-round losses is
+**75.9 to 91.6 percent**. Two different measurements of the same concentration agree.
+
+A second, tighter cross-check fell out of the same build. Mapping Z.1 sectors to holders
+gives a federal share of home mortgages of **64.9 percent** against the **63.7 percent**
+(GSE 51.1 plus FHA 12.6) read from the Enterprises' own 10-K filings in claim 147. Two
+independent routes, 1.2 points apart.
+
+**The sovereign share roughly doubled in fifty years**: 0.336 in 1970, 0.564 in 1990, 0.649
+in 2010, **0.794 in 2025**. The drivers are visible in the series: the GSEs and then the
+2008 conservatorship, federal student lending after 2010, and the growth of Treasury debt.
+**This is the part of the time series that is genuinely measured throughout**, because
+holder shares come from Z.1 in every year while the labour shares are held constant outside
+2021 to 2023.
+
+**The two-sided bet is lopsided by holder, and measurably so.** The federal government
+holds **1.0 percent of the AI leg against 79.4 percent of the wage leg**, a cover ratio of
+0.03, the lowest of any holder by a factor of five against banks at 0.17. The mirror holds:
+households hold 38.4 percent of the AI leg and 6.1 percent of the wage leg. The rest of the
+world, other financial and insurers come out almost exactly hedged, at 1.00, 1.07 and 1.02,
+which nothing in the construction forced.
+
+**The wealth gradient is the sharpest number in the session.** The ratio of equity share to
+household debt share runs from **28.1 at the top 0.1 percent to 0.019 at the bottom half**,
+a factor of about 1,480.
+
+**The current AI financing structure resembles 2000, not 2008.** Aggregate operating cash
+flow over capex is 1.343 and capex in excess of operating cash flow is 6.5 percent. Both
+historical anchors were MEASURED from Z.1 and NIPA rather than cited: the equity bust was
+the larger asset-price event (equity fell 39.9 percent of peak GDP against 22.4) and the
+smaller fiscal and banking event (receipts fell 9.5 percent against 16.0, corporate tax
+35.1 against 53.4). **The marginal dollar is not internally funded**: Oracle, CoreWeave,
+Equinix and Digital Realty each spend above operating cash flow, and off-balance-sheet
+financing is not sourced at all, so 6.5 percent is a lower bound.
+
+---
+
+### TWO METHOD FINDINGS, both caught by bounds rather than by tolerances
+
+**1. The obvious connection formula is wrong for credit claims.** Applying `(1 - R)` to a
+credit class assumes only the lost-income fraction of a balance is at risk, when a
+displaced borrower's whole balance is. With it in, 0 of 8 auto rows sat inside the
+benchmark loss band; with it out, 7 of 8 do. `(1 - R)` belongs in the fiscal channel and
+nowhere else.
+
+**2. The published fiscal loss is already NET of capital tax at the operative rate**, so
+asking how much a capital tax hedges the federal position and dividing by that figure
+counts the tax twice. The gross basis is required, and the check is that the break-even
+rate recovers exactly 1.000 of the gross fiscal loss by construction. This extends claim
+179 and it moved the headline from an apparent 56 percent to 36 percent.
+
+A third, smaller one is worth recording because it would have been invisible: **Z.1 does
+not carry the same instrument suffix for every sector.** Matching on the exact suffix
+silently dumped bank and central bank Treasury holdings into the residual, producing a 32.6
+percent Treasury residual on the first run. Matching on the instrument family cut the
+aggregate residual from 20.9 percent to 1.6 percent. **A residual that large should have
+been read as a defect immediately and was not, for one iteration.**
+
+---
+
+### THE VERDICT ASKED FOR: one section, not the central object
+
+Stated in full in `framework/labor_backing/ONE_PAGE.md`. Three reasons: the one-step rule
+moves the headline by 76 percent; the novelty gate narrowed sharply this session; and the
+durable finding is the sovereign concentration rather than the ratio, which is the vehicle
+that gets you there.
+
+**Recommendation.** Lead with the sovereign share and its time series. Report the aggregate
+ratio with its sensitivity table beside it. Do not put the ratio in the abstract. Report the
+corporate and equity cells as zero by rule with the second-round extension stated
+separately, which is what `feasibility.md` recommended before any of it was built.
+
+**What would change the verdict:** a direct approach to the Federal Reserve Financial
+Accounts team establishing that no labour decomposition exists anywhere, plus a euro area
+build to the same standard. Neither has been done.
+
+---
+
+### WHAT IS STILL OPEN
+
+1. **Nothing here has been independently replicated.** All of it is R-pending-2.
+2. **RAND and the IMF e-library return HTTP 403 to this environment**, so those two rows of
+   the related-work table are bibliographic verification only. The boundary between their
+   work and ours should be re-checked against full text before submission.
+3. **Capital gains realisations** are the other federal failure-state channel and are not
+   sourced. No figure is asserted.
+4. **Off-balance-sheet and GPU-backed AI financing** is unmeasured and is the single input
+   that would flip the B12 verdict from 2000 to 2008 if it is large.
+5. **`paper/references.bib` carries a superseded Korinek and Lockwood title**, and CBO
+   (2024) on AI and the federal budget was never in the audit. Both are audit gaps.
+6. **Pre-2021 labour shares are held constant**, so the early series is a claim stock and a
+   holder map with fixed labour shares, not a measurement of how labour backing itself
+   moved.
