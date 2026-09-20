@@ -99,13 +99,15 @@ either in `data/raw/manual/`, the flag is removed and the figure is cited.
   publication number and the December 2024 date, then move the entry into
   `references.bib` and upgrade the related-work row.
 
-### IMF Notes 2026/002, "Global Economic and Financial Implications of Artificial Intelligence"
+### IMF Note 2026/002 (Barhoumi and others). CLEARED 2026-09-20
 
-- Previously carried at level B on a bibliographic record. **The full text remains
-  unreadable from this environment:** `imf.org` returns HTTP 403 and the eLibrary route
-  returns 404 for the issue.
-- The owner reported placing it in `data/raw/manual/`. **It is not there**, and a search of
-  the whole machine finds no copy.
-- The related-work row therefore stands at level B, unchanged, and the boundary with this
-  project has NOT been redrawn from the full text. The row says so explicitly.
-- To clear: place the PDF in `data/raw/manual/` and the boundary can be redrawn in one pass.
+**RESOLVED.** The owner placed the PDF at
+`data/raw/manual/IMF_Note_2026_002_AI_Scenario_Planning.pdf`. It has been read in full, the
+related-work boundary has been redrawn in `lit/related_work_final.md` section 3, and the entry
+is now in `paper/references.bib` as `Barhoumi2026`. Verification level **F**.
+
+The owner also placed **IMF SDN/2024/002 (Brollo and others, June 2024)**, which was not in
+the audit at all. Read in full, added as `Brollo2024`, boundary in
+`lit/related_work_final.md` section 3A.
+
+**Neither is unverified any longer. The only remaining item in this file is CBO (2024).**

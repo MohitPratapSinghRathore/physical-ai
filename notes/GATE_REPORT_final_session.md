@@ -247,17 +247,37 @@ signed or bounded the net effect.
 
 ---
 
-## PART 6. ONE BLOCKER, reported not worked around
+## PART 6. THE BLOCKER IS CLEARED, and one new exposure is opened
 
-**Item 9 cannot be completed as specified.** The RAND report (Price and Suresh 2026) and IMF
-Note 2026/002 (Barhoumi and others) are **not in `data/raw/manual/`**, and a search of the
-whole machine finds neither. The most recent file placed in that directory is
-`NYFed_HHDC_2026Q2_data.xlsx`.
+**RESOLVED in the closing pass.** The owner placed both IMF documents. Item 9 is complete.
 
-Everything in item 9 that does not require those two documents has been done: the Manning
-correction, the Korinek and Lockwood superseded title, and the CBO 2024 addition. The
-related-work table carries RAND and the IMF note at the verification level the previous audit
-established, with the boundary **explicitly marked as not yet redrawn from the full text**.
-No reading of either document is asserted that is not already sourced in
-`lit/related_work_labour_backing.md`. Place the two files and the boundary can be redrawn in
-one pass.
+**IMF Note 2026/002, read in full.** Boundary redrawn at verification level F in
+`lit/related_work_final.md` section 3. Two findings matter and both are reported before
+anything else:
+
+1. **The overlap is larger than the previous audit recorded.** The Note states the wage-leg
+   credit mechanism directly: job losses weaken household balance sheets and raise default
+   risks in banking systems exposed to consumer credit, and income declines transmit into
+   banking losses and tighter credit.
+2. **The WS0 kill criterion was assessed and is NOT triggered, but this is the closest
+   approach yet located.** Both legs appear in the same paragraph, and the Note closes it with
+   a sentence asserting the distributional asymmetry our dose-response table measures. It is
+   not triggered because there is no holder map, no hedge-failure proposition, and no
+   measurement of any kind. **Our contribution narrows to measuring what the Note asserts, and
+   the paper must make that smaller claim.**
+
+**IMF SDN/2024/002, read in full. A row the audit never had.** It corroborates our sourced
+tau_k maximum (its advanced-economy capital ATR of about 0.20 to 0.22 against our
+independently constructed 0.20351), corroborates our reading of 26 USC 168(k), and supplies
+measured social-protection effects now carried in instrument row 4.
+
+**AND IT OPENS A NEW EXPOSURE IN THE PAPER'S CENTRAL FISCAL RESULT, reported against
+ourselves.** The IMF's measured US average tax rate on capital income sits well above our
+operative **0.0708**. The objects differ by construction and the defence is definitional, but
+**a referee will place them side by side and the paper must pre-empt it in the text, not a
+footnote.** The fiscal condition fails at 0.0708 and would be closer to closing at the IMF's
+measured rate. Recorded as claim 168 provisional.
+
+**CBO (2024) was not placed.** `cbo.gov` returns HTTP 403 on every route. It stays in
+`lit/unverified.md`, out of `references.bib`, with no dependent claim. It is now the only
+item in that file.

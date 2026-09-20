@@ -12,11 +12,51 @@ rather than deleted silently.
 
 ---
 
+## 0. Three standing rules that govern every number below
+
+**RULE 1. At a 50 percent displacement dose and above, every result is a BAND, not a point.**
+The reemployment rate is the fixed point of a stock-flow identity with a pole at an employment
+dose of 0.676142, which is a wage-bill dose of **0.459 for the embodied group**. A point
+estimate exists only where the solution lies inside the observed range of rho, [0.49, 0.74].
+**At 50 percent no exposure type has a point estimate**, and the embodied type has no
+admissible fixed point at all. Beyond the boundary the only reportable object is the band from
+the worst observed vintage, rho = 0.49, down to zero, labelled outside the data. Any
+instrument sized on a 50 percent dose is sized on a band.
+
+**RULE 2. The federal share of first-round losses is reported BOTH WAYS on the agency book.**
+See `notes/item3b_gse_classification.md`. Narrow reading (only loss beyond capital is federal)
+is the lower bound; conservatorship reading (the whole retained loss is federal) is the upper
+bound. They differ by 8 to 10 percentage points and never change the qualitative result.
+
+**RULE 3. Every credit figure is FIRST ROUND ONLY, with house prices held fixed.** It is a
+floor, not an estimate.
+
+---
+
 ## 1. The gap this architecture exists to close
 
 > **The state holds 0.794 of the wage leg (agreed range 0.778 to 0.804) [M, agreed with an
 > independent rebuild] and 0.010 of the AI leg (range 0.0095 to 0.0102) [S]. The gap is
 > 0.784.**
+
+**The paired presentation, which must travel with the number** (see
+`notes/item2b_sovereign_share_paired.md`). The one-step rule that produces 0.794 IS the
+first-round versus second-round boundary the rest of the paper uses:
+
+| | what it measures | federal share |
+|---|---|---|
+| **first round**: claims serviced DIRECTLY from labour income | mortgages, rent, consumer credit, student loans, Treasury and municipal debt | **0.794** (0.778 to 0.804) |
+| **including second round**: indirectly serviced claims added | business revenue funded by wage-financed spending | **0.452** |
+
+**The state is the first-round holder; private balance sheets are the second-round holders.**
+Widening to indirect exposure does not weaken the concentration finding, it relocates it: the
+claims added are held by banks, insurers, pensions, foreign investors and households. **That
+relocation is what the instruments in section 2 have to act on**, and it is why the bank and
+lender instruments (rows 8, 9, 10) exist alongside the fiscal ones.
+
+The other three structural calls: obligor leg excluded **0.321**, agency pools not federal
+**0.587**, commercial mortgage treated as rent-serviced **0.741**. No measurement call moves
+the share by more than 1.3 percent.
 
 That single asymmetry organises everything below. The state is the residual holder of the
 exposure that fails if AI succeeds, and holds essentially none of the exposure that pays if
@@ -57,7 +97,7 @@ not, the row says what would make it computable rather than guessing.
 | 1 | The fiscal condition fails at the operative capital tax rate: required 0.110 to 0.137 against operative 0.0708 **[M]**, with R = 0.568316 **[R]** | Tax authority (Congress, Treasury, IRS) | Raise the effective tax rate on capital and AI surplus toward the top of observed effective rates | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Effective rate on AI surplus **0.0708** against a threshold of **0.1101**. **BELOW THRESHOLD** | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
 | 2 | 55.2 pct of labour-backed claims are federal obligations and the share rose from 0.336 in 1970 to 0.794 in 2025 **[M]** | Treasury, and the fiscal authority setting the debt path | Pre-fund or term out the labour-linked obligation stock while the labour tax base is intact | stock | Norway's Government Pension Fund Global, established by the Government Pension Fund Act, is a sovereign pre-funding vehicle against a resource-linked revenue base | Debt to GDP at start **1.214** **[R]**; 20-year emerging-market baseline **376.7 pct** **[R]** | all regimes; the only instrument that acts BEFORE the dose | Not a gap closure. It buys time on the obligor leg, which is 55.2 pct of the wage leg |
 | 3 | The state holds 0.010 of the AI leg **[S]** against 0.794 of the wage leg **[M]** | Treasury, or a statutory fund | Direct equity or revenue claim on AI capital: sovereign fund, golden share, or a public stake taken in exchange for public inputs | ownership | Norway GPFG; the US Treasury's 2008 to 2010 TARP equity stakes under the Emergency Economic Stabilization Act | Debt-financed share of AI capex **0.0654**; self-funding ratio **1.3426**, four of nine filers below 1.0 | larger, sudden and near-total displacement; **unnecessary inside the data** | **Directly measurable: see the table in section 1.** 0.10 of the AI leg closes 11.5 pct of the gap |
-| 4 | Trust funds are payroll-funded: OASDI payroll share 0.9126, HI 0.8720; OASI depletes 2032Q4, HI 2033Q2, combined OASDI 2034Q3 **[M]** | Social insurance system (SSA, CMS, Congress) | Broaden the contribution base beyond covered wages, or convert to a general-revenue claim | flow | Medicare's Net Investment Income Tax, 26 USC 1411, already funds Part A adjacent spending from a non-wage base | Combined OASDI depletion **2034 Q3**, 83 pct of scheduled benefits payable at depletion | all regimes; binds SOONEST, because depletion arrives before any AI dose does | Removes the trust fund component of the fiscal loss, **4.07 pct of OASDI payroll income at the 10 pct dose** |
+| 4 | Trust funds are payroll-funded: OASDI payroll share 0.9126, HI 0.8720; OASI depletes 2032Q4, HI 2033Q2, combined OASDI 2034Q3 **[M]** | Social insurance system (SSA, CMS, Congress) | Broaden the contribution base beyond covered wages, or convert to a general-revenue claim; and raise UI generosity and duration, which has a MEASURED effect on automation wage losses | flow | Medicare's Net Investment Income Tax, 26 USC 1411, funds Part A adjacent spending from a non-wage base. **MEASURED EFFECT, Brollo (2024), IMF WP 2024/095: US states with more generous UI saw a wage decline from robotisation about TWO-THIRDS SMALLER, concentrated among workers without a college degree; one robot per thousand workers raised poverty 0.3pp, mostly attenuated where social assistance was more generous. US maximum UI duration of 26 weeks is on the low side of the OECD** | Combined OASDI depletion **2034 Q3**, 83 pct of scheduled benefits payable at depletion | all regimes; binds SOONEST, because depletion arrives before any AI dose does | Removes the trust fund component of the fiscal loss, **4.07 pct of OASDI payroll income at the 10 pct dose** |
 | 5 | Retained agency loss 3.3 to 12.5 pct of Enterprise net worth at the 10 pct dose, zero Treasury draw; 39 to 53 pct of each single-family book carries no credit enhancement **[M]** | Housing agencies (FHFA, Fannie, Freddie, FHA, Ginnie) | Forbearance and payment-deferral protocol pre-authorised for a displacement trigger; raise credit enhancement on the unenhanced book | contract | The CARES Act (Public Law 116-136) sections 4022 and 4023 pre-authorised federally backed mortgage forbearance. The precedent is exact | Household debt in any stage of delinquency **4.7 pct**, down 0.1pp on the quarter | larger and sudden displacement; **unnecessary inside the data**, where no draw is triggered | Removes the retained agency loss, **5.85 to 22.48bn at the 10 pct dose**, from the federal balance sheet |
 | 6 | Federal government holds 97.3 pct of the student book **[R]** and student labour backing is 0.8832 **[M]** | Student loan system (Education, servicers) | Income-driven repayment with an automatic displacement trigger; the claim already flexes with income | contract | Income-Driven Repayment is established US law, 20 USC 1087e(e). This instrument already exists and needs only a trigger | Recent graduate unemployment **5.6 pct**, underemployment **42.0 pct**; employment gap for workers aged 22 to 25 in AI-exposed occupations **19 pct below counterfactual and widening** | all regimes, and it is the CHEAPEST row here because the instrument exists | Converts a default loss into a deferred claim. The book is already 97.3 pct federal, so this moves timing, not incidence |
 | 7 | Auto is the one household credit channel with a real pathway-specific contrast: A31 adjusted +13.39, t = 3.50 **[M]** | Auto lenders and ABS investors; supervisors for the bank-held slice | Displacement-contingent payment holiday in auto contracts; ABS documentation that anticipates it | contract | CARES Act forbearance is the model; auto has no statutory analogue, so this is contractual rather than legislative | Auto loan balance 90+ days delinquent **5.49 pct** | larger and sudden displacement | Removes the auto component of first-round private loss. Sized in the dose-response table |
@@ -111,6 +151,34 @@ and 0.8720. A dollar of capital-tax-funded transfer income generates no OASDI or
 contribution. **Rows 1 and 4 are therefore not substitutes.** Any package that funds
 replacement income from capital and expects the trust funds to recover has a hole in it the
 size of the payroll share.
+
+**[IMF SDN/2024/002, read in full this session] Two things the literature now settles, and
+one vulnerability it opens in our own number.**
+
+*Settled, and our architecture matches it.* "**A specific tax on gen AI is therefore not
+recommended**": the base is hard to define, assets can be relabelled, and AI location is
+mobile. The recommendation is instead to reconsider capital allowances that favour
+labour-displacing assets and to strengthen **general** capital income taxation. That is
+exactly row 1, and it is why no row in this table is an AI-specific tax.
+
+*Settled, and it corroborates our sourced maximum.* The IMF puts the advanced-economy average
+tax rate on capital income at roughly **0.20 to 0.22**, from the Bachas and others (2022)
+macro-historical database. **Our sourced maximum of 0.20351 was built independently** as
+`0.351 x 0.21 + 0.649 x 0.20` on a rent-share decomposition and lands on the same number.
+
+*The vulnerability, reported against ourselves.* The same IMF series put the **US** average
+tax rate on capital well above our operative **0.0708**. The two are different objects: ours
+is the rate on the **AI surplus** after profit shifting and the rent decomposition, theirs is
+an economy-wide average on all capital income including personal-level taxes. **A referee will
+place them side by side, and the paper must pre-empt it in the text rather than in a
+footnote**, because the fiscal condition fails at 0.0708 and would be closer to closing at the
+IMF's measured rate. This is a live exposure in the paper's central fiscal result.
+
+*The live disagreement, named rather than smoothed over.* Falk and Tsoukalas conclude a
+Pigouvian automation tax is the instrument that works; the IMF concludes a specific AI tax is
+not implementable; Costinot and Werning's optimal robot tax of 1 to 3.7 percent of the robot
+price sits between them. **Our contribution is none of those verdicts: it is the calibrated
+break-even rate that says what any such instrument would have to raise.**
 
 **[Falk and Tsoukalas 2026, connected work] The theoretical case is stronger than ours.**
 They show that capital income taxes, worker equity, UBI, upskilling and bargaining all fail
@@ -211,6 +279,9 @@ EQIX) are already below a self-funding ratio of 1.0 individually while the aggre
 ---
 
 ## 5. Housing agencies, per item 1
+
+**Classification of the retained loss is set out once, both ways, in
+`notes/item3b_gse_classification.md`, and standing RULE 2 above applies to every figure here.**
 
 **[M] What the evidence supports.**
 

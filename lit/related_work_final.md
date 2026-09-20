@@ -17,7 +17,8 @@ dependent claim.
 | Price and Suresh 2026 (RAND) | B | **F** | full text obtained and read in this session, retained at `data/raw/manual/RAND_RRA4980-1_PriceSuresh2026.pdf` |
 | Korinek and Lockwood | B, superseded title | **B, corrected** | NBER WP 34873, DOI 10.3386/w34873, February 2026. Now in `references.bib` |
 | CBO 2024 | proposed addition | **U** | `cbo.gov` returns HTTP 403 on every route. Does not enter `references.bib` |
-| IMF Notes 2026/002 | B | **B, unchanged** | full text still unreachable and the owner's copy is not on this machine. **Boundary NOT redrawn from full text; the row below says so** |
+| IMF Note 2026/002 | B | **F, read in full** | owner placed it. Boundary redrawn. Kill criterion assessed and NOT triggered, but it is the closest approach located |
+| **IMF SDN/2024/002** | not in the audit | **F, read in full** | NEW ROW. Corroborates our sourced tau_k maximum, raises a vulnerability in our operative rate, and supplies measured social-protection effects |
 | Manning and others 2026 | "thesis-weakening" | **overlap, not contradiction** | corrected below |
 
 ---
@@ -142,23 +143,179 @@ it stays a deduction. It remains cautioned for that reason and not because of Ma
 
 ---
 
-## 3. IMF Notes 2026/002. Boundary NOT redrawn
+## 3. IMF Note 2026/002 (Barhoumi and others). READ IN FULL, boundary redrawn
 
-**Stated plainly because the alternative is to assert a reading we do not have.** The full
-text is unreachable from this environment (`imf.org` returns HTTP 403, the eLibrary route
-returns 404) and the owner's copy is not on this machine. The row below is unchanged from
-the previous audit, at verification level B, resting on the bibliographic record and the
-publisher abstract only.
+**Upgraded from verification level B to F.** Retained at
+`data/raw/manual/IMF_Note_2026_002_AI_Scenario_Planning.pdf`. This is the row the previous
+audit could only describe from an abstract, and reading it changes the boundary in both
+directions.
 
-| | |
+**What it is.** A synthesis of a two-day IMF workshop (10 to 11 December 2025) co-organised
+with the Economics of Transformative AI Initiative at the University of Virginia (Anton
+Korinek), plus a closed-door scenario-planning exercise on day two with about 30 IMF staff and
+15 external experts, under the Chatham House Rule. **The scenarios were developed in
+collaboration with the Windfall Trust**, which connects two rows of this table that the
+previous audit treated as independent.
+
+**Its two scenarios.** A shared assumption that AI attains human expert-level capability
+within five years and, by the early 2030s, "the technical capacity to perform most cognitive
+and physical tasks ... supported by its integration into robotics". The scenarios differ only
+in diffusion speed: **baseline diffusion** (slow, frictions and pushback) and **runaway
+diffusion** (rapid, minimal regulatory constraint). **The shared assumption covers PHYSICAL
+tasks and robotics**, so this is not a cognitive-only exercise, which the abstract did not
+make clear.
+
+### 3.1 The overlap is much larger than the previous audit recorded
+
+The previous row said the overlap was the employment-linked social insurance point. That
+understated it. **The Note states the wage-leg credit mechanism directly:**
+
+> "In the runaway scenario, **large-scale job losses weaken household balance sheets and raise
+> default risks, putting pressure on banking systems with high exposure to consumer credit**."
+
+> "Sharp declines in household and firm income during periods of rapid adoption **weaken debt
+> servicing capacity, transmitting adjustment pressures into banking losses and tighter credit
+> conditions**."
+
+That is this project's first-round and second-round mechanism, asserted. It also states the
+tau_k result qualitatively: "Shifting taxation from labor to capital through higher corporate
+income taxes **may only partially offset these losses** given capital mobility, market
+concentration, and international tax competition."
+
+### 3.2 THE KILL CRITERION: assessed, NOT triggered, and the closest approach yet located
+
+`PROJECT_BRIEF.md` WS0 carries a standing instruction: **"if any paper already combines both
+legs in one exposure framework, stop and report to the owner with a proposed repositioning."**
+This Note forces that assessment, because **both legs appear in the same paragraph**:
+
+| leg | the Note's words |
 |---|---|
-| what it is | scenario planning exercise, five-year horizon, two diffusion trajectories, baseline and runaway |
-| what it claims | transition dynamics strain fiscal frameworks through erosion of labour tax bases and rising social spending, particularly where social insurance is employment-linked; capital income taxes should be strengthened |
-| overlap | the employment-linked social insurance point is our trust fund result (claims 120, 161, 190). **Our audience is this institution and it has already published the framing** |
-| what remains ours, AT LEVEL B | our trust fund arithmetic is measured fund by fund against the 2026 Trustees tables with depletion dates; the note is a scenario exercise without that arithmetic |
+| **Leg W** | "large-scale job losses weaken household balance sheets and raise default risks, putting pressure on banking systems with high exposure to consumer credit" |
+| **Leg A** | "elevated leverage to finance AI-related investment, coupled with rapid capital obsolescence risks, increases uncertainty around future earnings and asset valuations" |
 
-**This boundary must be re-checked against the full text before submission.** It is the one
-row in the table where a claim about what a competitor does NOT do rests on an abstract.
+and it closes that paragraph with a sentence close to our partial-success logic:
+
+> "These risks are especially acute during the transition, when **displacement costs are
+> concentrated among incumbent workers and borrowers, whereas productivity gains accrue
+> primarily to new entrants and AI-intensive firms**."
+
+**The assessment, stated conservatively.** The criterion is **not triggered**, for four
+reasons, each checkable against the text:
+
+1. The two exposures are listed as **separate items on a risk list**, not as two sides of one
+   position.
+2. There is **no holder map**. The Note never asks who holds each leg, and never identifies an
+   institution holding both.
+3. There is **no hedge-failure proposition**. It does not state that a holder of both is
+   hedged at the extremes and unhedged in partial success, which is our centerpiece.
+4. **Nothing is measured.** No level, no share, no dose. It is a qualitative workshop
+   synthesis and says so.
+
+**But it is closer than anything previously located, and closer than the previous audit knew,
+so it is reported first rather than buried.** The distributional sentence above asserts, in
+one line, the asymmetry our dose-response table measures. **Our contribution narrows
+accordingly: we measure what this Note asserts.** That is a smaller claim than "we identified
+the two-sided bet", and the paper must make the smaller claim.
+
+### 3.3 What is ours, stated against the full text
+
+The Note names the data gap it cannot fill, and it is our paper:
+
+> "a key priority could be to **close data gaps** and strengthen diagnostic capabilities ...
+> systematically tracking **indicators of AI diffusion, sectoral concentration, and labor
+> market exposure** ... improved **measurement** of AI adoption and usage, combined with better
+> data on **task-level impacts and investment flows**."
+
+> "Fiscal analysis could incorporate **scenarios with persistent declines in labor income
+> share**."
+
+> a precondition for supervision is "improved **data collection on financial institutions'
+> exposures to AI-sensitive sectors**".
+
+| | IMF Note 2026/002 | this project |
+|---|---|---|
+| method | workshop synthesis, Chatham House Rule, no model | microdata plus the claim stock, one-command rebuild |
+| the wage-leg credit mechanism | **asserted** | **measured**, by dose and by holder |
+| the AI-leg leverage mechanism | **asserted** | **measured and bounded from below**, nine named filers |
+| who holds each leg | **absent** | **ours**: 0.794 of the wage leg, 0.010 of the AI leg |
+| hedge failure as a proposition | **absent** | **ours** |
+| numbers of any kind | **none** | the whole paper |
+| supervisory stress scenario | recommended in general terms | **ours**: severity against the Fed 2026 severely adverse, by loan category |
+| trust fund arithmetic | "employment-linked social insurance becomes less effective" | **ours**: fund by fund against the 2026 Trustees tables, with depletion dates |
+
+**One sentence for the paper:** the IMF's own scenario exercise identifies both exposures and
+calls for exactly the measurement this paper supplies; it does not combine them into a single
+holder-level position, and it produces no numbers.
+
+---
+
+## 3A. IMF Staff Discussion Note SDN/2024/002 (Brollo and others). NEW ROW, read in full
+
+**Not in the previous audit at all.** "Broadening the Gains from Generative AI: The Role of
+Fiscal Policies", June 2024, ISBN 979-8-40027-717-7, retained at
+`data/raw/manual/IMF_SDN_2024_002_Generative_AI_Fiscal_Policies.pdf`. Level **F**.
+
+This is the substantive fiscal companion to the 2026 Note, and it bears on three things in
+this project.
+
+**(a) It corroborates the top of our sourced capital tax range, from a different
+construction.** Its Figure 14 puts the advanced-economy average tax rate on capital income at
+roughly **0.20 to 0.22** in recent years, built from the Bachas and others (2022)
+macro-historical database, with property and wealth taxes excluded "to better reflect taxes
+affecting firms' automation decisions". **Our sourced maximum is 0.20351**, constructed
+entirely differently as `0.351 x 0.21 + 0.649 x 0.20` on a rent-share decomposition. Two
+unrelated constructions land on the same number.
+
+**(b) It raises a vulnerability in our OPERATIVE rate, and this is reported against
+ourselves.** The same series put the **US** average tax rate on capital well above our
+operative effective rate of **0.0708**. The two are different objects: ours is the effective
+rate on the **AI surplus** after profit shifting (Torslov, Wier and Zucman's 48 percent haven
+share) and after the rent decomposition; theirs is an economy-wide average on all capital
+income including personal-level taxes. **But a referee will put these side by side, and the
+paper must pre-empt it:** the fiscal condition fails at 0.0708 and would be closer to closing
+at the IMF's measured rate. The correct defence is the definitional one, stated up front, not
+silence. **This is a new and real exposure in the paper's central fiscal result and it is
+recorded as such.**
+
+**(c) It independently confirms a project input on the US tax code.** Our tau_k decomposition
+cites 26 USC 168(k). The SDN identifies the **United States among the ten economies whose
+corporate tax bias most favours labour-saving assets** (Figure 10), naming the Tax Cuts and
+Jobs Act's full expensing of acquired software and computer hardware from 2018 as the cause.
+An IMF measurement of METR differentials reaches the same conclusion as our statutory reading.
+
+**(d) It supplies MEASURED evidence for social-protection instruments, which our architecture
+previously had only as precedent.** From Brollo (2024), IMF Working Paper 2024/095, on US
+commuting zones:
+
+- States with more generous unemployment insurance saw a decline in wages from robotisation
+  **about two-thirds smaller** than other states, with the effect concentrated among workers
+  **without a college degree**. Employment effects did not depend on UI generosity.
+- **One additional robot per thousand workers raised the poverty rate by 0.3 percentage
+  points**, a 3 percent increase, and most of that was attenuated where social assistance was
+  more generous.
+- Maximum UI benefit duration is usually **under 12 months**; the US at 26 weeks in most
+  states is **on the low side of the OECD**.
+
+**(e) It sets the literature's position on taxing AI, which our architecture must match.**
+"**A specific tax on gen AI is therefore not recommended**", because the base is hard to
+define, assets can be relabelled, and AI location is mobile. Instead: reconsider capital
+allowances that favour labour-displacing assets, and strengthen **general** capital income
+taxation. **This creates a live disagreement the paper should name rather than smooth over:**
+Falk and Tsoukalas (2026) conclude a Pigouvian automation tax is the instrument that works;
+the IMF concludes a specific AI tax is not implementable; Costinot and Werning's optimal robot
+tax of 1 to 3.7 percent of the robot price sits between them. **Our contribution is none of
+those verdicts: it is the calibrated break-even rate that says what any such instrument would
+have to raise.**
+
+### The boundary
+
+| | SDN/2024/002 | this project |
+|---|---|---|
+| unit | cross-country, 74 to 85 economies, METRs and ATRs | one country, measured to the claim |
+| capital tax rates | **measured, and we agree at the top of the range** | ours is the rate on the AI surplus specifically |
+| social protection effects | **measured, and we should cite rather than rebuild** | ours is the obligation side they do not touch |
+| household debt, mortgages, holders | **absent** | **ours** |
+| the AI leg | **absent** | **ours** |
 
 ---
 

@@ -3,6 +3,50 @@
 Item 5 of the closing session. **Not to be used until the owner approves it, and
 `paper/outline.md` is not touched before then.**
 
+**AMENDED AGAIN 2026-09-20 (final analysis session, A103 and the closing pass), AWAITING
+OWNER APPROVAL.** Four changes, each marked in place below:
+
+1. **The holder gap is promoted to the opening clause.** The sovereign share is the paper's
+   central object and the sentence should lead with it rather than reach it.
+2. **"77 to 92 percent" is replaced by a by-dose statement reported both ways.** The federal
+   share is not one range and it is not monotone: narrow reading 0.785 to 0.870 at the 10
+   percent dose rising to 0.855 to 0.925 at 50 and falling back at 75; conservatorship reading
+   8 to 10 points higher. See `notes/item3b_gse_classification.md`.
+3. **The inside-the-data boundary is stated in the sentence itself.** At a 50 percent dose no
+   exposure type has a reemployment-rate point estimate, so everything there is a band.
+4. **The priority claim on the fiscal mechanism is gone from the wording.** RAND, the IMF
+   (both the 2024 SDN and the 2026 Note), the Windfall Trust, Korinek and Lockwood, and Casas
+   and Torres all have it. What is ours is the measured liability side.
+
+## The sentence, amended for this session
+
+> **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
+> It is the residual holder of the exposure that fails if AI succeeds and holds almost none of
+> the exposure that pays if it does. That concentration is what makes displacement a fiscal
+> event before it is a banking event: at the one dose fully inside the observed data, ten
+> percent of the wage bill, the federal government bears **0.785 to 0.870** of first-round
+> losses on the narrow reading of the agency book and **0.876 to 0.913** on the conservatorship
+> reading. The banking system is the second-round absorber, reached through consumer spending,
+> house prices and business credit rather than through displaced borrowers defaulting on their
+> own loans: roughly **nine tenths** of bank losses at large displacement arrive by that route.
+> Whether the fiscal absorber holds turns on the effective tax rate on AI capital, and **at the
+> operative effective rate of 0.0708 it does not hold at any dose**, though the required rate
+> of 0.110 to 0.137 stays inside the range of effective rates the literature has observed.
+> Beyond a displacement dose of about **46 percent for the embodied group this data cannot say
+> what happens**, because the reemployment rate has no admissible estimate there, and that
+> boundary is itself a finding.
+
+## The one-line version, amended
+
+> The state is the first-round holder of wage-backed credit and almost none of the AI capital
+> that would replace it, so displacement lands on the sovereign before it lands on the banks,
+> and the terms on which a sovereign borrows decide whether that is an accounting problem or a
+> crisis.
+
+---
+
+## SUPERSEDED VERSION, retained to show what moved
+
 **AMENDED 2026-09-20 (labour backing session, item 0a), AWAITING OWNER APPROVAL.** The
 break-even capital tax rates are corrected to the post-replication-repair values and the
 capital tax paragraph is softened, because the correction WEAKENS the claim that the

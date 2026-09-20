@@ -545,3 +545,34 @@ RAND report was obtained directly from the publisher and read. **`imf.org` retur
 on every route and the eLibrary issue returns 404**, so that row stands at verification level
 B and the related-work table says explicitly that its boundary has NOT been redrawn from the
 full text. Recorded in `lit/unverified.md`.
+
+---
+
+## Closing pass, 2026-09-20 (A104). Presentation and the two IMF documents.
+
+No new analysis. Every number below already existed; what changed is how it is reported, plus
+two documents the owner placed.
+
+| # | Claim | Amendment |
+|---|---|---|
+| 159, 195 | The sovereign share | **PAIRED PRESENTATION ADOPTED**, `notes/item2b_sovereign_share_paired.md`. The one-step rule IS the first-round versus second-round boundary the rest of the paper uses, so the two numbers are reported side by side rather than as a headline with a caveat: claims serviced DIRECTLY from labour income, federal share **0.794** (0.778 to 0.804); including indirectly serviced claims, **0.452**. **The state is the first-round holder, private balance sheets the second-round holders.** Widening to indirect exposure relocates the concentration rather than weakening it. The other three structural calls: obligor leg excluded 0.321, agency pools not federal 0.587, commercial mortgage as rent-serviced 0.741. **standing** |
+| 157, new 196 | The federal share of first-round losses, and how retained GSE losses are classified | **STATED IN ONE PLACE, BOTH WAYS**, `notes/item3b_gse_classification.md`. The ambiguity is genuine and is named: no new Treasury draw is triggered at any dose, but Treasury holds a senior claim on the net worth being consumed (liquidation preference 140.2bn on Freddie alone) and no private shareholder sits ahead of it. Narrow reading 0.785 to 0.870 at the 10 percent dose; conservatorship reading 0.876 to 0.913. The 8 to 10 point spread never changes the qualitative result. **standing, both ways** |
+| 85, and the novelty statement | Related work, IMF | **IMF Note 2026/002 READ IN FULL** (owner placed it), upgraded B to F. **The overlap is larger than the previous audit recorded:** the Note states the wage-leg credit mechanism directly, that job losses weaken household balance sheets and raise default risks in banking systems exposed to consumer credit. **KILL CRITERION ASSESSED AND NOT TRIGGERED**, but it is the closest approach located and is reported first rather than buried: both legs appear in the same paragraph, yet there is no holder map, no hedge-failure proposition and no measurement. **Our contribution narrows to measuring what the Note asserts.** Treated as connected work with the Windfall Trust (which co-designed the scenario exercise) and Korinek and Lockwood |
+| new 201 | IMF SDN/2024/002 (Brollo and others, June 2024) | **NEW ROW, not previously in the audit, read in full.** Three effects. (a) **Corroborates our sourced tau_k maximum:** its advanced-economy average tax rate on capital income of about 0.20 to 0.22 lands on our independently constructed 0.20351. (b) **Corroborates our reading of 26 USC 168(k):** it identifies the US among the economies whose corporate tax bias most favours labour-saving assets, naming TCJA full expensing. (c) **Supplies MEASURED social-protection effects** we previously had only as precedent: generous UI cut the robotisation wage decline by about two-thirds, concentrated among workers without a college degree; one robot per thousand workers raised poverty 0.3pp. Added to the instrument table row 4 |
+| 168 | The capital tax verdict | **A NEW VULNERABILITY IS RECORDED AGAINST US.** The IMF's measured US average tax rate on capital income sits well above our operative 0.0708. The objects differ, ours being the rate on the AI surplus after profit shifting and the rent decomposition, theirs an economy-wide average including personal-level taxes. **But a referee will place them side by side and the paper must pre-empt it in the text.** The fiscal condition fails at 0.0708 and would be closer to closing at the IMF's rate. **This is a live exposure in the paper's central fiscal result.** Also recorded: the literature now carries a live disagreement on AI taxation, the IMF against a specific AI tax, Falk and Tsoukalas for a Pigouvian automation tax, Costinot and Werning between them. **Ours is none of those verdicts; it is the calibrated break-even rate.** **provisional** |
+| 118 | Standing rules in the architecture | **THREE MADE EXPLICIT** at the head of `framework/architecture.md`: results at a 50 percent dose and above are bands, not points; the federal share is reported both ways on the agency book; every credit figure is first round only with house prices fixed |
+
+### Deliverables, all present
+
+| item | deliverable | location |
+|---|---|---|
+| 7 | paper outline | `paper/outline.md` |
+| 8 | one-page claims summary | `notes/CLAIMS_SUMMARY_one_page.md` |
+| 10 | labour backing placement, with B5 and B6 | `notes/item10_labour_backing_placement.md`; B5 `framework/labor_backing/quintile_labour_backing.csv`, B6 `framework/labor_backing/cross_country_feasibility.md` |
+| 11 | architecture, (a) to (h) | `framework/architecture.md` |
+
+### Still unverified
+
+**CBO (2024) was not placed** and `cbo.gov` returns HTTP 403 on every route from this
+environment. It stays in `lit/unverified.md`, stays out of `references.bib`, and no claim
+depends on it. It is now the only item in that file.
