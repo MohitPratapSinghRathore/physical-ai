@@ -786,3 +786,40 @@ had the least attention.
 **Tradeoff rejected.** We could have averaged the Rosenthal holder share against CBO's 57.2
 percent "fully taxable" figure. We did not: CBO's is the marginal dollar of SAVING by tax
 status in 2007, ours is the holder share of the outstanding STOCK. Different objects.
+
+## A116. The bondholder rate sourced, and the verdict becomes robust
+
+**Decision.** Replace the blind sweep on tau_b with a published range built the same way as
+the shareholder layer, and report that no remaining parameter can cross the fiscal threshold
+alone.
+
+**Construction.** CBO 2014 Table A-3 gives the tax status of C corporation debt (52.3 percent
+fully taxable, 14.9 temporarily deferred, 32.8 nontaxable) from Fed Flow of Funds data, with
+the fund look-through already done. Table A-4 gives the marginal rate on interest income for
+taxable holders, 27.4 percent, from the 2006 SOI Public Use File. Their product is 0.1433;
+adding the deferred tranche at CBO own annuity rate gives 0.1753. Range 0.143 to 0.175,
+central 0.159.
+
+**The check that settled it.** AMR debt-financed normal return is tau_b minus tau_c, which at
+this range is -0.0667 to -0.0347. CBO Table 2 measures the effective marginal rate on
+C-corporation debt-financed investment at -0.06, inside that interval. AMR predicted the
+sign, CBO measured the magnitude, and the assembly reproduces both from components.
+
+**Result.** Barkai 0.0864, Karabarbounis-Neiman 0.0150, against a required 0.110 to 0.137.
+The condition passes in under 1 percent of the remaining space against the easier labour
+reading and nowhere against the harder: the assembled maximum, 0.1240, is below 0.1373. In
+A113 four parameters could cross a threshold alone, in A115 one, in A116 none.
+
+**Tradeoff accepted.** We publish a verdict that is now hard to escape by parameter choice,
+which means it is also easy to attack on the base. That is the right place for the argument
+to sit, and base_argument.md states the case against us.
+
+**An A115 error found and fixed.** The lever table I reported as added to
+framework/architecture.md in A115 was never inserted: the anchor string I matched on did not
+exist in that file and the replace failed silently because I did not assert on it. The table
+is now in section 3, with A116 numbers. The lesson is the same one as the sealed-id guard in
+A103: a string replacement that cannot fail loudly will fail quietly.
+
+**What is left.** The debt share of AI capital spending, 37 percent of residual variance and
+unsourced. Module B reading of the nine filers own books points to the all-equity end, which
+would harden the verdict further. The open question is no longer a parameter; it is the base.

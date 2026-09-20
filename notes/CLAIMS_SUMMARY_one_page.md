@@ -35,23 +35,25 @@ and car debt and **the fiscal loss is unchanged to the cent**. Savings buffers a
 in the **second** wage quintile; differences between physically and cognitively exposed
 households are a **pay effect**. **[M]**
 
-**3. The budget does not absorb it at the central estimate, and we can now say what
-decides that.** The condition needs about **11 to 14 percent**. We rebuilt the effective rate
-on AI surplus from components, counting every tax layer that reaches the marginal dollar once.
-Under the Barkai rent reading it is **9.9 percent**, spanning 7.9 to 12.0; under Karabarbounis
-and Neiman, **3.5 percent**. **Both are below the requirement**, and the condition passes in
-only 18 percent of the remaining parameter space against the easier labour-tax reading and
-almost never against the harder. The two parameters that decide it are now **sourced, not
-assumed**: **who holds corporate equity in taxable form** and **how much of the gain is
-deferred away**. Only **27 percent** of US corporate equity sits in taxable accounts, down
-from 79 percent in 1965, because 42 percent is foreign-held and 25 percent sits in retirement
-accounts; and **47 percent of capital gains are held until death and never taxed at all**.
-Correcting those two moved our rate down by **1.8 points** and the pass rate from 61 percent
-to 18. **Profit shifting, which our earlier statement leaned on, moves it by 1.2 points.**
-Our earlier **7 percent** omitted shareholder tax entirely and the IMF's **20 to 22** is an
-average rate on the existing stock; both are kept as marked points. **[R]** on rent share and
-expensing, **[M]** on the two shareholder parameters, **[S]** on the assembled rate, because
-the bondholder rate is still unsourced and carries 44 percent of what uncertainty remains.
+**3. The budget does not absorb it, and the verdict is now robust to every parameter we
+have not yet pinned.** The condition needs about **11 to 14 percent**. Rebuilt from
+components, counting every tax layer that reaches the marginal dollar once, the rate on AI
+surplus is **8.6 percent** under the Barkai rent reading (spanning 7.0 to 10.2) and **1.5
+percent** under Karabarbounis and Neiman. **Both are below the requirement**, the condition
+passes in under **1 percent** of the remaining parameter space against the easier labour-tax
+reading, and **against the harder reading it cannot pass anywhere in that space at all**. The
+three parameters that decide it are now **sourced, not assumed**, and they say the same thing
+three times: **most of the income never reaches the individual income tax**. Only **27
+percent** of US corporate equity is held in taxable accounts (42 percent foreign, 25 percent
+in retirement accounts); **47 percent** of capital gains are held until death and never taxed;
+and on the debt side, **33 percent** of corporate interest is sheltered in retirement accounts
+while the rest of the world holds **29 percent** of the bonds. Sourcing those three moved our
+rate down **3.1 points** in total. **Profit shifting, which our earlier statement leaned on,
+moves it 1.2 points and is now fifth of seven.** The earlier **7 percent** omitted shareholder
+tax entirely and the IMF's **20 to 22** is an average rate on the existing stock; both are
+kept as marked points. **[R]** on rent share and expensing, **[M]** on the three tax-base
+parameters, **[S]** on the assembled rate, because the debt share of AI capital spending is
+still unsourced.
 
 **4. Banks are reached indirectly, and household relief does not protect them.** Measured
 across **8,612 balance sheets** (4,313 banks, 4,299 credit unions). At 10 percent the system
@@ -101,15 +103,15 @@ consume out of stock wealth is now **sourced and verified** at 3.2 cents (Chodor
 Nenov and Simsek 2021, AER 111(5)) and barely moves the result; the credit-led GDP path is
 still understated because bank-channel damage is not fed back.
 
-**The question for you.** The rate on the marginal dollar of US AI profit,
-assembled from components with every layer counted once, is **9.9 percent** against a
-requirement of 11 to 14, so on our central estimate **the condition fails**. That verdict now
-rests on measured things: only a quarter of US corporate equity is taxable at the shareholder
-level, and about half of capital gains escape tax at death. The live question is whether a
-**marginal flow rate** is the right object at all, against an **average rate on the existing
-stock**, which is where the IMF's 20 to 22 comes from; the case each way is in
-`framework/tau_k/base_argument.md`. The one input that could still move the verdict on its
-own is the **bondholder marginal rate**, which is unsourced.
+**The question for you.** It is no longer a parameter. The rate on the marginal
+dollar of US AI profit, assembled from components with every layer counted once, is **8.6
+percent** against a requirement of 11 to 14, and **no single input we have left can move it
+across that line**. The verdict rests on measured things: about a quarter of US corporate
+equity is taxable at the shareholder level, about half of capital gains escape at death, and
+a third of corporate interest is sheltered. What remains genuinely open is the **base**:
+whether a marginal flow rate is the right object at all, against an average rate on the
+existing stock, which is where the IMF's 20 to 22 comes from. The case each way is in
+`framework/tau_k/base_argument.md`, and nothing in our work settles it.
 
 **Disclosure.** The pipeline and analysis were built with Claude Code. The design was
 reviewed with Claude. The analysis was replicated by separate instances.

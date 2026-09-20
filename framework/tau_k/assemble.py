@@ -83,9 +83,12 @@ def draw(n, sourced=True):
                                          K.THETA_TAXABLE["high"], n)
         r["deferral_factor"] = RNG.uniform(K.DEFERRAL_FACTOR["low"],
                                            K.DEFERRAL_FACTOR["high"], n)
+        r["bondholder_rate"] = RNG.uniform(K.BONDHOLDER_RATE["low"],
+                                           K.BONDHOLDER_RATE["high"], n)
     else:
         r["theta_taxable"] = RNG.uniform(*K.SUPERSEDED_SWEEP["theta_taxable"], n)
         r["deferral_factor"] = RNG.uniform(*K.SUPERSEDED_SWEEP["deferral_factor"], n)
+        r["bondholder_rate"] = RNG.uniform(*K.SUPERSEDED_SWEEP["bondholder_rate"], n)
     return r
 
 
@@ -94,6 +97,7 @@ def ranges(sourced=True):
     if sourced:
         d["theta_taxable"] = [K.THETA_TAXABLE["low"], K.THETA_TAXABLE["high"]]
         d["deferral_factor"] = [K.DEFERRAL_FACTOR["low"], K.DEFERRAL_FACTOR["high"]]
+        d["bondholder_rate"] = [K.BONDHOLDER_RATE["low"], K.BONDHOLDER_RATE["high"]]
     else:
         d.update(K.SUPERSEDED_SWEEP)
     return d
@@ -175,6 +179,7 @@ def main():
     mid = {k: float(np.mean(v)) for k, v in RNG_ALL.items()}
     mid["theta_taxable"] = K.THETA_TAXABLE["central"]
     mid["deferral_factor"] = K.DEFERRAL_FACTOR["central"]
+    mid["bondholder_rate"] = K.BONDHOLDER_RATE["central"]
     g = 120
     A = np.linspace(*RNG_ALL[ax_names[0]], g)
     B = np.linspace(*RNG_ALL[ax_names[1]], g)
@@ -196,7 +201,7 @@ def main():
             cs = ax.contour(GA, GB, Z, levels=[lev], colors=col,
                             linewidths=2.0, linestyles="--")
             ax.clabel(cs, fmt={lev: lab}, fontsize=8)
-    SRC = {"theta_taxable", "deferral_factor"}
+    SRC = {"theta_taxable", "deferral_factor", "bondholder_rate"}
     lab = lambda n: n + ("  (SOURCED range)" if n in SRC else "  (NOT VERIFIED, swept)")
     ax.set_xlabel(lab(ax_names[0]))
     ax.set_ylabel(lab(ax_names[1]))
@@ -263,6 +268,14 @@ def main():
     if not (0.02 <= sh <= 0.09):
         viol.append(f"shareholder layer {sh:.4f} outside the CRS R47113 Table 5 published "
                     f"band of 0.03 to 0.085")
+
+    # ---- SIGN TEST: AMR's debt-financed normal return must be NEGATIVE across the
+    # sourced bondholder range, and CBO 2014 Table 2 measures the corresponding ETR at -0.06.
+    dn_lo = K.BONDHOLDER_RATE["low"] - K.V_FED_CIT
+    dn_hi = K.BONDHOLDER_RATE["high"] - K.V_FED_CIT
+    if dn_hi >= 0:
+        viol.append(f"AMR debt-financed normal return {dn_hi:.4f} is not negative, against "
+                    f"CBO 2014 Table 2 measuring the C-corp debt-financed ETR at -0.06")
 
     # ---- SENSITIVITY: what the superseded blind sweep gave
     d_old = draw(N, sourced=False)

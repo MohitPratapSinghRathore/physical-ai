@@ -14,23 +14,23 @@
     {
       "rent_reading": "Barkai",
       "sigma_rent": 0.351,
-      "tau_k_p05": 0.079,
-      "tau_k_median": 0.0979,
-      "tau_k_p95": 0.12,
-      "tau_k_min": 0.0554,
-      "tau_k_max": 0.15,
+      "tau_k_p05": 0.0696,
+      "tau_k_median": 0.0851,
+      "tau_k_p95": 0.1025,
+      "tau_k_min": 0.0525,
+      "tau_k_max": 0.124,
       "component_ceiling": 0.3142,
-      "pass_share_vs_required_low": 0.1757,
-      "pass_share_vs_required_high": 0.0013
+      "pass_share_vs_required_low": 0.0085,
+      "pass_share_vs_required_high": 0.0
     },
     {
       "rent_reading": "Karabarbounis_Neiman_case_R",
       "sigma_rent": 0.0,
-      "tau_k_p05": 0.0092,
-      "tau_k_median": 0.033,
-      "tau_k_p95": 0.0632,
-      "tau_k_min": -0.0121,
-      "tau_k_max": 0.0909,
+      "tau_k_p05": -0.0034,
+      "tau_k_median": 0.0138,
+      "tau_k_p95": 0.0329,
+      "tau_k_min": -0.016,
+      "tau_k_max": 0.0504,
       "component_ceiling": 0.238,
       "pass_share_vs_required_low": 0.0,
       "pass_share_vs_required_high": 0.0
@@ -39,17 +39,17 @@
   "assembled_CENTRAL_at_sourced_centrals": [
     {
       "rent_reading": "Barkai",
-      "tau_k_central": 0.0994,
+      "tau_k_central": 0.0864,
       "tau_rent": 0.2182,
-      "tau_normal": 0.0352,
+      "tau_normal": 0.015,
       "passes_vs_required_low": false,
       "passes_vs_required_high": false
     },
     {
       "rent_reading": "Karabarbounis_Neiman_case_R",
-      "tau_k_central": 0.0352,
+      "tau_k_central": 0.015,
       "tau_rent": 0.2182,
-      "tau_normal": 0.0352,
+      "tau_normal": 0.015,
       "passes_vs_required_low": false,
       "passes_vs_required_high": false
     }
@@ -58,17 +58,17 @@
   "SUPERSEDED_blind_sweep_for_comparison": [
     {
       "rent_reading": "Barkai",
-      "tau_k_p05": 0.0865,
-      "tau_k_median": 0.1159,
-      "tau_k_p95": 0.1558,
-      "pass_share_vs_required_low": 0.6093,
-      "pass_share_vs_required_high": 0.1807
+      "tau_k_p05": 0.0866,
+      "tau_k_median": 0.1158,
+      "tau_k_p95": 0.1559,
+      "pass_share_vs_required_low": 0.607,
+      "pass_share_vs_required_high": 0.1809
     },
     {
       "rent_reading": "Karabarbounis_Neiman_case_R",
       "tau_k_p05": 0.0181,
-      "tau_k_median": 0.0519,
-      "tau_k_p95": 0.0945,
+      "tau_k_median": 0.0518,
+      "tau_k_p95": 0.0946,
       "pass_share_vs_required_low": 0.0115,
       "pass_share_vs_required_high": 0.0
     }
@@ -94,25 +94,25 @@
   },
   "variance_decomposition_top3": {
     "Barkai": [
-      "bondholder_rate",
+      "debt_share",
       "deferral_factor",
       "state_cit_effective"
     ],
     "Karabarbounis_Neiman_case_R": [
-      "bondholder_rate",
+      "debt_share",
       "deferral_factor",
       "shareholder_rate"
     ]
   },
   "map_axes": [
-    "bondholder_rate",
+    "debt_share",
     "deferral_factor"
   ],
   "map_other_parameters": "held at range midpoints, which are NOT estimates",
   "marked_points": {
     "published operative rate, entity level only": 0.0708,
-    "assembled median, Barkai reading": 0.0979,
-    "assembled median, Karabarbounis-Neiman reading": 0.033,
+    "assembled median, Barkai reading": 0.0851,
+    "assembled median, Karabarbounis-Neiman reading": 0.0138,
     "IMF SDN/2024/002 economy-wide average, low": 0.2,
     "IMF SDN/2024/002 economy-wide average, high": 0.22,
     "OECD Pillar Two headline minimum, status NOT verified": 0.15,
@@ -122,53 +122,53 @@
   "single_parameter_movers": [
     {
       "parameter": "shareholder_rate",
-      "tau_k_at_range_low": 0.0937,
-      "tau_k_at_range_high": 0.1052,
+      "tau_k_at_range_low": 0.0806,
+      "tau_k_at_range_high": 0.0921,
       "swing": 0.0115,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "state_cit_effective",
-      "tau_k_at_range_low": 0.0924,
-      "tau_k_at_range_high": 0.1064,
+      "tau_k_at_range_low": 0.0793,
+      "tau_k_at_range_high": 0.0934,
       "swing": 0.014,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "debt_share",
       "tau_k_at_range_low": 0.097,
-      "tau_k_at_range_high": 0.1018,
-      "swing": 0.0048,
+      "tau_k_at_range_high": 0.0757,
+      "swing": 0.0213,
       "crosses_a_threshold_alone": false
     },
     {
-      "parameter": "bondholder_rate",
-      "tau_k_at_range_low": 0.0852,
-      "tau_k_at_range_high": 0.1137,
-      "swing": 0.0286,
-      "crosses_a_threshold_alone": true
-    },
-    {
       "parameter": "shifted_share",
-      "tau_k_at_range_low": 0.1056,
-      "tau_k_at_range_high": 0.0932,
+      "tau_k_at_range_low": 0.0926,
+      "tau_k_at_range_high": 0.0802,
       "swing": 0.0124,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "theta_taxable",
-      "tau_k_at_range_low": 0.0966,
-      "tau_k_at_range_high": 0.1004,
+      "tau_k_at_range_low": 0.0836,
+      "tau_k_at_range_high": 0.0873,
       "swing": 0.0037,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "deferral_factor",
-      "tau_k_at_range_low": 0.0915,
-      "tau_k_at_range_high": 0.1074,
+      "tau_k_at_range_low": 0.0784,
+      "tau_k_at_range_high": 0.0943,
       "swing": 0.0159,
+      "crosses_a_threshold_alone": false
+    },
+    {
+      "parameter": "bondholder_rate",
+      "tau_k_at_range_low": 0.0843,
+      "tau_k_at_range_high": 0.0884,
+      "swing": 0.0042,
       "crosses_a_threshold_alone": false
     }
   ],
-  "headline": "Under the Barkai rent reading the assembled marginal rate spans 0.079 to 0.120 across the unverified components, against a required 0.110 to 0.137. The condition passes in 18 percent of the swept space against the easier threshold and 0 percent against the harder one. The published 0.0708 sits below that span because it omits the shareholder layer entirely."
+  "headline": "Under the Barkai rent reading the assembled marginal rate spans 0.070 to 0.102 across the unverified components, against a required 0.110 to 0.137. The condition passes in 1 percent of the swept space against the easier threshold and 0 percent against the harder one. The published 0.0708 sits below that span because it omits the shareholder layer entirely."
 }

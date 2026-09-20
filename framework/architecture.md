@@ -121,7 +121,7 @@ not, the row says what would make it computable rather than guessing.
 
 | # | Measured mechanism, claim | Institution that must act | Instrument | Type | Verified precedent | Trigger indicator, current value | Binds in | Gap closure or loss removed |
 |---|---|---|---|---|---|---|---|---|
-| 1 | The fiscal condition is a FUNCTION of the capital tax rate, threshold 0.110 to 0.137 **[M]**, with R = 0.568316 **[R]**. It fails at the 0.0708 AI capital actually bears and passes at the 0.20 to 0.22 measured economy-wide. **The verdict is PROVISIONAL and depends on the base**, see section 3 | Tax authority (Congress, Treasury, IRS) | Narrow the gap between the AI-specific and economy-wide capital rates: limit expensing on labour-displacing assets, capture shifted rents, or tax the distribution rather than the entity. **Target: 26 to 52 pct of the AI surplus at the economy-wide rate.** NOT a statutory rate rise, and NOT an AI-specific tax | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Assembled effective rate on AI surplus **0.099** central (0.079 to 0.120) under Barkai and **0.035** under Karabarbounis-Neiman, against a threshold of **0.1101 to 0.1373**. **BELOW THRESHOLD at the central estimate under both rent readings.** The earlier 0.0708 omitted shareholder-level tax; the shareholder parameters are now sourced | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
+| 1 | The fiscal condition is a FUNCTION of the capital tax rate, threshold 0.110 to 0.137 **[M]**, with R = 0.568316 **[R]**. It fails at the 0.0708 AI capital actually bears and passes at the 0.20 to 0.22 measured economy-wide. **The verdict is PROVISIONAL and depends on the base**, see section 3 | Tax authority (Congress, Treasury, IRS) | Narrow the gap between the AI-specific and economy-wide capital rates: limit expensing on labour-displacing assets, capture shifted rents, or tax the distribution rather than the entity. **Target: 26 to 52 pct of the AI surplus at the economy-wide rate.** NOT a statutory rate rise, and NOT an AI-specific tax | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Assembled effective rate on AI surplus **0.086** central (0.070 to 0.102) under Barkai and **0.015** under Karabarbounis-Neiman, against a threshold of **0.1101 to 0.1373**. **BELOW THRESHOLD under both rent readings, and no remaining parameter can cross a threshold alone.** The earlier 0.0708 omitted shareholder-level tax; the shareholder and bondholder parameters are now sourced | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
 | 2 | 55.2 pct of labour-backed claims are federal obligations, and the sovereign union share traces a U: 0.523 in 1952 (almost all wartime Treasury debt), 0.336 in 1970, 0.794 in 2025, with the whole net rise since 2008 in the obligor leg **[M]** | Treasury, and the fiscal authority setting the debt path | Pre-fund or term out the labour-linked obligation stock while the labour tax base is intact | stock | Norway's Government Pension Fund Global, established by the Government Pension Fund Act, is a sovereign pre-funding vehicle against a resource-linked revenue base | Debt to GDP at start **1.214** **[R]**; 20-year emerging-market baseline **376.7 pct** **[R]** | all regimes; the only instrument that acts BEFORE the dose | Not a gap closure. It buys time on the obligor leg, which is 55.2 pct of the wage leg |
 | 3 | The state holds 0.010 of the AI leg **[S]** against 0.794 of the wage leg **[M]** | Treasury, or a statutory fund | Direct equity or revenue claim on AI capital: sovereign fund, golden share, or a public stake taken in exchange for public inputs | ownership | Norway GPFG; the US Treasury's 2008 to 2010 TARP equity stakes under the Emergency Economic Stabilization Act | Debt-financed share of AI capex **0.0654**; self-funding ratio **1.3426**, four of nine filers below 1.0 | larger, sudden and near-total displacement; **unnecessary inside the data** | **Directly measurable: see the table in section 1.** 0.10 of the AI leg closes 11.5 pct of the gap |
 | 4 | Trust funds are payroll-funded: OASDI payroll share 0.9126, HI 0.8720; OASI depletes 2032Q4, HI 2033Q2, combined OASDI 2034Q3 **[M]** | Social insurance system (SSA, CMS, Congress) | Broaden the contribution base beyond covered wages, or convert to a general-revenue claim; and raise UI generosity and duration, which has a MEASURED effect on automation wage losses | flow | Medicare's Net Investment Income Tax, 26 USC 1411, funds Part A adjacent spending from a non-wage base. **MEASURED EFFECT, Brollo (2024), IMF WP 2024/095: US states with more generous UI saw a wage decline from robotisation about TWO-THIRDS SMALLER, concentrated among workers without a college degree; one robot per thousand workers raised poverty 0.3pp, mostly attenuated where social assistance was more generous. US maximum UI duration of 26 weeks is on the low side of the OECD** | Combined OASDI depletion **2034 Q3**, 83 pct of scheduled benefits payable at depletion | all regimes; binds SOONEST, because depletion arrives before any AI dose does | **MEASURED, Module A4:** enhanced wage insurance (0.70 for 52 weeks) removes **12.9bn at the 10 pct dose, 6.3 pct of system losses**, at a fiscal cost of **314bn**, and stops 10 institutions breaching. **That ratio is absurd as bank protection and is the point of the programme as income protection.** It also removes the trust fund component of the fiscal loss, 4.07 pct of OASDI payroll income |
@@ -236,6 +236,39 @@ to resolve the automation externality, and that a Pigouvian automation tax can. 
 result first and in more general form. **Ours is the calibration, not the verdict.**
 
 ---
+
+### The lever, and how much each part of it is worth
+
+A115 and A116 sourced the parameters that decide the rate, so the policy argument can be
+stated with measured influence attached to each instrument rather than as a list. Moving the
+effective rate on AI surplus means moving one of five things, and they are not equal.
+
+| instrument | what it changes | measured influence on the assembled rate |
+|---|---|---|
+| **the SHAREHOLDER base** | who holds the equity in taxable form. Only **27 percent** of US corporate equity sits in taxable accounts: **42 percent is foreign-held** and **25 percent sits in retirement accounts** (Rosenthal and Mucciolo 2024) | sourcing it moved the rate by **0.0142**, the largest single move of any parameter |
+| **the BONDHOLDER base** | who holds the corporate debt in taxable form. **33 percent of corporate interest is sheltered in retirement accounts** (CBO 2014) and the **rest of the world holds 29 percent** of corporate and foreign bonds, while households hold **1 percent** directly (Fed Z.1, 2026Q2) | **0.0131**, the second largest single move |
+| **DEFERRAL and step-up at death** | how much of the gain is ever realised in taxable form. **46.9 percent of gains are held until death and never taxed** (CBO 2014); the effective-to-statutory factor runs 0.41 to 0.79 | **0.0062** from the correction, **0.0159** across its sourced range |
+| **EXPENSING**, 26 USC 168(k) | whether the normal return bears entity tax at all. Under full expensing it bears only the shareholder rate (AMR algebra) | it is why the normal return, about 65 percent of the total, carries 0.015 rather than 0.21 |
+| **profit SHIFTING** | the share of rents booked abroad | **0.0124** across 0.30 to 0.60, and 0.127 of the variance |
+
+**The order is the finding, and A116 confirmed it rather than changing it.** The instruments
+with the most leverage are the two that have had the least attention in this project and in
+the wider debate: **who holds the claims, at shareholder and at bondholder level**. Taxing
+the distribution rather than the entity does little when three quarters of the equity and a
+third of the interest go somewhere the individual income tax does not reach.
+
+**The unifying finding, now measured on three instruments.** The effective rate on AI surplus
+is low not mainly because statutory rates are low, and not mainly because profits are shifted,
+but because **the holders are outside the individual income tax**: three quarters of corporate
+equity, a third of corporate interest, and about half of accrued gains by virtue of death.
+**An AI-specific tax reaches none of that.** Withholding on foreign holders, the treatment of
+gains at death, and the taxation of retirement-account income are the instruments with
+leverage, and all three are ordinary public finance rather than a new tax on a new technology.
+
+**The honest limit.** The debt share of AI capital spending is unsourced and carries 37
+percent of the remaining variance. **No parameter, including that one, can now cross the
+fiscal threshold alone.** Module B reading of the nine filers own books points to the
+all-equity end of its range, which is the end that would harden the verdict, not soften it.
 
 ## 4. By regime: the minimum sufficient set, and what is unnecessary
 
@@ -542,7 +575,7 @@ is labelled inside or outside the data.
 
 | # | Rule | Current value | Inside the data? |
 |---|---|---|---|
-| T1 | If the **effective rate on AI surplus** stays below **0.1101** for two consecutive fiscal years while the displacement flow exceeds its median, then row 1 | assembled **0.099** central, 0.079 to 0.120, BELOW THRESHOLD | **INSIDE.** Both sides are observed today |
+| T1 | If the **effective rate on AI surplus** stays below **0.1101** for two consecutive fiscal years while the displacement flow exceeds its median, then row 1 | assembled **0.086** central, 0.070 to 0.102, BELOW THRESHOLD, robust | **INSIDE.** Both sides are observed today |
 | T2 | If **prime-age nonemployment** exceeds **24.71** for two consecutive quarters, then rows 3, 5, 7 and 8 together | **19.31** | **AT THE BOUNDARY BY CONSTRUCTION.** 24.71 is the observed maximum of the fit, so crossing it is precisely the moment rho leaves the data |
 | T3 | If the **annual displacement flow** exceeds **0.0273**, the median of the speed-limit specification table, for one year, then the contract instruments (5, 6, 7) pre-authorise | **0.00679** | **INSIDE**, but the threshold is a median over a range of 0.0005 to 0.0715 and is **never a single number**. State the range with the trigger |
 | T4 | If the **combined OASDI depletion date** moves inside five years, then row 4 | **2034 Q3**, which is eight years out | **INSIDE.** Trustees projection, not an AI scenario |

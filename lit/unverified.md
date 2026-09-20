@@ -175,7 +175,19 @@ Full extraction, with the method and the holder breakdown, is in
 `data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`. **The four source PDFs were supplied in
 session and are named there for placement on disk.**
 
-**What remains unverified and now matters most: the BONDHOLDER MARGINAL RATE**, swept over
-0.15 to 0.37. It carries **44 percent** of the residual variance in the assembled rate and is
-the only single parameter that can still cross the fiscal threshold on its own. It is the
-next item to clear.
+### A116: the bondholder rate is CLEARED
+
+**Sourced at 0.143 to 0.175, central 0.159.** CBO 2014 Table A-3 (C corporation debt: 52.3
+percent fully taxable, 14.9 temporarily deferred, 32.8 nontaxable, from Fed Flow of Funds
+data for 2007) times Table A-4 (marginal rate on interest income 27.4 percent, 2006 SOI
+Public Use File), with the upper bound adding the deferred tranche at CBO own nonqualified
+annuity rate. Cross-checked against CBO Table 2 measured -6 percent effective rate on
+C-corporation debt-financed investment, and corroborated by a Fed Z.1 holder map at 2026Q2.
+Extraction in `data/raw/manual/BONDHOLDER_RATE_extracted.md`; holder map in
+`framework/tau_k/z1_bond_holders.json`.
+
+**What remains unverified and now matters most: the DEBT SHARE of AI capital spending**,
+swept over 0.00 to 0.40, carrying **37 percent** of the residual variance. **No single
+parameter, including this one, can now cross the fiscal threshold alone.** Module B reading
+of the nine filers own books points to the low, all-equity end, which is the end unfavourable
+to the condition, so clearing it would probably harden the verdict rather than soften it.

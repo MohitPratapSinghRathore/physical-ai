@@ -89,7 +89,38 @@ DEFERRAL_FACTOR = {"low": 0.4118, "central": 0.6008, "high": 0.7899,
                    "cross_check_cbo_2014": 0.488}
 
 # The superseded blind sweeps, RETAINED as a sensitivity so the effect of sourcing is visible.
-SUPERSEDED_SWEEP = {"theta_taxable": [0.20, 0.60], "deferral_factor": [0.40, 1.00]}
+# THE BONDHOLDER RATE, sourced in A116 the same way as the shareholder layer: a taxable
+# share of the instrument times a marginal rate on the income for taxable holders.
+# CBO 2014 Table A-3, C corporation debt, from Fed Flow of Funds (8 March 2012), 2007:
+#   nontaxable 0.328, temporarily deferred 0.149, FULLY TAXABLE 0.523.
+#   CBO repeats the 0.328 twice in text: "almost one-third of interest income is sheltered"
+#   (p.10) and "about 33 percent of interest payments made by C corporations ... were never
+#   taxed" (p.24). The table already contains the fund look-through and the household
+#   residual treatment.
+# CBO 2014 Table A-4, from the 2006 SOI Public Use File:
+#   INTEREST INCOME 0.274, below the 0.434 top statutory rate because many recipients sit in
+#   lower brackets. Nonqualified annuity distributions 0.215.
+# Fed Z.1 at 2026Q2 corroborates the direction: of 18,115.7bn of corporate and foreign bonds,
+# the rest of the world holds 28.7 percent and households and nonprofits hold 1.1 percent
+# DIRECTLY, nonprofits alone accounting for all of it. Taxable household exposure is almost
+# entirely indirect, through mutual funds (14.8) and life insurance (21.8), which is what
+# CBO looks through. See framework/tau_k/z1_bond_holders.json.
+BONDHOLDER_RATE = {"low": 0.523 * 0.274,
+                   "central": (0.523 * 0.274 + (0.523 * 0.274 + 0.149 * 0.215)) / 2,
+                   "high": 0.523 * 0.274 + 0.149 * 0.215,
+                   "low_source": "CBO 2014 Tables A-3 and A-4: fully taxable share only",
+                   "central_source": "midpoint of the two bounds",
+                   "high_source": "plus the temporarily deferred tranche at CBO's own "
+                                  "nonqualified annuity rate, with no credit for deferral, "
+                                  "so an upper bound",
+                   "published_cross_check": "CBO 2014 Table 2: the ETR on C-corporation "
+                                            "debt-financed investment is -0.06, and AMR's "
+                                            "tau_b - tau_c at this range is -0.067 to "
+                                            "-0.035. Sign and magnitude agree."}
+
+# The superseded blind sweeps, RETAINED as a sensitivity so the effect of sourcing is visible.
+SUPERSEDED_SWEEP = {"theta_taxable": [0.20, 0.60], "deferral_factor": [0.40, 1.00],
+                    "bondholder_rate": [0.15, 0.37]}
 
 U = {
     "shareholder_rate": {
@@ -111,11 +142,6 @@ U = {
                  "on the nine filers own books in this project Module B.",
         "sought": "a verified marginal debt share for AI capital spending.",
     },
-    "bondholder_rate": {
-        "range": [0.15, 0.37],
-        "bound": "ordinary income treatment, so the top ordinary rate is the ceiling.",
-        "sought": "a sourced average bondholder marginal rate.",
-    },
     "shifted_share": {
         "range": [0.30, 0.60],
         "bound": "a share. Centred on the one verified value, 0.48 (Torslov, Wier and "
@@ -127,9 +153,10 @@ U = {
     },
 }
 
-CEILINGS = {"shareholder_rate": 0.238, "bondholder_rate": 0.37, "state_cit_effective": 0.095,
+CEILINGS = {"shareholder_rate": 0.238, "state_cit_effective": 0.095,
             "debt_share": 1.0, "shifted_share": 1.0,
-            "theta_taxable": 1.0, "deferral_factor": 1.0}
+            "theta_taxable": 1.0, "deferral_factor": 1.0,
+            "bondholder_rate": 0.434}   # CBO: top ordinary rate incl. the 3.8 pct NIIT
 
 
 def dump():
@@ -152,12 +179,12 @@ def dump():
         },
         "SOURCED_A115": {"theta_taxable": THETA_TAXABLE,
                          "deferral_factor": DEFERRAL_FACTOR,
+                         "bondholder_rate": BONDHOLDER_RATE,
                          "superseded_blind_sweep": SUPERSEDED_SWEEP},
         "not_verified_swept": U,
         "the_main_result_of_this_module":
-            "A115: the two parameters that carried 62 percent of the variance are now SOURCED. "
-            "Seven components verified, five still swept. The map remains, over a much "
-            "smaller space.",
+            "A116: the bondholder rate, which carried 44 percent of the residual variance, is "
+            "now SOURCED too. Eight components verified, four still swept.",
     }
     (HERE / "components.json").write_text(json.dumps(out, indent=2))
     return out
