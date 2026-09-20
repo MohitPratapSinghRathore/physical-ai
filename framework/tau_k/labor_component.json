@@ -1,0 +1,68 @@
+{
+  "status": "STRUCTURAL RESULT, with two SWEPT unsourced parameters. The structural result does not depend on either of them.",
+  "contribution_to_tau_k": 0.0,
+  "why_zero": "Compensation at AI producers and integrators is US compensation of employees, so it is already inside the wage bill the fiscal condition is scaled against (FRED COE, 16,224.3bn) and already inside the retained wage share R, because reemployment at those producers is what rho measures. Adding it to tau_k would count the same wage tax twice, once in tau_l x (1 - R) and once in tau_k. Item 1 forbids exactly this.",
+  "decomposition_of_one_dollar_of_ai_capex": {
+    "domestic_labour_ALREADY_COUNTED": [
+      0.0936,
+      0.1854,
+      0.334
+    ],
+    "imported_LEAKAGE_no_us_labour_tax": [
+      0.2728,
+      0.4745,
+      0.6772
+    ],
+    "domestic_surplus_PRICED_BY_tau_k": [
+      0.1836,
+      0.3193,
+      0.5052
+    ]
+  },
+  "double_count_avoided": [
+    {
+      "tau_l_reading": "AMR_0.255",
+      "tau_l": 0.255,
+      "contribution_to_tau_k": 0.0,
+      "would_be_double_counted_per_dollar_of_capex_p05": 0.0239,
+      "would_be_double_counted_per_dollar_of_capex_median": 0.0473,
+      "would_be_double_counted_per_dollar_of_capex_p95": 0.0852
+    },
+    {
+      "tau_l_reading": "bottom_up_0.301",
+      "tau_l": 0.301,
+      "contribution_to_tau_k": 0.0,
+      "would_be_double_counted_per_dollar_of_capex_p05": 0.0282,
+      "would_be_double_counted_per_dollar_of_capex_median": 0.0558,
+      "would_be_double_counted_per_dollar_of_capex_p95": 0.1005
+    },
+    {
+      "tau_l_reading": "bottom_up_0.318",
+      "tau_l": 0.318,
+      "contribution_to_tau_k": 0.0,
+      "would_be_double_counted_per_dollar_of_capex_p05": 0.0297,
+      "would_be_double_counted_per_dollar_of_capex_median": 0.059,
+      "would_be_double_counted_per_dollar_of_capex_p95": 0.1062
+    }
+  ],
+  "unverified_swept": {
+    "labour_share_of_ai_capex": {
+      "range": [
+        0.2,
+        0.55
+      ],
+      "bound": "a share of value added, so [0,1]. The lower end is below the labour share of semiconductor manufacturing, which is capital intensive; the upper end is below the labour share of construction and software, which are labour intensive. The true figure is a weighted mix of the two and must lie between.",
+      "sought": "BEA GDP-by-industry compensation share for computer and electronic product manufacturing, software publishing and nonresidential construction. BEA iTable requires an interactive query; FRED CSV endpoint timed out."
+    },
+    "import_share_of_ai_capex": {
+      "range": [
+        0.25,
+        0.7
+      ],
+      "bound": "a share, [0,1]. Bounded below by the fact that advanced logic and memory are predominantly fabricated outside the United States, and above by the fact that data centre construction, power interconnection and integration labour are necessarily domestic and are a large part of total outlay.",
+      "sought": "Census foreign-trade exhibit 8 (advanced technology products) returned HTTP 404; no primary substitute obtained."
+    }
+  },
+  "plausibility_violations": [],
+  "thesis_direction": "This item WEAKENS the thesis-friendly reading in one direction and the thesis-hostile reading in another. It removes a recovery channel that a careless construction would have credited to tau_k, which makes the condition harder to close. It also shows that a median 47 percent of a dollar of AI capital spending leaks abroad as imports and generates no US labour tax at all, which is a larger leak than profit shifting and has had none of the attention."
+}

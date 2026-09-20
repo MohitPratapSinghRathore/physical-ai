@@ -1,10 +1,11 @@
 # tau_k on AI surplus, rebuilt from components
 
 `definitions.md` first (what each published rate already contains), then `components.py`
-(the components and their verification status), then `assemble.py` (assembly, variance
+(the components and their verification status), then `labor_component.py`
+(item 2(g)), then `assemble.py` (assembly, variance
 decomposition, map), then `base_argument.md` (which base, and the case against ours).
 
-Rebuild: `python components.py && python assemble.py`. Figure at
+Rebuild: `python components.py && python labor_component.py && python assemble.py`. Figure at
 `paper/figures/tau_k_map.png`.
 
 ## Gate report
@@ -56,6 +57,25 @@ else at its range midpoint, the taxable-shareholder share alone moves the rate f
 and the shareholder rate from 0.1079 to 0.1277. Each of those intervals contains at least one
 of the two thresholds. **None of these four is verified.**
 
+**6. Item 2(g) would have been a double count, and a large one.** The labour-income
+component of AI capital spending contributes **zero** to tau_k, and that is forced rather
+than chosen. Compensation at AI producers and integrators is US compensation of employees,
+so it is already inside the wage bill the condition is scaled against (FRED COE, 16,224.3bn,
+used in `src/fiscal_extended_axis.py`) and already inside the retained wage share **R**,
+because reemployment at those producers is exactly what rho measures. Crediting it to tau_k
+would count the same wage tax twice, once in `tau_l x (1 - R)` and once in tau_k. The size of
+the avoided error is **4.7 to 5.9 cents per dollar of AI capital spending** at the median
+across the three labour-tax readings, which is comparable to the whole of the published tau_k
+of 0.0708. A construction that made the condition look closable would most easily have done
+it here.
+
+**7. The import leak is larger than the profit-shifting leak and has had none of the
+attention.** Decomposing a dollar of AI capital spending: a median of **47 percent leaks
+abroad as imports** and generates no US labour tax at all, against a median 19 percent that
+is domestic labour and 32 percent that is domestic surplus. Both parameters behind that split
+are unsourced and swept, so the figure is a scenario, but the ordering is robust across the
+swept range.
+
 ### Sourced, kept separate from scenario
 
 **Verified this session or previously in this repo, five components:**
@@ -74,7 +94,12 @@ of the two thresholds. **None of these four is verified.**
   zero, both previously verified, **never averaged**.
 - The AMR expensing algebra, read in full from the paper this session.
 
-**Scenario, swept, no point value asserted, seven components:** taxable-shareholder share,
+**Scenario, swept, no point value asserted, nine components:** the seven below plus the
+labour share and the import share of AI capital spending from item 2(g). Because 2(g)
+contributes zero to tau_k by the structural argument, nothing in the assembled rate depends
+on either of those two.
+
+The seven: taxable-shareholder share,
 shareholder rate, deferral factor, state effective corporate rate, debt share, bondholder
 rate, shifted share. Each is listed in `lit/unverified.md` with what was sought, what
 happened, and the ceiling that bounds its range. **No claim in this project depends on a

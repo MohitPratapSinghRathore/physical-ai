@@ -722,3 +722,30 @@ Pub. L. 119-21 on 4 July 2025. The deductions are now 33.34 and 40 percent, givi
 rates of 14.0 and 12.6, and GILTI is recaptioned "net CFC tested income". The pre-2025 13.125
 and 10.5 are superseded. This is why the instruction not to rely on pre-2025 descriptions was
 the right instruction.
+
+## A114. Item 2(g) delivered, and it contributes zero to tau_k
+
+**Decision.** The labour-income component of AI capital spending enters tau_k at zero, and is
+reported as a separate decomposition of the capex dollar rather than as a tax-rate component.
+
+**Why.** It is forced by the no-double-counting rule of item 1. The fiscal condition is
+scaled against compensation of employees economy wide (FRED COE, 16,224.3bn, in
+`src/fiscal_extended_axis.py`), and its retained wage share R is built from reemployment.
+Compensation at AI producers and integrators is US compensation of employees, and a displaced
+worker reemployed building data centres is inside rho. So that wage tax is already inside
+`tau_l x (1 - R)`. Crediting it to tau_k as well would count it twice.
+
+**Size of the avoided error.** 4.7 to 5.9 cents per dollar of AI capital spending at the
+median, comparable to the whole of the published tau_k of 0.0708. This is the single easiest
+place in the project to have made the fiscal condition look closable, and it would have
+looked like diligence rather than error.
+
+**Tradeoff accepted.** The task asked for this component at the labour rate with a sourced
+labour share and import share. We deliver the decomposition and the two swept parameters, but
+we decline to add it to tau_k, and we say why. A reader expecting a positive contribution
+will find none.
+
+**The by-product worth keeping.** A median 47 percent of a dollar of AI capital spending
+leaks abroad as imports and bears no US labour tax. That is a larger leak than profit
+shifting and has had none of the attention. It is a scenario, not a measurement, because
+neither the labour share nor the import share could be verified.

@@ -146,3 +146,18 @@ component. Whether it binds is the unverified part.
 and a range in `components.py`, rerun `assemble.py`, and move the row out of this file. The
 two worth doing first are the taxable-shareholder share and the deferral factor, which
 between them carry 62 percent of the first-order variance in the assembled rate.
+
+### A114 addendum: item 2(g), the labour component of AI capital spending
+
+Two further parameters, sought and not obtained, swept and carrying no dependent claim.
+
+| parameter | range swept | bound on the range | what was sought and what happened |
+|---|---|---|---|
+| labour share of AI capital spending | 0.20 to 0.55 | a share of value added, [0,1]; bounded below by capital-intensive semiconductor fabrication and above by labour-intensive construction and software, with the truth a weighted mix that must lie between | BEA GDP-by-industry compensation shares for computer and electronic product manufacturing, software publishing and nonresidential construction. BEA iTable requires an interactive query; the FRED CSV endpoint timed out on every series attempted |
+| import share of AI capital spending | 0.25 to 0.70 | a share, [0,1]; bounded below by the predominantly offshore fabrication of advanced logic and memory, above by the necessarily domestic data centre construction, power interconnection and integration labour | Census foreign-trade exhibit 8, advanced technology products, returned HTTP 404. No primary substitute obtained |
+
+**Neither is used in the assembled rate.** Item 2(g) contributes zero to tau_k for a
+structural reason that does not depend on either value: the compensation in question is
+already inside the wage bill and inside the retained wage share R, so crediting it to tau_k
+would double count it. See `framework/tau_k/labor_component.py`. The two parameters are used
+only to size the import leakage, which is reported as a scenario.
