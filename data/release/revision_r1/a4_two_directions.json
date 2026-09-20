@@ -7,8 +7,8 @@
     "bottom_up_0.318": 0.137276
   },
   "required_rates_central_pass_through": {
-    "easier": 0.215989,
-    "harder": 0.269353
+    "easier": 0.166875,
+    "harder": 0.208104
   },
   "economy_wide_average_capital_rate": [
     0.2,

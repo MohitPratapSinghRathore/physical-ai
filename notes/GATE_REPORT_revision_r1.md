@@ -14,21 +14,26 @@ The condition as published, `tau_k >= tau_l (1 - R)`, assumes that every dollar 
 wages reappears as a dollar of taxable US capital income. Written explicitly as
 `tau_k * g >= tau_l (1 - R)`, that is the case `g = 1`.
 
-Decomposing `g` from the project's own capex split, a dollar of AI capital spending is 19
-percent domestic labor (already inside `tau_l (1 - R)` and not available to `tau_k`), 47
-percent imported, and 32 percent domestic surplus. With half of the wage saving spent on AI
-capital services and 30 percent of the remainder competed away in prices, `g = 0.51`, and the
-required rate roughly doubles, from 11.0 to 13.7 percent to **21.6 to 26.9 percent**. Over the
-swept range `g` runs 0.25 to 0.85.
+**CORRECTED in the tightening pass.** A displaced wage dollar splits into the cost of the AI
+capital that replaces the work, share `c`, and the surplus the adopting firm keeps, `1 - c`.
+The capex split applies to the first part only, which is how the module was built, but the
+first version folded a price pass-through term into the reported central case and so
+overstated the correction. The base construction is `g = (1 - c) + c * s_dom`. At `c = 0.5`
+that gives **g = 0.66** and a required rate of **16.7 to 20.8 percent** against 11.0 to 13.7
+at `g = 1`, with `g` running 0.35 to 0.90 across the swept range. A price pass-through of 30
+percent of the retained surplus is reported separately and takes `g` to 0.51 and the required
+rate to 21.6 to 26.9 percent.
 
-Two consequences, and the second is the uncomfortable one.
-- The shortfall conclusion survives and widens: the assembled rate of 8.5 percent is further
-  from the required rate than the paper has said.
-- **The escape route the paper had conceded also closes.** The paper has said the condition
-  closes at the economy-wide average capital rate of 20 to 22 percent. At the central
-  pass-through case the required rate is 21.6 to 26.9 percent, so the economy-wide rate no
-  longer clears it either. A concession the paper made to its critics turns out to have been
-  generous for the wrong reason.
+On the base construction an economy-wide capital rate of 20 to 22 percent still clears the
+required band; it stops clearing only once the price term is added. The earlier claim that
+the escape route closes is therefore **conditional on that separate term** and is stated
+that way.
+
+The consequence that survives the correction: the shortfall conclusion widens, since the
+assembled rate of 8.5 percent is further from the required rate than the published band
+implied, on either construction. Because the inputs to g are unverified, the manuscript keeps
+the full pass-through case as the headline and reports g only as a sensitivity showing the
+direction.
 
 ### 2. The published statement about the parameter space is wrong on our own base (B1)
 

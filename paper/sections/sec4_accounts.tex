@@ -10,8 +10,8 @@ reveal is the paper's central claim; the later sections support it.
 \subsection{Definitions}
 
 A financial claim is serviced out of some income stream: a mortgage out of household wages, a
-corporate bond out of business revenue, Treasury debt out of federal receipts, which are drawn in
-measurable proportions from wages and from other sources.
+corporate bond out of business revenue, Treasury debt out of federal receipts, themselves drawn in
+measurable proportions from wages and elsewhere.
 
 \begin{definition}[Labor backing of a claim class]
 \label{def:backing}
@@ -58,22 +58,21 @@ the home mortgage and multifamily coefficients were rebuilt independently.}
 
 \subsection{Two conventions, stated because they are contestable}
 
-\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is not
-wage-backed because a household owes it, but to the extent that wage taxes service it, so it takes
-the labor-linked share of federal receipts, social insurance contributions in full plus the wage
-share of the individual income tax, measured at \result{ReceiptsPctLow} percent; state and local
-debt is treated the same way on its own receipts mix. Without this convention a government funded
-entirely from payroll taxes and one funded entirely from capital taxes would score identically.
+\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is
+wage-backed to the extent that wage taxes service it, so it takes the labor-linked share of
+federal receipts, measured at \result{ReceiptsPctLow} percent, and state and local debt is treated
+the same way on its own receipts mix. Without this convention a government funded entirely from
+payroll taxes and one funded entirely from capital taxes would score identically.
 
 \paragraph{The one-step rule is a convention, and it is the largest judgment in the paper.} We
 trace servicing one step and stop, so a claim serviced out of business revenue takes zero direct
-backing even though some of that revenue began as wages. Multifamily mortgages are the one
+backing even though some of that revenue began as wages; multifamily mortgages are the one
 property class that does not take the zero, because the rent that services them is paid out of
-wages with no firm in between. The rule is the first-round boundary applied to the liability side.
-Tracing further is what the indirect variant does, and we report both: on the whole claim stock,
-moving business classes to their measured indirect share raises the ratio by
-\result{OneStepMoveAllClaimsPct} percent, more than every other judgment call in the accounts
-together.
+wages with no firm in between. The rule is the first-round boundary applied to the liability side,
+and tracing further is what the indirect variant does. We report both everywhere: on the whole
+claim stock, moving the business classes to their measured indirect share raises the ratio by
+\result{OneStepMoveAllClaimsPct} percent, more than every other judgment call together.
+Appendix~\ref{app:detail} gives both conventions in full.
 
 \subsection{The ratio, and why we report the debt-only variant}
 
@@ -85,14 +84,14 @@ read \result{AllClaims2000} percent at the 2000 equity peak and \result{AllClaim
 Definition~\ref{def:ratio} removes every market-valued class, measuring composition rather than
 valuation, and on those dates reads \result{DebtOnly2000} and \result{DebtOnly2008} percent.
 
-About \result{DebtOnlyDirect} percent of all US debt, public and private, is serviced directly
-from wages, and \result{DebtOnlyIndirect} percent once indirect servicing is counted; the
-all-claims figures are \result{AllClaimsDirect} and \result{AllClaimsIndirect} percent. All four
-were reproduced by the independent rebuild to within 0.001. Two further properties favor the
-debt-only variant and both were rebuilt: over 1952 to 2025 its coefficient of variation is
-\result{DebtOnlyCV} against \result{AllClaimsCV}, and the one-step rule moves it by
-\result{OneStepMovePct} percent against \result{OneStepMoveAllClaimsPct} percent. The statistic we
-report is the one that is stable and depends least on our own largest convention.
+On this measure \result{DebtOnlyDirect} percent of US debt is serviced directly from wages and
+\result{DebtOnlyIndirect} percent including indirect servicing, against all-claims figures of
+\result{AllClaimsDirect} and \result{AllClaimsIndirect} percent; all four were reproduced by the
+independent rebuild to within 0.001. Two further properties favor the debt-only variant and both
+were rebuilt: its coefficient of variation over 1952 to 2025 is \result{DebtOnlyCV} against
+\result{AllClaimsCV}, and the one-step rule moves it by \result{OneStepMovePct} percent against
+\result{OneStepMoveAllClaimsPct}. The statistic we report is the one that is stable and depends
+least on our own largest convention.
 
 Table~\ref{tab:sensitivity} moves each judgment call one at a time; nothing but the one-step rule
 moves the debt-only ratio by more than ten percent. Moving them one at a time understates the
@@ -147,44 +146,23 @@ The alternatives follow immediately. Counting indirectly wage-backed claims give
 \end{quote}
 
 The figure is stable against every measurement call and unstable against those structural ones.
-Varying the Treasury series definition, the mortgage or rent backing definitions, the state and
-local split, the consumer credit blend, or whether the central bank counts as federal moves the
-share by at most \result{MeasurementMaxMovePct} percent; Appendix Table~\ref{tab:structural} gives
-the structural alternatives in full. This is a stable measurement under a stated convention, and
-the convention does heavy lifting.
+Varying the Treasury series definition, the backing definitions, the state and local split, the
+consumer credit blend, or whether the central bank counts as federal moves it by at most
+\result{MeasurementMaxMovePct} percent; Appendix Table~\ref{tab:structural} has the structural
+alternatives. This is a stable measurement under a stated convention, and the convention does
+heavy lifting.
 
 \subsection{The series, 1952 to 2025}
 
-Figure~\ref{fig:series} runs the accounts back to 1952, and two things in it move differently.
-
-The ratio itself is close to flat across seventy-three years, between
-\result{DebtOnlySeriesLow} and \result{DebtOnlySeriesHigh} percent on the debt-only measure with
-no trend. The share of the national debt stock that wages service is not a recent development.
-
-The federal share of it traces a U: \result{SovUnion1952} percent in 1952,
-\result{SovUnion1970} percent in 1970, \result{SovUnion2025} percent in 2025. The 1952 level is
-almost entirely wartime Treasury debt, the debtor position alone standing at
-\result{SovObligor1952} percent. It falls to 1970 as that debt shrinks against a growing claim
-stock, then climbs in two datable steps: the agency book grows between 1970 and 1990, taking the
-held-or-guaranteed position from \result{SovHeld1970} to \result{SovHeld1990} percent, and federal
-debt grows between 2008 and 2020, taking the debtor position from \result{SovObligor2008} to
-\result{SovObligor2020} percent.
-
-Said plainly, because it qualifies the headline: a large part of the recent rise is growth in
-federal debt itself rather than new exposure to households. The held-or-guaranteed position peaked
-at \result{SovHeld2020} percent in 2020 and has since fallen to \result{SovHeld2025} percent,
-while the whole net increase since 2008 sits in the debtor position.
+Figure~\ref{fig:series} runs the accounts back to 1952. The ratio itself is close to flat across seventy-three years, between \result{DebtOnlySeriesLow} and \result{DebtOnlySeriesHigh} percent on the debt-only measure with no trend. The federal share of it traces a U: \result{SovUnion1952} percent in 1952, \result{SovUnion1970} percent in 1970, \result{SovUnion2025} percent in 2025, with two datable drivers, the agency book growing between 1970 and 1990 and federal debt growing between 2008 and 2020. Said plainly, because it qualifies the headline, a large part of the recent rise is growth in federal debt itself rather than new exposure to households: the held-or-guaranteed position peaked at \result{SovHeld2020} percent in 2020 and has since fallen to \result{SovHeld2025} percent, while the whole net increase since 2008 sits in the debtor position. Appendix~\ref{app:detail} gives the decomposition.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{fig1_series.pdf}
-\caption{Federal exposure to directly wage-backed claims, 1952 to 2025, and the debt-only labor
-backing ratio. Upper panel: the exposure share as the union of the three roles, with its creditor
-or guarantor and debtor parts; the two parts overlap where the federal sector holds its own debt,
-so they do not sum to the union. Lower panel: the share of US debt serviced directly from wages,
-which is close to flat across the period. Measured, from the Federal Reserve financial accounts.}
+\caption{Federal exposure to directly wage-backed claims, 1952 to 2025, and the debt-only labor backing ratio. Upper panel: the exposure share as the union of the three roles, with its creditor or guarantor and debtor parts, which overlap where the federal sector holds its own debt and so do not sum to the union. Lower panel: the share of US debt serviced directly from wages. Measured, from the Federal Reserve financial accounts.}
 \label{fig:series}
 \end{figure}
+
 
 \subsection{The other side, reported as bounds}
 \label{sec:aiside}
@@ -193,11 +171,11 @@ The same decomposition applied to claims on AI capital gives the comparison the 
 it is reported as bounds rather than as a point, because the two sides are not equally observable.
 The wage side is a measured stock. The AI side is assembled in tiers: a measured lower bound of
 \result{OnBalanceSheetAIDebtBn} billion dollars of on-balance-sheet debt from nine registrants'
-filings; a verified secondary tier of about \result{AIBankCommitmentsBn} billion dollars of bank
-commitments to AI-adjacent industries; a scenario tier for AI-attributable equity, swept at
-\result{AIEquityScale} percent of nonfinancial corporate equity; and an unmeasured tier of
-off-balance-sheet vehicles, hardware-backed lending and securitizations, which \citet{BIS2026}
-describes as dominant and which contributes nothing to our total.
+filings, about \result{AIBankCommitmentsBn} billion dollars of bank commitments to AI-adjacent
+industries, a scenario tier for AI-attributable equity swept at \result{AIEquityScale} percent of
+nonfinancial corporate equity, and an unmeasured tier of off-balance-sheet vehicles,
+hardware-backed lending and securitizations, which \citet{BIS2026} describes as dominant and which
+contributes nothing to our total.
 
 The federal share of that side is \result{AIFederalShareLow} to \result{AIFederalShareHigh}
 percent across a threefold variation in the assumed scale, about
@@ -226,14 +204,5 @@ government is the largest holder on one side and close to absent on the other.}
 
 \subsection{Households, by position in the wage distribution}
 
-Splitting the household part of the stock by wage quintile gives the gradient: wage-backed claims
-per dollar of wages fall as pay rises, from \result{QTwoPerDollar} in the second quintile to
-\result{QTopPerDollar} at the top, while the top quintile earns \result{QTopWageShare} percent of
-the wage bill and carries \result{QTopClaimShare} percent of the household claims. Claims are
-spread far more evenly than the income that services them, which is the sense in which a wage
-shock is regressive before any policy response is chosen. Appendix Table~\ref{tab:quintile} gives
-the detail.
+The accounts also split the household part of the wage-backed stock by wage quintile. The gradient is the finding: wage-backed claims per dollar of wages fall as pay rises, from \result{QTwoPerDollar} in the second quintile to \result{QTopPerDollar} at the top, while the top quintile earns \result{QTopWageShare} percent of the wage bill and carries \result{QTopClaimShare} percent of the household claims. Claims are spread far more evenly than the income that services them. Appendix~\ref{app:detail} gives the detail and the one magnitude that is withdrawn.
 
-The magnitude for the bottom quintile is withdrawn: an independent rebuild landed a factor of 2.5
-to 3.4 away, and we cannot show its reading was wrong, because our own specification defined
-neither the universe nor the normalization of that cell. The direction was reproduced and stands.

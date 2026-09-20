@@ -28,8 +28,13 @@ def main():
     abstract = re.search(r"\\begin\{abstract\}(.+?)\\end\{abstract\}", front, re.S)
     n = words(abstract.group(1))
     rows.append(("abstract", n))
+    appendix_extra = 0
     for f in sorted((HERE / "sections").glob("*.tex")):
         n = words(f.read_text(encoding="utf-8"))
+        if f.stem.startswith("appendix"):
+            appendix_extra += n
+            rows.append((f.stem + " (appendix)", n))
+            continue
         rows.append((f.stem, n))
         total += n
     appendix = main_tex.split("\\appendix")

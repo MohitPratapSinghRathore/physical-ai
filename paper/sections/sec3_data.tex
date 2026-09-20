@@ -48,25 +48,9 @@ at retrieval rather than assumed, and a discontinued series is replaced rather t
 
 \subsection{The household credit engine}
 
-The engine maps a displacement level onto household credit losses without naming a set of
-displaced households. Displacement is a probability applied to every household in the working
-core, defined as a household with at least one employed member aged 25 to 64. The share of
-earners displaced is set equal to the share of the wage bill displaced, and each household's
-earners are drawn against that share.
+The engine maps a displacement level onto household credit losses without naming a set of displaced households: displacement is a probability applied to every household in the working core, defined as a household with at least one employed member aged 25 to 64. A household that loses an earner does not default, it becomes more likely to default, and the uplift is taken from \citet{GerardiHerkenhoffOhanianWillen2018}; losses are exposure at default times loss given default, with the severities set out in Appendix~\ref{app:detail}. Survey balances are benchmarked to official aggregates first, keeping the survey correction and the coverage share apart, as Table~\ref{tab:underreporting} shows. One scope statement travels with every credit number here: the engine is first round only, holding house prices, spending, business revenue and the employment of everyone not displaced fixed, so against a supervisory scenario the figures are a lower bound rather than an estimate.
 
-A household that loses an earner does not default; it becomes more likely to default. The
-uplift is five percentage points for one displaced earner and eight for two
-\citep{GerardiHerkenhoffOhanianWillen2018}, and losses are exposure at default times loss given
-default, with severities of 0.25 to 0.40 on first-lien mortgages, 0.80 to 1.00 on cards, 0.45 to
-0.65 on auto and 0.75 to 1.00 on student debt. Applying a portfolio loss rate to exposure at
-default instead would count the probability of default twice.
 
-Survey balances are benchmarked to official aggregates first, and two ratios do different work.
-The \emph{under-reporting factor} is the official aggregate over the full survey universe and is a
-survey correction; the \emph{coverage share} is the working-core balance over that universe and is
-a fact about which households the analysis covers. Table~\ref{tab:underreporting} gives both. The
-identity between them holds to three decimals on every book, and all four factors were rebuilt
-independently.
 
 \begin{table}[htbp]
 \centering
@@ -76,52 +60,15 @@ corrects the survey; the coverage share describes the analysis sample. Rebuilt.}
 \input{tables/tab_under_reporting.tex}
 \end{table}
 
-One scope statement travels with every credit number here. The engine is first round only: house
-prices, consumer spending, business revenue and the employment of everyone not displaced are held
-fixed. Against a supervisory scenario, which moves all of those together, the figures are a lower
-bound rather than an estimate.
-
 \subsection{The fiscal module and the second round}
 
-The fiscal module converts displacement into a dollar amount against the wage bill and applies a
-loss per dollar with three parts: the labor tax no longer collected on wages that are not
-re-earned, less the capital tax collected on the income that displaced them, plus any outlay
-response. The share of wages re-earned is governed by a reemployment rate fitted on the
-displacement vintages against labor market slack and solved as a fixed point, since displacement
-changes the slack the fit is a function of. Losses are reported for the terminal year rather than
-as a cumulative total divided by a horizon, and they are not linear in displacement: the share
-re-earned falls as displacement rises. Trust fund effects use each fund's own payroll share of its
-own income.
+The fiscal module converts displacement into a dollar amount against the wage bill and applies a loss per dollar: the labor tax no longer collected on wages that are not re-earned, less the capital tax on the income that displaced them, plus any outlay response. Losses are reported for the terminal year and are not linear in displacement, because the share re-earned falls as displacement rises. The second round turns the net fall in wage income into a demand shortfall through the difference between the propensity to consume out of labor and out of capital income \citep{MianStraubSufi2020,FagerengHolmNatvik2021}, compares that shortfall with the supervisory severely adverse scenario, and scales the supervisor's own published loss totals by the ratio; house prices enter through an income elasticity \citep{HarterDreiman2004} and employment through an Okun coefficient \citep{BallLeighLoungani2017}. Three elements of it have no source, so it is labeled scenario wherever it appears and reported as a band over the whole grid. Appendix~\ref{app:detail} sets out the construction and what is unsourced in it.
 
-The second round is the weakest module evidentially and is labeled scenario wherever it appears.
-The net fall in wage income becomes a demand shortfall through the difference between the
-propensity to consume out of labor and out of capital income
-\citep{MianStraubSufi2020,FagerengHolmNatvik2021}; the shortfall is expressed as a share of output
-and compared with the fall in output in the supervisory severely adverse scenario; and the
-supervisor's own published loss totals are scaled by that ratio. House prices enter through an
-income elasticity \citep{HarterDreiman2004}, and employment through an Okun coefficient
-\citep{BallLeighLoungani2017}. Three elements have no source: the shape of the loss curve beyond
-the supervisory point, for which we carry a linear, a capped and a convex mapping; the propensity
-ranges, measured on transitory shocks where displacement is persistent; and the path itself. We
-report the whole grid of 648 combinations as a band and never a point inside it.
 
 \subsection{Institution-level data}
 
-The second round is applied across individual balance sheets rather than to an aggregate. The
-panel is every insured bank and credit union at 30 June 2026, with the loan book by category and
-the capital measure each is tested against: the tier 1 leverage ratio against its four percent
-threshold for banks, the net worth ratio against its six percent threshold for credit unions.
-After exclusions it is \result{NInstitutions} institutions, \result{NBanks} banks and
-\result{NCreditUnions} credit unions, holding \result{SystemAssetsBn} billion dollars of assets.
+The second round is applied across individual balance sheets rather than to an aggregate: every insured bank and credit union at 30 June 2026, tested against the capital measure that applies to it. After excluding \result{ExcludedInstitutions} institutions that report no capital at all, an artifact of a missing field rather than a fact about them, the panel is \result{NInstitutions} institutions holding \result{SystemAssetsBn} billion dollars of assets, of which \result{BaselineBreaches} breach at baseline before any loss is applied. Losses are allocated pro rata by category holdings, so dispersion reflects business mix alone and is a lower bound on true dispersion. Appendix~\ref{app:detail} gives the exclusion and the capital tests.
 
-\result{ExcludedInstitutions} institutions holding \result{ExcludedAssetsBn} billion dollars are
-excluded because they report neither tier 1 capital nor total equity, being overwhelmingly insured
-US branches of foreign chartered institutions whose capital sits at the parent; a capital test
-shows them breaching before any loss, which is an artifact of a missing field. A capital test is
-only informative if almost nothing fails it before any loss, and after the exclusion
-\result{BaselineBreaches} institutions breach at baseline, \result{BaselinePctAssets} percent of
-system assets. Losses are allocated pro rata by category holdings, so dispersion reflects business
-mix alone and is a lower bound on true dispersion.
 
 \subsection{Status labels, and what was independently rebuilt}
 \label{sec:rebuild}

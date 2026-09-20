@@ -475,18 +475,22 @@ def main():
     R["OASDIDepletion"] = dash["Combined OASDI reserve depletion date"]["value"]
 
     # ---- revision: pass-through, the cash-flow bridge, relief feedback, two directions
-    gc = a1["g_central_case"]
+    gc = a1["g_central_base"]
+    gp = a1["g_central_with_thirty_percent_price_pass_through"]
     R["GCentral"] = f"{gc['g']:.2f}"
-    R["GLow"] = f"{a1['g_range_over_the_sweep'][0]:.2f}"
-    R["GHigh"] = f"{a1['g_range_over_the_sweep'][1]:.2f}"
-    R["RequiredPTEasy"] = pct(gc["required_tau_k_easier"], 0)
-    R["RequiredPTHarder"] = pct(gc["required_tau_k_harder"], 0)
+    R["GLow"] = f"{a1['g_range_base_construction'][0]:.2f}"
+    R["GHigh"] = f"{a1['g_range_base_construction'][1]:.2f}"
+    R["RequiredPTEasy"] = pct(gc["required_easier"], 0)
+    R["RequiredPTHarder"] = pct(gc["required_harder"], 0)
+    R["GWithPrice"] = f"{gp['g']:.2f}"
+    R["RequiredPriceEasy"] = pct(gp["required_easier"], 0)
+    R["RequiredPriceHarder"] = pct(gp["required_harder"], 0)
+    R["PriceThrough"] = pct(gp["price_pass_through_p"])
+    R["CapitalCostShare"] = pct(a1["capital_cost_share_central"])
     dec = a1["capex_dollar_decomposition_used"]
     R["CapexDomesticLabor"] = pct(dec["domestic_labour_already_inside_tau_l"][1])
     R["CapexImported"] = pct(dec["imported_no_us_tax"][1])
-    R["CapexDomesticSurplus"] = pct(dec["domestic_surplus_priced_by_tau_k"][1])
-    R["PriceThrough"] = pct(gc["price_pass_through_p"])
-    R["CapitalCostShare"] = pct(gc["capital_cost_share_k"])
+    R["CapexDomesticSurplus"] = pct(dec["domestic_producer_surplus"][1])
 
     flat = a2path["0.0"]
     grow = a2path["0.2"]

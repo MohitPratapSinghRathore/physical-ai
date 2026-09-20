@@ -10,29 +10,27 @@ neither does hardware-backed lending or securitization. Every level on that side
 and every federal share of it an upper bound, which is why Sections~\ref{sec:aiside}
 and~\ref{sec:bust} report it as bounds rather than as a point.
 
-\paragraph{L2. Capital gains inside federal receipts are not separated.} The labor-linked share of
-receipts splits the individual income tax by the wage share of adjusted gross income, and realized
-gains sit inside that base, so the share overstates in years with large realizations and
-understates in years without. The band is carried throughout and the federal exposure share moves
-by under one percent across it; the fiscal magnitudes are more sensitive and we have not bounded
-that.
+\paragraph{L2. Capital gains inside federal receipts are not separated.} Realized gains sit inside
+the base we split by the wage share of adjusted gross income, so the labor-linked share overstates
+in years with large realizations and understates in years without. The band is carried throughout
+and the federal exposure share moves by under one percent across it; the fiscal magnitudes are
+more sensitive and we have not bounded that.
 
 \paragraph{L3. The novelty of the accounts is ``none located'', not ``none exists''.} No
-systematic search with a stated protocol has been run for the specific question of whether anyone
-has built this object before. The related-work audit did locate prior work on the fiscal
-mechanism, and that priority claim was retired; the same could happen here.
+systematic search with a stated protocol has been run for this specific question. The related-work
+audit did locate prior work on the fiscal mechanism and that priority claim was retired; the same
+could happen here.
 
 \paragraph{L4. The holder split leaves an unidentified remainder.} Three of the four shares in the
 mortgage holder split are read from a publisher and the fourth is an arithmetic remainder, treated
 as private in full. That is conservative for our claim, since any federal fraction inside it would
-raise the federal share, but we have not identified what is in it. A remainder of the same kind
-appears on the AI side.
+raise the federal share, but we have not identified what is in it, and the AI side has a remainder
+of the same kind.
 
 \paragraph{L5. The effective labor tax rate does not vary across the wage distribution.} It is a
-single economy-wide rate. Because displacement is not uniform across the distribution, and the
-incidence results show it concentrated away from the top, a flat rate probably overstates the
-revenue loss from displacing low-paid workers and understates it from displacing high-paid ones.
-We have not signed or bounded the net effect.
+single economy-wide rate, and because displacement is concentrated away from the top of the
+distribution a flat rate probably overstates the revenue loss from displacing low-paid workers and
+understates it from displacing high-paid ones. We have not signed or bounded the net effect.
 
 \paragraph{L14. The base of the taxable shareholder share decides how much of the parameter space
 clears the threshold.} Ours is equity in taxable accounts over all US equity outstanding; the
@@ -71,17 +69,4 @@ precise enough to show the rebuild wrong, one because the object it referred to 
 and one because there is no such number to report. Appendix Table~\ref{tab:removed} lists each
 with its reason.
 
-\paragraph{Avenues for further work.} Each addresses a limitation above. Build the
-off-balance-sheet side from securitization prospectuses, vehicle-level filings and supervisory data
-on lending secured against computing hardware, so the AI side can be measured rather than bounded
-(L1). Separate realized gains from wage income inside the individual income tax base and re-run
-the fiscal magnitudes (L2). Run a systematic search with a published protocol for prior
-constructions of a labor backing decomposition (L3). Identify the holder remainder from loan-level
-sources (L4). Replace the single labor tax rate with rates by position in the income distribution
-(L5). Construct both bases for the taxable-holder share from the same holder data and report the
-rate on each (L14). Extend the reemployment relationship using a source that observes larger
-displacement episodes, which would turn the bands above a quarter of the wage bill into estimates;
-let house prices, spending and non-displaced employment move together, which would also let the
-state and local feedback loop be modeled rather than named; run a rebuild with an enforced blind
-and expected values held by a third party; and quantify withholding tax on dividends to foreign
-holders, reporting the corrected rate even though it runs against our own finding.
+\paragraph{Avenues for further work.} Each limitation above has a corresponding avenue, set out in Appendix~\ref{app:detail}: measuring the off-balance-sheet side directly, separating realized gains inside the tax base, running a systematic novelty search, identifying the holder remainder, using labor tax rates by position in the income distribution, constructing both bases for the taxable-holder share, extending the reemployment relationship beyond its observed range, letting house prices and spending move with displacement, running a rebuild with an enforced blind, and quantifying withholding tax on dividends to foreign holders.

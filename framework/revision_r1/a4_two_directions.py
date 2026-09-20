@@ -48,7 +48,7 @@ def main():
     tau_a = assembled["Barkai"]
     req = tk["required_tau_k"]["by_labour_reading"]
     econ_wide = (0.20, 0.22)          # the economy-wide average capital rate, as reported
-    req_pt = a1["g_central_case"]     # the required rate once pass-through is explicit
+    req_pt = a1["g_central_base"]     # the required rate once pass-through is explicit
 
     fall = [abs(x) for x in b34["federal_receipts_fall_bn_range"]]
     fall_lo, fall_hi = min(fall), max(fall)
@@ -60,7 +60,7 @@ def main():
         ("required, harder labor tax reading, full pass-through",
          req["bottom_up_0.318"], req["bottom_up_0.318"]),
         ("required at the central pass-through case",
-         req_pt["required_tau_k_easier"], req_pt["required_tau_k_harder"]),
+         req_pt["required_easier"], req_pt["required_harder"]),
         ("economy-wide average capital rate", econ_wide[0], econ_wide[1]),
     ]
 
@@ -86,8 +86,8 @@ def main():
         "assembled_rate": tau_a,
         "required_rates_full_pass_through": req,
         "required_rates_central_pass_through": {
-            "easier": req_pt["required_tau_k_easier"],
-            "harder": req_pt["required_tau_k_harder"]},
+            "easier": req_pt["required_easier"],
+            "harder": req_pt["required_harder"]},
         "economy_wide_average_capital_rate": list(econ_wide),
         "verified_bust_receipts_fall_bn": [fall_lo, fall_hi],
         "result_1_levels": (

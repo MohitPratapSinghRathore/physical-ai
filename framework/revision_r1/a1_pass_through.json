@@ -1,18 +1,15 @@
 {
-  "status": "SCENARIO. s_dom from the existing swept capex decomposition; k and p swept and not sourced. The bound 0 <= g <= 1 holds under output preserved and is asserted in the code.",
+  "status": "SCENARIO. c is unverified and swept; the labor and import shares behind the capex split are swept ranges, not sourced. Reported as a sensitivity on the headline comparison, which stays at full pass-through.",
   "condition": "tau_k * g >= tau_l * (1 - R)",
+  "base_construction": "g = (1 - c) + c * s_dom, the capex split applied to the capital-cost part only",
+  "price_pass_through_is_separate": "g(p) = (1 - c)(1 - p) + c * s_dom",
+  "superseded": "an earlier version of this module folded the price pass-through into the central case and reported the result as the correction. That overstated it and is withdrawn.",
   "retained_wage_share_R": 0.568316,
-  "effective_labour_tax_readings": {
-    "AMR_0.255": 0.254999,
-    "bottom_up_0.301": 0.301,
-    "bottom_up_0.318": 0.318001
-  },
   "required_tau_k_at_g_equals_one": {
     "AMR_0.255": 0.110079,
     "bottom_up_0.301": 0.129937,
     "bottom_up_0.318": 0.137276
   },
-  "what_g_equals_one_means": "every dollar of displaced wages reappears as a dollar of taxable US capital income. This is the assumption behind the required band the paper has published, and it is the most favourable case for closing the condition.",
   "capex_dollar_decomposition_used": {
     "domestic_labour_already_inside_tau_l": [
       0.0936,
@@ -24,32 +21,47 @@
       0.4745,
       0.6772
     ],
-    "domestic_surplus_priced_by_tau_k": [
+    "domestic_producer_surplus": [
       0.1836,
       0.3193,
       0.5052
     ]
   },
-  "g_range_over_the_sweep": [
-    0.24852,
-    0.85156
+  "capital_cost_share_grid": [
+    0.2,
+    0.35,
+    0.5,
+    0.65,
+    0.8
   ],
-  "g_central_case": {
-    "capital_cost_share_k": 0.5,
-    "price_pass_through_p": 0.3,
-    "domestic_surplus_share_of_capex": 0.3193,
+  "capital_cost_share_central": 0.5,
+  "g_range_base_construction": [
+    0.34688,
+    0.90104
+  ],
+  "g_central_base": {
+    "capital_cost_share_c": 0.5,
     "surplus_reading": "central",
+    "domestic_surplus_share_of_capex": 0.3193,
+    "g": 0.65965,
+    "required_easier": 0.166875,
+    "required_harder": 0.208104
+  },
+  "g_central_with_thirty_percent_price_pass_through": {
+    "capital_cost_share_c": 0.5,
+    "price_pass_through_p": 0.3,
     "g": 0.50965,
-    "required_tau_k_easier": 0.215989,
-    "required_tau_k_harder": 0.269353
+    "required_easier": 0.215989,
+    "required_harder": 0.269353
   },
   "assembled_tau_k_central": {
     "Barkai": 0.0851,
     "Karabarbounis_Neiman_case_R": 0.015
   },
-  "assembled_tau_k_central_domestic_holder_base": {
-    "Barkai": 0.1024,
-    "Karabarbounis_Neiman_case_R": 0.0322
-  },
-  "verdict": "The required rate is inversely proportional to g, so any pass-through short of one raises it. At the central case the required rate is roughly double the published band, and the assembled rate does not reach it on either base or under either rent reading. The direction of the correction is against the paper's own published required band, which was computed at the most favourable value of g, and in favour of its conclusion that the condition fails."
+  "economy_wide_average_capital_rate": [
+    0.2,
+    0.22
+  ],
+  "double_counting_check": "The import share removed in g and the shifted share inside the assembled rate are different flows: imports never enter the US base, shifted profits enter it and are taxed at the lower rate the assembly applies. Neither is removed twice. Where an import is an intra-firm transfer price the two can touch, which would make g too low and the required rate too high, against this module's own correction.",
+  "verdict": "The required rate is inversely proportional to g. At the central base case g = 0.66 and the required rate is 17 to 21 percent, against 11 to 14 percent at g = 1. The assembled rate of 8.5 percent falls short on either reading, and the shortfall widens. The economy-wide average capital rate of 20 to 22 percent still clears the base central case; it stops clearing once a price pass-through term is added, which is why that term is reported separately and not inside the headline."
 }

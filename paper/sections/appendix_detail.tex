@@ -1,0 +1,339 @@
+\section{Further detail}
+\label{app:detail}
+
+The material below was moved out of the body for length. Nothing in it is altered.
+
+\subsection{Households, by position in the wage distribution}
+
+Splitting the household part of the stock by wage quintile gives the gradient: wage-backed claims
+per dollar of wages fall as pay rises, from \result{QTwoPerDollar} in the second quintile to
+\result{QTopPerDollar} at the top, while the top quintile earns \result{QTopWageShare} percent of
+the wage bill and carries \result{QTopClaimShare} percent of the household claims. Claims are
+spread far more evenly than the income that services them, which is the sense in which a wage
+shock is regressive before any policy response is chosen. Appendix Table~\ref{tab:quintile} gives
+the detail.
+
+The magnitude for the bottom quintile is withdrawn: an independent rebuild landed a factor of 2.5
+to 3.4 away, and we cannot show its reading was wrong, because our own specification defined
+neither the universe nor the normalization of that cell. The direction was reproduced and stands.
+
+\subsection{The housing agencies absorb their share without reaching the Treasury}
+
+The agency book was rebuilt loan class by loan class from the Enterprises' own filings
+\citep{FannieMae10K2025,FreddieMac10K2025}, which is what makes the classification question
+answerable rather than assumed. Three measured results follow. A large part of each single-family
+book carries no credit enhancement at all, \result{UnenhancedLow} to \result{UnenhancedHigh}
+percent across the two Enterprises. Private cover transfers only \result{PrivateCoverLow} to
+\result{PrivateCoverHigh} percent of an agency loss at the ten percent level, because the
+structures are written for idiosyncratic losses and an event of this size passes most of the loss
+to the guarantor. And the Treasury draw is \result{TreasuryDrawBn} at every level we ran:
+\result{AgencyCapitalBn} billion dollars of capital stands against a maximum retained loss of
+\result{MaxRetainedAgencyLossBn} billion. That is a first-round result with house prices fixed,
+and a house price fall would change the severity on every loan in the book.
+
+\subsection{Trust funds}
+
+Trust fund effects are computed on a payroll-only basis: each fund's loss is the displaced share
+of its own covered payroll, adjusted for wages that return, times that fund's own payroll share of
+its own income. The two funds have different shares and different caps, the social security funds
+being capped at the contribution base while the hospital insurance fund is not, which is why the
+two rows in Table~\ref{tab:incidence} move differently across exposure groups. One consequence
+carries into Section~\ref{sec:institutions}: replacement income funded from a capital tax cannot
+repair these funds, because it is not covered wages.
+
+\subsection{What each type of institution should change}
+
+Each item is tied to a measured exposure in Section~\ref{sec:banks}, and each carries what the
+evidence does not support, because the second half keeps the first half honest. Card-heavy lenders
+should hold capital against the card book for a displacement scenario specifically, and this is
+not a tail risk: it is the first model to break and it breaks inside the range we model. Credit
+unions are undiversified by design rather than small and therefore safe. Large and regional banks
+need a supervisory scenario routed through the second round, not tighter household underwriting,
+which does not touch their exposure. Auto lenders should write displacement-contingent payment
+clauses into contracts and securitization documentation, though not at moderate displacement,
+where they show no breaches. Housing agencies should pre-authorize forbearance and raise credit
+enhancement on the unenhanced book, not recapitalize, since no Treasury draw appears at any level
+we ran. Insurers should report AI-linked and wage-linked holdings together; forced-sale rules are
+not supported, since they hold to maturity against matched liabilities. For private credit the
+instrument is disclosure sufficient to separate it from the aggregate it sits inside. Pension
+funds should report the funding gap against a displacement path, and state and local governments
+should build reserves against one.
+
+\subsection{Emerging markets}
+
+Three facts change the answer outside a reserve-currency economy and they compound. Imported AI
+capital accrues its taxable surplus abroad, so the domestic rate is lower still and the tax
+instrument is weakest where it is needed most. A sovereign that cannot borrow in a currency it
+issues cannot absorb the shock the way the United States can, leaving pre-funding, which must be
+built beforehand. And many such economies are already on a steep path: our twenty-year baseline
+reaches \result{EMBaseline} percent of output before any displacement, with an increment at the
+ten percent level of \result{EMIncrementLow} to \result{EMIncrementHigh} points against
+\result{ReserveIncrementLow} to \result{ReserveIncrementHigh} for a reserve-currency issuer, a
+ratio of about \result{EMRatio}. The measurement itself is unavailable there: for the one case we
+attempted, the flow of funds data have long lags and incomplete household coverage, there is no
+usable counterparty matrix, and high informality places much labor income outside both the tax
+base and the formal credit system, which is the variable the statistic turns on.
+
+\subsection{The series, 1952 to 2025}
+
+Figure~\ref{fig:series} runs the accounts back to 1952, and two things in it move differently.
+
+The ratio itself is close to flat across seventy-three years, between
+\result{DebtOnlySeriesLow} and \result{DebtOnlySeriesHigh} percent on the debt-only measure with
+no trend. The share of the national debt stock that wages service is not a recent development.
+
+The federal share of it traces a U: \result{SovUnion1952} percent in 1952,
+\result{SovUnion1970} percent in 1970, \result{SovUnion2025} percent in 2025. The 1952 level is
+almost entirely wartime Treasury debt, the debtor position alone standing at
+\result{SovObligor1952} percent. It falls to 1970 as that debt shrinks against a growing claim
+stock, then climbs in two datable steps: the agency book grows between 1970 and 1990, taking the
+held-or-guaranteed position from \result{SovHeld1970} to \result{SovHeld1990} percent, and federal
+debt grows between 2008 and 2020, taking the debtor position from \result{SovObligor2008} to
+\result{SovObligor2020} percent.
+
+Said plainly, because it qualifies the headline: a large part of the recent rise is growth in
+federal debt itself rather than new exposure to households. The held-or-guaranteed position peaked
+at \result{SovHeld2020} percent in 2020 and has since fallen to \result{SovHeld2025} percent,
+while the whole net increase since 2008 sits in the debtor position.
+
+\subsection{Checks, and what this module does not reach}
+
+Our shareholder layer at central values, \result{ShareholderLayerPct} percent, corroborates the
+Congressional Research Service's text figure of about \result{CRSTextFigure} percent for the
+effective capital gains rate on corporate profits. It does not reproduce that report's published
+band of \result{CRSBandLow} to \result{CRSBandHigh} percent as printed, and should not: the band
+already carries a taxable-share adjustment over domestically held stock. Rescaled to a common base
+it is \result{CRSRescaledLow} to \result{CRSRescaledHigh} percent, and our figure sits inside it.
+We report the correction rather than the original comparison, because as first written our own
+check failed against our own construction.
+
+Foreign holders are treated as bearing no tax at the owner level, though dividends to them bear
+withholding tax at treaty rates. The effect on the assembled rate is upward and we have not
+quantified it; since our result is that the rate falls short, that is a limitation running against
+our own finding. The debt share is an economy-wide stock ratio, \result{DebtShareLow} to
+\result{DebtShareHigh} percent, standing in for a marginal flow; the evidence in
+Section~\ref{sec:bust} points below that range, and because the debt-financed term is negative, a
+lower debt share would raise the assembled rate.
+
+\subsection{State-contingent triggers}
+
+Instruments are more useful attached to a trigger carrying its current value and a label saying
+whether the threshold sits inside the range of the data behind it. The capital tax trigger is already tripped:
+the assembled rate is \result{TauKBarkai} percent against a threshold of \result{RequiredEasy}
+percent, both sides observed today. Prime-age nonemployment stands at \result{PrimeAgeNonemp}
+against the observed maximum of \result{PrimeAgeMax}, where the reemployment fit leaves the data,
+so crossing it is the moment the rest of this architecture can no longer be sized. The
+debt-financed share of AI capital spending is \result{DebtFinancedShare} percent against the
+twenty percent read off the equity-led episode, and is a lower bound. The combined social insurance
+depletion date is \result{OASDIDepletion}, which arrives before any plausible displacement path,
+so that instrument binds soonest for reasons unrelated to AI. Recent graduate unemployment at
+\result{GradUnemployment} percent and underemployment at \result{GradUnderemployment} percent sit
+in somebody else's data and speak to the channel our engine cannot see.
+
+One trigger matters more than the others and is a statement about knowledge rather than the
+economy. Past a displacement level of about forty-six percent of the physically exposed wage bill,
+the reemployment construction has no admissible solution and no reemployment-based instrument can
+be sized from these data. The architecture does not become wrong there; it becomes unsizeable.
+Appendix~\ref{app:instruments} gives the full instrument table.
+
+\subsection{The fiscal module and the second round}
+
+The fiscal module converts displacement into a dollar amount against the wage bill and applies a
+loss per dollar with three parts: the labor tax no longer collected on wages that are not
+re-earned, less the capital tax collected on the income that displaced them, plus any outlay
+response. The share of wages re-earned is governed by a reemployment rate fitted on the
+displacement vintages against labor market slack and solved as a fixed point, since displacement
+changes the slack the fit is a function of. Losses are reported for the terminal year rather than
+as a cumulative total divided by a horizon, and they are not linear in displacement: the share
+re-earned falls as displacement rises. Trust fund effects use each fund's own payroll share of its
+own income.
+
+The second round is the weakest module evidentially and is labeled scenario wherever it appears.
+The net fall in wage income becomes a demand shortfall through the difference between the
+propensity to consume out of labor and out of capital income
+\citep{MianStraubSufi2020,FagerengHolmNatvik2021}; the shortfall is expressed as a share of output
+and compared with the fall in output in the supervisory severely adverse scenario; and the
+supervisor's own published loss totals are scaled by that ratio. House prices enter through an
+income elasticity \citep{HarterDreiman2004}, and employment through an Okun coefficient
+\citep{BallLeighLoungani2017}. Three elements have no source: the shape of the loss curve beyond
+the supervisory point, for which we carry a linear, a capped and a convex mapping; the propensity
+ranges, measured on transitory shocks where displacement is persistent; and the path itself. We
+report the whole grid of 648 combinations as a band and never a point inside it.
+
+\subsection{Institution-level data}
+
+The second round is applied across individual balance sheets rather than to an aggregate. The
+panel is every insured bank and credit union at 30 June 2026, with the loan book by category and
+the capital measure each is tested against: the tier 1 leverage ratio against its four percent
+threshold for banks, the net worth ratio against its six percent threshold for credit unions.
+After exclusions it is \result{NInstitutions} institutions, \result{NBanks} banks and
+\result{NCreditUnions} credit unions, holding \result{SystemAssetsBn} billion dollars of assets.
+
+\result{ExcludedInstitutions} institutions holding \result{ExcludedAssetsBn} billion dollars are
+excluded because they report neither tier 1 capital nor total equity, being overwhelmingly insured
+US branches of foreign chartered institutions whose capital sits at the parent; a capital test
+shows them breaching before any loss, which is an artifact of a missing field. A capital test is
+only informative if almost nothing fails it before any loss, and after the exclusion
+\result{BaselineBreaches} institutions breach at baseline, \result{BaselinePctAssets} percent of
+system assets. Losses are allocated pro rata by category holdings, so dispersion reflects business
+mix alone and is a lower bound on true dispersion.
+
+\subsection{Avenues for further work}
+
+Each addresses a limitation above. Build the
+off-balance-sheet side from securitization prospectuses, vehicle-level filings and supervisory data
+on lending secured against computing hardware, so the AI side can be measured rather than bounded
+(L1). Separate realized gains from wage income inside the individual income tax base and re-run
+the fiscal magnitudes (L2). Run a systematic search with a published protocol for prior
+constructions of a labor backing decomposition (L3). Identify the holder remainder from loan-level
+sources (L4). Replace the single labor tax rate with rates by position in the income distribution
+(L5). Construct both bases for the taxable-holder share from the same holder data and report the
+rate on each (L14). Extend the reemployment relationship using a source that observes larger
+displacement episodes, which would turn the bands above a quarter of the wage bill into estimates;
+let house prices, spending and non-displaced employment move together, which would also let the
+state and local feedback loop be modeled rather than named; run a rebuild with an enforced blind
+and expected values held by a third party; and quantify withholding tax on dividends to foreign
+holders, reporting the corrected rate even though it runs against our own finding.
+\subsection{The household credit engine}
+
+The engine maps a displacement level onto household credit losses without naming a set of
+displaced households. Displacement is a probability applied to every household in the working
+core, defined as a household with at least one employed member aged 25 to 64. The share of
+earners displaced is set equal to the share of the wage bill displaced, and each household's
+earners are drawn against that share.
+
+A household that loses an earner does not default; it becomes more likely to default. The
+uplift is five percentage points for one displaced earner and eight for two
+\citep{GerardiHerkenhoffOhanianWillen2018}, and losses are exposure at default times loss given
+default, with severities of 0.25 to 0.40 on first-lien mortgages, 0.80 to 1.00 on cards, 0.45 to
+0.65 on auto and 0.75 to 1.00 on student debt. Applying a portfolio loss rate to exposure at
+default instead would count the probability of default twice.
+
+Survey balances are benchmarked to official aggregates first, and two ratios do different work.
+The \emph{under-reporting factor} is the official aggregate over the full survey universe and is a
+survey correction; the \emph{coverage share} is the working-core balance over that universe and is
+a fact about which households the analysis covers. Table~\ref{tab:underreporting} gives both. The
+identity between them holds to three decimals on every book, and all four factors were rebuilt
+independently.
+
+One scope statement travels with every credit number here. The engine is first round only: house
+prices, consumer spending, business revenue and the employment of everyone not displaced are held
+fixed. Against a supervisory scenario, which moves all of those together, the figures are a lower
+bound rather than an estimate.
+
+\subsection{The exposures this engine does not reach}
+
+Four sets of institutions are exposed in ways the panel does not capture, and naming them is more
+useful than putting a number on them the data cannot support. \emph{State and local government} is
+exposed through its own tax base, \result{StateLocalWageLinkedBn} billion dollars of wage-linked
+income tax, \result{StateLocalWageLinkedShare} percent of its own tax receipts, and cannot run the
+deficit through because of balanced-budget requirements; its in-year spending cut feeds the same
+demand channel that produces nine tenths of the bank losses above, and that loop is not in the
+engine, so its absence makes our figures conservative in a direction we can sign but not size.
+\emph{Pension funds} are exposed on both sides at once, benefits fixed in nominal terms while
+contributions are a share of covered payroll, so displacement widens the funding gap mechanically;
+the accounts capture only the \result{PensionHoldingsBn} billion dollars they hold.
+\emph{Insurers and private credit} hold both sides, insurers \result{InsurerHoldingsBn} billion
+dollars of wage-backed claims against long-dated liabilities, while private credit cannot be
+separated from the other-financial aggregate, so the \result{OtherFinancialHoldingsBn} billion
+attributed to that sector is an upper bound by an unknown margin. And everything outside the
+insured depository system, nonbank servicers and consumer lenders among them, is absent from the
+panel; as a class they are more thinly capitalized than the institutions we measure, so the system
+figures are again a lower bound.
+
+\subsection{What the evidence does not support}
+
+Two claims are tempting and neither survives the measurement. \emph{Wholesale change to household
+mortgage underwriting at moderate displacement} fails on three grounds: the flat debt service
+result is partly mechanical, since underwriting caps debt service to income; physically exposed
+households are less indebted on most measures we can compute; and mortgage portfolio lenders are
+among the least exposed institution types.
+
+\emph{Occupation-based underwriting} fails on a legal ground as well as an empirical one, and the
+statement has to be careful because a looser version of it was wrong. Occupation is not a
+prohibited basis under the Equal Credit Opportunity Act, whose list of prohibited bases does not
+include it, and a creditor may consider information not used to discriminate on a prohibited
+basis. The exposure is different in kind: because occupation correlates with protected classes,
+occupation-based underwriting in housing credit exposes a lender to a discriminatory-effects claim
+under the Fair Housing Act, on which the lender must carry a legally sufficient justification
+under a burden-shifting framework. Combined with the finding that the exposure is spread almost
+evenly across borrowers, so screening on it buys a lender little, the risk-adjusted case for
+occupation-based underwriting is weak and the case for portfolio-level disclosure is strong.
+
+\subsection{What is needed at each regime}
+
+For each regime we state the minimum instrument set identified by the measured mechanisms, which
+is a narrower claim than a policy recommendation: it is what the mechanisms we can measure imply,
+and nothing more.
+
+\paragraph{Inside the data, about ten percent of the wage bill.} The capital tax instrument, the
+trust fund contribution base, the student loan trigger, and better measurement. The housing
+agencies absorb this level without a Treasury draw and the banking system barely moves, so
+mortgage instruments and ownership stakes are not needed here and a supervisory scenario is a
+disclosure requirement rather than a binding constraint. This is the only regime fully inside the
+observed data, and the one where we can say what is unnecessary as confidently as what is not.
+
+\paragraph{Larger displacement, twenty-five to fifty percent.} Nearly everything, with the
+composition changing rather than the scale. The break-even capital tax rate, \result{BreakEvenALow}
+to \result{BreakEvenAHigh} percent with output preserved and \result{BreakEvenBLow} to
+\result{BreakEvenBHigh} percent with output falling, reaches the top of the range anyone has
+measured, so ownership and direct-claim instruments enter here precisely because the tax
+instrument is at its limit. All of it is scenario and extrapolates the reemployment
+relationship.
+
+\paragraph{Sudden displacement.} The same set reordered: only contract instruments act inside a
+quarter, so pre-authorization is the whole instrument. Tax changes and ownership stakes take
+legislative time the regime does not have, and pre-funding is useless once the shock has arrived.
+
+\paragraph{Near-total displacement.} The share of wages re-earned falls toward zero, so the
+required capital tax rate approaches the whole effective labor tax rate: \result{BreakEvenALow} to
+\result{BreakEvenAHigh} percent with output preserved and \result{BreakEvenBLow} to
+\result{BreakEvenBHigh} percent with output falling, and higher still once the pass-through
+coefficient of Section~\ref{sec:fiscal} is applied. Those rates lie far outside anything observed
+in a modern tax system, which is a statement about precedent rather than about arithmetic:
+capital taxation is not excluded in principle at those levels, but nothing in the record tells us
+what a rate of that size would do to the base it is levied on. Ownership and direct-claim
+instruments therefore become the more plausible channel, not the only possible one. This is where
+the question stops being financial regulation and becomes a question about ownership.
+
+\paragraph{The failure case.} Instruments that protect the wage tax base do nothing here.
+Concentration limits on AI-linked lending and the capital tax rate are what remain, and the second
+is the same row that appears in every displacement regime.
+
+\subsection{The federal share, by displacement level and by classification}
+
+The federal share of the first round is not one number, and reporting it as one hides that it
+rises with the displacement level. It also depends on a classification choice about the housing
+agencies, and both readings travel together. Under the \emph{narrow} reading only the agency loss
+beyond the agencies' own capital and a year of earnings counts as federal. Under the
+\emph{conservatorship} reading the retained agency loss counts as federal, because the agencies
+are in conservatorship and no private shareholder is positioned to absorb anything; only what
+private credit cover actually pays is private.
+
+At the ten percent level the federal share is \result{FedShareTenNarrowLow} to
+\result{FedShareTenNarrowHigh} percent under the narrow reading and \result{FedShareTenConsLow} to
+\result{FedShareTenConsHigh} percent under the conservatorship reading.
+Figure~\ref{fig:fedshare} gives the whole path: it rises with displacement to a peak near the
+fifty percent level and falls back, because the fiscal component saturates while credit losses
+keep growing. The rise between the five and twenty-five percent levels was reproduced
+independently, the rebuild's own result sitting inside our range at both ends.
+
+\subsection{The two conventions in the accounts}
+
+\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is not
+wage-backed because a household owes it, but to the extent that wage taxes service it, so it takes
+the labor-linked share of federal receipts, social insurance contributions in full plus the wage
+share of the individual income tax, measured at \result{ReceiptsPctLow} percent; state and local
+debt is treated the same way on its own receipts mix. Without this convention a government funded
+entirely from payroll taxes and one funded entirely from capital taxes would score identically.
+
+\paragraph{The one-step rule is a convention, and it is the largest judgment in the paper.} We
+trace servicing one step and stop, so a claim serviced out of business revenue takes zero direct
+backing even though some of that revenue began as wages. Multifamily mortgages are the one
+property class that does not take the zero, because the rent that services them is paid out of
+wages with no firm in between. The rule is the first-round boundary applied to the liability side.
+Tracing further is what the indirect variant does, and we report both: on the whole claim stock,
+moving business classes to their measured indirect share raises the ratio by
+\result{OneStepMoveAllClaimsPct} percent, more than every other judgment call in the accounts
+together.
+

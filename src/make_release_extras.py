@@ -155,6 +155,7 @@ def method():
 
 def revision_r1():
     for name in ("a1_pass_through.json", "a1_required_by_g.csv", "a1_g_cases.csv",
+                 "a1_price_pass_through.csv",
                  "a2_cashflow_bridge.json", "a2_transition_path.csv",
                  "a3_relief_feedback.json", "a3_relief_feedback.csv", "a3_by_class.csv",
                  "a4_two_directions.json", "a4_rate_grid.csv"):

@@ -49,27 +49,22 @@ $\tau_{sh} = \theta\,\delta\,\tau_s$ and the entity layer $e$ formed from $\tau_
 The first bracket is the rate on rents; the second is the rate on the normal return.
 \end{definition}
 
-Two features of Equation~\eqref{eq:tauk} do most of the work and neither is our assumption. The
-first is expensing: under full expensing the normal return is relieved at the entity level, so at
-the margin it bears only the owner's tax, which is the result in
-\citet{AcemogluManeraRestrepo2020} and is why the debt-financed term is $\tau_b - \tau_c$ and
-negative throughout the sourced range. The Congressional Budget Office's measured effective rate
-on debt-financed corporate investment, minus \result{CBODebtFinancedETR} percent, sits inside the
-interval our components imply \citep{CBO2014}: the theory predicted the sign, the budget office
-measured the magnitude, and the assembly reproduces both. The second is the rent share, where the
-literature disagrees: \citet{Barkai2020} puts it at \result{RentBarkai} and
-\citet{KarabarbounisNeiman2014} at zero, in which case the rate reduces to the normal-return term.
-These are not two estimates of one quantity but two readings of what has happened to the corporate
-sector, so we report both and never average them.
+Two features of Equation~\eqref{eq:tauk} do most of the work and neither is our assumption.
+Under full expensing the normal return is relieved at the entity level, so at the margin it bears
+only the owner's tax \citep{AcemogluManeraRestrepo2020}, which is why the debt-financed term is
+negative throughout the sourced range and why the budget office's measured rate on debt-financed
+corporate investment, minus \result{CBODebtFinancedETR} percent, sits inside the interval our
+components imply \citep{CBO2014}. The rent share is the second: \citet{Barkai2020} puts it at
+\result{RentBarkai} and \citet{KarabarbounisNeiman2014} at zero, two readings of what has happened
+to the corporate sector rather than two estimates of one quantity, so we report both and never
+average them.
 
 \paragraph{The base, and the case against our own choice.} We take the rate on the marginal flow
-of US AI surplus, whoever holds the claim. Against that, an economy-wide average effective rate on
-capital income, reported for advanced economies at around twenty percent, is measured on a stock
-mostly neither fully expensed nor easily shifted and includes personal-level taxes as actually
-paid; if AI capital comes to look like the rest of the capital stock, that is the relevant rate and
-the condition closes on it. We think the marginal flow is the right object for a revenue
-replacement question, because the question concerns the next dollar that moves. That is a
-judgment about which base answers which question, not a fact.
+of US AI surplus, whoever holds the claim, because the question concerns the next dollar that
+moves. Against that, an economy-wide average rate on capital income, around twenty percent for
+advanced economies, is measured on a stock mostly neither fully expensed nor easily shifted and
+includes personal-level taxes as paid; if AI capital comes to look like the rest of the capital
+stock, that is the relevant rate. Which base answers which question is a judgment, not a fact.
 
 \subsection{The answer, under both readings and both bases}
 
@@ -111,40 +106,50 @@ stock. Scenario, on a construction reproduced by independent rebuild.}
 \label{fig:tauk}
 \end{figure}
 
-\subsection{The pass-through coefficient, and what it does to the required rate}
+\subsection{Pass-through: a sensitivity, not the headline}
 
-The condition in Definition~\ref{def:condition} carries a hidden coefficient. Written as
-$\tau_k \ge \tau_\ell (1 - R)$, it assumes that every dollar of displaced wages reappears as a
-dollar of taxable US capital income. Making that explicit,
+The condition in Definition~\ref{def:condition} carries a coefficient that the headline
+comparison sets to one. Written as $\tau_k \ge \tau_\ell (1 - R)$, it assumes that every dollar of
+displaced wages reappears as a dollar of taxable US capital income. Making that explicit,
 \begin{equation}
 \tau_k \, g \;\ge\; \tau_\ell\,(1 - R), \qquad
 \tau_k^{\ast} = \frac{\tau_\ell\,(1 - R)}{g},
 \label{eq:passthrough}
 \end{equation}
-where $g$ is the taxable US capital income generated per dollar of displaced wages, bounded in
-$[0,1]$ with output preserved. The band this paper has reported is the case $g = 1$, the most
-favourable one available.
+with $g$ the taxable US capital income generated per dollar of displaced wages, bounded in
+$[0,1]$ with output preserved. Everything reported above is the case $g = 1$, and it stays the
+headline because $g$ cannot be sourced. What follows is a sensitivity, and its only purpose is to
+show the direction: incomplete pass-through can only widen the shortfall, never close it.
 
-The parts of $g$ can be bounded. Per dollar of wages displaced a firm spends some share on AI
-capital services and keeps the rest; of what it keeps, part is competed away to consumers in lower
-prices and is never taxed as capital income at all. Of what it spends, our own decomposition of a
-dollar of AI capital spending gives \result{CapexDomesticLabor} percent domestic labor, which is
-already inside $\tau_\ell (1 - R)$ and must not be counted twice,
-\result{CapexImported} percent imported and bearing no US tax, and
-\result{CapexDomesticSurplus} percent domestic surplus, which is what $\tau_k$ prices. Taking
-\result{CapitalCostShare} percent of the wage saving as the cost of the capital and
-\result{PriceThrough} percent of the remainder as passed to consumers gives $g =
-\result{GCentral}$, against a swept range of \result{GLow} to \result{GHigh}.
+A displaced wage dollar splits into the cost of the AI capital and services that replace the work,
+a share $c$, and the surplus the adopting firm keeps, $1 - c$. The second is the adopting firm's
+capital income. Only the first is revenue to the suppliers of AI capital, and only there does our
+decomposition of a dollar of AI capital spending apply: \result{CapexDomesticLabor} percent
+domestic labor, which is already inside $\tau_\ell (1 - R)$ and must not be counted twice,
+\result{CapexImported} percent imported and never entering the US tax base, and
+\result{CapexDomesticSurplus} percent domestic producer surplus. So
+$g = (1 - c) + c \, s$, with $s$ that surplus share. Taking $c = \result{CapitalCostShare}$
+percent gives $g = \result{GCentral}$ and a required rate of \result{RequiredPTEasy} to
+\result{RequiredPTHarder} percent, against \result{RequiredEasy} to \result{RequiredHard} at
+$g = 1$; across the swept range of $c$, $g$ runs from \result{GLow} to \result{GHigh}.
 
-At that central case the required rate is \result{RequiredPTEasy} to \result{RequiredPTHarder}
-percent rather than \result{RequiredEasy} to \result{RequiredHard}. Two things follow, and the
-second is uncomfortable for a concession this paper has made. The shortfall widens: the assembled
-rate is further from the required rate than the published band implied. And the escape route
-closes: at the central case the required rate is at or above the economy-wide average capital rate
-of about twenty percent, so the reading on which the condition closes at the economy-wide rate no
-longer clears it either. All of this is scenario arithmetic, since the two shares are swept rather
-than sourced, but its direction is not in doubt: any pass-through short of one raises the required
-rate.
+A second channel is reported separately because it is a different mechanism. If a share of the
+adopting firm's retained surplus is competed away to consumers in lower prices, it is never taxed
+as capital income. At \result{PriceThrough} percent of the retained surplus, $g$ falls to
+\result{GWithPrice} and the required rate rises to \result{RequiredPriceEasy} to
+\result{RequiredPriceHarder} percent.
+
+Three statements about this sensitivity, since it is the weakest thing in the section. It is
+scenario arithmetic: $c$ has no verified estimate here or, so far as we located, anywhere, and the
+shares behind $s$ are swept ranges rather than sourced values. It does not double count the
+profit shifting already inside the assembled rate: the import share removed here is payment that
+never enters the US base, while shifted profit does enter it and is taxed at the lower rate the
+assembly already applies, and the one case where the two could touch, an intra-firm import priced
+as a transfer, would make $g$ too low and so runs against this correction. And it changes what can
+be said about the economy-wide rate only conditionally: at the central case of the base
+construction, an economy-wide rate of twenty to twenty-two percent still clears the required band;
+it stops clearing once a price pass-through term is added. That is a reason to report the two
+terms separately, not to fold either into the headline.
 
 \subsection{What the rate is a statement about}
 
@@ -158,27 +163,27 @@ as one.
 The transition runs the other way from the direction that would flatter the paper. While
 investment grows, current deductions exceed the tax on income from a capital stock built when
 investment was smaller, so net revenue from the sector is below the steady-state figure and can be
-negative. On an illustrative path using the parameters above, with investment growing at
+negative. An illustrative path, using the tax parameters above and a geometric investment series
+that is chosen rather than estimated, makes the size of that visible: with investment growing at
 \result{TransitionGrowthRate} percent a year, net entity-level tax is negative at
 \result{TransitionYearFive} per unit of investment in year five and still negative in year
-twenty-five; at zero growth it turns positive in year \result{TransitionPositiveYear}. During an
-AI investment boom, in other words, the revenue actually collected is lower than the assembled
+twenty-five, while at zero growth it turns positive in year \result{TransitionPositiveYear}. That
+path is an illustration of a mechanism and not a forecast of revenue. The mechanism itself is not
+in doubt: during an investment boom the revenue actually collected is lower than the assembled
 rate implies, not higher.
 
 \subsection{Why the rate is low, and it is not profit shifting}
 
-The interesting part is the reason rather than the number, and the binding constraint is who owns
-the claims. About \result{ThetaUntaxable} percent of US corporate equity is held in forms the
-individual income tax barely reaches, chiefly retirement accounts, foreign investors and
-nonprofits; only \result{ThetaTaxable} percent sits in taxable accounts, across a sourced range of
-\result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
+The binding constraint is who owns the claims. About \result{ThetaUntaxable} percent of US
+corporate equity is held in forms the individual income tax barely reaches, chiefly retirement
+accounts, foreign investors and nonprofits, leaving \result{ThetaTaxable} percent in taxable
+accounts across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
 \citep{RosenthalAustin2016,RosenthalBurke2020,RosenthalMucciolo2024}. Of the gains that do accrue
-in taxable hands, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, basis
-being stepped up; what is realized is realized late, and deferral cuts the present value by a
-factor running from \result{DeferralLow} to \result{DeferralHigh} \citep{Gravelle2022}. The same
-structure holds on the debt side: \result{InterestSheltered} percent of corporate interest goes to
-holders who do not pay tax on it, and \result{BondsRestOfWorld} percent of corporate bonds are held
-abroad against \result{BondsHouseholdDirect} percent held directly by households. Together these
+there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, and what is
+realized is realized late, deferral cutting the present value by a factor of
+\result{DeferralLow} to \result{DeferralHigh} \citep{Gravelle2022}. The debt side has the same
+structure: \result{InterestSheltered} percent of corporate interest goes to holders who do not pay
+tax on it and \result{BondsRestOfWorld} percent of corporate bonds are held abroad. Together these
 are why the owner's layer adds only \result{ShareholderLayerPct} percent to the rate on rents.
 
 Profit shifting is real and it is not the explanation. Moving the shifted share across its whole
@@ -202,19 +207,5 @@ smallest remaining source of uncertainty.
 
 \subsection{Checks, and what this module does not reach}
 
-Our shareholder layer at central values, \result{ShareholderLayerPct} percent, corroborates the
-Congressional Research Service's text figure of about \result{CRSTextFigure} percent for the
-effective capital gains rate on corporate profits. It does not reproduce that report's published
-band of \result{CRSBandLow} to \result{CRSBandHigh} percent as printed, and should not: the band
-already carries a taxable-share adjustment over domestically held stock. Rescaled to a common base
-it is \result{CRSRescaledLow} to \result{CRSRescaledHigh} percent, and our figure sits inside it.
-We report the correction rather than the original comparison, because as first written our own
-check failed against our own construction.
+Two published figures check the assembly and one limitation runs against our own finding; both are set out in Appendix~\ref{app:detail}. In short, our shareholder layer corroborates the Congressional Research Service's text figure once the two are put on a common base, and foreign holders are treated as bearing no tax at the owner level though dividends to them bear withholding tax, which biases the assembled rate downward by an amount we have not quantified.
 
-Foreign holders are treated as bearing no tax at the owner level, though dividends to them bear
-withholding tax at treaty rates. The effect on the assembled rate is upward and we have not
-quantified it; since our result is that the rate falls short, that is a limitation running against
-our own finding. The debt share is an economy-wide stock ratio, \result{DebtShareLow} to
-\result{DebtShareHigh} percent, standing in for a marginal flow; the evidence in
-Section~\ref{sec:bust} points below that range, and because the debt-financed term is negative, a
-lower debt share would raise the assembled rate.
