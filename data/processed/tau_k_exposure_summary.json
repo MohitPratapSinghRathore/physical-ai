@@ -1,0 +1,27 @@
+{
+  "R": 0.568316,
+  "operative_tau_k_ours": 0.0708,
+  "operative_is_a_rate_on": "the AI SURPLUS, after expensing exempts the normal return and after a share of rents is shifted abroad",
+  "imf_measured_range": [
+    0.2,
+    0.22
+  ],
+  "imf_is_a_rate_on": "all capital income, economy-wide, INCLUDING personal-level taxes on dividends and realised capital gains",
+  "our_sourced_maximum": 0.20351,
+  "required_tau_k_range": [
+    0.110079,
+    0.137276
+  ],
+  "condition_at_operative": "FAILS",
+  "condition_at_imf_measured": "PASSES",
+  "condition_at_our_sourced_maximum": "PASSES",
+  "share_of_AI_surplus_needed_at_0.20": [
+    0.304,
+    0.5145
+  ],
+  "share_of_AI_surplus_needed_at_0.22": [
+    0.2633,
+    0.4455
+  ],
+  "headline": "The fiscal condition is NOT a verdict under current law. It is a function of tau_k with a threshold at 0.110 to 0.137, and the two defensible measurements of tau_k fall on opposite sides of it."
+}

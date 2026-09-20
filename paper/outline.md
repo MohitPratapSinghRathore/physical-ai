@@ -47,9 +47,18 @@ burying it would be worse: the sovereign share is robust to every measurement ca
 0.452. **It is a robust measurement under a stated convention, and the convention does heavy
 lifting.**
 
-**Contribution, stated against the literature and not against a vacuum.** The fiscal
-mechanism is established. What is new is the **liability side**: who holds the claims, and
-what a displacement dose does to them.
+**Contribution, stated exactly and no more.** The fiscal mechanism is established and this
+paper does not claim it. **IMF Note 2026/002 asserts the wage-leg credit mechanism and the
+distributional asymmetry; RAND (Price and Suresh 2026) measures the federal revenue
+exposure.** What this paper adds is five measured things and nothing else:
+
+1. **The measured holder structure.** Who holds each leg, 0.794 and 0.010.
+2. **Household losses from microdata, mapped to the Federal Reserve's own loss rates.**
+3. **Incidence: who bears the loss**, by position in the wage distribution and by holder.
+4. **A replicated fiscal condition with sourced parameters**, independently rebuilt.
+5. **The public claims register**, with every claim's status and replication flag.
+
+That is the whole claim. The paper must not imply more.
 
 ---
 
@@ -62,7 +71,8 @@ Source: `lit/related_work_final.md` and `lit/related_work_labour_backing.md`.
 | work | what it MEASURES | what it only ASSERTS | boundary |
 |---|---|---|---|
 | **Price and Suresh (2026), RAND RR-A4980-1** [full text read] | US federal revenue under AI substitution in the RAND budget model. 84 pct of 2024 revenue from individual or payroll taxes, **about 66 pct directly from labour**. Four scenarios on two axes | Policy options, explicitly "illustrative" and unsized | **No household debt, no mortgages, no bank balance sheets, no financial stability content.** Holds output constant by construction, so it is the analogue of our case A only |
-| **IMF Notes 2026/002** | scenario planning, five-year horizon, two diffusion trajectories | that fiscal frameworks strain and capital taxes should be strengthened | **Boundary NOT redrawn from full text.** Level B. `imf.org` blocks this environment and the owner's copy is not on the machine. Stated as such |
+| **IMF Note 2026/002 (Barhoumi and others)** [full text read] | nothing. It is a workshop synthesis under the Chatham House Rule, with no model and no numbers | **the wage-leg credit mechanism** (job losses weaken household balance sheets, raising default risks in banks exposed to consumer credit), **the AI-leg leverage mechanism**, and **the distributional asymmetry** (displacement costs fall on incumbent workers and borrowers, gains on new entrants and AI-intensive firms) | **Both legs appear in the same paragraph. Kill criterion assessed and NOT triggered**: no holder map, no hedge-failure proposition, no measurement. The closest approach located. It names the data gap this paper fills |
+| **IMF SDN/2024/002 (Brollo and others)** [full text read] | corporate METRs and average tax rates on capital and labour across 74 to 85 economies; **advanced-economy capital ATR 0.20 to 0.22**; measured social-protection effects (Brollo 2024) | that capital income taxation should be strengthened; that a specific AI tax is **not** recommended | **Corroborates our sourced tau_k maximum of 0.20351 and our reading of 26 USC 168(k). AND it opens the capital tax rate exposure of section 5.1.** No household debt, no holders, no AI leg |
 | **Windfall Trust (Ieong and others 2026)** | four-channel fiscal accounting for an average OECD country | | Confirmed from the publisher page: **does not address household debt, mortgages, bank balance sheets or financial stability at all** |
 | **Korinek and Lockwood (2026)**, NBER 34873 | optimal taxation across two stages of AI transformation | | Ours is measurement, not optimal taxation |
 | **Chen (2026)**, arXiv 2603.09209 | macro-financial stress test of rapid AI adoption, eleven predictions, reaching private credit and mortgages | | **The largest overlap, and it is with our second round.** What remains ours: severity against a named supervisory benchmark, loss rates by loan category, decomposition by holder |
@@ -71,8 +81,21 @@ Source: `lit/related_work_final.md` and `lit/related_work_labour_backing.md`.
 | **Casas and Torres (2024)** | general equilibrium, automation shifts the tax base | | Establishes the base shift two years before this project |
 | **Fed DSR and Distributional Financial Accounts** | debt service over ALL income; balance sheets by wealth percentile | | **The closest existing statistic.** No labour decomposition of the servicing cash flow, and no extension beyond households |
 
-**Connected work, named as connected and not as competition:** the IMF note, the Windfall
-Trust report and Korinek and Lockwood establish the framing this paper builds on.
+**Connected work, named as connected and not as competition:** IMF Note 2026/002, the
+Windfall Trust report (which co-designed the IMF scenario exercise) and Korinek and Lockwood
+establish the framing this paper builds on.
+
+**The boundary sentence, to appear in section 2 in exactly this form:**
+
+> IMF Note 2026/002 asserts the wage-leg credit mechanism and the distributional asymmetry.
+> RAND measures the federal revenue exposure. **This paper contributes the measured holder
+> structure, household losses from microdata mapped to the Federal Reserve's loss rates,
+> incidence by who bears the loss, a replicated fiscal condition with sourced parameters, and
+> the public claims register.**
+
+**The kill criterion was assessed against IMF Note 2026/002 and is not triggered**, because it
+carries no holder map, no hedge-failure proposition and no measurement. It is the closest
+approach located and the paper says so.
 
 **Two priority claims already retired, stated in the paper:** the fiscal mechanism (RAND,
 Casas and Torres, Korinek and Lockwood, Windfall, IMF all have it) and the trigger dashboard
@@ -180,15 +203,45 @@ it replaces (claim 168, downgraded):
 
 > The required capital tax rate exceeds the **OPERATIVE** effective rate of 0.0708 under every
 > reading, and does **NOT** exceed the top of the **SOURCED** range of 0.20351 under any
-> reading. **The condition is unclosable under the tax code as it stands, not under every
-> reading of the literature.**
+> reading. **SUPERSEDED IN 5.1: the condition is unclosable under the tax code AS IT APPLIES
+> TO AI CAPITAL SPECIFICALLY. At the measured economy-wide capital rate of 0.20 to 0.22 it
+> closes.**
 
-**5.1 A correction reported against ourselves.** The sealed note attached to this result said
+**5.1 THE CAPITAL TAX RATE EXPOSURE. This is a subsection, not a footnote.**
+Full note: `notes/tau_k_exposure.md`. **Figure 3a: `paper/figures/fig_tau_k_condition.png`.**
+
+**The condition is a function of tau_k with a threshold at 0.110 to 0.137, and the two
+defensible measurements of tau_k fall on opposite sides of it:**
+
+| rate | value | condition |
+|---|---|---|
+| ours, the operative rate on the **AI surplus** | **0.0708** | **FAILS** |
+| our own sourced maximum | 0.20351 | PASSES |
+| IMF SDN/2024/002, measured **economy-wide** capital ATR | **0.20 to 0.22** | **PASSES** |
+
+**The argument for each, in two paragraphs.** Ours is the rate on the AI surplus: 26 USC
+168(k) expensing exempts the normal return so only the rent share of 0.351 bears tax, and 48
+percent of rents are shifted abroad (Torslov, Wier and Zucman). Theirs is economy-wide and
+includes personal-level taxes on dividends and realised capital gains, is an average rather
+than a marginal rate, and covers a capital stock that is mostly neither fully expensed nor
+shiftable.
+
+**The number the disagreement reduces to:** between **26 and 52 percent of the AI surplus**
+would have to bear the economy-wide rate rather than the AI-specific one for the condition to
+close. It does not require raising the statutory rate.
+
+**Therefore every statement of "fails under current law" is withdrawn** and replaced by "fails
+under current law as it applies to AI capital specifically". The condition itself is
+REPLICATED; **the verdict attached to it is PROVISIONAL**, because it rests on a base choice a
+public finance economist may reasonably make differently. **This is the first question for a
+public finance co-author** and is written out as such in the note.
+
+**5.2 A correction reported against ourselves.** The sealed note attached to this result said
 the required rate exceeds the top of the sourced range at every reading. Our own sensitivity
 file says the opposite in all five cells. **The note overstated the finding and is
 corrected.**
 
-**5.2 Independent corroboration.** RAND reaches "roughly doubled" by a macro route; we reach
+**5.3 Independent corroboration.** RAND reaches "roughly doubled" by a macro route; we reach
 1.55 to 1.94 times operative from sourced effective rates.
 
 ---
@@ -378,6 +431,7 @@ Three sentences, and no more:
 |---|---|---|
 | **Figure 1** | The labour backing ratio and the sovereign share of it, 1947 to 2025, two panels | 4.2 |
 | Figure 2 | Replication scoreboard and the six root causes | 3.5 |
+| **Figure 3a** | **The fiscal condition as a function of tau_k, with both rates marked** | **5.1** |
 | Figure 3 | Debt paths, reserve-currency issuer against emerging market | 5 |
 | Figure 4 | Liquid buffers against pay, showing non-monotonicity | 6.1 |
 | Figure 5 | The exposure frontier: share of the wage bill exposed as a function of capability c | 3.2 |

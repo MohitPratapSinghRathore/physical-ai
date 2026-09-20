@@ -184,17 +184,36 @@ def make_figure(T, srcd, R26, V, rws, need):
     ax.scatter([0.10], [rws["rho_2026"] * om_sw], s=70, color="#c00000", zorder=6,
                marker="v", label=f"switcher scenario, R = {rws['rho_2026']*om_sw:.3f}")
 
+    # ---- THE CAPITAL TAX RATE EXPOSURE, added in A105. Both defensible measurements of
+    # tau_k are marked, because the condition FAILS at one and PASSES at the other, so the
+    # verdict is a property of the tax BASE, not of the tax code. See notes/tau_k_exposure.md.
+    OPERATIVE_TAU_K = 0.0708               # ours: marginal, on the AI SURPLUS, after 168(k)
+    IMF_AE_LOW, IMF_AE_HIGH = 0.20, 0.22   # IMF SDN/2024/002 Fig 14, economy-wide capital ATR
+    ax.axvline(OPERATIVE_TAU_K, color="#c00000", lw=2.0, zorder=4)
+    ax.axvspan(IMF_AE_LOW, IMF_AE_HIGH, color="#2e7d32", alpha=0.17, zorder=1)
+    ax.annotate("OURS 0.0708\non the AI surplus\nCONDITION FAILS",
+                xy=(OPERATIVE_TAU_K + 0.004, 0.975), fontsize=7.8,
+                color="#c00000", va="top", ha="left")
+    ax.annotate("IMF measured 0.20 to 0.22\neconomy-wide capital ATR\nCONDITION PASSES",
+                xy=(IMF_AE_LOW + 0.004, 0.975), fontsize=7.8,
+                color="#1b5e20", va="top", ha="left")
+
     ax.set_xlim(0, 0.32); ax.set_ylim(0, 1.0)
     ax.set_xlabel("Effective tax rate on AI surplus, tau_k")
     ax.set_ylabel("Retained wage share, R = rho x omega")
     ax.grid(alpha=0.25, lw=0.6)
-    ax.set_title("The fiscal condition has two levers. Points above a line satisfy it.",
-                 fontsize=11)
+    ax.set_title("The fiscal condition has two levers. Points above a line satisfy it."+
+                 "\nIt FAILS at the rate AI surplus bears and PASSES at the measured "
+                 "economy-wide capital rate.", fontsize=10)
     h, l = ax.get_legend_handles_labels()
     h += [Line2D([], [], color="#c8dcc8", lw=10),
           Line2D([], [], color="#e8f0e8", lw=10)]
+    h += [Line2D([], [], color="#c00000", lw=2),
+          Line2D([], [], color="#2e7d32", lw=10, alpha=0.5)]
     l += ["tau_k, sourced rent share (Barkai 0.351)",
-          "tau_k, incl. scenario rent shares"]
+          "tau_k, incl. scenario rent shares",
+          "OURS 0.0708, marginal on AI surplus",
+          "IMF 0.20 to 0.22, economy-wide capital ATR"]
     ax.legend(h, l, frameon=False, fontsize=8.2, loc="upper right")
     fig.tight_layout()
     d = ROOT / "paper" / "figures"

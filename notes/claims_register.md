@@ -576,3 +576,38 @@ two documents the owner placed.
 **CBO (2024) was not placed** and `cbo.gov` returns HTTP 403 on every route from this
 environment. It stays in `lit/unverified.md`, stays out of `references.bib`, and no claim
 depends on it. It is now the only item in that file.
+
+---
+
+## Status and finish pass, 2026-09-20 (A105). The capital tax rate exposure moved into the main text.
+
+No new estimation. One existing result is re-presented as a function rather than a verdict,
+and the novelty statement is narrowed to its final form.
+
+| # | Claim | Amendment |
+|---|---|---|
+| **168** | The capital tax verdict | **REWRITTEN AS A FUNCTION OF tau_k, AND EVERY "FAILS UNDER CURRENT LAW" STATEMENT IS WITHDRAWN.** The condition has a threshold at **0.110 to 0.137**. It **FAILS at 0.0708**, the operative rate on the AI surplus, and **PASSES at 0.20 to 0.22**, the IMF's measured economy-wide average tax rate on capital income (SDN/2024/002). Both rates are correctly computed on different bases: ours is marginal on AI surplus, with 26 USC 168(k) expensing exempting the normal return so only the 0.351 rent share is taxed and 48 percent of rents shifted abroad; theirs is an economy-wide average including personal-level taxes on dividends and realised gains, over a capital stock that is mostly neither fully expensed nor shiftable. **Closing the condition requires 26 to 52 percent of the AI surplus to bear the economy-wide rate rather than the AI-specific one.** The threshold is **[M]**, the boolean is **[R]**, **the verdict is PROVISIONAL** because it rests on a base choice. Full note `notes/tau_k_exposure.md`, figure `paper/figures/fig_tau_k_condition.png`, code `src/tau_k_exposure.py` |
+| new 202 | The surviving form of the capital tax statement | **NEW, standing.** "The fiscal condition is unclosable under the tax code **as it applies to AI capital specifically**." The unqualified form is withdrawn wherever it appeared: `paper/outline.md`, `src/seal.py`, the claims summary and the thesis sentence all carry the qualified form and the superseded form is marked in place |
+| new 203 | Instrument row 1 is re-specified | **NEW, standing.** The tax instrument is **not** a statutory rate rise and **not** an AI-specific tax, which IMF SDN/2024/002 explicitly does not recommend. It is **narrowing the base difference**: limit expensing on labour-displacing assets, capture shifted rents, or tax the distribution rather than the entity, with a stated target of 26 to 52 percent of the AI surplus at the economy-wide rate |
+| 85, and the novelty statement | What this paper claims | **NARROWED TO FINAL FORM, and the introduction and related-work sections now say exactly this and no more.** IMF Note 2026/002 **asserts** the wage-leg credit mechanism and the distributional asymmetry; RAND **measures** the federal revenue exposure. **Our contribution is: the measured holder structure; household losses from microdata mapped to the Federal Reserve's loss rates; incidence by who bears the loss; a replicated fiscal condition with sourced parameters; and the public claims register.** Five things, nothing more |
+
+### The first question for a public finance co-author, recorded
+
+> Is 0.0708 the right rate for this condition, or is it the wrong base? Sub-questions: is the
+> marginal-on-AI-surplus base right for a revenue replacement question, or should it be the
+> average actually collected on capital income; is the 48 percent haven share right for AI
+> rents, which are unusually intangible and therefore if anything more shiftable, which would
+> argue our rate is too high; and is the 26 to 52 percent mixture share a policy-relevant
+> target, and what instrument moves it.
+
+**This is the single largest open question in the paper's fiscal half.**
+
+### Deliverables, all DONE
+
+| item | deliverable | path |
+|---|---|---|
+| 7 | paper outline | `paper/outline.md` |
+| 8 | one-page claims summary for a co-author | `notes/CLAIMS_SUMMARY_one_page.md` |
+| 10 | labour backing placement, ratio 0.270 with full sensitivity, as scaffold; B5 delivered, B6 future work | `notes/item10_labour_backing_placement.md` |
+| 11 | architecture, parts (a) to (h) | `framework/architecture.md` |
+| new | the capital tax rate exposure | `notes/tau_k_exposure.md`, `src/tau_k_exposure.py`, `paper/figures/fig_tau_k_condition.png` |

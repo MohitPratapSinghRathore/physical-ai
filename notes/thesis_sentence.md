@@ -14,7 +14,10 @@ OWNER APPROVAL.** Four changes, each marked in place below:
    8 to 10 points higher. See `notes/item3b_gse_classification.md`.
 3. **The inside-the-data boundary is stated in the sentence itself.** At a 50 percent dose no
    exposure type has a reemployment-rate point estimate, so everything there is a band.
-4. **The priority claim on the fiscal mechanism is gone from the wording.** RAND, the IMF
+4. **The capital tax verdict is now conditional on the rate, not on "current law".** The
+   condition fails at our operative rate and passes at the IMF's measured rate; both are
+   correctly computed on different bases. See `notes/tau_k_exposure.md`.
+5. **The priority claim on the fiscal mechanism is gone from the wording.** RAND, the IMF
    (both the 2024 SDN and the 2026 Note), the Windfall Trust, Korinek and Lockwood, and Casas
    and Torres all have it. What is ours is the measured liability side.
 
@@ -29,9 +32,11 @@ OWNER APPROVAL.** Four changes, each marked in place below:
 > reading. The banking system is the second-round absorber, reached through consumer spending,
 > house prices and business credit rather than through displaced borrowers defaulting on their
 > own loans: roughly **nine tenths** of bank losses at large displacement arrive by that route.
-> Whether the fiscal absorber holds turns on the effective tax rate on AI capital, and **at the
-> operative effective rate of 0.0708 it does not hold at any dose**, though the required rate
-> of 0.110 to 0.137 stays inside the range of effective rates the literature has observed.
+> Whether the fiscal absorber holds turns on **which capital tax rate applies**: the condition
+> has a threshold at **0.110 to 0.137**, it fails at the **0.0708** that AI surplus actually
+> bears after expensing and profit shifting, and it passes at the **0.20 to 0.22** measured
+> economy-wide on capital income. **Closing it needs between a quarter and a half of the AI
+> surplus taxed at the economy-wide rate rather than the AI-specific one.**
 > Beyond a displacement dose of about **46 percent for the embodied group this data cannot say
 > what happens**, because the reemployment rate has no admissible estimate there, and that
 > boundary is itself a finding.

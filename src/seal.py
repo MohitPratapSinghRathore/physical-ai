@@ -117,9 +117,13 @@ def main():
                                          "OPERATIVE effective rate of 0.0708 under every "
                                          "reading of tau_l, and does NOT exceed the top of "
                                          "the sourced range of 0.20351 under any reading. "
-                                         "The condition is unclosable under the tax code "
-                                         "as it stands, not under every reading of the "
-                                         "literature."},
+                                         "The condition is unclosable under the tax "
+                                         "code AS IT APPLIES TO AI CAPITAL "
+                                         "SPECIFICALLY. It CLOSES at the measured "
+                                         "economy-wide capital rate of 0.20 to 0.22 "
+                                         "(IMF SDN/2024/002). See notes/tau_k_exposure.md: "
+                                         "the condition is a function of tau_k with a "
+                                         "threshold at 0.110 to 0.137, not a verdict."},
         },
         "fiscal_magnitudes": {
             "terminal_year_loss_bn_at_10pct": v(

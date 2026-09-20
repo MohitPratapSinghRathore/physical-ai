@@ -1,0 +1,7 @@
+higher_rate,tau_high,required,required_tau_k,share_of_AI_surplus_at_higher_rate
+"IMF advanced economy low, 0.20",0.2,required low,0.110079,0.304
+"IMF advanced economy low, 0.20",0.2,required high,0.137276,0.5145
+"IMF advanced economy high, 0.22",0.22,required low,0.110079,0.2633
+"IMF advanced economy high, 0.22",0.22,required high,0.137276,0.4455
+"our own sourced maximum, 0.20351",0.20351,required low,0.110079,0.296
+"our own sourced maximum, 0.20351",0.20351,required high,0.137276,0.5009

@@ -94,7 +94,7 @@ not, the row says what would make it computable rather than guessing.
 
 | # | Measured mechanism, claim | Institution that must act | Instrument | Type | Verified precedent | Trigger indicator, current value | Binds in | Gap closure or loss removed |
 |---|---|---|---|---|---|---|---|---|
-| 1 | The fiscal condition fails at the operative capital tax rate: required 0.110 to 0.137 against operative 0.0708 **[M]**, with R = 0.568316 **[R]** | Tax authority (Congress, Treasury, IRS) | Raise the effective tax rate on capital and AI surplus toward the top of observed effective rates | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Effective rate on AI surplus **0.0708** against a threshold of **0.1101**. **BELOW THRESHOLD** | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
+| 1 | The fiscal condition fails at the operative capital tax rate: required 0.110 to 0.137 against operative 0.0708 **[M]**, with R = 0.568316 **[R]** | Tax authority (Congress, Treasury, IRS) | Narrow the gap between the AI-specific and economy-wide capital rates: limit expensing on labour-displacing assets, capture shifted rents, or tax the distribution rather than the entity. **Target: 26 to 52 pct of the AI surplus at the economy-wide rate.** NOT a statutory rate rise, and NOT an AI-specific tax | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Effective rate on AI surplus **0.0708** against a threshold of **0.1101**. **BELOW THRESHOLD** | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
 | 2 | 55.2 pct of labour-backed claims are federal obligations and the share rose from 0.336 in 1970 to 0.794 in 2025 **[M]** | Treasury, and the fiscal authority setting the debt path | Pre-fund or term out the labour-linked obligation stock while the labour tax base is intact | stock | Norway's Government Pension Fund Global, established by the Government Pension Fund Act, is a sovereign pre-funding vehicle against a resource-linked revenue base | Debt to GDP at start **1.214** **[R]**; 20-year emerging-market baseline **376.7 pct** **[R]** | all regimes; the only instrument that acts BEFORE the dose | Not a gap closure. It buys time on the obligor leg, which is 55.2 pct of the wage leg |
 | 3 | The state holds 0.010 of the AI leg **[S]** against 0.794 of the wage leg **[M]** | Treasury, or a statutory fund | Direct equity or revenue claim on AI capital: sovereign fund, golden share, or a public stake taken in exchange for public inputs | ownership | Norway GPFG; the US Treasury's 2008 to 2010 TARP equity stakes under the Emergency Economic Stabilization Act | Debt-financed share of AI capex **0.0654**; self-funding ratio **1.3426**, four of nine filers below 1.0 | larger, sudden and near-total displacement; **unnecessary inside the data** | **Directly measurable: see the table in section 1.** 0.10 of the AI leg closes 11.5 pct of the gap |
 | 4 | Trust funds are payroll-funded: OASDI payroll share 0.9126, HI 0.8720; OASI depletes 2032Q4, HI 2033Q2, combined OASDI 2034Q3 **[M]** | Social insurance system (SSA, CMS, Congress) | Broaden the contribution base beyond covered wages, or convert to a general-revenue claim; and raise UI generosity and duration, which has a MEASURED effect on automation wage losses | flow | Medicare's Net Investment Income Tax, 26 USC 1411, funds Part A adjacent spending from a non-wage base. **MEASURED EFFECT, Brollo (2024), IMF WP 2024/095: US states with more generous UI saw a wage decline from robotisation about TWO-THIRDS SMALLER, concentrated among workers without a college degree; one robot per thousand workers raised poverty 0.3pp, mostly attenuated where social assistance was more generous. US maximum UI duration of 26 weeks is on the low side of the OECD** | Combined OASDI depletion **2034 Q3**, 83 pct of scheduled benefits payable at depletion | all regimes; binds SOONEST, because depletion arrives before any AI dose does | Removes the trust fund component of the fiscal loss, **4.07 pct of OASDI payroll income at the 10 pct dose** |
@@ -151,6 +151,29 @@ and 0.8720. A dollar of capital-tax-funded transfer income generates no OASDI or
 contribution. **Rows 1 and 4 are therefore not substitutes.** Any package that funds
 replacement income from capital and expects the trust funds to recover has a hole in it the
 size of the payroll share.
+
+**[THE CAPITAL TAX RATE EXPOSURE. Full note: `notes/tau_k_exposure.md`. Figure:
+`paper/figures/fig_tau_k_condition.png`.]** Row 1 of the instrument table is conditional on a
+rate that is itself contested, and the architecture must say so before it recommends anything.
+
+**The condition is a function of tau_k with a threshold at 0.110 to 0.137, and the two
+defensible measurements fall on opposite sides:** ours, the operative rate on the **AI
+surplus**, is **0.0708** and the condition **fails**; the IMF's measured **economy-wide**
+average tax rate on capital income is **0.20 to 0.22** and the condition **passes**. Ours is
+lower because 26 USC 168(k) expensing exempts the normal return, leaving only the 0.351 rent
+share taxed, and because 48 percent of rents are shifted abroad. Theirs is higher because it
+is an average rather than a marginal rate, includes personal-level taxes on dividends and
+gains, and covers a capital stock that is mostly neither fully expensed nor shiftable.
+
+**What this does to row 1.** The instrument is not "raise the statutory rate". It is
+**narrow the base difference**: between **26 and 52 percent of the AI surplus** would have to
+bear the economy-wide rate rather than the AI-specific one for the condition to close. That is
+achieved by narrowing expensing, capturing shifted rents, or taxing the distribution rather
+than the entity. **Row 1 is re-specified accordingly and its trigger is unchanged.**
+
+**Status.** The threshold is **[M]**; the condition boolean is **[R]**; **the verdict attached
+to it is PROVISIONAL**, because it rests on a base choice a public finance economist may
+reasonably make differently. It is the first question for a public finance co-author.
 
 **[IMF SDN/2024/002, read in full this session] Two things the literature now settles, and
 one vulnerability it opens in our own number.**

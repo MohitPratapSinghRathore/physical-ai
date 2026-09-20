@@ -27,6 +27,13 @@ the one that pays if it does. **It is not hedged.**
 It is **not** robust to the one-step accounting rule, which moves it to **0.452**. It is a
 robust measurement under a stated convention, and the convention does heavy lifting.
 
+**What this paper claims, exactly and no more.** The fiscal mechanism is established
+literature and we do not claim it. **IMF Note 2026/002 asserts the wage-leg credit mechanism
+and the distributional asymmetry; RAND measures the federal revenue exposure.** Our
+contribution is five measured things: **the measured holder structure; household losses from
+microdata mapped to the Federal Reserve's loss rates; incidence by who bears the loss; a
+replicated fiscal condition with sourced parameters; and the public claims register.**
+
 ---
 
 ## Six supporting results
@@ -34,7 +41,7 @@ robust measurement under a stated convention, and the convention does heavy lift
 | # | Result | Status |
 |---|---|---|
 | 1 | **The sovereign share nearly doubles while the ratio stays flat.** Sovereign union share rises from **0.336 in 1970 to 0.794 in 2025**; the direct labour backing ratio moves between 0.267 and 0.376 with no trend. The quantity of wage-backed claims has barely changed; **who holds them has changed completely** | **[M]** |
-| 2 | **The fiscal condition fails, and fails for a stated reason.** Retained wage share **R = 0.568316**; the required capital tax rate of **0.110 to 0.137** exceeds the operative effective rate of **0.0708** under every reading and does **not** exceed the sourced top of **0.20351**. **Unclosable under the tax code as it stands, not under every reading of the literature** | **[R]** on R, tau_k and the verdict |
+| 2 | **The fiscal condition is a FUNCTION of the capital tax rate, with a threshold at 0.110 to 0.137.** Retained wage share **R = 0.568316**. It **fails at 0.0708**, the operative rate on the AI surplus after 168(k) expensing and profit shifting, and **passes at 0.20 to 0.22**, the IMF's measured economy-wide capital rate. **Closing it needs 26 to 52 percent of the AI surplus taxed at the economy-wide rate.** The old claim that it is "unclosable under the tax code as it stands" is WITHDRAWN and replaced by "as the code applies to AI capital specifically" | **[R]** on R and the boolean; **PROVISIONAL** on the verdict, which depends on the tax base chosen |
 | 3 | **The federal government bears roughly four fifths of first-round losses, and the share depends on the dose.** Narrow reading: **0.785 to 0.870 at a 10 percent dose**, rising to 0.855 to 0.925 at 50 percent, then falling back at 75 percent. Conservatorship reading is 8 to 10 points higher | **[M]**; the independent rebuild's 0.78 rising to 0.90 sits inside our range at both ends |
 | 4 | **The housing agencies absorb a wage shock without reaching the Treasury.** Rebuilt from the 2025 Form 10-Ks: **39 to 53 percent of each single-family book carries no credit enhancement**; private cover transfers only **11 to 15 percent** of an agency loss at small doses; **zero Treasury draw at every dose from 5 to 75 percent** (179.4bn of capital against a maximum retained first-round loss of 109.0bn). **First round only, house prices fixed** | **[M]** |
 | 5 | **The second round is nine tenths of the bank channel.** The demand event is **0.740741** of the first round, factorising exactly 20/27; second-round bank losses span a factor of nine, **173bn to 1,565bn** | **[R]** on the share; **[S]** on the levels |
@@ -84,6 +91,7 @@ be "roughly doubled"; we get **1.55 to 1.94 times** the operative rate. Neither 
 | **The hedge ratio at the operative tax rate, 0.36** | Its input, `surplus`, is undefined in our own brief |
 | **The two cognitive index scores by occupation** | Eleven mismatches running in opposite directions on the two indices. The wage machinery passes its controls; the index scores are unsettled |
 | **"29.7 percent of GSE net worth"** | It was a gross loss struck before any risk transfer. Replaced by a retained loss of 11.9 to 29.2 percent at the same dose |
+| **"The fiscal condition fails under current law"** | **WITHDRAWN this pass.** It fails under current law *as it applies to AI capital specifically*, at 0.0708. At the IMF's measured economy-wide capital rate of 0.20 to 0.22 it passes. The condition is a function of tau_k, not a verdict |
 | **"No reading of the corporate tax literature makes the break-even rate available"** | False. It is inside the sourced range in 10 of 15 cells. Narrowed to a statement about the operative rate |
 | **"Occupational diversification does not hedge a mortgage book"** | Overreach. A flat distribution does not stop an individual lender selecting low-exposure borrowers |
 | **Priority on the fiscal mechanism** | RAND, Casas and Torres, Korinek and Lockwood, Windfall and the IMF all have it. **We did not discover it and must not imply that we did** |
@@ -119,6 +127,16 @@ The pipeline rebuilds from raw data in one command. Two replication rounds are c
 127 scored quantities. The plausibility audit runs 53 checks with 4 violations, all
 deliberately retained superseded rows. The claims register carries every claim with its status
 and a separate replication flag. **The measurement is done; the manuscript is not written.**
+
+**THE FIRST QUESTION FOR A PUBLIC FINANCE CO-AUTHOR.** Is 0.0708 the right rate for this
+condition, or is it the wrong base? We compute the effective rate on the marginal dollar of US
+AI surplus as 0.0708 (21 percent statutory, normal return exempted by 168(k) expensing at a
+rent share of 0.351, 48 percent of rents shifted offshore). IMF SDN/2024/002 measures an
+economy-wide capital ATR of 0.20 to 0.22 including personal-level taxes on dividends and
+gains. Required is 0.110 to 0.137, so the condition fails on ours and passes on theirs. Is the
+marginal-on-AI-surplus base right for a revenue replacement question? Is the 48 percent haven
+share right for AI rents, which are unusually intangible and so if anything more shiftable?
+Full statement in `notes/tau_k_exposure.md`.
 
 **The single most useful thing a co-author could do**: run a systematic PRISMA search on the
 labour backing question (limitation 3), and define the two objects the replicator could not
