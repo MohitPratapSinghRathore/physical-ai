@@ -766,10 +766,18 @@ verdict that is falsifiable. The verdict rests on two measured facts rather than
 assumptions: only 27 percent of US corporate equity is held in taxable accounts, and 47
 percent of capital gains are never taxed because of step-up at death.
 
-**The check that decided we had it right.** Our shareholder layer at the sourced centrals is
-0.0386. CRS R47113 Table 5 publishes 0.045 to 0.085 for the same construction and its text
-says "around 3 percent". The blind sweep could neither have passed nor failed that test,
-which is the argument for sourcing over sweeping in general.
+**The check that decided we had it right. CORRECTED A118 after round-three replication, and
+the original form of it was wrong.** Our shareholder layer at the sourced centrals is 0.0386,
+and CRS R47113's text says the overall effective capital gains tax rate on corporate profits
+is "around 3 percent", i.e. 0.0315. **That half is a direct corroboration and it stands.**
+CRS Table 5's published 0.045 to 0.085 is **not** the same construction: that row has already
+had CRS's own taxable-share adjustment applied at an implied 25/(25+30) = 0.4545 over
+**domestically held** stock, while our theta of 0.24 to 0.28 is the same Rosenthal numerator
+over **all** equity outstanding, foreign included. Rescaled by theta/0.4545 the band is 0.0267
+to 0.0505 and 0.0386 sits inside it; as printed, our layer cannot reach 0.085 anywhere in the
+swept space, so **our own check B6.2 failed against our own construction** until it was
+rewritten. The argument for sourcing over sweeping survives — the blind sweep could neither
+have passed nor failed either test — but the test had to be put on one base first.
 
 **A trap in the variance decomposition, stated so nobody falls in it.** The
 taxable-shareholder share now carries 0.007 of the variance, down from 0.356. That is because
@@ -805,14 +813,31 @@ this range is -0.0667 to -0.0347. CBO Table 2 measures the effective marginal ra
 C-corporation debt-financed investment at -0.06, inside that interval. AMR predicted the
 sign, CBO measured the magnitude, and the assembly reproduces both from components.
 
-**Result.** Barkai 0.0864, Karabarbounis-Neiman 0.0150, against a required 0.110 to 0.137.
-The condition passes in under 1 percent of the remaining space against the easier labour
-reading and nowhere against the harder: the assembled maximum, 0.1240, is below 0.1373. In
-A113 four parameters could cross a threshold alone, in A115 one, in A116 none.
+**Result. AMENDED A118 after round-three replication; the level barely moves and the
+robustness statement does.** Barkai **0.0851** (0.0864 through A117, on the shifted share's
+range midpoint 0.45 instead of the sourced 0.48 that B3 always stated),
+Karabarbounis-Neiman 0.0150, against a required 0.110 to 0.137. The condition passes in
+**0.13 percent** of the remaining space against the easier labour reading and nowhere against
+the harder: the **analytic** maximum over all 128 corners of the box is **0.1236**, below
+0.1373. In A113 four parameters could cross a threshold alone, in A115 one, in A116 and
+A118 none.
 
-**Tradeoff accepted.** We publish a verdict that is now hard to escape by parameter choice,
-which means it is also easy to attack on the base. That is the right place for the argument
-to sit, and base_argument.md states the case against us.
+**AND THE "NOWHERE" HALF IS CONDITIONAL ON THE BASE OF THETA. This weakens the thesis and is
+stated first wherever the claim appears.** Our theta of 0.24 to 0.28 is equity in taxable
+accounts over ALL US equity outstanding. CRS R47113 Table 5 uses the same Rosenthal numerator
+over domestically held stock only, an implied 25/(25+30) = 0.4545, dropping the roughly
+45 percent foreign slice from the base. At 0.4545 the Barkai central is **0.1024**, the pass
+share against the easier reading is **0.2832**, and the analytic maximum is **0.1506**, which
+**clears** the harder threshold. The centre still fails under both rent readings and the
+condition still fails everywhere under Karabarbounis and Neiman, but "no corner of the space
+closes it" is a statement about our base and must carry it. Marked sensitivity in
+`framework/tau_k/tau_k_crs_theta_sensitivity.csv`, limitation L14.
+
+**Tradeoff accepted.** We publish a verdict that is hard to escape by parameter choice, which
+means it is also easy to attack on the base. Round three found exactly that, in the one place
+the base enters twice — theta's denominator, which decides both the level and how robust the
+level is. That is the right place for the argument to sit, and base_argument.md states the
+case against us.
 
 **An A115 error found and fixed.** The lever table I reported as added to
 framework/architecture.md in A115 was never inserted: the anchor string I matched on did not
