@@ -44,6 +44,8 @@ def main():
     rep = {r["round"]: r for r in rows("data/release/replication_rounds.csv")}
     fis = load("data/processed/fiscal_channel_summary.json")
     plaus = load("data/processed/verify/plausibility_audit.json")
+    pub = load("framework/tau_k/published_shares.json")
+    bh = load("framework/tau_k/z1_bond_holders.json")
 
     sov = lb["sovereign_exposure"]
     req = rsen["ours_observed_rho_and_our_omega"]["required_tau_k"]
@@ -143,10 +145,53 @@ def main():
     R["ThetaTaxable"] = pct(src["theta_taxable"]["central"])
     R["ThetaUntaxable"] = pct(1 - float(src["theta_taxable"]["central"]))
     R["DeferralCentral"] = f"{src['deferral_factor']['central']:.3f}"
-    R["GainsUntaxedAtDeath"] = "46.9"
-    R["InterestSheltered"] = "32.8"
-    R["BondsRestOfWorld"] = "28.7"
-    R["BondsHouseholdDirect"] = "1.1"
+    R["GainsUntaxedAtDeath"] = pct(pub["gains_never_taxed_at_death"]["value"], 1)
+    R["InterestSheltered"] = pct(pub["corporate_interest_nontaxable_share"]["value"], 1)
+    R["TaxableHolderInterestRate"] = pct(
+        pub["taxable_holder_marginal_interest_rate"]["value"], 1)
+    R["CBOFullyTaxableEquity"] = pct(pub["cbo_fully_taxable_equity_share_2007"]["value"], 1)
+    R["CBODebtFinancedETR"] = pct(
+        abs(pub["cbo_debt_financed_effective_rate"]["value"]), 0)
+    R["BondsRestOfWorld"] = pct(bh["rest_of_world"]["share"], 1)
+    R["BondsHouseholdDirect"] = pct(bh["households_and_nonprofits"]["share"], 1)
+
+    # ---- the fiscal condition, the map and the two bases
+    crs = tk["shareholder_layer_checks"]
+    ours_bk = [r for r in tk["assembled_SOURCED"] if r["rent_reading"] == "Barkai"][0]
+    crs_bk = [r for r in tk["MARKED_SENSITIVITY_at_CRS_implied_theta"]
+              if r["rent_reading"] == "Barkai"][0]
+    crs_kn = [r for r in tk["MARKED_SENSITIVITY_at_CRS_implied_theta"]
+              if r["rent_reading"] == "Karabarbounis_Neiman_case_R"][0]
+    R["RequiredEasy"] = pct(req["AMR_0.255"], 1)
+    R["RequiredHard"] = pct(req["bottom_up_0.318"], 1)
+    R["TauKAnalyticMax"] = pct(ours_bk["tau_k_max_ANALYTIC"], 1)
+    R["CRSTheta"] = pct(crs["CRS_implied_taxable_share"], 1)
+    R["TauKCRSCentral"] = pct(crs_bk["tau_k_central"], 1)
+    R["TauKCRSPassShare"] = pct(crs_bk["pass_share_vs_required_low"], 0)
+    R["TauKCRSAnalyticMax"] = pct(crs_bk["tau_k_max_ANALYTIC"], 1)
+    R["TauKCRSKN"] = pct(crs_kn["tau_k_central"], 1)
+    R["CRSTextFigure"] = pct(crs["CRS_text_figure_around_3_percent"], 1)
+    R["CRSBandLow"] = pct(crs["CRS_R47113_Table_5_band_as_published"][0], 1)
+    R["CRSBandHigh"] = pct(crs["CRS_R47113_Table_5_band_as_published"][1], 1)
+    R["CRSRescaledLow"] = pct(crs["band_rescaled_to_our_theta"][0], 1)
+    R["CRSRescaledHigh"] = pct(crs["band_rescaled_to_our_theta"][1], 1)
+    R["ShareholderLayerPct"] = pct(tk["shareholder_layer_at_centrals"], 1)
+
+    # ---- the levers, ranked by measured influence on the assembled rate
+    movers = {m["parameter"]: m for m in tk["single_parameter_movers"]}
+    for key, name in (("deferral_factor", "Deferral"), ("state_cit_effective", "StateCIT"),
+                      ("shifted_share", "Shifted"), ("shareholder_rate", "ShareholderRate"),
+                      ("debt_share", "DebtShare"), ("bondholder_rate", "BondRate"),
+                      ("theta_taxable", "Theta")):
+        R["Swing" + name] = f"{movers[key]['swing']:.4f}"
+    R["DebtShareLow"] = pct(src["debt_share"]["low"], 1)
+    R["DebtShareHigh"] = pct(src["debt_share"]["high"], 1)
+    R["BondRateLow"] = pct(src["bondholder_rate"]["low"], 1)
+    R["BondRateHigh"] = pct(src["bondholder_rate"]["high"], 1)
+    R["DeferralLow"] = f"{src['deferral_factor']['low']:.3f}"
+    R["DeferralHigh"] = f"{src['deferral_factor']['high']:.3f}"
+    R["ThetaTaxableLow"] = pct(src["theta_taxable"]["low"])
+    R["ThetaTaxableHigh"] = pct(src["theta_taxable"]["high"])
 
     # ---- statutory
     R["FedCIT"] = pct(comp["verified"]["federal_cit"])

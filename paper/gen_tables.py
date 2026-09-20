@@ -177,6 +177,52 @@ def tab_under_reporting():
     write("tab_under_reporting.tex", "\n".join(lines))
 
 
+def tab_tau_k():
+    tk = load("framework/tau_k/tau_k_assembled.json")
+    req = tk["required_tau_k"]
+    name = {"Barkai": "First rent reading", "Karabarbounis_Neiman_case_R": "Second rent reading"}
+    lines = [r"\begin{tabular}{llrrrr}", r"\toprule",
+             r"Base for the taxable holder share & Rent reading & Central & Fifth to "
+             r"ninety-fifth & Analytic maximum & Share of the space that closes \\",
+             r"\midrule"]
+    for row, cen in zip(tk["assembled_SOURCED"], tk["assembled_CENTRAL_at_sourced_centrals"]):
+        lines.append(
+            f"All equity outstanding & {name[row['rent_reading']]} & "
+            f"{cen['tau_k_central']:.4f} & {row['tau_k_p05']:.4f} to {row['tau_k_p95']:.4f} & "
+            f"{row['tau_k_max_ANALYTIC']:.4f} & {row['pass_share_vs_required_low']:.4f} \\\\")
+    for row in tk["MARKED_SENSITIVITY_at_CRS_implied_theta"]:
+        lines.append(
+            f"Domestically held stock & {name[row['rent_reading']]} & "
+            f"{row['tau_k_central']:.4f} & {row['tau_k_p05']:.4f} to {row['tau_k_p95']:.4f} & "
+            f"{row['tau_k_max_ANALYTIC']:.4f} & {row['pass_share_vs_required_low']:.4f} \\\\")
+    lines += [r"\midrule",
+              f"Required, easier labor tax reading & & {req['by_labour_reading']['AMR_0.255']:.4f}"
+              r" & & & \\",
+              "Required, harder labor tax reading & & "
+              f"{req['by_labour_reading']['bottom_up_0.318']:.4f}" + r" & & & \\",
+              r"\bottomrule", r"\end{tabular}"]
+    write("tab_tau_k.tex", "\n".join(lines))
+
+
+def tab_levers():
+    tk = load("framework/tau_k/tau_k_assembled.json")
+    label = {"deferral_factor": "Deferral and step-up at death",
+             "state_cit_effective": "State corporate income tax",
+             "shifted_share": "Profit shifting",
+             "shareholder_rate": "Shareholder-level statutory rate",
+             "debt_share": "Debt share of AI capital",
+             "bondholder_rate": "Effective rate on bondholders",
+             "theta_taxable": "Share of equity in taxable accounts"}
+    movers = sorted(tk["single_parameter_movers"], key=lambda m: -m["swing"])
+    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
+             r"Lever & Rate at the low end & Rate at the high end & Swing \\", r"\midrule"]
+    for m in movers:
+        lines.append(f"{label[m['parameter']]} & {m['tau_k_at_range_low']:.4f} & "
+                     f"{m['tau_k_at_range_high']:.4f} & {m['swing']:.4f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_levers.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -185,3 +231,5 @@ if __name__ == "__main__":
     tab_structural()
     tab_quintile()
     tab_under_reporting()
+    tab_tau_k()
+    tab_levers()
