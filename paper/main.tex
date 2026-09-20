@@ -158,12 +158,7 @@ opposite direction, if AI disappoints; RO5 prices that case in Section~\ref{sec:
 
 \input{sections/sec8_bust.tex}
 
-\section{Institutions, by regime}
-\label{sec:institutions}
-
-% TO DRAFT. The minimum sufficient set of instruments at each regime: moderate, large, sudden
-% and near-total displacement, and an AI bust. The cost of ownership stakes. What the evidence
-% does not support, said outright. Full twelve-row table to the appendix.
+\input{sections/sec9_institutions.tex}
 
 \section{Implications for individuals, organisations, and society}
 \label{sec:implications}
@@ -205,6 +200,25 @@ generative AI tool to assist with language editing and refinement of the text. T
 reviewed and edited all output and take full responsibility for the content of the paper.
 Generative AI was not used to generate or analyse the study's data, which were produced entirely
 by the measurement pipeline described in the paper.
+
+\appendix
+
+\section{The instrument table}
+\label{app:instruments}
+
+Table~\ref{tab:instruments} gives one row for each of the twelve instruments discussed in
+Section~\ref{sec:institutions}: the institution that must act, the instrument itself, its type,
+and the regime in which it binds. The table is generated from the released architecture file, and
+that file carries the measured mechanism, the verified precedent and the trigger with its current
+value for every row.
+
+\begin{table}[htbp]
+\centering\small
+\caption{The twelve instruments, the institution that must act, and the regime in which each
+binds.}
+\label{tab:instruments}
+\input{tables/tab_instruments.tex}
+\end{table}
 
 \bibliographystyle{apalike}
 \bibliography{references}

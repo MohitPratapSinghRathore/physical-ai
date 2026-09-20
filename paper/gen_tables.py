@@ -387,6 +387,25 @@ def tab_tiers():
     write("tab_ai_tiers.tex", "\n".join(lines))
 
 
+def _clean(s, limit=None):
+    s = s.replace("**", "").replace("&", "and").replace("_", " ")
+    s = s.split(";")[0].split(",")[0] if limit == "short" else s
+    return s
+
+
+def tab_instruments():
+    rs = rows("data/release/architecture/instruments.csv")
+    lines = [r"\begin{tabular}{p{0.4cm}p{3.2cm}p{4.4cm}p{1.5cm}p{3.6cm}}", r"\toprule",
+             r"\# & Institution that must act & Instrument & Type & Binds in \\",
+             r"\midrule"]
+    for r in rs:
+        lines.append(" & ".join([
+            r["n"], _clean(r["institution"]), _clean(r["instrument"])[:170],
+            _clean(r["type"]), _clean(r["binds_in"])[:90]]) + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_instruments.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -405,3 +424,4 @@ if __name__ == "__main__":
     tab_relief()
     tab_payoff()
     tab_tiers()
+    tab_instruments()
