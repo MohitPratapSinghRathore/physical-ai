@@ -348,6 +348,45 @@ def tab_relief():
     write("tab_relief.tex", "\n".join(lines))
 
 
+HOLDER_NAME = {"federal_government": "Federal government", "banks": "Banks",
+               "rest_of_world": "Rest of the world", "other_financial": "Other financial",
+               "households": "Households", "state_local_government": "State and local",
+               "insurers": "Insurers", "pensions": "Pension funds",
+               "nonfinancial_business": "Nonfinancial business",
+               "residual_unallocated": "Unallocated remainder"}
+
+
+def tab_payoff():
+    rs = rows("data/release/ai_bust/b4_payoff_by_holder.csv")
+    lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
+             r"Holder & Wage side & AI side & AI fails & Partial & AI succeeds \\",
+             r"\midrule"]
+    for r in rs:
+        lines.append(f"{HOLDER_NAME[r['holder']]} & {float(r['wage_leg_share']):.4f} & "
+                     f"{float(r['ai_leg_share']):.4f} & {float(r['net_ai_fails']):+.4f} & "
+                     f"{float(r['net_partial']):+.4f} & {float(r['net_success']):+.4f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_payoff.tex", "\n".join(lines))
+
+
+def tab_tiers():
+    tiers = load("data/release/ai_bust/b1_tiers.json")["tiers"]
+    lines = [r"\begin{tabular}{p{2.1cm}p{6.3cm}rp{3.1cm}}", r"\toprule",
+             r"Tier & What it covers & Size (USD bn) & Confidence \\", r"\midrule"]
+    for x in tiers:
+        size = x["size_bn"]
+        if size is None:
+            size = "n/a"
+        elif isinstance(size, dict):
+            size = f"{min(size.values()):,.0f} to {max(size.values()):,.0f}"
+        else:
+            size = f"{size:,.1f}"
+        conf = x["confidence"].split(",")[0].split(".")[0]
+        lines.append(f"{x['tier']} & {x['what']} & {size} & {conf} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_ai_tiers.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -364,3 +403,5 @@ if __name__ == "__main__":
     tab_attrition()
     tab_institutions_by_model()
     tab_relief()
+    tab_payoff()
+    tab_tiers()
