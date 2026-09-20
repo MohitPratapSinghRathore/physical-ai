@@ -111,3 +111,38 @@ the audit at all. Read in full, added as `Brollo2024`, boundary in
 `lit/related_work_final.md` section 3A.
 
 **Neither is unverified any longer. The only remaining item in this file is CBO (2024).**
+
+---
+
+## A113: the tau_k components. Seven parameters and one institutional status.
+
+Added 2026-09-20 during the component rebuild of the effective capital tax rate on AI
+surplus (`framework/tau_k/`). **Every item below was sought from a primary source in that
+session and not obtained. None of them carries a dependent claim.** They are swept over
+ranges bounded by statute or by structure, and the bound is named in
+`framework/tau_k/components.py`. The map in `paper/figures/tau_k_map.png` exists because
+these could not be pinned.
+
+| parameter | range swept | bound on the range | what was sought and what happened |
+|---|---|---|---|
+| taxable-shareholder share of US corporate equity | 0.20 to 0.60 | a share, [0,1] | Rosenthal and Austin, Tax Policy Center. Site returned HTTP 403 on both the TaxVox and the full-publication URLs |
+| shareholder rate on dividends and realised gains | 0.15 to 0.238 | statutory ceiling: 20 percent top long-term rate plus the 3.8 percent net investment income tax | a sourced average realised rate across the holder distribution |
+| deferral factor | 0.40 to 1.00 | a share, [0,1]; 1.0 is immediate realisation | a sourced accrual-equivalent discount |
+| state effective corporate income tax rate | 0.00 to 0.095 | state statutory rates run from zero to the high single digits | a verified apportioned effective rate |
+| marginal debt share of AI capital spending | 0.00 to 0.40 | a share; zero is the all-equity structure reported on the nine filers' own books in Module B | a verified marginal debt share |
+| bondholder marginal rate | 0.15 to 0.37 | ordinary income treatment, so the top ordinary rate is the ceiling | a sourced average bondholder rate |
+| shifted share of rents | 0.30 to 0.60 | a share, centred on the one verified value | **the task required two or more verified sources.** Torslov, Wier and Zucman at 0.48 is verified in this repo. A second was sought from Clausing (NBER w28442) and from Garcia-Bernardo, Jansky and Zucman (NBER w30086, title verified as "Did the Tax Cuts and Jobs Act Reduce Profit Shifting by US Multinational Companies?", abstract not retrievable). Neither abstract could be read. **The single verified value is therefore not used as a point; the parameter is swept** |
+
+**OECD Pillar Two, the 15 percent global minimum, current status for US-parented groups as
+of 2026. NOT VERIFIED.** The OECD topic and BEPS pages returned HTTP 403 in this session. No
+primary source confirming whether the minimum currently binds on US-parented groups, or on
+AI rents specifically, was obtained. **It is used nowhere in the assembly.** It appears on
+the map as a marked reference line at 0.15 with its status printed beside it. The only
+statement made about it is arithmetic and conditional: 0.15 exceeds the required 0.1101 to
+0.1373, so wherever such a floor genuinely bound, the condition would pass on the rent
+component. Whether it binds is the unverified part.
+
+**To clear any of these**: obtain the primary source, replace the swept range with a point
+and a range in `components.py`, rerun `assemble.py`, and move the row out of this file. The
+two worth doing first are the taxable-shareholder share and the deferral factor, which
+between them carry 62 percent of the first-order variance in the assembled rate.

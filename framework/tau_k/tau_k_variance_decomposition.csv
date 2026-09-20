@@ -1,0 +1,15 @@
+rent_reading,parameter,first_order_index
+Barkai,theta_taxable,0.3559
+Barkai,deferral_factor,0.2606
+Barkai,bondholder_rate,0.1526
+Barkai,shareholder_rate,0.0718
+Barkai,state_cit_effective,0.0343
+Barkai,shifted_share,0.0291
+Barkai,debt_share,0.0004
+Karabarbounis_Neiman_case_R,bondholder_rate,0.2971
+Karabarbounis_Neiman_case_R,theta_taxable,0.289
+Karabarbounis_Neiman_case_R,deferral_factor,0.2128
+Karabarbounis_Neiman_case_R,shareholder_rate,0.0577
+Karabarbounis_Neiman_case_R,debt_share,0.0006
+Karabarbounis_Neiman_case_R,state_cit_effective,0.0001
+Karabarbounis_Neiman_case_R,shifted_share,0.0001

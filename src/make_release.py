@@ -258,10 +258,24 @@ def build_dashboard():
          "status": "INSIDE the median; above the tightest specifications",
          "source": "BLS DWS: 3.324m over 3 years against prime-age employment",
          "date": "2026-01"},
-        {"indicator": "Effective tax rate on AI surplus, current code with shifting",
+        {"indicator": "Effective tax rate on AI surplus, assembled from components, "
+                      "all tax layers counted once, Barkai rent reading",
+         "value": "0.087 to 0.156, median 0.116",
+         "threshold": f'{round(tks["required_tau_k"]["AMR_0.255"], 4)} to 0.1373',
+         "status": "ON THE THRESHOLD. Passes in 61 percent of the swept parameter space "
+                   "against the easier labour-tax reading, 18 percent against the harder. "
+                   "Under the Karabarbounis and Neiman rent reading the rate is 0.052 and "
+                   "it fails almost everywhere",
+         "source": "framework/tau_k/. AMR 2020 expensing algebra; 26 USC 11(b); 26 USC "
+                   "250(a)(1) as amended by Pub. L. 119-21 of 2025, giving 14.0 and 12.6 "
+                   "percent; Barkai and Karabarbounis-Neiman rent readings. Three "
+                   "components carrying 77 percent of the variance are UNSOURCED and swept",
+         "date": "2026-09-20"},
+        {"indicator": "Effective tax rate on AI surplus, entity level only, SUPERSEDED",
          "value": 0.0708,
          "threshold": round(tks["required_tau_k"]["AMR_0.255"], 4),
-         "status": "BELOW THRESHOLD",
+         "status": "SUPERSEDED by the component rebuild. It omitted shareholder-level tax "
+                   "entirely and is the bottom edge of the assembled range, not its centre",
          "source": "AMR 2020 effective rates; 26 USC 168(k); Torslov Wier Zucman 48 percent "
                    "haven share; Barkai rent share 0.351",
          "date": "2026-09-19"},

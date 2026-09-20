@@ -1,0 +1,8 @@
+parameter,tau_k_at_range_low,tau_k_at_range_high,swing,crosses_a_threshold_alone
+theta_taxable,0.096,0.1396,0.0436,True
+deferral_factor,0.0991,0.1365,0.0374,True
+bondholder_rate,0.1035,0.132,0.0286,True
+shareholder_rate,0.1079,0.1277,0.0198,True
+state_cit_effective,0.1109,0.1246,0.0137,False
+shifted_share,0.1238,0.1117,0.0121,False
+debt_share,0.1183,0.1172,0.0011,False

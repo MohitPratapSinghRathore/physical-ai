@@ -11,9 +11,11 @@ tagged [R].**
 **1. Labour backing accounts.** We introduce a decomposition of all US financial claims by
 the income that services them and by who ultimately holds them. It yields a ratio, a
 sovereign share, a holder map, a 1952 to 2025 series and a breakdown by wage quintile.
-**About half of all US debt, public and private, is serviced directly out of wages** (52 percent), 60 percent including debt paid indirectly. Government debt enters by the labour-linked share of the receipts that service it, not because a household owes it, 60 percent including debt
-paid indirectly, once wages become spending and spending becomes business revenue. On all
-claims including equity the pair is 27 and 47 percent; equity is 48 percent of that
+**About half of all US debt, public and private, is serviced directly out of wages** (52
+percent), and 60 percent including debt paid indirectly, once wages become spending and
+spending becomes business revenue. Government debt enters by the labour-linked share of the
+receipts that service it, not because a household owes it. On all claims including equity the
+pair is 27 and 47 percent; equity is 48 percent of that
 denominator and moves with prices, so the debt-only measure is the stable one. **The federal
 government is exposed, as holder, guarantor or debtor, on about 79 percent of the directly
 wage-backed claims: about 32 percent as creditor or guarantor and about 55 percent as the
@@ -33,12 +35,22 @@ and car debt and **the fiscal loss is unchanged to the cent**. Savings buffers a
 in the **second** wage quintile; differences between physically and cognitively exposed
 households are a **pay effect**. **[M]**
 
-**3. Whether the budget absorbs it depends on which capital tax rate reaches AI profits.**
-The condition needs about **11 to 14 percent**. AI capital, after immediate expensing and
-profit shifting, bears about **7**. Capital economy-wide bears **20 to 22**. So **a quarter
-to a half of AI profits would have to be taxed at the ordinary rate**, which needs no
-statutory rate rise. **[R]** on the inputs; the verdict is **provisional**, because it turns
-on which tax base is right.
+**3. Whether the budget absorbs it is a function of three observable
+parameters, and we can now say which three.** The condition needs about **11 to 14 percent**.
+We rebuilt the effective rate on AI surplus from components, inclusive of every layer that
+reaches the marginal dollar. Under the Barkai rent reading the assembled rate spans **8.7 to
+15.6 percent**, with a median of **11.6**, which is **inside the required band**: the
+condition passes in 61 percent of the parameter space against the easier labour-tax reading
+and 18 percent against the harder one. Under the Karabarbounis and Neiman rent reading it is
+**5.2 percent** and fails almost everywhere. Our earlier **7 percent** is the bottom edge of
+that range, not its centre, because it omitted shareholder-level tax entirely; the IMF's
+**20 to 22** is an average rate on the existing capital stock and answers a different
+question. Both are kept as marked points. A variance decomposition says the three parameters
+that move the verdict are the **taxable-shareholder share, the deferral factor and the
+bondholder rate**, together 77 percent of the variance. **Profit shifting, which our earlier
+statement leaned on, carries 3 percent.** Rent share and expensing **[R]**; the current
+statutory rates **verified against Pub. L. 119-21 of 2025**; the three deciding parameters
+are **unsourced and swept**, so the result is a map, not a verdict. **[S]**
 
 **4. Banks are reached indirectly, and household relief does not protect them.** Measured
 across **8,612 balance sheets** (4,313 banks, 4,299 credit unions). At 10 percent the system
@@ -84,14 +96,19 @@ debt magnitude is withdrawn; the gradient stands.** All credit losses are first-
 house prices fixed, so they are floors. Above about 25 percent displacement estimates become
 bands, which is a limit of our method, not the world. In the institution work, dispersion
 reflects business mix only, so it is a lower bound. In the bust work, the propensity to
-consume out of wealth is an assumption checked against two episodes, not a sourced parameter,
-and the credit-led GDP path is understated because bank-channel damage is not fed back.
+consume out of stock wealth is now **sourced and verified** at 3.2 cents (Chodorow-Reich,
+Nenov and Simsek 2021, AER 111(5)) and barely moves the result; the credit-led GDP path is
+still understated because bank-channel damage is not fed back.
 
-**The question for you.** Is about 7 percent the right rate, or the wrong base? We compute
-the rate on the marginal dollar of US AI profit: 21 percent statutory, the normal return
-exempted by immediate expensing, 48 percent of remaining rents booked offshore. The IMF
-measures 20 to 22 percent economy-wide including personal taxes on dividends and gains. The
-condition needs 11 to 14. **The paper's central fiscal verdict turns on that choice.**
+**The question for you.** Not "is 7 percent right" any more. The rate on
+the marginal dollar of US AI profit, assembled from components with every tax layer counted
+once, is **8.7 to 15.6 percent** and the condition needs 11 to 14, so the answer sits on the
+threshold rather than clearly either side of it. Three parameters decide it, and none is
+sourced: what share of US corporate equity sits in taxable accounts, how much shareholder
+tax is deferred away, and what rate bondholders pay. **Two hours of sourcing on the first
+two would remove 62 percent of the uncertainty.** The deeper question is whether a marginal
+flow rate is the right object at all, against an average rate on the existing stock; the
+case each way is in `framework/tau_k/base_argument.md`.
 
 **Disclosure.** The pipeline and analysis were built with Claude Code. The design was
 reviewed with Claude. The analysis was replicated by separate instances.

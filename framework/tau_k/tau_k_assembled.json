@@ -1,0 +1,118 @@
+{
+  "status": "ASSEMBLED FROM COMPONENTS. Five components VERIFIED, seven NOT VERIFIED and swept. Reported as a MAP, not a point.",
+  "plausibility_violations": [],
+  "required_tau_k": {
+    "low": 0.110079,
+    "high": 0.137276,
+    "by_labour_reading": {
+      "AMR_0.255": 0.110079,
+      "bottom_up_0.301": 0.129937,
+      "bottom_up_0.318": 0.137276
+    }
+  },
+  "assembled": [
+    {
+      "rent_reading": "Barkai",
+      "sigma_rent": 0.351,
+      "tau_k_p05": 0.0865,
+      "tau_k_median": 0.1158,
+      "tau_k_p95": 0.1558,
+      "tau_k_min": 0.0578,
+      "tau_k_max": 0.2024,
+      "component_ceiling": 0.3142,
+      "pass_share_vs_required_low": 0.6087,
+      "pass_share_vs_required_high": 0.1799
+    },
+    {
+      "rent_reading": "Karabarbounis_Neiman_case_R",
+      "sigma_rent": 0.0,
+      "tau_k_p05": 0.0182,
+      "tau_k_median": 0.0518,
+      "tau_k_p95": 0.0945,
+      "tau_k_min": -0.0128,
+      "tau_k_max": 0.1388,
+      "component_ceiling": 0.238,
+      "pass_share_vs_required_low": 0.0111,
+      "pass_share_vs_required_high": 0.0
+    }
+  ],
+  "variance_decomposition_top3": {
+    "Barkai": [
+      "theta_taxable",
+      "deferral_factor",
+      "bondholder_rate"
+    ],
+    "Karabarbounis_Neiman_case_R": [
+      "bondholder_rate",
+      "theta_taxable",
+      "deferral_factor"
+    ]
+  },
+  "map_axes": [
+    "theta_taxable",
+    "deferral_factor"
+  ],
+  "map_other_parameters": "held at range midpoints, which are NOT estimates",
+  "marked_points": {
+    "published operative rate, entity level only": 0.0708,
+    "assembled median, Barkai reading": 0.1158,
+    "assembled median, Karabarbounis-Neiman reading": 0.0518,
+    "IMF SDN/2024/002 economy-wide average, low": 0.2,
+    "IMF SDN/2024/002 economy-wide average, high": 0.22,
+    "OECD Pillar Two headline minimum, status NOT verified": 0.15,
+    "required, AMR labour reading": 0.1101,
+    "required, bottom-up labour reading": 0.1373
+  },
+  "single_parameter_movers": [
+    {
+      "parameter": "theta_taxable",
+      "tau_k_at_range_low": 0.096,
+      "tau_k_at_range_high": 0.1396,
+      "swing": 0.0436,
+      "crosses_a_threshold_alone": true
+    },
+    {
+      "parameter": "shareholder_rate",
+      "tau_k_at_range_low": 0.1079,
+      "tau_k_at_range_high": 0.1277,
+      "swing": 0.0198,
+      "crosses_a_threshold_alone": true
+    },
+    {
+      "parameter": "deferral_factor",
+      "tau_k_at_range_low": 0.0991,
+      "tau_k_at_range_high": 0.1365,
+      "swing": 0.0374,
+      "crosses_a_threshold_alone": true
+    },
+    {
+      "parameter": "state_cit_effective",
+      "tau_k_at_range_low": 0.1109,
+      "tau_k_at_range_high": 0.1246,
+      "swing": 0.0137,
+      "crosses_a_threshold_alone": false
+    },
+    {
+      "parameter": "debt_share",
+      "tau_k_at_range_low": 0.1183,
+      "tau_k_at_range_high": 0.1172,
+      "swing": 0.0011,
+      "crosses_a_threshold_alone": false
+    },
+    {
+      "parameter": "bondholder_rate",
+      "tau_k_at_range_low": 0.1035,
+      "tau_k_at_range_high": 0.132,
+      "swing": 0.0286,
+      "crosses_a_threshold_alone": true
+    },
+    {
+      "parameter": "shifted_share",
+      "tau_k_at_range_low": 0.1238,
+      "tau_k_at_range_high": 0.1117,
+      "swing": 0.0121,
+      "crosses_a_threshold_alone": false
+    }
+  ],
+  "headline": "Under the Barkai rent reading the assembled marginal rate spans 0.086 to 0.156 across the unverified components, against a required 0.110 to 0.137. The condition passes in 61 percent of the swept space against the easier threshold and 18 percent against the harder one. The published 0.0708 sits below that span because it omits the shareholder layer entirely."
+}

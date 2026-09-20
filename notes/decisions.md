@@ -687,3 +687,38 @@ What remains is defensible and was always the stronger half: the liability side,
 holder map, and the finding that the federal government holds, guarantees or owes about
 four fifths of the labour-backed claim stock while holding 1.0 percent of the AI leg. The
 literature audit is also now honest, which it was not before.
+
+## A113. tau_k rebuilt from components, and reported as a map
+
+**Decision.** Replace the single published effective capital tax rate on AI surplus (0.0708)
+with a component assembly whose unsourced parameters are swept rather than assumed, and
+report the fiscal condition as a surface with the threshold drawn on it.
+
+**Why.** Reading Acemoglu, Manera and Restrepo in full established that their effective rates
+already include personal-level taxes, and that under 100 percent expensing their algebra
+collapses the normal-return rate for an equity-financed C corporation to the SHAREHOLDER rate
+alone. Our 0.0708 stops at the entity level. It therefore omitted a layer rather than
+avoiding a double count, and was biased downward, which is the direction the IMF comparison
+had already hinted at.
+
+**Tradeoff accepted.** We lose a single quotable number and gain an honest one. The assembled
+median under the Barkai rent reading, 0.116, sits INSIDE the required 0.110 to 0.137, so the
+paper can no longer say the condition fails. It says the condition straddles, and names what
+would settle it. A reader who wants a verdict will find this less satisfying; a referee will
+find it defensible.
+
+**Tradeoff rejected.** We could have picked plausible central values for the seven unsourced
+components and published a point. That would have made three unsourced parameters carrying 77
+percent of the variance invisible inside a number that looked measured.
+
+**The premise we were given, tested and found wrong.** The task named expected rent share,
+shifted share and taxable-shareholder share as the three parameters that matter. The
+first-order variance decomposition says taxable-shareholder share, deferral factor and
+bondholder rate. The shifted share carries 3 percent. We report the decomposition rather than
+the premise.
+
+**Statutory check that changed an input.** 26 USC 250(a)(1) and 26 USC 951A were amended by
+Pub. L. 119-21 on 4 July 2025. The deductions are now 33.34 and 40 percent, giving effective
+rates of 14.0 and 12.6, and GILTI is recaptioned "net CFC tested income". The pre-2025 13.125
+and 10.5 are superseded. This is why the instruction not to rely on pre-2025 descriptions was
+the right instruction.

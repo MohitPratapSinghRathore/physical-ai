@@ -15,7 +15,9 @@ OWNER APPROVAL.** Four changes, each marked in place below:
 3. **The inside-the-data boundary is stated in the sentence itself.** At a 50 percent dose no
    exposure type has a reemployment-rate point estimate, so everything there is a band.
 4. **The capital tax verdict is now conditional on the rate, not on "current law".** The
-   condition fails at our operative rate and passes at the IMF's measured rate; both are
+   condition STRADDLES the threshold once the rate is assembled from components, 0.087 to
+   0.156 against a required 0.110 to 0.137; the earlier operative rate and the IMF's rate are
+   the two edges of that disagreement and both are
    correctly computed on different bases. See `notes/tau_k_exposure.md`.
 5. **The priority claim on the fiscal mechanism is gone from the wording.** RAND, the IMF
    (both the 2024 SDN and the 2026 Note), the Windfall Trust, Korinek and Lockwood, and Casas
