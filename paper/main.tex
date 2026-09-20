@@ -2,17 +2,20 @@
 \usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{lmodern}
 \usepackage[margin=1in]{geometry}
 \usepackage{microtype}\setlength{\emergencystretch}{3em}
-\usepackage{amsmath,amssymb,booktabs,graphicx,array,xcolor,enumitem,caption}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,array,xcolor,enumitem,caption}
 \usepackage{longtable}
 \graphicspath{{figures/}}
 \usepackage[round]{natbib}
-\usepackage[hidelinks]{hyperref}
 \input{results_macros.tex}   % measured values only
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 
 \newif\ifanon
 \ifdefined\ANON\anontrue\else\anonfalse\fi
 
-\title{\bfseries Wage Risk Is Sovereign Risk: Labor Backing Accounts\\ and AI Exposure}
+\title{\bfseries Wage Risk Is Sovereign Risk: Measuring Labor-Backed\\ Financial Claims
+in the AI Transition}
 
 \ifanon
   \author{\normalsize\itshape Author names and affiliations removed for double-anonymous peer review}
@@ -25,6 +28,17 @@
 \fi
 \date{}
 
+\ifanon
+  \usepackage[hidelinks,pdftitle={Wage Risk Is Sovereign Risk: Measuring Labor-Backed Financial
+  Claims in the AI Transition},pdfauthor={},pdfkeywords={fiscal risk; contingent liabilities;
+  financial accounts; automation; capital taxation; stress testing}]{hyperref}
+\else
+  \usepackage[hidelinks,pdftitle={Wage Risk Is Sovereign Risk: Measuring Labor-Backed Financial
+  Claims in the AI Transition},pdfauthor={Mohit Pratap Singh Rathore; Gunveer Singh Kalsi;
+  Sriharsha Meduri; Pratap Chandra Mandal},pdfkeywords={fiscal risk; contingent liabilities;
+  financial accounts; automation; capital taxation; stress testing}]{hyperref}
+\fi
+
 \begin{document}
 \maketitle
 
@@ -34,21 +48,23 @@ We introduce labor backing accounts, a decomposition of United States financial 
 income that services each claim and by who holds, guarantees or owes it. About
 \result{DebtOnlyDirect} percent of all US debt, public and private, is serviced directly from
 wages, and \result{DebtOnlyIndirect} percent once indirect servicing is counted; government debt
-enters through the labor-linked share of the receipts that service it, not because a household
-owes it. The holder map shows an asymmetry: the federal government is exposed, as holder,
-guarantor or debtor, on about \result{SovereignUnion} percent of directly wage-backed claims and
-on about \result{AIFederalShareRounded} percent of the claims on artificial intelligence capital.
-Rebuilding the effective marginal rate on income that shifts from wages to AI capital, every layer
-of tax counted once, gives \result{TauKBarkai} percent against the \result{RequiredEasy} to
-\result{RequiredHard} percent needed to replace the wage taxes lost. It falls short on both
-defensible bases for the share of equity the income tax reaches. At the one displacement level
-inside our data the loss is overwhelmingly fiscal rather than financial. The state loses in both directions through different tax bases, so one
-capital tax rate is asked to do two opposite jobs.
+enters through the labor-linked share of the receipts that service it. Counting the federal
+government as exposed when it is holder, guarantor or debtor, it is exposed on about
+\result{SovereignUnion} percent of directly wage-backed claims, against about
+\result{AIFederalShareRounded} percent of the observable claims on artificial intelligence
+capital, a side measurable only from below. The effective marginal rate on income
+shifting from wages to AI capital is \result{TauKBarkai} percent against the
+\result{RequiredEasy} to \result{RequiredHard} percent needed to replace the wage taxes lost: it
+falls short at the center on both defensible bases for the share of equity the income tax reaches,
+though the share of the parameter space that closes the condition differs by base. In a
+conditional stress test removing a given share of the wage bill, the first-round burden falls
+mainly on the public sector and on households with thin buffers rather than on aggregate bank
+capital.
 \end{abstract}
 
 \vspace{0.5em}
-\noindent\textbf{Keywords:} fiscal exposure; automation; labor share; capital taxation;
-sovereign risk; financial claims
+\noindent\textbf{Keywords:} fiscal risk; contingent liabilities; financial accounts; automation;
+capital taxation; stress testing
 
 \input{sections/sec1_intro.tex}
 
@@ -68,43 +84,125 @@ sovereign risk; financial claims
 
 \input{sections/sec9_institutions.tex}
 
-\input{sections/sec10_implications.tex}
-
 \input{sections/sec11_limitations.tex}
 
 \input{sections/sec12_conclusion.tex}
 
 \section*{Declarations}
 
+\paragraph{Data availability.} The replication package, containing the measured artifacts behind
+every reported value and the code that generates them, will be public at a named repository on
+publication. During review it is private and is available to referees and editors on request
+through the journal.
+
 \ifanon
-\paragraph{Data availability.} The replication package, including the measured artifacts behind
-every reported value, will be made available upon acceptance.
 \else
 \paragraph{Disclosure statement.} The authors report no conflict of interest.
 \paragraph{Funding.} This research received no external funding.
-\paragraph{Data availability.} The replication package, including the measured artifacts behind
-every reported value and the sealed expected values used in blind replication, is available from
-the corresponding author.
 \fi
 
-\paragraph{Use of generative AI.} During the preparation of this manuscript the authors used a
-generative AI tool to assist with language editing and refinement of the text. The authors
-reviewed and edited all output and take full responsibility for the content of the paper. The
-study's data were produced entirely by the measurement pipeline described in the paper, and no
-reported value originates in a language model's assertion: every number in the text and in the
-tables is generated from a measured artifact in the replication package. The tooling used to
-build and to rebuild that pipeline is set out in Section~\ref{sec:data}.
+\paragraph{Use of generative AI.} The conceptual model, the definitions, the inclusion and
+exclusion rules, the equations, the scenario definitions, the statistical choices and the
+interpretation of results are the authors'. Generative AI tools provided computational assistance,
+in writing and checking analysis code, and drafting assistance with the text; the independent
+computational rebuilds described in Section~\ref{sec:rebuild} were carried out by separate
+instances of such tools working from published specifications. The authors reviewed every output
+and take responsibility for the content of the paper. No reported value originates in a model's
+assertion: every number in the text and in the tables is generated from a measured artifact in the
+replication package.
 
 \appendix
+
+\section{The independent computational rebuilds}
+\label{app:rebuild}
+
+Three rebuild rounds have been run against the measurements in this paper. Each was carried out by
+a separate run with no access to the project's code, working from raw data and a published
+specification, and scored against expected values fixed before the round began.
+
+Round one established the protocol and produced no comparable values in several modules, because
+the specification it worked from left definitions unstated. Round two scored
+\result{RepTwoScored} quantities, \result{RepTwoSealed} of them against fixed expected values:
+\result{RepTwoFivePct} came within five percent and \result{RepTwoTolerance} inside the stated
+tolerance, while \result{RepTwoMismatch} did not match. The mismatches had six root causes, of
+which the largest were an undefined universe for one household object, a class omitted because the
+specification described the exclusion rule in prose without enumerating the classes, and a
+Treasury level the rebuild could not know was the sum of two published series. Three of the five
+quantities withdrawn from this paper were withdrawn as a direct result. Round three covered the
+two constructions the earlier rounds had not reached, the debt-only ratio and the assembled
+capital tax rate, and matched all \result{RepThreeSealed} quantities,
+\result{RepThreeRounding} within rounding and the remainder inside tolerance. Its two
+non-rounding matches were traced exactly: one to a central value taken at a range midpoint rather
+than at the sourced point, which the paper now reports at the sourced point, and one to the
+maximum of a finite sample over a seven-dimensional box, which is an extreme order statistic with
+no stable value and is now reported as the analytic corner instead.
+
+The blind was procedural rather than enforced. The rebuild ran on the same machine, with the file
+of expected values reachable at a path the specification names; it was not attached to the request
+and was reported unopened until the rebuild was final. The supporting evidence is internal and
+circumstantial: most insufficiencies were written before the file was opened, several of the
+mismatch causes were among them, and the rebuild declined to use coefficients the specification
+had leaked. On that basis the paper claims that these quantities were independently rebuilt under
+a reported blind protocol, and never that they were independently verified.
+
+\section{Additional tables}
+\label{app:tables}
+
+\begin{table}[htbp]
+\centering
+\caption{Labor backing and federal exposure, selected years, 1952 to 2025. The creditor and debtor
+columns overlap where the federal sector holds its own debt, so they do not sum to the union.
+Measured.}
+\label{tab:series}
+\input{tables/tab_series.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Federal exposure under alternative structural choices. Measured.}
+\label{tab:structural}
+\input{tables/tab_structural.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Wage-backed household claims by wage quintile. The bottom-quintile magnitude is
+withdrawn. Measured.}
+\label{tab:quintile}
+\input{tables/tab_quintile.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{First round at ten percent of the wage bill under three incidence cases, billions of
+dollars. The federal budget column is identical across cases within each exposure group.
+Scenario, conditional on the displacement level.}
+\label{tab:attrition}
+\input{tables/tab_attrition.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Net position of each holder across three outcomes, scored on holdings. The wage side is
+measured; the AI side is a lower bound.}
+\label{tab:payoff}
+\input{tables/tab_payoff.tex}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\caption{Quantities removed from this work, with the reason for each.}
+\label{tab:removed}
+\input{tables/tab_removed.tex}
+\end{table}
 
 \section{The instrument table}
 \label{app:instruments}
 
 Table~\ref{tab:instruments} gives one row for each of the twelve instruments discussed in
-Section~\ref{sec:institutions}: the institution that must act, the instrument itself, its type,
-and the regime in which it binds. The table is generated from the released architecture file, and
-that file carries the measured mechanism, the verified precedent and the trigger with its current
-value for every row.
+Section~\ref{sec:institutions}. It is generated from the released architecture file, which also
+carries the measured mechanism, the verified precedent and the trigger with its current value for
+every row.
 
 {\small\input{tables/tab_instruments.tex}}
 

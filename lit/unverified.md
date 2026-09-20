@@ -191,3 +191,13 @@ swept over 0.00 to 0.40, carrying **37 percent** of the residual variance. **No 
 parameter, including this one, can now cross the fiscal threshold alone.** Module B reading
 of the nine filers own books points to the low, all-equity end, which is the end unfavourable
 to the condition, so clearing it would probably harden the verdict rather than soften it.
+
+## Cited institutionally because individual authorship could not be verified
+
+### BIS Quarterly Review, March 2026: "Financing the AI infrastructure boom"
+
+Re-checked 2026-09-20. The publication page carries the feature title, the publication and the
+date of 16 March 2026, all verified, but names no authors. The manuscript therefore cites it as
+an institutional publication of the Bank for International Settlements rather than inventing an
+author list. If the individual authors are later read from the PDF, the entry should be updated
+to name them.

@@ -1,130 +1,78 @@
 \section{Limitations}
 \label{sec:limitations}
 
-Every limitation below is carried in the released limitations file, and the numbering here follows
-it so that a reader can move between the two. Each is paired one to one with an avenue of future
-research in Section~\ref{sec:future}.
+Every limitation below is carried in the released limitations file and the numbering follows it.
 
 \paragraph{L1. Off-balance-sheet and hardware-backed AI financing is unmeasured.} The AI side is
-built from nine registrants' on-balance-sheet facts. Off-balance-sheet vehicles, which the Bank
-for International Settlements identifies as dominant in data centre financing, contribute nothing
-to it, and neither does hardware-backed lending or data centre securitization. Every level on the
-AI side is therefore a lower bound and every federal share of it an upper bound. We do not know the
-sign of the error on the gap between the two sides, only that the gap is measured against a side we
-can bound from below.
+built from nine registrants' on-balance-sheet facts. Off-balance-sheet vehicles, which
+\citet{BIS2026} identifies as dominant in data center financing, contribute nothing to it, and
+neither does hardware-backed lending or securitization. Every level on that side is a lower bound
+and every federal share of it an upper bound, which is why Sections~\ref{sec:aiside}
+and~\ref{sec:bust} report it as bounds rather than as a point.
 
 \paragraph{L2. Capital gains inside federal receipts are not separated.} The labor-linked share of
-federal receipts splits the individual income tax by the wage share of adjusted gross income, and
-realized gains sit inside that base. The share is therefore an overstatement in years with large
-realizations and an understatement in years without. The band is carried throughout and the federal
-exposure share moves by under one percent across it, so the headline is not sensitive to this. The
-fiscal magnitudes are more sensitive and we have not bounded that.
+receipts splits the individual income tax by the wage share of adjusted gross income, and realized
+gains sit inside that base, so the share overstates in years with large realizations and
+understates in years without. The band is carried throughout and the federal exposure share moves
+by under one percent across it; the fiscal magnitudes are more sensitive and we have not bounded
+that.
 
-\paragraph{L3. The novelty of the accounts is ``none located'', not ``none exists''.} No systematic
-search with a stated protocol, databases, query strings and counts at each stage has been run for
-the specific question of whether anyone has constructed this object before. The related-work audit
-did locate prior work on the fiscal mechanism, and that priority claim was retired. The same could
-happen here.
+\paragraph{L3. The novelty of the accounts is ``none located'', not ``none exists''.} No
+systematic search with a stated protocol has been run for the specific question of whether anyone
+has built this object before. The related-work audit did locate prior work on the fiscal
+mechanism, and that priority claim was retired; the same could happen here.
 
 \paragraph{L4. The holder split leaves an unidentified remainder.} Three of the four shares in the
 mortgage holder split are read from a publisher and the fourth is an arithmetic remainder, treated
-as private in full. That is the conservative choice for our claim, since any federal fraction
-inside it would raise the federal share rather than lower it, but we have not identified what is
-in it. A remainder of the same kind appears on the AI side.
+as private in full. That is conservative for our claim, since any federal fraction inside it would
+raise the federal share, but we have not identified what is in it. A remainder of the same kind
+appears on the AI side.
 
 \paragraph{L5. The effective labor tax rate does not vary across the wage distribution.} It is a
-single economy-wide rate, built from federal taxes over wages and salaries. Because displacement is
-not uniform across the distribution, and because the incidence results show it concentrated away
-from the top, a flat rate probably overstates the revenue loss from displacing low-paid workers and
-understates it from displacing high-paid ones. We have not signed or bounded the net effect.
+single economy-wide rate. Because displacement is not uniform across the distribution, and the
+incidence results show it concentrated away from the top, a flat rate probably overstates the
+revenue loss from displacing low-paid workers and understates it from displacing high-paid ones.
+We have not signed or bounded the net effect.
 
 \paragraph{L14. The base of the taxable shareholder share decides how stable the capital tax
-verdict is.} Our share is equity in taxable accounts over all US equity outstanding, foreign
-holders included. The Congressional Research Service uses the same numerator over domestically
-held stock alone. Ours is the right base for a rate on a dollar of US surplus whoever holds it,
-because a foreign holder bears close to no US tax at the owner level and that dollar is still in
-the surplus, but the choice is load-bearing: on the other base the central rate rises to
-\result{TauKCRSCentral} percent, the share of the parameter space that closes the condition rises
-to \result{TauKCRSPassShare} percent against the easier labor tax reading, and the analytic
-maximum clears the harder threshold. The statement that no corner of the space closes the
-condition holds only on our base, and it carries that qualification wherever it appears. The
-centre fails under both rent readings on either base.
+verdict is.} Ours is equity in taxable accounts over all US equity outstanding; the Congressional
+Research Service uses the same numerator over domestically held stock alone. Ours is the right
+base for a rate on a dollar of US surplus whoever holds it, but the choice is load-bearing: on the
+other base the central rate rises to \result{TauKCRSCentral} percent, the share of the parameter
+space that closes the condition rises to \result{TauKCRSPassShare} percent against the easier
+labor tax reading, and the analytic maximum clears the harder threshold. The statement that no
+corner of the space closes the condition holds only on our base and carries that qualification
+wherever it appears; the center falls short on either base.
 
-\paragraph{Method limitations.} Four more are properties of the method rather than of a parameter.
-The \emph{extrapolation boundary} described in Section~\ref{sec:displacement}: above about a
-quarter of the wage bill displaced there are no point estimates, only bands, because the
-reemployment fit leaves the range of the data. That is a limit of the specification and not a fact
+\paragraph{Method limitations.} Four are properties of the method. The \emph{extrapolation
+boundary} of Section~\ref{sec:displacement}: above about a quarter of the wage bill displaced
+there are no point estimates, only bands, which is a limit of the specification and not a fact
 about the economy. The \emph{first-round scope} of the credit engine, which holds house prices,
 spending, business revenue and the employment of everyone not displaced fixed, so every credit
-loss is a floor rather than an estimate. The \emph{procedural blind} in the replication protocol,
-described in Section~\ref{sec:data}, which is why this paper says quantities were independently
-rebuilt under a reported blind protocol and never that they were independently verified. And
+loss is a floor. The \emph{procedural blind} in the rebuild protocol described in
+Section~\ref{sec:rebuild}, which is why this paper says quantities were independently rebuilt
+under a reported blind protocol and never that they were independently verified. And
 \emph{foreign withholding}: dividends to foreign holders bear US withholding tax at treaty rates
 and we treat them as untaxed at the owner level, which biases the assembled capital tax rate
-downward by an amount we have not quantified. That last one runs against our own finding, which is
-why it appears here and in Section~\ref{sec:fiscal} rather than only in a note.
+downward by an amount we have not quantified, running against our own finding.
 
-\subsection{What was removed, and why}
+Five quantities that appeared in earlier versions of this work are not in this paper at all:
+three because an independent rebuild could not reproduce them and our own specification was not
+precise enough to show the rebuild wrong, one because the object it referred to was never defined,
+and one because there is no such number to report. Appendix Table~\ref{tab:removed} lists each
+with its reason.
 
-A reader is entitled to know what was cut. Five quantities that appeared in earlier versions of
-this work are not in this paper, and Table~\ref{tab:removed} gives each with the reason. Three were
-removed because an independent rebuild could not reproduce them and our own specification was not
-precise enough to show the rebuild wrong; one because the object it referred to was never defined;
-and one because there is no such number to report. None appears anywhere else in this paper, in
-any form.
-
-\begin{table}[htbp]
-\centering\small
-\caption{Quantities removed from this work, with the reason for each.}
-\label{tab:removed}
-\input{tables/tab_removed.tex}
-\end{table}
-
-\section{Avenues of future research}
-\label{sec:future}
-
-Each item below addresses the limitation with the same number.
-
-\paragraph{FR1.} Build the off-balance-sheet side of AI financing directly, from securitization
-prospectuses, vehicle-level filings and supervisory data on lending secured against computing
-hardware, so that the AI side can be measured rather than bounded from below and the gap between
-the two sides can be stated with a two-sided error.
-
-\paragraph{FR2.} Separate realized capital gains from wage income inside the individual income tax
-base using the published tax statistics by source and size of income, and re-run the fiscal
-magnitudes on the separated series, so that the sensitivity we can currently only name is bounded.
-
-\paragraph{FR3.} Run a systematic search with a published protocol for prior constructions of a
-labor backing decomposition, reporting databases, query strings, dates and counts at each stage,
-and publish the result whichever way it comes out.
-
-\paragraph{FR4.} Identify the remainder in the mortgage holder split from loan-level or
-servicer-level sources, so that the conservative treatment can be replaced by a measurement, and
-apply the same treatment to the corresponding remainder on the AI side.
-
-\paragraph{FR5.} Replace the single economy-wide labor tax rate with effective rates by position
-in the income distribution, from the published distributional tax tables, and re-run the fiscal
-condition with displacement weighted by where in the distribution it falls.
-
-\paragraph{FR14.} Settle the base question for the taxable shareholder share, ideally by
-constructing both bases from the same holder data and reporting the rate on each, so that a
-reader can see which question each answers rather than having to choose between two published
-numbers that are not comparable.
-
-\paragraph{FR6.} Extend the reemployment relationship beyond the range of the observed data by
-using a source that observes larger displacement episodes, whether historical, sectoral or
-cross-country, so that the estimates above a quarter of the wage bill can become estimates rather
-than bands.
-
-\paragraph{FR7.} Close the first-round scope by letting house prices, spending and non-displaced
-employment move together with displacement, which would turn the credit losses from a floor into
-an estimate and would also let the state and local feedback loop named in
-Section~\ref{sec:banks} be modelled rather than named.
-
-\paragraph{FR8.} Run a replication with an enforced blind, on a separate machine with the sealed
-values held by a third party, so that the protocol claim can be strengthened from independently
-rebuilt to independently verified.
-
-\paragraph{FR9.} Quantify the effect of withholding tax on dividends to foreign holders within the
-assembled rate, using treaty rates weighted by the composition of foreign holdings, and report the
-corrected rate even though the correction runs against the paper's own finding.
+\paragraph{Avenues for further work.} Each addresses a limitation above. Build the
+off-balance-sheet side from securitization prospectuses, vehicle-level filings and supervisory data
+on lending secured against computing hardware, so the AI side can be measured rather than bounded
+(L1). Separate realized gains from wage income inside the individual income tax base and re-run
+the fiscal magnitudes (L2). Run a systematic search with a published protocol for prior
+constructions of a labor backing decomposition (L3). Identify the holder remainder from loan-level
+sources (L4). Replace the single labor tax rate with rates by position in the income distribution
+(L5). Construct both bases for the taxable-holder share from the same holder data and report the
+rate on each (L14). Extend the reemployment relationship using a source that observes larger
+displacement episodes, which would turn the bands above a quarter of the wage bill into estimates;
+let house prices, spending and non-displaced employment move together, which would also let the
+state and local feedback loop be modeled rather than named; run a rebuild with an enforced blind
+and expected values held by a third party; and quantify withholding tax on dividends to foreign
+holders, reporting the corrected rate even though it runs against our own finding.

@@ -5,6 +5,7 @@ PLAYBOOK SECTION 3. Tables are generated from the same measured files the
 """
 import csv
 import json
+import re
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -74,13 +75,34 @@ def tab_classes():
     write("tab_claim_classes.tex", "\n".join(lines))
 
 
+
+# The sensitivity file carries the project's internal labels; these are the paper's.
+SENS_LABEL = {
+    "CENTRAL": "Central case",
+    "THE ONE-STEP RULE: business classes take the indirect share":
+        "The one-step rule: business classes take the indirect share",
+    "federal receipts: the 77.7 percent upper bound":
+        "Federal receipts at the upper bound of the labor-linked share",
+    "commercial mortgage treated like multifamily":
+        "Commercial mortgage treated as rent-serviced",
+    "mortgage backing: the superseded A38 definition":
+        "Mortgage backing on the earlier definition",
+    "state and local: all personal current taxes":
+        "State and local debt against all personal current taxes",
+    "mortgage backing: SIPP balances":
+        "Mortgage backing from survey balances rather than payments",
+    "rent backing: the A38 definition": "Rent backing on the earlier definition",
+    "other consumer: the card share alone":
+        "Other consumer credit at the card share alone",
+}
+
+
 def tab_sensitivity():
     rs = rows("data/release/labor_backing/debt_only_sensitivity.csv")
     lines = [r"\begin{tabular}{lrr}", r"\toprule",
              r"Judgement call & Debt-only ratio & Move (per cent) \\", r"\midrule"]
     for r in rs:
-        call = r["judgement_call"].replace("THE ONE-STEP RULE: ", "The one-step rule: ")
-        call = "Central case" if call == "CENTRAL" else call
+        call = SENS_LABEL.get(r["judgement_call"], r["judgement_call"])
         lines.append(f"{call} & {float(r['debt_only_ratio']):.4f} "
                      f"& {float(r['move_pct']):+.2f} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
@@ -389,6 +411,9 @@ def tab_tiers():
 
 def _clean(s, limit=None):
     s = s.replace("**", "").replace("&", "and").replace("_", " ")
+    s = re.sub(r"\bdoses?\b", "displacement level", s)
+    s = s.replace("inside the data and larger displacement level",
+                  "inside the data and at larger displacement")
     s = s.split(";")[0].split(",")[0] if limit == "short" else s
     return s
 

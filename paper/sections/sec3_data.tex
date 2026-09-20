@@ -1,194 +1,156 @@
 \section{Data and method}
 \label{sec:data}
 
-The paper is assembled from five modules: the claim stock and its decomposition, a household
-credit engine, a fiscal module, a second-round module, and an institution-level panel. This
-section states what each is built from, what it holds fixed, and how a reader should weigh the
-figures that come out of it. It ends with the replication protocol and the status vocabulary,
-because those decide what may be said about any number in the paper.
+This section states what each module is built from, what it holds fixed, and how a reader should
+weigh what comes out of it. It supports every later section, and it sets the vocabulary used to
+label results.
 
-\subsection{Sources and vintages}
+\paragraph{What the displacement engine is.} It is a conditional labor-income-loss stress test. A
+share of the wage bill is removed by assumption, and the engine reports what follows for the
+budget, for household credit and for individual balance sheets. It contains no model of
+artificial intelligence, no adoption path and no forecast. Every displacement figure in this
+paper is therefore conditional balance-sheet arithmetic, not a causal estimate and not a
+prediction, and the level is an input rather than a result.
 
-Claim levels and holder shares come from the Federal Reserve financial accounts (Z.1), read from
-the published data package rather than assembled series by series. The instrument suffix in Z.1 is
-not the same across sectors, so bank, insurer and central bank holdings of the same instrument sit
-under different codes; matching on the exact suffix silently pushes whole holder classes into an
-unallocated remainder. We match on the instrument family and take the closest suffix per sector,
-which cuts the aggregate remainder from about twenty-one percent to under two. Every series used
-is recorded with the publisher's own description in the replication package.
+\subsection{Sources}
 
-The remaining sources, with the vintage each is read at: household balances from the Survey of
-Income and Program Participation, 2025 panel, and household composition, earnings and occupation
-from the American Community Survey public use microdata, 2023; official credit aggregates from the
-New York Federal Reserve Household Debt and Credit report, 2026Q2, and the Federal Reserve's
-consumer credit release; the wage share of adjusted gross income from Internal Revenue Service
-Statistics of Income Table 1.4, tax year 2023; the wage bill, federal receipts and national
-accounts aggregates from the national income accounts, with wages and salaries of
-\result{WageBillBn} billion dollars and federal current receipts of \result{FedReceiptsBn} billion
-dollars as the two bases used throughout; reemployment after displacement from fourteen biennial
-vintages of the Bureau of Labor Statistics \emph{Displaced Workers Summary}; bank loss rates and
-scenario severities from the Federal Reserve's 2026 supervisory stress test; trust fund income
-from the 2026 Trustees Reports; and the AI side from the ten-K filings of nine SEC registrants.
+Claim levels and holder shares come from the Federal Reserve's financial accounts
+\citep{FRBZ1}, read from the published data package. The instrument suffix in that release is not
+the same across sectors, so bank, insurer and central bank holdings of one instrument sit under
+different codes; matching on the exact suffix pushes whole holder classes into an unallocated
+remainder. We match on the instrument family and take the closest suffix per sector, which cuts
+the aggregate remainder from about a fifth to under two percent. Every series used is recorded
+with the publisher's own description in the replication package.
 
-Two conventions on sources are worth stating because they caused errors that the checks caught.
-Units are taken from the provider at the point of retrieval rather than assumed, after a series
-published in millions was read as billions. And a discontinued series is replaced rather than
-carried: the auto loan aggregate moved to the New York Federal Reserve workbook after the previous
-source stopped publishing, which changed the under-reporting factor for that book and nothing
-downstream, because the same aggregate enters the correction and the bank-held share and cancels.
+Household balances come from the Survey of Income and Program Participation \citep{CensusSIPP},
+household composition, earnings and occupation from the American Community Survey
+\citep{CensusACS}, and official credit aggregates from the New York Federal Reserve
+\citep{NYFedHHDC2026}. The wage share of adjusted gross income, and the realized gains bound that
+travels with it, are from the Statistics of Income \citep{IRSSOI}; reemployment is fitted on
+fourteen biennial vintages of the worker displacement release \citep{BLSWorkerDisplacement}; loss
+rates and scenario severities are from the supervisory stress test \citep{FRBDFAST2026}; trust
+fund income and depletion dates from the trustees' report \citep{SSATrustees2026}; the
+distribution of corporate equity from the distributional financial accounts \citep{FRBDFA} and
+behind them the Survey of Consumer Finances \citep{FRBSCF}; and the housing agency book from the
+Enterprises' annual filings \citep{FannieMae10K2025,FreddieMac10K2025}. The AI side is built from
+the filings of nine registrants, with the off-balance-sheet structures described by
+\citet{BIS2026} absent from them. The wage bill and federal receipts used as bases are
+\result{WageBillBn} and \result{FedReceiptsBn} billion dollars. Units are taken from the provider
+at retrieval rather than assumed, and a discontinued series is replaced rather than carried.
 
 \subsection{The household credit engine}
 
-The engine maps a displacement level onto household credit losses without ever naming a set of
+The engine maps a displacement level onto household credit losses without naming a set of
 displaced households. Displacement is a probability applied to every household in the working
-core, which is a household containing at least one employed member aged 25 to 64. The share of
+core, defined as a household with at least one employed member aged 25 to 64. The share of
 earners displaced is set equal to the share of the wage bill displaced, and each household's
-earners are drawn against that share, so a household with two earners can lose one or both.
+earners are drawn against that share.
 
 A household that loses an earner does not default; it becomes more likely to default. The
-probability uplift is taken from the literature on job loss and mortgage default: five percentage
-points for one displaced earner and eight for two, which is less than twice the first because the
-second spell adds less than the first. Losses are then exposure at default times loss given
-default, and the loss given default ranges are taken from the supervisory stress test and from the
-conventional severities for each book: 0.25 to 0.40 on first-lien mortgages, 0.80 to 1.00 on
-cards, 0.45 to 0.65 on auto and 0.75 to 1.00 on student debt. Reporting a portfolio loss rate
-against exposure at default instead would apply the probability of default twice, which in an
-early version of this engine made the credit channel appear more than twenty times smaller than it
-is.
+uplift is five percentage points for one displaced earner and eight for two
+\citep{GerardiHerkenhoffOhanianWillen2018}, and losses are exposure at default times loss given
+default, with severities of 0.25 to 0.40 on first-lien mortgages, 0.80 to 1.00 on cards, 0.45 to
+0.65 on auto and 0.75 to 1.00 on student debt. Applying a portfolio loss rate to exposure at
+default instead would count the probability of default twice.
 
-Survey balances are benchmarked to official aggregates before any of this. Two ratios do different
-work and must not be multiplied into one. The \emph{under-reporting factor} is the official
-aggregate over the full survey universe and is a survey correction. The \emph{coverage share} is
-the working-core balance over the full survey universe and is a fact about which households the
-analysis covers. Table~\ref{tab:underreporting} gives both for each book. Their identity, the
-factor divided by the coverage share reproducing the working-core scale-up, holds to three
-decimals on every book, and all four factors are replicated.
+Survey balances are benchmarked to official aggregates first, and two ratios do different work.
+The \emph{under-reporting factor} is the official aggregate over the full survey universe and is a
+survey correction; the \emph{coverage share} is the working-core balance over that universe and is
+a fact about which households the analysis covers. Table~\ref{tab:underreporting} gives both. The
+identity between them holds to three decimals on every book, and all four factors were rebuilt
+independently.
 
 \begin{table}[htbp]
 \centering
-\caption{Survey balances benchmarked to official aggregates, 2026Q2. Replicated.}
+\caption{Survey balances benchmarked to official aggregates, 2026:Q2. The under-reporting factor
+corrects the survey; the coverage share describes the analysis sample. Rebuilt.}
 \label{tab:underreporting}
 \input{tables/tab_under_reporting.tex}
 \end{table}
 
-One scope statement travels with every credit number in this paper. The engine is first round
-only: it holds house prices, consumer spending, business revenue and the employment of everyone
-not displaced fixed. Compared against a supervisory scenario, which moves all of those together,
-the figures are a lower bound on losses rather than an estimate of them.
+One scope statement travels with every credit number here. The engine is first round only: house
+prices, consumer spending, business revenue and the employment of everyone not displaced are held
+fixed. Against a supervisory scenario, which moves all of those together, the figures are a lower
+bound rather than an estimate.
 
-\subsection{The fiscal module}
+\subsection{The fiscal module and the second round}
 
-The fiscal module asks what a fall in the wage bill does to federal receipts. Displacement is
-converted to a dollar amount against the wage bill, and the loss per dollar has three parts: the
-labor tax no longer collected on wages that are not re-earned, less the capital tax collected on
-the income that displaced them, plus any outlay response. The wage that is re-earned is governed by
-a reemployment rate fitted on the fourteen displaced-worker vintages against labor market slack,
-and solved as a fixed point against a stock-flow identity rather than read off the line, because
-displacement changes the slack that the line is a function of.
+The fiscal module converts displacement into a dollar amount against the wage bill and applies a
+loss per dollar with three parts: the labor tax no longer collected on wages that are not
+re-earned, less the capital tax collected on the income that displaced them, plus any outlay
+response. The share of wages re-earned is governed by a reemployment rate fitted on the
+displacement vintages against labor market slack and solved as a fixed point, since displacement
+changes the slack the fit is a function of. Losses are reported for the terminal year rather than
+as a cumulative total divided by a horizon, and they are not linear in displacement: the share
+re-earned falls as displacement rises. Trust fund effects use each fund's own payroll share of its
+own income.
 
-Two choices in that module matter enough to state here. The loss is reported for the terminal year
-rather than as a cumulative total divided by a horizon, because a cumulative loss is a stock and an
-annual loss is a flow, and only the second is comparable with a budget. And the loss is not linear
-in displacement: the share of wages re-earned falls as displacement rises, so the fiscal loss rises
-faster than the displacement that produces it. Trust fund effects are computed on a payroll-only
-basis with each fund's own payroll share of its own income, since the two funds have different
-shares and using one for the other overstates the smaller fund's ratio by about five percent.
-
-\subsection{The second-round module, and why it is scenario}
-
-The second round is the part of the paper with the weakest evidential basis, and it is labelled
-scenario everywhere it appears. The chain is short and stated in full: the net fall in wage income
-becomes a demand shortfall through the difference between the propensity to consume out of labor
-income and out of capital income; the shortfall is expressed as a share of output and compared
-with the fall in output in the Federal Reserve's severely adverse scenario; and the Federal
-Reserve's own published loss totals are scaled by that ratio. Business credit, commercial real
-estate and card losses enter only through that mapping. House prices enter separately, through an
-income elasticity applied to the fall in the national wage bill.
-
-Three things in that chain have no source. The shape of the loss curve beyond the supervisory
-point is unknown, so we carry three mappings, one linear, one that refuses to extrapolate beyond
-the supervisory severity, and one convex, and report the spread between them rather than choosing.
-The propensity ranges are measured on transitory shocks while displacement is persistent, so the
-spread between the labor and capital propensities is if anything understated. The results are
-reported over the whole grid of 648 combinations, as a band. A point estimate inside that band
-would be false precision, and we do not report one.
+The second round is the weakest module evidentially and is labeled scenario wherever it appears.
+The net fall in wage income becomes a demand shortfall through the difference between the
+propensity to consume out of labor and out of capital income
+\citep{MianStraubSufi2020,FagerengHolmNatvik2021}; the shortfall is expressed as a share of output
+and compared with the fall in output in the supervisory severely adverse scenario; and the
+supervisor's own published loss totals are scaled by that ratio. House prices enter through an
+income elasticity \citep{HarterDreiman2004}, and employment through an Okun coefficient
+\citep{BallLeighLoungani2017}. Three elements have no source: the shape of the loss curve beyond
+the supervisory point, for which we carry a linear, a capped and a convex mapping; the propensity
+ranges, measured on transitory shocks where displacement is persistent; and the path itself. We
+report the whole grid of 648 combinations as a band and never a point inside it.
 
 \subsection{Institution-level data}
 
-The second round is applied across individual balance sheets rather than to a system aggregate.
-The panel is every FDIC-insured bank and every federally insured credit union at 30 June 2026,
-with the loan book by category and the capital measure each one is tested against: the tier 1
-leverage ratio against its four percent threshold for banks, the net worth ratio against its six
-percent threshold for credit unions. After exclusions this is \result{NInstitutions} institutions,
-\result{NBanks} banks and \result{NCreditUnions} credit unions, holding \result{SystemAssetsBn}
-billion dollars of assets.
+The second round is applied across individual balance sheets rather than to an aggregate. The
+panel is every insured bank and credit union at 30 June 2026, with the loan book by category and
+the capital measure each is tested against: the tier 1 leverage ratio against its four percent
+threshold for banks, the net worth ratio against its six percent threshold for credit unions.
+After exclusions it is \result{NInstitutions} institutions, \result{NBanks} banks and
+\result{NCreditUnions} credit unions, holding \result{SystemAssetsBn} billion dollars of assets.
 
 \result{ExcludedInstitutions} institutions holding \result{ExcludedAssetsBn} billion dollars are
-excluded, and the reason is worth stating because it was found by a check rather than by
-inspection. They report neither tier 1 capital nor total equity, and they are overwhelmingly
-insured US branches of foreign chartered institutions whose capital is held at the parent. A
-capital test applied to them shows them breaching before any loss is applied, which is an artifact
-of the missing field rather than a finding about the institution. The baseline check is what
-surfaced them, and a capital test is only informative if almost nothing fails it before any loss:
-after the exclusion, \result{BaselineBreaches} institutions breach at baseline, which is
-\result{BaselinePctAssets} percent of system assets. All counts in this paper are post-exclusion
-and the excluded institutions are named in the replication package.
+excluded because they report neither tier 1 capital nor total equity, being overwhelmingly insured
+US branches of foreign chartered institutions whose capital sits at the parent; a capital test
+shows them breaching before any loss, which is an artifact of a missing field. A capital test is
+only informative if almost nothing fails it before any loss, and after the exclusion
+\result{BaselineBreaches} institutions breach at baseline, \result{BaselinePctAssets} percent of
+system assets. Losses are allocated pro rata by category holdings, so dispersion reflects business
+mix alone and is a lower bound on true dispersion.
 
-Loss allocation across the panel is pro rata by category holdings, so the dispersion in the
-results reflects differences in business mix and nothing else. True dispersion, which would also
-reflect differences in underwriting and borrower composition within a category, is wider. The
-institution-level distributions are therefore a lower bound on how uneven the outcome would be.
+\subsection{Status labels, and what was independently rebuilt}
+\label{sec:rebuild}
 
-\subsection{The claims register and the status vocabulary}
+Three labels are used throughout and appear in every table caption. \emph{Rebuilt} means the
+quantity was reproduced by an independent computational rebuild: a separate run that had no
+access to this project's code and worked from raw data and a published specification alone,
+inside a tolerance fixed before the rebuild began. \emph{Measured} means produced by the pipeline,
+clearing every applicable bounds check, but not independently rebuilt. \emph{Scenario} means
+arithmetic conditional on an assumption stated where the number appears. In prose we give the
+label where a reader could otherwise mistake a scenario for a measurement; elsewhere the table
+caption carries it.
 
-Every claim the project has made is carried in a public register with its status, the artifact
-that produced it, and a separate flag recording whether it has been independently rebuilt. Status
-is not a matter of judgement at the point of writing: it is assigned by a clearing pass whose
-source of truth is a single released file, and no claim reaches this manuscript without a status
-in that file. Claims tagged as removed or withdrawn appear nowhere in the paper except
-Section~\ref{sec:limitations}, which lists them with the reason.
+Three rebuild rounds have been run. Round two scored \result{RepTwoScored} quantities,
+\result{RepTwoSealed} of them against expected values fixed in advance;
+\result{RepTwoFivePct} came within five percent and \result{RepTwoTolerance} inside the stated
+tolerance, and \result{RepTwoMismatch} did not match. Round three covered the two constructions
+the earlier rounds had not reached, the debt-only ratio and the assembled capital tax rate, and
+matched all \result{RepThreeSealed} quantities, \result{RepThreeRounding} of them within
+rounding. The blind was procedural rather than enforced: the rebuild ran on the same machine, with
+the file of expected values reachable at a path the specification names, and reported it unopened
+until the rebuild was final. The claim is therefore that these quantities were independently
+rebuilt under a reported blind protocol, not that they were independently verified.
+Appendix~\ref{app:rebuild} gives the round-by-round detail and the causes of the mismatches.
 
-Separately, a standing audit states the bound a quantity must respect before the quantity is
-computed, and checks it afterwards. A loss on a payroll tax cannot exceed that tax base; a share
-cannot leave the unit interval; a debt-only denominator cannot exceed an all-claims denominator.
-The audit runs \result{PlausChecks} checks with \result{PlausViolations} violations, all of which
-are superseded rows retained deliberately so that the audit records what was corrected rather than
-quietly passing.
-
-\subsection{Three rebuild rounds, described exactly}
-
-Round one established the protocol and produced no comparable values in several modules, because
-the brief it worked from left definitions unstated. Round two scored \result{RepTwoScored}
-quantities, \result{RepTwoSealed} of them against expected values sealed in advance, by an
-instance that read none of the project code and worked from raw data and a published brief alone.
-\result{RepTwoFivePct} came within five percent and \result{RepTwoTolerance} inside the tolerance
-stated before the round began; \result{RepTwoMismatch} did not match, and the six root causes are
-published with the round. Round three covered the two constructions the earlier rounds had not
-reached, the debt-only ratio and the assembled capital tax rate, and matched all
-\result{RepThreeSealed} sealed quantities, \result{RepThreeRounding} of them within rounding, with
-\result{RepThreeMismatch} mismatches.
-
-The protocol has a limitation that we state rather than let a reader discover. The blind was
-procedural, not enforced. The rebuilder worked on the same machine, and the sealed file was
-reachable at a path the brief itself names; it was not attached to the request, and the rebuilder
-reported it unopened until the rebuild was final. The supporting evidence is internal and
-circumstantial: most of the insufficiencies were written before the file was opened, several of
-the mismatch causes were among them, and the rebuilder declined to use coefficients the brief had
-leaked. On that basis the claim in this paper is that a quantity was \emph{independently rebuilt
-under a reported blind protocol}, and never that it was independently verified.
-
-That gives the three labels used throughout. \emph{Replicated} means rebuilt in round two or round
-three inside the stated tolerance. \emph{Measured} means produced by the pipeline, clearing every
-applicable check, but not independently rebuilt. \emph{Scenario} means arithmetic conditional on
-an assumption that is stated where the number appears. Nothing else is reported.
+Separately, a standing bounds check states the bound a quantity must respect before it is
+computed and tests it afterwards, running \result{PlausChecks} checks with
+\result{PlausViolations} violations, all of them superseded rows retained deliberately.
 
 \subsection{Disclosure of AI assistance}
+\label{sec:aidisclosure}
 
-The pipeline, the analysis code and the drafting of this manuscript were carried out with
-substantial assistance from a generative AI coding assistant, and the replication rounds were
-performed by separate instances of the same class of tool working from published briefs. The
-authors specified the questions, the conventions and the checks, reviewed every output, and take
-full responsibility for the content. No figure in this paper was produced by a language model
-asserting a value: every reported number is generated from a measured artifact in the replication
-package by the macro pipeline described in Section~\ref{sec:accounts}, and the build fails if the
-prose calls for a value that no artifact defines.
+The conceptual model, the definitions, the inclusion and exclusion rules, the equations, the
+scenario definitions, the statistical choices and the interpretation of results are the authors'.
+Generative AI tools provided computational assistance, in writing and checking analysis code, and
+drafting assistance with the text; the independent computational rebuilds were carried out by
+separate instances of such tools working from published specifications. The authors reviewed every
+output and take responsibility for the content. No reported value originates in a model's
+assertion: every number in the text and tables is generated from a measured artifact in the
+replication package.

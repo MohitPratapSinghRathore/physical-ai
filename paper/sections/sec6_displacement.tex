@@ -1,195 +1,146 @@
 \section{Displacement, measured}
 \label{sec:displacement}
 
-This section asks where the loss lands when wages are displaced, at the one displacement level
-that sits inside the data used to calibrate reemployment. The answer is that displacement is a
-fiscal event well before it is a financial one, and that the composition of the private part of it
-depends on how the automation happens rather than only on how much of it there is.
+This module supports the incidence half of the central claim. It asks where the loss lands when
+wage income is removed, at the one level inside the data used to calibrate reemployment. The
+answer is that the burden is fiscal well before it is financial, and that the composition of the
+private part depends on how the displacement happens rather than only on how much of it there is.
+Everything here is conditional on the displacement level, which is an input.
 
 \subsection{The boundary, stated before any number}
 
-The reemployment rate in Section~\ref{sec:data} is a straight line fitted to fourteen biennial
-observations and then solved as a fixed point. A fitted line extrapolates until it breaks, and
-this one breaks: past a certain displacement level the fixed point leaves the range of
-reemployment rates ever observed, and past a further point no admissible solution exists at all.
-We report a point estimate only where the solution lies inside the observed range and a band
-otherwise, labelled as outside the data.
+The reemployment rate is a straight line fitted to fourteen biennial observations and solved as a
+fixed point. A fitted line extrapolates until it breaks, and this one breaks: past a point the
+solution leaves the range of reemployment rates ever observed, and past a further point no
+admissible solution exists. We report a point estimate only inside the observed range and a band
+otherwise. The physically exposed group leaves that range first, above the ten percent level; the
+two cognitively exposed groups stay inside it to twenty-five percent; above about a quarter of the
+wage bill, no group has a point estimate.
 
-The physically exposed group leaves the observed range first, above the ten percent level. The two
-cognitively exposed groups stay inside it to twenty-five percent. Above about a quarter of the
-wage bill displaced, no group has a point estimate, and every figure in this paper at those levels
-is a band.
-
-This is a limit of our specification, not a fact about the economy, and it is stated that way
-wherever it appears. An earlier version of the code enforced the bound accidentally, through an
-iteration that clipped at zero, and published the clipping boundary as though it were an estimate.
-Correcting it removed the point estimate from about a quarter of the cells in the response surface.
-Where the old value differed from the new band it was the boundary itself, so the superseded
-figures overstated the loss at large displacement rather than understating it.
+This is a limit of our specification, not a fact about the economy. An earlier version of the code
+enforced the bound accidentally, through an iteration that clipped at zero, and published the
+clipping boundary as an estimate; correcting it removed the point estimate from about a quarter of
+the response surface and lowered, rather than raised, the loss at large displacement.
 
 \subsection{First-round incidence by holder}
 
-Table~\ref{tab:incidence} gives the first-round loss by holder at ten percent of the wage bill,
-for each of the three exposure groups. The terminal-year fiscal loss at that level is
-\result{TerminalLossTen} billion dollars, which is replicated: an independent rebuild landed
-within a fifth of a percent of it.
+Table~\ref{tab:incidence} gives the first-round loss by holder at ten percent of the wage bill for
+each exposure group. The terminal-year fiscal loss at that level is \result{TerminalLossTen}
+billion dollars, reproduced by the independent rebuild to within a fifth of a percent.
 
-Read across the table, the shape is the same whichever group is displaced. The federal government
-takes between \result{FedFirstRoundTenLow} and \result{FedFirstRoundTenHigh} billion dollars of the
-first round, private holders between \result{PrivateFirstRoundTenLow} and
-\result{PrivateFirstRoundTenHigh} billion. Most of the federal loss is revenue rather than credit:
-general revenue, then the social security trust funds at \result{OASDILossTenLow} to
-\result{OASDILossTenHigh} billion and the hospital insurance fund at \result{HILossTenLow} to
-\result{HILossTenHigh} billion. The credit losses that reach the federal balance sheet, through the
-student loan book, the housing administration and the housing agencies, are a minority of the
-total.
+The shape is the same whichever group is displaced. The federal government takes between
+\result{FedFirstRoundTenLow} and \result{FedFirstRoundTenHigh} billion dollars of the first round,
+private holders between \result{PrivateFirstRoundTenLow} and \result{PrivateFirstRoundTenHigh}
+billion, and most of the federal loss is revenue rather than credit: general revenue first, then
+the social security funds at \result{OASDILossTenLow} to \result{OASDILossTenHigh} billion and the
+hospital insurance fund at \result{HILossTenLow} to \result{HILossTenHigh} billion. The credit
+losses reaching the federal balance sheet are a minority of the total.
 
 \begin{table}[htbp]
 \centering
 \caption{First-round loss by holder at ten percent of the wage bill displaced, billions of
-dollars. Measured; the terminal-year fiscal loss is replicated.}
+dollars, by exposure group. Scenario, conditional on the displacement level; the terminal-year
+fiscal loss was rebuilt independently.}
 \label{tab:incidence}
 \input{tables/tab_incidence_holder.tex}
 \end{table}
 
 \subsection{The federal share, by displacement level and by classification}
 
-The federal share of the first round is not a single number, and reporting it as one hides the
-one thing it does, which is rise with the displacement level. It also depends on a classification
-choice about the housing agencies, and both readings travel together throughout.
-
-Under the \emph{narrow} reading, only the agency loss beyond the agencies' own capital and a year
-of earnings counts as federal. Under the \emph{conservatorship} reading, the retained agency loss
-counts as federal, because the agencies are in conservatorship, their net worth stands behind
-agreements with the Treasury, and no private shareholder is positioned to absorb anything; only
-what private credit cover actually pays is private. The narrow reading is the lower bound and the
-conservatorship reading the upper bound.
+The federal share of the first round is not one number, and reporting it as one hides that it
+rises with the displacement level. It also depends on a classification choice about the housing
+agencies, and both readings travel together. Under the \emph{narrow} reading only the agency loss
+beyond the agencies' own capital and a year of earnings counts as federal. Under the
+\emph{conservatorship} reading the retained agency loss counts as federal, because the agencies
+are in conservatorship and no private shareholder is positioned to absorb anything; only what
+private credit cover actually pays is private.
 
 At the ten percent level the federal share is \result{FedShareTenNarrowLow} to
 \result{FedShareTenNarrowHigh} percent under the narrow reading and \result{FedShareTenConsLow} to
-\result{FedShareTenConsHigh} percent under the conservatorship reading. Table~\ref{tab:fedshare}
-gives the whole path. It rises with displacement to a peak around the fifty percent level and then
-falls back, because the fiscal component saturates while credit losses keep growing. Those upper
-rows are outside the data and are reported for shape rather than for level. The measured direction,
-the rise from the five to the twenty-five percent level, was reproduced independently: the
-rebuilder's own by-level result sits inside our range at both ends.
+\result{FedShareTenConsHigh} percent under the conservatorship reading.
+Figure~\ref{fig:fedshare} gives the whole path: it rises with displacement to a peak near the
+fifty percent level and falls back, because the fiscal component saturates while credit losses
+keep growing. The rise between the five and twenty-five percent levels was reproduced
+independently, the rebuild's own result sitting inside our range at both ends.
 
-\begin{table}[htbp]
+\begin{figure}[htbp]
 \centering
-\caption{Federal share of the first-round loss, by displacement level and by the classification of
-the housing agencies. Measured inside the data, scenario above it.}
-\label{tab:fedshare}
-\input{tables/tab_federal_share_by_dose.tex}
-\end{table}
+\includegraphics[width=0.84\textwidth]{fig4_federal_share.pdf}
+\caption{Federal share of the first-round loss by displacement level, under both classifications
+of the housing agencies. Bands span the exposure groups. To the right of the dotted line the
+reemployment relationship is extrapolated beyond the observed data and the figures are shape
+rather than level. Measured inside the data, scenario above it.}
+\label{fig:fedshare}
+\end{figure}
 
 \subsection{The housing agencies absorb their share without reaching the Treasury}
 
-The agency book was rebuilt loan class by loan class from the two Enterprises' 2025 annual filings,
-which is what makes the previous paragraph's classification question answerable rather than
-assumed. Three measured results come out of it.
-
-First, a large part of each single-family book carries no credit enhancement at all:
-\result{UnenhancedLow} to \result{UnenhancedHigh} percent across the two Enterprises. Mortgage
-insurance and credit risk transfer cover the rest, and they cover it thinly.
-
-Second, private cover transfers only \result{PrivateCoverLow} to \result{PrivateCoverHigh} percent
-of an agency loss at the ten percent level. The structures are attachment-point structures written
-for idiosyncratic losses; a displacement event of this size passes through most of the loss to the
-guarantor.
-
-Third, and this is the result that matters for the classification question, the Treasury draw is
-\result{TreasuryDrawBn} at every displacement level we ran, including those outside the data:
-\result{AgencyCapitalBn} billion dollars of Enterprise capital stands against a maximum retained
-loss of \result{MaxRetainedAgencyLossBn} billion. The agencies absorb what reaches them. That is a
-first-round result with house prices held fixed, and it is the honest scope of it: a house price
-fall would change the loss given default on every loan in the book, and the engine does not model
-one.
+The agency book was rebuilt loan class by loan class from the Enterprises' own filings
+\citep{FannieMae10K2025,FreddieMac10K2025}, which is what makes the classification question
+answerable rather than assumed. Three measured results follow. A large part of each single-family
+book carries no credit enhancement at all, \result{UnenhancedLow} to \result{UnenhancedHigh}
+percent across the two Enterprises. Private cover transfers only \result{PrivateCoverLow} to
+\result{PrivateCoverHigh} percent of an agency loss at the ten percent level, because the
+structures are written for idiosyncratic losses and an event of this size passes most of the loss
+to the guarantor. And the Treasury draw is \result{TreasuryDrawBn} at every level we ran:
+\result{AgencyCapitalBn} billion dollars of capital stands against a maximum retained loss of
+\result{MaxRetainedAgencyLossBn} billion. That is a first-round result with house prices fixed,
+and a house price fall would change the severity on every loan in the book.
 
 \subsection{Trust funds}
 
-Trust fund effects are computed on a payroll-only basis. Each fund's loss is the displaced share
-of its own covered payroll, adjusted for the wages that come back, times that fund's own payroll
-share of its own income. The two funds have different payroll shares and different caps: the social
-security funds are capped at the contribution and benefit base, so displacing a high-paid worker
-costs them less than displacing a low-paid one, while the hospital insurance fund has no cap. That
-asymmetry is why the two rows in Table~\ref{tab:incidence} move differently across the three
-exposure groups.
-
-One consequence of the payroll basis is worth carrying into Section~\ref{sec:institutions}:
-replacement income funded from a capital tax cannot repair these funds, because it is not covered
-wages. A transfer that makes a displaced household whole leaves the trust fund shortfall exactly
-where it was.
+Trust fund effects are computed on a payroll-only basis: each fund's loss is the displaced share
+of its own covered payroll, adjusted for wages that return, times that fund's own payroll share of
+its own income. The two funds have different shares and different caps, the social security funds
+being capped at the contribution base while the hospital insurance fund is not, which is why the
+two rows in Table~\ref{tab:incidence} move differently across exposure groups. One consequence
+carries into Section~\ref{sec:institutions}: replacement income funded from a capital tax cannot
+repair these funds, because it is not covered wages.
 
 \subsection{Households, and where the buffers are thinnest}
 
-Table~\ref{tab:buffers} gives the liquid runway of working households by wage quintile: the number
-of months of income their liquid assets cover, and the share with less than one month of it.
-
-The finding is that buffers are not monotonic in pay. The thinnest buffers are in the
-\emph{second} quintile, not the bottom one: a median runway of \result{QTwoRunway} months against
-\result{QOneRunway} in the bottom quintile, and \result{QTwoUnderOne} percent under one month
-against \result{QOneUnderOne} percent. The gradient is monotonic from the second quintile upward,
+Liquid runway by wage quintile gives the household result. Buffers are not monotonic in pay: the
+thinnest are in the \emph{second} quintile, a median of \result{QTwoRunway} months against
+\result{QOneRunway} in the bottom quintile, with \result{QTwoUnderOne} percent under one month
+against \result{QOneUnderOne} percent. From the second quintile upward the gradient is monotonic,
 reaching \result{QFiveRunway} months and \result{QFiveUnderOne} percent at the top.
 
-The explanation is not mysterious and it matters for policy design. Households in the bottom
-quintile hold little debt and few of the commitments that a runway is measured against; households
-in the second quintile have taken on the commitments of the households above them without the
-income or the assets to carry them. A relief instrument targeted at the bottom of the wage
-distribution misses the households with the least room, which is a design point rather than a
-rhetorical one.
+The explanation matters for design: households in the bottom quintile hold little debt and few of
+the commitments a runway is measured against, while households in the second have taken on the
+commitments of those above them without the income or assets to carry them. Relief targeted at the
+bottom of the distribution misses the households with the least room.
 
 \begin{table}[htbp]
 \centering
-\caption{Liquid runway of working households, by wage quintile. Measured.}
+\caption{Liquid runway of working households by wage quintile: months of income covered by liquid
+assets, and the share with less than one month. Measured.}
 \label{tab:buffers}
 \input{tables/tab_buffers.tex}
 \end{table}
 
-\subsection{The difference between exposure types is a pay effect}
+\subsection{Exposure type is a pay effect, and how displacement arrives changes who pays}
 
-Households whose earners are physically exposed to automation look more fragile than households
-whose earners are cognitively exposed. That difference does not survive a control for pay. Across
-the cells we can compute both ways, reweighting the cognitively exposed group to the pay
-distribution of the physically exposed group, and the reverse, leaves between
-\result{PayGapSurvivingLow} and \result{PayGapSurvivingHigh} percent of the raw gap standing. On
-one index and one survey the contrast reverses sign once pay is controlled.
+Households whose earners are physically exposed look more fragile than households whose earners
+are cognitively exposed, and that difference does not survive a control for pay: reweighting
+either group to the other's pay distribution leaves between \result{PayGapSurvivingLow} and
+\result{PayGapSurvivingHigh} percent of the raw gap standing, and on one index and one survey the
+contrast reverses sign. Exposure type is largely a proxy for pay in these data. The direction was
+confirmed in every cell by the independent rebuild; the magnitudes were not, and we report the
+direction as the finding.
 
-The reading is that exposure type is largely a proxy for pay in these data, and that a household's
-vulnerability to displacement is better predicted by what it earns than by what kind of work
-produces the earnings. The direction of this result was confirmed in every cell by the independent
-rebuild; the magnitudes were not, and we report the direction as the finding and the magnitudes as
-ours alone.
+Automation can also work through hiring that does not happen rather than through layoffs. Running
+the first round three ways, incumbents only, non-hiring only, and a sourced mix, student loan
+losses rise by \result{AttritionStudentLow} to \result{AttritionStudentHigh} percent under the
+non-hiring case against the sourced mix while mortgage losses fall by
+\result{AttritionMortgageLow} to \result{AttritionMortgageHigh} percent, because entrants carry
+student debt and rarely carry mortgages. Auto losses barely move. The private loss is the same
+size and lands on different people and different lenders.
 
-\subsection{Attrition-led automation moves the private loss to the young}
-
-Automation need not work through layoffs. It can work through hiring that does not happen, in
-which case the people who bear it are not incumbents but entrants. We ran the first round three
-ways: incumbents only, non-hiring only, and a sourced mix of the two. Table~\ref{tab:attrition}
-gives all nine cells.
-
-Two things come out of it. The first is compositional: under the non-hiring case, student loan
-losses rise by \result{AttritionStudentLow} to \result{AttritionStudentHigh} percent against the
-sourced mix and mortgage losses fall by \result{AttritionMortgageLow} to
-\result{AttritionMortgageHigh} percent, because entrants carry student debt and rarely carry
-mortgages. Auto losses barely move. The private loss is the same size and lands on different people
-and different lenders.
-
-The second is that the federal budget column does not move at all. It is identical across the three
-incidence cases, to the cent, in every exposure group. A wage that is never earned costs the same
-in tax whether it was never offered to an entrant or taken away from an incumbent. This is the
-clearest statement in the paper of why the fiscal exposure is the structural one: it is invariant
-to the channel through which displacement arrives, while the credit exposure is not.
-
-\begin{table}[htbp]
-\centering
-\caption{First round at ten percent of the wage bill under three incidence cases, billions of
-dollars. The federal budget column is identical across cases within each exposure group. Measured.}
-\label{tab:attrition}
-\input{tables/tab_attrition.tex}
-\end{table}
-
-One gap in this engine is worth naming rather than leaving for a reader to find. It measures
-displaced incumbents and, in the non-hiring case, jobs not offered to entrants who are already in
-the data. People who are never hired at all are structurally invisible to it. External indicators
-for recent graduates have been moving in ways consistent with that channel operating, and we report
-it as a gap in our own measurement rather than as a finding of ours.
+The federal column does not move at all. It is identical across the three cases, to the cent, in
+every exposure group: a wage that is never earned costs the same in tax whether it was never
+offered to an entrant or taken from an incumbent. That is the clearest statement in the paper of
+why the fiscal exposure is the structural one. Appendix Table~\ref{tab:attrition} gives the nine
+cells. One gap belongs with it: people who are never hired at all are invisible to this engine,
+and external indicators for recent graduates have been moving in ways consistent with that channel
+operating \citep{BrynjolfssonChandarChen2026}, which we report as a gap in our measurement rather
+than as a finding of ours.

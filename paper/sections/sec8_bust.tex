@@ -1,132 +1,118 @@
 \section{If AI fails}
 \label{sec:bust}
 
-The paper so far has asked what happens if AI succeeds and displaces labor. The opposite case
-deserves the same treatment, and for most of this project it did not get it: displacement went
-through a household engine, a fiscal module and thousands of balance sheets while the failure case
-was assessed against historical analogies. That asymmetry flattered the failure case, so this
-section runs it through the same machinery.
+This module prices the opposite direction on the same basis, so that the asymmetry in the central
+claim is not an artifact of having stress-tested only one outcome. For most of this project the
+failure case was assessed against historical analogies while displacement went through an engine,
+which flattered it. The answer is that an AI bust is a large fiscal event and a small credit
+event, which inverts the displacement case.
 
-The answer is that an AI bust is a large fiscal event and a small credit event, which inverts the
-displacement case exactly.
+\subsection{What the AI side is financed with, in bounds}
 
-\subsection{What the AI side is financed with, in tiers}
+Any claim about a bust depends on how the investment was financed, so we report the AI side as
+bounds by tier, never as a point. Table~\ref{tab:aitiers} gives them.
 
-Any claim about what a bust would do depends on how the investment was financed, so we set out
-what is known in tiers, each with its own confidence label, and never blend them.
-Table~\ref{tab:aitiers} gives them.
-
-The hard tier is nine SEC registrants' own filings: \result{FilerCapexBn} billion dollars of
-capital spending against \result{FilerOCFBn} billion of operating cash flow, a self-funding ratio
-of \result{SelfFunding}, and \result{OnBalanceSheetAIDebtBn} billion dollars of on-balance-sheet
-debt. On those books the debt-financed share of capital spending is
-\result{DebtFinancedShare} percent. A second tier, verified from a Federal Reserve Bank source but
-not from filings, is about \result{AIBankCommitmentsBn} billion dollars of large bank commitments
-to AI-adjacent industries, of which roughly \result{AIDrawnBn} billion appears to be drawn. A third
-tier, the equity value attributable to AI, has no defensible selection rule in our data and is
-swept rather than asserted. The fourth tier, off-balance-sheet vehicles, GPU-backed lending, data
-centre securitizations and vendor financing, is not sourced at all, and the Bank for International
-Settlements describes exactly those structures as dominant in this market.
+The measured lower bound is nine registrants' own filings: \result{FilerCapexBn} billion dollars
+of capital spending against \result{FilerOCFBn} billion of operating cash flow, a self-funding
+ratio of \result{SelfFunding}, and \result{OnBalanceSheetAIDebtBn} billion dollars of
+on-balance-sheet debt, putting the debt-financed share of capital spending at
+\result{DebtFinancedShare} percent on those books. A verified secondary tier adds about
+\result{AIBankCommitmentsBn} billion dollars of bank commitments to AI-adjacent industries, of
+which roughly \result{AIDrawnBn} billion appears drawn \citep{CohenKillenLau2026}. A scenario tier
+covers the equity attributable to AI, swept rather than asserted. The fourth tier,
+off-balance-sheet vehicles, hardware-backed lending and securitizations, is not sourced at all,
+and \citet{BIS2026} describes exactly those structures as dominant in this market. Every level is
+therefore a lower bound and every federal share of it an upper bound.
 
 \begin{table}[htbp]
 \centering
-\caption{The AI side by tier of evidence. Tier 1 is measured from filings; tier 4 is the hole the
-verdict turns on. Cells with no sourced value read n/a.}
+\caption{The AI side by tier of evidence. Tier 1 is measured from filings and is a lower bound on
+the total; tier 4 is unsourced and is the hole the financing verdict turns on. Cells with no
+sourced value read n/a.}
 \label{tab:aitiers}
 \input{tables/tab_ai_tiers.tex}
 \end{table}
 
-\subsection{The verdict on the financing structure, which is conditional}
+\subsection{The financing verdict, which is conditional}
 
-There are two historical patterns for an asset bust of this kind, and they have very different
-fiscal consequences. In the equity-led case of 2000 to 2002, federal receipts fell
-\result{EquityLedReceiptsPct} percent and corporate tax \result{EquityLedCorpPct} percent. In the
-debt-led case of 2007 to 2009, receipts fell \result{CreditLedReceiptsPct} percent and corporate
-tax \result{CreditLedCorpPct} percent. Both are verified from the published aggregates.
+Two historical patterns bracket a bust of this kind, with different fiscal consequences. In the
+equity-led case of 2000 to 2002 federal receipts fell \result{EquityLedReceiptsPct} percent and
+corporate tax \result{EquityLedCorpPct} percent; in the debt-led case of 2007 to 2009 receipts
+fell \result{CreditLedReceiptsPct} percent and corporate tax \result{CreditLedCorpPct} percent.
+Both are verified from published aggregates.
 
-On the nine filers' own books, at \result{DebtFinancedShare} percent debt-financed, the structure
-sits near the equity-led pattern. That is where a paper could stop, and it would be wrong to. The
-verdict flips out of that pattern on \result{FlipToBetweenBn} billion dollars of additional
-debt-financed capital spending, which is \result{FlipToBetweenShare} percent of the bank
-commitments already identified in tier 2, and reaches the debt-led pattern on
-\result{FlipToDebtLedBn} billion, \result{FlipToDebtLedShare} percent of them. The drawn portion of
-those commitments alone is already larger than the first threshold. Tier 4 is unmeasured.
+On the nine filers' own books the structure sits near the equity-led pattern. That is where a
+paper could stop and it would be wrong to. The verdict leaves that pattern on
+\result{FlipToBetweenBn} billion dollars of additional debt-financed capital spending, which is
+\result{FlipToBetweenShare} percent of the commitments already identified in tier 2, and reaches
+the debt-led pattern on \result{FlipToDebtLedBn} billion, \result{FlipToDebtLedShare} percent of
+them. The drawn portion of those commitments alone already exceeds the first threshold, and tier 4
+is unmeasured.
 
 \begin{quote}
-The defensible statement is that on the nine filers' own balance sheets the structure resembles the
-equity-led case. The statement that the structure resembles the equity-led case is not defensible,
-and we do not make it. The verdict is conditional on a quantity we have not measured, and the
-direction of the unmeasured quantity is towards the worse case.
+The defensible statement is that on the nine filers' own balance sheets the structure resembles
+the equity-led case. The statement that the structure resembles the equity-led case is not
+defensible, and we do not make it.
 \end{quote}
 
-\subsection{The bust run through the same engine}
+\subsection{The bust through the same engine}
 
-Converted to a wage-bill equivalent, an AI bust costs \result{BustWageLow} to
-\result{BustWageHigh} percent of the wage bill, which is \result{BustRatioLow} to
-\result{BustRatioHigh} times smaller than the ten percent displacement case this paper has used
-throughout. Household credit losses are \result{BustCreditLow} to \result{BustCreditHigh} billion
-dollars, against tens of billions in the displacement case. Output falls \result{BustGDPLow} to
-\result{BustGDPHigh} percent, well inside the fall in the Federal Reserve's severely adverse
-scenario. All of these are scenario figures.
+Converted to a wage-bill equivalent, a bust costs \result{BustWageLow} to \result{BustWageHigh}
+percent of the wage bill, \result{BustRatioLow} to \result{BustRatioHigh} times smaller than the
+ten percent displacement case. Household credit losses are \result{BustCreditLow} to
+\result{BustCreditHigh} billion dollars, and output falls \result{BustGDPLow} to
+\result{BustGDPHigh} percent, well inside the supervisory severely adverse scenario. Federal
+receipts, by contrast, fall \result{BustReceiptsLow} to \result{BustReceiptsHigh} billion dollars
+on the verified historical episodes: an order of magnitude larger than the terminal-year fiscal
+loss at ten percent displacement, and arriving through capital gains and corporate receipts rather
+than wage taxes. These are scenario figures.
 
-Federal receipts, on the other hand, fall \result{BustReceiptsLow} to \result{BustReceiptsHigh}
-billion dollars on the verified historical episodes. That is an order of magnitude larger than the
-terminal-year fiscal loss at ten percent displacement, and it arrives through a completely
-different door: capital gains and corporate receipts rather than wage taxes.
-
-Why the bust transmits so weakly to households is measured rather than assumed, and it is the same
-ownership fact that drove Section~\ref{sec:fiscal}. Corporate equity is extraordinarily
-concentrated: the top one percent of households hold \result{TopOnePctEquity} percent of it and the
-bottom half hold \result{BottomHalfEquity} percent. A fall in equity value therefore lands on the
-households with the lowest propensity to consume out of wealth, measured at \result{MPCWealth}
-cents in the dollar per year. The same concentration that makes the capital tax base hard to reach
-makes the wealth channel weak.
-
-Two caveats belong with these numbers. The propensity to consume out of wealth is a sourced
-parameter checked against two episodes, not a parameter we estimated. And the path through which
-output falls does not feed bank-channel damage back into itself, so the output fall is understated
-by an amount we have not sized.
+Why the bust transmits so weakly to households is measured, and it is the same ownership fact that
+drove Section~\ref{sec:fiscal}. Corporate equity is extraordinarily concentrated: the top one
+percent of households hold \result{TopOnePctEquity} percent of it and the bottom half
+\result{BottomHalfEquity} percent \citep{FRBDFA}. A fall in equity value lands on the households
+with the lowest propensity to consume out of wealth, measured at \result{MPCWealth} cents in the
+dollar per year \citep{ChodorowReichNenovSimsek2021}. The concentration that makes the capital tax
+base hard to reach makes the wealth channel weak. Two caveats: that propensity is a sourced
+parameter checked against two episodes rather than one we estimated, and the output path does not
+feed bank-channel damage back into itself, so the output fall is understated by an amount we have
+not sized.
 
 \subsection{The payoff by holder, and what a holdings table cannot show}
 
-Table~\ref{tab:payoff} scores each holder by its share of the wage side and its share of the AI
-side, and reports the net position in three outcomes. Only the federal government and banks lose in
-every column. Everyone else holds enough of the AI side to offset what they lose on the wage side
-if AI succeeds: households in particular hold \result{HouseholdsAISide} percent of the AI side
-against six percent of the wage side, and gain \result{HouseholdPayoffSuccess} under success where
-the federal government loses \result{FedPayoffSuccess}.
+Figure~\ref{fig:payoff} scores each holder by its share of the two sides and reports the net
+position in three outcomes. Only the federal government and banks lose in every column; everyone
+else holds enough of the AI side to offset what they lose on the wage side if AI succeeds.
+Households in particular hold \result{HouseholdsAISide} percent of the AI side against six percent
+of the wage side, gaining \result{HouseholdPayoffSuccess} under success where the federal
+government loses \result{FedPayoffSuccess}.
 
-\begin{table}[htbp]
+\begin{figure}[htbp]
 \centering
-\caption{The position of each holder across three outcomes, scored on holdings. The wage side is
-measured; the AI side is scenario and a lower bound.}
-\label{tab:payoff}
-\input{tables/tab_payoff.tex}
-\end{table}
+\includegraphics[width=0.82\textwidth]{fig6_payoff.pdf}
+\caption{Net position of each holder across three outcomes, scored on holdings. The wage side is
+measured; the AI side is a lower bound built from on-balance-sheet filings, so positions in the
+AI-fails column are correspondingly bounded. A holdings score cannot see a tax claim, which is why
+the federal row understates the state's fiscal position.}
+\label{fig:payoff}
+\end{figure}
 
-The table understates the federal position in the first column and the reason matters more than the
-table. It scores holders by what they hold, so a government holding one percent of the AI side
-scores as barely exposed when AI fails, at \result{FedPayoffFails}. But federal receipts fall
-\result{BustReceiptsLow} to \result{BustReceiptsHigh} billion dollars in exactly that case. The
-state's claim on the AI upside is fiscal rather than proprietary: it is the capital tax of
-Section~\ref{sec:fiscal}, not a portfolio. A holdings table cannot see a tax claim, which is why
-this paragraph sits beside the table rather than in a footnote.
-
-Read that way, the two facts are one fact. Being barely exposed to an AI bust, in holdings terms,
-and being unhedged on the AI upside are the same statement about a government whose only claim on
-AI capital is a tax that reaches \result{TauKBarkai} percent of the surplus.
+The figure understates the federal position in the first column, and the reason matters more than
+the figure. It scores holders by what they hold, so a government holding about
+\result{AIFederalShareRounded} percent of the AI side scores as barely exposed when AI fails, at
+\result{FedPayoffFails}. But federal receipts fall \result{BustReceiptsLow} to
+\result{BustReceiptsHigh} billion dollars in exactly that case. The state's claim on the AI upside
+is fiscal rather than proprietary: it is the capital tax of Section~\ref{sec:fiscal}, not a
+portfolio. Being barely exposed to a bust in holdings terms and being unhedged on the upside are
+the same statement about a government whose only claim on AI capital is a tax reaching
+\result{TauKBarkai} percent of the surplus.
 
 \subsection{Two directions, two tax bases}
 
 The instruments that would protect against the two failure directions are nearly disjoint, but not
-for the reason it would be natural to assume. It is not that a bust leaves the wage side untouched:
-it touches it, and the size of that is reported above. It is that the bust reaches the wage side
-through a channel one to two orders of magnitude smaller than displacement does, while reaching the
-federal budget through capital gains and corporate receipts, which displacement barely touches.
-
-The two failure directions therefore hit the same institution through different tax bases.
-Instruments that protect the wage tax base do not protect the capital tax base, and the reverse.
-That is the organising conclusion this paper carries into
-Section~\ref{sec:institutions}: one capital tax rate is simultaneously the state's only claim on
-the AI upside and the thing that would have to rise to close the fiscal condition after
-displacement. It is being asked to do two opposite jobs.
+because a bust leaves the wage side untouched. It touches it, by the amount reported above, and
+the point is that it reaches the wage side through a channel one to two orders of magnitude
+smaller than displacement does while reaching the federal budget through a different tax base
+entirely. Instruments that protect the wage tax base do not protect the capital tax base, and the
+reverse. One capital tax rate is simultaneously the state's only claim on the AI upside and the
+thing that would have to rise to close the fiscal condition after displacement.

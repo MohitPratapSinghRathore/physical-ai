@@ -1,140 +1,111 @@
 \section{Banks and the second round}
 \label{sec:banks}
 
-Displacement reaches banks, but not mainly through the borrowers who lose their jobs. It reaches
-them through what the lost spending does to everyone else. This section applies the loss across
-\result{NInstitutions} individual balance sheets and asks which of them is short of capital
-afterwards, and then asks whether household relief is the instrument that protects them. The
-balance sheets are measured. Every loss applied above the level inside the data is scenario, and
-labelled so in every table.
+This module tests the last clause of the central claim, that the first-round burden does not fall
+on aggregate bank capital. Displacement reaches banks, but mostly through what lost spending does
+to everyone else rather than through the borrowers who lose their jobs. We apply the loss across
+\result{NInstitutions} individual balance sheets and ask which are short of capital afterwards,
+and then whether household relief is the instrument that protects them. The balance sheets are
+measured; every loss applied above the level inside the data is scenario.
 
 \subsection{Almost nothing happens at the level inside the data}
 
 At ten percent of the wage bill displaced, system losses are about \result{SysLossTen} billion
 dollars, of which \result{SysFirstTen} billion is first round and \result{SysSecondTen} billion,
-\result{SecondRoundShareTen} percent of the total, arrives through the second round: the spending
-shortfall, house prices and business credit. \result{BreachTenN} institutions fall below their
-capital threshold, holding \result{BreachTenAssets} percent of system assets, against a baseline of
-\result{BaselineBreaches} institutions and \result{BaselinePctAssets} percent before any loss is
-applied. On any reading that is a banking system that barely moves.
+\result{SecondRoundShareTen} percent of the total, arrives through the second round.
+\result{BreachTenN} institutions fall below their capital threshold, holding
+\result{BreachTenAssets} percent of system assets, against a baseline of
+\result{BaselineBreaches} institutions and \result{BaselinePctAssets} percent before any loss.
+That is a banking system that barely moves.
 
-Breaches open above the level inside the data. At twenty-five percent, \result{BreachTwentyFiveN}
-institutions holding \result{BreachTwentyFiveAssets} percent of assets breach; at fifty percent,
-\result{BreachFiftyN} institutions holding \result{BreachFiftyAssets} percent. Allowing one year of
-earnings to absorb losses before the capital test is applied cuts those to
-\result{BreachTwentyFiveAssetsEarnings} and \result{BreachFiftyAssetsEarnings} percent, which is
-the single largest sensitivity in this module and the reason the upper rows should be read as
-shape rather than level. Both are scenario figures outside the observed data.
+Breaches open above the level inside the data: \result{BreachTwentyFiveN} institutions holding
+\result{BreachTwentyFiveAssets} percent of assets at twenty-five percent displacement, and
+\result{BreachFiftyN} holding \result{BreachFiftyAssets} percent at fifty. Allowing one year of
+earnings to absorb losses before the capital test cuts those to
+\result{BreachTwentyFiveAssetsEarnings} and \result{BreachFiftyAssetsEarnings} percent, the single
+largest sensitivity in this module and the reason the upper rows are shape rather than level.
 
-\subsection{Which institutions, by size and by business model}
+\subsection{Which institutions}
 
-The interesting result is not the system total but its dispersion, in
-Table~\ref{tab:instmodel}. Card-heavy lenders are the most exposed by a distance:
-\result{CardHeavyTwentyFiveInst} percent of them breach at twenty-five percent displacement,
-holding \result{CardHeavyTwentyFiveAssets} percent of that class's assets, rising to
-\result{CardHeavyFiftyInst} percent of institutions at fifty. Credit unions are the only class with
-any stress at the ten percent level, \result{CreditUnionTenInst} percent of them, because their
-book is almost entirely household credit and they have no commercial business to diversify into.
-At the other end, mortgage portfolio lenders are among the least exposed at every level,
-\result{MortgageLenderTwentyFiveInst} percent of institutions at twenty-five percent displacement.
+The result worth reporting is the dispersion, in Figure~\ref{fig:breach}. Card-heavy lenders are
+the most exposed by a distance, \result{CardHeavyTwentyFiveInst} percent of them breaching at
+twenty-five percent displacement and holding \result{CardHeavyTwentyFiveAssets} percent of that
+class's assets, rising to \result{CardHeavyFiftyInst} percent of institutions at fifty. Credit
+unions are the only class with any stress at the ten percent level,
+\result{CreditUnionTenInst} percent of them, because their book is almost entirely household
+credit with no commercial business to dilute it. Mortgage portfolio lenders are among the least
+exposed at every level, \result{MortgageLenderTwentyFiveInst} percent of institutions at
+twenty-five percent.
 
-That last result settles at institution level a question left open elsewhere in this literature.
-A mortgage book concentrated in one region or one industry is not what makes a lender fragile to
-displacement; an unsecured consumer book is, because unsecured credit has no collateral to
-recover against and its loss given default is close to one.
+That last result settles at institution level a question occupational data alone leave open. What
+makes a lender fragile to a wage shock is an unsecured consumer book, whose loss given default is
+close to one, rather than a mortgage book concentrated in one region or industry. Two
+qualifications travel with it: losses are allocated pro rata by category, so business mix is the
+only source of dispersion here and the true spread is wider; and the largest institutions are
+diversified by construction, so this is a statement about the tail rather than the center.
 
-Two qualifications travel with the dispersion. Losses are allocated pro rata by category
-holdings, so the only thing generating dispersion here is business mix; differences in
-underwriting within a category would widen it, which makes these figures a lower bound on how
-uneven the outcome is. And the largest institutions are diversified by construction, so a
-concentration result of this kind says more about the tail of the system than about its centre.
-
-\begin{table}[htbp]
+\begin{figure}[htbp]
 \centering
-\caption{Share of assets in breach by business model and displacement level. Balance sheets
-measured; loss application scenario above the ten percent level.}
-\label{tab:instmodel}
-\input{tables/tab_institutions_by_model.tex}
-\end{table}
+\includegraphics[width=0.84\textwidth]{fig5_breach.pdf}
+\caption{Share of each business model's assets held by institutions below their capital threshold,
+at three displacement levels. Balance sheets measured at 30 June 2026; loss application is
+scenario, and the twenty-five and fifty percent levels are outside the observed data.}
+\label{fig:breach}
+\end{figure}
 
 \subsection{The instrument test: household relief does not protect bank capital}
 
-If the second round is what reaches banks, then instruments that act on the first round should not
-do much for bank capital. Table~\ref{tab:relief} tests that directly, running each relief
-instrument through the same balance sheets.
-
-Forbearance, automatic income-driven student repayment and enhanced wage insurance, all together,
+If the second round is what reaches banks, instruments acting on the first round should not do
+much for bank capital. Table~\ref{tab:relief} tests that through the same balance sheets.
+Forbearance, automatic income-driven student repayment and enhanced wage insurance together
 remove \result{ReliefRemovedTen} percent of system bank losses at the ten percent level,
 \result{ReliefRemovedTwentyFive} percent at twenty-five and \result{ReliefRemovedFifty} percent at
-fifty. Under a tenth, everywhere. The arithmetic behind that is already in the first paragraph of
-this section: at the ten percent level only \result{SysFirstTen} billion of a
-\result{SysLossTen} billion total is first round, and the instruments act on the first round. The
-most expensive instrument in the set, enhanced wage insurance, costs
-\result{WageInsuranceCost} billion dollars and removes \result{WageInsuranceRemoved} billion of
-bank losses.
+fifty: under a tenth everywhere. The arithmetic is in the first paragraph of this section, since
+only \result{SysFirstTen} billion of a \result{SysLossTen} billion total is first round. The most
+expensive instrument in the set costs \result{WageInsuranceCost} billion dollars and removes
+\result{WageInsuranceRemoved} billion of bank losses.
 
 \begin{table}[htbp]
 \centering
 \caption{Relief instruments against system bank losses at ten percent of the wage bill displaced.
-Where a fiscal cost is not sourced the cell reads n/a. Scenario.}
+Cells with no sourced fiscal cost read n/a. Scenario.}
 \label{tab:relief}
 \input{tables/tab_relief.tex}
 \end{table}
 
-The conclusion to draw is about what these instruments are for, not about whether they are worth
-having.
+The conclusion is about what these instruments are for.
 
 \begin{quote}
-Household relief instruments must be judged on household outcomes, not on bank capital. They do
-reshape the distribution of failures: at the twenty-five percent level they take assets in breach
-from \result{ReliefAssetsBeforeTwentyFive} to \result{ReliefAssetsAfterTwentyFive} percent and stop
-\result{ReliefStoppedTwentyFive} institutions breaching. They change who fails, not how much is
+Household relief must be judged on household outcomes, not on bank capital. It does reshape the
+distribution of failures: at the twenty-five percent level it takes assets in breach from
+\result{ReliefAssetsBeforeTwentyFive} to \result{ReliefAssetsAfterTwentyFive} percent and stops
+\result{ReliefStoppedTwentyFive} institutions breaching. It changes who fails, not how much is
 lost.
 \end{quote}
 
-Those two facts are consistent, and the reason is worth a sentence because it is easy to read as a
-contradiction. The instruments remove a small share of a large aggregate loss, but they remove it
-from precisely the institutions whose books are concentrated in the relieved categories. A small
-total with a concentrated incidence can change many capital outcomes while barely moving the
-system total. An instrument chosen to protect capital would instead have to act on the second
-round, which means acting on spending, house prices and business credit.
+Those two facts are consistent. The instruments remove a small share of a large aggregate loss,
+but they remove it from the institutions whose books are concentrated in the relieved categories,
+so a small total with concentrated incidence changes many capital outcomes while barely moving the
+system total. An instrument chosen to protect capital would have to act on the second round, which
+means acting on spending, house prices and business credit.
 
-\subsection{The institutions the engine does not reach}
+\subsection{The exposures this engine does not reach}
 
-Four sets of institutions are exposed to wage risk in ways this engine does not capture, and they
-are named here rather than estimated, because naming what is missing is more useful than putting a
-number on it that the data cannot support.
-
-\paragraph{State and local government.} It is exposed through its own tax base rather than a loan
-book: \result{StateLocalWageLinkedBn} billion dollars of wage-linked income tax,
-\result{StateLocalWageLinkedShare} percent of its own tax receipts, plus sales taxes that fall with
-the spending wages fund. Unlike the federal government it cannot run the deficit through, because
-every state but one has a balanced-budget requirement of some form. A revenue fall therefore
-becomes an in-year spending cut, and that cut feeds the same demand channel that produces nine
-tenths of the bank losses above. That loop is not in the engine. It would amplify the second round,
-so its absence makes our figures conservative in a direction we can sign but not size.
-
-\paragraph{Pension funds.} They are exposed on both sides at once and in opposite directions.
-Benefit promises are fixed in nominal terms; contributions are a percentage of covered payroll and
-fall with the wage bill. Displacement widens the funding gap mechanically, with no change in asset
-returns, and because amortization schedules are set as a share of payroll, a smaller payroll raises
-the required contribution rate on the employers who remain. For public plans that employer is the
-same balanced-budget government in the paragraph above, which is how the two exposures compound.
-What the accounts capture is only the \result{PensionHoldingsBn} billion dollars of wage-backed
-claims pension funds hold, not what they owe against payroll.
-
-\paragraph{Insurers and private credit.} These are the holders most directly exposed to both sides
-of the bet at once, which makes them the population to which the paper's central asymmetry most
-directly applies. Insurers hold \result{InsurerHoldingsBn} billion dollars of wage-backed claims
-against long-dated liabilities, and can hold to maturity in a way a leveraged holder cannot. Private
-credit cannot be separated from the Z.1 other-financial aggregate with the data used here, so the
-\result{OtherFinancialHoldingsBn} billion dollars attributed to that sector is an upper bound on
-the private credit holding by a wide and unknown margin. On the other side, large banks have
-committed about \result{AIBankCommitmentsBn} billion dollars to AI-adjacent industries, which is
-the point at which the two sides of the bet meet on one balance sheet.
-
-\paragraph{Everything outside the insured depository system.} The panel covers insured banks and
-credit unions. Nonbank mortgage servicers, consumer lenders and marketplace platforms hold
-household credit and are not in it. Their absence is not neutral: they are, as a class, more thinly
-capitalized and more dependent on wholesale funding than the institutions we measure, so the
-system-wide figures here are again a lower bound.
+Four sets of institutions are exposed in ways the panel does not capture, and naming them is more
+useful than putting a number on them the data cannot support. \emph{State and local government} is
+exposed through its own tax base, \result{StateLocalWageLinkedBn} billion dollars of wage-linked
+income tax, \result{StateLocalWageLinkedShare} percent of its own tax receipts, and cannot run the
+deficit through because of balanced-budget requirements; its in-year spending cut feeds the same
+demand channel that produces nine tenths of the bank losses above, and that loop is not in the
+engine, so its absence makes our figures conservative in a direction we can sign but not size.
+\emph{Pension funds} are exposed on both sides at once, benefits fixed in nominal terms while
+contributions are a share of covered payroll, so displacement widens the funding gap mechanically
+and raises the required contribution rate on the employers who remain; the accounts capture only
+the \result{PensionHoldingsBn} billion dollars they hold. \emph{Insurers and private credit} hold
+both sides, insurers \result{InsurerHoldingsBn} billion dollars of wage-backed claims against
+long-dated liabilities, while private credit cannot be separated from the other-financial
+aggregate, so the \result{OtherFinancialHoldingsBn} billion attributed to that sector is an upper
+bound by an unknown margin. And everything outside the insured depository system, nonbank
+servicers and consumer lenders among them, is absent from the panel; as a class they are more
+thinly capitalized than the institutions we measure, so the system figures are again a lower
+bound.
