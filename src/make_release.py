@@ -260,12 +260,22 @@ def build_dashboard():
          "date": "2026-01"},
         {"indicator": "Effective tax rate on AI surplus, assembled from components, "
                       "all tax layers counted once, Barkai rent reading",
-         "value": "0.086 central, 0.073 to 0.099 (Barkai); 0.015 (Karabarbounis-Neiman)",
+         "value": "0.0851 central, 0.073 to 0.099 (Barkai), analytic range 0.056 to "
+                  "0.124; 0.015 (Karabarbounis-Neiman)",
          "threshold": f'{round(tks["required_tau_k"]["AMR_0.255"], 4)} to 0.1373',
-         "status": "BELOW THRESHOLD under BOTH rent readings, and ROBUST: passes in under "
-                   "1 percent of the remaining parameter space against the easier "
-                   "labour-tax reading and NOWHERE against the harder. No single remaining "
-                   "parameter can cross a threshold alone",
+         "status": "BELOW THRESHOLD under BOTH rent readings. ROBUSTNESS IS CONDITIONAL "
+                   "ON THE BASE OF THETA and must not be quoted without it: at our theta "
+                   "(0.24 to 0.28, taxable share of ALL US equity outstanding) the "
+                   "condition passes in 0.13 percent of the space against the easier "
+                   "labour-tax reading and NOWHERE against the harder, and no single "
+                   "remaining parameter can cross a threshold alone. At the taxable share "
+                   "CRS R47113 itself implies (0.4545, the same Rosenthal numerator over "
+                   "DOMESTICALLY HELD stock only) the central rises to 0.1024, the pass "
+                   "share against the easier reading rises to 28 percent, and the analytic "
+                   "maximum of 0.1506 clears the harder threshold, so \"nowhere in the "
+                   "space\" FAILS on that base. The centre fails under both rent readings "
+                   "either way, and the condition fails everywhere under "
+                   "Karabarbounis-Neiman",
          "source": "framework/tau_k/. AMR 2020 expensing algebra; 26 USC 11(b); 26 USC "
                    "250(a)(1) as amended by Pub. L. 119-21 of 2025, giving 14.0 and 12.6 "
                    "percent; Barkai and Karabarbounis-Neiman rent readings. A115 SOURCED "
@@ -277,8 +287,15 @@ def build_dashboard():
                    "A117 sourced the debt share from Fed Z.1 2026Q2 (0.141 at market to "
                    "0.259 at book, an economy-wide stock proxy for a marginal flow). Three "
                    "components remain swept: shareholder rate, state corporate rate, "
-                   "shifted share",
-         "date": "2026-09-20, sourced A115 to A117"},
+                   "shifted share. A118 corrected three things after round-three "
+                   "replication: the shifted share's central is the SOURCED 0.48, not the "
+                   "range midpoint 0.45 (central 0.0864 to 0.0851); the reported extremes "
+                   "are ANALYTIC corner values, not Monte Carlo sample extremes; and the "
+                   "CRS R47113 Table 5 cross-check is rescaled by theta/0.4545 to 0.0267 "
+                   "to 0.0505, because the published 0.045 to 0.085 is on a "
+                   "foreign-excluded base. The claim that the construction reproduces "
+                   "CRS's published band is WITHDRAWN",
+         "date": "2026-09-20, sourced A115 to A117, corrected and REPLICATED A118"},
         {"indicator": "Effective tax rate on AI surplus, entity level only, SUPERSEDED",
          "value": 0.0708,
          "threshold": round(tks["required_tau_k"]["AMR_0.255"], 4),

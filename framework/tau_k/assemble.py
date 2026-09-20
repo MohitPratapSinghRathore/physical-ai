@@ -73,6 +73,34 @@ def assemble(sigma, shifted, theta, sh_rate, defer, state, debt, bond):
     return sigma * tau_rent + (1 - sigma) * tau_normal, tau_rent, tau_normal
 
 
+# THETA AS CRS R47113 ITSELF IMPLIES IT. Table 5's taxable-form row is a "55 percent
+# reduction", i.e. a multiplier of 0.45. CRS's own text gives the arithmetic: "the 25% share
+# of corporate stock held by taxable individuals compared with the 30% share from exempt
+# shareholders", so the implied share is 25 / (25 + 30) = 0.454545. That denominator is
+# DOMESTICALLY HELD stock: the roughly 45 percent held by foreigners is dropped from the base
+# rather than counted as untaxed. Our theta of 0.24 to 0.28 is the same numerator over ALL
+# equity outstanding, foreign included. Same source family (CRS cites Rosenthal and Burke
+# 2020), different base. Run here as a MARKED SENSITIVITY, not as an alternative estimate:
+# our object is a rate on a dollar of US AI surplus whoever holds it, so the foreign-inclusive
+# base is the right one for the assembly.
+THETA_CRS_IMPLIED = 25.0 / 55.0        # 0.454545
+
+
+def corner_extremes(sigma, box):
+    """The assembly is MULTILINEAR in all seven parameters, so its supremum and infimum over
+    a box are attained at corners. Evaluate all 2^7 and return them. This replaces the
+    Monte Carlo sample max, which is an extreme order statistic with no stable value across
+    seeds and is not reproducible by construction."""
+    names = ["shifted_share", "theta_taxable", "shareholder_rate", "deferral_factor",
+             "state_cit_effective", "debt_share", "bondholder_rate"]
+    grids = np.meshgrid(*[np.array(box[n], dtype=float) for n in names], indexing="ij")
+    g = dict(zip(names, grids))
+    z, _, _ = assemble(sigma, g["shifted_share"], g["theta_taxable"], g["shareholder_rate"],
+                       g["deferral_factor"], g["state_cit_effective"], g["debt_share"],
+                       g["bondholder_rate"])
+    return float(z.min()), float(z.max())
+
+
 def draw(n, sourced=True):
     """Sample the parameter space. The two SOURCED parameters are drawn over their
     published ranges; passing sourced=False restores the superseded blind sweep so the
@@ -131,6 +159,11 @@ def main():
                               d["state_cit_effective"], d["debt_share"],
                               d["bondholder_rate"])
         per_reading[name] = {"tau_k": tk, "draws": d}
+        # The ANALYTIC extremes over the box. Reported in place of the sample extremes:
+        # the assembly is multilinear, so its true supremum and infimum sit at corners, and
+        # the max of 200,000 draws from a 7-dimensional box is an extreme order statistic
+        # with no stable value across seeds.
+        cmin, cmax = corner_extremes(sigma, RNG_ALL)
         # ceiling: fully domestic, fully distributed, fully taxable, all-equity dollar
         ceil = sigma * (0.21 + 0.095 * 0.79
                         + (1 - (0.21 + 0.095 * 0.79)) * 0.238) + (1 - sigma) * 0.238
@@ -143,8 +176,10 @@ def main():
             "tau_k_p05": round(float(np.percentile(tk, 5)), 4),
             "tau_k_median": round(float(np.median(tk)), 4),
             "tau_k_p95": round(float(np.percentile(tk, 95)), 4),
-            "tau_k_min": round(float(tk.min()), 4),
-            "tau_k_max": round(float(tk.max()), 4),
+            "tau_k_min_sample": round(float(tk.min()), 4),
+            "tau_k_max_sample": round(float(tk.max()), 4),
+            "tau_k_min_ANALYTIC": round(cmin, 4),
+            "tau_k_max_ANALYTIC": round(cmax, 4),
             "component_ceiling": round(float(ceil), 4),
             "pass_share_vs_required_low": round(float((tk >= req_lo).mean()), 4),
             "pass_share_vs_required_high": round(float((tk >= req_hi).mean()), 4),
@@ -180,6 +215,14 @@ def main():
     sigma = K.RENT_READINGS[name]
     ax_names = top3[name][:2]
     mid = {k: float(np.mean(v)) for k, v in RNG_ALL.items()}
+    # THE SHIFTED SHARE'S CENTRAL IS THE SOURCED VALUE, NOT THE RANGE MIDPOINT. B3 of the
+    # brief says "0.30 to 0.60, centred on 0.48" and cites Torslov, Wier and Zucman for the
+    # 0.48; the sweep is uncertainty AROUND that one verified value, not a flat interval
+    # whose midpoint means anything. Through A117 this line took the range midpoint 0.45,
+    # so text and code disagreed. The TEXT is right and the code is corrected here. Effect:
+    # the Barkai central falls from 0.0864 to 0.0851. Nothing else moves -- under
+    # Karabarbounis and Neiman sigma is zero, which kills the shifted term entirely.
+    mid["shifted_share"] = K.V_SHIFTED
     mid["theta_taxable"] = K.THETA_TAXABLE["central"]
     mid["deferral_factor"] = K.DEFERRAL_FACTOR["central"]
     mid["bondholder_rate"] = K.BONDHOLDER_RATE["central"]
@@ -267,11 +310,24 @@ def main():
                              "passes_vs_required_low": bool(c >= req_lo),
                              "passes_vs_required_high": bool(c >= req_hi)})
 
-    # ---- PLAUSIBILITY on the shareholder layer against the published figure
+    # ---- PLAUSIBILITY on the shareholder layer against the published figures. CORRECTED
+    # in A118. CRS R47113 Table 5's 0.045 to 0.085 row has ALREADY had CRS's own taxable-share
+    # adjustment applied, at an implied share of 25/(25+30) = 0.4545 over DOMESTICALLY HELD
+    # stock. Our theta is the same numerator over ALL equity outstanding, foreign included.
+    # Comparing our 0.0386 to the unadjusted band was comparing two different bases, and our
+    # own construction failed our own check by 0.0064 at the bottom. The band is rescaled by
+    # theta / 0.4545, and the "around 3 percent" text figure is kept as a direct test against
+    # tau_sh, which needs no rescaling.
     sh = mid["theta_taxable"] * 0.238 * mid["deferral_factor"]
-    if not (0.02 <= sh <= 0.09):
-        viol.append(f"shareholder layer {sh:.4f} outside the CRS R47113 Table 5 published "
-                    f"band of 0.03 to 0.085")
+    crs_lo = 0.045 * mid["theta_taxable"] / THETA_CRS_IMPLIED
+    crs_hi = 0.085 * mid["theta_taxable"] / THETA_CRS_IMPLIED
+    if not (crs_lo <= sh <= crs_hi):
+        viol.append(f"shareholder layer {sh:.4f} outside CRS R47113 Table 5's 0.045 to 0.085 "
+                    f"rescaled to our theta, {crs_lo:.4f} to {crs_hi:.4f}")
+    tau_sh_crs_text = 0.0315     # CRS R47113 p. 2, "around 3 percent"
+    if abs(sh - tau_sh_crs_text) > 0.010:
+        viol.append(f"shareholder layer {sh:.4f} more than 0.010 from CRS R47113's text "
+                    f"figure of around 3 percent ({tau_sh_crs_text})")
 
     # ---- SIGN TEST: AMR's debt-financed normal return must be NEGATIVE across the
     # sourced bondholder range, and CBO 2014 Table 2 measures the corresponding ETR at -0.06.
@@ -280,6 +336,45 @@ def main():
     if dn_hi >= 0:
         viol.append(f"AMR debt-financed normal return {dn_hi:.4f} is not negative, against "
                     f"CBO 2014 Table 2 measuring the C-corp debt-financed ETR at -0.06")
+
+    # ---- MARKED SENSITIVITY, NEW IN A118: the assembly at the taxable share CRS R47113
+    # ITSELF implies, 25/(25+30) = 0.4545. Not an alternative estimate of our theta -- CRS's
+    # denominator drops foreign holders, ours keeps them, and ours is the right base for a
+    # rate on a dollar of US AI surplus whoever holds it. Run so the reader can see exactly
+    # what the base difference is worth, because it is the largest single adjustment left in
+    # this module and it moves the assembled rate TOWARD the threshold.
+    d_crs = dict(d)
+    d_crs["theta_taxable"] = np.full(N, THETA_CRS_IMPLIED)
+    box_crs = dict(RNG_ALL)
+    box_crs["theta_taxable"] = [THETA_CRS_IMPLIED, THETA_CRS_IMPLIED]
+    crs_rows = []
+    for name, sigma in K.RENT_READINGS.items():
+        tk_c, _, _ = assemble(sigma, d_crs["shifted_share"], d_crs["theta_taxable"],
+                              d_crs["shareholder_rate"], d_crs["deferral_factor"],
+                              d_crs["state_cit_effective"], d_crs["debt_share"],
+                              d_crs["bondholder_rate"])
+        kwc = dict(mid)
+        kwc["theta_taxable"] = THETA_CRS_IMPLIED
+        cc, _, _ = assemble(sigma, kwc["shifted_share"], kwc["theta_taxable"],
+                            kwc["shareholder_rate"], kwc["deferral_factor"],
+                            kwc["state_cit_effective"], kwc["debt_share"],
+                            kwc["bondholder_rate"])
+        cmin_c, cmax_c = corner_extremes(sigma, box_crs)
+        crs_rows.append({
+            "rent_reading": name, "theta_taxable": round(THETA_CRS_IMPLIED, 4),
+            "tau_k_central": round(float(cc), 4),
+            "tau_k_p05": round(float(np.percentile(tk_c, 5)), 4),
+            "tau_k_median": round(float(np.median(tk_c)), 4),
+            "tau_k_p95": round(float(np.percentile(tk_c, 95)), 4),
+            "tau_k_min_ANALYTIC": round(cmin_c, 4),
+            "tau_k_max_ANALYTIC": round(cmax_c, 4),
+            "pass_share_vs_required_low": round(float((tk_c >= req_lo).mean()), 4),
+            "pass_share_vs_required_high": round(float((tk_c >= req_hi).mean()), 4),
+            "central_passes_vs_required_low": bool(cc >= req_lo),
+            "central_passes_vs_required_high": bool(cc >= req_hi),
+        })
+    CRS = pd.DataFrame(crs_rows)
+    CRS.to_csv(HERE / "tau_k_crs_theta_sensitivity.csv", index=False)
 
     # ---- SENSITIVITY: what the superseded blind sweep gave
     d_old = draw(N, sourced=False)
@@ -304,6 +399,21 @@ def main():
         "assembled_SOURCED": out_rows,
         "assembled_CENTRAL_at_sourced_centrals": central_rows,
         "shareholder_layer_at_centrals": round(float(sh), 4),
+        "shareholder_layer_checks": {
+            "CRS_R47113_Table_5_band_as_published": [0.045, 0.085],
+            "CRS_implied_taxable_share": round(THETA_CRS_IMPLIED, 4),
+            "CRS_implied_share_basis": "25 / (25 + 30), CRS's own arithmetic, over "
+                                       "DOMESTICALLY HELD stock; the roughly 45 percent "
+                                       "foreign-held slice is dropped from the base, not "
+                                       "carried as untaxed. Our theta is the same numerator "
+                                       "over ALL equity outstanding. Same source family "
+                                       "(CRS cites Rosenthal and Burke 2020), different base.",
+            "band_rescaled_to_our_theta": [round(crs_lo, 4), round(crs_hi, 4)],
+            "CRS_text_figure_around_3_percent": tau_sh_crs_text,
+            "verdict": "PASSES the rescaled band and the text figure. It does NOT reproduce "
+                       "the published 0.045 to 0.085, and must not be described as doing so.",
+        },
+        "MARKED_SENSITIVITY_at_CRS_implied_theta": crs_rows,
         "SUPERSEDED_blind_sweep_for_comparison": old_rows,
         "sourced_parameters": {"theta_taxable": K.THETA_TAXABLE,
                                "deferral_factor": K.DEFERRAL_FACTOR},
@@ -335,6 +445,10 @@ def main():
     print(V.to_string(index=False))
     print("\nSINGLE-PARAMETER MOVERS, Barkai reading, others at midpoint")
     print(M.to_string(index=False))
+    print("\nMARKED SENSITIVITY: theta at the CRS R47113 implied 0.4545 "
+          "(foreign-EXCLUDED base)")
+    print(CRS.to_string(index=False))
+
     print("\nMARKED POINTS")
     for k, v in marked.items():
         print(f"  {v:7.4f}   {k}")

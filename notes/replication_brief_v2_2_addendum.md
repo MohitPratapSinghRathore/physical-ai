@@ -45,6 +45,15 @@ Note the `LM` prefix. Z.1 uses **LM for market-value levels** and **FL for book-
 levels**, which is itself the signal the rule keys on. It is the only such class in the
 thirteen-class table.
 
+**One thing this exclusion does NOT do, and you must get it right or no value will
+reproduce.** `corporate_equity` is a business-revenue-serviced class like classes 9 to 12.
+It is dropped from the **debt-only** construction entirely, numerator and denominator. But in
+the **all-claims INCLUDING INDIRECT** variant it stays in, and it **carries the indirect
+labour share of business revenue in the numerator**, exactly as classes 9 to 12 do. The
+business-revenue-serviced set is therefore five classes, not four:
+`corporate_bonds`, `corporate_loans`, `noncorporate_business_debt`, `commercial_mortgage`
+and `corporate_equity`.
+
 ## A3. The twelve classes that remain
 
 | # | class | Z.1 liability series | labour backing |
@@ -70,6 +79,13 @@ lower end of a bound**, for the reason set out in Part A6.
 **Classes 9 to 12** are serviced from business revenue. In DIRECT they carry zero; in
 INCLUDING INDIRECT they carry the measured indirect labour share of business revenue.
 
+**THE INDIRECT LABOUR SHARE OF BUSINESS REVENUE, 2025 = 0.338212.** It is the product of
+**consumption's share of final demand, 0.681191** and **labour's share of personal income,
+0.496502**, both from the NIPA vintage of this Z.1 release. It is a per-year series, not a
+constant: build it for every year and use each year's own value. Added in A118 because
+without it Part A could only be recovered by inverting a rounded cross-check, which cost the
+round-three replicator 0.4 percent on the parameter.
+
 ## A4. The arithmetic
 
     debt_denominator(y) = sum of the twelve class levels in year y
@@ -77,7 +93,13 @@ INCLUDING INDIRECT they carry the measured indirect labour share of business rev
     DEBT_ONLY_direct(y) = labour_backed(y) / debt_denominator(y)
 
     INCLUDING INDIRECT adds, for classes 9 to 12 only:
-        + level x indirect_labour_share_of_business_revenue
+        + level x indirect_labour_share_of_business_revenue(y)
+
+    indirect_labour_share_of_business_revenue(2025) = 0.338212
+
+Classes 9 to 12 are the business-revenue-serviced classes that SURVIVE the debt-only
+exclusion. In the **all-claims** INCLUDING INDIRECT variant the same term is added for
+`corporate_equity` as well, per A2.
 
 Build it for **every year from 1952 to 2025**, taking the Q4 observation of each series.
 
@@ -107,12 +129,31 @@ zero or the indirect share. It is the largest judgement in this project and move
 **all-claims** ratio by about 76 percent. Report what it does to the debt-only ratio; if you
 get a much smaller number, that is the point of the statistic and not an error.
 
-**One bound you must carry.** The Treasury backing share is the labour-linked share of
-federal receipts and is itself a bound, not a point. Realised capital gains sit inside AGI and
-bear preferential rates, so on IRS Statistics of Income data for 2021 to 2023 the share runs
-**0.6339 to 0.6528**. We publish the lower end. Realised gains are **6.19 to 15.36 percent of
-AGI** across those three years. Across that band the sovereign union share moves from 0.793592
-to 0.797089, under half a percent.
+**Report the coefficients of variation on the SAMPLE standard deviation**, `ddof = 1`, not
+the population convention. Over 74 annual observations the two differ in the fourth decimal
+and the tolerance would absorb either, but the convention is sample sd and the published
+figures are computed that way.
+
+**One bound you must carry, and TWO QUANTITIES THAT MUST NOT BE CONFUSED.** Corrected in
+A118: through A117 this passage quoted an upstream band against a downstream number, and
+`0.657788` is not inside `0.6339 to 0.6528` at all. The two are:
+
+| quantity | 2023 band | what it is |
+|---|---|---|
+| labour-linked share of federal **receipts** | **0.6339 to 0.6528** | the INPUT: social insurance contributions in full plus the wage share of the individual income tax, from IRS SOI Table 1.4 |
+| **Treasury class backing**, the figure in A3 | **0.657788 to 0.678331** | the OUTPUT: that receipts share carried onto the Treasury class |
+
+**We publish the lower end of the SECOND band, 0.657788**, which is the figure in the A3
+class table and the one every sealed value is built on. The sentence was always true of the
+construction; it quoted the wrong band. The reason it is a bound and not a point is
+unchanged: realised capital gains sit inside AGI at preferential rates and we do not separate
+them, and realised gains are **6.19 to 15.36 percent of AGI** across 2021 to 2023.
+
+**The effect of moving to the upper end**, stated because it is small and an unexplained
+inconsistency reads worse than a stated one: the 2025 debt-only direct ratio rises from
+**0.5216 to 0.5306** (+1.73 percent relative), the all-claims direct ratio from **0.270271 to
+0.274931** (+1.72 percent), and the sovereign union share from **0.793592 to 0.797089**, under
+half a percent. No conclusion moves.
 
 ## A7. What to attack
 
@@ -162,7 +203,7 @@ It is not zero. A construction that stops at the entity level omits a layer.
 | net CFC tested income, effective | **0.126** | 26 USC 250(a)(1)(B), **40 percent** deduction, same Act. 26 USC 951A was recaptioned from "Global intangible low-taxed income" to "Net CFC tested income" |
 | rent share, reading 1 | **0.351** | Barkai |
 | rent share, reading 2 | **approximately 0.00** | Karabarbounis and Neiman, case R |
-| shifted share of rents | **0.30 to 0.60**, centred on 0.48 | Torslov, Wier and Zucman, 48 percent of pre-tax profit of majority-owned foreign affiliates of US multinationals booked in havens. **One verified source only**, so swept |
+| shifted share of rents | **0.30 / 0.48 / 0.60**, central **0.48** | Torslov, Wier and Zucman, 48 percent of pre-tax profit of majority-owned foreign affiliates of US multinationals booked in havens. **One verified source only**, so swept AROUND the sourced value. The central is 0.48, NOT the range midpoint 0.45: the sweep is uncertainty about a measured number, not a flat interval. Through A117 the code took 0.45 while the text said 0.48; corrected in A118 in favour of the text, which is what the source supports. Worth 0.0012 on the Barkai central (0.0864 to 0.0851) and nothing under Karabarbounis and Neiman, where sigma = 0 kills the term |
 | state effective corporate rate | **0.00 to 0.095**, swept | statutory ceiling, unsourced |
 | taxable-shareholder share `theta` | **0.24 / 0.27 / 0.28** | Rosenthal and Austin, Tax Notes 16 May 2016 p. 923, Table 2 (0.242, C corporation stock, 2015); Rosenthal and Mucciolo, Tax Notes Federal 183(1), 1 April 2024, **Table 5 (0.27, total US equity, 2022)** and Table 7 (0.28, publicly traded) |
 | shareholder statutory rate | **0.15 to 0.238**, swept | 0.238 ceiling is the 20 percent top long-term rate plus the 3.8 percent net investment income tax |
@@ -204,22 +245,66 @@ gives **0.110079 (AMR, tau_l = 0.255)**, **0.129937 (bottom-up, 0.301)** and **0
    **CBO 2014 Table 2 measures the effective marginal rate on C-corporation debt-financed
    investment at -0.06**; your interval should contain it. AMR predicted the sign, CBO
    measured the magnitude.
-2. **The shareholder layer against a published figure.** `theta x 0.238 x deferral` at the
-   central values must land in **CRS R47113 Table 5's published 0.045 to 0.085**, and CRS's
-   text puts the overall effective capital gains rate on corporate profits at "around 3
-   percent". If your shareholder layer is far outside that, you have double counted theta.
+2. **The shareholder layer against a published figure. REWRITTEN IN A118 - the form of this
+   check through A117 was wrong, and our own construction failed it.** Two tests, both
+   against CRS R47113:
+
+   **(a) The text figure, directly.** CRS p. 2 puts the overall effective capital gains tax
+   rate on corporate profits at "around 3 percent". `theta x 0.238 x deferral` at the sourced
+   centrals is **0.0386**, against **0.0315**. Test: within 0.010. It passes, and it needs no
+   rescaling because the text figure is stated on the whole of corporate profits.
+
+   **(b) The Table 5 band, RESCALED.** Do **not** compare your layer to CRS's published
+   0.045 to 0.085 as printed. That row has already had CRS's own taxable-share adjustment
+   applied, at a "55 percent reduction", i.e. an implied taxable share of
+   **25 / (25 + 30) = 0.4545**. CRS states the arithmetic in its own text: "the 25% share of
+   corporate stock held by taxable individuals compared with the 30% share from exempt
+   shareholders", citing Rosenthal and Burke (2020). **That denominator is DOMESTICALLY HELD
+   stock - the roughly 45 percent held by foreigners is dropped from the base, not carried as
+   untaxed.** Our `theta` of 0.24 to 0.28 is the same numerator over **all equity
+   outstanding**, foreign included. Same source family, different base, so the two are not
+   comparable as printed. Rescale:
+
+       CRS band rescaled = [0.045, 0.085] x theta / 0.4545
+       at theta = 0.27   = 0.0267 to 0.0505
+
+   The constructed **0.0386** sits comfortably inside. At the ends of our theta range the band
+   runs 0.0238 to 0.0524, and 0.0386 is inside throughout.
+
+   **Why the base difference is ours to keep.** Our object is the rate on a dollar of US AI
+   surplus **whoever holds it**, and a foreign holder genuinely bears close to no US
+   shareholder-level tax, so the foreign-inclusive base is the right one here. CRS's base is
+   right for CRS's question, which is the rate faced by a US saver. Neither is wrong; they are
+   different denominators and must be reconciled before they are compared. **Run the
+   foreign-excluded base as a marked sensitivity, per B7.6 - it is the largest single
+   adjustment left in this module and it moves the rate toward the threshold.**
+
+   If your shareholder layer is far outside the RESCALED band, you have double counted theta.
 3. **Ceilings.** No component above its statutory ceiling; every share in [0, 1]; the
    assembled rate between the lowest and highest component-consistent values.
 
 ## B7. What to report
 
 1. The central rate under **each** rent reading, at the sourced central values.
-2. The 5th and 95th percentiles, the minimum and the maximum, under each reading.
+2. The 5th and 95th percentiles under each reading, and the **ANALYTIC minimum and maximum,
+   not the sample extremes.** The assembly is **multilinear** in all seven parameters, so its
+   supremum and infimum over the box are attained at corners: evaluate all 2^7 = 128 corners
+   and report those. The maximum of 200,000 draws from a 7-dimensional box is an extreme order
+   statistic with no stable value across seeds, and reporting it was a defect in this brief
+   through A117. Under Barkai the analytic pair is **0.0563 to 0.1236**; the 200,000-draw
+   sample gave 0.0593 to 0.1166, low by 0.007 at the top for the reason just given. Every
+   "no corner of the space closes the condition" statement must be made against the ANALYTIC
+   maximum.
 3. The share of the swept space in which `tau_k >= required`, against **each** of the three
    labour-tax readings.
 4. A first-order variance decomposition over the seven swept and sourced parameters.
 5. For each parameter, the assembled rate at each end of its range with the others at
-   midpoint, and whether that interval contains either threshold.
+   central, and whether that interval contains either threshold.
+6. **A MARKED SENSITIVITY at the CRS-implied taxable share of 0.4545**, per B6.2(b): the
+   central rate under **both** rent readings, the percentiles, the analytic extremes, and the
+   pass shares against the labour-tax readings. Report it as a **sensitivity on the base of
+   theta**, never as an alternative estimate of theta, and report it whether or not it changes
+   your verdict - it changes ours in one respect and we say so in B9.
 
 ## B8. What to attack
 
@@ -237,3 +322,29 @@ gives **0.110079 (AMR, tau_l = 0.255)**, **0.129937 (bottom-up, 0.301)** and **0
 - **The one verified source behind the shifted share.**
 - **Whether the 46.9 percent of gains escaping at death should be modelled as a rate
   reduction at all**, rather than as a base exclusion.
+- **The base of theta**, which is B6.2(b) and is now the live one. If you think a rate on US
+  AI surplus should be computed over domestically held stock only, as CRS does, then B9's
+  sensitivity is your central case and the robustness statement weakens as described there.
+
+## B9. Where the verdict IS sensitive to the base of theta, stated first
+
+At our theta the condition fails at the centre under both rent readings and **no corner of
+the parameter space closes it against either labour-tax threshold.** At the CRS-implied
+theta of 0.4545 the second half **stops being true** and the first half survives:
+
+| | our theta, 0.24 to 0.28 | CRS-implied theta, 0.4545 |
+|---|---|---|
+| Barkai central | 0.0851 | **0.1024** |
+| Barkai p05 to p95 | 0.0726 to 0.0993 | **0.0860 to 0.1231** |
+| Barkai ANALYTIC max | 0.1236, **below** the 0.1373 threshold | **0.1506, ABOVE it** |
+| pass share vs 0.1101 | 0.0013 | **0.2832** |
+| pass share vs 0.1373 | 0.0000 | **0.0010** |
+| Karabarbounis and Neiman central | 0.0150 | **0.0322** |
+| Karabarbounis and Neiman pass share, either threshold | 0.0000 | 0.0000 |
+
+**What survives either way:** the condition fails at the centre under both rent readings, and
+fails everywhere under Karabarbounis and Neiman. **What does not survive the base change:**
+the stronger A116 statement that there is no corner of the space in which the condition
+closes. Under the foreign-excluded base there is, and the pass share against the easier
+labour-tax reading rises from under a tenth of a percent to **28 percent**. Any claim resting
+on "nowhere in the parameter space" must carry the base of theta in the same sentence.

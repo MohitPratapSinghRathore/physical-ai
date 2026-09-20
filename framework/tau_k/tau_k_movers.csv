@@ -1,8 +1,8 @@
 parameter,tau_k_at_range_low,tau_k_at_range_high,swing,crosses_a_threshold_alone
-deferral_factor,0.0784,0.0943,0.0159,False
-state_cit_effective,0.0793,0.0934,0.014,False
+deferral_factor,0.0772,0.0931,0.0159,False
+state_cit_effective,0.0785,0.0918,0.0133,False
 shifted_share,0.0926,0.0802,0.0124,False
-shareholder_rate,0.0806,0.0921,0.0115,False
-debt_share,0.0895,0.0832,0.0063,False
-bondholder_rate,0.0843,0.0884,0.0042,False
-theta_taxable,0.0836,0.0873,0.0037,False
+shareholder_rate,0.0794,0.0909,0.0115,False
+debt_share,0.0883,0.082,0.0063,False
+bondholder_rate,0.083,0.0872,0.0042,False
+theta_taxable,0.0823,0.0861,0.0037,False

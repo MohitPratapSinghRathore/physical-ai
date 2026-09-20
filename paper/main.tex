@@ -1,0 +1,342 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}\setlength{\emergencystretch}{3em}
+\usepackage{amsmath,amssymb,booktabs,graphicx,array,xcolor,enumitem,caption}
+\graphicspath{{figures/}}
+\usepackage[round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\input{results_macros.tex}   % measured values only
+
+\newif\ifanon
+\ifdefined\ANON\anontrue\else\anonfalse\fi
+
+\title{\bfseries Wage Risk Is Sovereign Risk: Labor Backing Accounts\\ and AI Exposure}
+
+\ifanon
+  \author{\normalsize\itshape Author names and affiliations removed for double-anonymous peer review}
+\else
+  \author{%
+    Mohit Pratap Singh Rathore\thanks{Oviqo. Corresponding author.}\quad
+    Gunveer Singh Kali\thanks{Oviqo.}\quad
+    Sriharsha Meduri\thanks{Oviqo.}\quad
+    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}}
+\fi
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We introduce labor backing accounts, a decomposition of all United States financial claims by
+the income that services each claim and by who ultimately holds it. About \result{DebtOnlyDirect}
+percent of all US debt, public and private, is serviced directly from wages, and
+\result{DebtOnlyIndirect} percent once indirect servicing is counted. Government debt enters
+this measure through the labor-linked share of the receipts that service it, not because a
+household owes it. The share has been stable since 1952. Mapping the holders shows an
+asymmetry: the federal government is exposed, as holder, guarantor or debtor, on about
+\result{SovereignUnion} percent of directly wage-backed claims, and on roughly one percent of
+the claims on artificial intelligence capital. It therefore holds the wage side of a two-sided
+bet on AI and almost none of the other side. We then ask whether the tax system can close the
+gap, and build the effective marginal rate on AI surplus from components with every layer of
+tax counted once. It is \result{TauKBarkai} percent under one reading of the rent share and
+\result{TauKKN} percent under a second, incompatible reading, against the
+\result{RequiredLow} to \result{RequiredHigh} percent needed to replace the wage taxes lost.
+The binding reason is ownership rather than offshore profit shifting: about
+\result{ThetaUntaxable} percent of US corporate equity is held by pension funds, retirement
+accounts, foreign investors and nonprofits, and about \result{GainsUntaxedAtDeath} percent of
+capital gains are never taxed at all. We label what is measured and
+what is scenario, and release a replication package.
+\end{abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} fiscal exposure; automation; labor share; capital taxation;
+sovereign risk; financial claims
+
+\section{Introduction}
+
+A government that guarantees mortgages, lends for education, and funds itself from payroll and
+income taxes has taken a position on wages without ever describing it as one. If automation
+moves income from labor to capital, that position loses value on both sides of the public
+balance sheet at once: the revenue that services the debt falls, and the credit that the
+government has guaranteed deteriorates for the same reason. Whether the government holds an
+offsetting claim on the capital that replaced the labor is an empirical question, and it is the
+question this paper answers.
+
+The answer is that it does not. We measure the United States as holding the wage side of a
+two-sided bet on artificial intelligence and almost none of the other side. If AI succeeds and
+displaces labor, wage taxes fall and wage-backed credit deteriorates. If AI fails, capital gains
+and corporate receipts fall instead. The federal government loses in both directions, through
+different tax bases, and in neither direction does it hold a claim large enough to offset the
+loss. That is a structural observation about who holds what, not a forecast about which
+direction events will take.
+
+Three numbers carry the argument. First, about \result{DebtOnlyDirect} percent of all US debt,
+public and private, is serviced directly from wages, and \result{DebtOnlyIndirect} percent once
+indirect servicing is counted. Second, the federal government is exposed on about
+\result{SovereignUnion} percent of the directly wage-backed claims, as holder, guarantor or
+debtor, against roughly one percent of the claims on AI capital. Third, income that moves from
+wages to AI capital bears an effective marginal tax rate of about \result{TauKBarkai} percent,
+while replacing the wage taxes lost would require \result{RequiredLow} to \result{RequiredHigh}
+percent.
+
+\paragraph{Contributions.} The paper makes four.
+
+\begin{enumerate}[leftmargin=1.4em,itemsep=0.25em]
+\item \textbf{A measurement framework.} Labor backing accounts decompose all US financial claims
+two ways at once, by the income that services them and by who ultimately holds them. The
+framework yields a ratio, a sovereign exposure share, a holder map for both sides of the bet, a
+series running from 1952, and a breakdown by wage quintile. The construction, the conventions,
+and the sensitivity of each to the judgement calls behind it are stated in full.
+
+\item \textbf{A holder map that shows the asymmetry.} The wage side and the AI side are measured
+on the same basis so that the exposures can be compared rather than asserted. This is where the
+one-sidedness becomes visible.
+
+\item \textbf{An explanation of why the tax system cannot close the gap.} We rebuild the
+effective marginal rate on AI surplus from components, taking the treatment of full expensing
+directly from \citet{AcemogluManeraRestrepo2020} rather than assuming it, and we show that the
+binding constraint is the ownership of corporate claims rather than offshore profit shifting.
+About \result{ThetaUntaxable} percent of US corporate equity sits with holders the individual
+income tax does not reach, and about \result{GainsUntaxedAtDeath} percent of capital gains are
+never taxed because basis is stepped up at death.
+
+\item \textbf{A measured incidence of displacement.} At the only displacement level inside the
+observed data, we measure where the first-round loss lands across the federal government,
+households, housing agencies and \result{NInstitutions} bank and credit union balance sheets.
+\end{enumerate}
+
+\paragraph{What we do not claim.} We do not forecast the pace of automation. We do not claim
+that AI will displace any particular quantity of labor, and the paper reports a dose-response
+surface rather than a point on it. Only one displacement level, ten percent of the wage bill,
+sits inside the range of the data used to calibrate reemployment; every figure above that level
+is labeled as scenario arithmetic and is reported as a band. We do not claim that the
+measurement framework is new to the literature in the strong sense; our search located no prior
+construction of the same object, but a systematic search has not been completed, so the novelty
+claim is stated as ``none located'' rather than ``none exists''. We do not claim that the
+capital tax result settles the question of which tax base is the right one; we argue for a
+marginal, flow-based rate and state the case against it plainly in Section~\ref{sec:fiscal}.
+
+\paragraph{Research questions and objectives.} RQ1 asks what share of US financial claims is
+serviced by labor income, and who holds those claims; RO1 constructs the labor backing accounts
+and the holder map, in Section~\ref{sec:accounts}. RQ2 asks whether the capital tax system can
+replace the revenue lost when income shifts from wages to AI capital; RO2 builds the effective
+marginal rate from components and compares it with the required rate, in
+Section~\ref{sec:fiscal}. RQ3 asks where the loss from displacement lands, by holder; RO3
+measures first-round incidence at the level inside the data, in Section~\ref{sec:displacement}.
+RQ4 asks what the second round does to the institutions that hold the credit; RO4 applies the
+losses across individual balance sheets, in Section~\ref{sec:banks}. RQ5 asks what happens in the
+opposite direction, if AI disappoints; RO5 prices that case in Section~\ref{sec:bust}.
+
+\section{Related work}
+\label{sec:related}
+
+% TO DRAFT. Grouped by theme, each theme ending with what this paper does differently.
+% Themes and the verified sources available for each:
+%   (a) AI and the public finances: \citet{KorinekLockwood2026}, \citet{Brollo2024},
+%       \citet{Barhoumi2026}, \citet{PriceSuresh2026}.
+%   (b) Automation and labor demand: \citet{AcemogluRestrepo2020},
+%       \citet{AcemogluManeraRestrepo2020}.
+%   (c) Capital taxation and the corporate base: \citet{Auerbach2017},
+%       \citet{TorslovWierZucman2023}, \citet{Barkai2020}.
+%   (d) Household balance sheets and default: \citet{BhuttaBrickerDettlingKelliherLaufer2019},
+%       \citet{MerikullRoom2020}, \citet{AlbaceteFessler2010}, \citet{Huckfeldt2022},
+%       \citet{CohenKillenLau2026}.
+% What is ours: none of these decomposes the stock of claims by servicing income and holder,
+% and none prices the two sides of the bet on the same basis.
+
+\section{Data and method}
+\label{sec:data}
+
+% TO DRAFT. Sources and vintages (Z.1 released 2026-09-10, observation 2026Q2; IRS SOI
+% Table 1.4; FDIC BankFind; NCUA call reports; BLS Displaced Workers Survey; SIPP);
+% the household engine; the replication protocol and sealed-value discipline; the claims
+% register and its status tags; the AI-assistance disclosure.
+
+\section{Labor backing accounts}
+\label{sec:accounts}
+
+\subsection{Definition}
+
+A financial claim is serviced out of some income stream. A mortgage is serviced out of household
+wages; a corporate bond out of business revenue; Treasury debt out of federal receipts, which are
+themselves drawn from wages, from capital income and from other sources in measurable
+proportions. Labor backing accounts assign to each class of claim the share of its servicing that
+is traceable to labor income, and then, separately, record who holds the claim.
+
+The accounts run over thirteen classes of claim drawn from the Federal Reserve financial
+accounts, covering household mortgage and consumer credit, multifamily and commercial mortgages,
+Treasury and state and local debt, corporate bonds and loans, noncorporate business debt, and
+corporate equity. Two variants are reported throughout and never collapsed into one. The
+\emph{direct} variant counts only claims that wages pay directly. The \emph{including indirect}
+variant additionally credits business-revenue-serviced classes with the measured labor share of
+business revenue, on the reasoning that wages become spending and spending becomes revenue.
+
+Two conventions deserve emphasis because they are the ones a reader is most likely to contest.
+
+\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is not
+wage-backed because a household owes it. It is wage-backed to the extent that wage taxes service
+it. We therefore assign Treasury debt the labor-linked share of federal receipts, which is social
+insurance contributions in full plus the wage share of the individual income tax. This is the
+convention that makes the sovereign exposure in Section~\ref{sec:holders} meaningful rather than
+tautological.
+
+\paragraph{The one-step rule is the largest judgement in the paper.} Whether
+business-revenue-serviced classes carry zero or carry the indirect labor share is a choice, and
+it is the single assumption to which the accounts are most sensitive. We report both variants
+everywhere rather than choosing, and Section~\ref{sec:sensitivity} prices the choice.
+
+\subsection{The debt-only ratio, and why it is the one we report}
+
+The natural first construction puts every claim in the denominator, including corporate equity at
+market value. That construction has a defect serious enough to disqualify it as a headline.
+Corporate equity is \result{EquityShareDenom} percent of the all-claims denominator and moves
+with asset prices, so the all-claims ratio falls when equity rises and rises when equity falls,
+independently of anything happening to labor. Read as a risk indicator it would have called the
+economy least exposed at the 2000 equity peak and most exposed in 2009.
+
+The debt-only ratio removes every market-valued equity class from the denominator, leaving claims
+carried at par or amortized cost, so the series measures composition rather than valuation. The
+exclusion rule keys on valuation basis rather than on the name of the class, which means a future
+equity class is caught automatically.
+
+On this measure, about \result{DebtOnlyDirect} percent of all US debt, public and private, is
+serviced directly from wages, and \result{DebtOnlyIndirect} percent once indirect servicing is
+counted. The corresponding all-claims figures are \result{AllClaimsDirect} and
+\result{AllClaimsIndirect} percent. The difference between the two constructions is almost
+entirely the equity denominator.
+
+The stability of the debt-only series is itself a result. Over 1952 to 2025 its coefficient of
+variation is \result{DebtOnlyCV}, against \result{AllClaimsCV} for the all-claims series: the
+debt-only measure is roughly half as volatile, which is what the exclusion was designed to
+achieve.
+
+\subsection{Sensitivity}
+\label{sec:sensitivity}
+
+% TO DRAFT AS A TABLE, generated from framework/labor_backing/debt_only_sensitivity.csv.
+% Each named judgement call, one at a time, with the resulting ratio and the percentage move.
+% The one-step rule moves the all-claims ratio by about 76 percent and the debt-only ratio by
+% \result{OneStepMovePct} percent, which is the point of the debt-only construction.
+
+One bound must travel with every fiscal magnitude in the paper. The labor-linked share of federal
+receipts is built from the wage share of adjusted gross income, and realized capital gains sit
+inside that base while bearing preferential rates. On Internal Revenue Service Statistics of
+Income data for 2021 to 2023, realized gains run from \result{GainsAGILow} to
+\result{GainsAGIHigh} percent of adjusted gross income, and the labor-linked receipts share is
+therefore a band, \result{ReceiptsShareLow} to \result{ReceiptsShareHigh}, rather than a point. We
+publish the lower end throughout. The sovereign exposure share moves by less than one percent
+across the band.
+
+\subsection{Who holds the claims}
+\label{sec:holders}
+
+% TO DRAFT. The holder map for both sides, from
+% framework/labor_backing/direct_ratio_latest.json. Wage side: federal exposure
+% \result{SovereignUnion} percent as the union of held-or-guaranteed and obligor, less overlap;
+% \result{SovereignCreditor} percent as creditor or guarantor and \result{SovereignDebtor}
+% percent as the debtor on debt serviced from wage taxes. AI side: about one percent.
+% The U-shaped series from 1952 and the reading that much of the recent rise is federal debt
+% growth rather than new exposure to households.
+
+\section{The fiscal condition}
+\label{sec:fiscal}
+
+% TO DRAFT IN FULL. The spine is:
+%   (a) the condition: required tau_k = tau_l x (1 - R), with R = \result{RetainedWageShare},
+%       giving \result{RequiredLow} to \result{RequiredHigh} percent across labor tax readings;
+%   (b) the component build, with the \citet{AcemogluManeraRestrepo2020} expensing result
+%       taken as derived rather than assumed: under full expensing the normal return bears the
+%       shareholder rate alone for equity-financed C corporations, and tau_b minus tau_c,
+%       which is negative, for debt-financed ones;
+%   (c) the answer: \result{TauKBarkai} percent under \citet{Barkai2020} and \result{TauKKN}
+%       percent under the second rent reading, reported separately and never averaged;
+%   (d) THE OWNERSHIP EXPLANATION, which is the section's contribution:
+%       \result{ThetaUntaxable} percent of corporate equity is held outside the individual
+%       income tax, \result{GainsUntaxedAtDeath} percent of gains escape at death, and
+%       \result{InterestSheltered} percent of corporate interest is sheltered, while
+%       \result{BondsRestOfWorld} percent of corporate bonds are held by the rest of the world
+%       and \result{BondsHouseholdDirect} percent directly by households. Profit shifting at
+%       \result{ShiftedShare} percent moves the rate far less than these do;
+%   (e) the case against our own base choice, stated fairly, per the playbook's honest-null rule.
+
+\section{Displacement, measured}
+\label{sec:displacement}
+
+% TO DRAFT. First-round incidence by holder at ten percent of the wage bill, the only level
+% inside the observed data; households and the second-quintile buffer finding; the pay-effect
+% result; housing agencies absorbing their share without a Treasury draw; the non-hiring
+% channel, which shifts private losses onto the young and leaves the fiscal loss unchanged.
+
+\section{Banks and the second round}
+\label{sec:banks}
+
+% TO DRAFT. \result{NInstitutions} balance sheets (\result{NBanks} banks and
+% \result{NCreditUnions} credit unions). Almost nothing happens at ten percent; breaches open
+% above twenty-five percent; the channel is mostly spending, house prices and business credit.
+% Card-heavy lenders most exposed, mortgage portfolio lenders least. Household relief removes
+% under ten percent of bank losses, which is the instrument test. Scenario labels throughout.
+
+\section{If AI fails}
+\label{sec:bust}
+
+% TO DRAFT. A large fiscal event and a small credit event. Capital gains and corporate receipts
+% fall. Transmission is weak because the top one percent hold \result{TopOnePctEquity} percent
+% of corporate equity and the bottom half hold \result{BottomHalfEquity} percent, so the wealth
+% shock lands on the households with the lowest propensity to consume, measured at
+% \result{MPCWealth} cents per year. Whether it resembles 2000 or 2008 turns on financing that
+% is not observable. The structural conclusion: one capital tax rate, two opposite jobs.
+
+\section{Institutions, by regime}
+\label{sec:institutions}
+
+% TO DRAFT. The minimum sufficient set of instruments at each regime: moderate, large, sudden
+% and near-total displacement, and an AI bust. The cost of ownership stakes. What the evidence
+% does not support, said outright. Full twelve-row table to the appendix.
+
+\section{Implications for individuals, organisations, and society}
+\label{sec:implications}
+
+% TO DRAFT, per playbook section 2.2, with paragraph leads:
+%   For the people displacement reaches; For managers and organisations; Strategic
+%   implications; For society and fiscal equity.
+
+\section{Limitations}
+\label{sec:limitations}
+
+% TO DRAFT as L1..Ln, paired one-to-one with FR1..FRn in the next section.
+
+\section{Avenues of future research}
+\label{sec:future}
+
+% TO DRAFT as FR1..FRn, full sentences, each mapped to its limitation.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+% TO DRAFT. Close on who the work is for.
+
+\section*{Declarations}
+
+\ifanon
+\paragraph{Data availability.} The replication package, including the measured artifacts behind
+every reported value, will be made available upon acceptance.
+\else
+\paragraph{Disclosure statement.} The authors report no conflict of interest.
+\paragraph{Funding.} This research received no external funding.
+\paragraph{Data availability.} The replication package, including the measured artifacts behind
+every reported value and the sealed expected values used in blind replication, is available from
+the corresponding author.
+\fi
+
+\paragraph{Use of generative AI.} During the preparation of this manuscript the authors used a
+generative AI tool to assist with language editing and refinement of the text. The authors
+reviewed and edited all output and take full responsibility for the content of the paper.
+Generative AI was not used to generate or analyse the study's data, which were produced entirely
+by the measurement pipeline described in the paper.
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}

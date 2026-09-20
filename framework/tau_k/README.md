@@ -9,6 +9,54 @@ Rebuild: `python components.py && python labor_component.py && python assemble.p
 `paper/figures/tau_k_map.png`. The A115 source extraction, with tables and page references,
 is in `data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`.
 
+## Gate report, A118. THESIS-WEAKENING FIRST.
+
+**1. The strongest robustness statement this module makes is SENSITIVE to the base of theta,
+and it does not survive CRS's base.** A116 said there is "no corner of the space left in
+which it closes" against the harder labour-tax reading. That is true at our theta, where the
+ANALYTIC maximum under Barkai is **0.1236** against a required 0.1373. It is **false** at the
+taxable share CRS R47113 itself implies, 25/(25+30) = **0.4545**, where the analytic maximum
+is **0.1506** and clears the harder threshold, and the pass share against the easier reading
+rises from **0.0013 to 0.2832**. The centre still fails under both rent readings (Barkai
+0.1024 against 0.1101; Karabarbounis and Neiman 0.0322) and the condition still fails
+everywhere under Karabarbounis and Neiman. But **"nowhere in the parameter space" is now a
+statement that must carry the base of theta in the same sentence.** Full run in
+`tau_k_crs_theta_sensitivity.csv`; the base argument is in
+`data/raw/manual/SHAREHOLDER_PARAMS_extracted.md` section 3.
+
+**2. Our own published cross-check was wrong, and our construction failed it.** B6.2 of the
+addendum required the shareholder layer to land in CRS Table 5's published 0.045 to 0.085.
+Our layer is 0.0386 and cannot reach 0.085 anywhere in the swept space, because that CRS row
+has already had CRS's own taxable-share adjustment applied at 0.4545 over a foreign-excluded
+base while we substitute 0.24 to 0.28 over a foreign-inclusive one. The check is corrected to
+the rescaled band **0.0267 to 0.0505**, which the construction passes, plus the "around 3
+percent" text figure against 0.0315, which it also passes. **The claim that the construction
+"reproduces the published figure" is WITHDRAWN** wherever it referred to the Table 5 band.
+
+**3. The Barkai central moves from 0.0864 to 0.0851.** Through A117 the code took the
+shifted share's RANGE MIDPOINT, 0.45, while B3 of the brief said "centred on 0.48" and cited
+Torslov, Wier and Zucman for it. The text is right: the sweep is uncertainty around one
+measured value, not a flat interval. The code is corrected. Nothing downstream moves - the
+percentiles, pass shares and threshold conclusions are untouched, and under Karabarbounis and
+Neiman sigma = 0 kills the term entirely.
+
+**4. The reported maximum is now ANALYTIC, not a sample extreme.** The assembly is multilinear
+in all seven parameters, so its supremum and infimum sit at corners of the box. Evaluating all
+128 gives **0.0563 to 0.1236** under Barkai and **-0.0063 to 0.0403** under Karabarbounis and
+Neiman. The 200,000-draw sample gave 0.0593 to 0.1166, low by 0.007 at the top; a sample
+maximum from a 7-dimensional box has no stable value across seeds and should never have been
+the reported figure.
+
+### Round-three replication, 2026-09-20
+
+An instance that did not write the code rebuilt both constructions from the addendum alone.
+**All 32 sealed quantities matched**, 30 within rounding and 2 within tolerance, both
+explained. The four items above are what that round found; every one is an error on this
+project's side, not the replicator's. Comparison in
+`notes/replication/round3/comparison_round3.md`.
+
+---
+
 ## Gate report, A116
 
 ### Plausibility violations
@@ -18,10 +66,14 @@ assembled rate lies between the lowest and highest component-consistent values u
 rent readings; the assembled maximum is below the ceiling on a fully domestic, fully
 distributed, fully taxable, all-equity dollar.
 
-**Two published-figure checks, both passed.**
+**Two published-figure checks. AMENDED A118: the first passed only on one of its two legs
+and its band was wrongly scoped. See the A118 gate report above.**
 
-1. The shareholder layer at the sourced centrals is `0.27 x 0.238 x 0.601 = 0.0386`, against
-   CRS R47113 Table 5 published 0.045 to 0.085 and its text figure of about 3 percent.
+1. The shareholder layer at the sourced centrals is `0.27 x 0.238 x 0.601 = 0.0386`.
+   **CORROBORATED** against CRS R47113's text figure of about 3 percent (0.0315).
+   **NOT corroborated against Table 5's published 0.045 to 0.085 as printed** - that row is
+   on CRS's foreign-excluded base at an implied taxable share of 0.4545, and 0.0386 cannot
+   reach it. Rescaled to our theta the band is 0.0267 to 0.0505 and 0.0386 sits inside.
 2. **New in A116, the sign test.** AMR debt-financed normal return is `tau_b - tau_c`. At the
    sourced bondholder range that is **-0.0667 to -0.0347**, and **CBO 2014 Table 2 measures
    the effective marginal rate on C-corporation debt-financed investment at -0.06**, which
@@ -31,16 +83,20 @@ distributed, fully taxable, all-equity dollar.
 ### Thesis-weakening results, first
 
 **1. The verdict does not change. It hardens, and it is now robust to every remaining
-parameter.** Required 0.1101 to 0.1373. Under the Barkai rent reading the assembled rate at
-the sourced centrals is **0.0864**, median 0.0851, 5th to 95th percentile **0.070 to 0.102**.
+parameter** - subject, as of A118, to the base of theta, per item 1 of the A118 gate report.
+Required 0.1101 to 0.1373. Under the Barkai rent reading the assembled rate at
+the sourced centrals is **0.0851** (**0.0864** through A117, on the superseded shifted-share
+midpoint), median 0.0851, 5th to 95th percentile **0.073 to 0.099**.
 Under Karabarbounis and Neiman it is **0.0150**. The condition passes in **0.85 percent** of
 the remaining space against the easier labour-tax reading and **in none of it** against the
 harder one.
 
 **2. Against the harder labour-tax reading the condition cannot pass anywhere in the
-parameter space.** The assembled maximum under Barkai, across every combination of the four
-remaining swept parameters, is **0.1240**, below the 0.1373 required. That is a stronger
-statement than a low pass share: there is no corner of the space left in which it closes.
+parameter space - AT OUR THETA.** The ANALYTIC maximum under Barkai, over all 128 corners of
+the box, is **0.1236**, below the 0.1373 required. That is a stronger statement than a low
+pass share: there is no corner of the space left in which it closes. **A118 qualifies it: at
+the CRS-implied theta of 0.4545 the analytic maximum is 0.1506 and the statement fails.** It
+must not be quoted without the base of theta attached.
 
 **3. No single parameter can cross a threshold on its own any more.** In A113 four could; in
 A115 one could, the bondholder rate; in A116 **none can**. The largest single swing left is

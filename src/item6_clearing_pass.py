@@ -235,6 +235,23 @@ HEADLINE = [
 ]
 
 LIMITATIONS = [
+    dict(id="L14",
+         title="The base of the taxable-shareholder share decides how robust the capital-tax "
+               "verdict is",
+         text="Our theta of 0.24 to 0.28 is equity in taxable accounts over ALL US equity "
+              "outstanding, foreign included (Rosenthal and Austin 2016, Rosenthal and "
+              "Mucciolo 2024). CRS R47113 Table 5 uses the same Rosenthal numerator over "
+              "DOMESTICALLY HELD stock only, an implied 25/(25+30) = 0.4545, dropping the "
+              "roughly 45 percent foreign slice from the base. Ours is the right base for a "
+              "rate on a dollar of US AI surplus whoever holds it, because a foreign holder "
+              "bears close to no US shareholder-level tax and that dollar is still in the "
+              "surplus. But the choice is a judgement and it is load-bearing: at 0.4545 the "
+              "assembled Barkai central rises from 0.0851 to 0.1024, the pass share against "
+              "the easier labour-tax reading from 0.0013 to 0.2832, and the analytic "
+              "maximum to 0.1506, which CLEARS the harder 0.1373 threshold. The statement "
+              "that no corner of the parameter space closes the fiscal condition holds only "
+              "on our base. The centre fails under both rent readings on either base. "
+              "Marked sensitivity in framework/tau_k/tau_k_crs_theta_sensitivity.csv."),
     dict(id="L1", title="Off-balance-sheet and GPU-backed AI financing is unmeasured",
          text="The AI leg is built from nine SEC registrants' us-gaap facts, which is "
               "on-balance-sheet Tier 2 only. BIS QR March 2026 identifies off-balance-sheet "

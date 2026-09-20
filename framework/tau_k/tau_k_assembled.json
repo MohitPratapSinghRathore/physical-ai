@@ -17,8 +17,10 @@
       "tau_k_p05": 0.0726,
       "tau_k_median": 0.0851,
       "tau_k_p95": 0.0993,
-      "tau_k_min": 0.0593,
-      "tau_k_max": 0.1166,
+      "tau_k_min_sample": 0.0593,
+      "tau_k_max_sample": 0.1166,
+      "tau_k_min_ANALYTIC": 0.0563,
+      "tau_k_max_ANALYTIC": 0.1236,
       "component_ceiling": 0.3142,
       "pass_share_vs_required_low": 0.0013,
       "pass_share_vs_required_high": 0.0
@@ -29,8 +31,10 @@
       "tau_k_p05": 0.004,
       "tau_k_median": 0.0137,
       "tau_k_p95": 0.0255,
-      "tau_k_min": -0.0048,
-      "tau_k_max": 0.0385,
+      "tau_k_min_sample": -0.0048,
+      "tau_k_max_sample": 0.0385,
+      "tau_k_min_ANALYTIC": -0.0063,
+      "tau_k_max_ANALYTIC": 0.0403,
       "component_ceiling": 0.238,
       "pass_share_vs_required_low": 0.0,
       "pass_share_vs_required_high": 0.0
@@ -39,8 +43,8 @@
   "assembled_CENTRAL_at_sourced_centrals": [
     {
       "rent_reading": "Barkai",
-      "tau_k_central": 0.0864,
-      "tau_rent": 0.2182,
+      "tau_k_central": 0.0851,
+      "tau_rent": 0.2147,
       "tau_normal": 0.015,
       "passes_vs_required_low": false,
       "passes_vs_required_high": false
@@ -48,13 +52,57 @@
     {
       "rent_reading": "Karabarbounis_Neiman_case_R",
       "tau_k_central": 0.015,
-      "tau_rent": 0.2182,
+      "tau_rent": 0.2147,
       "tau_normal": 0.015,
       "passes_vs_required_low": false,
       "passes_vs_required_high": false
     }
   ],
   "shareholder_layer_at_centrals": 0.0386,
+  "shareholder_layer_checks": {
+    "CRS_R47113_Table_5_band_as_published": [
+      0.045,
+      0.085
+    ],
+    "CRS_implied_taxable_share": 0.4545,
+    "CRS_implied_share_basis": "25 / (25 + 30), CRS's own arithmetic, over DOMESTICALLY HELD stock; the roughly 45 percent foreign-held slice is dropped from the base, not carried as untaxed. Our theta is the same numerator over ALL equity outstanding. Same source family (CRS cites Rosenthal and Burke 2020), different base.",
+    "band_rescaled_to_our_theta": [
+      0.0267,
+      0.0505
+    ],
+    "CRS_text_figure_around_3_percent": 0.0315,
+    "verdict": "PASSES the rescaled band and the text figure. It does NOT reproduce the published 0.045 to 0.085, and must not be described as doing so."
+  },
+  "MARKED_SENSITIVITY_at_CRS_implied_theta": [
+    {
+      "rent_reading": "Barkai",
+      "theta_taxable": 0.4545,
+      "tau_k_central": 0.1024,
+      "tau_k_p05": 0.086,
+      "tau_k_median": 0.1031,
+      "tau_k_p95": 0.1231,
+      "tau_k_min_ANALYTIC": 0.0666,
+      "tau_k_max_ANALYTIC": 0.1506,
+      "pass_share_vs_required_low": 0.2832,
+      "pass_share_vs_required_high": 0.001,
+      "central_passes_vs_required_low": false,
+      "central_passes_vs_required_high": false
+    },
+    {
+      "rent_reading": "Karabarbounis_Neiman_case_R",
+      "theta_taxable": 0.4545,
+      "tau_k_central": 0.0322,
+      "tau_k_p05": 0.0165,
+      "tau_k_median": 0.0315,
+      "tau_k_p95": 0.0507,
+      "tau_k_min_ANALYTIC": 0.0035,
+      "tau_k_max_ANALYTIC": 0.0685,
+      "pass_share_vs_required_low": 0.0,
+      "pass_share_vs_required_high": 0.0,
+      "central_passes_vs_required_low": false,
+      "central_passes_vs_required_high": false
+    }
+  ],
   "SUPERSEDED_blind_sweep_for_comparison": [
     {
       "rent_reading": "Barkai",
@@ -122,16 +170,16 @@
   "single_parameter_movers": [
     {
       "parameter": "shareholder_rate",
-      "tau_k_at_range_low": 0.0806,
-      "tau_k_at_range_high": 0.0921,
+      "tau_k_at_range_low": 0.0794,
+      "tau_k_at_range_high": 0.0909,
       "swing": 0.0115,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "state_cit_effective",
-      "tau_k_at_range_low": 0.0793,
-      "tau_k_at_range_high": 0.0934,
-      "swing": 0.014,
+      "tau_k_at_range_low": 0.0785,
+      "tau_k_at_range_high": 0.0918,
+      "swing": 0.0133,
       "crosses_a_threshold_alone": false
     },
     {
@@ -143,29 +191,29 @@
     },
     {
       "parameter": "theta_taxable",
-      "tau_k_at_range_low": 0.0836,
-      "tau_k_at_range_high": 0.0873,
+      "tau_k_at_range_low": 0.0823,
+      "tau_k_at_range_high": 0.0861,
       "swing": 0.0037,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "deferral_factor",
-      "tau_k_at_range_low": 0.0784,
-      "tau_k_at_range_high": 0.0943,
+      "tau_k_at_range_low": 0.0772,
+      "tau_k_at_range_high": 0.0931,
       "swing": 0.0159,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "bondholder_rate",
-      "tau_k_at_range_low": 0.0843,
-      "tau_k_at_range_high": 0.0884,
+      "tau_k_at_range_low": 0.083,
+      "tau_k_at_range_high": 0.0872,
       "swing": 0.0042,
       "crosses_a_threshold_alone": false
     },
     {
       "parameter": "debt_share",
-      "tau_k_at_range_low": 0.0895,
-      "tau_k_at_range_high": 0.0832,
+      "tau_k_at_range_low": 0.0883,
+      "tau_k_at_range_high": 0.082,
       "swing": 0.0063,
       "crosses_a_threshold_alone": false
     }

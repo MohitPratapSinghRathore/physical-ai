@@ -43,11 +43,16 @@ brief alone. The two are independent and a claim carries both.
   not contain enough to rebuild it
 - **R-pending-2** queued for round two against `notes/replication_brief_v2.md` and
   `notes/sealed/sealed_expected_values_round2.json`
+- **R-REPLICATED-3** rebuilt independently from `notes/replication_brief_v2_2_addendum.md`
+  alone, against `notes/sealed/sealed_addendum_v2_2.json`, and inside the stated tolerance on
+  every sealed quantity. This is the strongest replication flag in the register: the sealed
+  file was opened only after the rebuild was written down
 - **R-notapplicable** not a sealed quantity
 
 **Nothing in this project may be described as independently replicated unless it carries
-R-replicated or R-confirmed-direction.** Round one attempted 51 quantities and matched 21.
-The full accounting is in `notes/replication/round1_mismatch_classification.md`.
+R-replicated, R-confirmed-direction or R-REPLICATED-3.** Round one attempted 51 quantities and
+matched 21. The full accounting is in `notes/replication/round1_mismatch_classification.md`.
+**Round three attempted 32 and matched 32**; see the round-three section below.
 
 ## Promotion pass log
 
@@ -155,7 +160,8 @@ them in the same list.
 | 53b | The effective capital tax rate on AI surplus, assembled from components with every layer counted once, is 0.087 to 0.156 (Barkai, median 0.116) and 0.052 (Karabarbounis-Neiman), so the fiscal condition straddles its 0.110 to 0.137 threshold rather than clearly failing. Claim 53 is SUPERSEDED: 0.0708 omitted shareholder-level tax. The taxable-shareholder share, deferral factor and bondholder rate carry 77 percent of the variance and none is sourced; profit shifting carries 3 percent | **superseded by 53c (A115)**, five components verified and seven swept | A113 | n/a | n/a | n/a | yes | n/a | n/a |
 | 53c | With the taxable-shareholder share (0.24 to 0.28, Rosenthal and Austin 2016, Rosenthal and Mucciolo 2024) and the deferral factor (0.412 to 0.790, CRS R47113, cross-checked against CBO 2014) SOURCED rather than swept, the assembled effective rate on AI surplus is 0.099 (Barkai) and 0.035 (Karabarbounis-Neiman) against a required 0.110 to 0.137, so the fiscal condition FAILS at the central estimate under both rent readings. Claim 53b's straddle was an artefact of sweeping two published parameters. The decisive lever is the shareholder-level base and deferral, not profit shifting | **superseded by 53d (A116)**, measured on the two sourced parameters, **scenario** on the assembled rate (the bondholder rate remains unsourced and carries 44 percent of the residual variance) | A115 | n/a | n/a | n/a | yes | n/a | n/a |
 | 53d | With the bondholder rate SOURCED at 0.143 to 0.175 (CBO 2014 Table A-3, 52.3 percent of C corporation debt fully taxable, times Table A-4, 27.4 percent marginal rate on interest; cross-checked against CBO Table 2 measured -6 percent on debt-financed C corporation investment), the assembled rate is 0.086 (Barkai) and 0.015 (Karabarbounis-Neiman) against a required 0.110 to 0.137. The condition FAILS, passes in under 1 percent of the remaining space against the easier labour reading and NOWHERE against the harder, and NO single remaining parameter can cross a threshold alone. The lever ranking of 53c is CONFIRMED unchanged | **superseded by 53e (A117)**, measured on the three base parameters, **scenario** on the assembled rate (the debt share of AI capex remains unsourced at 37 percent of residual variance) | A116 | n/a | n/a | n/a | yes | n/a | n/a |
-| 53e | With the debt share SOURCED from Fed Z.1 2026Q2 (nonfinancial corporate debt over debt plus equity: 0.1412 at market value LM103164105, 0.2589 at book net worth FL102090005), the assembled rate is unchanged at the centre, 0.086 (Barkai) and 0.015 (Karabarbounis-Neiman), and the range tightens to 0.073 to 0.099 with the pass share against the easier labour reading falling to 0.1 percent and remaining zero against the harder. NO single remaining parameter crosses a threshold alone. The debt share is an economy-wide STOCK standing in for a marginal FLOW and Module B points below it, which would harden the verdict | **measured** on four base parameters, **scenario** on the assembled rate (shareholder rate, state corporate rate and shifted share remain swept) | A117 | n/a | n/a | n/a | yes | n/a | n/a |
+| 53e | With the debt share SOURCED from Fed Z.1 2026Q2 (nonfinancial corporate debt over debt plus equity: 0.1412 at market value LM103164105, 0.2589 at book net worth FL102090005), the assembled rate is unchanged at the centre, 0.086 (Barkai) and 0.015 (Karabarbounis-Neiman), and the range tightens to 0.073 to 0.099 with the pass share against the easier labour reading falling to 0.1 percent and remaining zero against the harder. NO single remaining parameter crosses a threshold alone. The debt share is an economy-wide STOCK standing in for a marginal FLOW and Module B points below it, which would harden the verdict | **superseded by 53f (A118)**, **measured** on four base parameters, **scenario** on the assembled rate (shareholder rate, state corporate rate and shifted share remain swept) | A117 | n/a | n/a | n/a | yes | n/a | n/a |
+| 53f | **The assembled rate is 0.0851 (Barkai) and 0.0150 (Karabarbounis-Neiman) against a required 0.110 to 0.137, and the condition FAILS at the centre under both rent readings.** Two corrections from round-three replication. (i) The Barkai central falls from 0.0864 to 0.0851 because the shifted share's central is the SOURCED 0.48, not the range midpoint 0.45; the brief always said 0.48 and the code did not. (ii) The reported extremes are now ANALYTIC corner values, 0.0563 to 0.1236 (Barkai), not Monte Carlo sample extremes, which have no stable value across seeds. **THE ROBUSTNESS STATEMENT IS NARROWED AND THIS WEAKENS THE THESIS: "no corner of the parameter space closes the condition" holds at our theta of 0.24 to 0.28 and FAILS at the taxable share CRS R47113 itself implies, 0.4545, where the analytic maximum is 0.1506, above the harder 0.1373 threshold, and the pass share against the easier reading rises from 0.0013 to 0.2832.** The two thetas are the same Rosenthal numerator over different denominators - ours all US equity outstanding, CRS's domestically held stock only, with the roughly 45 percent foreign slice dropped from the base. Ours is the right base for a rate on a dollar of US AI surplus whoever holds it, but **the "nowhere in the space" claim must carry the base of theta in the same sentence, everywhere it appears** | **measured** on four base parameters, **scenario** on the assembled rate, **and the robustness half is CONDITIONAL on the base of theta** | A118; round three | n/a | n/a | n/a | yes | n/a | n/a |
 | 54 | Profit shifting alone is enough to push tau_k below break-even: closed economy at 2010s rates gives 0.1386 against 0.1101 needed, applying the verified 48 percent haven share drops it to 0.1032 | **provisional**, sourced this session | A53 | n/a | n/a | n/a | yes | n/a | n/a |
 | 55 | Raising the rent share does not rescue the condition under profit shifting, because a larger rent share puts more surplus into the shifted component | **provisional** | A53 | n/a | n/a | n/a | n/a | n/a | n/a |
 | 56 | Of the additional nonemployed from robot exposure, about three quarters leave the labour force and one quarter remain unemployed | **standing**, VERIFIED, in the published JPE article, Section V.C, PDF page 34, table A15. Used as the LONG-RUN (decade-plus) variant only | A54 corrected, A55 | n/a | n/a | n/a | n/a | n/a | n/a |
@@ -453,12 +459,12 @@ the four builds, 0 violations.
 
 | # | Claim | Status | Findings | Replication flag |
 |---|---|---|---|---|
-| 194 | The DIRECT labour backing ratio of the US claim stock is 0.270 in 2025: 40,380bn of 149,407bn dollars of claims are serviced in the first round out of wages. First round only, one step, business-revenue-serviced classes zero by rule | **provisional** | this session, B1 and B3 | R-pending-2 |
+| 194 | The DIRECT labour backing ratio of the US claim stock is 0.270 in 2025: 40,380bn of 149,407bn dollars of claims are serviced in the first round out of wages. First round only, one step, business-revenue-serviced classes zero by rule | **provisional** | this session, B1 and B3 | **R-REPLICATED-3**, the 2025 all-claims direct ratio is a round-three sealed quantity and matched |
 | 195 | **The federal government holds, guarantees or owes 79.4 percent of all labour-backed claims**, in two legs: 32.6 percent as holder or guarantor and 54.3 percent as obligor, less the overlap. **This was produced from the Financial Accounts with no reference to the dose-response table and lands inside the independently derived 75.9 to 91.6 percent federal share of first-round losses** | **provisional**, and it is the strongest result of the session | this session, B3; claim 157 | R-pending-2 |
 | 196 | The sovereign share roughly DOUBLED in fifty years: 0.336 in 1970, 0.564 in 1990, 0.649 in 2010, 0.794 in 2025. The drivers are visible in the series: the GSEs and the 2008 conservatorship, federal student lending after 2010, and the growth of Treasury debt, which is the obligor leg | **provisional** | this session, B4 | R-pending-2 |
-| 197 | The RATIO itself is nearly trendless and cyclical (0.288 in 1947, 0.376 at the 2008 peak, 0.270 in 2025). It falls when equity is expensive, because equity is the largest zero-by-rule class. **It is as much an asset price series as a labour series and must not be read as a measure of labour dependence** | **provisional**, and it is a warning about the headline | this session, B4 | R-pending-2 |
-| 198 | **The one-step tracing rule moves the headline by 76 percent and no other judgement call moves it by more than 10.** The household and fiscal cells, which is where this project's own measurement sits, are robust. The definition is the whole argument | **provisional**, and it was predicted in `feasibility.md` before being computed | this session, B9 | R-pending-2 |
-| 199 | The INDIRECT (second-round) labour backing of business revenue is 0.338, the product of consumption's share of final demand (0.681) and labour's share of personal income (0.497). Combined with the direct ratio it gives 0.475. **This is never blended into the headline; it is the paper's first-round versus second-round distinction expressed as a ratio** | **provisional** | this session, B2 | R-pending-2 |
+| 197 | The RATIO itself is nearly trendless and cyclical (0.288 in 1947, 0.376 at the 2008 peak, 0.270 in 2025). It falls when equity is expensive, because equity is the largest zero-by-rule class. **It is as much an asset price series as a labour series and must not be read as a measure of labour dependence** | **provisional**, and it is a warning about the headline | this session, B4 | **R-REPLICATED-3**, the 2000 and 2008 readings and the equity share are round-three sealed quantities and matched |
+| 198 | **The one-step tracing rule moves the headline by 76 percent and no other judgement call moves it by more than 10.** The household and fiscal cells, which is where this project's own measurement sits, are robust. The definition is the whole argument | **provisional**, and it was predicted in `feasibility.md` before being computed | this session, B9 | **R-REPLICATED-3**, the debt-only move of 15.4 percent is a round-three sealed quantity and matched; the all-claims 76 percent is rounded in the brief and the replicator recovered 75.72 from it |
+| 199 | The INDIRECT (second-round) labour backing of business revenue is 0.338, the product of consumption's share of final demand (0.681) and labour's share of personal income (0.497). Combined with the direct ratio it gives 0.475. **This is never blended into the headline; it is the paper's first-round versus second-round distinction expressed as a ratio** | **provisional** | this session, B2 | **R-REPLICATED-3**, carried by the sealed INCLUDING INDIRECT ratios, 0.6020 and 0.4749, both of which matched; the 0.338212 share itself was recovered to 0.4 percent without being supplied |
 | 200 | **The bottom wage quintile carries 4.15 times more labour-backed claim per dollar of wage bill than its wage share implies, and the top quintile 0.65, a factor of 6.3.** Q1 holds 13.4 percent of household labour-backed claims on 3.2 percent of the wage bill | **provisional**, SIPP only | this session, B5; claim 175 | R-pending-2 |
 | 201 | **The obvious connection formula is wrong for credit claims.** Applying `(1 - R)` to a credit class assumes only the lost-income fraction of a balance is at risk, when a displaced borrower's whole balance is. Removing it moves auto loans from 0 of 8 to 7 of 8 rows inside the benchmark loss band. `(1 - R)` belongs in the fiscal channel and nowhere else | **provisional**, a method finding | this session, B8 | R-pending-2 |
 | 202 | **The fiscal loss this project publishes is already NET of capital tax at the operative rate**, so any calculation of how much a capital tax hedges the federal position must use the GROSS loss or it counts the tax twice. The check is that the break-even rate recovers exactly 1.000 of the gross fiscal loss by construction | **provisional**, arithmetic, and it extends claim 179 | this session, B11 | R-pending-2 |
@@ -469,6 +475,61 @@ the four builds, 0 violations.
 | 207 | The two historical anchors MEASURED from Z.1 and NIPA rather than cited: **the equity bust was the larger asset-price event and the smaller fiscal and banking event.** Nonfinancial corporate equity fell 39.9 percent of peak GDP in 2000 to 2002 against 22.4 in 2007 to 2009, while federal receipts fell 9.5 percent against 16.0 and corporate tax receipts 35.1 percent against 53.4 | **provisional**, measured | this session, B12 | R-pending-2 |
 | 208 | **The federal government loses in all three AI states.** CONFIRMED, with one qualification that weakens it and must be stated whenever the claim is used: at the operative tau_k of 0.0708 the capital tax recovers **36 percent** of the gross federal first-round loss at a 10 percent dose, so "holds almost none of the upside" is too strong. The recovery share FALLS as the dose rises, because the break-even rate rises with the dose and the operative rate does not | **provisional**, CONFIRMED with a stated qualification | this session, B12 | R-pending-2 |
 | 209 | A labour decomposition of the claim stock by the income TYPE that services it was not located in any prior work, including the Federal Reserve DSR, whose denominator is explicitly all income, and the Distributional Financial Accounts, which distribute by wealth percentile and not by income type. **The search is now systematic for this question; the claim remains "none located", not "none exists", and a direct approach to the Financial Accounts team has still not been made** | **provisional**, and the novelty gate is narrow | this session, B7 | n/a |
+
+---
+
+## ROUND THREE REPLICATION, 2026-09-20 (A118). Both constructions REPLICATED.
+
+An instance that did not write the code rebuilt both constructions of
+`notes/replication_brief_v2_2_addendum.md` from the brief and raw data alone, wrote its
+results down, and only then opened `notes/sealed/sealed_addendum_v2_2.json`.
+**All 32 sealed quantities matched: 30 within rounding, 2 within the stated tolerance with
+the cause of each identified exactly. No mismatches.** Comparison, results and the
+replicator's insufficiency list are in `notes/replication/round3/`.
+
+Tolerances honoured: Part A within 0.002 absolute on every ratio and 0.005 on the coefficient
+of variation; Part B within 0.004 on central rates and 0.01 on pass shares.
+
+### The two constructions, tagged R-REPLICATED-3
+
+| # | claim | Status | Findings | Replication flag |
+|---|---|---|---|---|
+| **216** | **The debt-only labour backing ratio.** Excluding every market-valued equity class from the denominator, the 2025 **pair** is **0.5216 direct** and **0.6020 including indirect**, against all-claims 0.2703 and 0.4749; equity is 48.19 percent of the all-claims denominator. The **2000 and 2008** direct readings are **0.4687 and 0.5006** debt-only against **0.2705 and 0.3772** all-claims, which is the asset-price problem made visible: the all-claims ratio rose 39 percent across the crash while the debt-only ratio rose 7. The **coefficient of variation** 1952 to 2025, on the **sample** standard deviation, is **0.0506 debt-only against 0.0942 all-claims**, so the all-claims series is 1.86 times as variable. The largest judgement call is the one-step rule, worth 15.4 percent on the debt-only ratio against about 76 on the all-claims one | **standing**, promoted from provisional on the round-three result | A112, A117; round three | **R-REPLICATED-3**, all 15 Part A sealed quantities within rounding |
+| **53f** | the assembled effective capital tax rate, both rent readings and both pass shares | see the row in the main table above | A118; round three | **R-REPLICATED-3**, 15 of 17 within rounding and 2 within tolerance, both explained and both corrected |
+
+The shareholder layer at the sourced centrals, 0.0386, matched the sealed value **exactly**.
+Every class list, Z.1 series mapping, Q4 convention and backing coefficient reproduced
+exactly. The replicator recovered the indirect labour share of business revenue to within
+0.4 percent **without ever being given it**, by inverting a rounded cross-check in the brief.
+
+### What round three found, all four on this project's side
+
+**THESIS-WEAKENING FIRST.**
+
+| # | finding | resolution |
+|---|---|---|
+| **1** | **Our own check B6.2 was wrong and our own construction failed it.** It required the shareholder layer to land in CRS R47113 Table 5's published 0.045 to 0.085. Our 0.0386 cannot reach 0.085 anywhere in the swept space. CRS's row is on an implied taxable share of **25/(25+30) = 0.4545** over **domestically held** stock; our theta of 0.24 to 0.28 is the same Rosenthal numerator over **all equity outstanding**, foreign included. CRS cites Rosenthal and Burke 2020 for its own 25 percent, so the numerators are one family and only the denominators differ | Check rewritten: the band rescaled by `theta / 0.4545` to **0.0267 to 0.0505**, which 0.0386 passes, plus CRS's "around 3 percent" text figure against 0.0315, which it also passes. **"Reproduces the published figure" is WITHDRAWN** wherever it referred to the Table 5 band |
+| **2** | **The robustness half of the capital-tax verdict is CONDITIONAL on the base of theta, and this WEAKENS THE THESIS.** At the CRS-implied 0.4545 the analytic maximum under Barkai is **0.1506**, above the harder 0.1373 threshold, so "no corner of the space closes the condition" fails; the pass share against the easier reading rises from 0.0013 to **0.2832**, and the Barkai central from 0.0851 to **0.1024** | Run as a marked sensitivity in `framework/tau_k/tau_k_crs_theta_sensitivity.csv`, carried into claim **53f**, the brief (B9), the tau_k gate report and the dashboard. The centre still fails under both rent readings either way, and the condition still fails everywhere under Karabarbounis and Neiman |
+| 3 | The shifted share's central disagreed between text (0.48, sourced from Torslov, Wier and Zucman) and code (0.45, the range midpoint) | Code corrected to the text, which is what the source supports. Barkai central **0.0864 to 0.0851**; nothing else moves, and under Karabarbounis and Neiman sigma = 0 kills the term |
+| 4 | The reported maximum was a Monte Carlo sample extreme, an order statistic with no stable value across seeds | Replaced by the **analytic** corner extremes: the assembly is multilinear, so 128 corners give **0.0563 to 0.1236** (Barkai) and **-0.0063 to 0.0403** (Karabarbounis-Neiman) |
+
+### Brief defects corrected, so round four does not hit them
+
+- The **indirect labour share of business revenue, 0.338212** (2025, = 0.681191 x 0.496502),
+  is now stated numerically in A3 and A4 instead of being recoverable only by inverting a
+  rounded cross-check. This was the single blocking gap in the brief.
+- **A2 now states that `corporate_equity` carries the indirect share in the all-claims
+  numerator** while being dropped from the debt-only construction entirely. The replicator
+  had to infer this and inferred it correctly.
+- **A6's Treasury passage is corrected.** It quoted the labour-linked share of federal
+  **receipts** (0.6339 to 0.6528) against the **Treasury class backing** in use (0.657788),
+  which is downstream of it and not inside it, so "we publish the lower end" read as false of
+  the number in production. Both bands are now given with their scope. The sentence is true
+  of the Treasury class band, **0.657788 to 0.678331**. Effect of moving to its upper end:
+  debt-only direct 0.5216 to 0.5306 (+1.73 pct), all-claims direct 0.270271 to 0.274931
+  (+1.72 pct), sovereign share 0.793592 to 0.797089. **No conclusion moves.**
+- **The coefficients of variation use the SAMPLE standard deviation** (`ddof = 1`), which the
+  sealed values pin down and which is now stated in A6.
 
 ---
 

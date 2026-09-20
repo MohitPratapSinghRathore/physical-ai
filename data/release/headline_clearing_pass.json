@@ -34,6 +34,7 @@
     }
   ],
   "limitations": [
+    "L14: The base of the taxable-shareholder share decides how robust the capital-tax verdict is",
     "L1: Off-balance-sheet and GPU-backed AI financing is unmeasured",
     "L2: Capital gains receipts are unsourced",
     "L3: The labour backing ratio's novelty is 'none located', pending a systematic search",
