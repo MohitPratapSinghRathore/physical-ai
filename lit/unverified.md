@@ -183,7 +183,7 @@ data for 2007) times Table A-4 (marginal rate on interest income 27.4 percent, 2
 Public Use File), with the upper bound adding the deferred tranche at CBO own nonqualified
 annuity rate. Cross-checked against CBO Table 2 measured -6 percent effective rate on
 C-corporation debt-financed investment, and corroborated by a Fed Z.1 holder map at 2026Q2.
-Extraction in `data/raw/manual/BONDHOLDER_RATE_extracted.md`; holder map in
+Extraction in `notes/sources/BONDHOLDER_RATE_extracted.md`; holder map in
 `framework/tau_k/z1_bond_holders.json`.
 
 **What remains unverified and now matters most: the DEBT SHARE of AI capital spending**,

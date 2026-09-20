@@ -18,7 +18,7 @@
 \else
   \author{%
     Mohit Pratap Singh Rathore\thanks{Oviqo. Corresponding author.}\quad
-    Gunveer Singh Kali\thanks{Oviqo.}\quad
+    Gunveer Singh Kalsi\thanks{Oviqo.}\quad
     Sriharsha Meduri\thanks{Oviqo.}\quad
     Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}}
 \fi
@@ -154,91 +154,7 @@ opposite direction, if AI disappoints; RO5 prices that case in Section~\ref{sec:
 % the household engine; the replication protocol and sealed-value discipline; the claims
 % register and its status tags; the AI-assistance disclosure.
 
-\section{Labor backing accounts}
-\label{sec:accounts}
-
-\subsection{Definition}
-
-A financial claim is serviced out of some income stream. A mortgage is serviced out of household
-wages; a corporate bond out of business revenue; Treasury debt out of federal receipts, which are
-themselves drawn from wages, from capital income and from other sources in measurable
-proportions. Labor backing accounts assign to each class of claim the share of its servicing that
-is traceable to labor income, and then, separately, record who holds the claim.
-
-The accounts run over thirteen classes of claim drawn from the Federal Reserve financial
-accounts, covering household mortgage and consumer credit, multifamily and commercial mortgages,
-Treasury and state and local debt, corporate bonds and loans, noncorporate business debt, and
-corporate equity. Two variants are reported throughout and never collapsed into one. The
-\emph{direct} variant counts only claims that wages pay directly. The \emph{including indirect}
-variant additionally credits business-revenue-serviced classes with the measured labor share of
-business revenue, on the reasoning that wages become spending and spending becomes revenue.
-
-Two conventions deserve emphasis because they are the ones a reader is most likely to contest.
-
-\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is not
-wage-backed because a household owes it. It is wage-backed to the extent that wage taxes service
-it. We therefore assign Treasury debt the labor-linked share of federal receipts, which is social
-insurance contributions in full plus the wage share of the individual income tax. This is the
-convention that makes the sovereign exposure in Section~\ref{sec:holders} meaningful rather than
-tautological.
-
-\paragraph{The one-step rule is the largest judgement in the paper.} Whether
-business-revenue-serviced classes carry zero or carry the indirect labor share is a choice, and
-it is the single assumption to which the accounts are most sensitive. We report both variants
-everywhere rather than choosing, and Section~\ref{sec:sensitivity} prices the choice.
-
-\subsection{The debt-only ratio, and why it is the one we report}
-
-The natural first construction puts every claim in the denominator, including corporate equity at
-market value. That construction has a defect serious enough to disqualify it as a headline.
-Corporate equity is \result{EquityShareDenom} percent of the all-claims denominator and moves
-with asset prices, so the all-claims ratio falls when equity rises and rises when equity falls,
-independently of anything happening to labor. Read as a risk indicator it would have called the
-economy least exposed at the 2000 equity peak and most exposed in 2009.
-
-The debt-only ratio removes every market-valued equity class from the denominator, leaving claims
-carried at par or amortized cost, so the series measures composition rather than valuation. The
-exclusion rule keys on valuation basis rather than on the name of the class, which means a future
-equity class is caught automatically.
-
-On this measure, about \result{DebtOnlyDirect} percent of all US debt, public and private, is
-serviced directly from wages, and \result{DebtOnlyIndirect} percent once indirect servicing is
-counted. The corresponding all-claims figures are \result{AllClaimsDirect} and
-\result{AllClaimsIndirect} percent. The difference between the two constructions is almost
-entirely the equity denominator.
-
-The stability of the debt-only series is itself a result. Over 1952 to 2025 its coefficient of
-variation is \result{DebtOnlyCV}, against \result{AllClaimsCV} for the all-claims series: the
-debt-only measure is roughly half as volatile, which is what the exclusion was designed to
-achieve.
-
-\subsection{Sensitivity}
-\label{sec:sensitivity}
-
-% TO DRAFT AS A TABLE, generated from framework/labor_backing/debt_only_sensitivity.csv.
-% Each named judgement call, one at a time, with the resulting ratio and the percentage move.
-% The one-step rule moves the all-claims ratio by about 76 percent and the debt-only ratio by
-% \result{OneStepMovePct} percent, which is the point of the debt-only construction.
-
-One bound must travel with every fiscal magnitude in the paper. The labor-linked share of federal
-receipts is built from the wage share of adjusted gross income, and realized capital gains sit
-inside that base while bearing preferential rates. On Internal Revenue Service Statistics of
-Income data for 2021 to 2023, realized gains run from \result{GainsAGILow} to
-\result{GainsAGIHigh} percent of adjusted gross income, and the labor-linked receipts share is
-therefore a band, \result{ReceiptsShareLow} to \result{ReceiptsShareHigh}, rather than a point. We
-publish the lower end throughout. The sovereign exposure share moves by less than one percent
-across the band.
-
-\subsection{Who holds the claims}
-\label{sec:holders}
-
-% TO DRAFT. The holder map for both sides, from
-% framework/labor_backing/direct_ratio_latest.json. Wage side: federal exposure
-% \result{SovereignUnion} percent as the union of held-or-guaranteed and obligor, less overlap;
-% \result{SovereignCreditor} percent as creditor or guarantor and \result{SovereignDebtor}
-% percent as the debtor on debt serviced from wage taxes. AI side: about one percent.
-% The U-shaped series from 1952 and the reading that much of the recent rise is federal debt
-% growth rather than new exposure to households.
+\input{sections/sec4_accounts.tex}
 
 \section{The fiscal condition}
 \label{sec:fiscal}

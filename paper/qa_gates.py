@@ -12,6 +12,8 @@ HERE = pathlib.Path(__file__).parent
 
 def main():
     t = (HERE / "main.tex").read_text(encoding="utf-8")
+    for sec in sorted((HERE / "sections").glob("*.tex")):
+        t += "\n" + sec.read_text(encoding="utf-8")
     m = (HERE / "results_macros.tex").read_text(encoding="utf-8")
     bib = (HERE / "references.bib").read_text(encoding="utf-8")
 

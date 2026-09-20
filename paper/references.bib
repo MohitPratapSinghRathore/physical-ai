@@ -53,7 +53,7 @@
   note    = {Origin of the "financial margin" construction: income minus debt service minus
              basic consumption, stressed household by household against interest rate,
              unemployment, asset price and exchange rate shocks. The runway measures in
-             src/stress/sipp_engine.py are deliberately a bounded version of this, because
+             src/stress/sipp\_engine.py are deliberately a bounded version of this, because
              this repository has no measured US consumption floor and will not invent one.}
 }
 
@@ -112,11 +112,11 @@
              different from zero"; switchers show "relative losses remaining around 10
              percent ten years after job displacement". Crucially these are measured
              "relative to counterfactual outcomes under no displacement", the same basis as
-             omega_counterfactual in src/omega_blended.py.}
+             omega\_counterfactual in src/omega\_blended.py.}
 }
 
 % ---------------------------------------------------------------------------
-% tau_k decomposition. All verified 2026-09-19 against the papers themselves.
+% tau\_k decomposition. All verified 2026-09-19 against the papers themselves.
 % ---------------------------------------------------------------------------
 
 @article{AcemogluManeraRestrepo2020,
@@ -124,13 +124,13 @@
   title   = {Does the {US} Tax Code Favor Automation?},
   journal = {Brookings Papers on Economic Activity},
   year    = {2020},
-  note    = {Read from the copy in data/raw/manual/AMR2020_tax_automation.pdf. Verified
+  note    = {Read from the copy in data/raw/manual/AMR2020\_tax\_automation.pdf. Verified
              verbatim: "Effective capital taxes on software and equipment, on the other
              hand, are much lower, 10 percent in the 2010s and 5 percent after the 2017 tax
              reforms, though they used to be about 20 percent in 2000." Also "In table 1, we
-             used an effective tax rate on labor of tau_l = 25.5 percent", which is the
-             origin of the AMR_0.255 row in this repository's grid, and "with immediate
-             expensing (alpha_j = 1), we have tau_k,j passthrough,equity = 0".}
+             used an effective tax rate on labor of tau\_l = 25.5 percent", which is the
+             origin of the AMR\_0.255 row in this repository's grid, and "with immediate
+             expensing (alpha\_j = 1), we have tau\_k,j passthrough,equity = 0".}
 }
 
 @techreport{Auerbach2017,
@@ -144,7 +144,7 @@
   url         = {http://www.nber.org/papers/w23881},
   note        = {Verified verbatim: "Hence, the cash-flow tax acts as a tax on pure profits,
              exempting only the normal return from taxation." This is the result that makes
-             the normal-return and rent split the right decomposition for tau_k under
+             the normal-return and rent split the right decomposition for tau\_k under
              expensing.}
 }
 
@@ -179,7 +179,7 @@
              was "very small in the early 1980s"; "the capital share declines from 32% of
              gross value added in 1984 to 25% of gross value added in 2014". The implied
              rent share of total capital income, 13.5/(25+13.5) = 0.351, is the ONLY sourced
-             point on sigma_rent in this repository; every higher value is a labelled
+             point on sigma\_rent in this repository; every higher value is a labelled
              scenario.}
 }
 
@@ -191,7 +191,7 @@
   number  = {6},
   pages   = {2188--2244},
   year    = {2020},
-  note    = {Consulted as data/raw/manual/AcemogluRestrepo2020_JPE_robots_and_jobs.pdf.
+  note    = {Consulted as data/raw/manual/AcemogluRestrepo2020\_JPE\_robots\_and\_jobs.pdf.
              Section V.C "Other Labor Market Outcomes", PDF page 34, appendix table A15:
              of the additional nonemployed, about three quarters leave the labour force and
              about one quarter remain unemployed. Estimated on long differences 1990 to
@@ -216,7 +216,7 @@
   doi         = {10.3386/w34873},
   url         = {https://www.nber.org/papers/w34873},
   note        = {SUPERSEDES the 2025 title carried in
-                 data/raw/manual/KorinekLockwood2025_public_finance_AI.pdf, which is the
+                 data/raw/manual/KorinekLockwood2025\_public\_finance\_AI.pdf, which is the
                  earlier draft. Verified from the NBER record on 2026-09-20: authors,
                  title, working paper number, DOI and a February 2026 issue date. Also
                  circulated as a Brookings working paper. The abstract states the result
@@ -236,7 +236,7 @@
   address     = {Santa Monica, CA},
   url         = {https://www.rand.org/t/RRA4980-1},
   note        = {FULL TEXT read in this environment on 2026-09-20 and retained at
-                 data/raw/manual/RAND_RRA4980-1_PriceSuresh2026.pdf. Upgraded from
+                 data/raw/manual/RAND\_RRA4980-1\_PriceSuresh2026.pdf. Upgraded from
                  verification level B to level F. Part of RAND's Social and Economic
                  Policy Rethink project, using the RAND von Furstenberg Family Budget
                  Model. This is the work that retires this project's priority claim on
@@ -257,7 +257,7 @@
   month       = apr,
   address     = {Washington, DC},
   note        = {FULL TEXT read in this environment on 2026-09-20, placed by the owner at
-                 data/raw/manual/IMF_Note_2026_002_AI_Scenario_Planning.pdf. Prepared under
+                 data/raw/manual/IMF\_Note\_2026\_002\_AI\_Scenario\_Planning.pdf. Prepared under
                  the guidance of Era Dabla-Norris. ISBN 979-8-22904-248-2 (paper),
                  979-8-22904-297-0 (webPDF). Synthesis of an IMF workshop of 10 to 11
                  December 2025 co-organised with the Economics of Transformative AI
@@ -279,10 +279,10 @@
   address     = {Washington, DC},
   isbn        = {979-8-40027-717-7},
   note        = {FULL TEXT read in this environment on 2026-09-20, placed by the owner at
-                 data/raw/manual/IMF_SDN_2024_002_Generative_AI_Fiscal_Policies.pdf. NOT
+                 data/raw/manual/IMF\_SDN\_2024\_002\_Generative\_AI\_Fiscal\_Policies.pdf. NOT
                  previously in the literature audit. Source for three things in this project:
                  the advanced-economy average tax rate on capital income of about 0.20 to
-                 0.22, which corroborates our sourced tau_k maximum of 0.20351; the
+                 0.22, which corroborates our sourced tau\_k maximum of 0.20351; the
                  identification of the United States among the economies whose corporate tax
                  bias most favours labour-saving assets, which corroborates our reading of
                  26 USC 168(k); and the measured social-protection effects of Brollo (2024),

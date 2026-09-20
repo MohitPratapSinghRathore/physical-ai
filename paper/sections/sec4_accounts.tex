@@ -1,0 +1,292 @@
+\section{Labor backing accounts}
+\label{sec:accounts}
+
+This section sets out the paper's method contribution. Labor backing accounts decompose the
+whole stock of United States financial claims twice over: once by the income that services each
+claim, and once by who ultimately holds, guarantees or owes it. The two decompositions are taken
+on the same claim stock in the same period, which is what allows the wage side and the AI side of
+the exposure to be compared rather than asserted. Everything later in the paper is built on the
+object defined here.
+
+\subsection{Definition and vocabulary}
+
+A financial claim is serviced out of some income stream. A mortgage is serviced out of household
+wages; a corporate bond out of business revenue; Treasury debt out of federal receipts, which are
+themselves drawn from wages, from capital income and from other sources in measurable
+proportions. The \emph{labor backing} of a class of claims is the share of the cash flow that
+services it which is labor income. A claim is \emph{directly wage-backed} when wages pay it
+without passing through another party's income statement first. It is \emph{indirectly
+wage-backed} when wages first become spending, spending becomes business revenue, and that
+revenue services the claim.
+
+The distinction is the accounting form of one the rest of the paper uses throughout. The
+\emph{first round} is what happens to the party whose own wages fall. The \emph{second round} is
+what happens to everyone else, through the spending, house prices and business credit that
+follow. Direct backing is the first round seen on the liability side of the economy; indirect
+backing is the second.
+
+Two conventions of presentation travel with every result below. \emph{Displacement} is always
+stated as a share of the total wage bill, never as a count of jobs and never as a share of one
+occupation, because the fiscal and the credit channel both run on dollars of pay. And every
+quantitative statement carries a status on its first use. A \emph{replicated} figure was rebuilt
+by an instance that had not written the code, from raw data and a published brief alone, inside a
+stated tolerance. A \emph{measured} figure comes from the pipeline and clears every applicable
+check but has not been independently rebuilt. A \emph{scenario} figure is arithmetic conditional
+on a stated assumption. Section~\ref{sec:data} sets out how the labels are assigned and what they
+are worth.
+
+The accounts run over thirteen classes of claim drawn from the Federal Reserve financial
+accounts, listed with their levels in Table~\ref{tab:classes}. They cover household mortgage and
+consumer credit, multifamily and commercial mortgages, Treasury and state and local debt,
+corporate bonds and loans, noncorporate business debt, and corporate equity.
+
+\begin{table}[htbp]
+\centering
+\caption{The thirteen claim classes, levels and labor backing, 2025. Classes marked $\dagger$ are
+serviced from business revenue and carry zero direct backing under the one-step rule. Measured;
+the home mortgage and multifamily coefficients are replicated.}
+\label{tab:classes}
+\input{tables/tab_claim_classes.tex}
+\end{table}
+
+\subsection{Two conventions, stated plainly because they are contestable}
+
+\paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt is not
+wage-backed because a household owes it. It is wage-backed to the extent that wage taxes service
+it. We therefore assign Treasury debt the labor-linked share of federal receipts, which is social
+insurance contributions in full plus the wage share of the individual income tax, measured at
+\result{ReceiptsPctLow} percent. State and local debt is treated the same way on its own receipts
+mix. The convention is what makes the federal exposure in Section~\ref{sec:holders} an empirical
+quantity rather than a definitional one. Without it a government funded entirely from payroll
+taxes and a government funded entirely from capital taxes would score identically, which is
+plainly the wrong answer for a question about wage risk.
+
+\paragraph{The one-step rule is a convention, and it is the largest judgement in the paper.} We
+trace servicing one step and stop. A claim serviced out of business revenue carries zero direct
+backing, even though some of that revenue began as somebody's wages. Multifamily mortgages are the
+one property class that does not take the zero, because the rent that services them is paid out of
+wages directly, with no firm in between.
+
+The rule is the first-round and second-round boundary applied to the liability side, and we adopt
+it for that reason rather than because tracing further is impossible. Tracing further is exactly
+what the indirect variant does. We report both variants everywhere and never average them. On the
+whole claim stock, moving the business classes from zero to their measured indirect share raises
+the ratio by \result{OneStepMoveAllClaimsPct} percent, more than every other judgement call in the
+accounts put together. A reader who rejects the convention gets a different number, and that
+number is printed beside ours rather than buried.
+
+\subsection{The debt-only ratio, and why it is the one we report}
+
+The natural first construction puts every claim in the denominator, corporate equity at market
+value included. It has a defect serious enough to disqualify it as a headline. Equity is
+\result{EquityShareDenom} percent of the all-claims denominator and moves with asset prices, so
+the ratio falls when equity rises and rises when equity falls, independently of anything happening
+to wages. It read \result{AllClaims2000} percent at the 2000 equity peak and \result{AllClaims2008}
+percent in 2008 after the crash. Read as an exposure indicator it would have called the economy
+least exposed in 2000 and most exposed in 2009, which is the wrong sign on both.
+
+The debt-only ratio removes every market-valued equity class from the denominator, leaving claims
+carried at par or amortized cost, so the series measures composition rather than valuation. The
+exclusion keys on the valuation basis rather than on the name of the class, so a future
+equity-like instrument is caught automatically. On the same two dates the debt-only ratio reads
+\result{DebtOnly2000} and \result{DebtOnly2008} percent, a three-point move where the all-claims
+ratio moved eleven.
+
+On this measure, about \result{DebtOnlyDirect} percent of all US debt, public and private, is
+serviced directly from wages, and \result{DebtOnlyIndirect} percent once indirect servicing is
+counted. The corresponding all-claims figures are \result{AllClaimsDirect} and
+\result{AllClaimsIndirect} percent. All four are replicated: an independent rebuild reproduced
+each of them to within 0.001 (Section~\ref{sec:replication}).
+
+Two further properties favour the debt-only construction, and both are replicated. Over 1952 to
+2025 its coefficient of variation is \result{DebtOnlyCV} against \result{AllClaimsCV} for the
+all-claims series, so it is roughly half as volatile. And it is far less sensitive to the one-step
+rule, which moves it by \result{OneStepMovePct} percent against
+\result{OneStepMoveAllClaimsPct} percent for the all-claims ratio. The statistic we put forward is
+the one that is stable and the one that depends least on our own largest convention. That is not a
+coincidence, it is the reason for the construction.
+
+\subsection{Sensitivity}
+\label{sec:sensitivity}
+
+Table~\ref{tab:sensitivity} moves each named judgement call one at a time and reports the
+resulting ratio. The one-step rule leads it, as it leads everything in this section, and nothing
+else moves the debt-only ratio by more than ten percent. The table is one at a time and so
+understates the true range if the calls interact, which the one-step rule does with all of them.
+
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the debt-only labor backing ratio, one judgement call at a time.
+Measured.}
+\label{tab:sensitivity}
+\input{tables/tab_debt_only_sensitivity.tex}
+\end{table}
+
+One bound travels with every fiscal magnitude in the paper. The labor-linked share of federal
+receipts is built from the wage share of adjusted gross income, and realized capital gains sit
+inside that base while bearing preferential rates. On Internal Revenue Service Statistics of
+Income data for 2021 to 2023, realized gains run from \result{GainsAGILow} to
+\result{GainsAGIHigh} percent of adjusted gross income, so the labor-linked receipts share is a
+band, \result{ReceiptsPctLow} to \result{ReceiptsPctHigh} percent, rather than a point. We publish
+the lower end throughout. The federal exposure share moves by less than one percent across the
+band. The fiscal magnitudes in Section~\ref{sec:displacement} are more sensitive to it, and we
+have not bounded that.
+
+\subsection{Who is exposed, and how}
+\label{sec:holders}
+
+The second decomposition asks who holds each claim. Table~\ref{tab:holders} gives the holder
+shares of the directly wage-backed stock. The federal government is the largest single holder or
+guarantor, at \result{SovereignCreditor} percent, through agency mortgage guarantees, the student
+loan book and central bank holdings. Banks and the rest of the world come next, at roughly
+eighteen percent each.
+
+\begin{table}[htbp]
+\centering
+\caption{Holders of directly wage-backed claims, 2025. Measured.}
+\label{tab:holders}
+\input{tables/tab_holders.tex}
+\end{table}
+
+Holding is not the only way a claim reaches a balance sheet. For an agency-guaranteed mortgage the
+federal government bears a credit loss. For Treasury debt serviced from wage taxes it bears a
+revenue shortfall on a claim it owes. Both are ways a fall in wages reaches the same institution,
+and a measure that counted only the first would understate the concentration by a factor of more
+than two. We therefore report the federal position as a union of three roles, holder, guarantor
+and debtor, and state it that way wherever it appears.
+
+\begin{quote}
+The federal government is exposed, as holder, guarantor or debtor, on about
+\result{SovereignUnion} percent of directly wage-backed claims: \result{SovereignCreditor} percent
+as creditor or guarantor and \result{SovereignDebtor} percent as the debtor on debt serviced from
+wage taxes, less the \result{OverlapBn} billion dollar overlap where the federal sector holds its
+own debt. Measured, with an agreed range of \result{AgreedRangeLow} to \result{AgreedRangeHigh}
+percent after independent rebuild.
+\end{quote}
+
+The union is not a portfolio share and must not be read as one. A reader who takes
+\result{SovereignUnion} percent to mean that the government owns four fifths of the claim stock
+has it wrong. It means that four fifths of the claims wages pay reach the federal balance sheet
+through one of three doors.
+
+The figure is stable against every measurement call and unstable against two structural ones, and
+the honest way to report it is to say both in the same breath. Varying the Treasury series
+definition, the mortgage backing definition, the rent backing definition, the state and local
+split, the consumer credit blend, or whether the central bank counts as federal moves the share by
+at most \result{MeasurementMaxMovePct} percent, and the central bank question moves it by exactly
+zero. The structural choices in Table~\ref{tab:structural} move it a great deal more. Counting
+indirectly wage-backed claims takes it to \result{StructIndirect} percent; not treating agency
+pools as federal takes it to \result{StructNoPools} percent; excluding the debtor position
+entirely leaves \result{StructObligorExcluded} percent. This is a stable measurement under a
+stated convention, and the convention does heavy lifting.
+
+\begin{table}[htbp]
+\centering
+\caption{Federal exposure under alternative structural choices. Measured.}
+\label{tab:structural}
+\input{tables/tab_structural.tex}
+\end{table}
+
+\subsection{The series, 1952 to 2025}
+
+Table~\ref{tab:series} runs the accounts back to 1952. Two things in it move differently, and
+reporting the series from 1970 would misdescribe both.
+
+The ratio itself is close to flat across seventy-three years. The all-claims measure stays between
+\result{AllClaimsSeriesLow} and \result{AllClaimsSeriesHigh} percent with no trend, and the
+debt-only measure between \result{DebtOnlySeriesLow} and \result{DebtOnlySeriesHigh} percent. The
+share of the national debt stock that wages service is not a recent development.
+
+The federal share of it traces a U. It stands at \result{SovUnion1952} percent in 1952, falls to
+\result{SovUnion1970} percent in 1970, and climbs back to \result{SovUnion2025} percent in 2025.
+The 1952 level is almost entirely wartime Treasury debt: the debtor position alone is
+\result{SovObligor1952} percent that year against \result{SovHeld1952} percent held or guaranteed.
+It falls to 1970 as that debt shrinks against a growing claim stock. It then climbs in two datable
+steps. The agency book grows between 1970 and 1990, taking the held-or-guaranteed position from
+\result{SovHeld1970} to \result{SovHeld1990} percent. Federal debt then grows between 2008 and
+2020, taking the debtor position from \result{SovObligor2008} to \result{SovObligor2020} percent.
+
+Said plainly, because it qualifies the headline: a large part of the recent rise is growth in
+federal debt itself rather than new exposure to households. The held-or-guaranteed position peaked
+at \result{SovHeld2020} percent in 2020 and has since fallen to \result{SovHeld2025} percent,
+while the whole net increase since 2008 sits in the debtor position. A reader who wants to know
+whether the government has been writing more wage-backed credit should look at the creditor
+column, where the answer for the last five years is no.
+
+\begin{table}[htbp]
+\centering
+\caption{Labor backing and federal exposure, selected years, 1952 to 2025. The creditor and debtor
+columns overlap where the federal sector holds its own debt, so they do not sum to the union.
+Measured.}
+\label{tab:series}
+\input{tables/tab_series.tex}
+\end{table}
+
+\subsection{The other side of the bet}
+
+The same decomposition applied to claims on AI capital gives the comparison the paper is for. The
+federal government holds about \result{AIFederalShareRounded} percent of them, across a threefold
+variation in the assumed scale of AI capital, \result{AIFederalShareLow} to
+\result{AIFederalShareHigh} percent, with a central assumption that AI capital is
+\result{AIEquityScale} percent of US nonfinancial corporate equity. That scale is a scenario
+parameter and is never asserted: no filing discloses an AI-attributable market value, so we sweep
+it and report the whole sweep.
+
+One caveat is load-bearing and belongs in the same sentence as the number. The AI side is built
+from nine SEC registrants' on-balance-sheet facts. Off-balance-sheet vehicles, which the Bank for
+International Settlements identifies as dominant in data centre financing, contribute nothing to
+it, and neither do GPU-backed lending or data centre securitizations. Every level on the AI side
+is therefore a lower bound, and the federal share of it is correspondingly an upper bound: adding
+the unmeasured financing would enlarge the denominator and push the share below
+\result{AIFederalShareRounded} percent. The gap between the two sides, about \result{HolderGap}
+percentage points, is measured on the wage side and bounded on the AI side, and it would widen
+rather than narrow if the missing financing were found.
+
+\subsection{Households, by position in the wage distribution}
+
+The accounts also split the household part of the wage-backed stock by wage quintile, in
+Table~\ref{tab:quintile}. The gradient is the finding. Wage-backed claims per dollar of wages fall
+as pay rises, from \result{QTwoPerDollar} in the second quintile to \result{QTopPerDollar} at the
+top. The top quintile earns \result{QTopWageShare} percent of the wage bill and carries
+\result{QTopClaimShare} percent of the household claims, so the claims are spread far more evenly
+than the income that services them. That is the sense in which a wage shock is regressive before
+any policy response has been chosen: the same proportional fall in pay consumes a larger share of
+the servicing capacity of households further down.
+
+The magnitude for the bottom quintile is withdrawn and does not appear in
+Table~\ref{tab:quintile}. An independent rebuild landed a factor of 2.5 to 3.4 away from ours, and
+we cannot show its reading was wrong, because our own brief defined neither the universe nor the
+normalisation of that cell. The direction of the gradient stands and was reproduced; the
+bottom-quintile level is reported nowhere in this paper. Section~\ref{sec:limitations} lists it
+among the withdrawn quantities.
+
+\begin{table}[htbp]
+\centering
+\caption{Wage-backed household claims by wage quintile. The bottom-quintile magnitude is
+withdrawn. Measured.}
+\label{tab:quintile}
+\input{tables/tab_quintile.tex}
+\end{table}
+
+\subsection{What has been independently rebuilt}
+\label{sec:replication}
+
+Three rebuild rounds have been run against these accounts, and what each established is worth
+stating precisely, because the available words carry different weights.
+
+Round two scored 127 quantities, 79 of them against sealed counterparts, by an instance that read
+no project code. Within this section it reproduced the home mortgage and multifamily backing
+coefficients to the last published digit, rebuilt from survey mortgage service and gross rent, and
+reached a federal exposure share of 78 percent against our \result{SovereignUnion} percent, a
+difference that decomposes almost entirely to the definition of the Treasury class. Round three
+took the debt-only ratio and the capital tax assembly of Section~\ref{sec:fiscal}, the two
+constructions the earlier rounds did not cover, and matched all 32 sealed quantities inside
+tolerance, 30 of them within rounding. That is the basis on which the debt-only pair, the equity
+share of the denominator, both coefficients of variation and the size of the one-step move are
+labelled replicated here.
+
+The protocol carries one qualification, stated here and again in Section~\ref{sec:data}. The blind
+was procedural rather than enforced: the rebuilder worked on the same machine, with the sealed
+file reachable at a path the brief itself names, and reported it unopened until the rebuild was
+final. The claim is therefore that these quantities were independently rebuilt under a reported
+blind protocol, not that they were independently verified.
