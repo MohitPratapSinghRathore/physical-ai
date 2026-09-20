@@ -1,0 +1,70 @@
+{
+  "treasury_series_verified": {
+    "series": [
+      "FL313161105",
+      "FL313169205"
+    ],
+    "descriptions": [
+      "Federal government; total marketable Treasury securities; liability",
+      "Federal government; total nonmarketable Treasury securities; liability"
+    ],
+    "vintage": "Z.1 annual, 2025, the latest complete year",
+    "values_mn": [
+      30069641,
+      3817450
+    ],
+    "sum_bn": 33887.1,
+    "reproduces_published_level": true,
+    "includes_intragovernmental": "partly; Z.1 consolidates the federal sector so trust fund GAS holdings net out",
+    "includes_federal_reserve_holdings": true,
+    "cross_checks_bn": {
+      "Treasury gross federal debt GFDEBTN 2025": 37144.3,
+      "Treasury debt held by the public FYGFDPUN 2025": 29769.5,
+      "Federal Reserve holdings TREAST 2025": 4219.6,
+      "Z.1 all-sector asset FL893061105 2025": 28481.0
+    },
+    "verdict": "CORRECT. The level is right and the documentation was wrong."
+  },
+  "other_consumer_class_now_explicit": {
+    "level_bn": 377.6,
+    "backing": 0.815554,
+    "z1_series": "FL153166205",
+    "note": "omitted entirely by the replicator because the brief lists the zero-rule classes in prose and never enumerates the thirteen"
+  },
+  "class_count": 13,
+  "sovereign_union_central": 0.793593,
+  "sovereign_union_range_core": [
+    0.451677,
+    0.803796
+  ],
+  "sovereign_union_range_with_obligor_excluded": [
+    0.32148,
+    0.803796
+  ],
+  "agreed_range_with_replicator": [
+    0.77781,
+    0.803796
+  ],
+  "replicator_value": 0.77781,
+  "largest_move": "obligor leg EXCLUDED (holder and guarantor only)",
+  "largest_move_pct": 59.49,
+  "ai_leg_federal_share_central": 0.01001,
+  "ai_leg_federal_share_range": [
+    0.009523,
+    0.010185
+  ],
+  "ai_leg_scenario_axis": "AI equity as 10, 20 or 30 percent of US nonfinancial corporate equity",
+  "holder_gap_central": 0.7836,
+  "narrow_range_same_object": [
+    0.787638,
+    0.803796
+  ],
+  "narrow_range_max_move_pct": 1.29,
+  "structural_calls_that_do_move_it": {
+    "one_step_rule": 0.451677,
+    "commercial_mortgage_as_rent_serviced": 0.74082,
+    "agency_pools_not_federal": 0.58654,
+    "obligor_leg_excluded": 0.32148
+  },
+  "central_bank_federal_or_not_moves_it_by": 0.0
+}

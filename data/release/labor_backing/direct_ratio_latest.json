@@ -1,0 +1,128 @@
+{
+ "status": "PROVISIONAL, produced in one session, not independently replicated",
+ "definition": "FIRST-ROUND servicing only. Business-revenue-serviced classes are zero by rule.",
+ "latest_year": 2025,
+ "total_claims_bn": 149407.2,
+ "labour_backed_bn": 40380.5,
+ "direct_labour_backing_ratio": 0.270271,
+ "by_class": {
+  "home_mortgage": {
+   "level_bn": 13788.3,
+   "backing": 0.840223,
+   "labour_backed_bn": 11585.3
+  },
+  "credit_card": {
+   "level_bn": 1324.3,
+   "backing": 0.74,
+   "labour_backed_bn": 980.0
+  },
+  "auto_loan": {
+   "level_bn": 1562.2,
+   "backing": 0.7737,
+   "labour_backed_bn": 1208.7
+  },
+  "student_loan": {
+   "level_bn": 1834.7,
+   "backing": 0.8832,
+   "labour_backed_bn": 1620.4
+  },
+  "other_consumer": {
+   "level_bn": 377.6,
+   "backing": 0.815554,
+   "labour_backed_bn": 308.0
+  },
+  "multifamily_mortgage": {
+   "level_bn": 2448.7,
+   "backing": 0.72754,
+   "labour_backed_bn": 1781.5
+  },
+  "treasury": {
+   "level_bn": 33887.1,
+   "backing": 0.657788,
+   "labour_backed_bn": 22290.5
+  },
+  "state_local_debt": {
+   "level_bn": 3803.9,
+   "backing": 0.159338,
+   "labour_backed_bn": 606.1
+  },
+  "corporate_bonds": {
+   "level_bn": 8075.3,
+   "backing": 0.0,
+   "labour_backed_bn": 0.0
+  },
+  "corporate_loans": {
+   "level_bn": 3903.7,
+   "backing": 0.0,
+   "labour_backed_bn": 0.0
+  },
+  "noncorporate_business_debt": {
+   "level_bn": 2453.0,
+   "backing": 0.0,
+   "labour_backed_bn": 0.0
+  },
+  "commercial_mortgage": {
+   "level_bn": 3953.4,
+   "backing": 0.0,
+   "labour_backed_bn": 0.0
+  },
+  "corporate_equity": {
+   "level_bn": 71994.9,
+   "backing": 0.0,
+   "labour_backed_bn": 0.0
+  }
+ },
+ "labour_backed_by_holder_bn": {
+  "banks": 7445.0,
+  "federal_government": 12981.5,
+  "households": 2451.0,
+  "insurers": 820.6,
+  "nonfinancial_business": 251.3,
+  "other_financial": 6186.9,
+  "pensions": 444.6,
+  "residual_unallocated": 661.4,
+  "rest_of_world": 7271.1,
+  "state_local_government": 1867.1
+ },
+ "labour_backed_by_holder_share": {
+  "banks": 0.184371,
+  "federal_government": 0.321479,
+  "households": 0.060699,
+  "insurers": 0.020323,
+  "nonfinancial_business": 0.006224,
+  "other_financial": 0.153214,
+  "pensions": 0.01101,
+  "residual_unallocated": 0.016378,
+  "rest_of_world": 0.180065,
+  "state_local_government": 0.046237
+ },
+ "sovereign_share_of_labour_backed": 0.321479,
+ "sovereign_exposure": {
+  "labour_backed_held_or_guaranteed_bn": 12981.5,
+  "labour_backed_obligor_bn": 22290.5,
+  "overlap_removed_bn": 3226.4,
+  "labour_backed_sovereign_exposure_bn": 32045.6,
+  "share_held_or_guaranteed": 0.321479,
+  "share_obligor": 0.552012,
+  "share_union": 0.793592
+ },
+ "social_insurance_memo": {
+  "note": "MEMO ITEM, never inside the ratio. Payroll share of each fund's OWN total income, 2026 Trustees summary Table 5.",
+  "payroll_share": {
+   "OASI": 0.9054,
+   "DI": 0.9571,
+   "HI": 0.872
+  },
+  "oasdi_payroll_income_bn": 1322.6,
+  "hi_payroll_income_bn": 403.2,
+  "oasdi_reserves_bn": 2561.3,
+  "hi_reserves_bn": 255.7
+ },
+ "sipp_working_core_shares": {
+  "mortgage": 0.8205,
+  "card": 0.74,
+  "auto": 0.7737,
+  "student": 0.8832
+ },
+ "other_consumer_blend": 0.815554294879353
+}

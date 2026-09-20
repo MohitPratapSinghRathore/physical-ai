@@ -1,0 +1,28 @@
+{
+  "object": "Published shares used in the ownership explanation of the capital tax section. Each is a figure read from a named published table, with the extraction recorded in notes/sources/. They are inputs, not pipeline outputs, and the manuscript's macros read them from here so that no value is typed into the prose.",
+  "gains_never_taxed_at_death": {
+    "value": 0.469,
+    "source": "CBO 2014, taxation of capital income: 46.9 percent of accrued gains are held until the owner's death and never taxed, basis being stepped up at death.",
+    "extraction": "notes/sources/SHAREHOLDER_PARAMS_extracted.md"
+  },
+  "corporate_interest_nontaxable_share": {
+    "value": 0.328,
+    "source": "CBO 2014 Table A-3, tax status of C corporation debt: 32.8 percent nontaxable, chiefly retirement plans.",
+    "extraction": "notes/sources/BONDHOLDER_RATE_extracted.md"
+  },
+  "taxable_holder_marginal_interest_rate": {
+    "value": 0.274,
+    "source": "CBO 2014 Table A-4, marginal rate on interest income for taxable holders, from the 2006 SOI Public Use File.",
+    "extraction": "notes/sources/BONDHOLDER_RATE_extracted.md"
+  },
+  "cbo_fully_taxable_equity_share_2007": {
+    "value": 0.572,
+    "source": "CBO, share of C corporation equity that was fully taxable. Reported for contrast only: it is the marginal dollar of saving by tax status, not the holder share of the outstanding stock, so it is NOT averaged with our theta.",
+    "extraction": "notes/sources/SHAREHOLDER_PARAMS_extracted.md"
+  },
+  "cbo_debt_financed_effective_rate": {
+    "value": -0.06,
+    "source": "CBO 2014 Table 2, effective marginal tax rate on C corporation debt-financed investment. Used as the published check on the assembled normal-return rate.",
+    "extraction": "notes/sources/BONDHOLDER_RATE_extracted.md"
+  }
+}

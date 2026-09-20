@@ -1,0 +1,7 @@
+dataset,statistic,index,embodied,cognitive,cognitive_reweighted_to_embodied_pay,embodied_reweighted_to_cognitive_pay,raw_gap,gap_after_reweighting_cognitive,gap_after_reweighting_embodied,share_of_gap_that_is_pay_a,share_of_gap_that_is_pay_b,mean_wage_embodied,mean_wage_cognitive
+ACS,distress_pp_per_bn,cognitive_AIOE,0.003995,0.001243,0.003802,0.001332,0.002751,0.000193,8.8e-05,0.929741,0.967992,47285.025477,110467.644197
+ACS,share_under_OASDI_cap,cognitive_AIOE,0.977416,0.811742,0.958522,0.888042,0.165674,0.018895,0.0763,0.885952,0.539456,47285.025477,110467.644197
+ACS,distress_pp_per_bn,cognitive_GPT,0.003995,0.002049,0.003877,0.002083,0.001945,0.000118,3.4e-05,0.939561,0.982664,47285.025477,77021.16976
+ACS,share_under_OASDI_cap,cognitive_GPT,0.977416,0.907518,0.975026,0.915272,0.069899,0.002391,0.007754,0.965798,0.889061,47285.025477,77021.16976
+SIPP,share_under_OASDI_cap,cognitive_AIOE,0.883658,0.704393,0.88184,0.707197,0.179265,0.001818,0.002804,0.989861,0.984356,62961.320599,134876.140074
+SIPP,share_under_OASDI_cap,cognitive_GPT,0.883658,0.832847,0.934279,0.726808,0.050811,-0.050621,-0.106038,1.99627,3.086923,62961.320599,102346.698331

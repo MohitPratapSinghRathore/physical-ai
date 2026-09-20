@@ -1,0 +1,57 @@
+{
+  "all_sectors": {
+    "date": "2026:Q2",
+    "level_bn": 18115.7,
+    "share": 1.0
+  },
+  "rest_of_world": {
+    "date": "2026:Q2",
+    "level_bn": 5195.7,
+    "share": 0.2868
+  },
+  "households_and_nonprofits": {
+    "date": "2026:Q2",
+    "level_bn": 192.0,
+    "share": 0.0106
+  },
+  "nonprofits": {
+    "date": "2025",
+    "level_bn": 194.0,
+    "share": 0.0107
+  },
+  "mutual_funds": {
+    "date": "2026:Q2",
+    "level_bn": 2672.1,
+    "share": 0.1475
+  },
+  "life_insurance": {
+    "date": "2026:Q2",
+    "level_bn": 3944.2,
+    "share": 0.2177
+  },
+  "pc_insurance": {
+    "date": "2026:Q2",
+    "level_bn": 906.0,
+    "share": 0.05
+  },
+  "pension_funds_total": {
+    "date": "2026:Q2",
+    "level_bn": 1547.6,
+    "share": 0.0854
+  },
+  "private_pension_funds": {
+    "date": "2026:Q2",
+    "level_bn": 897.3,
+    "share": 0.0495
+  },
+  "us_depository_institutions": {
+    "date": "2026:Q2",
+    "level_bn": 817.7,
+    "share": 0.0451
+  },
+  "federal_government": {
+    "date": "2026:Q2",
+    "level_bn": 10.1,
+    "share": 0.0006
+  }
+}

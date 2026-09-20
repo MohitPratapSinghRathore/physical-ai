@@ -1,0 +1,14 @@
+{
+ "status": "PROVISIONAL, one-at-a-time sensitivity",
+ "central_ratio": 0.270271,
+ "range_low": 0.26684,
+ "range_high": 0.474864,
+ "largest_single_call": "THE ONE-STEP RULE: business classes zero (central) vs the B2 indirect share",
+ "largest_single_move_pct": 75.7,
+ "sovereign_union_central": 0.793592,
+ "sovereign_union_range": [
+  0.321479,
+  0.793592
+ ],
+ "caveat": "ONE AT A TIME. The stated range UNDERSTATES the true range if the calls interact, and the one-step rule interacts with everything."
+}

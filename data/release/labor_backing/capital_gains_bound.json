@@ -1,0 +1,71 @@
+{
+  "status": "MEASURED from IRS SOI Table 1.4, 2021 to 2023. Reported as a BOUND, not a point: the truth lies between, because gains bear a positive but preferential rate.",
+  "source": "IRS Statistics of Income Table 1.4, All Returns: Sources of Income, Adjustments, and Tax Items, by Size of Adjusted Gross Income",
+  "by_year": [
+    {
+      "year": 2021,
+      "agi_bn": 14795.6,
+      "wages_bn": 9022.4,
+      "realised_capital_gains_bn": 2273.3,
+      "capital_gains_share_of_agi": 0.1536,
+      "w_wages_over_agi_LOWER": 0.6098,
+      "w_wages_over_agi_ex_gains_UPPER": 0.7205,
+      "labour_linked_receipts_share_LOWER": 0.609,
+      "labour_linked_receipts_share_UPPER": 0.6566
+    },
+    {
+      "year": 2022,
+      "agi_bn": 14834.0,
+      "wages_bn": 9739.0,
+      "realised_capital_gains_bn": 1253.8,
+      "capital_gains_share_of_agi": 0.0845,
+      "w_wages_over_agi_LOWER": 0.6565,
+      "w_wages_over_agi_ex_gains_UPPER": 0.7171,
+      "labour_linked_receipts_share_LOWER": 0.6291,
+      "labour_linked_receipts_share_UPPER": 0.6552
+    },
+    {
+      "year": 2023,
+      "agi_bn": 15286.0,
+      "wages_bn": 10204.1,
+      "realised_capital_gains_bn": 946.2,
+      "capital_gains_share_of_agi": 0.0619,
+      "w_wages_over_agi_LOWER": 0.6675,
+      "w_wages_over_agi_ex_gains_UPPER": 0.7116,
+      "labour_linked_receipts_share_LOWER": 0.6339,
+      "labour_linked_receipts_share_UPPER": 0.6528
+    }
+  ],
+  "capital_gains_share_of_agi_range": [
+    0.0619,
+    0.1536
+  ],
+  "wage_share_of_agi_range": [
+    0.6098,
+    0.6675
+  ],
+  "wage_share_EX_GAINS_range": [
+    0.7116,
+    0.7205
+  ],
+  "labour_linked_receipts_share_2023": {
+    "lower": 0.6339,
+    "upper": 0.6528
+  },
+  "downstream_2025": {
+    "treasury_class_backing": {
+      "lower": 0.657788,
+      "upper": 0.678331
+    },
+    "all_claims_labour_backing_ratio": {
+      "lower": 0.270271,
+      "upper": 0.274931
+    },
+    "sovereign_union_share": {
+      "lower": 0.793592,
+      "upper": 0.797089
+    }
+  },
+  "stability_point": "Realised gains swing from 15.4 pct of AGI in 2021 to 6.2 pct in 2023, and the wage share of AGI swings with them (0.610 to 0.668). The wage share EXCLUDING gains barely moves (0.712 to 0.721). The upper bound is also the more stable series.",
+  "limitation_wording_NEW": "Realised capital gains are 6.2 to 15.4 percent of AGI (IRS SOI 2021 to 2023) and bear preferential rates, so the labour-linked share of federal receipts is a BOUND, 0.634 to 0.653 on 2023 data, not a point. Every fiscal magnitude that scales with it carries that band. The sovereign share moves by under 1 percent across it."
+}

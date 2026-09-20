@@ -1,0 +1,21 @@
+{
+  "status": "SCENARIO throughout; the fiscal falls are VERIFIED historical episodes",
+  "conversion": "unemployment pp -> share of wage bill, one for one, a LOWER bound because a bust falls on above-average earners",
+  "bust_wage_bill_dose_equivalent_pct": [
+    0.125,
+    0.843
+  ],
+  "compare_displacement_headline_dose_pct": 10.0,
+  "ratio": 11.9,
+  "household_credit_loss_bn_range": [
+    0.8,
+    5.37
+  ],
+  "federal_receipts_fall_bn_range": [
+    -955.1,
+    -569.4
+  ],
+  "THE_FINDING": "An AI bust damages the wage side, but on these assumptions by 0.12 to 0.84 percent of the wage bill, which is 12 to 80 times SMALLER than the 10 percent displacement case. Household credit losses are 0.8 to 5.4bn against 30.7bn at the 10 percent dose. BUT the FISCAL hit is large and comes from the other side of the budget: federal receipts fall -955 to -569bn on the verified historical episodes, driven by capital gains and corporate tax rather than by wages.",
+  "disjointness_verdict": "The claim that the instrument sets are NEARLY DISJOINT across the two failure directions SURVIVES, but it must be narrowed and the reason changes. It is not that a bust leaves the wage side untouched: it does touch it, and B3 sizes that. It is that the bust reaches the wage side through a channel one to two orders of magnitude smaller than displacement does, while reaching the FEDERAL BUDGET through capital gains and corporate receipts, which displacement barely touches. So the two failure directions hit the same institution, the federal government, through DIFFERENT TAX BASES. Instruments that protect the wage tax base do not protect the capital tax base and the reverse. That is a sharper and more defensible claim than disjointness of instrument SETS.",
+  "federal_position_correction": "THE PAYOFF TABLE UNDERSTATES THE FEDERAL POSITION IN THE AI-FAILS COLUMN, and the reason matters. The table scores each holder by what it HOLDS. The federal government holds 1.0 percent of the AI leg, so it scores as barely exposed when AI fails. But B3 shows federal receipts falling 569 to 955bn in a bust, through capital gains and corporate tax. **The state's claim on the AI upside is fiscal, not proprietary: it is the capital tax, which is exactly the contested rate of section 5.1.** So the state is exposed to an AI bust roughly in proportion to how much of the AI surplus it taxes, and at the operative 0.0708 that exposure is small, which is the same fact as being unhedged on the upside. A holder-share table cannot show this and the paper must say so in words beside it."
+}

@@ -1,0 +1,419 @@
+{
+  "n_checks": 59,
+  "n_violations": 4,
+  "checks": [
+    {
+      "quantity": "CORRECTED OASDI loss as percent of that fund's payroll income",
+      "value": 76.4303,
+      "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
+      "verdict": "OK",
+      "detail": "rebuilt in A79 with the OASDI cap and a payroll numerator"
+    },
+    {
+      "quantity": "CORRECTED HI loss as percent of that fund's payroll income",
+      "value": 73.03,
+      "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
+      "verdict": "OK",
+      "detail": "rebuilt in A79 with the OASDI cap and a payroll numerator"
+    },
+    {
+      "quantity": "CORRECTED implied bank share after benchmarking",
+      "value": 0.875,
+      "bound": "a subset cannot exceed its total: 0 to 1",
+      "verdict": "OK",
+      "detail": "survey balances scaled to official aggregates in A79"
+    },
+    {
+      "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of OASDI payroll income",
+      "value": 194.8193,
+      "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
+      "verdict": "VIOLATION",
+      "detail": "maximum across the extended axis at the ten-year horizon"
+    },
+    {
+      "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of HI Part A revenue",
+      "value": 639.0574,
+      "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
+      "verdict": "VIOLATION",
+      "detail": "maximum across the extended axis at the ten-year horizon"
+    },
+    {
+      "quantity": "terminal fiscal loss as percent of federal receipts",
+      "value": 43.0837,
+      "bound": "cannot exceed the labour-linked share of receipts, about 65%, so 0 to 65 percent",
+      "verdict": "OK",
+      "detail": "a displacement shock removes labour-linked revenue, not capital or excise revenue"
+    },
+    {
+      "quantity": "rho on the extended axis",
+      "value": 0.0,
+      "bound": "a reemployment share is a probability: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "R = rho x omega",
+      "value": 0.5968,
+      "bound": "a retained wage share is 0 to 1 unless reemployment raises wages",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "SUPERSEDED A79 implied bank share of mortgage balances",
+      "value": 0.1757,
+      "bound": "a subset cannot exceed its total: 0 to 1",
+      "verdict": "OK",
+      "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
+    },
+    {
+      "quantity": "SUPERSEDED A79 implied bank share of card balances",
+      "value": 2.9739,
+      "bound": "a subset cannot exceed its total: 0 to 1",
+      "verdict": "VIOLATION",
+      "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
+    },
+    {
+      "quantity": "SUPERSEDED A79 implied bank share of auto balances",
+      "value": 1.0644,
+      "bound": "a subset cannot exceed its total: 0 to 1",
+      "verdict": "VIOLATION",
+      "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
+    },
+    {
+      "quantity": "SUPERSEDED A79 implied bank share of student balances",
+      "value": 0.7238,
+      "bound": "a subset cannot exceed its total: 0 to 1",
+      "verdict": "OK",
+      "detail": "above 1 means the survey under-reports that balance relative to the aggregate"
+    },
+    {
+      "quantity": "mortgage loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.001660772097697835,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.004069861530514442,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.002672282586917765,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 5% of wage bill, as a share of the national balance",
+      "value": 0.004004509333584134,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "mortgage loss at 10% of wage bill, as a share of the national balance",
+      "value": 0.0032945742519097693,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 10% of wage bill, as a share of the national balance",
+      "value": 0.008075841817013053,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 10% of wage bill, as a share of the national balance",
+      "value": 0.005301764990512865,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 10% of wage bill, as a share of the national balance",
+      "value": 0.007947685792464201,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "mortgage loss at 25% of wage bill, as a share of the national balance",
+      "value": 0.008034149337755496,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 25% of wage bill, as a share of the national balance",
+      "value": 0.019708992124319414,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 25% of wage bill, as a share of the national balance",
+      "value": 0.012933841975690932,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 25% of wage bill, as a share of the national balance",
+      "value": 0.01940863193800067,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "mortgage loss at 50% of wage bill, as a share of the national balance",
+      "value": 0.0153940383724888,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 50% of wage bill, as a share of the national balance",
+      "value": 0.03781569233991235,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 50% of wage bill, as a share of the national balance",
+      "value": 0.02479897199130151,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 50% of wage bill, as a share of the national balance",
+      "value": 0.037281988732135216,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "mortgage loss at 75% of wage bill, as a share of the national balance",
+      "value": 0.022079678820074576,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "card loss at 75% of wage bill, as a share of the national balance",
+      "value": 0.05432085219082606,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "auto loss at 75% of wage bill, as a share of the national balance",
+      "value": 0.03559553367160798,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "student loss at 75% of wage bill, as a share of the national balance",
+      "value": 0.05362007038240364,
+      "bound": "a loss cannot exceed the balance it sits on: 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "maximum share of the total wage bill displaced",
+      "value": 0.83749,
+      "bound": "a share of the wage bill is 0 to 1",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "terminal prime-age nonemployment",
+      "value": 64.8446,
+      "bound": "a nonemployment rate is 0 to 100 percent",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "break-even tau_k, case A, maximum",
+      "value": 0.301,
+      "bound": "a break-even rate on the surplus cannot exceed the labour tax it replaces plus added outlays: tau_l + g = 0.301 + 0 = 0.301",
+      "verdict": "OK",
+      "detail": "this is the bound the sealed 0.378371 broke"
+    },
+    {
+      "quantity": "break-even tau_k, case A, minimum",
+      "value": 0.124614,
+      "bound": "a tax rate is not negative",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "break-even tau_k, case B, maximum",
+      "value": 0.649569319426274,
+      "bound": "no tax rate exceeds 1",
+      "verdict": "OK",
+      "detail": "case B may exceed tau_l legitimately, because the base shrinks as the loss grows, but it may not exceed 100 percent"
+    },
+    {
+      "quantity": "break-even tau_k, case B, minimum",
+      "value": 0.1817708418746006,
+      "bound": "a tax rate is not negative",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case B break-even minus case A, minimum across the grid",
+      "value": 0.0571568418746006,
+      "bound": "case B raises the loss and shrinks the base, so it cannot be the lower of the two",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case B surplus, minimum",
+      "value": 548.5651447079999,
+      "bound": "a break-even rate exists only while a positive surplus remains to tax",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case A break-even against the top of the SOURCED tau_k range",
+      "value": 0.124614,
+      "bound": "NOT a plausibility bound, a THESIS check: the fiscal condition is closable only if a break-even rate falls at or below the sourced maximum of 0.20351",
+      "verdict": "OK",
+      "detail": "reported, not enforced: a break-even rate below the sourced maximum WEAKENS the claim that the instrument is unavailable, and must be said plainly"
+    },
+    {
+      "quantity": "stock-flow unemployment rate",
+      "value": 0.218862,
+      "bound": "0 to 1.0",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "stock-flow prime-age E/P ratio, percent",
+      "value": 80.240483,
+      "bound": "0 to 100.0",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "rho, superseded extended axis, rho",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15120 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded extended axis, rho",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "6384 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_clamped",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "101 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_band_lo",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "105 values, min 0.0000, max 0.6941"
+    },
+    {
+      "quantity": "rho, bounded scenario axis, rho_band_hi",
+      "value": 0.6941170006801652,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "105 values, min 0.4900, max 0.6941"
+    },
+    {
+      "quantity": "rho raw fixed point, bounded scenario axis, DIAGNOSTIC",
+      "value": 6,
+      "bound": "breaches expected past the pole, must be caught and banded",
+      "verdict": "OK",
+      "detail": "6 of 101 raw values outside [0, 1]"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_clamped",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "13 values, min 0.0000, max 0.6815"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_band_lo",
+      "value": 0.0,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15 values, min 0.0000, max 0.6815"
+    },
+    {
+      "quantity": "rho, bounded dose grid, rho_band_hi",
+      "value": 0.6814569491733323,
+      "bound": "rho in [0, 1], it is a rate",
+      "verdict": "OK",
+      "detail": "15 values, min 0.4900, max 0.6815"
+    },
+    {
+      "quantity": "rho raw fixed point, bounded dose grid, DIAGNOSTIC",
+      "value": 2,
+      "bound": "breaches expected past the pole, must be caught and banded",
+      "verdict": "OK",
+      "detail": "2 of 13 raw values outside [0, 1]"
+    },
+    {
+      "quantity": "DEBT_ONLY_ratio_direct in [0, 1]",
+      "value": 0.5217,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.4364, max 0.5217"
+    },
+    {
+      "quantity": "DEBT_ONLY_ratio_incl_indirect in [0, 1]",
+      "value": 0.602,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.5523, max 0.6020"
+    },
+    {
+      "quantity": "all_claims_ratio_direct in [0, 1]",
+      "value": 0.402,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.2513, max 0.4020"
+    },
+    {
+      "quantity": "equity_share_of_all_claims in [0, 1]",
+      "value": 0.4819,
+      "bound": "a share: 0 to 1",
+      "verdict": "OK",
+      "detail": "74 years, min 0.2078, max 0.4819"
+    },
+    {
+      "quantity": "debt-only denominator <= all-claims denominator",
+      "value": 0.792188858423059,
+      "bound": "excluding equity cannot enlarge the denominator",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "quantity": "debt-only ratio >= all-claims ratio",
+      "value": 0.09360000000000002,
+      "bound": "removing an unbacked class from the denominator must RAISE the ratio",
+      "verdict": "OK",
+      "detail": ""
+    }
+  ]
+}

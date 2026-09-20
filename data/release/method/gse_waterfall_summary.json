@@ -1,0 +1,30 @@
+{
+  "pmi_covered_share_of_book": {
+    "Fannie Mae": 0.2137,
+    "Freddie Mac": 0.2157
+  },
+  "pmi_coverage_depth": {
+    "Fannie Mae": 0.2663,
+    "Freddie Mac": 0.2665
+  },
+  "crt_reference_pool_share_of_book": {
+    "Fannie Mae": 0.3609,
+    "Freddie Mac": 0.5576
+  },
+  "crt_outstanding_band_width_of_pool": {
+    "Fannie Mae": 0.03054,
+    "Freddie Mac": 0.02274
+  },
+  "crt_attachment": 0.0075,
+  "crt_vertical_retained": 0.05,
+  "superseded_transfer_layer_bn": 592.855,
+  "rebuilt_crt_risk_in_force_bn": 79.016,
+  "rebuilt_pmi_risk_in_force_bn": 382.817,
+  "capital_bn": 179.4,
+  "one_year_ppnr_bn": 34.24,
+  "gfee_income_bn": 40.492,
+  "sources": {
+    "fnma": "Fannie Mae 2025 Form 10-K, accession 0000310522-26-000015, https://www.sec.gov/Archives/edgar/data/310522/000031052226000015/fnm-20251231.htm",
+    "fmcc": "Freddie Mac 2025 Form 10-K, accession 0001026214-26-000021, https://www.sec.gov/Archives/edgar/data/1026214/000102621426000021/fmcc-20251231.htm"
+  }
+}

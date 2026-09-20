@@ -57,7 +57,7 @@ HOLDER_LABELS = [
 
 
 def tab_classes():
-    lb = load("framework/labor_backing/direct_ratio_latest.json")
+    lb = load("data/release/labor_backing/direct_ratio_latest.json")
     by = lb["by_class"]
     lines = [r"\begin{tabular}{lrrr}", r"\toprule",
              r"Claim class & Level (USD bn) & Labor backing & Wage-backed (USD bn) \\",
@@ -75,7 +75,7 @@ def tab_classes():
 
 
 def tab_sensitivity():
-    rs = rows("framework/labor_backing/debt_only_sensitivity.csv")
+    rs = rows("data/release/labor_backing/debt_only_sensitivity.csv")
     lines = [r"\begin{tabular}{lrr}", r"\toprule",
              r"Judgement call & Debt-only ratio & Move (per cent) \\", r"\midrule"]
     for r in rs:
@@ -89,8 +89,8 @@ def tab_sensitivity():
 
 def tab_series():
     years = ["1952", "1970", "1990", "2000", "2008", "2020", "2025"]
-    dr = {r["year"]: r for r in rows("framework/labor_backing/direct_ratio_timeseries.csv")}
-    do = {r["year"]: r for r in rows("framework/labor_backing/debt_only_ratio_timeseries.csv")}
+    dr = {r["year"]: r for r in rows("data/release/labor_backing/direct_ratio_timeseries.csv")}
+    do = {r["year"]: r for r in rows("data/release/labor_backing/debt_only_ratio_timeseries.csv")}
     lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
              r"Year & Debt-only ratio & All-claims ratio & Federal, union "
              r"& \quad as creditor & \quad as debtor \\", r"\midrule"]
@@ -106,7 +106,7 @@ def tab_series():
 
 
 def tab_holders():
-    lb = load("framework/labor_backing/direct_ratio_latest.json")
+    lb = load("data/release/labor_backing/direct_ratio_latest.json")
     sh = lb["labour_backed_by_holder_share"]
     bn = lb["labour_backed_by_holder_bn"]
     lines = [r"\begin{tabular}{lrr}", r"\toprule",
@@ -118,7 +118,7 @@ def tab_holders():
 
 
 def tab_structural():
-    rs = rows("framework/labor_backing/item3_sovereign_robustness.csv")
+    rs = rows("data/release/labor_backing/item3_sovereign_robustness.csv")
     keep = {
         "THE ONE-STEP RULE: business classes zero (central) vs the B2 indirect share":
             "Indirectly wage-backed claims included",
@@ -147,7 +147,7 @@ QLAB = {"Q1_bottom": "Bottom quintile", "Q2": "Second quintile", "Q3_middle": "M
 
 
 def tab_quintile():
-    rs = rows("framework/labor_backing/quintile_labour_backing.csv")
+    rs = rows("data/release/labor_backing/quintile_labour_backing.csv")
     lines = [r"\begin{tabular}{lrrr}", r"\toprule",
              r"Wage quintile & Share of the wage bill & Share of household wage-backed claims "
              r"& Claims per wage dollar \\", r"\midrule"]
@@ -162,7 +162,7 @@ def tab_quintile():
 
 
 def tab_under_reporting():
-    b = load("data/processed/benchmark_cap_summary.json")["under_reporting"]
+    b = load("data/release/method/benchmark_cap_summary.json")["under_reporting"]
     label = {"mortgage": "Mortgage", "card": "Credit card", "auto": "Auto",
              "student": "Student"}
     lines = [r"\begin{tabular}{lrrrr}", r"\toprule",
@@ -178,7 +178,7 @@ def tab_under_reporting():
 
 
 def tab_tau_k():
-    tk = load("framework/tau_k/tau_k_assembled.json")
+    tk = load("data/release/tau_k/tau_k_assembled.json")
     req = tk["required_tau_k"]
     name = {"Barkai": "First rent reading", "Karabarbounis_Neiman_case_R": "Second rent reading"}
     lines = [r"\begin{tabular}{llrrrr}", r"\toprule",
@@ -205,7 +205,7 @@ def tab_tau_k():
 
 
 def tab_levers():
-    tk = load("framework/tau_k/tau_k_assembled.json")
+    tk = load("data/release/tau_k/tau_k_assembled.json")
     label = {"deferral_factor": "Deferral and step-up at death",
              "state_cit_effective": "State corporate income tax",
              "shifted_share": "Profit shifting",
@@ -223,6 +223,90 @@ def tab_levers():
     write("tab_levers.tex", "\n".join(lines))
 
 
+EXPOSURE = {"embodied": "Physically exposed", "cognitive_AIOE": "Cognitively exposed, first index",
+            "cognitive_GPT": "Cognitively exposed, second index"}
+
+
+def tab_incidence_holder():
+    rs = [r for r in rows("data/release/dose_response/sovereign_consolidation.csv")
+          if r["dose"] == "0.1" and r["incidence"] == "c_sourced_mix"]
+    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
+             r"Where the first-round loss lands & " +
+             " & ".join(EXPOSURE[r["exposure_type"]] for r in rs) + r" \\",
+             r"\midrule"]
+    fields = [("general_revenue_bn", "Federal general revenue"),
+              ("oasdi_bn", "Social security trust funds"),
+              ("hi_bn", "Hospital insurance trust fund"),
+              ("federal_student_bn", "Federal student loan book"),
+              ("fha_bn", "Federal housing administration"),
+              ("gse_loss_bn", "Housing agencies, gross"),
+              ("federal_first_round_bn", "Federal, total"),
+              ("private_first_round_bn", "Private holders, total")]
+    for key, label in fields:
+        vals = " & ".join(f"{float(r[key]):,.1f}" for r in rs)
+        lines.append(f"{label} & {vals} \\\\")
+    lines.append("Federal share & " +
+                 " & ".join(f"{float(r['federal_share_first_round']):.3f}" for r in rs)
+                 + r" \\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_incidence_holder.tex", "\n".join(lines))
+
+
+def tab_federal_share_by_dose():
+    rs = rows("data/release/incidence/federal_share_by_dose.csv")
+    lines = [r"\begin{tabular}{lrrl}", r"\toprule",
+             r"Displacement, share of the wage bill & Narrow reading & "
+             r"Conservatorship reading & Inside the data \\", r"\midrule"]
+    for r in rs:
+        inside = "yes" if r["inside_observed_data_range"].lower().startswith("t") else "no"
+        lines.append(
+            f"{100 * float(r['dose_share_of_total_wage_bill']):.0f} per cent & "
+            f"{float(r['narrow_low']):.3f} to {float(r['narrow_high']):.3f} & "
+            f"{float(r['conservatorship_low']):.3f} to "
+            f"{float(r['conservatorship_high']):.3f} & {inside} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_federal_share_by_dose.tex", "\n".join(lines))
+
+
+def tab_buffers():
+    seen = {}
+    for r in rows("data/release/dose_response/by_wage_quintile_dose_response.csv"):
+        seen.setdefault(r["wage_quintile"], r)
+    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
+             r"Wage quintile & Mean wage (USD) & Median months of runway & "
+             r"Under one month (per cent) \\", r"\midrule"]
+    for key in ("Q1_bottom", "Q2", "Q3_middle", "Q4", "Q5_top"):
+        r = seen[key]
+        lines.append(f"{QLAB[key]} & {float(r['mean_wage']):,.0f} & "
+                     f"{float(r['median_runway_months']):.3f} & "
+                     f"{float(r['pct_under_1_month']):.3f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_buffers.tex", "\n".join(lines))
+
+
+def tab_attrition():
+    ten = {}
+    for r in rows("data/release/dose_response/dose_response_first_round.csv"):
+        if r["dose_share_of_total_wage_bill"] == "0.1":
+            ten.setdefault((r["exposure_type"], r["incidence"]), r)
+    lines = [r"\begin{tabular}{llrrrr}", r"\toprule",
+             r"Exposure group & Who is displaced & Federal budget & Mortgage & Auto "
+             r"& Student \\", r"\midrule"]
+    case = {"a_incumbents": "incumbents only", "b_entrants": "non-hiring",
+            "c_sourced_mix": "sourced mix"}
+    for et in ("embodied", "cognitive_AIOE", "cognitive_GPT"):
+        for inc in ("a_incumbents", "b_entrants", "c_sourced_mix"):
+            r = ten[(et, inc)]
+            lines.append(
+                f"{EXPOSURE[et]} & {case[inc]} & "
+                f"{float(r['public_budget_loss_hi_bn']):,.2f} & "
+                f"{float(r['mortgage_national_loss_hi_bn']):,.2f} & "
+                f"{float(r['auto_lenders_loss_hi_bn']):,.2f} & "
+                f"{float(r['student_loan_holders_loss_hi_bn']):,.2f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_attrition.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -233,3 +317,7 @@ if __name__ == "__main__":
     tab_under_reporting()
     tab_tau_k()
     tab_levers()
+    tab_incidence_holder()
+    tab_federal_share_by_dose()
+    tab_buffers()
+    tab_attrition()

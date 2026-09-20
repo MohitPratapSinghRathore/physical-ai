@@ -24,28 +24,40 @@ def rows(rel):
 
 
 def main():
-    lb = load("framework/labor_backing/direct_ratio_latest.json")
-    do = load("framework/labor_backing/debt_only_ratio.json")
-    cg = load("framework/labor_backing/capital_gains_bound.json")
-    tk = load("framework/tau_k/tau_k_assembled.json")
-    comp = load("framework/tau_k/components.json")
-    inst = load("framework/institutions/a2_summary.json")
-    bust = load("framework/ai_bust/b2_transmission.json")
-    rsen = load("data/processed/replication_r_sensitivity.json")
-    it3 = load("framework/labor_backing/item3_sovereign_robustness.json")
-    tsb = load("framework/labor_backing/two_sided_bet.json")
+    lb = load("data/release/labor_backing/direct_ratio_latest.json")
+    do = load("data/release/labor_backing/debt_only_ratio.json")
+    cg = load("data/release/labor_backing/capital_gains_bound.json")
+    tk = load("data/release/tau_k/tau_k_assembled.json")
+    comp = load("data/release/tau_k/components.json")
+    inst = load("data/release/institutions/a2_summary.json")
+    bust = load("data/release/ai_bust/b2_transmission.json")
+    rsen = load("data/release/method/replication_r_sensitivity.json")
+    it3 = load("data/release/labor_backing/item3_sovereign_robustness.json")
+    tsb = load("data/release/labor_backing/two_sided_bet.json")
     dots = {r["year"]: r for r in
-            rows("framework/labor_backing/debt_only_ratio_timeseries.csv")}
+            rows("data/release/labor_backing/debt_only_ratio_timeseries.csv")}
     drts = {r["year"]: r for r in
-            rows("framework/labor_backing/direct_ratio_timeseries.csv")}
+            rows("data/release/labor_backing/direct_ratio_timeseries.csv")}
     quint = {r["wage_quintile"]: r for r in
-             rows("framework/labor_backing/quintile_labour_backing.csv")}
-    acsen = load("framework/labor_backing/sensitivity.json")
+             rows("data/release/labor_backing/quintile_labour_backing.csv")}
+    acsen = load("data/release/labor_backing/sensitivity.json")
     rep = {r["round"]: r for r in rows("data/release/replication_rounds.csv")}
-    fis = load("data/processed/fiscal_channel_summary.json")
-    plaus = load("data/processed/verify/plausibility_audit.json")
-    pub = load("framework/tau_k/published_shares.json")
-    bh = load("framework/tau_k/z1_bond_holders.json")
+    fis = load("data/release/method/fiscal_channel_summary.json")
+    plaus = load("data/release/method/plausibility_audit.json")
+    fed_dose = {r["dose_share_of_total_wage_bill"]: r for r in
+                rows("data/release/incidence/federal_share_by_dose.csv")}
+    cons = [r for r in rows("data/release/dose_response/sovereign_consolidation.csv")
+            if r["dose"] == "0.1" and r["incidence"] == "c_sourced_mix"]
+    gse_wf = rows("data/release/incidence/housing_agency_waterfall.csv")
+    gse_un = rows("data/release/incidence/housing_agency_unenhanced_share.csv")
+    quint_buf = {}
+    for r in rows("data/release/dose_response/by_wage_quintile_dose_response.csv"):
+        quint_buf.setdefault(r["wage_quintile"], r)
+    paycon = rows("data/release/incidence/pay_control.csv")
+    first = rows("data/release/dose_response/dose_response_first_round.csv")
+    clearing = {r["id"]: r for r in rows("data/release/headline_clearing_pass.csv")}
+    pub = load("data/release/tau_k/published_shares.json")
+    bh = load("data/release/tau_k/z1_bond_holders.json")
 
     sov = lb["sovereign_exposure"]
     req = rsen["ours_observed_rho_and_our_omega"]["required_tau_k"]
@@ -218,6 +230,82 @@ def main():
     R["SystemAssetsBn"] = f"{inst['system_assets_bn']:,.1f}"
     R["BaselineBreaches"] = str(inst["baseline_breaches_after_exclusion"]["n_breaching"])
     R["BaselinePctAssets"] = f"{inst['baseline_breaches_after_exclusion']['pct_assets']:.3f}"
+
+    # ---- displacement, measured
+    R["TerminalLossTen"] = clearing["terminal_loss_10pct"]["value"].replace("bn", "")
+    R["FedShareTenNarrowLow"] = pct(fed_dose["0.1"]["narrow_low"])
+    R["FedShareTenNarrowHigh"] = pct(fed_dose["0.1"]["narrow_high"])
+    R["FedShareTenConsLow"] = pct(fed_dose["0.1"]["conservatorship_low"])
+    R["FedShareTenConsHigh"] = pct(fed_dose["0.1"]["conservatorship_high"])
+    R["FedShareFiftyNarrowLow"] = pct(fed_dose["0.5"]["narrow_low"])
+    R["FedShareFiftyNarrowHigh"] = pct(fed_dose["0.5"]["narrow_high"])
+    R["FedShareSeventyFiveNarrowHigh"] = pct(fed_dose["0.75"]["narrow_high"])
+    fed_bn = [float(r["federal_first_round_bn"]) for r in cons]
+    priv_bn = [float(r["private_first_round_bn"]) for r in cons]
+    R["FedFirstRoundTenLow"] = f"{min(fed_bn):,.0f}"
+    R["FedFirstRoundTenHigh"] = f"{max(fed_bn):,.0f}"
+    R["PrivateFirstRoundTenLow"] = f"{min(priv_bn):,.0f}"
+    R["PrivateFirstRoundTenHigh"] = f"{max(priv_bn):,.0f}"
+    R["OASDILossTenLow"] = f"{min(float(r['oasdi_bn']) for r in cons):,.0f}"
+    R["OASDILossTenHigh"] = f"{max(float(r['oasdi_bn']) for r in cons):,.0f}"
+    R["HILossTenLow"] = f"{min(float(r['hi_bn']) for r in cons):,.0f}"
+    R["HILossTenHigh"] = f"{max(float(r['hi_bn']) for r in cons):,.0f}"
+
+    # housing agencies
+    un = [float(r["unenhanced_share_of_single_family_book"]) for r in gse_un]
+    R["UnenhancedLow"] = pct(min(un))
+    R["UnenhancedHigh"] = pct(max(un))
+    wf10 = [r for r in gse_wf if r["dose_share_of_total_wage_bill"] == "0.1"]
+    cover = [float(r["private_cover_share_of_loss"]) for r in wf10]
+    R["PrivateCoverLow"] = pct(min(cover))
+    R["PrivateCoverHigh"] = pct(max(cover))
+    R["AgencyCapitalBn"] = f"{float(wf10[0]['capital_bn']):,.1f}"
+    R["MaxRetainedAgencyLossBn"] = f"{max(float(r['retained_bn']) for r in gse_wf):,.1f}"
+    assert all(float(r["treasury_draw_bn"]) == 0 for r in gse_wf), "a Treasury draw appeared"
+    R["TreasuryDrawBn"] = "0"
+
+    # household buffers by quintile
+    for key, tag in (("Q1_bottom", "QOne"), ("Q2", "QTwo"), ("Q3_middle", "QThree"),
+                     ("Q4", "QFour"), ("Q5_top", "QFive")):
+        R[tag + "Runway"] = f"{float(quint_buf[key]['median_runway_months']):.2f}"
+        R[tag + "UnderOne"] = f"{float(quint_buf[key]['pct_under_1_month']):.1f}"
+
+    # the pay effect: how little of the raw gap survives reweighting on pay
+    surviving = []
+    for r in paycon:
+        if r["statistic"] != "distress_pp_per_bn":
+            continue
+        for k in ("share_of_gap_that_is_pay_a", "share_of_gap_that_is_pay_b"):
+            surviving.append(1 - float(r[k]))
+    R["PayGapSurvivingLow"] = f"{100 * min(surviving):.1f}"
+    R["PayGapSurvivingHigh"] = f"{100 * max(surviving):.1f}"
+    R["PayCells"] = str(len(surviving))
+
+    # attrition-led automation: case b against case c at the ten percent level
+    ten = {}
+    for r in first:
+        if r["dose_share_of_total_wage_bill"] != "0.1":
+            continue
+        ten.setdefault((r["exposure_type"], r["incidence"]), r)
+    moves = {"student": [], "auto": [], "mortgage": []}
+    fiscal = set()
+    for et in {k[0] for k in ten}:
+        b, c = ten[(et, "b_entrants")], ten[(et, "c_sourced_mix")]
+        moves["student"].append(float(b["student_loan_holders_loss_hi_bn"])
+                                / float(c["student_loan_holders_loss_hi_bn"]) - 1)
+        moves["auto"].append(float(b["auto_lenders_loss_hi_bn"])
+                             / float(c["auto_lenders_loss_hi_bn"]) - 1)
+        moves["mortgage"].append(float(b["mortgage_national_loss_hi_bn"])
+                                 / float(c["mortgage_national_loss_hi_bn"]) - 1)
+        fiscal.add((round(float(b["public_budget_loss_hi_bn"]), 4),
+                    round(float(c["public_budget_loss_hi_bn"]), 4)))
+    assert all(x == y for x, y in fiscal), "the fiscal loss moved across incidence cases"
+    R["AttritionStudentLow"] = f"{100 * min(moves['student']):.0f}"
+    R["AttritionStudentHigh"] = f"{100 * max(moves['student']):.0f}"
+    R["AttritionAutoLow"] = f"{100 * min(moves['auto']):.0f}"
+    R["AttritionAutoHigh"] = f"{100 * max(moves['auto']):.0f}"
+    R["AttritionMortgageLow"] = f"{100 * abs(max(moves['mortgage'])):.0f}"
+    R["AttritionMortgageHigh"] = f"{100 * abs(min(moves['mortgage'])):.0f}"
 
     # ---- institutions
     R["NInstitutions"] = f"{inst['n_institutions']:,}"

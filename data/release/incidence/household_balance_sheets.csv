@@ -1,0 +1,5 @@
+group,households_weighted_m,pct_with_mortgage,pct_renting_or_no_mortgage,pct_with_student_debt,pct_with_vehicle_debt,pct_with_credit_card,mortgage_balance_bn,student_balance_bn,vehicle_balance_bn,credit_card_balance_bn,unsecured_balance_bn,median_liquid,pct_double_trigger_region
+"incumbent working-core, no 22 to 29 year old",62.806,47.973,52.027,21.131,36.386,44.711,7160.084,740.142,553.476,317.165,1290.984,11000.0,13.166
+working core containing a 22 to 29 year old,17.007,36.34,63.66,37.973,39.715,47.844,1375.343,283.779,142.782,82.013,431.191,10102.0,15.289
+any household containing a 22 to 29 year old,21.994,32.683,67.317,35.601,36.877,45.314,1557.589,322.618,171.018,94.56,498.656,9400.0,13.709
+household with an EMPLOYED 22 to 29 year old,18.241,33.668,66.332,37.996,38.591,46.537,1325.119,290.497,150.546,76.753,428.663,11000.0,14.804

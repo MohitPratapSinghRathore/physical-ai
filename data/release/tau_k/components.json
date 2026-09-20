@@ -1,0 +1,98 @@
+{
+  "object": "marginal effective tax rate on a dollar of US AI surplus, all layers",
+  "verified": {
+    "federal_cit": 0.21,
+    "fddei_effective_rate_CURRENT": 0.13999,
+    "net_cfc_tested_income_effective_rate_CURRENT": 0.126,
+    "pre2025_fdii_rate_SUPERSEDED": 0.13125,
+    "pre2025_gilti_rate_SUPERSEDED": 0.105,
+    "statutory_change": "Pub. L. 119-21, 4 July 2025. 26 USC 951A recaptioned from Global intangible low-taxed income to Net CFC tested income; 26 USC 250(a)(1) deductions set to 33.34 and 40 percent. Verified from Cornell LII on 2026-09-20. The pre-2025 rates of 13.125 and 10.5 percent are SUPERSEDED and must not be used.",
+    "shifted_share_single_verified_value": 0.48,
+    "rent_readings_NEVER_AVERAGED": {
+      "Barkai": 0.351,
+      "Karabarbounis_Neiman_case_R": 0.0
+    }
+  },
+  "SOURCED_A115": {
+    "theta_taxable": {
+      "low": 0.24,
+      "central": 0.27,
+      "high": 0.28,
+      "low_source": "Rosenthal and Austin 2016 Table 2, C corporation stock, 2015",
+      "central_source": "Rosenthal and Mucciolo 2024 Table 5, total US equity, 2022",
+      "high_source": "Rosenthal and Mucciolo 2024 Table 7, publicly traded, 2022"
+    },
+    "deferral_factor": {
+      "low": 0.4118,
+      "central": 0.6008,
+      "high": 0.7899,
+      "low_source": "CRS R47113 Table 5, no-dividend stock, 7-year holding",
+      "central_source": "CRS R47113 Table 5, midpoint, dividends near 2 percent",
+      "high_source": "CRS R47113 Table 5, 4 percent dividend stock",
+      "cross_check_cbo_2014": 0.488
+    },
+    "bondholder_rate": {
+      "low": 0.143302,
+      "central": 0.1593195,
+      "high": 0.17533700000000002,
+      "low_source": "CBO 2014 Tables A-3 and A-4: fully taxable share only",
+      "central_source": "midpoint of the two bounds",
+      "high_source": "plus the temporarily deferred tranche at CBO's own nonqualified annuity rate, with no credit for deferral, so an upper bound",
+      "published_cross_check": "CBO 2014 Table 2: the ETR on C-corporation debt-financed investment is -0.06, and AMR's tau_b - tau_c at this range is -0.067 to -0.035. Sign and magnitude agree."
+    },
+    "debt_share": {
+      "low": 0.1412,
+      "central": 0.2001,
+      "high": 0.2589,
+      "low_source": "Fed Z.1 2026Q2, debt over debt plus equity at MARKET value",
+      "central_source": "midpoint of the two valuation bases",
+      "high_source": "Fed Z.1 2026Q2, debt over debt plus net worth at BOOK value",
+      "caveat": "economy-wide stock ratio used as a proxy for the marginal flow; Module B points below this range, which would raise the rate"
+    },
+    "superseded_blind_sweep": {
+      "theta_taxable": [
+        0.2,
+        0.6
+      ],
+      "deferral_factor": [
+        0.4,
+        1.0
+      ],
+      "bondholder_rate": [
+        0.15,
+        0.37
+      ],
+      "debt_share": [
+        0.0,
+        0.4
+      ]
+    }
+  },
+  "not_verified_swept": {
+    "shareholder_rate": {
+      "range": [
+        0.15,
+        0.238
+      ],
+      "bound": "statutory ceiling: the top long-term capital gain and qualified dividend rate of 20 percent plus the 3.8 percent net investment income tax is 23.8 percent, which no shareholder layer may exceed.",
+      "sought": "a sourced average realised rate across the holder distribution."
+    },
+    "state_cit_effective": {
+      "range": [
+        0.0,
+        0.095
+      ],
+      "bound": "state statutory corporate rates run from zero to roughly the high single digits; the upper end is a ceiling, not an estimate.",
+      "sought": "a verified apportioned effective state rate."
+    },
+    "shifted_share": {
+      "range": [
+        0.3,
+        0.6
+      ],
+      "bound": "a share. Centred on the one verified value, 0.48 (Torslov, Wier and Zucman), and swept because a SECOND verified source was required and not obtained.",
+      "sought": "Clausing (NBER w28442) and Garcia-Bernardo, Jansky and Zucman (NBER w30086, title verified, abstract not retrievable). Neither abstract could be read from a primary source in this session."
+    }
+  },
+  "the_main_result_of_this_module": "A117: the debt share is sourced too. Nine components verified, three swept."
+}

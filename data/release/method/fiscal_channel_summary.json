@@ -1,0 +1,71 @@
+{
+  "rates": {
+    "federal_income_tax_on_wages": 0.12851997725436207,
+    "federal_payroll": 0.1552090503696166,
+    "state_local_income_low": 0.017294568581091192,
+    "state_local_income_high": 0.034589137162182385,
+    "total_effective_labor_tax_low": 0.30102359620506985,
+    "total_effective_labor_tax_high": 0.31831816478616104,
+    "AMR_tau_labor_benchmark": 0.255,
+    "note": "our bottom-up effective labor tax rate is reported alongside AMR's 25.5 percent; they differ because AMR include the employer side and a marginal rather than average concept"
+  },
+  "tau_s_condition": {
+    "g = 0 (no added outlays)": {
+      "s_required_at_tau_k_10pct": 2.55,
+      "s_required_at_tau_k_5pct_equipment": 5.1
+    },
+    "g = 0.10": {
+      "s_required_at_tau_k_10pct": 3.55,
+      "s_required_at_tau_k_5pct_equipment": 7.1
+    },
+    "g = 0.25": {
+      "s_required_at_tau_k_10pct": 5.05,
+      "s_required_at_tau_k_5pct_equipment": 10.1
+    }
+  },
+  "outlay_assumptions": {
+    "driving": {
+      "mean_annual_wage_usd": 37576.951579513676,
+      "outlay_per_displaced_worker_low_usd": 0.0,
+      "outlay_per_displaced_worker_high_usd": 23928.15789487842,
+      "components_high": {
+        "UI_50pct_26wks": 9394.237894878419,
+        "SNAP_1.5_persons": 3382.9199999999996,
+        "Medicaid_1_enrollee": 9255.0,
+        "SSDI_10pct_take_up": 1896.0
+      }
+    },
+    "gated": {
+      "mean_annual_wage_usd": 40019.61953865447,
+      "outlay_per_displaced_worker_low_usd": 0.0,
+      "outlay_per_displaced_worker_high_usd": 24538.82488466362,
+      "components_high": {
+        "UI_50pct_26wks": 10004.904884663618,
+        "SNAP_1.5_persons": 3382.9199999999996,
+        "Medicaid_1_enrollee": 9255.0,
+        "SSDI_10pct_take_up": 1896.0
+      }
+    },
+    "manipulation": {
+      "mean_annual_wage_usd": 23363.176536618437,
+      "outlay_per_displaced_worker_low_usd": 0.0,
+      "outlay_per_displaced_worker_high_usd": 20374.71413415461,
+      "components_high": {
+        "UI_50pct_26wks": 5840.794134154609,
+        "SNAP_1.5_persons": 3382.9199999999996,
+        "Medicaid_1_enrollee": 9255.0,
+        "SSDI_10pct_take_up": 1896.0
+      }
+    }
+  },
+  "trust_funds": {
+    "OASDI_payroll_income_usd_bn": 1323.2,
+    "OASDI_total_income_usd_bn": 1449.3,
+    "HI_income_usd_bn": 462.4
+  },
+  "denominators": {
+    "federal_current_receipts_usd_bn": 5980.6,
+    "state_local_current_receipts_usd_bn": 2830.805,
+    "wage_bill_usd_bn": 13365.2
+  }
+}

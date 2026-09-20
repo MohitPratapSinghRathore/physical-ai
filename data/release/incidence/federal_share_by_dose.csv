@@ -1,0 +1,6 @@
+dose_share_of_total_wage_bill,narrow_low,narrow_high,conservatorship_low,conservatorship_high,inside_observed_data_range
+0.05,0.7588,0.8525,0.8574,0.901,True
+0.1,0.7853,0.8697,0.8763,0.9125,True
+0.25,0.8101,0.9227,0.8782,0.9481,True
+0.5,0.8551,0.9251,0.8972,0.9485,False
+0.75,0.8086,0.8972,0.8587,0.9244,False

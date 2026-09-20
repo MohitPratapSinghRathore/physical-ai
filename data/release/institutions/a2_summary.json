@@ -1,0 +1,23 @@
+{
+  "status": "SCENARIO. Balance sheets measured; loss application conditional.",
+  "n_institutions": 8588,
+  "n_banks": 4296,
+  "n_credit_unions": 4292,
+  "system_assets_bn": 29012.5,
+  "system_capital_bn": 2620.7,
+  "excluded_no_capital_reported": {
+    "n": 24,
+    "assets_bn": 263.2,
+    "why": "tier 1 and total equity both absent; overwhelmingly insured US branches of foreign chartered institutions (FDIC BKCLASS OI) whose capital is held at the parent. Found by the baseline check, which showed them breaching with zero losses applied."
+  },
+  "baseline_breaches_after_exclusion": {
+    "n_breaching": 29,
+    "pct_institutions": 0.338,
+    "pct_assets": 0.029
+  },
+  "capital_test": {
+    "banks": "tier 1 leverage vs 4 pct, 12 CFR 217.10(a)(1)(iv)",
+    "credit_unions": "net worth ratio vs 6 pct, 12 USC 1790d"
+  },
+  "allocation": "pro rata by category holdings; dispersion here is business mix only, so it is a LOWER bound on true dispersion"
+}

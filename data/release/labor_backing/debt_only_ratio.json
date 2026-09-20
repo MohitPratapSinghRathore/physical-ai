@@ -1,0 +1,24 @@
+{
+  "status": "MEASURED, PROVISIONAL until the next promotion pass. New construction, not independently rebuilt.",
+  "why": "The all-claims ratio has corporate equity at market value at 48 percent of its denominator, so it is partly an asset-price series: 0.267 at the 2000 equity peak, 0.376 in 2008 after the crash. The debt-only ratio removes that by excluding market-valued equity classes.",
+  "latest_year": 2025,
+  "DEBT_ONLY_direct": 0.5216,
+  "DEBT_ONLY_incl_indirect": 0.602,
+  "all_claims_direct": 0.2703,
+  "all_claims_incl_indirect": 0.4749,
+  "equity_share_of_all_claims_latest": 0.4819,
+  "debt_only_range_1952_2025": [
+    0.4364,
+    0.5217
+  ],
+  "all_claims_range_1952_2025": [
+    0.2513,
+    0.402
+  ],
+  "coefficient_of_variation": {
+    "debt_only": 0.0506,
+    "all_claims": 0.0942
+  },
+  "largest_judgement_call": "THE ONE-STEP RULE: business classes take the indirect share",
+  "largest_move_pct": 15.4
+}
