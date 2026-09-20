@@ -41,6 +41,9 @@ def main():
     quint = {r["wage_quintile"]: r for r in
              rows("framework/labor_backing/quintile_labour_backing.csv")}
     acsen = load("framework/labor_backing/sensitivity.json")
+    rep = {r["round"]: r for r in rows("data/release/replication_rounds.csv")}
+    fis = load("data/processed/fiscal_channel_summary.json")
+    plaus = load("data/processed/verify/plausibility_audit.json")
 
     sov = lb["sovereign_exposure"]
     req = rsen["ours_observed_rho_and_our_omega"]["required_tau_k"]
@@ -151,6 +154,25 @@ def main():
     R["CFCRate"] = pct(comp["verified"]["net_cfc_tested_income_effective_rate_CURRENT"], 1)
     R["RentBarkai"] = f"{comp['verified']['rent_readings_NEVER_AVERAGED']['Barkai']:.3f}"
     R["ShiftedShare"] = pct(comp["verified"]["shifted_share_single_verified_value"])
+
+    # ---- data and method
+    R["WageBillBn"] = f"{fis['denominators']['wage_bill_usd_bn']:,.1f}"
+    R["FedReceiptsBn"] = f"{fis['denominators']['federal_current_receipts_usd_bn']:,.1f}"
+    R["PlausChecks"] = str(plaus["n_checks"])
+    R["PlausViolations"] = str(plaus["n_violations"])
+    R["RepTwoScored"] = rep["2"]["quantities_scored"]
+    R["RepTwoSealed"] = rep["2"]["sealed_counterparts"]
+    R["RepTwoTolerance"] = rep["2"]["inside_tolerance"]
+    R["RepTwoFivePct"] = rep["2"]["within_five_percent"]
+    R["RepTwoMismatch"] = rep["2"]["mismatches"]
+    R["RepThreeSealed"] = rep["3"]["sealed_counterparts"]
+    R["RepThreeRounding"] = rep["3"]["within_rounding"]
+    R["RepThreeMismatch"] = rep["3"]["mismatches"]
+    R["ExcludedInstitutions"] = str(inst["excluded_no_capital_reported"]["n"])
+    R["ExcludedAssetsBn"] = f"{inst['excluded_no_capital_reported']['assets_bn']:,.1f}"
+    R["SystemAssetsBn"] = f"{inst['system_assets_bn']:,.1f}"
+    R["BaselineBreaches"] = str(inst["baseline_breaches_after_exclusion"]["n_breaching"])
+    R["BaselinePctAssets"] = f"{inst['baseline_breaches_after_exclusion']['pct_assets']:.3f}"
 
     # ---- institutions
     R["NInstitutions"] = f"{inst['n_institutions']:,}"

@@ -1,0 +1,3 @@
+round,quantities_scored,sealed_counterparts,inside_tolerance,within_five_percent,within_rounding,mismatches,source
+2,127,79,28,45,,34,notes/replication/round2/comparison_round2.csv
+3,32,32,32,32,30,0,notes/replication/round3/comparison_round3.md

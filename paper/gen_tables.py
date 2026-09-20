@@ -161,6 +161,22 @@ def tab_quintile():
     write("tab_quintile.tex", "\n".join(lines))
 
 
+def tab_under_reporting():
+    b = load("data/processed/benchmark_cap_summary.json")["under_reporting"]
+    label = {"mortgage": "Mortgage", "card": "Credit card", "auto": "Auto",
+             "student": "Student"}
+    lines = [r"\begin{tabular}{lrrrr}", r"\toprule",
+             r"Book & Official aggregate (USD bn) & Survey universe (USD bn) "
+             r"& Under-reporting factor & Coverage share \\", r"\midrule"]
+    for r in b:
+        lines.append(f"{label[r['loan']]} & {r['official_aggregate_bn']:,.1f} & "
+                     f"{r['sipp_FULL_universe_bn']:,.1f} & "
+                     f"{r['UNDER_REPORTING_factor']:.4f} & "
+                     f"{r['working_core_share_of_full']:.4f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_under_reporting.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -168,3 +184,4 @@ if __name__ == "__main__":
     tab_holders()
     tab_structural()
     tab_quintile()
+    tab_under_reporting()
