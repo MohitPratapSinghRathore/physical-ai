@@ -56,6 +56,13 @@ def main():
     paycon = rows("data/release/incidence/pay_control.csv")
     first = rows("data/release/dose_response/dose_response_first_round.csv")
     clearing = {r["id"]: r for r in rows("data/release/headline_clearing_pass.csv")}
+    sysres = {(r["dose"], r["band"], r["earnings_offset"]): r for r in
+              rows("data/release/institutions/a2_system_results.csv")}
+    bymodel = {(r["dose"], r["business_model"]): r for r in
+               rows("data/release/institutions/a2_distribution_by_class.csv")
+               if r["cut"] == "model"}
+    instr = load("data/release/institutions/a4_instrument_results.json")
+    omitted = load("data/release/institutions/a3_omitted_institutions.json")
     pub = load("data/release/tau_k/published_shares.json")
     bh = load("data/release/tau_k/z1_bond_holders.json")
 
@@ -311,6 +318,62 @@ def main():
     R["NInstitutions"] = f"{inst['n_institutions']:,}"
     R["NBanks"] = f"{inst['n_banks']:,}"
     R["NCreditUnions"] = f"{inst['n_credit_unions']:,}"
+
+    # ---- banks and the second round
+    def sysrow(dose, offset="False"):
+        return sysres[(dose, "high", offset)]
+
+    s10, s25, s50 = sysrow("0.1"), sysrow("0.25"), sysrow("0.5")
+    R["SysLossTen"] = f"{float(s10['system_loss_bn']):,.0f}"
+    R["SysFirstTen"] = f"{float(s10['first_round_bn']):,.0f}"
+    R["SysSecondTen"] = f"{float(s10['second_round_bn']):,.0f}"
+    R["SecondRoundShareTen"] = pct(float(s10["second_round_bn"])
+                                   / float(s10["system_loss_bn"]))
+    R["BreachTenN"] = f"{float(s10['n_breaching']):,.0f}"
+    R["BreachTenAssets"] = f"{float(s10['pct_system_assets_breaching']):.2f}"
+    R["BreachTwentyFiveN"] = f"{float(s25['n_breaching']):,.0f}"
+    R["BreachTwentyFiveAssets"] = f"{float(s25['pct_system_assets_breaching']):.2f}"
+    R["BreachTwentyFiveAssetsEarnings"] = \
+        f"{float(sysrow('0.25', 'True')['pct_system_assets_breaching']):.2f}"
+    R["BreachFiftyN"] = f"{float(s50['n_breaching']):,.0f}"
+    R["BreachFiftyAssets"] = f"{float(s50['pct_system_assets_breaching']):.1f}"
+    R["BreachFiftyAssetsEarnings"] = \
+        f"{float(sysrow('0.5', 'True')['pct_system_assets_breaching']):.1f}"
+    R["SysLossFifty"] = f"{float(s50['system_loss_bn']):,.0f}"
+
+    def model(dose, m, field):
+        return f"{float(bymodel[(dose, m)][field]):.2f}"
+
+    R["CardHeavyTwentyFiveInst"] = model("0.25", "card-heavy", "pct_institutions_breaching")
+    R["CardHeavyTwentyFiveAssets"] = model("0.25", "card-heavy", "pct_assets_breaching")
+    R["CardHeavyFiftyInst"] = model("0.5", "card-heavy", "pct_institutions_breaching")
+    R["CreditUnionTenInst"] = model("0.1", "credit union", "pct_institutions_breaching")
+    R["MortgageLenderTwentyFiveInst"] = model("0.25", "mortgage portfolio lender",
+                                              "pct_institutions_breaching")
+
+    allrelief = {round(r["dose"], 2): r for r in instr if r["instrument"].startswith("ALL")}
+    R["ReliefRemovedTen"] = f"{allrelief[0.1]['loss_removed_pct']:.2f}"
+    R["ReliefRemovedTwentyFive"] = f"{allrelief[0.25]['loss_removed_pct']:.2f}"
+    R["ReliefRemovedFifty"] = f"{allrelief[0.5]['loss_removed_pct']:.2f}"
+    R["ReliefRemovedTenBn"] = f"{allrelief[0.1]['loss_removed_bn']:,.1f}"
+    R["ReliefAssetsBeforeTwentyFive"] = f"{allrelief[0.25]['pct_assets_breaching_before']:.2f}"
+    R["ReliefAssetsAfterTwentyFive"] = f"{allrelief[0.25]['pct_assets_breaching_after']:.2f}"
+    R["ReliefStoppedTwentyFive"] = str(allrelief[0.25]["institutions_stopped_breaching"])
+    wi = [r for r in instr if r["instrument"].startswith("wage insurance, enhanced")
+          and round(r["dose"], 2) == 0.1][0]
+    R["WageInsuranceCost"] = f"{wi['fiscal_cost_bn']:,.0f}"
+    R["WageInsuranceRemoved"] = f"{wi['loss_removed_bn']:,.1f}"
+
+    sl = omitted["state_and_local_government"]
+    R["StateLocalWageLinkedBn"] = f"{sl['size_bn']['of which wage-linked at the SOI wage share']:,.1f}"
+    R["StateLocalWageLinkedShare"] = pct(sl["wage_linked_share_of_own_tax_receipts"])
+    R["PensionHoldingsBn"] = f"{omitted['pension_funds']['size_bn']['labour_backed_claims_held']:,.1f}"
+    ins = omitted["insurers_and_private_credit"]["size_bn"]
+    R["InsurerHoldingsBn"] = f"{ins['insurers, labour-backed claims held']:,.1f}"
+    R["OtherFinancialHoldingsBn"] = \
+        f"{ins['other financial (includes private credit), labour-backed claims held']:,.1f}"
+    R["AIBankCommitmentsBn"] = \
+        f"{ins['large bank C and I commitments to AI-adjacent industries']:,.0f}"
 
     # ---- the AI bust
     R["TopOnePctEquity"] = pct(bust["top1_share_of_corporate_equity"], 1)

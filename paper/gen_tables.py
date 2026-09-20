@@ -307,6 +307,47 @@ def tab_attrition():
     write("tab_attrition.tex", "\n".join(lines))
 
 
+def tab_institutions_by_model():
+    rs = [r for r in rows("data/release/institutions/a2_distribution_by_class.csv")
+          if r["cut"] == "model"]
+    models = ["card-heavy", "credit union", "auto-heavy", "C and I heavy",
+              "commercial real estate heavy", "diversified", "mortgage portfolio lender"]
+    label = {"card-heavy": "Card-heavy lenders", "credit union": "Credit unions",
+             "auto-heavy": "Auto-heavy lenders", "C and I heavy": "Commercial and industrial",
+             "commercial real estate heavy": "Commercial real estate heavy",
+             "diversified": "Diversified", "mortgage portfolio lender": "Mortgage portfolio"}
+    idx = {(r["dose"], r["business_model"]): r for r in rs}
+    lines = [r"\begin{tabular}{lrrrrrr}", r"\toprule",
+             r"Business model & Institutions & Assets (USD bn) & \multicolumn{3}{c}"
+             r"{Per cent of assets in breach} \\",
+             r"\cmidrule(lr){4-6}",
+             r" & & & at 10 per cent & at 25 per cent & at 50 per cent \\", r"\midrule"]
+    for m in models:
+        base = idx[("0.1", m)]
+        lines.append(
+            f"{label[m]} & {float(base['n']):,.0f} & {float(base['assets_bn']):,.0f} & "
+            f"{float(idx[('0.1', m)]['pct_assets_breaching']):.2f} & "
+            f"{float(idx[('0.25', m)]['pct_assets_breaching']):.2f} & "
+            f"{float(idx[('0.5', m)]['pct_assets_breaching']):.2f} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_institutions_by_model.tex", "\n".join(lines))
+
+
+def tab_relief():
+    instr = [r for r in load("data/release/institutions/a4_instrument_results.json")
+             if round(r["dose"], 2) == 0.1]
+    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
+             r"Instrument & System loss removed (USD bn) & Per cent of system loss "
+             r"& Fiscal cost (USD bn) \\", r"\midrule"]
+    for r in instr:
+        name = r["instrument"].split(" (")[0].replace("ALL TOGETHER: ", "All together: ")
+        cost = "n/a" if r["fiscal_cost_bn"] is None else f"{r['fiscal_cost_bn']:,.1f}"
+        lines.append(f"{name} & {r['loss_removed_bn']:,.2f} & {r['loss_removed_pct']:.2f} "
+                     f"& {cost} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_relief.tex", "\n".join(lines))
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -321,3 +362,5 @@ if __name__ == "__main__":
     tab_federal_share_by_dose()
     tab_buffers()
     tab_attrition()
+    tab_institutions_by_model()
+    tab_relief()
