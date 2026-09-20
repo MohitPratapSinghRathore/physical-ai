@@ -1,0 +1,91 @@
+\section{Introduction}
+\label{sec:intro}
+
+A government that guarantees mortgages, lends for education and funds itself from payroll and
+income taxes has taken a position on wages without ever describing it as one. If automation moves
+income from labor to capital, that position loses value on both sides at once: the revenue that
+services the debt falls, and the credit the government has guaranteed deteriorates for the same
+reason. Whether it holds an offsetting claim on the capital that replaced the labor is an
+empirical question, and it is the question this paper answers.
+
+The answer is that it does not. Measured on the same basis and in the same period, the United
+States holds the wage side of a two-sided bet on artificial intelligence and almost none of the
+other side. That is a structural observation about who holds what, not a forecast about which
+direction events will take, and it has a consequence in both directions: if AI succeeds and
+displaces labor, wage taxes fall and wage-backed credit deteriorates; if AI disappoints, capital
+gains and corporate receipts fall instead. The federal government loses in both cases, through
+different tax bases, and in neither does it hold a claim large enough to offset the loss.
+
+Three measurements carry the argument. About \result{DebtOnlyDirect} percent of all US debt,
+public and private, is serviced directly from wages, and \result{DebtOnlyIndirect} percent once
+indirect servicing is counted. The federal government is exposed, as holder, guarantor or debtor,
+on about \result{SovereignUnion} percent of those directly wage-backed claims, against about
+\result{AIFederalShareRounded} percent of the claims on AI capital. And income that moves from
+wages to AI capital bears an effective marginal tax rate of about \result{TauKBarkai} percent,
+where replacing the wage taxes lost would require \result{RequiredEasy} to \result{RequiredHard}
+percent.
+
+\paragraph{Contributions.} The paper makes four.
+
+\begin{enumerate}[leftmargin=1.4em,itemsep=0.25em]
+\item \textbf{A measurement framework.} Labor backing accounts decompose the whole stock of US
+financial claims two ways at once, by the income that services each claim and by who ultimately
+holds, guarantees or owes it. The framework yields a ratio, a federal exposure share, a holder map
+for both sides of the exposure, a series running from 1952, and a breakdown by wage quintile. The
+construction, the conventions, and the sensitivity of each result to the judgement calls behind it
+are stated in full, including the one convention that does most of the work.
+
+\item \textbf{A holder map that shows the asymmetry.} The wage side and the AI side are measured
+on the same basis so that the two can be compared rather than asserted. The AI side is built from
+on-balance-sheet filings alone, so it is a lower bound and the federal share of it an upper bound,
+which means the asymmetry we report is the conservative version of it.
+
+\item \textbf{An explanation of why the tax system cannot close the gap.} We rebuild the effective
+marginal rate on income that shifts from wages to AI capital from components, taking the treatment
+of expensing from \citet{AcemogluManeraRestrepo2020} rather than assuming it, and show that the
+binding constraint is the ownership of corporate claims rather than offshore profit shifting.
+About \result{ThetaUntaxable} percent of US corporate equity is held in forms the individual
+income tax barely reaches, and about \result{GainsUntaxedAtDeath} percent of accrued gains are
+never taxed because basis is stepped up at death.
+
+\item \textbf{A measured incidence of displacement.} At the only displacement level inside the
+observed data we measure where the first-round loss lands across the federal government,
+households, the housing agencies and \result{NInstitutions} bank and credit union balance sheets,
+and we test whether household relief protects bank capital. It does not, and the reason it does
+not is measured rather than argued.
+\end{enumerate}
+
+\paragraph{What we do not claim.} We do not forecast the pace of automation, and we do not claim
+that AI will displace any particular quantity of labor: the paper reports a response surface
+rather than a point on it. Only one level, ten percent of the wage bill, sits inside the range of
+the data used to calibrate reemployment; every figure above that is labelled scenario and reported
+as a band. We do not claim the fiscal mechanism, which is established in the literature reviewed
+in Section~\ref{sec:related} and which we take as our starting point rather than our finding. We
+do not claim that the measurement framework is new in the strong sense: our search located no
+prior construction of the same object, but that search was not systematic, so the claim is stated
+as ``none located'' rather than ``none exists''. And we do not claim that the capital tax result
+settles which tax base is the right one; we argue for a marginal, flow-based rate and state the
+case against it plainly in Section~\ref{sec:fiscal}.
+
+\paragraph{Research questions and objectives.} RQ1 asks what share of US financial claims is
+serviced by labor income, and who holds those claims; RO1 constructs the labor backing accounts
+and the holder map, in Section~\ref{sec:accounts}. RQ2 asks whether the capital tax system can
+replace the revenue lost when income shifts from wages to AI capital; RO2 builds the effective
+rate from components and compares it with the required rate, in Section~\ref{sec:fiscal}. RQ3 asks
+where the loss from displacement lands, by holder; RO3 measures first-round incidence at the level
+inside the data, in Section~\ref{sec:displacement}. RQ4 asks what the second round does to the
+institutions that hold the credit, and whether household relief protects them; RO4 applies the
+losses across individual balance sheets, in Section~\ref{sec:banks}. RQ5 asks what happens in the
+opposite direction, if AI disappoints; RO5 prices that case on the same basis, in
+Section~\ref{sec:bust}. RQ6 asks what follows for institutions; RO6 sets out the minimum
+sufficient set of instruments at each regime, and what the evidence does not support, in
+Section~\ref{sec:institutions}.
+
+\paragraph{How to read the numbers.} Every quantitative statement in this paper carries a status
+on its first use. \emph{Replicated} means rebuilt by an instance that did not write the code, from
+raw data and a published brief alone, inside a tolerance stated before the rebuild.
+\emph{Measured} means produced by the pipeline and clearing every applicable check, but not
+independently rebuilt. \emph{Scenario} means arithmetic conditional on an assumption stated where
+the number appears. Quantities that were withdrawn appear only in Section~\ref{sec:limitations},
+which lists them with reasons. Every number in the text is generated from an artifact in the
+replication package rather than typed, and the same artifacts generate the tables.

@@ -48,8 +48,8 @@ def main():
     ab = re.sub(r"\\[a-zA-Z]+", " ", ab)
     nab = len(ab.split())
     print(f"abstract words {nab}")
-    if nab > 250:
-        fails.append(f"abstract is {nab} words, cap is 250")
+    if nab > 200:
+        fails.append(f"abstract is {nab} words, cap is 200")
 
     keys = set(re.findall(r"@[a-z]+\{([A-Za-z0-9]+),", bib))
     cited = set(re.findall(r"\\cite[tp]\{([A-Za-z0-9]+)\}", t))

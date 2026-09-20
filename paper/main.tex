@@ -29,105 +29,27 @@
 
 \begin{abstract}
 \noindent
-We introduce labor backing accounts, a decomposition of all United States financial claims by
-the income that services each claim and by who ultimately holds it. About \result{DebtOnlyDirect}
-percent of all US debt, public and private, is serviced directly from wages, and
-\result{DebtOnlyIndirect} percent once indirect servicing is counted. Government debt enters
-this measure through the labor-linked share of the receipts that service it, not because a
-household owes it. The share has been stable since 1952. Mapping the holders shows an
-asymmetry: the federal government is exposed, as holder, guarantor or debtor, on about
-\result{SovereignUnion} percent of directly wage-backed claims, and on roughly one percent of
-the claims on artificial intelligence capital. It therefore holds the wage side of a two-sided
-bet on AI and almost none of the other side. We then ask whether the tax system can close the
-gap, and build the effective marginal rate on AI surplus from components with every layer of
-tax counted once. It is \result{TauKBarkai} percent under one reading of the rent share and
-\result{TauKKN} percent under a second, incompatible reading, against the
-\result{RequiredLow} to \result{RequiredHigh} percent needed to replace the wage taxes lost.
-The binding reason is ownership rather than offshore profit shifting: about
-\result{ThetaUntaxable} percent of US corporate equity is held by pension funds, retirement
-accounts, foreign investors and nonprofits, and about \result{GainsUntaxedAtDeath} percent of
-capital gains are never taxed at all. We label what is measured and
-what is scenario, and release a replication package.
+We introduce labor backing accounts, a decomposition of United States financial claims by the
+income that services each claim and by who holds, guarantees or owes it. About
+\result{DebtOnlyDirect} percent of all US debt, public and private, is serviced directly from
+wages, and \result{DebtOnlyIndirect} percent once indirect servicing is counted; government debt
+enters through the labor-linked share of the receipts that service it, not because a household
+owes it. The holder map shows an asymmetry: the federal government is exposed, as holder,
+guarantor or debtor, on about \result{SovereignUnion} percent of directly wage-backed claims and
+on about \result{AIFederalShareRounded} percent of the claims on artificial intelligence capital.
+Rebuilding the effective marginal rate on income that shifts from wages to AI capital, every layer
+of tax counted once, gives \result{TauKBarkai} percent against the \result{RequiredEasy} to
+\result{RequiredHard} percent needed to replace the wage taxes lost. It falls short on both
+defensible bases for the share of equity the income tax reaches. At the one displacement level
+inside our data the loss is overwhelmingly fiscal rather than financial. The state loses in both directions through different tax bases, so one
+capital tax rate is asked to do two opposite jobs.
 \end{abstract}
 
 \vspace{0.5em}
 \noindent\textbf{Keywords:} fiscal exposure; automation; labor share; capital taxation;
 sovereign risk; financial claims
 
-\section{Introduction}
-
-A government that guarantees mortgages, lends for education, and funds itself from payroll and
-income taxes has taken a position on wages without ever describing it as one. If automation
-moves income from labor to capital, that position loses value on both sides of the public
-balance sheet at once: the revenue that services the debt falls, and the credit that the
-government has guaranteed deteriorates for the same reason. Whether the government holds an
-offsetting claim on the capital that replaced the labor is an empirical question, and it is the
-question this paper answers.
-
-The answer is that it does not. We measure the United States as holding the wage side of a
-two-sided bet on artificial intelligence and almost none of the other side. If AI succeeds and
-displaces labor, wage taxes fall and wage-backed credit deteriorates. If AI fails, capital gains
-and corporate receipts fall instead. The federal government loses in both directions, through
-different tax bases, and in neither direction does it hold a claim large enough to offset the
-loss. That is a structural observation about who holds what, not a forecast about which
-direction events will take.
-
-Three numbers carry the argument. First, about \result{DebtOnlyDirect} percent of all US debt,
-public and private, is serviced directly from wages, and \result{DebtOnlyIndirect} percent once
-indirect servicing is counted. Second, the federal government is exposed on about
-\result{SovereignUnion} percent of the directly wage-backed claims, as holder, guarantor or
-debtor, against roughly one percent of the claims on AI capital. Third, income that moves from
-wages to AI capital bears an effective marginal tax rate of about \result{TauKBarkai} percent,
-while replacing the wage taxes lost would require \result{RequiredLow} to \result{RequiredHigh}
-percent.
-
-\paragraph{Contributions.} The paper makes four.
-
-\begin{enumerate}[leftmargin=1.4em,itemsep=0.25em]
-\item \textbf{A measurement framework.} Labor backing accounts decompose all US financial claims
-two ways at once, by the income that services them and by who ultimately holds them. The
-framework yields a ratio, a sovereign exposure share, a holder map for both sides of the bet, a
-series running from 1952, and a breakdown by wage quintile. The construction, the conventions,
-and the sensitivity of each to the judgement calls behind it are stated in full.
-
-\item \textbf{A holder map that shows the asymmetry.} The wage side and the AI side are measured
-on the same basis so that the exposures can be compared rather than asserted. This is where the
-one-sidedness becomes visible.
-
-\item \textbf{An explanation of why the tax system cannot close the gap.} We rebuild the
-effective marginal rate on AI surplus from components, taking the treatment of full expensing
-directly from \citet{AcemogluManeraRestrepo2020} rather than assuming it, and we show that the
-binding constraint is the ownership of corporate claims rather than offshore profit shifting.
-About \result{ThetaUntaxable} percent of US corporate equity sits with holders the individual
-income tax does not reach, and about \result{GainsUntaxedAtDeath} percent of capital gains are
-never taxed because basis is stepped up at death.
-
-\item \textbf{A measured incidence of displacement.} At the only displacement level inside the
-observed data, we measure where the first-round loss lands across the federal government,
-households, housing agencies and \result{NInstitutions} bank and credit union balance sheets.
-\end{enumerate}
-
-\paragraph{What we do not claim.} We do not forecast the pace of automation. We do not claim
-that AI will displace any particular quantity of labor, and the paper reports a dose-response
-surface rather than a point on it. Only one displacement level, ten percent of the wage bill,
-sits inside the range of the data used to calibrate reemployment; every figure above that level
-is labeled as scenario arithmetic and is reported as a band. We do not claim that the
-measurement framework is new to the literature in the strong sense; our search located no prior
-construction of the same object, but a systematic search has not been completed, so the novelty
-claim is stated as ``none located'' rather than ``none exists''. We do not claim that the
-capital tax result settles the question of which tax base is the right one; we argue for a
-marginal, flow-based rate and state the case against it plainly in Section~\ref{sec:fiscal}.
-
-\paragraph{Research questions and objectives.} RQ1 asks what share of US financial claims is
-serviced by labor income, and who holds those claims; RO1 constructs the labor backing accounts
-and the holder map, in Section~\ref{sec:accounts}. RQ2 asks whether the capital tax system can
-replace the revenue lost when income shifts from wages to AI capital; RO2 builds the effective
-marginal rate from components and compares it with the required rate, in
-Section~\ref{sec:fiscal}. RQ3 asks where the loss from displacement lands, by holder; RO3
-measures first-round incidence at the level inside the data, in Section~\ref{sec:displacement}.
-RQ4 asks what the second round does to the institutions that hold the credit; RO4 applies the
-losses across individual balance sheets, in Section~\ref{sec:banks}. RQ5 asks what happens in the
-opposite direction, if AI disappoints; RO5 prices that case in Section~\ref{sec:bust}.
+\input{sections/sec1_intro.tex}
 
 \input{sections/sec2_related.tex}
 
@@ -164,11 +86,13 @@ every reported value and the sealed expected values used in blind replication, i
 the corresponding author.
 \fi
 
-\paragraph{Use of generative AI.} During the preparation of this manuscript the authors used a
-generative AI tool to assist with language editing and refinement of the text. The authors
-reviewed and edited all output and take full responsibility for the content of the paper.
-Generative AI was not used to generate or analyse the study's data, which were produced entirely
-by the measurement pipeline described in the paper.
+\paragraph{Use of generative AI.} The measurement pipeline, the analysis code and the drafting
+of this manuscript were produced with substantial assistance from generative AI coding tools,
+and the independent rebuild rounds described in Section~\ref{sec:data} were carried out by separate instances
+of such tools working from published briefs. The authors specified the questions, the
+conventions and the checks, reviewed every output, and take full responsibility for the content
+of the paper. No reported value originates in a language model's assertion: every number in the
+text and in the tables is generated from a measured artifact in the replication package.
 
 \appendix
 
