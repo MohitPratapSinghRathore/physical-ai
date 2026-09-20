@@ -38,9 +38,18 @@ floor, not an estimate.
 
 ## 1. The gap this architecture exists to close
 
-> **The state holds 0.794 of the wage leg (agreed range 0.778 to 0.804) [M, agreed with an
-> independent rebuild] and 0.010 of the AI leg (range 0.0095 to 0.0102) [S]. The gap is
-> 0.784.**
+> **The federal government is exposed, as holder, guarantor or debtor, on 0.794 of the claims
+> paid directly from wages (agreed range 0.778 to 0.804) [M, agreed with an independent
+> rebuild]: 0.321 as creditor or guarantor and 0.552 as the obligor on Treasury debt serviced
+> from wage taxes, less a 3,226.4bn overlap where it holds its own debt. It holds 0.010 of the
+> claims on AI capital (range 0.0095 to 0.0102) [S], an UPPER bound because that side is
+> on-balance-sheet only. The gap is 0.784.**
+
+**The split matters for the instruments and not only for accuracy.** The 0.321 creditor and
+guarantor leg is what rows 5 and 6 act on, because a guarantee can be restructured. The 0.552
+obligor leg is what row 2 acts on, because debt already owed can only be pre-funded or termed
+out. **No instrument in this table touches both legs**, which is why the table has separate
+fiscal and housing rows rather than one sovereign row.
 
 **The paired presentation, which must travel with the number** (see
 `notes/item2b_sovereign_share_paired.md`). The one-step rule that produces 0.794 IS the
@@ -57,9 +66,9 @@ claims added are held by banks, insurers, pensions, foreign investors and househ
 relocation is what the instruments in section 2 have to act on**, and it is why the bank and
 lender instruments (rows 8, 9, 10) exist alongside the fiscal ones.
 
-The other three structural calls: obligor leg excluded **0.321**, agency pools not federal
-**0.587**, commercial mortgage treated as rent-serviced **0.741**. No measurement call moves
-the share by more than 1.3 percent.
+The other three structural calls: obligor leg excluded **0.321** (which is just the creditor
+and guarantor leg on its own), agency pools not federal **0.587**, commercial mortgage treated
+as rent-serviced **0.741**. No measurement call moves the share by more than 1.3 percent.
 
 That single asymmetry organises everything below. The state is the residual holder of the
 exposure that fails if AI succeeds, and holds essentially none of the exposure that pays if
@@ -101,7 +110,7 @@ not, the row says what would make it computable rather than guessing.
 | # | Measured mechanism, claim | Institution that must act | Instrument | Type | Verified precedent | Trigger indicator, current value | Binds in | Gap closure or loss removed |
 |---|---|---|---|---|---|---|---|---|
 | 1 | The fiscal condition is a FUNCTION of the capital tax rate, threshold 0.110 to 0.137 **[M]**, with R = 0.568316 **[R]**. It fails at the 0.0708 AI capital actually bears and passes at the 0.20 to 0.22 measured economy-wide. **The verdict is PROVISIONAL and depends on the base**, see section 3 | Tax authority (Congress, Treasury, IRS) | Narrow the gap between the AI-specific and economy-wide capital rates: limit expensing on labour-displacing assets, capture shifted rents, or tax the distribution rather than the entity. **Target: 26 to 52 pct of the AI surplus at the economy-wide rate.** NOT a statutory rate rise, and NOT an AI-specific tax | tax | US statutory corporate rate cut from 35 to 21 pct, Public Law 115-97 (2017), is the same instrument operated in reverse | Effective rate on AI surplus **0.0708** against a threshold of **0.1101**. **BELOW THRESHOLD** | inside the data and larger displacement; **fails at near-total displacement**, see 4(d) | Closes the FISCAL gap by construction at break-even. Does NOT close the holder gap: taxing a return is not holding the asset |
-| 2 | 55.2 pct of labour-backed claims are federal obligations and the share rose from 0.336 in 1970 to 0.794 in 2025 **[M]** | Treasury, and the fiscal authority setting the debt path | Pre-fund or term out the labour-linked obligation stock while the labour tax base is intact | stock | Norway's Government Pension Fund Global, established by the Government Pension Fund Act, is a sovereign pre-funding vehicle against a resource-linked revenue base | Debt to GDP at start **1.214** **[R]**; 20-year emerging-market baseline **376.7 pct** **[R]** | all regimes; the only instrument that acts BEFORE the dose | Not a gap closure. It buys time on the obligor leg, which is 55.2 pct of the wage leg |
+| 2 | 55.2 pct of labour-backed claims are federal obligations, and the sovereign union share traces a U: 0.523 in 1952 (almost all wartime Treasury debt), 0.336 in 1970, 0.794 in 2025, with the whole net rise since 2008 in the obligor leg **[M]** | Treasury, and the fiscal authority setting the debt path | Pre-fund or term out the labour-linked obligation stock while the labour tax base is intact | stock | Norway's Government Pension Fund Global, established by the Government Pension Fund Act, is a sovereign pre-funding vehicle against a resource-linked revenue base | Debt to GDP at start **1.214** **[R]**; 20-year emerging-market baseline **376.7 pct** **[R]** | all regimes; the only instrument that acts BEFORE the dose | Not a gap closure. It buys time on the obligor leg, which is 55.2 pct of the wage leg |
 | 3 | The state holds 0.010 of the AI leg **[S]** against 0.794 of the wage leg **[M]** | Treasury, or a statutory fund | Direct equity or revenue claim on AI capital: sovereign fund, golden share, or a public stake taken in exchange for public inputs | ownership | Norway GPFG; the US Treasury's 2008 to 2010 TARP equity stakes under the Emergency Economic Stabilization Act | Debt-financed share of AI capex **0.0654**; self-funding ratio **1.3426**, four of nine filers below 1.0 | larger, sudden and near-total displacement; **unnecessary inside the data** | **Directly measurable: see the table in section 1.** 0.10 of the AI leg closes 11.5 pct of the gap |
 | 4 | Trust funds are payroll-funded: OASDI payroll share 0.9126, HI 0.8720; OASI depletes 2032Q4, HI 2033Q2, combined OASDI 2034Q3 **[M]** | Social insurance system (SSA, CMS, Congress) | Broaden the contribution base beyond covered wages, or convert to a general-revenue claim; and raise UI generosity and duration, which has a MEASURED effect on automation wage losses | flow | Medicare's Net Investment Income Tax, 26 USC 1411, funds Part A adjacent spending from a non-wage base. **MEASURED EFFECT, Brollo (2024), IMF WP 2024/095: US states with more generous UI saw a wage decline from robotisation about TWO-THIRDS SMALLER, concentrated among workers without a college degree; one robot per thousand workers raised poverty 0.3pp, mostly attenuated where social assistance was more generous. US maximum UI duration of 26 weeks is on the low side of the OECD** | Combined OASDI depletion **2034 Q3**, 83 pct of scheduled benefits payable at depletion | all regimes; binds SOONEST, because depletion arrives before any AI dose does | Removes the trust fund component of the fiscal loss, **4.07 pct of OASDI payroll income at the 10 pct dose** |
 | 5 | Retained agency loss 3.3 to 12.5 pct of Enterprise net worth at the 10 pct dose, zero Treasury draw; 39 to 53 pct of each single-family book carries no credit enhancement **[M]** | Housing agencies (FHFA, Fannie, Freddie, FHA, Ginnie) | Forbearance and payment-deferral protocol pre-authorised for a displacement trigger; raise credit enhancement on the unenhanced book | contract | The CARES Act (Public Law 116-136) sections 4022 and 4023 pre-authorised federally backed mortgage forbearance. The precedent is exact | Household debt in any stage of delinquency **4.7 pct**, down 0.1pp on the quarter | larger and sudden displacement; **unnecessary inside the data**, where no draw is triggered | Removes the retained agency loss, **5.85 to 22.48bn at the 10 pct dose**, from the federal balance sheet |

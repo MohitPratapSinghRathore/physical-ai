@@ -65,7 +65,7 @@ series, six months apart.** That is a further argument for the ratio being scaff
 The ratio is one number. The accounting that produces it produces four things that matter
 more, and the paper should lead with these.
 
-### (a) The sovereign share, and the 1970 to present series
+### (a) The sovereign share, and the 1952 to present series
 
 | year | direct ratio | **sovereign union share** | federal held or guaranteed | household debt share of claims |
 |---|---|---|---|---|
@@ -79,14 +79,23 @@ more, and the paper should lead with these.
 | 2020 | 0.2907 | 0.7831 | 0.3923 | 0.1450 |
 | **2025** | **0.2703** | **0.7936** | 0.3215 | 0.1264 |
 
-**The ratio is flat across fifty-five years, moving between 0.267 and 0.376 with no trend.
-The sovereign share of it more than doubles, from 0.336 in 1970 to 0.794 in 2025.** That
-contrast is the figure. The quantity of wage-backed claims in the economy has not changed
-much as a share of all claims; **who holds them has changed completely.**
+**The ratio is flat across seventy-three years, moving between 0.267 and 0.376 with no trend.
+The sovereign share of it traces a U: 0.523 in 1952, 0.336 in 1970, 0.794 in 2025.** That
+contrast is the figure, and **the series must be shown from 1952: starting it at 1970 turns a
+U into a doubling and misdescribes the history.**
 
-The two steps are visible and datable: 1970 to 1990, the federal held-or-guaranteed leg rises
-from 0.12 to 0.25 as the agency book grows; 2008 to 2020, the obligor leg takes over as
-federal debt grows from 4,819bn to 15,642bn of labour-backed claims.
+**The 1952 level is wartime Treasury debt, not exposure to households.** That year the obligor
+leg alone is 0.510 while the held-or-guaranteed leg is only 0.085. The fall to 1970 is that
+debt shrinking against a growing claim stock, not a retreat from household credit.
+
+The two steps back up are visible and datable: 1970 to 1990, the federal held-or-guaranteed
+leg rises from 0.12 to 0.25 as the agency book grows; 2008 to 2020, the obligor leg takes over
+as federal debt grows from 4,819bn to 15,642bn of labour-backed claims.
+
+**And the qualification that must travel with the recent level: a large part of the rise since
+2008 is growth in federal debt itself rather than new exposure to households.** The
+held-or-guaranteed leg peaked at 0.392 in 2020 and has since FALLEN to 0.321, so the entire
+net increase sits in the obligor leg.
 
 ### (b) The holder map
 
@@ -160,6 +169,7 @@ Reasons, in order:
    not: **no measurement call moves the sovereign share by more than 1.3 percent**, against
    76 percent on the ratio.
 
-**What goes in the abstract is the holder gap: the state holds about four fifths of the wage
-leg and about 1 percent of the AI leg.** The ratio is how that was computed, and it is
+**What goes in the abstract is the holder gap: the federal government is exposed, as holder,
+guarantor or debtor, on about four fifths of the claims paid directly from wages, and holds
+about 1 percent of the claims on AI capital.** The ratio is how that was computed, and it is
 reported in full, with its sensitivity, one section in.

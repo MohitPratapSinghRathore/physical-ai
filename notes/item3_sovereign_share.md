@@ -140,8 +140,10 @@ leg and therefore an upper bound on the federal share of it.
 
 ## 7. The holder gap, which is the paper's central object
 
-> **The state holds 0.794 of the wage leg (agreed range 0.778 to 0.804) and 0.010 of the AI
-> leg (range 0.0095 to 0.0102). The gap is 0.784.**
+> **The federal government is exposed, as holder, guarantor or debtor, on 0.794 of the claims
+> paid directly from wages (agreed range 0.778 to 0.804), of which 0.321 as creditor or
+> guarantor and 0.552 as obligor, and holds 0.010 of the claims on AI capital (range 0.0095 to
+> 0.0102, an UPPER bound because that side is on-balance-sheet only). The gap is 0.784.**
 
 **Recorded as the paper's central object.** It qualifies on three grounds: it is
 independently replicated to within 0.016 by a rebuild with no code access; it is robust to

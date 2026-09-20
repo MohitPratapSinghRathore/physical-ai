@@ -13,11 +13,24 @@ on a chosen assumption.
 
 ## The central finding
 
-> **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
+> **The federal government is exposed, as holder, guarantor or debtor, on about four fifths of
+> the claims paid directly from wages, and holds about one percent of the claims on AI
+> capital.**
 >
-> Sovereign share of labour-backed claims **0.794** (agreed range **0.778 to 0.804**) **[M]**.
-> Federal share of the AI leg **0.010** (range 0.0095 to 0.0102) **[S]**. **The gap is
-> 0.784.**
+> Sovereign UNION share of labour-backed claims **0.794** (agreed range **0.778 to 0.804**)
+> **[M]**. It is a union of two legs that overlap and therefore do not add: **0.321 held or
+> guaranteed** (agency mortgage guarantees, the student loan book, central bank holdings) and
+> **0.552 as obligor** (Treasury debt serviced from wage taxes), less a **3,226.4bn overlap**
+> where the federal sector holds its own debt. Naive sum 0.874; union 0.794.
+>
+> Federal share of claims on AI capital **0.010** (range 0.0095 to 0.0102) **[S]**, and an
+> **UPPER bound**: the AI side is measured from on-balance-sheet filings only, so adding the
+> unmeasured off-balance-sheet financing would enlarge the denominator and lower the share.
+> **The gap is 0.784.**
+>
+> **Structural sensitivities, reported beside the headline:** obligor leg excluded **0.321**;
+> agency pools not treated as federal **0.587**; indirectly wage-backed claims included
+> **0.452**; commercial mortgage treated as rent-serviced **0.741**.
 
 The financial system holds two exposures resting on opposite assumptions about labour. The
 state is the residual holder of the one that fails if AI succeeds, and holds almost none of
@@ -44,7 +57,7 @@ replicated fiscal condition with sourced parameters; and the public claims regis
 
 | # | Result | Status |
 |---|---|---|
-| 1 | **The sovereign share nearly doubles while the ratio stays flat.** Sovereign union share rises from **0.336 in 1970 to 0.794 in 2025**; the direct labour backing ratio moves between 0.267 and 0.376 with no trend. The quantity of wage-backed claims has barely changed; **who holds them has changed completely** | **[M]** |
+| 1 | **The sovereign share is U-SHAPED, not a rise, and the whole path must be reported.** Sovereign union share **0.523 in 1952**, **0.336 in 1970**, 0.564 in 1990, 0.558 in 2008, 0.783 in 2020, **0.794 in 2025**. The 1952 level is almost entirely **wartime Treasury debt**: the obligor leg alone was 0.510 that year while the held-or-guaranteed leg was 0.085. It falls to 1970 as that debt shrinks against a growing claim stock. Two datable drivers on the way back up: the **agency book grows 1970 to 1990** (held leg 0.120 to 0.248), then **federal debt grows 2008 to 2020** (obligor leg 0.286 to 0.522). **Part of the recent rise is growth in federal debt itself rather than new exposure to households**, and the held leg has in fact FALLEN since 2020, from 0.392 to 0.321. Through all of it the direct labour backing ratio moves between 0.267 and 0.376 with no trend | **[M]** |
 | 2 | **The fiscal condition is a FUNCTION of the capital tax rate, with a threshold at 0.110 to 0.137.** Retained wage share **R = 0.568316**. It **fails at 0.0708**, the operative rate on the AI surplus after 168(k) expensing and profit shifting, and **passes at 0.20 to 0.22**, the IMF's measured economy-wide capital rate. **Closing it needs 26 to 52 percent of the AI surplus taxed at the economy-wide rate.** The old claim that it is "unclosable under the tax code as it stands" is WITHDRAWN and replaced by "as the code applies to AI capital specifically" | **[R]** on R and the boolean; **PROVISIONAL** on the verdict, which depends on the tax base chosen |
 | 3 | **The federal government bears roughly four fifths of first-round losses, and the share depends on the dose.** Narrow reading: **0.785 to 0.870 at a 10 percent dose**, rising to 0.855 to 0.925 at 50 percent, then falling back at 75 percent. Conservatorship reading is 8 to 10 points higher | **[M]**; the independent rebuild's 0.78 rising to 0.90 sits inside our range at both ends |
 | 4 | **The housing agencies absorb a wage shock without reaching the Treasury.** Rebuilt from the 2025 Form 10-Ks: **39 to 53 percent of each single-family book carries no credit enhancement**; private cover transfers only **11 to 15 percent** of an agency loss at small doses; **zero Treasury draw at every dose from 5 to 75 percent** (179.4bn of capital against a maximum retained first-round loss of 109.0bn). **First round only, house prices fixed** | **[M]** |

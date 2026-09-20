@@ -12,19 +12,26 @@ arithmetic conditional on an assumed path.
 
 ## The finding
 
-**In the United States the federal government holds or guarantees about 79 percent of the
-financial claims paid directly out of wages, and holds about 1 percent of the claims on AI
-capital.** It is the main holder of the exposure that loses if AI replaces labour, and has
-almost no stake in the exposure that gains. **It is largely unhedged: its only claim on the AI
-side is whatever capital tax reaches those profits.**
+**In the United States the federal government is exposed, as holder, guarantor or debtor, on
+about 79 percent of the financial claims paid directly out of wages: about 32 percent as
+creditor or guarantor, through agency mortgage guarantees and the student loan book, and about
+55 percent as the debtor on Treasury debt serviced from wage taxes.** The two legs overlap
+where it holds its own debt, so they do not simply add. **It holds about 1 percent of the
+claims on AI capital**, and that 1 percent is an upper bound, because the AI side is measured
+from on-balance-sheet filings only. It is the main bearer of the exposure that loses if AI
+replaces labour and has almost no stake in the one that gains. **It is largely unhedged: its
+only claim on the AI side is whatever capital tax reaches those profits.**
 
-**The convention behind 79 percent matters and is stated up front.** We count a claim as
-wage-backed only if wages pay it *directly*: mortgages, rent, consumer and student credit, and
-federal and municipal debt serviced from income and payroll taxes. Claims paid only
-*indirectly* from wages, where wages become consumer spending and spending becomes business
-revenue, are excluded. Include them and the figure falls to about 45 percent. That is the same
-first-round boundary the rest of the paper uses, so the pair is reported together: the state
-is the first-round holder, private balance sheets the second-round holders.
+**Three conventions move the 79 percent and are reported beside it.** Count only what the
+government holds or guarantees, setting aside what it owes: **32 percent**. Do not treat
+agency mortgage pools as federal: **59 percent**. Count claims backed only *indirectly* by
+wages, where wages become spending and spending becomes business revenue: **45 percent**.
+
+**What counts as wage-backed.** A claim qualifies only if wages pay it *directly*: mortgages,
+rent, consumer and student credit, and federal and municipal debt serviced from income and
+payroll taxes. That is the same first-round boundary the rest of the paper uses, so the pair
+is reported together: the state is the first-round holder, private balance sheets the
+second-round holders.
 
 ## What we contribute
 
@@ -39,7 +46,7 @@ register.**
 
 | | | tag |
 |---|---|---|
-| 1 | **The state's share doubled while the stock stood still.** Federal share of wage-backed claims rose from about 34 percent in 1970 to 79 percent in 2025, while the share of all financial claims that wages back stayed flat near 27 percent. What changed is who holds them | [M] |
+| 1 | **The state's exposure is U-shaped, not rising.** It was **52 percent in 1952**, almost all of it wartime Treasury debt; fell to **34 percent in 1970** as that debt shrank against a growing claim stock; and is **79 percent in 2025**. Two datable drivers: the agency book grows 1970 to 1990, then federal debt grows 2008 to 2020. **Much of the recent rise is growth in federal debt itself**, not new exposure to households: the debtor leg went from 29 to 55 percent while the creditor leg peaked in 2020 and has since fallen. Through all of it the share of *all* financial claims that wages back stayed flat near 27 percent | [M] |
 | 2 | **Whether the budget absorbs the loss depends on which capital tax rate reaches AI profits.** It needs about 11 to 14 percent. AI capital, after immediate expensing and profit shifting, bears about 7. Capital economy-wide bears 20 to 22 (IMF). **So a quarter to a half of AI profits would have to be taxed at the ordinary rate** | inputs [R], verdict provisional |
 | 3 | **Displacement is a fiscal event before a banking event.** At 10 percent of wages displaced, the only level fully inside observed data, the federal government bears roughly 80 to 90 percent of first-round losses, and direct household credit losses are small | [M] |
 | 4 | **The housing agencies absorb it without reaching the Treasury.** 39 to 53 percent of each single-family book carries no credit enhancement; private insurance and risk transfer take only 11 to 15 percent of the loss; no Treasury draw at any level we can reach | [M] |

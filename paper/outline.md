@@ -37,14 +37,20 @@ measured proposition about regimes.
 
 **The finding that organises the paper, and it goes in the first paragraph:**
 
-> **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
-> Sovereign share of labour-backed claims **0.794**, agreed range **0.778 to 0.804** [M].
-> Federal share of the AI leg **0.010**, range **0.0095 to 0.0102** [S]. **The gap is
-> 0.784.**
+> **The federal government is exposed, as holder, guarantor or debtor, on about 79 percent of
+> the claims paid directly from wages: about 32 percent as creditor or guarantor and about 55
+> percent as the debtor on Treasury debt serviced from wage taxes.** The legs overlap where it
+> holds its own debt, so they do not add: union **0.794**, agreed range **0.778 to 0.804**
+> [M]. **It holds about 1 percent of the claims on AI capital**, 0.010, range 0.0095 to 0.0102
+> [S], and that is an **upper bound** because the AI side is on-balance-sheet only. **The gap
+> is 0.784.**
+>
+> **Structural sensitivities beside the headline:** obligor leg excluded 0.321; agency pools
+> not federal 0.587; indirectly wage-backed claims included 0.452.
 
 | claim ID | statement | status | figure or table |
 |---|---|---|---|
-| `sovereign_share_union` | The state holds 0.794 of the wage leg | **[M]**, agreed with an independent rebuild to within 0.016 | Table 1 |
+| `sovereign_share_union` | Federal exposure on 0.794 of directly wage-backed claims: 0.321 as creditor or guarantor, 0.552 as obligor, legs overlapping | **[M]**, agreed with an independent rebuild to within 0.016 | Table 1 |
 | `ai_leg_federal_share` | The state holds 0.010 of the AI leg | **[S]** | Table 1 |
 | `holder_gap` | The gap is 0.784 | **[M]** on the wage side, **[S]** on the AI side | Table 1 |
 | 159 | The concentration of wage risk on the sovereign is the central result | **[M]**, strengthened; claim 195 reaches it by a second route | Figure 1 |
@@ -169,20 +175,29 @@ mismatches.
 else moves it by more than 10; and **it is partly an asset-price series**, reading 0.376 in
 2008 because equity fell, which is the wrong sign for an indicator.
 
-**4.2 The 1970 to present series. This is Figure 1 and it is the paper's best single image.**
+**4.2 The 1952 to present series. This is Figure 1 and it is the paper's best single image.
+It is a U, and reporting it from 1970 would misdescribe it.**
 
-| year | ratio | **sovereign union share** |
-|---|---|---|
-| 1970 | 0.2767 | **0.3356** |
-| 1990 | 0.3549 | 0.5638 |
-| 2008 | 0.3763 | 0.5582 |
-| 2020 | 0.2907 | 0.7831 |
-| 2025 | 0.2703 | **0.7936** |
+| year | ratio | **sovereign union share** | held or guaranteed | obligor |
+|---|---|---|---|---|
+| **1952** | 0.2837 | **0.5227** | 0.0853 | **0.5102** |
+| **1970** | 0.2767 | **0.3356** | 0.1204 | 0.2965 |
+| 1990 | 0.3549 | 0.5638 | 0.2482 | 0.3647 |
+| 2008 | 0.3763 | 0.5582 | 0.2977 | 0.2859 |
+| 2020 | 0.2907 | 0.7831 | **0.3923** | 0.5225 |
+| **2025** | 0.2703 | **0.7936** | 0.3215 | **0.5520** |
 
-**The ratio is flat across fifty-five years. The sovereign share of it more than doubles.**
-The quantity of wage-backed claims has not changed much; who holds them has changed
-completely. Two datable steps: 1970 to 1990 the agency book grows; 2008 to 2020 the obligor
-leg takes over.
+**The ratio is flat across seventy-three years. The sovereign share of it traces a U.** The
+1952 level is almost entirely **wartime Treasury debt**: the obligor leg alone is 0.510 that
+year against a held-or-guaranteed leg of 0.085. It falls to 1970 as that debt shrinks against
+a growing claim stock, then climbs in two datable steps: **the agency book grows 1970 to
+1990** (held leg 0.120 to 0.248), then **federal debt grows 2008 to 2020** (obligor leg 0.286
+to 0.522).
+
+**Said plainly, because it qualifies the headline: a large part of the recent rise is growth
+in federal debt itself rather than new exposure to households.** The held-or-guaranteed leg
+peaked at 0.392 in 2020 and has since fallen to 0.321; the whole net increase since 2008 sits
+in the obligor leg.
 
 **4.3 The holder map.** Federal 32.1 pct held or guaranteed, 55.2 pct as obligor, 79.4 pct
 union. Banks 18.4, rest of world 18.0, other financial 15.3.
@@ -432,9 +447,10 @@ the economy-wide average, and both are correctly computed.
 
 Three sentences, and no more:
 
-1. **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
-   It is the residual holder of the exposure that fails if AI succeeds and holds almost none
-   of the exposure that pays if it does.
+1. **The federal government is exposed, as holder, guarantor or debtor, on about four fifths
+   of the claims paid directly from wages, about a third as creditor or guarantor and about
+   fifty-five percent as the debtor, and holds about one percent of the claims on AI capital.**
+   It bears the exposure that fails if AI succeeds and has almost no stake in the one that pays.
 2. **At the one dose fully inside the observed data, ten percent of the wage bill, the federal
    government bears roughly four fifths of first-round losses**, and closing the fiscal
    condition would require between a quarter and a half of the AI surplus to bear the
@@ -452,7 +468,7 @@ Three sentences, and no more:
 
 | # | Content | Section |
 |---|---|---|
-| **Figure 1** | The labour backing ratio and the sovereign share of it, 1947 to 2025, two panels | 4.2 |
+| **Figure 1** | The labour backing ratio and the sovereign share of it, **1952 to 2025**, two panels, with the sovereign share split into its held-or-guaranteed and obligor legs so the U and its composition both read | 4.2 |
 | Figure 2 | Replication scoreboard and the six root causes | 3.5 |
 | **Figure 3a** | **The fiscal condition as a function of tau_k, with both rates marked** | **5.1** |
 | Figure 3 | Debt paths, reserve-currency issuer against emerging market | 5 |

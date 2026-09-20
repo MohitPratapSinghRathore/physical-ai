@@ -27,10 +27,11 @@ Same numbers, readable on a first pass. Replaces the previous version, which was
 carried project jargon (dose, leg, tau_k) and three-decimal figures into a sentence meant to
 be read aloud.
 
-> In the United States, the federal government holds or guarantees about four fifths of the
-> financial claims that are paid directly out of wages, through taxes, Social Security and
-> Medicare, mortgage guarantees and student loans, and about one percent of the claims on AI
-> capital. It is the main holder of the exposure that loses if AI replaces labor and has
+> In the United States, the federal government is exposed, as holder, guarantor or debtor, on
+> about four fifths of the financial claims that are paid directly out of wages: about a third
+> as creditor or guarantor, through mortgage guarantees and student loans, and about
+> fifty-five percent as the debtor on Treasury debt serviced from income and payroll taxes.
+> It holds about one percent of the claims on AI capital. It is the main holder of the exposure that loses if AI replaces labor and has
 > almost no stake in the exposure that gains. So displacement is a fiscal event before it is a
 > banking event: at ten percent of wages displaced, the only level inside observed data, the
 > federal government bears roughly 80 to 90 percent of first-round losses, and direct
@@ -41,8 +42,10 @@ be read aloud.
 > to 14 percent, AI capital after expensing and profit shifting bears about 7, and capital
 > economy-wide bears 20 to 22, so between a quarter and a half of AI profits would need to be
 > taxed at the ordinary rate. Above roughly 25 percent displacement our estimates become
-> bands, and the conventions behind the four-fifths figure matter: counting claims backed only
-> indirectly by wages lowers it to about 45 percent.
+> bands, and the conventions behind the four-fifths figure matter: setting aside what the
+> government owes and counting only what it holds or guarantees gives about 32 percent, not
+> treating agency mortgage pools as federal gives about 59, and counting claims backed only
+> indirectly by wages gives about 45.
 
 ## The one-line version, unchanged
 
