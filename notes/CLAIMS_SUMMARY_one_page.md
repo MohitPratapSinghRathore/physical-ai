@@ -1,149 +1,83 @@
-# The two-sided bet: one-page claims summary
+# Who holds the claims that wages pay
 
-For a prospective co-author. Status as of 2026-09-20. Source of truth for every tag:
+One page for a prospective co-author. 2026-09-20. Full dossier with every number, source and
+caveat: `notes/CLAIMS_DOSSIER_full.md`. Source of truth for tags:
 `data/release/headline_clearing_pass.csv`.
 
-**Tags. [R] REPLICATED**: rebuilt by an instance that did not write the code, from raw data
-and a published brief alone, inside our stated tolerance. **[M] STANDING**: measured, clears
-every applicable check, not independently rebuilt. **[S] SCENARIO**: arithmetic conditional
-on a chosen assumption.
+**Tags.** **[R]** rebuilt independently, from raw data and a published brief, by an instance
+that did not write the code. **[M]** measured here, not independently rebuilt. **[S]**
+arithmetic conditional on an assumed path.
 
 ---
 
-## The central finding
+## The finding
 
-> **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
->
-> Sovereign share of labour-backed claims **0.794** (agreed range **0.778 to 0.804**) **[M]**.
-> Federal share of the AI leg **0.010** (range 0.0095 to 0.0102) **[S]**. **The gap is
-> 0.784.**
+**In the United States the federal government holds or guarantees about 79 percent of the
+financial claims paid directly out of wages, and holds about 1 percent of the claims on AI
+capital.** It is the main holder of the exposure that loses if AI replaces labour, and has
+almost no stake in the exposure that gains. **It is largely unhedged: its only claim on the AI
+side is whatever capital tax reaches those profits.**
 
-The financial system holds two exposures resting on opposite assumptions about labour. The
-state is the residual holder of the one that fails if AI succeeds, and holds almost none of
-the one that pays if it does. **It is not hedged.**
+**The convention behind 79 percent matters and is stated up front.** We count a claim as
+wage-backed only if wages pay it *directly*: mortgages, rent, consumer and student credit, and
+federal and municipal debt serviced from income and payroll taxes. Claims paid only
+*indirectly* from wages, where wages become consumer spending and spending becomes business
+revenue, are excluded. Include them and the figure falls to about 45 percent. That is the same
+first-round boundary the rest of the paper uses, so the pair is reported together: the state
+is the first-round holder, private balance sheets the second-round holders.
 
-**The honest qualification, which belongs in the same breath.** The share is robust to every
-*measurement* call at under 1.3 percent, including the entire Treasury-definition question.
-It is **not** robust to the one-step accounting rule, which moves it to **0.452**. It is a
-robust measurement under a stated convention, and the convention does heavy lifting.
+## What we contribute
 
-**What this paper claims, exactly and no more.** The fiscal mechanism is established
-literature and we do not claim it. **IMF Note 2026/002 asserts the wage-leg credit mechanism
-and the distributional asymmetry; RAND measures the federal revenue exposure.** Our
-contribution is five measured things: **the measured holder structure; household losses from
-microdata mapped to the Federal Reserve's loss rates; incidence by who bears the loss; a
-replicated fiscal condition with sourced parameters; and the public claims register.**
+The fiscal mechanism is established literature and we do not claim it. IMF Note 2026/002
+asserts the household-credit mechanism and the distributional asymmetry; RAND (2026) measures
+the federal revenue exposure. **Ours is five measured things: the holder structure; household
+losses from survey microdata mapped to the Federal Reserve's own loss rates; incidence, or who
+bears the loss; a replicated fiscal condition with sourced parameters; and a public claims
+register.**
 
----
+## Six results
 
-## Six supporting results
-
-| # | Result | Status |
+| | | tag |
 |---|---|---|
-| 1 | **The sovereign share nearly doubles while the ratio stays flat.** Sovereign union share rises from **0.336 in 1970 to 0.794 in 2025**; the direct labour backing ratio moves between 0.267 and 0.376 with no trend. The quantity of wage-backed claims has barely changed; **who holds them has changed completely** | **[M]** |
-| 2 | **The fiscal condition is a FUNCTION of the capital tax rate, with a threshold at 0.110 to 0.137.** Retained wage share **R = 0.568316**. It **fails at 0.0708**, the operative rate on the AI surplus after 168(k) expensing and profit shifting, and **passes at 0.20 to 0.22**, the IMF's measured economy-wide capital rate. **Closing it needs 26 to 52 percent of the AI surplus taxed at the economy-wide rate.** The old claim that it is "unclosable under the tax code as it stands" is WITHDRAWN and replaced by "as the code applies to AI capital specifically" | **[R]** on R and the boolean; **PROVISIONAL** on the verdict, which depends on the tax base chosen |
-| 3 | **The federal government bears roughly four fifths of first-round losses, and the share depends on the dose.** Narrow reading: **0.785 to 0.870 at a 10 percent dose**, rising to 0.855 to 0.925 at 50 percent, then falling back at 75 percent. Conservatorship reading is 8 to 10 points higher | **[M]**; the independent rebuild's 0.78 rising to 0.90 sits inside our range at both ends |
-| 4 | **The housing agencies absorb a wage shock without reaching the Treasury.** Rebuilt from the 2025 Form 10-Ks: **39 to 53 percent of each single-family book carries no credit enhancement**; private cover transfers only **11 to 15 percent** of an agency loss at small doses; **zero Treasury draw at every dose from 5 to 75 percent** (179.4bn of capital against a maximum retained first-round loss of 109.0bn). **First round only, house prices fixed** | **[M]** |
-| 5 | **The second round is nine tenths of the bank channel.** The demand event is **0.740741** of the first round, factorising exactly 20/27; second-round bank losses span a factor of nine, **173bn to 1,565bn** | **[R]** on the share; **[S]** on the levels |
-| 6 | **The measurement has a hard boundary, and it is a finding.** The reemployment rate is a fixed point with a **pole at a 45.9 percent embodied wage-bill dose**. A point estimate exists only inside the observed range of rho, [0.49, 0.74]. **At a 50 percent dose no exposure type has one.** Past that boundary this data cannot say what happens | **[M]** |
+| 1 | **The state's share doubled while the stock stood still.** Federal share of wage-backed claims rose from about 34 percent in 1970 to 79 percent in 2025, while the share of all financial claims that wages back stayed flat near 27 percent. What changed is who holds them | [M] |
+| 2 | **Whether the budget absorbs the loss depends on which capital tax rate reaches AI profits.** It needs about 11 to 14 percent. AI capital, after immediate expensing and profit shifting, bears about 7. Capital economy-wide bears 20 to 22 (IMF). **So a quarter to a half of AI profits would have to be taxed at the ordinary rate** | inputs [R], verdict provisional |
+| 3 | **Displacement is a fiscal event before a banking event.** At 10 percent of wages displaced, the only level fully inside observed data, the federal government bears roughly 80 to 90 percent of first-round losses, and direct household credit losses are small | [M] |
+| 4 | **The housing agencies absorb it without reaching the Treasury.** 39 to 53 percent of each single-family book carries no credit enhancement; private insurance and risk transfer take only 11 to 15 percent of the loss; no Treasury draw at any level we can reach | [M] |
+| 5 | **Households, from survey microdata.** Savings buffers are thinnest in the **second** wage quintile, not the first. Differences between physically and cognitively exposed households are **a pay effect**: controlling for pay removes the gap, and an independent rebuild reached the same conclusion in all eight cells. When automation works through **non-hiring** rather than layoffs, losses shift onto younger borrowers carrying student and car debt, mortgage losses fall, and **the fiscal loss is unchanged** | [M]; pay effect independently confirmed in direction |
+| 6 | **Banks are reached mainly at large displacement, and mostly indirectly.** Demand leads the other channels in 20 of 27 grid cells **[R]**. That roughly nine tenths of bank losses arrive through the second round, via falling spending, house prices and business credit rather than displaced borrowers' own loans, is a different quantity and is **[S]** | as marked |
 
----
+## What we withdrew
 
-## What has been independently replicated
+The reemployment rate at 50 percent displacement (no admissible value exists); an incidence
+robustness claim; the bottom-quintile debt ratio's magnitude; a hedging ratio whose input we
+never defined; two occupation exposure indices; and priority on the fiscal mechanism itself.
+Eleven withdrawals in all, listed with reasons in the dossier.
 
-Two rounds, the second scoring **127 quantities**, 79 with sealed counterparts, **45 within 5
-percent and 28 inside our own tolerance**, by an instance that read no project code.
+## Limitations
 
-**Reproduced exactly or near-exactly:** `R_2026` 0.568315 against 0.568316; both sourced
-capital tax rates; debt to GDP start 1.214121 to six decimals; the emerging-market 20-year
-baseline 376.74 percent; the federal student share 0.972808; the demand event share 0.740741;
-all four under-reporting factors and coverage shares; the terminal fiscal loss at the 10
-percent dose to 0.19 percent; and **home mortgage and multifamily labour backing to the last
-published digit, rebuilt independently from ACS mortgage service and gross rent**.
+Off-balance-sheet and GPU-backed AI financing is unmeasured, so the AI side is a lower bound.
+Capital gains inside the receipts split are unsourced. The novelty claim rests on a
+non-systematic search. A quarter of the mortgage book is an unidentified residual. Labour tax
+rates do not vary by income. **All credit losses are first-round only, with house prices held
+fixed, so they are floors.** **Above about 25 percent displacement our estimates become bands.
+That is a limit of our method, not a fact about the world: it comes from extrapolating a
+straight-line reemployment fit until it breaks.** And the capital tax base in result 2 is
+contested. The replication was blind by protocol, not by isolation.
 
-**Near miss on the central object.** The sovereign union share: ours 0.793592, theirs
-0.777810, a 1.99 percent gap that decomposes to 83.7 percent the Treasury class (they could
-not know it was two Z.1 series summed), 6.6 percent a class they omitted, and the remainder
-household balances.
+## The question for you
 
-**The protocol, stated plainly.** The blind was **procedural, not enforced**. The replicator
-worked on the same machine; the sealed file was reachable at a path the brief itself names,
-was not attached to the request, and is reported unopened until the rebuild was final. The
-supporting evidence is internal and circumstantial: eleven of twelve insufficiencies were
-written before opening, four of six mismatch root causes were among them, and they declined to
-use three sealed coefficients the brief had leaked. **The claim is "independently rebuilt
-under a reported blind protocol", not "independently verified."**
+**Is about 7 percent the right rate, or the wrong base?** We compute the rate on the marginal
+dollar of US AI profit: 21 percent statutory, the normal return exempted by immediate
+expensing, and 48 percent of the remaining rents booked offshore. The IMF measures 20 to 22
+percent economy-wide, including personal taxes on dividends and gains. The condition needs 11
+to 14. It fails on ours and passes on theirs, and **the paper's central fiscal verdict turns
+on that choice.**
 
-**Independent external corroboration, from a different direction.** RAND (Price and Suresh
-2026) put **66 percent** of federal revenue as directly labour-derived; we get **63.4
-percent** from a bottom-up SOI construction. They conclude corporate tax rates would need to
-be "roughly doubled"; we get **1.55 to 1.94 times** the operative rate. Neither saw the other.
+## Disclosure
 
----
+The pipeline and analysis were built with Claude Code. The design was reviewed with Claude.
+The analysis was replicated by separate instances.
 
-## What was withdrawn
-
-| withdrawn | why |
-|---|---|
-| **The 50 percent reemployment rate** | There is no such number. Past the pole the construction has no admissible solution; the superseded code clipped it to zero and published the boundary as an estimate |
-| **"Incidence moves household counts by 5 to 9 percent, so counts are robust to it"** | Not reproducible. The natural alternative reading of one case gives 59 percent, which removes the robustness the claim rested on |
-| **The bottom-quintile labour-backed ratio, 4.15** | The independent rebuild lands 2.5 to 3.4 times away and we cannot show their reading is wrong, because we never defined the object's universe. **The gradient survives; the magnitude does not** |
-| **The hedge ratio at the operative tax rate, 0.36** | Its input, `surplus`, is undefined in our own brief |
-| **The two cognitive index scores by occupation** | Eleven mismatches running in opposite directions on the two indices. The wage machinery passes its controls; the index scores are unsettled |
-| **"29.7 percent of GSE net worth"** | It was a gross loss struck before any risk transfer. Replaced by a retained loss of 11.9 to 29.2 percent at the same dose |
-| **"The fiscal condition fails under current law"** | **WITHDRAWN this pass.** It fails under current law *as it applies to AI capital specifically*, at 0.0708. At the IMF's measured economy-wide capital rate of 0.20 to 0.22 it passes. The condition is a function of tau_k, not a verdict |
-| **"No reading of the corporate tax literature makes the break-even rate available"** | False. It is inside the sourced range in 10 of 15 cells. Narrowed to a statement about the operative rate |
-| **"Occupational diversification does not hedge a mortgage book"** | Overreach. A flat distribution does not stop an individual lender selecting low-exposure borrowers |
-| **Priority on the fiscal mechanism** | RAND, Casas and Torres, Korinek and Lockwood, Windfall and the IMF all have it. **We did not discover it and must not imply that we did** |
-| **The trigger dashboard as a contribution** | An indicator list is not a research contribution. It stays as an artifact |
-
----
-
-## Known limitations
-
-1. **Off-balance-sheet and GPU-backed AI financing is unmeasured.** The AI leg is nine SEC
-   registrants' on-balance-sheet facts. BIS identifies SPV structures as dominant and none
-   appear. **Every AI-leg level is a lower bound and the state's share of it an upper bound.**
-2. **Capital gains receipts are unsourced.** The labour-linked receipts share does not
-   separate realised gains inside AGI. The headline is insensitive to it (0.71 percent); the
-   fiscal magnitudes are more sensitive and we have not bounded that.
-3. **The labour backing ratio's novelty is "none located", not "none exists."** No systematic
-   PRISMA search has been run for that specific question. We have already retired one
-   priority claim after a non-systematic search found prior work.
-4. **The holder proxy residual.** 24.88 percent of the mortgage book, 3,259bn, is an
-   arithmetic remainder treated as private in full. Conservative for our claim, but
-   unidentified.
-5. **Effective labour tax rates by income are not from CBO.** A single economy-wide rate,
-   flat across the wage distribution. We have not signed or bounded the net effect.
-6. **First round only, house prices fixed.** Every credit loss is a floor, not an estimate.
-7. **The replication blind was procedural, not enforced.** The replicator worked on the same
-   machine with the sealed file reachable at a path the brief names. The claim is
-   "independently rebuilt under a reported blind protocol", not "independently verified".
-8. **The capital tax base is contested and the fiscal verdict turns on it.** The condition
-   fails at our 0.0708 and passes at the IMF's measured 0.20 to 0.22. Both are correctly
-   computed on different bases. This is limitation and open question at once, and it is the
-   first thing a public finance co-author should attack.
-
----
-
-## Where the work stands
-
-The pipeline rebuilds from raw data in one command. Two replication rounds are complete with
-127 scored quantities. The plausibility audit runs 53 checks with 4 violations, all
-deliberately retained superseded rows. The claims register carries every claim with its status
-and a separate replication flag. **The measurement is done; the manuscript is not written.**
-
-**THE FIRST QUESTION FOR A PUBLIC FINANCE CO-AUTHOR.** Is 0.0708 the right rate for this
-condition, or is it the wrong base? We compute the effective rate on the marginal dollar of US
-AI surplus as 0.0708 (21 percent statutory, normal return exempted by 168(k) expensing at a
-rent share of 0.351, 48 percent of rents shifted offshore). IMF SDN/2024/002 measures an
-economy-wide capital ATR of 0.20 to 0.22 including personal-level taxes on dividends and
-gains. Required is 0.110 to 0.137, so the condition fails on ours and passes on theirs. Is the
-marginal-on-AI-surplus base right for a revenue replacement question? Is the 48 percent haven
-share right for AI rents, which are unusually intangible and so if anything more shiftable?
-Full statement in `notes/tau_k_exposure.md`.
-
-**The single most useful thing a co-author could do**: run a systematic PRISMA search on the
-labour backing question (limitation 3), and define the two objects the replicator could not
-reproduce because we never specified them, B5's universe and `surplus` in the hedging
-construction.
+**Target journal is open.** The centre of the paper is now fiscal and sovereign rather than
+bank-facing, so a public finance or macro outlet may fit better than the Journal of Financial
+Stability.

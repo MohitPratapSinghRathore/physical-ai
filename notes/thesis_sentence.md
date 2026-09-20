@@ -21,32 +21,40 @@ OWNER APPROVAL.** Four changes, each marked in place below:
    (both the 2024 SDN and the 2026 Note), the Windfall Trust, Korinek and Lockwood, and Casas
    and Torres all have it. What is ours is the measured liability side.
 
-## The sentence, amended for this session
+## The sentence, rewritten plainly. OWNER'S WORDING, 2026-09-20.
 
-> **The state holds about four fifths of the wage leg and about one percent of the AI leg.**
-> It is the residual holder of the exposure that fails if AI succeeds and holds almost none of
-> the exposure that pays if it does. That concentration is what makes displacement a fiscal
-> event before it is a banking event: at the one dose fully inside the observed data, ten
-> percent of the wage bill, the federal government bears **0.785 to 0.870** of first-round
-> losses on the narrow reading of the agency book and **0.876 to 0.913** on the conservatorship
-> reading. The banking system is the second-round absorber, reached through consumer spending,
-> house prices and business credit rather than through displaced borrowers defaulting on their
-> own loans: roughly **nine tenths** of bank losses at large displacement arrive by that route.
-> Whether the fiscal absorber holds turns on **which capital tax rate applies**: the condition
-> has a threshold at **0.110 to 0.137**, it fails at the **0.0708** that AI surplus actually
-> bears after expensing and profit shifting, and it passes at the **0.20 to 0.22** measured
-> economy-wide on capital income. **Closing it needs between a quarter and a half of the AI
-> surplus taxed at the economy-wide rate rather than the AI-specific one.**
-> Beyond a displacement dose of about **46 percent for the embodied group this data cannot say
-> what happens**, because the reemployment rate has no admissible estimate there, and that
-> boundary is itself a finding.
+Same numbers, readable on a first pass. Replaces the previous version, which was accurate but
+carried project jargon (dose, leg, tau_k) and three-decimal figures into a sentence meant to
+be read aloud.
 
-## The one-line version, amended
+> In the United States, the federal government holds or guarantees about four fifths of the
+> financial claims that are paid directly out of wages, through taxes, Social Security and
+> Medicare, mortgage guarantees and student loans, and about one percent of the claims on AI
+> capital. It is the main holder of the exposure that loses if AI replaces labor and has
+> almost no stake in the exposure that gains. So displacement is a fiscal event before it is a
+> banking event: at ten percent of wages displaced, the only level inside observed data, the
+> federal government bears roughly 80 to 90 percent of first-round losses, and direct
+> household credit losses are small. Banks are reached mainly at large displacement, and then
+> mostly through falling spending, house prices and business credit rather than displaced
+> borrowers' own loans; that part is scenario, not measurement. Whether the budget can absorb
+> the loss depends on which capital tax rate reaches AI profits: the condition needs about 11
+> to 14 percent, AI capital after expensing and profit shifting bears about 7, and capital
+> economy-wide bears 20 to 22, so between a quarter and a half of AI profits would need to be
+> taxed at the ordinary rate. Above roughly 25 percent displacement our estimates become
+> bands, and the conventions behind the four-fifths figure matter: counting claims backed only
+> indirectly by wages lowers it to about 45 percent.
 
-> The state is the first-round holder of wage-backed credit and almost none of the AI capital
-> that would replace it, so displacement lands on the sovereign before it lands on the banks,
-> and the terms on which a sovereign borrows decide whether that is an accounting problem or a
-> crisis.
+## The one-line version, unchanged
+
+> Wage-based public finance makes the state the residual claimant on labour income, so
+> displacement lands on the sovereign first and on the banks second, and the terms on which a
+> sovereign borrows decide whether that is an accounting problem or a crisis.
+
+**Note on the closing clause.** "The terms on which a sovereign borrows decide whether that is
+an accounting problem or a crisis" **rests on scenario arithmetic**, not measurement: the
+emerging-market debt path, the 376.7 percent twenty-year baseline and the 1.8 ratio of
+displacement increments are projections on assumed paths. The clause is worth keeping because
+it is the paper's reach, but it must not be read as a measured result.
 
 ---
 

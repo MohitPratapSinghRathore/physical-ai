@@ -1,7 +1,11 @@
 # Paper outline: a measurement paper
 
-Target: Journal of Financial Stability. Fallback: Technological Forecasting and Social
-Change.
+**Target journal: OPEN, for the co-author to decide.** The centre of the paper has moved from
+bank-facing to fiscal and sovereign, so a public finance or macro outlet may now fit better
+than the Journal of Financial Stability, which was the original target. Journal of Public
+Economics, Journal of Monetary Economics and the IMF Economic Review are all plausible.
+Previously: Journal of Financial Stability, with Technological Forecasting and Social Change
+as fallback.
 
 **Status tags on every claim.** **[R] REPLICATED**, rebuilt by an instance that did not write
 the code, from raw data and the brief alone, inside the project's stated tolerance.
@@ -21,11 +25,15 @@ holds each exposure, and what does a given amount of displacement do to them?**
 **The frame.** The financial system holds two exposures that depend on opposite assumptions.
 Leg W, the wage leg, is credit serviced from labour income and implicitly assumes AI arrives
 slowly. Leg A, the AI leg, is credit and equity extended against AI capital and implicitly
-assumes it arrives quickly. A holder of both is naturally hedged at the extremes. **Partial
-success, displacement without sufficient surplus, is the only regime in which both are
-impaired at once, so it is the only regime in which the natural hedge fails.** Claimed
-exactly that, and NOT as a claim that partial success is the most destabilising scenario,
-which we cannot prove without a global model.
+assumes it arrives quickly. A holder of both has offsetting positions; a holder of one does
+not.
+
+**The "only regime" claim is CUT.** The superseded text said partial success is the only
+regime in which both legs are impaired at once, so it is the only regime in which the natural
+hedge fails. **We never measured that**, and our own payoff table by holder shows the state
+losing in all three outcomes, not only in partial success. The two-sided bet stays as
+FRAMING, which is what it earns: it organises who holds what. It is not offered as a
+measured proposition about regimes.
 
 **The finding that organises the paper, and it goes in the first paragraph:**
 
@@ -285,7 +293,9 @@ separations**. **Reported as a gap in our own measurement**, not as our finding.
 | `terminal_loss_25pct` | 25 pct dose figures | **[S]**, embodied point estimate withdrawn | Table 9 |
 | `rho_50pct` | The 50 percent reemployment rate | **REMOVED. There is no such number** | Section 7.1 |
 
-**7.1 The inside-the-data boundary, stated before any number in this section.**
+**7.1 The extrapolation boundary, stated before any number in this section, AND stated as a
+limitation of the method rather than as a finding.** The reemployment rate is a straight-line
+fit extrapolated until it breaks. A referee will say so; the paper says it first.
 
 | dose | embodied | cognitive GPT | cognitive AIOE |
 |---|---|---|---|
@@ -403,7 +413,13 @@ what was cut: the incidence count-robustness claim, the 50 percent reemployment 
 hedge ratio at the operative rate, the bottom-quintile magnitude, and the two cognitive index
 scores.
 
-**Plus two method limitations.** The replication blind was **procedural, not enforced**: the
+**Plus three method limitations. The first is the extrapolation boundary.** Above about 25
+percent displacement our estimates become bands, because the reemployment rate is a
+straight-line fit extrapolated until it breaks: it has a pole at a 45.9 percent
+physically-exposed displacement level and no point estimate exists outside the observed range
+[0.49, 0.74]. **This is a limit of the specification, not a fact about the economy**, and it
+is stated that way wherever it appears rather than presented as a finding. The replication
+blind was **procedural, not enforced**: the
 replicator worked on the same machine with the sealed file reachable at a path the brief
 names, so the claim is "independently rebuilt under a reported blind protocol", not
 "independently verified". And **the capital tax base is contested**, which is what section 5.1
@@ -423,10 +439,12 @@ Three sentences, and no more:
    government bears roughly four fifths of first-round losses**, and closing the fiscal
    condition would require between a quarter and a half of the AI surplus to bear the
    economy-wide capital rate rather than the much lower rate AI capital actually faces.
-3. **Past a displacement dose of about forty-six percent for the embodied group, this data
-   cannot say what happens**, because the reemployment rate has no admissible estimate there.
-   That boundary is a finding about the limits of the measurement, and it is where the paper
-   stops.
+3. **Who bears the loss depends on how automation arrives, and the budget does not notice
+   the difference.** Savings buffers are thinnest in the second wage quintile, not the first;
+   the gap between physically and cognitively exposed households is a pay effect rather than
+   an exposure effect; and when automation works through non-hiring rather than layoffs the
+   losses move onto younger borrowers with student and car debt while the fiscal loss is
+   unchanged.
 
 ---
 
