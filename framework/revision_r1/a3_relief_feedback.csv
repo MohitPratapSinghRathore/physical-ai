@@ -1,0 +1,25 @@
+instrument,dose,band,feedback,inside_observed_data_range,system_loss_before_bn,system_loss_after_bn,loss_removed_bn,loss_removed_pct,first_round_removed_bn,second_round_removed_bn,fiscal_cost_bn,institutions_breaching,pct_assets_breaching_before,pct_assets_breaching_after
+combined package,0.1,high,"none, as published",True,204.99,185.28,19.71,9.61,19.71,0.0,317.58,40,0.04,0.034
+combined package,0.1,high,income replacement and deferred payments feed spending,True,204.99,77.48,127.51,62.2,19.71,107.8,317.58,33,0.04,0.03
+"wage insurance, current US, 0.50 for 26 weeks",0.1,high,"none, as published",True,204.99,200.39,4.6,2.24,4.6,0.0,112.24,51,0.04,0.04
+"wage insurance, current US, 0.50 for 26 weeks",0.1,high,income replacement feeds spending,True,204.99,164.87,40.12,19.57,4.6,35.53,112.24,43,0.04,0.034
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,high,"none, as published",True,204.99,192.12,12.87,6.28,12.87,0.0,314.26,44,0.04,0.035
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,high,income replacement feeds spending,True,204.99,92.64,112.35,54.81,12.87,99.48,314.26,38,0.04,0.034
+"forbearance, full",0.1,high,"none, as published",True,204.99,191.46,13.53,6.6,13.53,0.0,,41,0.04,0.034
+"forbearance, full",0.1,high,deferred payments feed spending,True,204.99,185.75,19.24,9.38,13.53,5.71,,41,0.04,0.034
+combined package,0.25,high,"none, as published",True,547.13,498.4,48.72,8.91,48.72,0.0,946.77,123,4.02,1.477
+combined package,0.25,high,income replacement and deferred payments feed spending,True,547.13,194.22,352.91,64.5,48.72,304.18,946.77,42,4.02,0.053
+"wage insurance, current US, 0.50 for 26 weeks",0.25,high,"none, as published",True,547.13,535.28,11.85,2.17,11.85,0.0,335.44,218,4.02,3.964
+"wage insurance, current US, 0.50 for 26 weeks",0.25,high,income replacement feeds spending,True,547.13,433.99,113.14,20.68,11.85,101.29,335.44,159,4.02,1.506
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,high,"none, as published",True,547.13,513.95,33.18,6.06,33.18,0.0,939.22,167,4.02,3.829
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,high,income replacement feeds spending,True,547.13,230.34,316.79,57.9,33.18,283.62,939.22,58,4.02,0.059
+"forbearance, full",0.25,high,"none, as published",True,547.13,514.12,33.01,6.03,33.01,0.0,,144,4.02,3.804
+"forbearance, full",0.25,high,deferred payments feed spending,True,547.13,500.18,46.94,8.58,33.01,13.93,,132,4.02,3.775
+combined package,0.5,high,"none, as published",False,1262.06,1166.23,95.84,7.59,95.84,0.0,2798.52,901,28.2,25.346
+combined package,0.5,high,income replacement and deferred payments feed spending,False,1262.06,389.39,872.67,69.15,95.84,776.84,2798.52,82,28.2,1.256
+"wage insurance, current US, 0.50 for 26 weeks",0.5,high,"none, as published",False,1262.06,1236.97,25.09,1.99,25.09,0.0,995.03,1310,28.2,27.551
+"wage insurance, current US, 0.50 for 26 weeks",0.5,high,income replacement feeds spending,False,1262.06,973.98,288.09,22.83,25.09,262.99,995.03,826,28.2,7.972
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,high,"none, as published",False,1262.06,1191.8,70.27,5.57,70.27,0.0,2786.09,1091,28.2,26.373
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,high,income replacement feeds spending,False,1262.06,455.42,806.65,63.91,70.27,736.38,2786.09,161,28.2,1.534
+"forbearance, full",0.5,high,"none, as published",False,1262.06,1198.73,63.33,5.02,63.33,0.0,,995,28.2,26.231
+"forbearance, full",0.5,high,deferred payments feed spending,False,1262.06,1171.99,90.07,7.14,63.33,26.74,,933,28.2,25.427

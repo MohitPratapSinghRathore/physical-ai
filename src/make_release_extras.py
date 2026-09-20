@@ -153,6 +153,19 @@ def method():
             print("wrote", dst.relative_to(ROOT))
 
 
+def revision_r1():
+    for name in ("a1_pass_through.json", "a1_required_by_g.csv", "a1_g_cases.csv",
+                 "a2_cashflow_bridge.json", "a2_transition_path.csv",
+                 "a3_relief_feedback.json", "a3_relief_feedback.csv", "a3_by_class.csv",
+                 "a4_two_directions.json", "a4_rate_grid.csv"):
+        src = ROOT / "framework" / "revision_r1" / name
+        if src.exists():
+            dst = REL / "revision_r1" / name
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(src, dst)
+            print("wrote", dst.relative_to(ROOT))
+
+
 if __name__ == "__main__":
     federal_share_by_dose()
     housing_agencies()
@@ -163,3 +176,4 @@ if __name__ == "__main__":
     tau_k()
     labor_backing()
     method()
+    revision_r1()

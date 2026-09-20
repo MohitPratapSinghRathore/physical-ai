@@ -1,0 +1,55 @@
+{
+  "status": "SCENARIO. s_dom from the existing swept capex decomposition; k and p swept and not sourced. The bound 0 <= g <= 1 holds under output preserved and is asserted in the code.",
+  "condition": "tau_k * g >= tau_l * (1 - R)",
+  "retained_wage_share_R": 0.568316,
+  "effective_labour_tax_readings": {
+    "AMR_0.255": 0.254999,
+    "bottom_up_0.301": 0.301,
+    "bottom_up_0.318": 0.318001
+  },
+  "required_tau_k_at_g_equals_one": {
+    "AMR_0.255": 0.110079,
+    "bottom_up_0.301": 0.129937,
+    "bottom_up_0.318": 0.137276
+  },
+  "what_g_equals_one_means": "every dollar of displaced wages reappears as a dollar of taxable US capital income. This is the assumption behind the required band the paper has published, and it is the most favourable case for closing the condition.",
+  "capex_dollar_decomposition_used": {
+    "domestic_labour_already_inside_tau_l": [
+      0.0936,
+      0.1854,
+      0.334
+    ],
+    "imported_no_us_tax": [
+      0.2728,
+      0.4745,
+      0.6772
+    ],
+    "domestic_surplus_priced_by_tau_k": [
+      0.1836,
+      0.3193,
+      0.5052
+    ]
+  },
+  "g_range_over_the_sweep": [
+    0.24852,
+    0.85156
+  ],
+  "g_central_case": {
+    "capital_cost_share_k": 0.5,
+    "price_pass_through_p": 0.3,
+    "domestic_surplus_share_of_capex": 0.3193,
+    "surplus_reading": "central",
+    "g": 0.50965,
+    "required_tau_k_easier": 0.215989,
+    "required_tau_k_harder": 0.269353
+  },
+  "assembled_tau_k_central": {
+    "Barkai": 0.0851,
+    "Karabarbounis_Neiman_case_R": 0.015
+  },
+  "assembled_tau_k_central_domestic_holder_base": {
+    "Barkai": 0.1024,
+    "Karabarbounis_Neiman_case_R": 0.0322
+  },
+  "verdict": "The required rate is inversely proportional to g, so any pass-through short of one raises it. At the central case the required rate is roughly double the published band, and the assembled rate does not reach it on either base or under either rent reading. The direction of the correction is against the paper's own published required band, which was computed at the most favourable value of g, and in favour of its conclusion that the condition fails."
+}

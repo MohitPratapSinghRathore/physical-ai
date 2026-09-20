@@ -12,6 +12,14 @@ artificial intelligence, no adoption path and no forecast. Every displacement fi
 paper is therefore conditional balance-sheet arithmetic, not a causal estimate and not a
 prediction, and the level is an input rather than a result.
 
+One level, ten percent of the wage bill, is reported throughout as the case with the least
+extrapolation, and that phrase is meant literally rather than as a claim to observation. What
+stays inside its observed range there is the reemployment relationship. The default uplifts are
+transferred from a different episode, the allocation of displacement across households is assumed,
+and the transmission from lost income to spending is a stated mapping. So the ten percent case is
+a calibrated scenario whose weakest link is calibrated to data, not an observed or causally
+identified result.
+
 \subsection{Sources}
 
 Claim levels and holder shares come from the Federal Reserve's financial accounts
@@ -119,13 +127,19 @@ mix alone and is a lower bound on true dispersion.
 \label{sec:rebuild}
 
 Three labels are used throughout and appear in every table caption. \emph{Rebuilt} means the
-quantity was reproduced by an independent computational rebuild: a separate run that had no
-access to this project's code and worked from raw data and a published specification alone,
-inside a tolerance fixed before the rebuild began. \emph{Measured} means produced by the pipeline,
-clearing every applicable bounds check, but not independently rebuilt. \emph{Scenario} means
-arithmetic conditional on an assumption stated where the number appears. In prose we give the
-label where a reader could otherwise mistake a scenario for a measurement; elsewhere the table
-caption carries it.
+quantity was reproduced by an independent computational rebuild: a separate run that had no access
+to this project's code and worked from raw data and a published specification alone, inside a
+tolerance fixed before the rebuild began. \emph{Measured} means produced by the pipeline, clearing
+every applicable bounds check, but not independently rebuilt. \emph{Scenario} means arithmetic
+conditional on an assumption stated where the number appears. In prose we give the label where a
+reader could otherwise mistake a scenario for a measurement; elsewhere the table caption carries
+it.
+
+What a rebuild establishes needs saying plainly, because the word invites more than it should. It
+establishes computational reproducibility: that the stated inputs and the stated construction
+produce the stated number. It says nothing about whether the construction is the right one, or
+whether the economic assumptions behind it hold. A quantity can be rebuilt to six decimal places
+and still rest on an assumption we have no evidence for, and several in this paper do.
 
 Three rebuild rounds have been run. Round two scored \result{RepTwoScored} quantities,
 \result{RepTwoSealed} of them against expected values fixed in advance;

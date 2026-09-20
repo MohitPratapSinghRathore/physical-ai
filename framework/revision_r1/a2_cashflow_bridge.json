@@ -1,0 +1,30 @@
+{
+  "status": "SCENARIO. The growth path is illustrative; the tax parameters are those used elsewhere in the paper.",
+  "the_two_objects": {
+    "effective_marginal_rate": "a present-value wedge over the life of one marginal investment, which is what the paper assembles",
+    "annual_revenue_coefficient": "the tax collected from the sector in a year, which is what a revenue replacement question asks about"
+  },
+  "they_coincide": "only in a steady state, with investment flat and the capital stock constant, where each year's deductions and each year's tax on existing income are flows of the same size",
+  "assembled_rate_is_a_steady_state_statement": true,
+  "transition": "while investment grows, current deductions exceed the tax on income from a smaller past stock, so net revenue from the sector is below the steady-state figure and can be negative",
+  "parameters": {
+    "federal_entity_rate": 0.21,
+    "rent_share": 0.351,
+    "discount_rate": 0.03,
+    "depreciation_rate": 0.15,
+    "horizon_years": 25
+  },
+  "assembled_tau_k_central": {
+    "Barkai": 0.0851,
+    "Karabarbounis_Neiman_case_R": 0.015
+  },
+  "which_statements_are_steady_state": [
+    "the required rate tau_l (1 - R) / g and every comparison against it",
+    "the assembled effective marginal rate and its component decomposition",
+    "every statement of the form the rate falls short of what replacement needs"
+  ],
+  "which_statements_are_not_steady_state": [
+    "any claim about revenue collected in a particular year during an investment boom, which this paper does not make and should not be read as making"
+  ],
+  "verdict": "The paper's comparison is a steady-state comparison and must say so. During a period of rapidly growing AI investment the revenue actually collected from the sector is lower than the assembled rate implies, and on this illustrative path it is negative in the early years, so the near-term position is worse than the steady-state statement, not better."
+}

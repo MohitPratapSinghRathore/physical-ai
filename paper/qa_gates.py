@@ -3,6 +3,7 @@
 The PDF-level gates (dashes, undefined refs, the anonymous leak check) are in
 pdf_gates.py and run after a build. These are the source-level gates.
 """
+import json
 import pathlib
 import re
 import sys
@@ -97,6 +98,48 @@ def main():
         fails.append(f"unresolved citations: {unres}")
     if uncited:
         fails.append(f"entries in the bibliography that the text never cites: {uncited}")
+
+    # ---- every statement about closing the fiscal condition must match the artifact.
+    # Absolute claims about the parameter space are banned outright, because the artifact
+    # reports a pass SHARE by base and by labor tax reading, and an earlier version of this
+    # manuscript asserted an absolute that the same artifact contradicts.
+    ABSOLUTES = ["no corner of the parameter space", "nowhere in the space",
+                 "cannot pass anywhere", "no combination closes", "never closes"]
+    found = sorted({a for a in ABSOLUTES if a.lower() in t.lower()})
+    tk_path = HERE.parent / "data" / "release" / "tau_k" / "tau_k_assembled.json"
+    if tk_path.exists():
+        tk = json.loads(tk_path.read_text())
+        ours = [r for r in tk["assembled_SOURCED"] if r["rent_reading"] == "Barkai"][0]
+        crs = [r for r in tk["MARKED_SENSITIVITY_at_CRS_implied_theta"]
+               if r["rent_reading"] == "Barkai"][0]
+        req = tk["required_tau_k"]["by_labour_reading"]
+        shares = {"ours, easier": ours["pass_share_vs_required_low"],
+                  "ours, harder": ours["pass_share_vs_required_high"],
+                  "domestic base, easier": crs["pass_share_vs_required_low"],
+                  "domestic base, harder": crs["pass_share_vs_required_high"]}
+        maxima = {"ours": ours["tau_k_max_ANALYTIC"], "domestic base": crs["tau_k_max_ANALYTIC"]}
+        exceeds = {k: v > req["AMR_0.255"] for k, v in maxima.items()}
+        print(f"fiscal condition: pass shares {shares}; analytic maxima {maxima}; "
+              f"exceeds the easier required rate {exceeds}")
+        if found and any(exceeds.values()):
+            fails.append(f"absolute claim about the parameter space {found} while the "
+                         f"artifact's analytic maximum exceeds the easier required rate")
+        elif found:
+            fails.append(f"absolute claim about the parameter space: {found}. Report the "
+                         f"pass share by base and by reading instead")
+        # Any sentence CLAIMING that the condition closes must carry a pass-share macro.
+        # Sentences reporting a withdrawn claim are exempt: they are corrections, not claims.
+        WITHDRAWAL = ("earlier version", "asserted", "was wrong", "contradicts",
+                      "has been replaced", "we do not make it")
+        for sent in re.split(r"(?<=[.])\s+", t):
+            if "closes the condition" in sent and "\\result{PassShare" not in sent \
+                    and "closes nowhere" not in sent \
+                    and not any(w in sent.lower() for w in WITHDRAWAL):
+                fails.append("a sentence claims the condition closes without citing a pass "
+                             f"share macro: {sent.strip()[:90]}")
+                break
+    else:
+        print("fiscal condition gate: artifact not released, gate skipped")
 
     # the printed bibliography must carry no internal note
     bbl = HERE / "main.bbl"

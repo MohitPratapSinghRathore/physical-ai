@@ -83,13 +83,21 @@ construction was reproduced in full by the independent rebuild.
 How far short depends on the base for $\theta$, and the two answers differ enough that we report
 both. On our base, $\theta$ is measured over all US equity outstanding, foreign holders included,
 because a foreign holder bears close to no US tax at the owner level and that dollar is still in
-the surplus. There, no corner of the parameter space closes the condition: the analytic maximum
-over every combination of the swept components is \result{TauKAnalyticMax} percent, below even the
-easier threshold. On the alternative base, the same numerator over domestically held stock alone,
-$\theta$ rises to \result{CRSTheta} percent, the central rate to \result{TauKCRSCentral} percent,
-and \result{TauKCRSPassShare} percent of the parameter space closes the condition against the
-easier reading. The center falls short on either base and under either rent reading, and under the
-second rent reading the condition fails everywhere on both.
+the surplus. On the alternative base, the same numerator over domestically held stock alone,
+$\theta$ rises to \result{CRSTheta} percent and the central rate to \result{TauKCRSCentral}
+percent.
+
+The precise statement is the share of the swept parameter space in which the condition closes, and
+it differs by base and by labor tax reading. On our base that share is
+\result{PassShareOursEasy} percent against the easier reading and \result{PassShareOursHard}
+percent against the harder; on the domestic-holder base it is \result{PassShareCRSEasy} and
+\result{PassShareCRSHard} percent. An earlier version of this section said that no corner of the
+parameter space closes the condition on our base. That was wrong: the analytic maximum on our base
+is \result{AnalyticMaxOurs} percent, which exceeds the easier required rate of
+\result{RequiredEasy} percent while falling below the harder \result{RequiredHard} percent, and
+the corresponding maximum on the domestic-holder base is \result{AnalyticMaxCRS} percent. What is
+true on every base and under every reading is that the central case falls short, and that under the
+second rent reading the condition closes nowhere in the swept space.
 
 \begin{figure}[htbp]
 \centering
@@ -102,6 +110,60 @@ measured over all equity outstanding, the two right bars the same numerator over
 stock. Scenario, on a construction reproduced by independent rebuild.}
 \label{fig:tauk}
 \end{figure}
+
+\subsection{The pass-through coefficient, and what it does to the required rate}
+
+The condition in Definition~\ref{def:condition} carries a hidden coefficient. Written as
+$\tau_k \ge \tau_\ell (1 - R)$, it assumes that every dollar of displaced wages reappears as a
+dollar of taxable US capital income. Making that explicit,
+\begin{equation}
+\tau_k \, g \;\ge\; \tau_\ell\,(1 - R), \qquad
+\tau_k^{\ast} = \frac{\tau_\ell\,(1 - R)}{g},
+\label{eq:passthrough}
+\end{equation}
+where $g$ is the taxable US capital income generated per dollar of displaced wages, bounded in
+$[0,1]$ with output preserved. The band this paper has reported is the case $g = 1$, the most
+favourable one available.
+
+The parts of $g$ can be bounded. Per dollar of wages displaced a firm spends some share on AI
+capital services and keeps the rest; of what it keeps, part is competed away to consumers in lower
+prices and is never taxed as capital income at all. Of what it spends, our own decomposition of a
+dollar of AI capital spending gives \result{CapexDomesticLabor} percent domestic labor, which is
+already inside $\tau_\ell (1 - R)$ and must not be counted twice,
+\result{CapexImported} percent imported and bearing no US tax, and
+\result{CapexDomesticSurplus} percent domestic surplus, which is what $\tau_k$ prices. Taking
+\result{CapitalCostShare} percent of the wage saving as the cost of the capital and
+\result{PriceThrough} percent of the remainder as passed to consumers gives $g =
+\result{GCentral}$, against a swept range of \result{GLow} to \result{GHigh}.
+
+At that central case the required rate is \result{RequiredPTEasy} to \result{RequiredPTHarder}
+percent rather than \result{RequiredEasy} to \result{RequiredHard}. Two things follow, and the
+second is uncomfortable for a concession this paper has made. The shortfall widens: the assembled
+rate is further from the required rate than the published band implied. And the escape route
+closes: at the central case the required rate is at or above the economy-wide average capital rate
+of about twenty percent, so the reading on which the condition closes at the economy-wide rate no
+longer clears it either. All of this is scenario arithmetic, since the two shares are swept rather
+than sourced, but its direction is not in doubt: any pass-through short of one raises the required
+rate.
+
+\subsection{What the rate is a statement about}
+
+Under full expensing the deduction precedes the income. The rate assembled here is therefore a
+present-value wedge over the life of one marginal investment, not the tax collected from the
+sector in a given year. The two coincide in a steady state, with investment flat and the capital
+stock constant, where each year's deductions and each year's tax on existing income are flows of
+the same size. Every comparison in this section is a steady-state comparison, and should be read
+as one.
+
+The transition runs the other way from the direction that would flatter the paper. While
+investment grows, current deductions exceed the tax on income from a capital stock built when
+investment was smaller, so net revenue from the sector is below the steady-state figure and can be
+negative. On an illustrative path using the parameters above, with investment growing at
+\result{TransitionGrowthRate} percent a year, net entity-level tax is negative at
+\result{TransitionYearFive} per unit of investment in year five and still negative in year
+twenty-five; at zero growth it turns positive in year \result{TransitionPositiveYear}. During an
+AI investment boom, in other words, the revenue actually collected is lower than the assembled
+rate implies, not higher.
 
 \subsection{Why the rate is low, and it is not profit shifting}
 

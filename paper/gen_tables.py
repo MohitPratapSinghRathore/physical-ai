@@ -356,18 +356,39 @@ def tab_institutions_by_model():
 
 
 def tab_relief():
-    instr = [r for r in load("data/release/institutions/a4_instrument_results.json")
-             if round(r["dose"], 2) == 0.1]
-    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
-             r"Instrument & System loss removed (USD bn) & Per cent of system loss "
-             r"& Fiscal cost (USD bn) \\", r"\midrule"]
-    for r in instr:
-        name = r["instrument"].split(" (")[0].replace("ALL TOGETHER: ", "All together: ")
-        cost = "n/a" if r["fiscal_cost_bn"] is None else f"{r['fiscal_cost_bn']:,.1f}"
-        lines.append(f"{name} & {r['loss_removed_bn']:,.2f} & {r['loss_removed_pct']:.2f} "
-                     f"& {cost} \\\\")
+    """Relief instruments with the second round fixed and with demand feedback."""
+    rs = [r for r in rows("data/release/revision_r1/a3_relief_feedback.csv")
+          if r["dose"] == "0.1"]
+    pairs = {}
+    for r in rs:
+        pairs.setdefault(r["instrument"], {})[
+            "fixed" if r["feedback"].startswith("none") else "feedback"] = r
+    label = {"combined package": "All together: forbearance, income-driven repayment "
+                                 "and enhanced wage insurance",
+             "wage insurance, current US, 0.50 for 26 weeks":
+                 "Wage insurance, 0.50 replacement for 26 weeks",
+             "wage insurance, enhanced, 0.70 for 52 weeks":
+                 "Wage insurance, 0.70 replacement for 52 weeks",
+             "forbearance, full": "Forbearance on mortgage and consumer credit"}
+    order = ["forbearance, full", "wage insurance, current US, 0.50 for 26 weeks",
+             "wage insurance, enhanced, 0.70 for 52 weeks", "combined package"]
+    lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
+             r"Instrument & \multicolumn{2}{c}{Second round fixed} "
+             r"& \multicolumn{2}{c}{With demand feedback} & Fiscal cost \\",
+             r"\cmidrule(lr){2-3}\cmidrule(lr){4-5}",
+             r" & USD bn & per cent & USD bn & per cent & USD bn \\", r"\midrule"]
+    for key in order:
+        a, b = pairs[key]["fixed"], pairs[key]["feedback"]
+        cost = a["fiscal_cost_bn"]
+        cost = "n/a" if cost in ("", "None") else f"{float(cost):,.0f}"
+        lines.append(
+            f"{label[key]} & {float(a['loss_removed_bn']):,.1f} & "
+            f"{float(a['loss_removed_pct']):.1f} & {float(b['loss_removed_bn']):,.1f} & "
+            f"{float(b['loss_removed_pct']):.1f} & {cost} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     write("tab_relief.tex", "\n".join(lines))
+
+
 
 
 HOLDER_NAME = {"federal_government": "Federal government", "banks": "Banks",

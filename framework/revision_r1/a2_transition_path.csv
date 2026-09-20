@@ -1,0 +1,6 @@
+investment_growth_rate,net_tax_year_1_per_unit_of_investment,net_tax_year_5,net_tax_year_10,net_tax_year_25,negative_while_growing,years_until_net_tax_turns_positive
+0.0,-0.10225,0.031846,0.113312,0.172614,False,4
+0.1,-0.10675,-0.008287,0.03124,0.045957,True,6
+0.2,-0.110501,-0.035531,-0.014806,-0.010334,True,
+0.3,-0.113674,-0.054888,-0.043312,-0.041744,True,
+0.4,-0.116394,-0.06917,-0.062357,-0.061744,True,

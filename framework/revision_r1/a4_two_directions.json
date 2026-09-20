@@ -1,0 +1,25 @@
+{
+  "status": "SCENARIO. The multipliers are arithmetic; the dollar scale is illustrative and is not a measured counterfactual.",
+  "assembled_rate": 0.0851,
+  "required_rates_full_pass_through": {
+    "AMR_0.255": 0.110079,
+    "bottom_up_0.301": 0.129937,
+    "bottom_up_0.318": 0.137276
+  },
+  "required_rates_central_pass_through": {
+    "easier": 0.215989,
+    "harder": 0.269353
+  },
+  "economy_wide_average_capital_rate": [
+    0.2,
+    0.22
+  ],
+  "verified_bust_receipts_fall_bn": [
+    569.4,
+    955.1
+  ],
+  "result_1_levels": "Closing the displacement-side condition at full pass-through means moving the rate from 0.0851 to between 0.1101 and 0.1373, a multiple of 1.29 to 1.61. Revenue at risk in a bust is linear in the rate, so it rises by the same multiple. On the illustrative scale that is an increase of 167 to 586 billion dollars of capital-linked receipts at risk.",
+  "result_2_ratio": "The ratio of bust-state exposure to success-state revenue is the fall in the base over the base itself, and does not depend on the rate. Raising the rate does not make the state relatively more exposed to a bust.",
+  "why_no_dollar_figure": "The AI capital income base is undefined in this project's data. The same gap caused an earlier hedging ratio to be withdrawn, and it is not closed here.",
+  "verdict_on_the_framing": "The trade-off is real in levels and absent in ratio. Because we cannot size the base, we cannot say the trade-off is material in dollars, and a slogan that turns on materiality is not supported. 'One rate, two opposite jobs' is WITHDRAWN and replaced by 'fiscally exposed in both states through different tax bases', with the proportional result reported alongside."
+}

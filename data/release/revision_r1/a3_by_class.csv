@@ -1,0 +1,385 @@
+instrument,dose,feedback,cut,class,pct_assets_breaching
+combined package,0.1,"none, as published",business_model,C and I heavy,0.0
+combined package,0.1,"none, as published",business_model,auto-heavy,0.0
+combined package,0.1,"none, as published",business_model,card-heavy,0.0
+combined package,0.1,"none, as published",business_model,commercial real estate heavy,0.0
+combined package,0.1,"none, as published",business_model,credit union,0.29
+combined package,0.1,"none, as published",business_model,diversified,0.01
+combined package,0.1,"none, as published",business_model,mortgage portfolio lender,0.01
+combined package,0.1,"none, as published",size_class,community (under 1bn),0.05
+combined package,0.1,"none, as published",size_class,"credit union, 1 to 10bn",0.36
+combined package,0.1,"none, as published",size_class,"credit union, 100m to 1bn",0.49
+combined package,0.1,"none, as published",size_class,"credit union, over 10bn",0.0
+combined package,0.1,"none, as published",size_class,"credit union, under 100m",0.64
+combined package,0.1,"none, as published",size_class,large (100 to 700bn),0.0
+combined package,0.1,"none, as published",size_class,largest (over 700bn),0.0
+combined package,0.1,"none, as published",size_class,midsize (1 to 10bn),0.08
+combined package,0.1,"none, as published",size_class,regional (10 to 100bn),0.0
+combined package,0.1,income replacement and deferred payments feed spending,business_model,C and I heavy,0.0
+combined package,0.1,income replacement and deferred payments feed spending,business_model,auto-heavy,0.0
+combined package,0.1,income replacement and deferred payments feed spending,business_model,card-heavy,0.0
+combined package,0.1,income replacement and deferred payments feed spending,business_model,commercial real estate heavy,0.0
+combined package,0.1,income replacement and deferred payments feed spending,business_model,credit union,0.25
+combined package,0.1,income replacement and deferred payments feed spending,business_model,diversified,0.01
+combined package,0.1,income replacement and deferred payments feed spending,business_model,mortgage portfolio lender,0.01
+combined package,0.1,income replacement and deferred payments feed spending,size_class,community (under 1bn),0.05
+combined package,0.1,income replacement and deferred payments feed spending,size_class,"credit union, 1 to 10bn",0.36
+combined package,0.1,income replacement and deferred payments feed spending,size_class,"credit union, 100m to 1bn",0.28
+combined package,0.1,income replacement and deferred payments feed spending,size_class,"credit union, over 10bn",0.0
+combined package,0.1,income replacement and deferred payments feed spending,size_class,"credit union, under 100m",0.54
+combined package,0.1,income replacement and deferred payments feed spending,size_class,large (100 to 700bn),0.0
+combined package,0.1,income replacement and deferred payments feed spending,size_class,largest (over 700bn),0.0
+combined package,0.1,income replacement and deferred payments feed spending,size_class,midsize (1 to 10bn),0.08
+combined package,0.1,income replacement and deferred payments feed spending,size_class,regional (10 to 100bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,C and I heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,auto-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,card-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,commercial real estate heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,credit union,0.36
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,diversified,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",business_model,mortgage portfolio lender,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,community (under 1bn),0.05
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,"credit union, 1 to 10bn",0.36
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,"credit union, 100m to 1bn",0.83
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,"credit union, over 10bn",0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,"credit union, under 100m",0.87
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,large (100 to 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,largest (over 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,midsize (1 to 10bn),0.08
+"wage insurance, current US, 0.50 for 26 weeks",0.1,"none, as published",size_class,regional (10 to 100bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,C and I heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,auto-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,card-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,commercial real estate heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,credit union,0.3
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,diversified,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,business_model,mortgage portfolio lender,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,community (under 1bn),0.05
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,"credit union, 1 to 10bn",0.36
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,"credit union, 100m to 1bn",0.49
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,"credit union, over 10bn",0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,"credit union, under 100m",0.77
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,large (100 to 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,midsize (1 to 10bn),0.08
+"wage insurance, current US, 0.50 for 26 weeks",0.1,income replacement feeds spending,size_class,regional (10 to 100bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,C and I heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,auto-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,card-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,commercial real estate heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,credit union,0.31
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,diversified,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",business_model,mortgage portfolio lender,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,community (under 1bn),0.05
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,"credit union, 1 to 10bn",0.36
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,"credit union, 100m to 1bn",0.53
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,"credit union, over 10bn",0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,"credit union, under 100m",0.77
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,large (100 to 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,largest (over 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,midsize (1 to 10bn),0.08
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,"none, as published",size_class,regional (10 to 100bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,C and I heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,auto-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,card-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,commercial real estate heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,credit union,0.29
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,diversified,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,business_model,mortgage portfolio lender,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,community (under 1bn),0.05
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,"credit union, 1 to 10bn",0.36
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,"credit union, 100m to 1bn",0.49
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,"credit union, over 10bn",0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,"credit union, under 100m",0.63
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,large (100 to 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,midsize (1 to 10bn),0.08
+"wage insurance, enhanced, 0.70 for 52 weeks",0.1,income replacement feeds spending,size_class,regional (10 to 100bn),0.0
+"forbearance, full",0.1,"none, as published",business_model,C and I heavy,0.0
+"forbearance, full",0.1,"none, as published",business_model,auto-heavy,0.0
+"forbearance, full",0.1,"none, as published",business_model,card-heavy,0.0
+"forbearance, full",0.1,"none, as published",business_model,commercial real estate heavy,0.0
+"forbearance, full",0.1,"none, as published",business_model,credit union,0.3
+"forbearance, full",0.1,"none, as published",business_model,diversified,0.01
+"forbearance, full",0.1,"none, as published",business_model,mortgage portfolio lender,0.01
+"forbearance, full",0.1,"none, as published",size_class,community (under 1bn),0.05
+"forbearance, full",0.1,"none, as published",size_class,"credit union, 1 to 10bn",0.36
+"forbearance, full",0.1,"none, as published",size_class,"credit union, 100m to 1bn",0.49
+"forbearance, full",0.1,"none, as published",size_class,"credit union, over 10bn",0.0
+"forbearance, full",0.1,"none, as published",size_class,"credit union, under 100m",0.75
+"forbearance, full",0.1,"none, as published",size_class,large (100 to 700bn),0.0
+"forbearance, full",0.1,"none, as published",size_class,largest (over 700bn),0.0
+"forbearance, full",0.1,"none, as published",size_class,midsize (1 to 10bn),0.08
+"forbearance, full",0.1,"none, as published",size_class,regional (10 to 100bn),0.0
+"forbearance, full",0.1,deferred payments feed spending,business_model,C and I heavy,0.0
+"forbearance, full",0.1,deferred payments feed spending,business_model,auto-heavy,0.0
+"forbearance, full",0.1,deferred payments feed spending,business_model,card-heavy,0.0
+"forbearance, full",0.1,deferred payments feed spending,business_model,commercial real estate heavy,0.0
+"forbearance, full",0.1,deferred payments feed spending,business_model,credit union,0.3
+"forbearance, full",0.1,deferred payments feed spending,business_model,diversified,0.01
+"forbearance, full",0.1,deferred payments feed spending,business_model,mortgage portfolio lender,0.01
+"forbearance, full",0.1,deferred payments feed spending,size_class,community (under 1bn),0.05
+"forbearance, full",0.1,deferred payments feed spending,size_class,"credit union, 1 to 10bn",0.36
+"forbearance, full",0.1,deferred payments feed spending,size_class,"credit union, 100m to 1bn",0.49
+"forbearance, full",0.1,deferred payments feed spending,size_class,"credit union, over 10bn",0.0
+"forbearance, full",0.1,deferred payments feed spending,size_class,"credit union, under 100m",0.75
+"forbearance, full",0.1,deferred payments feed spending,size_class,large (100 to 700bn),0.0
+"forbearance, full",0.1,deferred payments feed spending,size_class,largest (over 700bn),0.0
+"forbearance, full",0.1,deferred payments feed spending,size_class,midsize (1 to 10bn),0.08
+"forbearance, full",0.1,deferred payments feed spending,size_class,regional (10 to 100bn),0.0
+combined package,0.25,"none, as published",business_model,C and I heavy,0.53
+combined package,0.25,"none, as published",business_model,auto-heavy,0.0
+combined package,0.25,"none, as published",business_model,card-heavy,31.75
+combined package,0.25,"none, as published",business_model,commercial real estate heavy,0.18
+combined package,0.25,"none, as published",business_model,credit union,0.94
+combined package,0.25,"none, as published",business_model,diversified,0.01
+combined package,0.25,"none, as published",business_model,mortgage portfolio lender,0.01
+combined package,0.25,"none, as published",size_class,community (under 1bn),0.14
+combined package,0.25,"none, as published",size_class,"credit union, 1 to 10bn",0.91
+combined package,0.25,"none, as published",size_class,"credit union, 100m to 1bn",2.14
+combined package,0.25,"none, as published",size_class,"credit union, over 10bn",0.0
+combined package,0.25,"none, as published",size_class,"credit union, under 100m",2.93
+combined package,0.25,"none, as published",size_class,large (100 to 700bn),4.62
+combined package,0.25,"none, as published",size_class,largest (over 700bn),0.0
+combined package,0.25,"none, as published",size_class,midsize (1 to 10bn),0.68
+combined package,0.25,"none, as published",size_class,regional (10 to 100bn),1.54
+combined package,0.25,income replacement and deferred payments feed spending,business_model,C and I heavy,0.0
+combined package,0.25,income replacement and deferred payments feed spending,business_model,auto-heavy,0.0
+combined package,0.25,income replacement and deferred payments feed spending,business_model,card-heavy,0.43
+combined package,0.25,income replacement and deferred payments feed spending,business_model,commercial real estate heavy,0.0
+combined package,0.25,income replacement and deferred payments feed spending,business_model,credit union,0.3
+combined package,0.25,income replacement and deferred payments feed spending,business_model,diversified,0.01
+combined package,0.25,income replacement and deferred payments feed spending,business_model,mortgage portfolio lender,0.01
+combined package,0.25,income replacement and deferred payments feed spending,size_class,community (under 1bn),0.05
+combined package,0.25,income replacement and deferred payments feed spending,size_class,"credit union, 1 to 10bn",0.36
+combined package,0.25,income replacement and deferred payments feed spending,size_class,"credit union, 100m to 1bn",0.49
+combined package,0.25,income replacement and deferred payments feed spending,size_class,"credit union, over 10bn",0.0
+combined package,0.25,income replacement and deferred payments feed spending,size_class,"credit union, under 100m",0.75
+combined package,0.25,income replacement and deferred payments feed spending,size_class,large (100 to 700bn),0.0
+combined package,0.25,income replacement and deferred payments feed spending,size_class,largest (over 700bn),0.0
+combined package,0.25,income replacement and deferred payments feed spending,size_class,midsize (1 to 10bn),0.29
+combined package,0.25,income replacement and deferred payments feed spending,size_class,regional (10 to 100bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,C and I heavy,0.53
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,auto-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,card-heavy,84.4
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,commercial real estate heavy,0.18
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,credit union,3.28
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,diversified,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",business_model,mortgage portfolio lender,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,community (under 1bn),0.14
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,"credit union, 1 to 10bn",3.18
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,"credit union, 100m to 1bn",4.97
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,"credit union, over 10bn",2.24
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,"credit union, under 100m",4.67
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,large (100 to 700bn),13.91
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,largest (over 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,midsize (1 to 10bn),0.68
+"wage insurance, current US, 0.50 for 26 weeks",0.25,"none, as published",size_class,regional (10 to 100bn),1.54
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,C and I heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,auto-heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,card-heavy,31.16
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,commercial real estate heavy,0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,credit union,1.69
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,diversified,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,business_model,mortgage portfolio lender,0.01
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,community (under 1bn),0.05
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,"credit union, 1 to 10bn",2.08
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,"credit union, 100m to 1bn",2.82
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,"credit union, over 10bn",0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,"credit union, under 100m",3.57
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,large (100 to 700bn),4.62
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,midsize (1 to 10bn),0.29
+"wage insurance, current US, 0.50 for 26 weeks",0.25,income replacement feeds spending,size_class,regional (10 to 100bn),1.54
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,C and I heavy,0.53
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,auto-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,card-heavy,84.4
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,commercial real estate heavy,0.18
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,credit union,1.74
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,diversified,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",business_model,mortgage portfolio lender,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,community (under 1bn),0.14
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,"credit union, 1 to 10bn",2.08
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,"credit union, 100m to 1bn",3.1
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,"credit union, over 10bn",0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,"credit union, under 100m",3.62
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,large (100 to 700bn),13.91
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,largest (over 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,midsize (1 to 10bn),0.68
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,"none, as published",size_class,regional (10 to 100bn),1.54
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,C and I heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,auto-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,card-heavy,0.43
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,commercial real estate heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,credit union,0.37
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,diversified,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,business_model,mortgage portfolio lender,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,community (under 1bn),0.05
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,"credit union, 1 to 10bn",0.36
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,"credit union, 100m to 1bn",0.83
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,"credit union, over 10bn",0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,"credit union, under 100m",1.14
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,large (100 to 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,midsize (1 to 10bn),0.29
+"wage insurance, enhanced, 0.70 for 52 weeks",0.25,income replacement feeds spending,size_class,regional (10 to 100bn),0.0
+"forbearance, full",0.25,"none, as published",business_model,C and I heavy,0.53
+"forbearance, full",0.25,"none, as published",business_model,auto-heavy,0.0
+"forbearance, full",0.25,"none, as published",business_model,card-heavy,84.4
+"forbearance, full",0.25,"none, as published",business_model,commercial real estate heavy,0.18
+"forbearance, full",0.25,"none, as published",business_model,credit union,1.44
+"forbearance, full",0.25,"none, as published",business_model,diversified,0.01
+"forbearance, full",0.25,"none, as published",business_model,mortgage portfolio lender,0.01
+"forbearance, full",0.25,"none, as published",size_class,community (under 1bn),0.14
+"forbearance, full",0.25,"none, as published",size_class,"credit union, 1 to 10bn",1.77
+"forbearance, full",0.25,"none, as published",size_class,"credit union, 100m to 1bn",2.44
+"forbearance, full",0.25,"none, as published",size_class,"credit union, over 10bn",0.0
+"forbearance, full",0.25,"none, as published",size_class,"credit union, under 100m",3.16
+"forbearance, full",0.25,"none, as published",size_class,large (100 to 700bn),13.91
+"forbearance, full",0.25,"none, as published",size_class,largest (over 700bn),0.0
+"forbearance, full",0.25,"none, as published",size_class,midsize (1 to 10bn),0.68
+"forbearance, full",0.25,"none, as published",size_class,regional (10 to 100bn),1.54
+"forbearance, full",0.25,deferred payments feed spending,business_model,C and I heavy,0.53
+"forbearance, full",0.25,deferred payments feed spending,business_model,auto-heavy,0.0
+"forbearance, full",0.25,deferred payments feed spending,business_model,card-heavy,84.4
+"forbearance, full",0.25,deferred payments feed spending,business_model,commercial real estate heavy,0.18
+"forbearance, full",0.25,deferred payments feed spending,business_model,credit union,1.11
+"forbearance, full",0.25,deferred payments feed spending,business_model,diversified,0.01
+"forbearance, full",0.25,deferred payments feed spending,business_model,mortgage portfolio lender,0.01
+"forbearance, full",0.25,deferred payments feed spending,size_class,community (under 1bn),0.14
+"forbearance, full",0.25,deferred payments feed spending,size_class,"credit union, 1 to 10bn",1.23
+"forbearance, full",0.25,deferred payments feed spending,size_class,"credit union, 100m to 1bn",2.14
+"forbearance, full",0.25,deferred payments feed spending,size_class,"credit union, over 10bn",0.0
+"forbearance, full",0.25,deferred payments feed spending,size_class,"credit union, under 100m",3.04
+"forbearance, full",0.25,deferred payments feed spending,size_class,large (100 to 700bn),13.91
+"forbearance, full",0.25,deferred payments feed spending,size_class,largest (over 700bn),0.0
+"forbearance, full",0.25,deferred payments feed spending,size_class,midsize (1 to 10bn),0.68
+"forbearance, full",0.25,deferred payments feed spending,size_class,regional (10 to 100bn),1.54
+combined package,0.5,"none, as published",business_model,C and I heavy,51.08
+combined package,0.5,"none, as published",business_model,auto-heavy,54.34
+combined package,0.5,"none, as published",business_model,card-heavy,99.29
+combined package,0.5,"none, as published",business_model,commercial real estate heavy,3.17
+combined package,0.5,"none, as published",business_model,credit union,30.46
+combined package,0.5,"none, as published",business_model,diversified,21.78
+combined package,0.5,"none, as published",business_model,mortgage portfolio lender,4.45
+combined package,0.5,"none, as published",size_class,community (under 1bn),3.42
+combined package,0.5,"none, as published",size_class,"credit union, 1 to 10bn",23.13
+combined package,0.5,"none, as published",size_class,"credit union, 100m to 1bn",23.63
+combined package,0.5,"none, as published",size_class,"credit union, over 10bn",50.65
+combined package,0.5,"none, as published",size_class,"credit union, under 100m",13.13
+combined package,0.5,"none, as published",size_class,large (100 to 700bn),19.85
+combined package,0.5,"none, as published",size_class,largest (over 700bn),38.29
+combined package,0.5,"none, as published",size_class,midsize (1 to 10bn),9.8
+combined package,0.5,"none, as published",size_class,regional (10 to 100bn),6.97
+combined package,0.5,income replacement and deferred payments feed spending,business_model,C and I heavy,0.0
+combined package,0.5,income replacement and deferred payments feed spending,business_model,auto-heavy,0.0
+combined package,0.5,income replacement and deferred payments feed spending,business_model,card-heavy,27.71
+combined package,0.5,income replacement and deferred payments feed spending,business_model,commercial real estate heavy,0.0
+combined package,0.5,income replacement and deferred payments feed spending,business_model,credit union,0.53
+combined package,0.5,income replacement and deferred payments feed spending,business_model,diversified,0.01
+combined package,0.5,income replacement and deferred payments feed spending,business_model,mortgage portfolio lender,0.01
+combined package,0.5,income replacement and deferred payments feed spending,size_class,community (under 1bn),0.05
+combined package,0.5,income replacement and deferred payments feed spending,size_class,"credit union, 1 to 10bn",0.36
+combined package,0.5,income replacement and deferred payments feed spending,size_class,"credit union, 100m to 1bn",1.66
+combined package,0.5,income replacement and deferred payments feed spending,size_class,"credit union, over 10bn",0.0
+combined package,0.5,income replacement and deferred payments feed spending,size_class,"credit union, under 100m",1.72
+combined package,0.5,income replacement and deferred payments feed spending,size_class,large (100 to 700bn),4.62
+combined package,0.5,income replacement and deferred payments feed spending,size_class,largest (over 700bn),0.0
+combined package,0.5,income replacement and deferred payments feed spending,size_class,midsize (1 to 10bn),0.29
+combined package,0.5,income replacement and deferred payments feed spending,size_class,regional (10 to 100bn),0.37
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,C and I heavy,51.08
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,auto-heavy,54.78
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,card-heavy,99.29
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,commercial real estate heavy,3.33
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,credit union,44.66
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,diversified,22.99
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",business_model,mortgage portfolio lender,4.94
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,community (under 1bn),4.58
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,"credit union, 1 to 10bn",37.41
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,"credit union, 100m to 1bn",36.59
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,"credit union, over 10bn",66.33
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,"credit union, under 100m",19.6
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,large (100 to 700bn),19.85
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,largest (over 700bn),38.29
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,midsize (1 to 10bn),10.65
+"wage insurance, current US, 0.50 for 26 weeks",0.5,"none, as published",size_class,regional (10 to 100bn),13.66
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,C and I heavy,26.51
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,auto-heavy,54.19
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,card-heavy,96.54
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,commercial real estate heavy,0.26
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,credit union,30.42
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,diversified,0.39
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,business_model,mortgage portfolio lender,0.14
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,community (under 1bn),1.01
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,"credit union, 1 to 10bn",22.78
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,"credit union, 100m to 1bn",24.31
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,"credit union, over 10bn",50.65
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,"credit union, under 100m",13.93
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,large (100 to 700bn),18.04
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,midsize (1 to 10bn),4.53
+"wage insurance, current US, 0.50 for 26 weeks",0.5,income replacement feeds spending,size_class,regional (10 to 100bn),3.66
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,C and I heavy,51.08
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,auto-heavy,54.67
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,card-heavy,99.29
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,commercial real estate heavy,3.27
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,credit union,34.82
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,diversified,22.58
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",business_model,mortgage portfolio lender,4.86
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,community (under 1bn),4.26
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,"credit union, 1 to 10bn",28.59
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,"credit union, 100m to 1bn",29.32
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,"credit union, over 10bn",52.23
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,"credit union, under 100m",15.91
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,large (100 to 700bn),19.85
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,largest (over 700bn),38.29
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,midsize (1 to 10bn),10.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,"none, as published",size_class,regional (10 to 100bn),11.67
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,C and I heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,auto-heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,card-heavy,31.75
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,commercial real estate heavy,0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,credit union,1.72
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,diversified,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,business_model,mortgage portfolio lender,0.01
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,community (under 1bn),0.05
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,"credit union, 1 to 10bn",2.08
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,"credit union, 100m to 1bn",2.98
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,"credit union, over 10bn",0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,"credit union, under 100m",3.57
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,large (100 to 700bn),4.62
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,largest (over 700bn),0.0
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,midsize (1 to 10bn),0.59
+"wage insurance, enhanced, 0.70 for 52 weeks",0.5,income replacement feeds spending,size_class,regional (10 to 100bn),1.54
+"forbearance, full",0.5,"none, as published",business_model,C and I heavy,51.08
+"forbearance, full",0.5,"none, as published",business_model,auto-heavy,54.34
+"forbearance, full",0.5,"none, as published",business_model,card-heavy,99.29
+"forbearance, full",0.5,"none, as published",business_model,commercial real estate heavy,3.17
+"forbearance, full",0.5,"none, as published",business_model,credit union,33.55
+"forbearance, full",0.5,"none, as published",business_model,diversified,22.56
+"forbearance, full",0.5,"none, as published",business_model,mortgage portfolio lender,4.5
+"forbearance, full",0.5,"none, as published",size_class,community (under 1bn),3.66
+"forbearance, full",0.5,"none, as published",size_class,"credit union, 1 to 10bn",27.12
+"forbearance, full",0.5,"none, as published",size_class,"credit union, 100m to 1bn",26.72
+"forbearance, full",0.5,"none, as published",size_class,"credit union, over 10bn",52.23
+"forbearance, full",0.5,"none, as published",size_class,"credit union, under 100m",14.3
+"forbearance, full",0.5,"none, as published",size_class,large (100 to 700bn),19.85
+"forbearance, full",0.5,"none, as published",size_class,largest (over 700bn),38.29
+"forbearance, full",0.5,"none, as published",size_class,midsize (1 to 10bn),9.9
+"forbearance, full",0.5,"none, as published",size_class,regional (10 to 100bn),11.67
+"forbearance, full",0.5,deferred payments feed spending,business_model,C and I heavy,49.68
+"forbearance, full",0.5,deferred payments feed spending,business_model,auto-heavy,54.34
+"forbearance, full",0.5,deferred payments feed spending,business_model,card-heavy,99.29
+"forbearance, full",0.5,deferred payments feed spending,business_model,commercial real estate heavy,1.99
+"forbearance, full",0.5,deferred payments feed spending,business_model,credit union,32.25
+"forbearance, full",0.5,deferred payments feed spending,business_model,diversified,21.77
+"forbearance, full",0.5,deferred payments feed spending,business_model,mortgage portfolio lender,4.45
+"forbearance, full",0.5,deferred payments feed spending,size_class,community (under 1bn),3.0
+"forbearance, full",0.5,deferred payments feed spending,size_class,"credit union, 1 to 10bn",25.17
+"forbearance, full",0.5,deferred payments feed spending,size_class,"credit union, 100m to 1bn",25.18
+"forbearance, full",0.5,deferred payments feed spending,size_class,"credit union, over 10bn",52.23
+"forbearance, full",0.5,deferred payments feed spending,size_class,"credit union, under 100m",13.82
+"forbearance, full",0.5,deferred payments feed spending,size_class,large (100 to 700bn),19.85
+"forbearance, full",0.5,deferred payments feed spending,size_class,largest (over 700bn),38.29
+"forbearance, full",0.5,deferred payments feed spending,size_class,midsize (1 to 10bn),9.12
+"forbearance, full",0.5,deferred payments feed spending,size_class,regional (10 to 100bn),6.97

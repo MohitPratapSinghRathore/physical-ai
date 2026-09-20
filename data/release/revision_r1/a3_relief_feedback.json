@@ -1,0 +1,74 @@
+{
+  "status": "SCENARIO. Balance sheets measured; losses and feedback conditional.",
+  "what_was_imposed_by_construction": "the published instrument test held the second round fixed, so relief could only reach the first round, which is about a ninth of the total at the ten percent displacement level. The result that relief removes under a tenth of system losses was close to mechanical.",
+  "the_two_treatments_are_bounds": "the published treatment, with the second round held fixed, is a LOWER bound on what relief removes. Full feedback is an UPPER bound, because the instrument runs for a year while the loss path does not, so income replacement cannot hold the demand shortfall down for the whole path. The honest statement is the pair, with the duration mismatch named.",
+  "expected_headline": {
+    "statement": "relief materially protects the most vulnerable institutions while its effect on aggregate losses is modest",
+    "verdict": "HALF CONFIRMED. The protection of the most exposed classes is large under both treatments. The aggregate effect is modest only in the no-feedback treatment, which imposed it; with feedback the package removes most of the system loss."
+  },
+  "by_dose": [
+    {
+      "dose": 0.1,
+      "inside_observed_data_range": true,
+      "system_loss_bn": 204.99,
+      "removed_no_feedback_bn": 19.71,
+      "removed_no_feedback_pct": 9.61,
+      "removed_with_feedback_bn": 127.51,
+      "removed_with_feedback_pct": 62.2,
+      "fiscal_cost_bn": 317.58,
+      "assets_breaching_before_pct": 0.04,
+      "assets_breaching_no_feedback_pct": 0.034,
+      "assets_breaching_with_feedback_pct": 0.03,
+      "credit_union_assets_breaching_before_after": [
+        0.29,
+        0.25
+      ],
+      "card_heavy_assets_breaching_before_after": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "dose": 0.25,
+      "inside_observed_data_range": true,
+      "system_loss_bn": 547.13,
+      "removed_no_feedback_bn": 48.72,
+      "removed_no_feedback_pct": 8.91,
+      "removed_with_feedback_bn": 352.91,
+      "removed_with_feedback_pct": 64.5,
+      "fiscal_cost_bn": 946.77,
+      "assets_breaching_before_pct": 4.02,
+      "assets_breaching_no_feedback_pct": 1.477,
+      "assets_breaching_with_feedback_pct": 0.053,
+      "credit_union_assets_breaching_before_after": [
+        0.94,
+        0.3
+      ],
+      "card_heavy_assets_breaching_before_after": [
+        31.75,
+        0.43
+      ]
+    },
+    {
+      "dose": 0.5,
+      "inside_observed_data_range": false,
+      "system_loss_bn": 1262.06,
+      "removed_no_feedback_bn": 95.84,
+      "removed_no_feedback_pct": 7.59,
+      "removed_with_feedback_bn": 872.67,
+      "removed_with_feedback_pct": 69.15,
+      "fiscal_cost_bn": 2798.52,
+      "assets_breaching_before_pct": 28.2,
+      "assets_breaching_no_feedback_pct": 25.346,
+      "assets_breaching_with_feedback_pct": 1.256,
+      "credit_union_assets_breaching_before_after": [
+        30.46,
+        0.53
+      ],
+      "card_heavy_assets_breaching_before_after": [
+        99.29,
+        27.71
+      ]
+    }
+  ]
+}

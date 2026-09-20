@@ -1,0 +1,6 @@
+rate_definition,rate_low,rate_high,multiple_of_assembled_low,multiple_of_assembled_high,illustrative_bust_revenue_at_risk_low_bn,illustrative_bust_revenue_at_risk_high_bn
+assembled rate on AI surplus,0.0851,0.0851,1.0,1.0,569.4,955.1
+"required, easier labor tax reading, full pass-through",0.110079,0.110079,1.2935,1.2935,736.5,1235.4
+"required, harder labor tax reading, full pass-through",0.137276,0.137276,1.6131,1.6131,918.5,1540.7
+required at the central pass-through case,0.215989,0.269353,2.5381,3.1651,1445.2,3023.0
+economy-wide average capital rate,0.2,0.22,2.3502,2.5852,1338.2,2469.1
