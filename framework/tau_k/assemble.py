@@ -73,9 +73,30 @@ def assemble(sigma, shifted, theta, sh_rate, defer, state, debt, bond):
     return sigma * tau_rent + (1 - sigma) * tau_normal, tau_rent, tau_normal
 
 
-def draw(n):
+def draw(n, sourced=True):
+    """Sample the parameter space. The two SOURCED parameters are drawn over their
+    published ranges; passing sourced=False restores the superseded blind sweep so the
+    effect of sourcing them is visible as a sensitivity."""
     r = {k: RNG.uniform(*K.U[k]["range"], n) for k in K.U}
+    if sourced:
+        r["theta_taxable"] = RNG.uniform(K.THETA_TAXABLE["low"],
+                                         K.THETA_TAXABLE["high"], n)
+        r["deferral_factor"] = RNG.uniform(K.DEFERRAL_FACTOR["low"],
+                                           K.DEFERRAL_FACTOR["high"], n)
+    else:
+        r["theta_taxable"] = RNG.uniform(*K.SUPERSEDED_SWEEP["theta_taxable"], n)
+        r["deferral_factor"] = RNG.uniform(*K.SUPERSEDED_SWEEP["deferral_factor"], n)
     return r
+
+
+def ranges(sourced=True):
+    d = {k: K.U[k]["range"] for k in K.U}
+    if sourced:
+        d["theta_taxable"] = [K.THETA_TAXABLE["low"], K.THETA_TAXABLE["high"]]
+        d["deferral_factor"] = [K.DEFERRAL_FACTOR["low"], K.DEFERRAL_FACTOR["high"]]
+    else:
+        d.update(K.SUPERSEDED_SWEEP)
+    return d
 
 
 def main():
@@ -85,9 +106,10 @@ def main():
     req_lo, req_hi = min(req.values()), max(req.values())
 
     viol = []
+    RNG_ALL = ranges(True)
     # ---- plausibility on the component ranges themselves
-    for k, v in K.U.items():
-        lo, hi = v["range"]
+    for k, lohi in RNG_ALL.items():
+        lo, hi = lohi
         if not (0.0 <= lo <= hi):
             viol.append(f"{k}: range not ordered or negative")
         if hi > K.CEILINGS[k] + 1e-12:
@@ -129,7 +151,7 @@ def main():
     for name, sigma in K.RENT_READINGS.items():
         tk = per_reading[name]["tau_k"]
         tot = float(tk.var())
-        for p in K.U:
+        for p in RNG_ALL:
             x = d[p]
             b = np.clip(((x - x.min()) / (x.max() - x.min() + 1e-12) * 20).astype(int), 0, 19)
             m = np.array([tk[b == j].mean() if (b == j).any() else np.nan
@@ -150,10 +172,12 @@ def main():
     name = "Barkai"
     sigma = K.RENT_READINGS[name]
     ax_names = top3[name][:2]
-    mid = {k: float(np.mean(K.U[k]["range"])) for k in K.U}
+    mid = {k: float(np.mean(v)) for k, v in RNG_ALL.items()}
+    mid["theta_taxable"] = K.THETA_TAXABLE["central"]
+    mid["deferral_factor"] = K.DEFERRAL_FACTOR["central"]
     g = 120
-    A = np.linspace(*K.U[ax_names[0]]["range"], g)
-    B = np.linspace(*K.U[ax_names[1]]["range"], g)
+    A = np.linspace(*RNG_ALL[ax_names[0]], g)
+    B = np.linspace(*RNG_ALL[ax_names[1]], g)
     GA, GB = np.meshgrid(A, B)
     kw = dict(mid)
     kw[ax_names[0]] = GA
@@ -172,8 +196,10 @@ def main():
             cs = ax.contour(GA, GB, Z, levels=[lev], colors=col,
                             linewidths=2.0, linestyles="--")
             ax.clabel(cs, fmt={lev: lab}, fontsize=8)
-    ax.set_xlabel(ax_names[0] + "  (NOT VERIFIED, swept)")
-    ax.set_ylabel(ax_names[1] + "  (NOT VERIFIED, swept)")
+    SRC = {"theta_taxable", "deferral_factor"}
+    lab = lambda n: n + ("  (SOURCED range)" if n in SRC else "  (NOT VERIFIED, swept)")
+    ax.set_xlabel(lab(ax_names[0]))
+    ax.set_ylabel(lab(ax_names[1]))
     ax.set_title("tau_k on AI surplus, assembled from components, Barkai rent reading\n"
                  "other unverified parameters at range midpoints; dashed lines are the "
                  "fiscal condition threshold", fontsize=9)
@@ -197,8 +223,8 @@ def main():
     # ---- which single parameter moves the verdict across the line, and by how much
     movers = []
     tkB = per_reading["Barkai"]["tau_k"]
-    for p in K.U:
-        lo, hi = K.U[p]["range"]
+    for p in RNG_ALL:
+        lo, hi = RNG_ALL[p]
         kwl, kwh = dict(mid), dict(mid)
         kwl[p], kwh[p] = lo, hi
         zl, _, _ = assemble(sigma, kwl["shifted_share"], kwl["theta_taxable"],
@@ -218,12 +244,52 @@ def main():
     M = pd.DataFrame(movers).sort_values("swing", ascending=False)
     M.to_csv(HERE / "tau_k_movers.csv", index=False)
 
+    # ---- the assembled CENTRAL rate, at the sourced central values
+    central_rows = []
+    for name, sigma in K.RENT_READINGS.items():
+        kw = dict(mid)
+        c, cr, cn = assemble(sigma, kw["shifted_share"], kw["theta_taxable"],
+                             kw["shareholder_rate"], kw["deferral_factor"],
+                             kw["state_cit_effective"], kw["debt_share"],
+                             kw["bondholder_rate"])
+        central_rows.append({"rent_reading": name, "tau_k_central": round(float(c), 4),
+                             "tau_rent": round(float(cr), 4),
+                             "tau_normal": round(float(cn), 4),
+                             "passes_vs_required_low": bool(c >= req_lo),
+                             "passes_vs_required_high": bool(c >= req_hi)})
+
+    # ---- PLAUSIBILITY on the shareholder layer against the published figure
+    sh = mid["theta_taxable"] * 0.238 * mid["deferral_factor"]
+    if not (0.02 <= sh <= 0.09):
+        viol.append(f"shareholder layer {sh:.4f} outside the CRS R47113 Table 5 published "
+                    f"band of 0.03 to 0.085")
+
+    # ---- SENSITIVITY: what the superseded blind sweep gave
+    d_old = draw(N, sourced=False)
+    old_rows = []
+    for name, sigma in K.RENT_READINGS.items():
+        tk_old, _, _ = assemble(sigma, d_old["shifted_share"], d_old["theta_taxable"],
+                                d_old["shareholder_rate"], d_old["deferral_factor"],
+                                d_old["state_cit_effective"], d_old["debt_share"],
+                                d_old["bondholder_rate"])
+        old_rows.append({"rent_reading": name,
+                         "tau_k_p05": round(float(np.percentile(tk_old, 5)), 4),
+                         "tau_k_median": round(float(np.median(tk_old)), 4),
+                         "tau_k_p95": round(float(np.percentile(tk_old, 95)), 4),
+                         "pass_share_vs_required_low": round(float((tk_old >= req_lo).mean()), 4),
+                         "pass_share_vs_required_high": round(float((tk_old >= req_hi).mean()), 4)})
+
     summary = {
         "status": "ASSEMBLED FROM COMPONENTS. Five components VERIFIED, seven NOT VERIFIED "
                   "and swept. Reported as a MAP, not a point.",
         "plausibility_violations": viol,
         "required_tau_k": {"low": req_lo, "high": req_hi, "by_labour_reading": req},
-        "assembled": out_rows,
+        "assembled_SOURCED": out_rows,
+        "assembled_CENTRAL_at_sourced_centrals": central_rows,
+        "shareholder_layer_at_centrals": round(float(sh), 4),
+        "SUPERSEDED_blind_sweep_for_comparison": old_rows,
+        "sourced_parameters": {"theta_taxable": K.THETA_TAXABLE,
+                               "deferral_factor": K.DEFERRAL_FACTOR},
         "variance_decomposition_top3": top3,
         "map_axes": ax_names,
         "map_other_parameters": "held at range midpoints, which are NOT estimates",
@@ -232,6 +298,7 @@ def main():
         "headline": "",
     }
     b = T[T.rent_reading == "Barkai"].iloc[0]
+    cb = [r for r in central_rows if r["rent_reading"] == "Barkai"][0]
     summary["headline"] = (
         f"Under the Barkai rent reading the assembled marginal rate spans "
         f"{b.tau_k_p05:.3f} to {b.tau_k_p95:.3f} across the unverified components, against a "

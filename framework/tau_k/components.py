@@ -52,26 +52,52 @@ RENT_READINGS = {"Barkai": 0.351, "Karabarbounis_Neiman_case_R": 0.00}
 # obtained. They are SWEPT over the stated ranges and no point value is asserted. Each
 # range is bounded by statute or by structure, and the bound is named.
 
+# ------------------------------------------ SOURCED IN A115, no longer swept blind
+# Both were verified from the documents the owner supplied. Full extraction, with tables,
+# page references and the method, is in data/raw/manual/SHAREHOLDER_PARAMS_extracted.md.
+
+# THETA, the share of US corporate equity held in TAXABLE accounts.
+# Rosenthal and Austin (Tax Notes, 16 May 2016, p. 923) Table 2: 0.242 of C corporation
+# stock in 2015, down from 0.836 in 1965. Rosenthal and Burke (2020, NYU Tax Policy
+# Colloquium, quoted in CRS R47113 note 9): 0.25, with 0.30 in retirement assets and the
+# remainder foreign. Rosenthal and Mucciolo (Tax Notes Federal 183(1), 1 April 2024)
+# Table 5: 0.27 of total US equity in 2022; Table 7: 0.28 of publicly traded stock.
+# Method: Fed Financial Accounts L.224, with the residual household sector decomposed,
+# pass-through issuances removed and their holdings allocated to beneficial owners.
+# Non-taxable holders in 2022: foreign 0.42, IRAs 0.11, DB 0.07, DC 0.07, nonprofits 0.04,
+# life insurance separate accounts 0.02, government 0.01.
+THETA_TAXABLE = {"low": 0.24, "central": 0.27, "high": 0.28,
+                 "low_source": "Rosenthal and Austin 2016 Table 2, C corporation stock, 2015",
+                 "central_source": "Rosenthal and Mucciolo 2024 Table 5, total US equity, 2022",
+                 "high_source": "Rosenthal and Mucciolo 2024 Table 7, publicly traded, 2022"}
+
+# THE DEFERRAL FACTOR, effective over statutory, from deferral, unindexed inflation,
+# step-up in basis at death, and the distribution of shareholder rates. CRS R47113 Table 5,
+# third row, taken BEFORE its taxable-share adjustment so that theta is not counted twice:
+#   no-dividend stock   9.8 / 23.8 = 0.4118
+#   4 percent dividend 18.8 / 23.8 = 0.7899
+# CRS states dividends are now "closer to 2 percent" because buybacks exceed half of
+# distributions, "so the rate is somewhere in between": the midpoint is 0.6008.
+# INDEPENDENT CROSS-CHECK, CBO 2014 Tables A-3 and A-4: gains are 3.4 pct short-term at
+# 32.3, 49.6 pct long-term at 21.2, and 46.9 pct held until death and UNTAXED, implying
+# 11.61 / 23.8 = 0.488, inside this range. Two separate datasets agree that roughly half of
+# accrued gains never bear tax.
+DEFERRAL_FACTOR = {"low": 0.4118, "central": 0.6008, "high": 0.7899,
+                   "low_source": "CRS R47113 Table 5, no-dividend stock, 7-year holding",
+                   "central_source": "CRS R47113 Table 5, midpoint, dividends near 2 percent",
+                   "high_source": "CRS R47113 Table 5, 4 percent dividend stock",
+                   "cross_check_cbo_2014": 0.488}
+
+# The superseded blind sweeps, RETAINED as a sensitivity so the effect of sourcing is visible.
+SUPERSEDED_SWEEP = {"theta_taxable": [0.20, 0.60], "deferral_factor": [0.40, 1.00]}
+
 U = {
-    "theta_taxable": {
-        "range": [0.20, 0.60],
-        "bound": "a share, so [0,1]; narrowed only by the qualitative fact that retirement "
-                 "accounts and foreign holders together are widely described as the "
-                 "majority of US corporate equity.",
-        "sought": "Rosenthal and Austin, Tax Policy Center. Site returned HTTP 403.",
-    },
     "shareholder_rate": {
         "range": [0.15, 0.238],
         "bound": "statutory ceiling: the top long-term capital gain and qualified dividend "
                  "rate of 20 percent plus the 3.8 percent net investment income tax is 23.8 "
                  "percent, which no shareholder layer may exceed.",
         "sought": "a sourced average realised rate across the holder distribution.",
-    },
-    "deferral_factor": {
-        "range": [0.40, 1.00],
-        "bound": "a share, so [0,1]. 1.0 is immediate realisation, the ceiling; deferral and "
-                 "basis step-up can only reduce it.",
-        "sought": "a sourced accrual-equivalent discount.",
     },
     "state_cit_effective": {
         "range": [0.00, 0.095],
@@ -102,8 +128,8 @@ U = {
 }
 
 CEILINGS = {"shareholder_rate": 0.238, "bondholder_rate": 0.37, "state_cit_effective": 0.095,
-            "theta_taxable": 1.0, "deferral_factor": 1.0, "debt_share": 1.0,
-            "shifted_share": 1.0}
+            "debt_share": 1.0, "shifted_share": 1.0,
+            "theta_taxable": 1.0, "deferral_factor": 1.0}
 
 
 def dump():
@@ -124,12 +150,14 @@ def dump():
             "shifted_share_single_verified_value": V_SHIFTED,
             "rent_readings_NEVER_AVERAGED": RENT_READINGS,
         },
+        "SOURCED_A115": {"theta_taxable": THETA_TAXABLE,
+                         "deferral_factor": DEFERRAL_FACTOR,
+                         "superseded_blind_sweep": SUPERSEDED_SWEEP},
         "not_verified_swept": U,
         "the_main_result_of_this_module":
-            "Of the components needed to pin the rate, five are verified and seven are not. "
-            "The seven include every parameter of the shareholder layer. A point estimate of "
-            "tau_k therefore cannot be asserted from sources, and the honest object is a map "
-            "over the unverified components rather than a verdict.",
+            "A115: the two parameters that carried 62 percent of the variance are now SOURCED. "
+            "Seven components verified, five still swept. The map remains, over a much "
+            "smaller space.",
     }
     (HERE / "components.json").write_text(json.dumps(out, indent=2))
     return out

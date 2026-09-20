@@ -125,9 +125,7 @@ these could not be pinned.
 
 | parameter | range swept | bound on the range | what was sought and what happened |
 |---|---|---|---|
-| taxable-shareholder share of US corporate equity | 0.20 to 0.60 | a share, [0,1] | Rosenthal and Austin, Tax Policy Center. Site returned HTTP 403 on both the TaxVox and the full-publication URLs |
 | shareholder rate on dividends and realised gains | 0.15 to 0.238 | statutory ceiling: 20 percent top long-term rate plus the 3.8 percent net investment income tax | a sourced average realised rate across the holder distribution |
-| deferral factor | 0.40 to 1.00 | a share, [0,1]; 1.0 is immediate realisation | a sourced accrual-equivalent discount |
 | state effective corporate income tax rate | 0.00 to 0.095 | state statutory rates run from zero to the high single digits | a verified apportioned effective rate |
 | marginal debt share of AI capital spending | 0.00 to 0.40 | a share; zero is the all-equity structure reported on the nine filers' own books in Module B | a verified marginal debt share |
 | bondholder marginal rate | 0.15 to 0.37 | ordinary income treatment, so the top ordinary rate is the ceiling | a sourced average bondholder rate |
@@ -161,3 +159,23 @@ structural reason that does not depend on either value: the compensation in ques
 already inside the wage bill and inside the retained wage share R, so crediting it to tau_k
 would double count it. See `framework/tau_k/labor_component.py`. The two parameters are used
 only to size the import leakage, which is reported as a scenario.
+
+### A115: two of the A113 items are CLEARED
+
+**The taxable-shareholder share and the deferral factor are no longer unverified.** The owner
+supplied the source documents and both were read and recorded. They have been removed from
+the A113 table above and now carry dependent claims.
+
+| parameter | sourced range | source |
+|---|---|---|
+| taxable-shareholder share of US corporate equity | **0.24 to 0.28, central 0.27** | Rosenthal and Austin, Tax Notes, 16 May 2016, p. 923, Table 2 (0.242, C corporation stock, 2015); Rosenthal and Burke 2020 via CRS R47113 note 9 (0.25); Rosenthal and Mucciolo, Tax Notes Federal 183(1), 1 April 2024, Table 5 (0.27 total US equity, 2022) and Table 7 (0.28 publicly traded) |
+| deferral factor on capital gains | **0.412 to 0.790, central 0.601** | CRS R47113 Table 5, third row, before its taxable-share adjustment so theta is not double counted. Cross-checked at 0.488 from CBO 2014 Tables A-3 and A-4 (46.9 percent of gains held until death and untaxed) |
+
+Full extraction, with the method and the holder breakdown, is in
+`data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`. **The four source PDFs were supplied in
+session and are named there for placement on disk.**
+
+**What remains unverified and now matters most: the BONDHOLDER MARGINAL RATE**, swept over
+0.15 to 0.37. It carries **44 percent** of the residual variance in the assembled rate and is
+the only single parameter that can still cross the fiscal threshold on its own. It is the
+next item to clear.

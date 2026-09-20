@@ -1,124 +1,118 @@
 # tau_k on AI surplus, rebuilt from components
 
 `definitions.md` first (what each published rate already contains), then `components.py`
-(the components and their verification status), then `labor_component.py`
-(item 2(g)), then `assemble.py` (assembly, variance
-decomposition, map), then `base_argument.md` (which base, and the case against ours).
+(the components and their verification status), then `labor_component.py` (item 2(g)), then
+`assemble.py` (assembly, variance decomposition, map), then `base_argument.md` (which base,
+and the case against ours).
 
 Rebuild: `python components.py && python labor_component.py && python assemble.py`. Figure at
-`paper/figures/tau_k_map.png`.
+`paper/figures/tau_k_map.png`. The A115 source extraction, with tables and page references,
+is in `data/raw/manual/SHAREHOLDER_PARAMS_extracted.md`.
 
-## Gate report
+## Gate report, A115
 
 ### Plausibility violations
 
 **None.** Every component range sits inside its named statutory or structural ceiling; every
 share is in [0, 1]; the assembled rate lies between the lowest and highest
-component-consistent values in both rent readings; the assembled maximum is below the ceiling
-on a fully domestic, fully distributed, fully taxable, all-equity dollar (0.3142 under
-Barkai, 0.2380 under Karabarbounis and Neiman). The one negative value that appears,
-a minimum of -0.0128 under the Karabarbounis and Neiman reading, is not a violation: it is
-the AMR debt-financing result, where the marginal rate on the normal return is `tau_b - tau_c`
-and is negative when bondholders are taxed below the corporation. AMR state that explicitly.
+component-consistent values under both rent readings; the assembled maximum is below the
+ceiling on a fully domestic, fully distributed, fully taxable, all-equity dollar. The one
+negative value, a minimum of -0.0121 under the Karabarbounis and Neiman reading, is AMR's own
+debt-financing result, `tau_b - tau_c`, which is negative when bondholders are taxed below
+the corporation.
+
+**One new check, and it is the one that matters.** The assembled shareholder layer at the
+sourced central values is `0.27 x 0.238 x 0.601 = 0.0386`. CRS R47113 Table 5 publishes
+**0.045** for no-dividend stock and **0.085** for dividend stock after the same adjustments,
+and its summary text puts the overall effective capital gains rate on corporate profits at
+**"around 3 percent"**. **Our construction reproduces the published figure**, which is the
+test a rebuilt component has to pass and which the blind sweep could not have passed or
+failed.
 
 ### Thesis-weakening results, first
 
-**1. The task's own premise about which parameters matter is wrong, and we tested it rather
-than assuming it.** The task named expected rent share, shifted share and taxable-shareholder
-share as the three most influential parameters. The first-order variance decomposition says
-otherwise. Under the Barkai reading the three are **taxable-shareholder share (0.356),
-deferral factor (0.261) and bondholder rate (0.153)**. The **shifted share carries 0.029**,
-and the debt share carries 0.0004. Profit shifting, which is the leg of our published story
-that has had the most attention, is close to irrelevant to the assembled rate. Two of the
-three parameters that do matter were not in the published construction at all.
+**1. Sourcing the two parameters moves the verdict, and it moves it toward FAILING.** The
+required rate is 0.1101 to 0.1373. Under the Barkai rent reading the assembled rate at the
+**sourced central values is 0.0994, which is BELOW the requirement**, and the 5th to 95th
+percentile span is **0.079 to 0.120**. The condition passes in **17.6 percent** of the
+remaining space against the easier labour-tax reading and **0.13 percent** against the harder
+one. Under Karabarbounis and Neiman the central is **0.0352** and it passes nowhere.
 
-**2. Our published 0.0708 is too low, and the rebuild says so.** It omits the shareholder
-layer entirely, which under AMR's own algebra is the *whole* of the effective rate on the
-normal return under full expensing. The assembled rate under the same Barkai rent reading has
-a 5th to 95th percentile span of **0.0865 to 0.1558**, and its minimum across the entire
-swept space, 0.0578, is the only region that reaches down to 0.0708. The published figure
-sits at the bottom edge of the plausible range, not in the middle of it.
+**2. The A113 verdict of "cannot be called" does not stand. It tightens, and it resolves
+against the thesis-friendly reading.** A113's blind sweep gave a Barkai median of 0.1159,
+inside the required band, passing in 61 percent of the space. Sourcing the two parameters
+moves the median down by **0.018** and the pass rate from **61 percent to 18 percent**. The
+honest statement is no longer "it straddles". It is **"it fails at the central value under
+both rent readings, and passes only in the corner of the space where the bondholder rate is
+at its ceiling."**
 
-**3. The verdict changes, and it changes toward "cannot be called".** The required rate is
-0.1101 to 0.1373. The assembled median under Barkai is **0.1158**, which is *inside* the
-required band. So the condition neither clearly fails, as the published 0.0708 implied, nor
-clearly passes. Across the swept space it passes in **61 percent** of draws against the
-easier labour-tax reading and **18 percent** against the harder one.
+**3. Both corrections pushed the same way, and the holder share did most of it.** Holding
+everything else at midpoints, correcting the taxable-shareholder share from the blind
+midpoint of 0.40 to the sourced 0.27 costs **0.0142**; correcting the deferral factor from
+0.70 to 0.601 costs a further **0.0062**; together **0.0183**. **Who holds the equity is the
+larger of the two**, and it moved the rate down because the published share is near the
+bottom of what we had been sweeping.
 
-**4. The rent-share disagreement is still the thing that decides it, and the worse reading
-is decisive.** Under Karabarbounis and Neiman, with a rent share near zero, the assembled
-median is **0.0518** and the condition passes in **1.1 percent** of the swept space against
-the easier threshold and in **none** against the harder one. The two readings must not be
-averaged, and under one of them the answer is not in doubt.
+**4. The reason is that most US corporate equity is outside the shareholder tax base
+entirely.** Rosenthal and Mucciolo put 2022 holdings at **42 percent foreign** and **25
+percent in retirement accounts** (IRAs 11, defined benefit 7, defined contribution 7), with
+nonprofits 4, life insurance separate accounts 2 and government 1, leaving **27 percent
+taxable**, down from 79 percent in 1965. A shareholder-level tax reaches roughly a quarter of
+the equity it appears to apply to.
 
-**5. Four separate parameters can each cross a threshold on their own.** Holding everything
-else at its range midpoint, the taxable-shareholder share alone moves the rate from 0.0960 to
-0.1396, the deferral factor from 0.0991 to 0.1365, the bondholder rate from 0.1035 to 0.1320
-and the shareholder rate from 0.1079 to 0.1277. Each of those intervals contains at least one
-of the two thresholds. **None of these four is verified.**
+**5. And roughly half of the gains on that quarter are never taxed.** CBO 2014 has **46.9
+percent of capital gains held until the owner's death** and therefore untaxed through step-up
+in basis; CRS applies a 50 percent reduction for the same reason. Two separate datasets, one
+conclusion.
 
-**6. Item 2(g) would have been a double count, and a large one.** The labour-income
-component of AI capital spending contributes **zero** to tau_k, and that is forced rather
-than chosen. Compensation at AI producers and integrators is US compensation of employees,
-so it is already inside the wage bill the condition is scaled against (FRED COE, 16,224.3bn,
-used in `src/fiscal_extended_axis.py`) and already inside the retained wage share **R**,
-because reemployment at those producers is exactly what rho measures. Crediting it to tau_k
-would count the same wage tax twice, once in `tau_l x (1 - R)` and once in tau_k. The size of
-the avoided error is **4.7 to 5.9 cents per dollar of AI capital spending** at the median
-across the three labour-tax readings, which is comparable to the whole of the published tau_k
-of 0.0708. A construction that made the condition look closable would most easily have done
-it here.
+**6. The variance decomposition has been reshaped, and it must not be misread.** The
+remaining first-order indices under Barkai are **bondholder rate 0.442, deferral factor
+0.127, state corporate rate 0.105, shifted share 0.085, shareholder rate 0.064, debt share
+0.013, taxable-shareholder share 0.007**. The taxable-shareholder share now carries almost
+none of the *variance* **because it has been pinned to a four-point range**, not because it
+does not matter: it is simultaneously the **largest single mover of the level** (finding 3)
+and the **smallest remaining source of uncertainty**. Those are different questions and this
+report answers both.
 
-**7. The import leak is larger than the profit-shifting leak and has had none of the
-attention.** Decomposing a dollar of AI capital spending: a median of **47 percent leaks
-abroad as imports** and generates no US labour tax at all, against a median 19 percent that
-is domestic labour and 32 percent that is domestic surplus. Both parameters behind that split
-are unsourced and swept, so the figure is a scenario, but the ordering is robust across the
-swept range.
+**7. Only one parameter can still cross a threshold on its own**, and it is the bondholder
+rate, which moves the rate from 0.0852 to 0.1137 across its range. It is unsourced. That is
+now the single highest-value item left.
+
+**8. Profit shifting still is not the story.** It carries 0.085 of the variance and moves the
+rate by 0.0124 across a range from 0.30 to 0.60, against 0.0183 from the two shareholder
+parameters combined.
 
 ### Sourced, kept separate from scenario
 
-**Verified this session or previously in this repo, five components:**
+**Verified, seven components.** Federal corporate rate 0.21 (26 USC 11(b)); 26 USC 250(a)(1)
+as amended by Pub. L. 119-21 of 4 July 2025, giving **14.0 and 12.6 percent** effective, with
+26 USC 951A recaptioned from GILTI to "net CFC tested income" and the pre-2025 13.125 and
+10.5 superseded; the shifted share 0.48 (Torslov, Wier and Zucman, one source only, so still
+swept); the two rent readings, Barkai 0.351 and Karabarbounis and Neiman at approximately
+zero, **never averaged**; the AMR expensing algebra; and, **new in A115**, the
+**taxable-shareholder share 0.24 to 0.28, central 0.27** (Rosenthal and Austin 2016 Table 2;
+Rosenthal and Burke 2020; Rosenthal and Mucciolo 2024 Tables 5 and 7) and the **deferral
+factor 0.412 to 0.790, central 0.601** (CRS R47113 Table 5, cross-checked at 0.488 from CBO
+2014 Tables A-3 and A-4).
 
-- Federal corporate rate 0.21, 26 USC 11(b).
-- **26 USC 250(a)(1), as amended by Pub. L. 119-21 of 4 July 2025.** The deduction is now
-  33.34 percent of foreign-derived deduction eligible income and 40 percent of the net CFC
-  tested income amount, giving effective rates of **14.0 and 12.6 percent**. 26 USC 951A has
-  been recaptioned from "Global intangible low-taxed income" to "Net CFC tested income".
-  Verified from Cornell LII on 2026-09-20. **The pre-2025 figures of 13.125 and 10.5 percent
-  are superseded and are not used.** This is exactly the check the task asked for, and the
-  descriptions had in fact moved.
-- Shifted share 0.48, Torslov, Wier and Zucman, already verified in this repo. **One verified
-  source, not the two the task required**, so the parameter is swept as well as marked.
-- The two rent readings, Barkai 0.351 and Karabarbounis and Neiman case R at approximately
-  zero, both previously verified, **never averaged**.
-- The AMR expensing algebra, read in full from the paper this session.
+**Scenario, swept, no point asserted, five components:** shareholder rate, state effective
+corporate rate, debt share, bondholder rate, shifted share, plus the two capex parameters of
+item 2(g), which affect nothing in the assembly. All are in `lit/unverified.md`.
 
-**Scenario, swept, no point value asserted, nine components:** the seven below plus the
-labour share and the import share of AI capital spending from item 2(g). Because 2(g)
-contributes zero to tau_k by the structural argument, nothing in the assembled rate depends
-on either of those two.
+**One measure deliberately not used.** CBO 2014 Table A-3 reports 57.2 percent of C
+corporation equity as "fully taxable". That is the distribution of the **marginal dollar of
+saving by tax status in 2007**, not the holder share of the outstanding **stock**. The two
+answer different questions and are **not averaged**; our construction needs the holder share.
 
-The seven: taxable-shareholder share,
-shareholder rate, deferral factor, state effective corporate rate, debt share, bondholder
-rate, shifted share. Each is listed in `lit/unverified.md` with what was sought, what
-happened, and the ceiling that bounds its range. **No claim in this project depends on a
-point value for any of them.** The map is the deliverable precisely because they could not be
-pinned.
+### Pillar Two
 
-### Pillar Two, item 3
-
-**NOT VERIFIED, and therefore not used.** The OECD pages returned HTTP 403 in this session
-and no primary-source confirmation of the current status of the global minimum tax for
-US-parented groups as of 2026 was obtained. It is recorded in `lit/unverified.md`. It appears
-on the map **only as a marked reference line at 0.15**, with its status printed next to it,
-and it carries no claim. The conditional statement, which is arithmetic and not a finding, is
-this: 0.15 exceeds the required 0.1101 to 0.1373, so wherever a 15 percent floor genuinely
-bound the AI rents the condition would pass on the rent component. Whether it binds is the
-unverified part and is the whole of the question.
+Unchanged from A113: **NOT VERIFIED** (OECD returned HTTP 403), used nowhere, present only as
+a marked line at 0.15 with its status printed. The conditional arithmetic still holds and is
+now more relevant, not less: 0.15 exceeds the required 0.1101 to 0.1373, and the assembled
+rate does not, so a binding 15 percent floor is one of the few things in this analysis that
+would close the condition on the rent component. Whether it binds is the unverified part.
 
 ### What would close this
 
-One verified source for the taxable-shareholder share and one for the deferral factor would
-between them remove 62 percent of the variance in the assembled rate under the Barkai
-reading. That is the highest-value hour of sourcing left in this project.
+The **bondholder rate**, alone, carries 44 percent of the remaining variance and is the only
+parameter that can still cross a threshold by itself. It is the next hour of sourcing.

@@ -15,7 +15,7 @@ measurement. Owner to choose.
 |---|---|---|
 | 1 | **Labour backing accounts**: about 52 pct of US debt is serviced directly from wages, 60 including indirectly; the federal government is exposed on about 79 pct of directly wage-backed claims, 32 as creditor or guarantor and 55 as debtor; the series is a U from 1952 | **[M]**; sovereign share agreed within 0.016 by independent rebuild; debt-only ratio **provisional** |
 | 2 | **Displacement is fiscal before it is financial.** 80 to 90 pct of first-round losses federal at the 10 pct level; attrition-led automation leaves the fiscal loss unchanged | **[M]** |
-| 3 | **The budget condition is a function of three observable parameters.** Needs 11 to 14 pct. Assembled from components, AI capital bears **8.7 to 15.6** (median 11.6) under the Barkai rent reading and **5.2** under Karabarbounis and Neiman. The earlier 7 and the economy-wide 20 to 22 are kept as marked points. The taxable-shareholder share, the deferral factor and the bondholder rate carry 77 pct of the variance; profit shifting carries 3 | **[R]** on rent share and expensing, **[S]** on the assembled rate |
+| 3 | **The budget condition FAILS at the central estimate, and the decisive parameters are the shareholder-level base and deferral.** Needs 11 to 14 pct. Assembled from components, AI capital bears **9.9** (7.9 to 12.0) under Barkai and **3.5** under Karabarbounis and Neiman. Only 27 pct of US corporate equity is taxable (42 pct foreign, 25 pct retirement) and 47 pct of gains escape at death; correcting those two moved the rate down 1.8 points against 1.2 from profit shifting. The earlier 7 and the economy-wide 20 to 22 are marked points | **[R]** on rent share and expensing, **[M]** on the shareholder parameters, **[S]** on the assembled rate |
 | 4 | **Banks are reached indirectly and concentrated**, card-heavy lenders most exposed; **household relief does not protect bank capital** | balance sheets **[M]**, losses above the inside-data level **[S]** |
 | 5 | **An AI bust is a fiscal event**, 569 to 955bn of capital gains and corporate receipts; the financing verdict is **conditional** on unseen off-balance-sheet debt | **[S]**, receipts falls **[M]** |
 | 6 | **One tax rate, two opposite jobs**: the state loses in both directions through different tax bases | **[S]** |
@@ -298,8 +298,9 @@ defensible measurements of tau_k fall on opposite sides of it:**
 | rate | value | condition |
 |---|---|---|
 | ours, the operative rate on the **AI surplus**, entity level only, SUPERSEDED | **0.0708** | **FAILS** |
-| assembled from components, all layers, Barkai rent reading | **0.087 to 0.156**, median **0.116** | **STRADDLES**, passes in 61 pct of the swept space against the easier labour reading, 18 pct against the harder |
-| assembled from components, Karabarbounis and Neiman rent reading | **0.052** | **FAILS** in 99 pct of the swept space |
+| assembled from components, all layers, shareholder parameters SOURCED, Barkai | **0.099** central, **0.079 to 0.120** | **FAILS** at the central estimate; passes in 18 pct of the remaining space against the easier labour reading, 0.1 pct against the harder |
+| assembled from components, Karabarbounis and Neiman rent reading | **0.035** central | **FAILS** everywhere |
+| A113 blind sweep, SUPERSEDED by sourcing the two shareholder parameters | 0.087 to 0.156, median 0.116 | straddled; the straddle was an artefact of sweeping two parameters that are published |
 | our own sourced maximum | 0.20351 | PASSES |
 | IMF SDN/2024/002, measured **economy-wide** capital ATR | **0.20 to 0.22** | **PASSES** |
 
@@ -622,9 +623,10 @@ Three sentences.
    inside the observed data the federal government bears 80 to 90 percent of first-round
    losses while banks barely move, and whether the budget absorbs that depends on which
    capital tax rate reaches AI profits: the condition needs 11 to 14 percent, AI capital
-   bears 8.7 to 15.6 once every tax layer is counted once, so it straddles the threshold;
-   the earlier 7 omitted shareholder-level tax and capital economy-wide bears 20 to 22 on a
-   different base. See `framework/tau_k/`.
+   bears 9.9 once every tax layer is counted once, so the condition fails at the central
+   estimate; the earlier 7 omitted shareholder-level tax and capital economy-wide bears 20
+   to 22 on a different base. The decisive inputs are the shareholder-level base and
+   deferral, both now sourced. See `framework/tau_k/`.
 3. **The state loses in both failure directions, through different tax bases: wage taxes if
    AI succeeds, capital gains and corporate taxes if it fails. So the same capital tax rate
    is being asked to do two opposite jobs, and that, rather than any single loss estimate, is

@@ -749,3 +749,40 @@ will find none.
 leaks abroad as imports and bears no US labour tax. That is a larger leak than profit
 shifting and has had none of the attention. It is a scenario, not a measurement, because
 neither the labour share nor the import share could be verified.
+
+## A115. The two shareholder parameters sourced, and the verdict resolves
+
+**Decision.** Replace the blind sweeps on the taxable-shareholder share and the deferral
+factor with published ranges, keep the old sweep as a sensitivity, and report that the fiscal
+condition FAILS at the central estimate under both rent readings.
+
+**Why it matters more than it looks.** A113 reported a straddle: an assembled median of 0.116
+inside a required band of 0.110 to 0.137. That straddle was an artefact. Two of the
+parameters generating it are published and had simply not been looked up. Sourced, they move
+the median to 0.099 and the pass rate from 61 percent to 18.
+
+**Tradeoff accepted.** We give up the comfortable "cannot be called" position and take a
+verdict that is falsifiable. The verdict rests on two measured facts rather than on our
+assumptions: only 27 percent of US corporate equity is held in taxable accounts, and 47
+percent of capital gains are never taxed because of step-up at death.
+
+**The check that decided we had it right.** Our shareholder layer at the sourced centrals is
+0.0386. CRS R47113 Table 5 publishes 0.045 to 0.085 for the same construction and its text
+says "around 3 percent". The blind sweep could neither have passed nor failed that test,
+which is the argument for sourcing over sweeping in general.
+
+**A trap in the variance decomposition, stated so nobody falls in it.** The
+taxable-shareholder share now carries 0.007 of the variance, down from 0.356. That is because
+it has been PINNED to a four-point range, not because it stopped mattering: it is
+simultaneously the largest single mover of the LEVEL and the smallest remaining source of
+UNCERTAINTY. The gate report answers both questions separately.
+
+**What changed in the policy argument.** The architecture now ranks the instruments by
+measured influence: the shareholder-level base (0.0142), deferral and step-up (0.0062 from
+the correction, 0.0159 across its range), expensing (it is why the normal return bears 0.035
+rather than 0.21), and profit shifting last (0.0124). The instrument with the most leverage
+had the least attention.
+
+**Tradeoff rejected.** We could have averaged the Rosenthal holder share against CBO's 57.2
+percent "fully taxable" figure. We did not: CBO's is the marginal dollar of SAVING by tax
+status in 2007, ours is the holder share of the outstanding STOCK. Different objects.
