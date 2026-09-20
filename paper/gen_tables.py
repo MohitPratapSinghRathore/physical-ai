@@ -406,6 +406,54 @@ def tab_instruments():
     write("tab_instruments.tex", "\n".join(lines))
 
 
+# The clearing pass decides WHICH quantities were removed; these are the paper's own
+# words for each one. The assert below fails if the two ever drift apart.
+REMOVED_TEXT = {
+    "incidence_count_spread": (
+        "Household counts move by only five to nine per cent across incidence cases",
+        "Not reproducible. Under the rebuilder's most natural reading of one case the "
+        "spread is fifty-nine per cent, which removes the stability the claim rested on, "
+        "and our own brief did not say which reading was intended."),
+    "rho_50pct": (
+        "The share of displaced wages re-earned at fifty per cent displacement",
+        "There is no such number. At that level no exposure group has a solution inside "
+        "the observed range, and the physically exposed group has no admissible solution "
+        "at all. Only a band can be reported."),
+    "hedge_ratio_at_operative": (
+        "The share of the federal wage loss offset by capital tax receipts",
+        "One of its inputs was never defined in our own brief, so the quantity cannot be "
+        "rebuilt from the specification. The claim is not that the offset is zero: it is "
+        "that we cannot size it."),
+    "quintile_labour_backed_Q1": (
+        "Wage-backed claims per wage dollar in the bottom quintile",
+        "An independent rebuild landed a factor of two and a half to three and a half "
+        "away, and we cannot show its reading was wrong, because we defined neither the "
+        "universe nor the normalisation. The gradient survives; this magnitude does not."),
+    "exposure_index_scores": (
+        "The two occupation-level scores of cognitive exposure",
+        "Eleven mismatches in the rebuild, running in opposite directions on the two "
+        "indices, so it is not a single weighting error. The wage machinery passes its "
+        "controls; the index scores are unsettled."),
+}
+
+
+def tab_removed():
+    rs = [r for r in rows("data/release/headline_clearing_pass.csv")
+          if r["tag"] == "REMOVED"]
+    ids = {r["id"] for r in rs}
+    assert ids == set(REMOVED_TEXT), (
+        f"removed claims in the release {sorted(ids)} do not match the text keys "
+        f"{sorted(REMOVED_TEXT)}")
+    lines = [r"\begin{tabular}{p{5.6cm}p{9.0cm}}", r"\toprule",
+             r"Quantity & Why it is not in this paper \\", r"\midrule"]
+    for r in rs:
+        claim, why = REMOVED_TEXT[r["id"]]
+        lines.append(f"{claim} & {why} \\\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_removed.tex", "\n".join(lines))
+
+
+
 if __name__ == "__main__":
     tab_classes()
     tab_sensitivity()
@@ -425,3 +473,4 @@ if __name__ == "__main__":
     tab_payoff()
     tab_tiers()
     tab_instruments()
+    tab_removed()
