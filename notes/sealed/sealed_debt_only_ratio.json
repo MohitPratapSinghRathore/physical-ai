@@ -1,0 +1,55 @@
+{
+  "_README": "Sealed expected values for the DEBT-ONLY labour backing ratio. Do not open until your rebuild is complete and written down. Definition and method are in notes/replication_brief_debt_only.md. Tolerance: abs 0.005 on every ratio, abs 0.01 on the coefficient of variation.",
+  "_vintage": "Z.1 annual, latest complete year 2025. Series resolved from the Z.1 CSV package.",
+  "debt_only.2025.direct": {
+    "expected": 0.5216,
+    "tolerance": "abs 0.005"
+  },
+  "debt_only.2025.incl_indirect": {
+    "expected": 0.602,
+    "tolerance": "abs 0.005"
+  },
+  "debt_only.2000.direct": {
+    "expected": 0.4687,
+    "tolerance": "abs 0.005"
+  },
+  "debt_only.2008.direct": {
+    "expected": 0.5006,
+    "tolerance": "abs 0.005"
+  },
+  "debt_only.1952.direct": {
+    "expected": 0.5208,
+    "tolerance": "abs 0.005"
+  },
+  "all_claims.2025.direct": {
+    "expected": 0.2703,
+    "tolerance": "abs 0.005",
+    "note": "the comparator; equity is in the denominator"
+  },
+  "all_claims.2000.direct": {
+    "expected": 0.2705,
+    "tolerance": "abs 0.005"
+  },
+  "all_claims.2008.direct": {
+    "expected": 0.3772,
+    "tolerance": "abs 0.005"
+  },
+  "equity_share_of_all_claims.2025": {
+    "expected": 0.4819,
+    "tolerance": "abs 0.005"
+  },
+  "coefficient_of_variation.debt_only_1952_2025": {
+    "expected": 0.0506,
+    "tolerance": "abs 0.01"
+  },
+  "coefficient_of_variation.all_claims_1952_2025": {
+    "expected": 0.0942,
+    "tolerance": "abs 0.01"
+  },
+  "_structural_bound": "DEBT_ONLY_ratio_direct >= all_claims_ratio_direct in EVERY year. Removing a class with zero labour backing from the denominator cannot lower the ratio. If your rebuild violates this, the error is in the class list, not in the data.",
+  "_largest_judgement_call": {
+    "name": "THE ONE-STEP RULE: business classes take the indirect share",
+    "move_pct": 15.4,
+    "note": "the one-step rule. It moves the debt-only ratio far less than the all-claims one."
+  }
+}

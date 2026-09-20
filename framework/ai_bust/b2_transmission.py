@@ -16,11 +16,15 @@ percent in the first and 16.0 in the second. So the split is not decorative.
     bank losses arrive directly, and the corporate tax base falls much further. Bounded by
     2007 to 2009.
 
-THE MPC OUT OF WEALTH IS A STATED ASSUMPTION, NOT A SOURCED PARAMETER, and it is the
-weakest input here. A range of 1 to 5 cents per dollar is used. Rather than lean on a
-citation this project has not verified, the range is CHECKED against the two verified
-episodes by backing out what MPC would have been needed to produce the consumption path
-that actually occurred. That check is printed.
+THE MPC OUT OF STOCK WEALTH IS NOW SOURCED AND VERIFIED, replacing the stated assumption
+this module previously carried. Chodorow-Reich, Nenov and Simsek (2021, American Economic
+Review 111(5): 1613-57, DOI 10.1257/aer.20200208) estimate an **MPC of 3.2 cents per year**
+out of stock market wealth, from a local labour market design. The abstract was read from the
+AEA article page and the figure verified before use. The previous assumption was a range of
+1 to 5 cents with a central of 3, so the sourced value lands almost exactly on the old
+central and the module's results barely move. The bracketing low and high are retained as a
+sensitivity and are labelled as NOT part of the sourced estimate. The check against the two
+verified episodes is still printed.
 
 WHY THE DISTRIBUTION MATTERS MORE THAN THE MPC. Corporate equity is extraordinarily
 concentrated: at 2026Q2 the top 1 percent hold about 51 percent of it and the bottom 50
@@ -39,8 +43,16 @@ HERE = Path(__file__).parent
 PROC = Path(__file__).resolve().parents[2] / "data" / "processed"
 LB = Path(__file__).resolve().parents[1] / "labor_backing"
 
-# STATED ASSUMPTION, checked against the episodes below.
-MPC_WEALTH = {"low": 0.01, "central": 0.03, "high": 0.05}
+# SOURCED AND VERIFIED, replacing the stated assumption this module previously carried.
+# Chodorow-Reich, Gabriel, Plamen T. Nenov, and Alp Simsek. 2021. "Stock Market Wealth and
+# the Real Economy: A Local Labor Market Approach." American Economic Review 111 (5):
+# 1613-57. DOI 10.1257/aer.20200208. Abstract verified from the AEA article page on
+# 2026-09-20: "these responses imply an MPC of 3.2 cents per year".
+# The 0.032 point estimate is the CENTRAL value. The low and high are a bracketing
+# sensitivity, NOT part of the sourced estimate, and are labelled as such.
+MPC_WEALTH = {"bracket_low": 0.01,
+              "SOURCED central, Chodorow-Reich Nenov Simsek 2021": 0.032,
+              "bracket_high": 0.05}
 
 # Okun coefficients, the same set used elsewhere in this project
 # (Ball, Leigh and Loungani, "Okun's Law: Fit at 50?", in data/raw/manual/).
@@ -125,7 +137,9 @@ def main():
         "top1_share_of_corporate_equity": round(eq_share["TopPt1"]
                                                 + eq_share["RemainingTop1"], 4),
         "bottom50_share": eq_share["Bottom50"],
-        "mpc_wealth_range_STATED": MPC_WEALTH,
+        "mpc_wealth_SOURCED": MPC_WEALTH,
+        "mpc_source": "Chodorow-Reich, Nenov and Simsek 2021, AER 111(5): 1613-57, "
+                      "DOI 10.1257/aer.20200208. MPC of 3.2 cents per year, verified.",
         "mpc_check_against_verified_episodes": checks,
         "okun_range": OKUN,
         "ai_inv_share_of_growth_STATED": AI_INV_SHARE_OF_GROWTH,
@@ -153,7 +167,7 @@ def main():
     print("\nMPC CHECK against the verified episodes")
     print(pd.DataFrame(checks).to_string(index=False))
     print("\nTRANSMISSION, central MPC and central investment share")
-    c = R[(R.mpc == "central") & (R.ai_inv_share_of_growth == "central")]
+    c = R[(R.mpc.str.startswith("SOURCED")) & (R.ai_inv_share_of_growth == "central")]
     print(c[["scenario", "okun", "ai_equity_fall_bn", "consumption_fall_bn",
              "investment_fall_bn", "gdp_fall_pct", "unemployment_rise_pp"]]
           .to_string(index=False))

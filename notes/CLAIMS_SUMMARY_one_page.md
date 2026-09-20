@@ -11,7 +11,7 @@ tagged [R].**
 **1. Labour backing accounts.** We introduce a decomposition of all US financial claims by
 the income that services them and by who ultimately holds them. It yields a ratio, a
 sovereign share, a holder map, a 1952 to 2025 series and a breakdown by wage quintile.
-**About 52 percent of US debt is serviced directly out of wages**, 60 percent including debt
+**About half of all US debt, public and private, is serviced directly out of wages** (52 percent), 60 percent including debt paid indirectly. Government debt enters by the labour-linked share of the receipts that service it, not because a household owes it, 60 percent including debt
 paid indirectly, once wages become spending and spending becomes business revenue. On all
 claims including equity the pair is 27 and 47 percent; equity is 48 percent of that
 denominator and moves with prices, so the debt-only measure is the stable one. **The federal
@@ -60,7 +60,7 @@ is **12 to 80 times weaker** than displacement. It transmits weakly to spending 
 debt-financed capex against about **162bn of AI-linked bank lending already drawn**, and
 off-balance-sheet financing is unsourced. **[S]**, historical receipts falls **[M]**.
 
-**6. One tax rate, two opposite jobs.** The state loses in **both** failure directions
+**6. One tax rate, two opposite jobs.** *A structural observation, not a forecast.* The state loses in **both** failure directions
 through **different tax bases**: wage taxes if AI succeeds, capital gains and corporate taxes
 if it fails. In the payoff table only the federal government and banks lose in every column;
 households gain under success because they hold 38 percent of the AI side against 6 percent
@@ -76,7 +76,7 @@ the supervisory scenario and concentration limits, not from household relief.**
 ---
 
 **Limitations.** Off-balance-sheet and GPU-backed AI financing unmeasured, so the AI side is
-a lower bound. Capital gains inside the receipts split unsourced. **The one-step rule is the
+a lower bound. Realised capital gains are **6.2 to 15.4 percent of AGI** (IRS SOI 2021 to 2023) and bear preferential rates, so the labour-linked receipts share is a **bound, 0.634 to 0.653**, not a point; the sovereign share moves under 1 percent across it. **The one-step rule is the
 largest judgement in the project**: it moves the all-claims ratio 76 percent and the
 debt-only ratio 15. **Novelty is "none located", not "none exists"**, pending a systematic
 search. A quarter of the mortgage book is an unidentified residual. **The bottom-quintile

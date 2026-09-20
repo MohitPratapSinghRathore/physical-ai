@@ -1,73 +1,73 @@
 scenario,mpc,mpc_value,ai_inv_share_of_growth,okun,okun_value,ai_equity_fall_bn,consumption_fall_bn,investment_fall_bn,gdp_fall_bn,gdp_fall_pct,unemployment_rise_pp,ai_debt_impaired_bn
-"equity-led, bounded by 2000 to 2002",low,0.01,low,BLL_hp1000,0.372,-4410.4,-44.1,-80.4,-124.5,-0.387,0.144,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,low,BLL_firstdiff,0.402,-4410.4,-44.1,-80.4,-124.5,-0.387,0.156,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,low,BLL_hp100,0.421,-4410.4,-44.1,-80.4,-124.5,-0.387,0.163,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,low,earlier_assumption,0.5,-4410.4,-44.1,-80.4,-124.5,-0.387,0.194,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,central,BLL_hp1000,0.372,-4410.4,-44.1,-201.1,-245.2,-0.762,0.283,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,central,BLL_firstdiff,0.402,-4410.4,-44.1,-201.1,-245.2,-0.762,0.306,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,central,BLL_hp100,0.421,-4410.4,-44.1,-201.1,-245.2,-0.762,0.321,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,central,earlier_assumption,0.5,-4410.4,-44.1,-201.1,-245.2,-0.762,0.381,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,high,BLL_hp1000,0.372,-4410.4,-44.1,-321.8,-365.9,-1.137,0.423,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,high,BLL_firstdiff,0.402,-4410.4,-44.1,-321.8,-365.9,-1.137,0.457,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,high,BLL_hp100,0.421,-4410.4,-44.1,-321.8,-365.9,-1.137,0.479,0.0
-"equity-led, bounded by 2000 to 2002",low,0.01,high,earlier_assumption,0.5,-4410.4,-44.1,-321.8,-365.9,-1.137,0.569,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,low,BLL_hp1000,0.372,-4410.4,-132.3,-80.4,-212.8,-0.661,0.246,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,low,BLL_firstdiff,0.402,-4410.4,-132.3,-80.4,-212.8,-0.661,0.266,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,low,BLL_hp100,0.421,-4410.4,-132.3,-80.4,-212.8,-0.661,0.278,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,low,earlier_assumption,0.5,-4410.4,-132.3,-80.4,-212.8,-0.661,0.331,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,central,BLL_hp1000,0.372,-4410.4,-132.3,-201.1,-333.4,-1.036,0.385,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,central,BLL_firstdiff,0.402,-4410.4,-132.3,-201.1,-333.4,-1.036,0.417,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,central,BLL_hp100,0.421,-4410.4,-132.3,-201.1,-333.4,-1.036,0.436,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,central,earlier_assumption,0.5,-4410.4,-132.3,-201.1,-333.4,-1.036,0.518,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,high,BLL_hp1000,0.372,-4410.4,-132.3,-321.8,-454.1,-1.411,0.525,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,high,BLL_firstdiff,0.402,-4410.4,-132.3,-321.8,-454.1,-1.411,0.567,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,high,BLL_hp100,0.421,-4410.4,-132.3,-321.8,-454.1,-1.411,0.594,0.0
-"equity-led, bounded by 2000 to 2002",central,0.03,high,earlier_assumption,0.5,-4410.4,-132.3,-321.8,-454.1,-1.411,0.706,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,low,BLL_hp1000,0.372,-4410.4,-220.5,-80.4,-301.0,-0.935,0.348,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,low,BLL_firstdiff,0.402,-4410.4,-220.5,-80.4,-301.0,-0.935,0.376,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,low,BLL_hp100,0.421,-4410.4,-220.5,-80.4,-301.0,-0.935,0.394,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,low,earlier_assumption,0.5,-4410.4,-220.5,-80.4,-301.0,-0.935,0.468,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,central,BLL_hp1000,0.372,-4410.4,-220.5,-201.1,-421.6,-1.31,0.487,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,central,BLL_firstdiff,0.402,-4410.4,-220.5,-201.1,-421.6,-1.31,0.527,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,central,BLL_hp100,0.421,-4410.4,-220.5,-201.1,-421.6,-1.31,0.552,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,central,earlier_assumption,0.5,-4410.4,-220.5,-201.1,-421.6,-1.31,0.655,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,high,BLL_hp1000,0.372,-4410.4,-220.5,-321.8,-542.3,-1.685,0.627,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,high,BLL_firstdiff,0.402,-4410.4,-220.5,-321.8,-542.3,-1.685,0.678,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,high,BLL_hp100,0.421,-4410.4,-220.5,-321.8,-542.3,-1.685,0.71,0.0
-"equity-led, bounded by 2000 to 2002",high,0.05,high,earlier_assumption,0.5,-4410.4,-220.5,-321.8,-542.3,-1.685,0.843,0.0
-"credit-led, bounded by 2007 to 2009",low,0.01,low,BLL_hp1000,0.372,-2758.8,-27.6,-80.4,-108.0,-0.336,0.125,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,low,BLL_firstdiff,0.402,-2758.8,-27.6,-80.4,-108.0,-0.336,0.135,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,low,BLL_hp100,0.421,-2758.8,-27.6,-80.4,-108.0,-0.336,0.141,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,low,earlier_assumption,0.5,-2758.8,-27.6,-80.4,-108.0,-0.336,0.168,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,central,BLL_hp1000,0.372,-2758.8,-27.6,-201.1,-228.7,-0.711,0.264,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,central,BLL_firstdiff,0.402,-2758.8,-27.6,-201.1,-228.7,-0.711,0.286,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,central,BLL_hp100,0.421,-2758.8,-27.6,-201.1,-228.7,-0.711,0.299,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,central,earlier_assumption,0.5,-2758.8,-27.6,-201.1,-228.7,-0.711,0.355,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,high,BLL_hp1000,0.372,-2758.8,-27.6,-321.8,-349.3,-1.086,0.404,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,high,BLL_firstdiff,0.402,-2758.8,-27.6,-321.8,-349.3,-1.086,0.436,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,high,BLL_hp100,0.421,-2758.8,-27.6,-321.8,-349.3,-1.086,0.457,160.4
-"credit-led, bounded by 2007 to 2009",low,0.01,high,earlier_assumption,0.5,-2758.8,-27.6,-321.8,-349.3,-1.086,0.543,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,low,BLL_hp1000,0.372,-2758.8,-82.8,-80.4,-163.2,-0.507,0.189,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,low,BLL_firstdiff,0.402,-2758.8,-82.8,-80.4,-163.2,-0.507,0.204,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,low,BLL_hp100,0.421,-2758.8,-82.8,-80.4,-163.2,-0.507,0.214,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,low,earlier_assumption,0.5,-2758.8,-82.8,-80.4,-163.2,-0.507,0.254,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,central,BLL_hp1000,0.372,-2758.8,-82.8,-201.1,-283.9,-0.882,0.328,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,central,BLL_firstdiff,0.402,-2758.8,-82.8,-201.1,-283.9,-0.882,0.355,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,central,BLL_hp100,0.421,-2758.8,-82.8,-201.1,-283.9,-0.882,0.371,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,central,earlier_assumption,0.5,-2758.8,-82.8,-201.1,-283.9,-0.882,0.441,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,high,BLL_hp1000,0.372,-2758.8,-82.8,-321.8,-404.5,-1.257,0.468,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,high,BLL_firstdiff,0.402,-2758.8,-82.8,-321.8,-404.5,-1.257,0.505,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,high,BLL_hp100,0.421,-2758.8,-82.8,-321.8,-404.5,-1.257,0.529,160.4
-"credit-led, bounded by 2007 to 2009",central,0.03,high,earlier_assumption,0.5,-2758.8,-82.8,-321.8,-404.5,-1.257,0.629,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,low,BLL_hp1000,0.372,-2758.8,-137.9,-80.4,-218.4,-0.679,0.252,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,low,BLL_firstdiff,0.402,-2758.8,-137.9,-80.4,-218.4,-0.679,0.273,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,low,BLL_hp100,0.421,-2758.8,-137.9,-80.4,-218.4,-0.679,0.286,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,low,earlier_assumption,0.5,-2758.8,-137.9,-80.4,-218.4,-0.679,0.339,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,central,BLL_hp1000,0.372,-2758.8,-137.9,-201.1,-339.0,-1.054,0.392,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,central,BLL_firstdiff,0.402,-2758.8,-137.9,-201.1,-339.0,-1.054,0.424,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,central,BLL_hp100,0.421,-2758.8,-137.9,-201.1,-339.0,-1.054,0.444,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,central,earlier_assumption,0.5,-2758.8,-137.9,-201.1,-339.0,-1.054,0.527,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,high,BLL_hp1000,0.372,-2758.8,-137.9,-321.8,-459.7,-1.429,0.531,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,high,BLL_firstdiff,0.402,-2758.8,-137.9,-321.8,-459.7,-1.429,0.574,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,high,BLL_hp100,0.421,-2758.8,-137.9,-321.8,-459.7,-1.429,0.601,160.4
-"credit-led, bounded by 2007 to 2009",high,0.05,high,earlier_assumption,0.5,-2758.8,-137.9,-321.8,-459.7,-1.429,0.714,160.4
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,low,BLL_hp1000,0.372,-4410.4,-44.1,-80.4,-124.5,-0.387,0.144,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,low,BLL_firstdiff,0.402,-4410.4,-44.1,-80.4,-124.5,-0.387,0.156,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,low,BLL_hp100,0.421,-4410.4,-44.1,-80.4,-124.5,-0.387,0.163,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,low,earlier_assumption,0.5,-4410.4,-44.1,-80.4,-124.5,-0.387,0.194,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,central,BLL_hp1000,0.372,-4410.4,-44.1,-201.1,-245.2,-0.762,0.283,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,central,BLL_firstdiff,0.402,-4410.4,-44.1,-201.1,-245.2,-0.762,0.306,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,central,BLL_hp100,0.421,-4410.4,-44.1,-201.1,-245.2,-0.762,0.321,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,central,earlier_assumption,0.5,-4410.4,-44.1,-201.1,-245.2,-0.762,0.381,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,high,BLL_hp1000,0.372,-4410.4,-44.1,-321.8,-365.9,-1.137,0.423,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,high,BLL_firstdiff,0.402,-4410.4,-44.1,-321.8,-365.9,-1.137,0.457,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,high,BLL_hp100,0.421,-4410.4,-44.1,-321.8,-365.9,-1.137,0.479,0.0
+"equity-led, bounded by 2000 to 2002",bracket_low,0.01,high,earlier_assumption,0.5,-4410.4,-44.1,-321.8,-365.9,-1.137,0.569,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_hp1000,0.372,-4410.4,-141.1,-80.4,-221.6,-0.689,0.256,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_firstdiff,0.402,-4410.4,-141.1,-80.4,-221.6,-0.689,0.277,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_hp100,0.421,-4410.4,-141.1,-80.4,-221.6,-0.689,0.29,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,earlier_assumption,0.5,-4410.4,-141.1,-80.4,-221.6,-0.689,0.344,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_hp1000,0.372,-4410.4,-141.1,-201.1,-342.2,-1.064,0.396,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_firstdiff,0.402,-4410.4,-141.1,-201.1,-342.2,-1.064,0.428,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_hp100,0.421,-4410.4,-141.1,-201.1,-342.2,-1.064,0.448,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,earlier_assumption,0.5,-4410.4,-141.1,-201.1,-342.2,-1.064,0.532,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_hp1000,0.372,-4410.4,-141.1,-321.8,-462.9,-1.439,0.535,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_firstdiff,0.402,-4410.4,-141.1,-321.8,-462.9,-1.439,0.578,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_hp100,0.421,-4410.4,-141.1,-321.8,-462.9,-1.439,0.606,0.0
+"equity-led, bounded by 2000 to 2002","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,earlier_assumption,0.5,-4410.4,-141.1,-321.8,-462.9,-1.439,0.719,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,low,BLL_hp1000,0.372,-4410.4,-220.5,-80.4,-301.0,-0.935,0.348,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,low,BLL_firstdiff,0.402,-4410.4,-220.5,-80.4,-301.0,-0.935,0.376,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,low,BLL_hp100,0.421,-4410.4,-220.5,-80.4,-301.0,-0.935,0.394,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,low,earlier_assumption,0.5,-4410.4,-220.5,-80.4,-301.0,-0.935,0.468,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,central,BLL_hp1000,0.372,-4410.4,-220.5,-201.1,-421.6,-1.31,0.487,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,central,BLL_firstdiff,0.402,-4410.4,-220.5,-201.1,-421.6,-1.31,0.527,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,central,BLL_hp100,0.421,-4410.4,-220.5,-201.1,-421.6,-1.31,0.552,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,central,earlier_assumption,0.5,-4410.4,-220.5,-201.1,-421.6,-1.31,0.655,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,high,BLL_hp1000,0.372,-4410.4,-220.5,-321.8,-542.3,-1.685,0.627,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,high,BLL_firstdiff,0.402,-4410.4,-220.5,-321.8,-542.3,-1.685,0.678,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,high,BLL_hp100,0.421,-4410.4,-220.5,-321.8,-542.3,-1.685,0.71,0.0
+"equity-led, bounded by 2000 to 2002",bracket_high,0.05,high,earlier_assumption,0.5,-4410.4,-220.5,-321.8,-542.3,-1.685,0.843,0.0
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,low,BLL_hp1000,0.372,-2758.8,-27.6,-80.4,-108.0,-0.336,0.125,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,low,BLL_firstdiff,0.402,-2758.8,-27.6,-80.4,-108.0,-0.336,0.135,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,low,BLL_hp100,0.421,-2758.8,-27.6,-80.4,-108.0,-0.336,0.141,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,low,earlier_assumption,0.5,-2758.8,-27.6,-80.4,-108.0,-0.336,0.168,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,central,BLL_hp1000,0.372,-2758.8,-27.6,-201.1,-228.7,-0.711,0.264,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,central,BLL_firstdiff,0.402,-2758.8,-27.6,-201.1,-228.7,-0.711,0.286,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,central,BLL_hp100,0.421,-2758.8,-27.6,-201.1,-228.7,-0.711,0.299,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,central,earlier_assumption,0.5,-2758.8,-27.6,-201.1,-228.7,-0.711,0.355,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,high,BLL_hp1000,0.372,-2758.8,-27.6,-321.8,-349.3,-1.086,0.404,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,high,BLL_firstdiff,0.402,-2758.8,-27.6,-321.8,-349.3,-1.086,0.436,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,high,BLL_hp100,0.421,-2758.8,-27.6,-321.8,-349.3,-1.086,0.457,160.4
+"credit-led, bounded by 2007 to 2009",bracket_low,0.01,high,earlier_assumption,0.5,-2758.8,-27.6,-321.8,-349.3,-1.086,0.543,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_hp1000,0.372,-2758.8,-88.3,-80.4,-168.7,-0.524,0.195,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_firstdiff,0.402,-2758.8,-88.3,-80.4,-168.7,-0.524,0.211,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,BLL_hp100,0.421,-2758.8,-88.3,-80.4,-168.7,-0.524,0.221,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,low,earlier_assumption,0.5,-2758.8,-88.3,-80.4,-168.7,-0.524,0.262,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_hp1000,0.372,-2758.8,-88.3,-201.1,-289.4,-0.899,0.335,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_firstdiff,0.402,-2758.8,-88.3,-201.1,-289.4,-0.899,0.362,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,BLL_hp100,0.421,-2758.8,-88.3,-201.1,-289.4,-0.899,0.379,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,central,earlier_assumption,0.5,-2758.8,-88.3,-201.1,-289.4,-0.899,0.45,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_hp1000,0.372,-2758.8,-88.3,-321.8,-410.0,-1.274,0.474,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_firstdiff,0.402,-2758.8,-88.3,-321.8,-410.0,-1.274,0.512,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,BLL_hp100,0.421,-2758.8,-88.3,-321.8,-410.0,-1.274,0.537,160.4
+"credit-led, bounded by 2007 to 2009","SOURCED central, Chodorow-Reich Nenov Simsek 2021",0.032,high,earlier_assumption,0.5,-2758.8,-88.3,-321.8,-410.0,-1.274,0.637,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,low,BLL_hp1000,0.372,-2758.8,-137.9,-80.4,-218.4,-0.679,0.252,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,low,BLL_firstdiff,0.402,-2758.8,-137.9,-80.4,-218.4,-0.679,0.273,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,low,BLL_hp100,0.421,-2758.8,-137.9,-80.4,-218.4,-0.679,0.286,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,low,earlier_assumption,0.5,-2758.8,-137.9,-80.4,-218.4,-0.679,0.339,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,central,BLL_hp1000,0.372,-2758.8,-137.9,-201.1,-339.0,-1.054,0.392,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,central,BLL_firstdiff,0.402,-2758.8,-137.9,-201.1,-339.0,-1.054,0.424,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,central,BLL_hp100,0.421,-2758.8,-137.9,-201.1,-339.0,-1.054,0.444,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,central,earlier_assumption,0.5,-2758.8,-137.9,-201.1,-339.0,-1.054,0.527,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,high,BLL_hp1000,0.372,-2758.8,-137.9,-321.8,-459.7,-1.429,0.531,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,high,BLL_firstdiff,0.402,-2758.8,-137.9,-321.8,-459.7,-1.429,0.574,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,high,BLL_hp100,0.421,-2758.8,-137.9,-321.8,-459.7,-1.429,0.601,160.4
+"credit-led, bounded by 2007 to 2009",bracket_high,0.05,high,earlier_assumption,0.5,-2758.8,-137.9,-321.8,-459.7,-1.429,0.714,160.4

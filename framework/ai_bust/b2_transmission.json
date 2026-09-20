@@ -16,11 +16,12 @@
   },
   "top1_share_of_corporate_equity": 0.5088,
   "bottom50_share": 0.0058,
-  "mpc_wealth_range_STATED": {
-    "low": 0.01,
-    "central": 0.03,
-    "high": 0.05
+  "mpc_wealth_SOURCED": {
+    "bracket_low": 0.01,
+    "SOURCED central, Chodorow-Reich Nenov Simsek 2021": 0.032,
+    "bracket_high": 0.05
   },
+  "mpc_source": "Chodorow-Reich, Nenov and Simsek 2021, AER 111(5): 1613-57, DOI 10.1257/aer.20200208. MPC of 3.2 cents per year, verified.",
   "mpc_check_against_verified_episodes": [
     {
       "episode": "2000_to_2002_equity_financed",
