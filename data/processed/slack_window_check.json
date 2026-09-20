@@ -1,0 +1,30 @@
+{
+  "windows": [
+    {
+      "window": "full sample, 2000 to 2026",
+      "n": 14,
+      "prime_age_r_squared": 0.7733336447041165,
+      "unrate_r_squared": 0.8119088812192521,
+      "better_fit": "the unemployment rate",
+      "slope_ratio_unrate_over_prime_age": 1.1070214159642269,
+      "prime_age_intercept": 1.2279753939570808,
+      "prime_age_slope": -0.027490328792045014,
+      "unrate_intercept": 0.8090059140491526,
+      "unrate_slope": -0.030432382704691827
+    },
+    {
+      "window": "post-2008, 2010 to 2026",
+      "n": 9,
+      "prime_age_r_squared": 0.7319887225004313,
+      "unrate_r_squared": 0.9399304180746353,
+      "better_fit": "the unemployment rate",
+      "slope_ratio_unrate_over_prime_age": 1.0955311686993854,
+      "prime_age_intercept": 1.17818081036848,
+      "prime_age_slope": -0.025408838466318324,
+      "unrate_intercept": 0.779417351996079,
+      "unrate_slope": -0.027836174500299612
+    }
+  ],
+  "verdict": "Both windows select the unemployment rate on fit. The expected post-2008 restriction does NOT hold: the unemployment rate's advantage is LARGER post-2008 (0.93993 against 0.73199) than on the full sample (0.81191 against 0.77333). The preference for prime-age nonemployment rests on MECHANISM alone and must be defended that way wherever it is stated.",
+  "speed_limit_2.5x_claim": "NOT SUPPORTED, withdrawn"
+}

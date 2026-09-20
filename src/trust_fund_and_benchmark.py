@@ -29,7 +29,10 @@ SOURCED PARAMETERS
     and the contribution base page**, which is why a secondary source is used and named.
     OASDI rate 6.2 percent each side, HI 1.45 percent each side with no cap, plus an
     additional 0.9 percent above 200,000 which is NOT modelled here.
-    Payroll is 91.3 percent of OASDI trust fund income (A32, verified in the repository).
+    Payroll is 91.26 percent of OASDI trust fund income and 87.20 percent of HI trust fund
+    income, both read from the 2026 Trustees summary tables (Table 5). The earlier version
+    of this module applied the OASDI share to HI as well, which overstated every HI ratio
+    by a factor of 1.047.
 
 ITEM 2. SURVEY BALANCES BENCHMARKED TO AGGREGATES.
 
@@ -45,7 +48,13 @@ ROOT = pathlib.Path(__file__).parents[1]
 RAW, OUT = ROOT / "data" / "raw", ROOT / "data" / "processed"
 
 OASDI_CAP_2026 = 184_500.0
-PAYROLL_SHARE_OASDI = 0.913          # A32
+# Payroll share of each fund's TOTAL income, read from the 2026 Trustees summary tables the
+# owner placed in data/raw/owner/ (Table 5), not assumed. The two funds differ and using the
+# OASDI share for HI overstated every HI ratio by a factor of 1.047.
+_OWN = json.loads((pathlib.Path(__file__).parents[1] / "data" / "processed"
+                   / "owner_sources.json").read_text())["trustees_2026"]
+PAYROLL_SHARE_OASDI = _OWN["payroll_share_of_oasdi_income"]
+PAYROLL_SHARE_HI = round(_OWN["hi_payroll_income_bn"] / _OWN["hi_total_income_bn"], 4)
 # official aggregates, USD billions
 AGG = {
     "mortgage": {"value": 13_100.0, "source": "NY Fed HHDC 2026Q2, mortgage balances"},
@@ -68,6 +77,35 @@ def fred_last(series):
     d["v"] = pd.to_numeric(d["v"], errors="coerce")
     d = d.dropna()
     return float(d["v"].iloc[-1]), str(d["date"].iloc[-1])
+
+
+def nyfed_auto_balance_bn():
+    """AUTO AGGREGATE, replaced in the replication-repair session (item 5).
+
+    FRED MVLOAS, motor vehicle loans owned and securitized, was DISCONTINUED after 2024Q4
+    while every other input in this project is 2026, and Fed G.19 no longer publishes a
+    live motor vehicle loan balance. The replacement is the NY Fed Household Debt and
+    Credit report, which is ALREADY the source of the mortgage and student aggregates and
+    is on the same 2026Q2 vintage. Read from the report's own data workbook rather than
+    from the PDF, because the PDF gives auto only as a quarterly percentage change.
+
+    CARDS stay on FRED REVOLSL. Revolving consumer credit and the NY Fed credit card
+    balance are different objects (1,357.2bn against 1,263bn) and the brief names REVOLSL.
+    The choice is stated rather than left implicit.
+    """
+    import openpyxl
+    p = RAW / "manual" / "NYFed_HHDC_2026Q2_data.xlsx"
+    wb = openpyxl.load_workbook(p, read_only=True, data_only=True)
+    ws = wb["Page 3 Data"]
+    rows = list(ws.iter_rows(min_row=1, values_only=True))
+    header = next(list(r) for r in rows if r and "Auto Loan" in r)
+    data = [r for r in rows if r and r[0] and isinstance(r[1], (int, float))]
+    col = header.index("Auto Loan")
+    last = data[-1]
+    return float(last[col]) * 1000.0, (
+        f"NY Fed Household Debt and Credit report data workbook, Page 3 Data, "
+        f"auto loan balance at {last[0]}, trillions converted to billions. REPLACES FRED "
+        f"MVLOAS (1,568.6bn at 2024Q4), which was discontinued after 2024Q4.")
 
 
 def acs_wages():
@@ -131,7 +169,7 @@ def main():
         tx_share = acc[g_for]["taxable"] / acc[g_for]["wage"]
         # displaced taxable wages as a share of all taxable wages
         oasdi_ratio = (d_wb * tot_wage * tx_share / tot_taxable) * (1 - R) * PAYROLL_SHARE_OASDI
-        hi_ratio = d_wb * (1 - R) * PAYROLL_SHARE_OASDI
+        hi_ratio = d_wb * (1 - R) * PAYROLL_SHARE_HI
         rows.append({"group": r["group"], "level_of_exposed": r["level_of_exposed"],
                      "share_of_total_wage_bill": d_wb, "R": R,
                      "taxable_share_of_group_wages": tx_share,
@@ -162,13 +200,10 @@ def main():
     # not billions. The first run of this module divided by the wrong scale and produced
     # scaling factors in the thousands, which is how the error was caught.
     card, cdate = fred_last("REVOLSL")
-    auto, adate = fred_last("MVLOAS")
     AGG["card"] = {"value": card / 1000.0 if card else None,
                    "source": f"FRED REVOLSL revolving consumer credit, millions ({cdate})"}
-    AGG["auto"] = {"value": auto / 1000.0 if auto else None,
-                   "source": f"FRED MVLOAS motor vehicle loans owned and securitized, "
-                             f"millions ({adate}). NOTE: this series is STALE relative to "
-                             f"the others and is flagged."}
+    auto_bn, auto_date = nyfed_auto_balance_bn()
+    AGG["auto"] = {"value": auto_bn, "source": auto_date}
     hc = pd.read_csv(OUT / "verify" / "hand_check_credit.csv")
     base = hc.drop_duplicates(subset=["loan"])[["loan", "total_balance_bn"]]
     scal = []

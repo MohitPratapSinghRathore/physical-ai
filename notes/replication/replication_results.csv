@@ -1,0 +1,52 @@
+quantity_id,value,units,data_source_and_vintage,judgement_calls_and_notes,plausibility_bound_applied
+households_occupied,131.33,millions,"ACS PUMS 2023 1-yr csv_hus, WGTP",TYPEHUGQ==1 and NP>0. Reproduces the brief exactly.,subset <= total: 131.33 <= 145.33 OK
+households_incl_vacant,145.33,millions,"ACS PUMS 2023 1-yr csv_hus, WGTP",NP==0 vacant units retained. Reproduces the brief's error-path figure exactly.,n/a
+rho_slack.intercept,125.2615,percentage points,BLS DWS news releases 1998-2026 (15 vintages) + FRED LNS12300060,PRIMARY fit: every vintage I could source to a primary BLS release. The brief states no start date.,"fitted coefficient, no bound"
+rho_slack.slope,-2.8575,pp reemployment per pp nonemployment,same,x = 100 minus the prime-age 25-54 employment-population ratio at the survey month,"negative slope expected, OK"
+rho_slack.r_squared,0.7726,ratio,same,,0 <= R2 <= 1 OK
+rho_slack.n,15,count,same,"1998,2000,2002,2004,2006,2008,2010,2012,2014,2016,2018,2020,2022,2024,2026",n/a
+rho_slack.x_range,18.200 to 24.900,percent,same,Outside this range the relation is an extrapolation.,0 < x < 100 OK
+rho_slack.ALT2008.intercept,116.9780,percentage points,"same sources, 2008-2026 window only",ALTERNATIVE. Only a post-2008 window reproduces the brief's own remark that the circular UNRATE fit has the HIGHER R2 (0.9202 vs 0.7554). This is indirect evidence their window starts at 2008.,fitted coefficient
+rho_slack.ALT2008.slope,-2.4999,pp per pp,same,,OK
+rho_slack.ALT2008.r_squared,0.7554,ratio,same,,0-1 OK
+rho_slack.ALT2008.n,10,count,same,x_range 19.200 to 24.900,n/a
+DIAGNOSTIC.unrate_vs_primeage_slope_ratio,1.11,ratio,same,"NOT REPRODUCED. The brief says the circular unemployment-rate fit yields a speed limit about 2.5 times larger. The slope ratio is 1.11 on the full sample and 1.13 on 2008-2026. 'Speed limit' is never defined in the brief, so I cannot tell whether 2.5 refers to the slope or to a derived quantity.",n/a
+fiscal.rho_at_current_slack,0.6925,share,"S1 fit evaluated at x = 19.6 (FRED LNS12300060, Aug 2026 = 80.4)",Observed DWS Jan 2026 rate of 0.6610 is the alternative.,0-1 OK
+fiscal.R_2026,0.6233,share,rho_fit times omega = 0.90,omega is NOT specified in the brief beyond 'a blended counterfactual from the DWS earnings question'. My omega range 0.85-0.97 gives R from 0.5618 to 0.6718.,0 <= R <= 1 OK
+fiscal.tau_k_range_sourced_sigma,0.1141 to 0.1904,share,"Barkai (2020); Torslov, Wier and Zucman; Auerbach; Acemoglu, Manera and Restrepo","MY parameter reads, not the brief's: sigma_rent 0.30-0.60, domestic share 0.70-0.80, tau_normal 0.10-0.20, statutory 0.21. The brief names the sources but states none of the extracted values.",tau_k <= statutory 0.21 OK
+fiscal.tau_k_needed_to_pass.taul_0.153,0.0576,share,"tau_l times (1 - R), R = 0.6233",tau_l reading 1 of 3: combined employer plus employee OASDI and HI payroll only.,0-1 OK
+fiscal.tau_k_needed_to_pass.taul_0.250,0.0942,share,same,tau_l reading 2: average effective federal tax on labour income.,0-1 OK
+fiscal.tau_k_needed_to_pass.taul_0.350,0.1318,share,same,"tau_l reading 3: broad, including state and local.",0-1 OK
+fiscal.condition_result,PASSES on all three tau_l readings,qualitative,same,"CONTRADICTS the brief, which states the required tau_k exceeds the top of the sourced range by a margin no plausible reading closes. At my R = 0.6233 the condition fails only if tau_l > 0.505. Most likely cause is that my omega and my tau_l readings differ from theirs, not a data error.",n/a
+fiscal_magnitudes.total_wage_bill,10595.6,$bn,"ACS PUMS 2023 1-yr, PWGTP, ESR in (1,2,4,5), WAGP>0, times ADJINC","Denominator is the TOTAL wage bill per the brief, not an exposed group. BEA wages and salaries (~11.1tn) is the alternative.",n/a
+fiscal_magnitudes.terminal_loss_bn_at_10pct,122.4,$bn per year,"case A, (tau_l 0.25 minus tau_k 0.1345) times dW","Terminal-year FLOW, not cumulative divided by horizon. Horizon-invariant by construction. Highly sensitive to the unspecified tau_l.",loss <= tau_l x dW = 264.9 OK
+fiscal_magnitudes.terminal_loss_bn_at_25pct,305.9,$bn per year,same,,loss <= 662.2 OK
+trust_funds.OASDI_pct_of_payroll_income_at_10pct,9.72,percent,"0.124 x dW x under-cap share 0.8506, over OASDI payroll income 1150 $bn",Under-cap share taken from the cognitive AIOE group. OASDI payroll income is MY figure (SSA Trustees order of magnitude); the brief does not state it.,0-100 percent bound satisfied
+trust_funds.OASDI_pct_of_payroll_income_at_25pct,24.29,percent,same,,0-100 OK
+trust_funds.HI_pct_of_payroll_income_at_10pct,7.68,percent,0.029 x dW over HI payroll income 400 $bn,"HI has no cap, per the brief.",0-100 OK
+trust_funds.HI_pct_of_payroll_income_at_25pct,19.20,percent,same,,0-100 OK
+under_reporting.mortgage,1.265,ratio,NY Fed HHDC 2026Q2 13100 $bn over SIPP 2025 full universe 10358.4 $bn,"SIPP universe: MONTHCODE==12, WPFINWGT>0, ERELRPE in (1,2) deduplicated to household = 134.81m households. Household aggregate THDEBT_HOME.",factor > 1 as expected OK
+under_reporting.card,2.522,ratio,FRED REVOLSL 2026-07 = 1357.2 $bn (units confirmed MILLIONS) over SIPP 538.0 $bn,THDEBT_CC.,> 1 OK
+under_reporting.auto,1.751,ratio,FRED MVLOAS 2024-10 = 1568.6 $bn (units confirmed MILLIONS) over SIPP 895.9 $bn,"MVLOAS IS DISCONTINUED after 2024Q4, so no 2026 value exists. This is a vintage mismatch against every other input and the brief does not acknowledge it.",> 1 OK
+under_reporting.student,1.428,ratio,NY Fed 1650 $bn over SIPP 1155.6 $bn,THDEBT_ED.,> 1 OK
+coverage_share.mortgage,0.897,share,SIPP working-core balance over SIPP full-universe balance,"'Working core' is NOT defined in the brief. Mine = households with positive summed member earnings in month 12 (93.84m households, 69.6 percent of the universe).",0-1 OK
+coverage_share.card,0.838,share,same,,0-1 OK
+coverage_share.auto,0.867,share,same,,0-1 OK
+coverage_share.student,0.940,share,same,,0-1 OK
+DIAGNOSTIC.factor_over_coverage_inflation,6.4 to 19.3,percent,"factor divided by coverage share, against factor","The brief's section 8 says this error inflates factors by 14 to 26 percent. I get 6.4 to 19.3, so their working core is NARROWER than mine. Restricting to reference person under 65 gives 11.9 to 37.2; ages 25-64 gives 14.1 to 38.1. No definition I tried reproduces the stated 14-26 band across all four books.",n/a
+cap_contrast.ACS.embodied,0.9733,share of group wage bill under the cap,ACS PUMS 2023 plus O*NET 31.0,"THE EMBODIMENT INDEX IS MY OWN CONSTRUCTION. notes/paei_c_method.md was not supplied, so this is NOT a replication of Embodiment P. Mine = mean O*NET Importance over elements 1.A.2 (psychomotor) and 1.A.3 (physical abilities), top employment-weighted quintile.",0-1 OK
+cap_contrast.ACS.cognitive_AIOE,0.8506,share,ACS PUMS 2023 plus Felten AIOE (AIOE_DataAppendix.xlsx),"Group = top employment-weighted quintile of the index. The 2026 cap of $184,500 is applied to 2023 nominal wages, as the brief instructs; this understates the share above the cap.",0-1 OK
+cap_contrast.ACS.cognitive_GPT,0.8939,share,ACS PUMS 2023 plus Eloundou human_rating_beta,"The brief does not say which of alpha, beta or gamma to use. I chose human-labelled beta (E1 + 0.5 x E2), the paper's headline.",0-1 OK
+cap_contrast.SIPP.embodied,0.8841,share,"SIPP 2025, TPEARN x 12, occupation via ACS OCCP-to-SOCP crosswalk","Levels differ from ACS as the brief predicts, because the income concepts differ. 87.9 percent of SIPP earners matched to an index.",0-1 OK
+cap_contrast.SIPP.cognitive_AIOE,0.7614,share,same,,0-1 OK
+cap_contrast.SIPP.cognitive_GPT,0.8349,share,same,,0-1 OK
+pay_control.share_of_gap_that_is_pay.ACS_AIOE,0.6151,share of the raw gap,reweight cognitive group onto embodied deciles of individual annual wage income,Inside the brief's stated 54-99 percent band.,<= 1 unless sign change
+pay_control.share_of_gap_that_is_pay.ACS_GPT,0.6105,share,same,Inside the band.,<= 1
+pay_control.share_of_gap_that_is_pay.SIPP_AIOE,0.8796,share,same,Inside the band.,<= 1
+pay_control.share_of_gap_that_is_pay.SIPP_GPT,1.4011,share,same,"EXCEEDS 1, meaning the residual gap CHANGES SIGN (residual -0.0197). This is precisely the outcome the brief predicts for SIPP against Eloundou GPT.","sign change is the predicted result, not a bound violation"
+cases.case_B_over_A_min,-3.18,ratio,"grid over mpc_L 0.70-1.00, mpc_K 0.35-0.55, three tau_l, tau_k endpoints; W/Y = 0.3262","UNSTABLE. The case A denominator (tau_l minus tau_k) approaches zero at my low tau_l reading, so the ratio diverges and changes sign. The range is not meaningful without the project's tau_l.","flagged unstable, not a usable number"
+cases.case_B_over_A_max,3.97,ratio,same,same caveat,flagged unstable
+cases.breakeven_tau_k_caseA,0.0576 to 0.1318,share,"tau_l x (1 - R), R = 0.6233",,0-1 OK
+cases.breakeven_tau_k_caseB,-0.0016 to 1.0979,share,fiscal loss B over (dW minus dC),"Upper end exceeds 1 where dC approaches dW. Not plausible as a tax rate; reflects the unspecified mpc grid, so I report it as out of bounds rather than as a result.","UPPER END VIOLATES <= 1, flagged"
+debt.baseline_20y_emerging_market,380.4,percent of GDP,"FRED GFDEBTN over GDP, 2026Q1 = 122.594 percent; r = 9 percent, g = 3 percent, 20 years","Using the brief's own stated 121.4 percent start reproduces 376.7 percent, i.e. their 'about 377'. The only difference is the starting-ratio vintage or debt concept (I used total public debt outstanding).","level path, no bound"
+debt.displacement_increment_10pct_emerging,13.6,pp of GDP,annual case-A loss 0.377 percent of GDP compounded at (1+r)/(1+g) over 20 years,"Only ONE regime (r=9, g=3) is defined in the brief. The other regimes are referred to but never named, so they are not computed.",increment must be far below the baseline: 13.6 vs 258 pp of baseline rise OK

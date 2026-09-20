@@ -20,12 +20,12 @@
     },
     {
       "loan": "auto",
-      "official_aggregate_bn": 1568.6,
+      "official_aggregate_bn": 1713.0,
       "sipp_FULL_universe_bn": 899.8666,
       "sipp_working_core_bn": 696.2587,
-      "UNDER_REPORTING_factor": 1.7431,
+      "UNDER_REPORTING_factor": 1.9036,
       "working_core_share_of_full": 0.7737,
-      "A80_factor_working_core": 2.2529
+      "A80_factor_working_core": 2.4603
     },
     {
       "loan": "student",

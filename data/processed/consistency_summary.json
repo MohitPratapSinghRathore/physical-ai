@@ -1,16 +1,24 @@
 {
-  "tau_k_used": 0.11798,
+  "tau_k_used": 0.0708,
+  "tau_k_used_note": "the Barkai rent-share reading, the same rate the case A loss is built on; the old code used the midpoint of the sourced range here while combining it with a loss built at 0.0708",
+  "wage_bill_base_bn": 13365.2,
+  "wage_bill_base": "FRED WASCUR wages and salaries, the base tau_l is built on",
+  "break_even_definition_case_A": "tau_l * (1 - R)",
+  "break_even_definition_case_B": "tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC)",
+  "break_even_correction": "the sealed round-one values 0.213835 to 0.378371 (case A) and 0.560866 to 0.860022 (case B) are WITHDRAWN: they divided a loss that already nets out tau_k by a surplus built on a different wage bill total",
+  "break_even_bounds_checked": 7,
+  "break_even_bound_violations": 0,
   "case_B_over_A_range": [
-    1.2501291822322655,
-    1.4425919665659954
+    1.38283387980932,
+    1.6774063335470255
   ],
   "break_even_tau_k_case_A": [
-    0.21383466373775378,
-    0.37837050239019443
+    0.124614,
+    0.301
   ],
   "break_even_tau_k_case_B": [
-    0.5608657601480448,
-    0.8600218304252096
+    0.18177084187460069,
+    0.649569319426274
   ],
   "debt_to_gdp_start": 1.21412078269093,
   "baseline_explodes": {
@@ -23,22 +31,22 @@
   },
   "sensitivity_ranges": {
     "severity_vs_fed_on_demand": [
-      0.3142610247330307,
-      1.3617977738431337
+      0.4255377356200992,
+      1.8439968543537644
     ],
     "house_price_fall_pct": [
       6.5974954499999985,
       47.12496749999999
     ],
     "bank_losses_bn": [
-      110.0896036421444,
-      993.0690674517388
+      173.46730930135445,
+      1564.7709990965218
     ],
     "second_round_job_losses_pct": [
-      0.5377634655231621,
-      3.1321348798392075
+      0.7281801731931139,
+      4.241192765013658
     ]
   },
-  "demand_event_first_share": 0.6296296296296297,
+  "demand_event_first_share": 0.7407407407407407,
   "demand_event_first_verdict": "SURVIVES ONLY CONDITIONALLY"
 }

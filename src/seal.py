@@ -1,9 +1,40 @@
-"""Item 6: SEALED EXPECTED VALUES for the replication brief.
+"""SEALED EXPECTED VALUES for the replication brief.
 
-Writes data/release/sealed_expected_values.json, the file a fresh instance opens only AFTER
-rebuilding the quantities in notes/replication_brief.md from raw data. It carries the
-expected value, the tolerance and the construction's one-line identity, and nothing that
+Writes notes/sealed/sealed_expected_values_round2.json, the file a fresh instance opens only
+AFTER rebuilding the quantities in notes/replication_brief_v2.md from raw data.
+
+WHY notes/sealed/ AND NOT data/release/. data/release/ is a PUBLICATION folder: the scenario
+file and the trigger dashboard are meant to be handed to a supervisor. Expected values and
+tolerances are the opposite of that. They exist to be withheld from a replicator until their
+own rebuild is finished, and shipping them in the published artifact would defeat the whole
+exercise. They live beside the brief instead. It carries
+the expected value, the tolerance and the construction's one-line identity, and nothing that
 would let a replicator shortcut the rebuild.
+
+ROUND TWO. Round one is FROZEN at notes/sealed/sealed_expected_values_round1_ARCHIVED.json
+and is never regenerated: it is the record the first replication was scored against and
+rewriting it would destroy that record. This module writes round two to its own path.
+Neither file goes anywhere near notes/replication/, which is the replicator's own folder.
+
+WHAT MOVED BETWEEN THE ROUNDS, and why, is listed in
+notes/replication/round1_mismatch_classification.md. The load-bearing changes are:
+
+  the wage bill base       a dose is now converted to dollars on FRED WASCUR national wages
+                           and salaries, the base tau_l is built on. Round one used FRED COE
+                           compensation of employees in the fiscal modules and this
+                           project's occupational grid in the second-round module, which are
+                           two different totals and neither matches tau_l's base.
+  break-even tau_k         corrected to tau_l * (1 - R) for case A and to
+                           tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC) for case B. Round
+                           one divided a loss that already nets out tau_k by a surplus built
+                           on a different wage bill, and the result broke the bound that a
+                           break-even rate cannot exceed tau_l + g.
+  HI payroll income        403.2bn from the 2026 Trustees summary tables, replacing 462.4bn,
+                           which is HI TOTAL income including interest, government
+                           contributions and premiums.
+  HI payroll share         0.8720, its own, replacing the OASDI share of 0.9126 that was
+                           being applied to both funds.
+  OASDI payroll income     1,322.6bn published, replacing 1,323.2bn derived.
 
 TOLERANCES, stated once and applied throughout:
     survey_relative   0.02   survey-based aggregates, for weight and vintage differences
@@ -16,7 +47,9 @@ import pandas as pd
 
 ROOT = pathlib.Path(__file__).parents[1]
 OUT = ROOT / "data" / "processed"
-REL = ROOT / "data" / "release"
+# NOT data/release/. See the note in the module docstring: sealed values are withheld from a
+# replicator by design and data/release/ is for material intended for publication.
+SEALED = ROOT / "notes" / "sealed"
 
 TOL = {"survey_relative": 0.02, "fit_relative": 0.05, "share_absolute": 0.01}
 
@@ -28,7 +61,7 @@ def v(value, tol, note):
 
 
 def main():
-    REL.mkdir(parents=True, exist_ok=True)
+    SEALED.mkdir(parents=True, exist_ok=True)
     S = json.loads((OUT / "slack_reestimate.json").read_text())
     f = S["fits"]["rho_on_PRIME_AGE_nonemployment"]
     tk = json.loads((OUT / "tau_k_decomposition_summary.json").read_text())
@@ -219,15 +252,31 @@ def main():
                                    "fiscal loss under case B over case A"),
             "case_B_over_A_max": v(cs["case_B_over_A_range"][1], "share_absolute", ""),
             "break_even_tau_k_case_A_min": v(cs["break_even_tau_k_case_A"][0],
-                                             "share_absolute", "tau_l times (1 - R)"),
+                                             "share_absolute",
+                                             "tau_l * (1 - R), at the highest R on the grid"),
             "break_even_tau_k_case_A_max": v(cs["break_even_tau_k_case_A"][1],
-                                             "share_absolute", ""),
+                                             "share_absolute",
+                                             "tau_l * (1 - R) at R = 0, so it equals tau_l "
+                                             "exactly. BOUND: cannot exceed tau_l + g"),
             "break_even_tau_k_case_B_min": v(cs["break_even_tau_k_case_B"][0],
                                              "share_absolute",
-                                             "loss B over a surplus reduced by the demand "
-                                             "shortfall"),
+                                             "tau_l * ((1 - R) * D + (W / Y) * dC) "
+                                             "/ (D - dC)"),
             "break_even_tau_k_case_B_max": v(cs["break_even_tau_k_case_B"][1],
-                                             "share_absolute", ""),
+                                             "share_absolute",
+                                             "BOUND: may exceed tau_l, because the base "
+                                             "shrinks as the loss grows, but not 1"),
+            "_definition_case_A": "tau_l * (1 - R)",
+            "_definition_case_B": "tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC), where D "
+                                  "is the gross displaced wage bill and dC the demand "
+                                  "shortfall",
+            "_bounds": "0 <= case A <= tau_l + g; 0 <= either case <= 1; case B >= case A; "
+                       "D - dC > 0",
+            "_withdrawn_round1": "the round-one values 0.213835 to 0.378371 (case A) and "
+                                 "0.560866 to 0.860022 (case B) are WITHDRAWN. They divided "
+                                 "a loss that already nets out tau_k by a surplus built on a "
+                                 "different wage bill total, and the case A maximum broke "
+                                 "the tau_l + g bound, which is how the replicator caught it",
             "_rule": "every fiscal figure published before the closing session is a CASE A "
                      "figure; case B is the internally consistent one whenever the "
                      "second-round module is quoted",
@@ -255,12 +304,26 @@ def main():
     except FileNotFoundError:
         pass
 
-    p = REL / "sealed_expected_values.json"
+    sealed["_round"] = {
+        "round": 2,
+        "brief": "notes/replication_brief_v2.md",
+        "round_1_frozen_at": "notes/sealed/sealed_expected_values_round1_ARCHIVED.json",
+        "round_1_outcome": "21 of 51 attempted quantities matched. The 30 mismatches are "
+                           "classified in notes/replication/round1_mismatch_classification.md.",
+        "wage_bill_base_bn": json.loads(
+            (OUT / "capacities.json").read_text())["national_wage_bill_bn"],
+        "wage_bill_base": "FRED WASCUR, national wages and salaries",
+        "not_in": "this file must never be placed in notes/replication/, which is the "
+                  "replicator's own folder",
+    }
+    p = SEALED / "sealed_expected_values_round2.json"
     p.write_text(json.dumps(sealed, indent=2, default=str))
     n = json.dumps(sealed).count('"expected"')
-    print(f"=== SEALED EXPECTED VALUES written to {p.relative_to(ROOT)} ===")
-    print(f"  {n} sealed quantities across 8 sections, each with a tolerance.")
-    print("  A fresh instance rebuilds from notes/replication_brief.md and opens this "
+    print(f"=== SEALED EXPECTED VALUES, ROUND TWO, written to {p.relative_to(ROOT)} ===")
+    print(f"  {n} sealed quantities, each with a tolerance.")
+    print("  Round one stays frozen at "
+          "notes/sealed/sealed_expected_values_round1_ARCHIVED.json.")
+    print("  A fresh instance rebuilds from notes/replication_brief_v2.md and opens this "
           "only after.")
     for sec in ["rho_slack", "fiscal", "fiscal_magnitudes", "trust_funds",
                 "under_reporting", "household_first_round", "cap_contrast",

@@ -116,7 +116,12 @@ def severity(cap, fx):
     shortfall after the shift from labour to capital income, the rise in prime-age
     nonemployment, and the long-run house price response."""
     gdp = cap["gdp_bn"]
-    wb = cap["total_wage_bill_bn"]
+    # THE BASE, corrected in the replication-repair session. A dose is a SHARE of the total
+    # wage bill; the dollars are that share of the NATIONAL wage bill (FRED WASCUR), not of
+    # this project's occupational grid, which covers 73.9 percent of it. The old code used
+    # the grid and understated every macro dollar in this module by a factor of 1.354.
+    # src/consistency.py and src/fiscal_extended_axis.py now use the same base.
+    wb = cap["national_wage_bill_bn"]
     rows = []
     for t in TYPES:
         g = fx[fx["type"] == t]

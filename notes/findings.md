@@ -6507,3 +6507,272 @@ once.
 **16 quantities, 16 matched, 0 failed.** The plausibility audit reports 36 checks and 4
 violations, all four being the A77 and A79 errors retained as a regression record and now
 labelled SUPERSEDED in the output.
+
+---
+
+## A101. THE REPLICATION FOUND A LIVE ERROR FROM A BOUND ALONE, THE FISCAL LOSS WAS 21 PERCENT TOO LARGE, AND THE ONE RESULT THAT REPLICATED OUTRIGHT IS THE ONE THE THESIS RESTS ON
+
+Date 2026-09-20. Gate report. Plausibility violations first, then thesis-weakening results,
+standing separated from provisional.
+
+### What was tested
+
+An instance that did not write this project's code rebuilt it from `notes/replication_brief.md`
+and raw public data, reading no `src/`, and opened the sealed file only after its own 51
+values were final. It matched 21. This session classifies all 30 mismatches, fixes the ten
+that are ours, and rewrites the brief.
+
+---
+
+### 1. PLAUSIBILITY VIOLATIONS, reported first
+
+**One violation, and it was ours, and an outsider found it without reading a line of code.**
+
+Sealed `break_even_tau_k_case_A_max` was 0.378371. The brief defines the case A break-even
+rate as `tau_l * (1 - R)`, whose maximum at the highest reading of tau_l is 0.318 and which
+needs R negative to reach 0.378. **The replicator could not compute the quantity at all and
+still knew the number was wrong**, because a break-even rate defined that way cannot exceed
+tau_l.
+
+What the code actually computed was
+
+    (comp / grid) x [tau_l - tau_k / (1 - R)]
+
+which at R = 0 is `1.6438 x (0.301 - 0.0708) = 0.37840`, the sealed figure exactly. Two
+independent defects multiplied:
+
+1. **The capital tax was counted twice.** The expression divided `case_A_fiscal_loss_bn` by
+   the surplus, but that loss is already net of tau_k at the operative 0.0708. A break-even
+   rate is the tau_k at which the loss is zero; dividing a loss that contains a tau_k by
+   anything cannot produce one.
+2. **Two different wage bill totals sat in one ratio**, compensation of employees in the
+   numerator and this project's occupational grid in the denominator, a spurious factor of
+   1.6438.
+
+A third inconsistency sat in the same block: the case B term used the MIDPOINT of the sourced
+tau_k range while the case A loss it was added to embeds the operative rate.
+
+**Corrected, with the bounds now enforced.**
+
+| | round one, withdrawn | round two |
+|---|---|---|
+| case A break-even | 0.213835 to 0.378371 | **0.124614 to 0.301000** |
+| case B break-even | 0.560866 to 0.860022 | **0.181771 to 0.649569** |
+| case B loss over case A | 1.250 to 1.443 | **1.383 to 1.677** |
+
+Seven bounds are now enforced in `src/consistency.py` and folded into the plausibility audit,
+which goes from 36 checks to 43: case A cannot exceed `tau_l + g`; neither case can exceed 1;
+case B cannot fall below case A; the post-shortfall surplus must stay positive. All pass. The
+case A maximum is now exactly tau_l, because it is reached where R falls to zero, which is the
+bound binding with equality rather than a coincidence.
+
+**The replicator's own case B topped out at 1.0979, which is also not a possible tax rate.
+Both sides were producing out-of-bound values from under-specified formulas.** Our maximum is
+0.649569 and 1.0979 is not reachable under the corrected formula anywhere on our grid. **The
+0.56 to 0.86 range does not stand and is withdrawn.**
+
+**THE METHOD FINDING, and it is the most useful thing in this session.** The promotion pass of
+2026-09-19 recomputed sixteen headline quantities in a script importing nothing from `src/`
+and found sixteen matches and zero failures. It did not catch this. A bound did, from outside,
+with no code access at all. **Tolerances test whether two computations agree. Bounds test
+whether a number can exist.** The standing plausibility rule is extended accordingly and the
+brief now carries the bounds, which it did not.
+
+---
+
+### 2. THESIS-WEAKENING RESULTS
+
+#### 2a. Claim 168 is false as stated, and the corrected numbers are what make it false
+
+Claim 168 said there is "no reading of the corporate tax literature in which the break-even
+capital tax rate is an available instrument". On the corrected grid the sourced tau_k range
+tops out at 0.20351 and:
+
+- case A break-even is at or below it in **10 of 15** cells, minimum **0.12461**;
+- case B break-even is at or below it in **5 of 15** cells, minimum **0.18177**.
+
+At small and moderate doses **the break-even rate is inside the sourced range**. The claim
+survives only in its narrower form:
+
+> **The break-even capital tax rate exceeds the OPERATIVE effective rate of 0.0708 in every
+> cell of the grid, in both cases, and exceeds the top of the sourced range only at larger
+> doses.**
+
+That is a statement about the tax code as it stands, not about what the literature says is
+attainable. It is materially weaker than the claim it replaces and it must be the one that
+appears in the paper. Claim 168 is downgraded to provisional.
+
+#### 2b. Every fiscal dollar figure was 21.4 percent too large
+
+tau_l is built as federal taxes over FRED WASCUR wages and salaries, 13,365.2bn. The fiscal
+modules applied it to FRED COE compensation of employees, 16,224.3bn, which additionally
+includes employer pension and health contributions that bear neither the income tax nor the
+payroll tax. **A wage tax rate was being applied to income that is not taxed.**
+
+Separately, the second-round module used this project's occupational grid, 9,870.2bn, which is
+73.9 percent of national wages, and understated the demand channel by a factor of 1.354.
+
+One base now serves both, and the assumption is stated: the exposed group's share of national
+wages is taken to equal its share of the occupational grid.
+
+| | direction |
+|---|---|
+| terminal-year fiscal loss, and every percent of receipts | **falls 17.6 percent** |
+| second-round demand, house price and bank-loss levels | **rise 35.4 percent** |
+| trust fund ratios, and the corrected break-even rate | **do not move**, the base cancels |
+
+**The fiscal channel is smaller than this project has been reporting.** At a 10 percent dose
+the terminal-year loss is 85.2bn and 1.42 percent of federal receipts, against 103.4bn and
+1.73 percent.
+
+#### 2c. The slack measure has no window on which it wins on fit
+
+This session was asked to record that the preference for prime-age nonemployment over the
+unemployment rate holds only on a post-2008 window. **It does not hold on any window.**
+`src/slack_window_check.py`, whose full-sample fits reproduce this project's stored fits to
+five decimals:
+
+| Window | n | prime-age nonemployment, R2 | unemployment rate, R2 | better fit |
+|---|---|---|---|---|
+| full, 2000 to 2026 | 14 | 0.77333 | **0.81191** | the unemployment rate |
+| post-2008, 2010 to 2026 | 9 | 0.73199 | **0.93993** | the unemployment rate |
+
+The unemployment rate wins on both, and **its advantage is larger post-2008, not smaller.**
+The preference rests on MECHANISM alone: the unemployment rate cannot measure the slack a
+reemployment hazard responds to, because the workers who leave it unchanged by exiting the
+labour force are exactly the workers who did not get reemployed. The post-2008 result is what
+a circularity should look like as exits became more important. This is now a standing
+constraint: any sentence preferring prime-age nonemployment must give the circularity argument
+in the same breath and must not claim the fit supports it.
+
+The related claim that the circular fit gives a speed limit "about 2.5 times larger" is
+**withdrawn**: the slope ratio is 1.107 on the full sample and 1.096 post-2008.
+
+#### 2d. Two more of ours, smaller
+
+- **HI carried the OASDI payroll share.** `403.2 / 462.4 = 0.8720`, not 0.9126, so every HI
+  trust fund ratio was 4.7 percent too large. Separately the fiscal modules used 462.4bn as an
+  HI payroll denominator when it is HI TOTAL income including interest, government
+  contributions and premiums.
+- **The auto aggregate sat on FRED MVLOAS**, discontinued after 2024Q4, two years stale
+  against every other input.
+
+---
+
+### 3. WHAT THE REPLICATION CONFIRMED, and it is the load-bearing result
+
+**The fiscal condition fails under the replicator's parameters as well as ours.** They first
+reported it PASSING, which would have contradicted the project's headline. They then found
+their own error: they had set the effective rate on the normal return at 0.10 to 0.20 where
+full expensing drives it to near zero, so their tau_k grid floor of 0.1141 sat above the
+required rate and the condition passed mechanically.
+
+| construction | rho | omega | R | required tau_k at tau_l 0.301 | verdict at 0.0708 |
+|---|---|---|---|---|---|
+| ours, observed rho | 0.6610 | 0.8598 | 0.5683 | 0.1299 | **FAILS** |
+| their fitted rho, our omega | 0.7080 | 0.8598 | 0.6087 | 0.1178 | **FAILS** |
+| their rho and their omega | 0.7080 | 0.9000 | 0.6372 | 0.1092 | **FAILS** |
+| their reported R | | | 0.6233 | 0.1134 | **FAILS** |
+
+**This is the only result in the project that an outsider has confirmed against their own
+initial contrary finding**, and it is the one the thesis rests on. It is also the result most
+sensitive to a single unstated number: had tau_normal not been corrected, the headline would
+have been reversed by one parameter the brief named a source for and never gave a value to.
+
+The R gap itself resolves into two roughly equal parts, and neither is a coding difference:
+rho 0.6610 observed against their 0.6926 fitted, and omega 0.8598 against their assumed 0.90.
+**`R_2026` uses the DIRECTLY OBSERVED 2026 rho, not the fitted value**, and the brief said
+otherwise. That sentence sent the replicator to a reverse-engineered omega of 0.815 that we
+have never used.
+
+**Also confirmed independently**, in every case before the sealed file was opened: all four
+survey under-reporting factors within 0.5 percent; the occupied-household count exactly; the
+federal student share; the vacant-unit, units and debt-baseline traps; and **the sign reversal
+in the SIPP Eloundou GPT pay control**, found on a different embodiment index and a different
+crosswalk, which is the strongest form the confirmation could take.
+
+---
+
+### 4. WHAT COULD NOT BE ATTEMPTED AT ALL, and why it matters most
+
+**Sections 5, 7, 10 and 11 produced no values.** Household first-round losses, the incidence
+comparison, the sovereign share and the whole second-round module. In every case the brief
+named the inputs and omitted the model.
+
+The dose-to-household mapping is the clearest example. The brief said the dose is a share of
+the wage bill and never said how that selects households in SIPP. **It does not select
+households at all**: the share of working-core earners displaced is set equal to the share of
+the wage bill displaced, a binomial draw over each household's earners gives `p_one` and
+`p_two`, and the default uplift is `p_one x 0.050 + p_two x 0.080` applied to EVERY
+working-core household. One paragraph, absent, blocked an entire section.
+
+**So the sovereign result, the second-round result and the incidence result have never been
+checked by anything outside this project.** They are the project's headline claims and they
+are the least tested. Claims 110, 111, 117, 133, 134, 150, 153, 154, 155, 157, 158, 160, 172,
+173 and 177 are flagged R-pending-2 and none may be described as independently replicated.
+
+---
+
+### 5. The owner's files, and what they corrected
+
+The 2026 Trustees summary tables and the CBO estimate of H.R. 748 are now in
+`data/raw/owner/`. `src/owner_files.py` runs 23 verification checks, 0 failures.
+
+- **The CBO extraction is verified against its saved original**, all 35 pages, every headline
+  figure present in both, 37 of 40 sampled sentences verbatim in the PDF text layer (the three
+  misses are table rows whose column whitespace the text layer re-flows).
+- **The Trustees extraction has no original**, because its source is an HTML page. It is
+  verified instead by arithmetic: every accounting identity in the summary tables closes to
+  the stated rounding.
+- **HI payroll income is 403.2bn**, not the 286.2bn this project derived at the statutory 2.9
+  percent on its own occupational grid. The derived figure was 71.0 percent of the published
+  one and **the gap is the wage bill, not the rate**: the grid is a subset of covered earnings
+  while HI is levied on all covered wages and on self-employment, uncapped.
+- **OASDI payroll income is 1,322.6bn published** against 1,323.2bn derived, a difference of
+  0.05 percent. The derivation was right.
+- **160.2bn is the OASDI NET CHANGE IN RESERVES** in 2025, OASI -200.0 plus DI +39.8.
+- **HI was NOT in deficit in 2025: reserves ROSE by 18.2bn.** The Trustees put the first year
+  HI cost exceeds income excluding interest at 2026. Any text saying otherwise is corrected.
+- **The reserve column is filled**: OASI 2,338.3bn, DI 223.0bn, HI 255.7bn at end 2025.
+- **Depletion timing is added as a capacity measure in its own right**: OASI 2032 Q4 at 78
+  percent of scheduled benefits, OASDI combined 2034 Q3 at 83, HI 2033 Q2 at 89, DI not within
+  75 years. For a fund running down, how long is the number a supervisor uses.
+- **The public budget threshold is now CITED rather than derived**: CBO scored a 408bn revenue
+  decrease inside a 1.7tn deficit increase over 2020 to 2030. The derived 13.2 percent
+  receipts fall of 2008 to 2009 is retained alongside because it measures a different thing.
+
+---
+
+### 6. What this does to the thesis
+
+**Against it.** The fiscal channel is a fifth smaller than reported. The break-even capital
+tax rate is lower than reported and falls inside the sourced range of effective rates at small
+and moderate doses, so the instrument is not unavailable in the sense claim 168 asserted. The
+slack measure has no empirical support over the alternative and never did.
+
+**For it.** The condition still fails at the operative rate in every cell, and an independent
+rebuild confirmed that failure after starting from the opposite conclusion. The second-round
+factor of nine survives exactly at 9.02. The sovereign majority survives in every row. The pay
+result was confirmed from outside on a different index.
+
+**What remains unknown.** Whether sections 5, 7, 10 and 11 can be rebuilt by anyone else at
+all. That is what round two is for, and the brief now contains the models.
+
+---
+
+### 7. Status separation
+
+**Standing, unchanged by this session:** 113, 126, 127, 137, 138, 139, 140, 141, 156, 162,
+166, 171, 176.
+
+**Standing on direction, numbers corrected:** 167, 170, 172, 154, 150, 157.
+
+**Downgraded to provisional:** 168.
+
+**Withdrawn:** the "2.5 times larger speed limit" remark; the round-one break-even ranges
+under both cases.
+
+**Superseded:** 132 and 178, the blocked-source records; 165, the sealed count.
+
+**Provisional, produced this session and blocked from promotion by the same-session rule:**
+179 to 193.

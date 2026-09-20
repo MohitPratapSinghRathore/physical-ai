@@ -1,14 +1,14 @@
 {
   "oasdi_cap_2026": 184500.0,
   "cap_source": "The Tax Adviser, AICPA, 24 October 2025, reporting the SSA announcement. SSA.gov returns HTTP 403 to this environment.",
-  "payroll_share_of_oasdi_income": 0.913,
+  "payroll_share_of_oasdi_income": 0.9126,
   "taxable_shares": {
     "cognitive_AIOE": 0.8118500384374082,
     "cognitive_GPT": 0.9075355156808844,
     "embodied": 0.9774501958045473,
     "ALL": 0.8984587294017198
   },
-  "max_trust_fund_pct": 76.46375000000002,
+  "max_trust_fund_pct": 76.43025000000002,
   "bound_respected": true,
   "aggregates": {
     "mortgage": {
@@ -24,8 +24,8 @@
       "source": "FRED REVOLSL revolving consumer credit, millions (2026-07-01)"
     },
     "auto": {
-      "value": 1568.61945,
-      "source": "FRED MVLOAS motor vehicle loans owned and securitized, millions (2024-10-01). NOTE: this series is STALE relative to the others and is flagged."
+      "value": 1713.0,
+      "source": "NY Fed Household Debt and Credit report data workbook, Page 3 Data, auto loan balance at 26:Q2, trillions converted to billions. REPLACES FRED MVLOAS (1,568.6bn at 2024Q4), which was discontinued after 2024Q4."
     }
   },
   "scaling": [
@@ -46,9 +46,9 @@
     {
       "loan": "auto",
       "sipp_working_core_bn": 696.2587,
-      "official_aggregate_bn": 1568.6194,
-      "scaling_factor": 2.2529,
-      "source": "FRED MVLOAS motor vehicle loans owned and securitized, millions (2024-10-01). NOTE: this series is STALE relative to the others and is flagged."
+      "official_aggregate_bn": 1713.0,
+      "scaling_factor": 2.4603,
+      "source": "NY Fed Household Debt and Credit report data workbook, Page 3 Data, auto loan balance at 26:Q2, trillions converted to billions. REPLACES FRED MVLOAS (1,568.6bn at 2024Q4), which was discontinued after 2024Q4."
     },
     {
       "loan": "student",

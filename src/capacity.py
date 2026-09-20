@@ -40,18 +40,27 @@ CAPACITY MEASURES, by sheet.
       not a solvency test.
 
   Public budget
-      Annual federal current receipts (FRED FGRECPT). The reference point is the 13.2
-      percent fall in receipts from 2008 to 2009, the largest annual fall in that series,
-      DERIVED here because CBO publication pages return HTTP 403 to this environment.
+      Annual federal current receipts (FRED FGRECPT). TWO reference points are carried.
+      CITED: CBO's Preliminary Estimate of the Effects of H.R. 748 (the CARES Act), revised
+      April 27 2020, scores a 408bn decrease in revenues inside a 1.7tn increase in
+      deficits over 2020-2030. The owner has placed that document and its original PDF in
+      data/raw/owner/ and src/owner_files.py verifies the extraction against it, so this
+      figure is now cited rather than derived. DERIVED, retained because it measures a
+      different thing: the 13.2 percent fall in receipts from 2008 to 2009, the largest
+      annual fall in the FRED series, which is what actually happened rather than what one
+      act was scored as costing.
 
   OASDI and HI trust funds
-      Annual payroll income. OASDI is 1,323.2bn (A32, verified). HI payroll income is
-      computed at the statutory combined rate of 2.9 percent on the uncapped wage bill.
-      BLOCKED: trust fund RESERVES could not be sourced. SSA.gov returns HTTP 403 on every
-      route and no FRED series carries the balance. The owner can drop the OASDI Trustees
-      Report summary tables into data/raw/manual/ and the reserve denominator becomes
-      available; until then only the income denominator is reported and the reserve column
-      is left empty rather than guessed.
+      Annual payroll income, now read from the 2026 Trustees summary tables the owner
+      placed in data/raw/owner/ (Table 5), not derived. OASDI 1,322.6bn (OASI 1,130.7 plus
+      DI 191.9); HI 403.2bn. The HI figure REPLACES a derived 286.2bn, which applied the
+      statutory 2.9 percent rate to this project's occupational wage bill: that grid is a
+      subset of covered earnings, so the derived figure was 71.0 percent of the published
+      one. The RESERVE column, blocked in A85 and A100, is now filled from Table 4: OASI
+      2,338.3bn, DI 223.0bn, HI 255.7bn at the end of 2025. DEPLETION TIMING is added as a
+      second capacity measure, because for a fund running down "how long" is the more
+      useful supervisory number than "how much": OASI 2032 Q4, combined OASDI 2034 Q3, HI
+      2033 Q2, DI not within the 75-year window.
 
   Landlords and multifamily lenders
       Not a dollar capacity. The binding constraint is debt service coverage: a property
@@ -107,8 +116,11 @@ FHA_INSURANCE_IN_FORCE_BN = 1_647.0
 FHA_ECONOMIC_NET_WORTH_BN = FHA_CAPITAL_RATIO * FHA_INSURANCE_IN_FORCE_BN
 FHA_STATUTORY_MINIMUM = 0.02
 
-# ---- trust funds
-OASDI_PAYROLL_INCOME_BN = 1_323.2      # A32, verified
+# ---- trust funds. Every figure below is READ from data/processed/owner_sources.json,
+#      which src/owner_files.py builds from the owner's 2026 Trustees summary tables and
+#      verifies by arithmetic reconciliation. Nothing here is derived any more.
+#      The statutory combined HI rate is retained only to document the superseded
+#      derivation, never to produce a capacity.
 HI_COMBINED_RATE = 0.029               # 26 USC 3101(b) and 3111(b), employee plus employer
 
 # ---- multifamily underwriting, FLAGGED range
@@ -187,7 +199,13 @@ def build():
     gse_ppe = sum(v["net_income"] + v["tax"] + v["provision"] for v in GSE_PPE.values())
 
     wage_bill_bn = total_wage_bill_bn()
-    hi_payroll_income_bn = HI_COMBINED_RATE * wage_bill_bn
+    national_wage_bill_bn = json.loads(
+        (OUT / "legW_us_derived.json").read_text())["wage_bill_usd_bn"]
+    own = json.loads((OUT / "owner_sources.json").read_text())
+    tr, cbo = own["trustees_2026"], own["cbo_hr748"]
+    oasdi_payroll_income_bn = tr["oasdi_payroll_income_bn"]
+    hi_payroll_income_bn = tr["hi_payroll_income_bn"]
+    hi_derived_superseded_bn = HI_COMBINED_RATE * wage_bill_bn
 
     cap = {
         "gdp_bn": gdp_bn,
@@ -195,6 +213,18 @@ def build():
         "gdp_source": "FRED GDP, annual mean of quarterly nominal GDP",
         "total_wage_bill_bn": wage_bill_bn,
         "total_wage_bill_source": "this project's occupational grid, data/processed/paei_c.csv",
+        "national_wage_bill_bn": national_wage_bill_bn,
+        "national_wage_bill_source":
+            "FRED WASCUR, NIPA wages and salaries. THE BASE every dose is converted to "
+            "dollars on. The occupational grid above is a SUBSET of national wages "
+            f"({100 * wage_bill_bn / national_wage_bill_bn:.1f} percent of it, and "
+            "src/coverage_reconciliation.py reconciles the two), so a dose expressed as a "
+            "share of the grid is scaled to dollars on the national total under an explicit "
+            "proportionality assumption. WASCUR and not FRED COE: tau_l is built as federal "
+            "taxes over WASCUR, and compensation of employees additionally includes employer "
+            "pension and health contributions, which bear neither the income tax nor the "
+            "payroll tax.",
+        "grid_share_of_national_wage_bill": wage_bill_bn / national_wage_bill_bn,
         "sheets": {
             "bank_capital": {
                 "capacity_bn": cet1_surplus_bn,
@@ -326,34 +356,83 @@ def build():
                 "measure": "annual federal current receipts",
                 "source": f"FRED FGRECPT, annual mean, {receipts_date}",
                 "reference_point": {
+                    "cited_revenue_decrease_bn": cbo["revenue_decrease_bn"],
+                    "cited_revenue_decrease_pct_of_receipts":
+                        cbo["revenue_decrease_bn"] / receipts_bn,
+                    "cited_deficit_increase_tn": cbo["deficit_increase_2020_2030_tn"],
+                    "cited_source": cbo["document"],
+                    "cited_local_original": cbo["local_original"],
+                    "note": "CITED, replacing the derived threshold. The owner placed the "
+                            "CBO document and its original PDF; src/owner_files.py checks "
+                            "the extraction against the PDF text layer.",
                     "largest_annual_fall": peak_fall,
                     "years": list(peak_years),
-                    "note": "DERIVED from FRED because CBO publication pages return HTTP "
-                            "403 to this environment. The exact document is CBO's "
-                            "Preliminary Estimate of the Effects of H.R. 748.",
+                    "derived_note": "RETAINED alongside because it measures a different "
+                                    "thing: the largest annual fall in receipts actually "
+                                    "observed in FRED, against what one act was scored as "
+                                    "costing.",
                 },
             },
             "oasdi": {
-                "capacity_bn": OASDI_PAYROLL_INCOME_BN,
+                "capacity_bn": oasdi_payroll_income_bn,
                 "measure": "annual OASDI payroll income",
-                "source": "A32, verified in this repository",
-                "reserves_bn": None,
-                "reserves_status": "BLOCKED. SSA.gov returns HTTP 403 on every route and no "
-                                   "FRED series carries the trust fund balance. The exact "
-                                   "document is the annual OASDI Trustees Report summary "
-                                   "tables. Left empty rather than guessed.",
+                "source": "2026 Trustees summary Table 5: OASI payroll taxes 1,130.7bn "
+                          "plus DI 191.9bn. SUPERSEDES the 1,323.2bn derived in A32 as "
+                          "91.3 percent of total income; the published payroll share is "
+                          f"{100 * tr['payroll_share_of_oasdi_income']:.2f} percent and "
+                          "the two figures differ by 0.05 percent.",
+                "reserves_bn": tr["oasdi_reserves_end_2025_bn"],
+                "reserves_detail_bn": {"OASI": tr["funds"]["OASI"]["reserves_end_2025_bn"],
+                                       "DI": tr["funds"]["DI"]["reserves_end_2025_bn"]},
+                "reserves_status": "FILLED from 2026 Trustees summary Table 4, end of 2025. "
+                                   "The A85 and A100 BLOCKED record is superseded.",
+                "depletion": {"OASI": tr["depletion"]["OASI"],
+                              "DI": tr["depletion"]["DI"],
+                              "combined": tr["depletion"]["OASDI_combined"]},
+                "depletion_note": "A SECOND capacity measure. A reserve stock says how "
+                                  "much; a depletion date says how long, and for a fund "
+                                  "running down that is the number a supervisor uses. The "
+                                  "share of scheduled benefits payable at depletion is the "
+                                  "size of the cliff.",
                 "reference_point": {
-                    "existing_deficit_share": 160.2 / OASDI_PAYROLL_INCOME_BN,
-                    "note": "the combined deficit already being run, A32",
+                    "net_change_in_reserves_bn": tr["oasdi_net_change_in_reserves_bn"],
+                    "net_change_share_of_payroll_income":
+                        abs(tr["oasdi_net_change_in_reserves_bn"])
+                        / oasdi_payroll_income_bn,
+                    "note": "160.2bn is the OASDI NET CHANGE IN RESERVES in 2025 (OASI "
+                            "-200.0 plus DI +39.8), that is, the amount by which cost "
+                            "exceeded TOTAL income including interest. It is not an HI "
+                            "figure and not a payroll-only balance.",
                 },
             },
             "hi": {
                 "capacity_bn": hi_payroll_income_bn,
-                "measure": "annual HI payroll income at the statutory combined rate",
-                "source": f"2.9 percent (26 USC 3101(b) and 3111(b)) on the uncapped wage "
-                          f"bill of {wage_bill_bn:,.0f}bn",
-                "reserves_bn": None,
-                "reserves_status": "BLOCKED, same as OASDI.",
+                "measure": "annual HI payroll income",
+                "source": "2026 Trustees summary Table 5: HI payroll taxes 403.2bn, 2025.",
+                "superseded_derived_bn": hi_derived_superseded_bn,
+                "superseded_note": f"SUPERSEDES {hi_derived_superseded_bn:,.1f}bn, which "
+                                   f"applied the statutory 2.9 percent combined rate to "
+                                   f"this project's occupational wage bill of "
+                                   f"{wage_bill_bn:,.0f}bn. That grid is a SUBSET of "
+                                   f"covered earnings, so the derived figure was "
+                                   f"{100 * hi_derived_superseded_bn / hi_payroll_income_bn:.1f}"
+                                   f" percent of the published one. The gap is the wage "
+                                   f"bill, not the rate.",
+                "total_income_bn": tr["hi_total_income_bn"],
+                "total_income_note": "462.4bn is HI TOTAL income including interest, "
+                                     "government contributions and beneficiary premiums. "
+                                     "It is NOT a payroll denominator and must not be used "
+                                     "as one.",
+                "reserves_bn": tr["funds"]["HI"]["reserves_end_2025_bn"],
+                "reserves_status": "FILLED from 2026 Trustees summary Table 4, end of 2025. "
+                                   "The A85 and A100 BLOCKED record is superseded.",
+                "depletion": tr["depletion"]["HI"],
+                "in_deficit_now": False,
+                "in_deficit_note": "HI was NOT in deficit in 2025: reserves ROSE by 18.2bn, "
+                                   "from 237.5 to 255.7. The Trustees put the first year HI "
+                                   "cost exceeds income excluding interest at 2026 and "
+                                   "including interest at 2027. Any text stating HI is "
+                                   "already in deficit is wrong.",
             },
             "landlords_multifamily": {
                 "capacity_bn": None,

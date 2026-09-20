@@ -17,10 +17,44 @@ ROOT = pathlib.Path(__file__).parents[1]
 OUT = ROOT / "data" / "processed"
 REL = ROOT / "data" / "release"
 SCEN, DASH = REL / "scenarios", REL / "dashboard"
-VERSION = "0.7.0"
+VERSION = "0.8.0"
 TODAY = "2026-09-20"
 
 CHANGELOG = """# Changelog
+
+## 0.8.0 (2026-09-20)
+Independent replication round one matched 21 of 51 quantities. This release is the repair.
+The mismatches are classified in notes/replication/round1_mismatch_classification.md and the
+rebuilt brief is notes/replication_brief_v2.md.
+
+- THE BREAK-EVEN CAPITAL TAX RATE WAS WRONG AND IS CORRECTED. The replicator found the
+  sealed case A maximum of 0.378371 above the highest reading of tau_l, which the brief's own
+  definition tau_l * (1 - R) makes impossible. Two defects multiplied: the expression divided
+  a loss that ALREADY nets out tau_k by a surplus, and numerator and denominator were built
+  on two different wage bill totals. Case A is now 0.125 to 0.301 and case B 0.182 to 0.650,
+  replacing 0.214 to 0.378 and 0.561 to 0.860. Plausibility bounds are now enforced: case A
+  cannot exceed tau_l + g, no rate can exceed 1, and case B cannot fall below case A.
+- THE WAGE BILL BASE IS CORRECTED THROUGHOUT. A dose is converted to dollars on FRED WASCUR
+  national wages and salaries, the base tau_l is actually built on. The fiscal modules were
+  using compensation of employees, which includes employer pension and health contributions
+  that bear neither the income tax nor the payroll tax, and the second-round module was using
+  this project's occupational grid, which is 73.9 percent of national wages. Fiscal dollar
+  figures fall 17.6 percent; second-round demand figures rise 35.4 percent.
+- THE TRUST FUND DENOMINATORS ARE READ FROM THE TRUSTEES REPORT, not derived. HI payroll
+  income is 403.2bn, replacing 462.4bn, which is HI TOTAL income including interest,
+  government contributions and premiums. HI's own payroll share of fund income, 0.8720,
+  replaces the OASDI share of 0.9126 that was being applied to both funds.
+- THE TRUST FUND RESERVE COLUMN IS FILLED and DEPLETION TIMING is added as a second capacity
+  measure: OASI 2,338.3bn depleting 2032 Q4, DI 223.0bn not depleting within 75 years, HI
+  255.7bn depleting 2033 Q2. HI was NOT in deficit in 2025: its reserves rose by 18.2bn.
+- THE AUTO AGGREGATE MOVES OFF A DISCONTINUED SERIES. FRED MVLOAS ended at 2024Q4 while every
+  other input is 2026. Replaced with the NY Fed Household Debt and Credit auto loan balance,
+  1,713bn at 2026Q2, the same source and vintage as the mortgage and student aggregates. The
+  auto under-reporting factor moves from 1.743 to 1.904; the auto bank loss does not move,
+  because the bank-held share carries the same denominator and the two cancel.
+- THE DASHBOARD gains auto loan delinquency, the trust fund reserve balances and the
+  depletion dates, which standing requirement 4 asks for and which were previously recorded
+  as blocked.
 
 ## 0.7.0 (2026-09-20)
 - THE TABLE IS REORGANISED BY WAGE QUINTILE. Exposure type turned out to be a pay proxy in
@@ -179,6 +213,27 @@ def build_scenarios():
     return P
 
 
+def _nyfed_auto_delinquency_pct():
+    """Percent of auto loan balance 90+ days delinquent, latest quarter, read from the NY
+    Fed report's own data workbook. Standing requirement 4 names this indicator."""
+    import openpyxl
+    wb = openpyxl.load_workbook(
+        ROOT / "data" / "raw" / "manual" / "NYFed_HHDC_2026Q2_data.xlsx",
+        read_only=True, data_only=True)
+    ws = wb["Page 12 Data"]
+    rows = list(ws.iter_rows(values_only=True))
+    header = next(list(r) for r in rows if r and "AUTO" in [str(c).strip().upper()
+                                                            if c else "" for c in r])
+    col = [str(c).strip().upper() if c else "" for c in header].index("AUTO")
+    data = [r for r in rows if r and r[0] and isinstance(r[1], (int, float))]
+    return round(float(data[-1][col]), 2)
+
+
+_TR = json.loads((ROOT / "data" / "processed"
+                  / "owner_sources.json").read_text())["trustees_2026"]
+_AUTO_DELINQ = _nyfed_auto_delinquency_pct()
+
+
 def build_dashboard():
     DASH.mkdir(parents=True, exist_ok=True)
     rws = json.loads((OUT / "retained_wage_share_summary.json").read_text())
@@ -257,11 +312,56 @@ def build_dashboard():
          "source": "Federal Reserve 2026 Dodd-Frank Act stress test results, June 2026",
          "date": "2026-06"},
         {"indicator": "Payroll share of OASDI trust fund income",
-         "value": 0.913,
+         "value": round(_TR["payroll_share_of_oasdi_income"], 4),
          "threshold": "n/a, context for the fiscal channel",
          "status": "REPORTED",
-         "source": "repository finding A32, from SSA trustees data",
+         "source": "2026 Trustees Reports summary Table 5, placed by the owner at "
+                   "data/raw/owner/. SUPERSEDES the 0.913 derived in A32",
          "date": "2025"},
+        {"indicator": "Payroll share of HI trust fund income",
+         "value": round(_TR["hi_payroll_income_bn"] / _TR["hi_total_income_bn"], 4),
+         "threshold": "n/a, context for the fiscal channel",
+         "status": "REPORTED. It is NOT the OASDI share, and using the OASDI share for HI "
+                   "overstated every HI ratio by a factor of 1.047",
+         "source": "2026 Trustees Reports summary Table 5",
+         "date": "2025"},
+        {"indicator": "Auto loan balance 90+ days delinquent",
+         "value": _AUTO_DELINQ,
+         "threshold": "no threshold set; the pathway-specific credit indicator standing "
+                      "requirement 4 asks for",
+         "status": "REPORTED. Filled this release; previously recorded as not retrieved",
+         "source": "NY Fed Household Debt and Credit 2026:Q2 data workbook, Page 12 Data, "
+                   "percent of balance 90+ days delinquent by loan type",
+         "date": "2026-06"},
+        {"indicator": "OASI trust fund reserves",
+         "value": _TR["funds"]["OASI"]["reserves_end_2025_bn"],
+         "threshold": "depleted 2032 Q4, after which 78 percent of scheduled benefits are "
+                      "payable",
+         "status": "FALLING. Net change in 2025 was -200.0bn",
+         "source": "2026 Trustees Reports summary Tables 4, 7 and 8",
+         "date": "end of 2025"},
+        {"indicator": "DI trust fund reserves",
+         "value": _TR["funds"]["DI"]["reserves_end_2025_bn"],
+         "threshold": "not depleted within the 75-year projection window",
+         "status": "RISING. Net change in 2025 was +39.8bn",
+         "source": "2026 Trustees Reports summary Tables 4 and 8",
+         "date": "end of 2025"},
+        {"indicator": "HI trust fund reserves",
+         "value": _TR["funds"]["HI"]["reserves_end_2025_bn"],
+         "threshold": "depleted 2033 Q2, after which 89 percent of scheduled benefits are "
+                      "payable",
+         "status": "RISING in 2025 (+18.2bn). HI is NOT yet in deficit: the Trustees put "
+                   "the first year cost exceeds income excluding interest at 2026",
+         "source": "2026 Trustees Reports summary Tables 4, 7, 8 and 12",
+         "date": "end of 2025"},
+        {"indicator": "Combined OASDI reserve depletion date",
+         "value": "2034 Q3",
+         "threshold": "83 percent of scheduled benefits payable at depletion",
+         "status": "A CAPACITY MEASURE IN TIME. A reserve stock says how much; a depletion "
+                   "date says how long, and for a fund running down that is the number a "
+                   "supervisor uses",
+         "source": "2026 Trustees Reports summary Tables 7 and 8",
+         "date": "2026 report"},
     ]
     D = pd.DataFrame(rows)
     D.to_csv(DASH / "dashboard.csv", index=False)
@@ -271,10 +371,12 @@ def build_dashboard():
         "Every indicator computable from public data, with its current value, source, date "
         "and threshold where one exists. Regenerated whenever an input changes.\n\n"
         "## NOT YET POPULATED, and deliberately left empty rather than guessed\n\n"
-        "- Auto loan delinquency. Needs the New York Fed Household Debt and Credit report "
-        "transition rates, not yet retrieved and verified.\n"
-        "- Driverless fleet counts. Needs company disclosures, to be labelled as such.\n"
-        "- OASDI trust fund balance. Needs the current Trustees Report, not yet retrieved.\n",
+        "- Driverless fleet counts. Needs company disclosures, to be labelled as such.\n\n"
+        "## FILLED IN 0.8.0, previously recorded as blocked\n\n"
+        "- Auto loan delinquency, from the NY Fed Household Debt and Credit 2026:Q2 data "
+        "workbook.\n"
+        "- OASDI and HI trust fund reserve balances and depletion dates, from the 2026 "
+        "Trustees Reports summary tables the owner placed in data/raw/owner/.\n",
         encoding="utf-8")
     return D
 

@@ -1,6 +1,6 @@
 # Dose-response table
 
-Version 0.7.0, generated 2026-09-20.
+Version 0.8.0, generated 2026-09-20.
 
 Rows are displacement as a share of the TOTAL US wage bill. Columns are balance sheets. Every cell reports the loss in dollars, as a share of GDP, and as a share of that sheet's own absorbing capacity, whose measure and source are in `absorbing_capacities.json`.
 

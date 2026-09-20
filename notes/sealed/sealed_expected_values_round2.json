@@ -1,0 +1,509 @@
+{
+  "_README": "Open this only AFTER rebuilding from notes/replication_brief.md. Every entry is expected value, tolerance, and the construction's identity. A rebuilt value outside tolerance means the claim resting on it does not stand until the difference is explained.",
+  "_tolerances": {
+    "survey_relative": 0.02,
+    "fit_relative": 0.05,
+    "share_absolute": 0.01
+  },
+  "rho_slack": {
+    "intercept": {
+      "expected": 1.227975,
+      "tolerance": "fit_relative",
+      "note": "rho = intercept + slope * prime-age nonemployment percent"
+    },
+    "slope": {
+      "expected": -0.02749,
+      "tolerance": "fit_relative",
+      "note": "per percentage point of nonemployment"
+    },
+    "r_squared": {
+      "expected": 0.773334,
+      "tolerance": "fit_relative",
+      "note": "n = 14 DWS vintages"
+    },
+    "n": {
+      "expected": 14.0,
+      "tolerance": "share_absolute",
+      "note": "one observation per DWS vintage"
+    },
+    "x_range_low": {
+      "expected": 18.27241,
+      "tolerance": "fit_relative",
+      "note": "below this the relation is extrapolated"
+    },
+    "x_range_high": {
+      "expected": 24.70612,
+      "tolerance": "fit_relative",
+      "note": "above this the relation is extrapolated"
+    }
+  },
+  "fiscal": {
+    "R_2026": {
+      "expected": 0.568316,
+      "tolerance": "fit_relative",
+      "note": "R = rho * omega, retained wage share"
+    },
+    "tau_k_sourced_low": {
+      "expected": 0.03245,
+      "tolerance": "share_absolute",
+      "note": "Barkai rent share 0.351"
+    },
+    "tau_k_sourced_high": {
+      "expected": 0.20351,
+      "tolerance": "share_absolute",
+      "note": "Barkai rent share 0.351"
+    },
+    "tau_k_needed_bottom_up_0.301": {
+      "expected": 0.129937,
+      "tolerance": "share_absolute",
+      "note": "tau_k such that R = 1 - tau_k / tau_l holds with equality"
+    },
+    "tau_k_needed_AMR_0.255": {
+      "expected": 0.110079,
+      "tolerance": "share_absolute",
+      "note": "at the AMR reading of tau_l"
+    },
+    "condition_passes": {
+      "expected": false,
+      "tolerance": "exact",
+      "note": "required tau_k exceeds the top of the sourced range at every reading of tau_l"
+    }
+  },
+  "fiscal_magnitudes": {
+    "terminal_year_loss_bn_at_10pct": {
+      "expected": 85.168033,
+      "tolerance": "survey_relative",
+      "note": "annual flow in the terminal year, 10-year horizon, mean across exposure groups at this dose"
+    },
+    "terminal_year_loss_bn_at_25pct": {
+      "expected": 301.891733,
+      "tolerance": "survey_relative",
+      "note": "as above at a 25 percent dose"
+    },
+    "pct_of_receipts_at_10pct": {
+      "expected": 1.424073,
+      "tolerance": "share_absolute",
+      "note": "against federal current receipts"
+    },
+    "pct_of_receipts_at_25pct": {
+      "expected": 5.047817,
+      "tolerance": "share_absolute",
+      "note": "against federal current receipts"
+    }
+  },
+  "trust_funds": {
+    "OASDI_pct_of_payroll_income_at_10pct": {
+      "expected": 4.069493,
+      "tolerance": "share_absolute",
+      "note": "denominator is FUND payroll income, not receipts"
+    },
+    "OASDI_pct_of_payroll_income_at_25pct": {
+      "expected": 12.0319,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "HI_pct_of_payroll_income_at_10pct": {
+      "expected": 3.85822,
+      "tolerance": "share_absolute",
+      "note": "HI has no earnings cap"
+    },
+    "grid_maximum_pct": {
+      "expected": 76.4303,
+      "tolerance": "share_absolute",
+      "note": "BOUND: must lie between 0 and 100"
+    }
+  },
+  "under_reporting": {
+    "mortgage": {
+      "expected": 1.2592,
+      "tolerance": "survey_relative",
+      "note": "official aggregate over the FULL SIPP household universe"
+    },
+    "card": {
+      "expected": 2.5159,
+      "tolerance": "survey_relative",
+      "note": "official aggregate over the FULL SIPP household universe"
+    },
+    "auto": {
+      "expected": 1.9036,
+      "tolerance": "survey_relative",
+      "note": "official aggregate over the FULL SIPP household universe"
+    },
+    "student": {
+      "expected": 1.4233,
+      "tolerance": "survey_relative",
+      "note": "official aggregate over the FULL SIPP household universe"
+    },
+    "coverage_share": {
+      "mortgage": {
+        "expected": 0.8205,
+        "tolerance": "share_absolute",
+        "note": "working-core balance over the full universe"
+      },
+      "card": {
+        "expected": 0.74,
+        "tolerance": "share_absolute",
+        "note": "working-core balance over the full universe"
+      },
+      "auto": {
+        "expected": 0.7737,
+        "tolerance": "share_absolute",
+        "note": "working-core balance over the full universe"
+      },
+      "student": {
+        "expected": 0.8832,
+        "tolerance": "share_absolute",
+        "note": "working-core balance over the full universe"
+      }
+    },
+    "identity": "factor divided by coverage share reproduces the working-core figure to three decimals"
+  },
+  "household_first_round": {
+    "mortgage_bank_loss_hi_bn_at_10pct": {
+      "expected": 4.055,
+      "tolerance": "survey_relative",
+      "note": "exposure at default times LGD times the bank-held share"
+    },
+    "mortgage_pct_of_fed_at_10pct": {
+      "expected": 18.02,
+      "tolerance": "share_absolute",
+      "note": "against the Fed severely adverse loss for that book"
+    },
+    "card_bank_loss_hi_bn_at_10pct": {
+      "expected": 7.094,
+      "tolerance": "survey_relative",
+      "note": "exposure at default times LGD times the bank-held share"
+    },
+    "card_pct_of_fed_at_10pct": {
+      "expected": 3.495,
+      "tolerance": "share_absolute",
+      "note": "against the Fed severely adverse loss for that book"
+    },
+    "auto_bank_loss_hi_bn_at_10pct": {
+      "expected": 3.04,
+      "tolerance": "survey_relative",
+      "note": "exposure at default times LGD times the bank-held share"
+    },
+    "auto_pct_of_fed_at_10pct": {
+      "expected": 5.619,
+      "tolerance": "share_absolute",
+      "note": "against the Fed severely adverse loss for that book"
+    },
+    "student_bank_loss_hi_bn_at_10pct": {
+      "expected": 5.202,
+      "tolerance": "survey_relative",
+      "note": "exposure at default times LGD times the bank-held share"
+    },
+    "student_pct_of_fed_at_10pct": {
+      "expected": 9.616,
+      "tolerance": "share_absolute",
+      "note": "against the Fed severely adverse loss for that book"
+    },
+    "_scope": "FIRST ROUND ONLY. House prices, consumer demand, business revenue and the employment of non-displaced workers are held fixed. Against the Fed's economy-wide scenario this is a LOWER BOUND, not an estimate."
+  },
+  "cap_contrast": {
+    "SIPP": {
+      "cognitive_AIOE": {
+        "expected": 0.7044,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "cognitive_GPT": {
+        "expected": 0.8328,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "embodied": {
+        "expected": 0.8837,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "ALL": {
+        "expected": 0.8248,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      }
+    },
+    "ACS": {
+      "cognitive_AIOE": {
+        "expected": 0.8119,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "cognitive_GPT": {
+        "expected": 0.9075,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "embodied": {
+        "expected": 0.9775,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      },
+      "ALL": {
+        "expected": 0.8985,
+        "tolerance": "share_absolute",
+        "note": "share of the group's wage bill under the 184,500 dollar base"
+      }
+    }
+  },
+  "pay_control": {
+    "ACS_distress_pp_per_bn_cognitive_AIOE": {
+      "raw_gap": {
+        "expected": 0.002751,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 0.929741,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 0.967992,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "ACS_share_under_OASDI_cap_cognitive_AIOE": {
+      "raw_gap": {
+        "expected": 0.165674,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 0.885952,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 0.539456,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "ACS_distress_pp_per_bn_cognitive_GPT": {
+      "raw_gap": {
+        "expected": 0.001945,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 0.939561,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 0.982664,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "ACS_share_under_OASDI_cap_cognitive_GPT": {
+      "raw_gap": {
+        "expected": 0.069899,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 0.965798,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 0.889061,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "SIPP_share_under_OASDI_cap_cognitive_AIOE": {
+      "raw_gap": {
+        "expected": 0.179265,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 0.989861,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 0.984356,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "SIPP_share_under_OASDI_cap_cognitive_GPT": {
+      "raw_gap": {
+        "expected": 0.050811,
+        "tolerance": "survey_relative",
+        "note": "embodied minus cognitive"
+      },
+      "share_of_gap_that_is_pay_a": {
+        "expected": 1.99627,
+        "tolerance": "share_absolute",
+        "note": "cognitive reweighted to embodied pay"
+      },
+      "share_of_gap_that_is_pay_b": {
+        "expected": 3.086923,
+        "tolerance": "share_absolute",
+        "note": "embodied reweighted to cognitive pay"
+      }
+    },
+    "_finding": "Neither exposure-type contrast survives the pay control. Between 1.0 and 11.4 percent of the raw gap remains at the weaker end, and the SIPP Eloundou GPT cap contrast reverses sign. Report a PAY mechanism with an exposure-type CORRELATE."
+  },
+  "incidence": {
+    "household_count_spread_low": {
+      "expected": 1.049,
+      "tolerance": "share_absolute",
+      "note": "max over min on household COUNTS"
+    },
+    "household_count_spread_high": {
+      "expected": 1.092,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "dollar_spread_low": {
+      "expected": 1.75,
+      "tolerance": "share_absolute",
+      "note": "max over min on the DOLLARS those households owe"
+    },
+    "dollar_spread_high": {
+      "expected": 3.01,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "rule": "no dollar figure may be quoted without naming the incidence assumption; the count figures are robust to it"
+  },
+  "sovereign": {
+    "federal_share_first_round_min": {
+      "expected": 0.759,
+      "tolerance": "share_absolute",
+      "note": "federal over federal plus private, first-round column"
+    },
+    "federal_share_first_round_max": {
+      "expected": 0.916,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "federal_share_with_second_round_min": {
+      "expected": 0.566,
+      "tolerance": "share_absolute",
+      "note": "the second round raises the total and LOWERS the federal share"
+    },
+    "federal_share_with_second_round_max": {
+      "expected": 0.645,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "federal_student_share": {
+      "expected": 0.972808,
+      "tolerance": "share_absolute",
+      "note": "FRED FGCCSAQ027S over the NY Fed total"
+    },
+    "_ordering": "CRT and private mortgage insurance are LOSS TRANSFERS taken BEFORE Enterprise capital, not additions to it"
+  },
+  "second_round": {
+    "bank_losses_bn_min": {
+      "expected": 173.4673,
+      "tolerance": "survey_relative",
+      "note": "50 percent cognitive AIOE dose, across all sourced input combinations"
+    },
+    "bank_losses_bn_max": {
+      "expected": 1564.771,
+      "tolerance": "survey_relative",
+      "note": ""
+    },
+    "bank_losses_bn_median": {
+      "expected": 624.9,
+      "tolerance": "survey_relative",
+      "note": ""
+    },
+    "house_price_fall_pct_min": {
+      "expected": 6.5975,
+      "tolerance": "share_absolute",
+      "note": "income elasticity 0.21"
+    },
+    "house_price_fall_pct_max": {
+      "expected": 47.125,
+      "tolerance": "share_absolute",
+      "note": "income elasticity 1.50"
+    },
+    "demand_event_first_share": {
+      "expected": 0.740741,
+      "tolerance": "share_absolute",
+      "note": "share of combinations in which demand severity exceeds house price severity"
+    },
+    "_verdict": "SURVIVES ONLY CONDITIONALLY",
+    "_dominant_input": "the MPC gap explains about 0.95 of the variance of the demand severity; the house price elasticity explains 0.998 of the variance of the house price fall"
+  },
+  "cases": {
+    "case_B_over_A_min": {
+      "expected": 1.382834,
+      "tolerance": "share_absolute",
+      "note": "fiscal loss under case B over case A"
+    },
+    "case_B_over_A_max": {
+      "expected": 1.677406,
+      "tolerance": "share_absolute",
+      "note": ""
+    },
+    "break_even_tau_k_case_A_min": {
+      "expected": 0.124614,
+      "tolerance": "share_absolute",
+      "note": "tau_l * (1 - R), at the highest R on the grid"
+    },
+    "break_even_tau_k_case_A_max": {
+      "expected": 0.301,
+      "tolerance": "share_absolute",
+      "note": "tau_l * (1 - R) at R = 0, so it equals tau_l exactly. BOUND: cannot exceed tau_l + g"
+    },
+    "break_even_tau_k_case_B_min": {
+      "expected": 0.181771,
+      "tolerance": "share_absolute",
+      "note": "tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC)"
+    },
+    "break_even_tau_k_case_B_max": {
+      "expected": 0.649569,
+      "tolerance": "share_absolute",
+      "note": "BOUND: may exceed tau_l, because the base shrinks as the loss grows, but not 1"
+    },
+    "_definition_case_A": "tau_l * (1 - R)",
+    "_definition_case_B": "tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC), where D is the gross displaced wage bill and dC the demand shortfall",
+    "_bounds": "0 <= case A <= tau_l + g; 0 <= either case <= 1; case B >= case A; D - dC > 0",
+    "_withdrawn_round1": "the round-one values 0.213835 to 0.378371 (case A) and 0.560866 to 0.860022 (case B) are WITHDRAWN. They divided a loss that already nets out tau_k by a surplus built on a different wage bill total, and the case A maximum broke the tau_l + g bound, which is how the replicator caught it",
+    "_rule": "every fiscal figure published before the closing session is a CASE A figure; case B is the internally consistent one whenever the second-round module is quoted"
+  },
+  "debt": {
+    "debt_to_gdp_start": {
+      "expected": 1.214121,
+      "tolerance": "share_absolute",
+      "note": "FRED GFDEBTN over GDP"
+    },
+    "baseline_20y_emerging_market": {
+      "expected": 3.7674,
+      "tolerance": "share_absolute",
+      "note": "NO DISPLACEMENT, r 9 percent against g 3"
+    },
+    "increment_pp_at_10pct_reserve_currency_20y": {
+      "expected": 10.080367,
+      "tolerance": "survey_relative",
+      "note": "case B"
+    },
+    "increment_pp_at_10pct_emerging_market_20y": {
+      "expected": 18.196033,
+      "tolerance": "survey_relative",
+      "note": "case B"
+    },
+    "_withdrawn": "A91's 389 percent at a 10 percent dose is WITHDRAWN as a statement about automation: it is almost entirely the no-displacement baseline compounding at r above g"
+  },
+  "_round": {
+    "round": 2,
+    "brief": "notes/replication_brief_v2.md",
+    "round_1_frozen_at": "notes/sealed/sealed_expected_values_round1_ARCHIVED.json",
+    "round_1_outcome": "21 of 51 attempted quantities matched. The 30 mismatches are classified in notes/replication/round1_mismatch_classification.md.",
+    "wage_bill_base_bn": 13365.2,
+    "wage_bill_base": "FRED WASCUR, national wages and salaries",
+    "not_in": "this file must never be placed in notes/replication/, which is the replicator's own folder"
+  }
+}

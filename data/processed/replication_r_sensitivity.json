@@ -1,0 +1,75 @@
+{
+  "ours_observed_rho_and_our_omega": {
+    "rho": 0.661,
+    "omega": 0.859782,
+    "R": 0.568316,
+    "required_tau_k": {
+      "AMR_0.255": 0.110079,
+      "bottom_up_0.301": 0.129937,
+      "bottom_up_0.318": 0.137276
+    },
+    "operative_tau_k": 0.0708,
+    "sourced_tau_k_high": 0.20351,
+    "condition_passes_at_operative_tau_k": false,
+    "condition_passes_at_top_of_sourced_range": true
+  },
+  "their_fitted_rho_and_our_omega": {
+    "rho": 0.707976,
+    "omega": 0.859782,
+    "R": 0.608705,
+    "required_tau_k": {
+      "AMR_0.255": 0.09978,
+      "bottom_up_0.301": 0.11778,
+      "bottom_up_0.318": 0.124432
+    },
+    "operative_tau_k": 0.0708,
+    "sourced_tau_k_high": 0.20351,
+    "condition_passes_at_operative_tau_k": false,
+    "condition_passes_at_top_of_sourced_range": true
+  },
+  "our_fitted_rho_and_our_omega": {
+    "rho": 0.697137,
+    "omega": 0.859782,
+    "R": 0.599386,
+    "required_tau_k": {
+      "AMR_0.255": 0.102157,
+      "bottom_up_0.301": 0.120585,
+      "bottom_up_0.318": 0.127395
+    },
+    "operative_tau_k": 0.0708,
+    "sourced_tau_k_high": 0.20351,
+    "condition_passes_at_operative_tau_k": false,
+    "condition_passes_at_top_of_sourced_range": true
+  },
+  "ours_observed_rho_and_their_omega": {
+    "rho": 0.661,
+    "omega": 0.9,
+    "R": 0.5949,
+    "required_tau_k": {
+      "AMR_0.255": 0.103301,
+      "bottom_up_0.301": 0.121935,
+      "bottom_up_0.318": 0.128822
+    },
+    "operative_tau_k": 0.0708,
+    "sourced_tau_k_high": 0.20351,
+    "condition_passes_at_operative_tau_k": false,
+    "condition_passes_at_top_of_sourced_range": true
+  },
+  "their_fitted_rho_and_their_omega": {
+    "rho": 0.707976,
+    "omega": 0.9,
+    "R": 0.637178,
+    "required_tau_k": {
+      "AMR_0.255": 0.092519,
+      "bottom_up_0.301": 0.109209,
+      "bottom_up_0.318": 0.115377
+    },
+    "operative_tau_k": 0.0708,
+    "sourced_tau_k_high": 0.20351,
+    "condition_passes_at_operative_tau_k": false,
+    "condition_passes_at_top_of_sourced_range": true
+  },
+  "_replicator_reported_R": 0.6233,
+  "_x_now_prime_age_nonemployment_pct": 19.31,
+  "_note": "The fiscal condition FAILS at the operative tau_k of 0.0708 under every combination, including the replicator's own R of 0.6233. That is the result the replicator independently confirmed after correcting their tau_normal. The condition is closable only at the TOP of the sourced tau_k range and only under the most favourable R, which is the weaker statement the corrected break-even grid also produces."
+}

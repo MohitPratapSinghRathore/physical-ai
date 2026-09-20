@@ -1,0 +1,8 @@
+quantity,value,bound,verdict,detail
+"break-even tau_k, case A, maximum",0.301,a break-even rate on the surplus cannot exceed the labour tax it replaces plus added outlays: tau_l + g = 0.301 + 0 = 0.301,OK,this is the bound the sealed 0.378371 broke
+"break-even tau_k, case A, minimum",0.124614,a tax rate is not negative,OK,
+"break-even tau_k, case B, maximum",0.649569319426274,no tax rate exceeds 1,OK,"case B may exceed tau_l legitimately, because the base shrinks as the loss grows, but it may not exceed 100 percent"
+"break-even tau_k, case B, minimum",0.18177084187460069,a tax rate is not negative,OK,
+"case B break-even minus case A, minimum across the grid",0.05715684187460068,"case B raises the loss and shrinks the base, so it cannot be the lower of the two",OK,
+"case B surplus, minimum",548.5651447079999,a break-even rate exists only while a positive surplus remains to tax,OK,
+case A break-even against the top of the SOURCED tau_k range,0.124614,"NOT a plausibility bound, a THESIS check: the fiscal condition is closable only if a break-even rate falls at or below the sourced maximum of 0.20351",OK,"reported, not enforced: a break-even rate below the sourced maximum WEAKENS the claim that the instrument is unavailable, and must be said plainly"

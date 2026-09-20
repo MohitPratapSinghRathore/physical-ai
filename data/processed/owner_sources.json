@@ -1,0 +1,217 @@
+{
+  "trustees_2026": {
+    "funds": {
+      "OASI": {
+        "reserves_end_2024_bn": 2538.3,
+        "income_2025_bn": 1248.8,
+        "cost_2025_bn": 1448.8,
+        "net_change_2025_bn": -200.0,
+        "reserves_end_2025_bn": 2338.3,
+        "payroll_taxes_2025_bn": 1130.7,
+        "interest_2025_bn": 61.7
+      },
+      "DI": {
+        "reserves_end_2024_bn": 183.2,
+        "income_2025_bn": 200.5,
+        "cost_2025_bn": 160.7,
+        "net_change_2025_bn": 39.8,
+        "reserves_end_2025_bn": 223.0,
+        "payroll_taxes_2025_bn": 191.9,
+        "interest_2025_bn": 7.2
+      },
+      "HI": {
+        "reserves_end_2024_bn": 237.5,
+        "income_2025_bn": 462.4,
+        "cost_2025_bn": 444.2,
+        "net_change_2025_bn": 18.2,
+        "reserves_end_2025_bn": 255.7,
+        "payroll_taxes_2025_bn": 403.2,
+        "interest_2025_bn": 9.1
+      },
+      "SMI": {
+        "reserves_end_2024_bn": 170.4,
+        "income_2025_bn": 763.8,
+        "cost_2025_bn": 765.8,
+        "net_change_2025_bn": -2.0,
+        "reserves_end_2025_bn": 168.4,
+        "payroll_taxes_2025_bn": null,
+        "interest_2025_bn": 3.9
+      }
+    },
+    "oasdi_payroll_income_bn": 1322.6,
+    "oasdi_total_income_bn": 1449.3,
+    "oasdi_net_change_in_reserves_bn": -160.2,
+    "oasdi_reserves_end_2025_bn": 2561.3,
+    "hi_payroll_income_bn": 403.2,
+    "hi_total_income_bn": 462.4,
+    "payroll_share_of_oasdi_income": 0.9126,
+    "depletion": {
+      "OASI": {
+        "year_quarter": "2032 Q4",
+        "pct_scheduled_benefits_payable": 78,
+        "source": "Trustees 2026 summary Tables 7, 8 and 10"
+      },
+      "DI": {
+        "year_quarter": null,
+        "pct_scheduled_benefits_payable": 100,
+        "source": "reserves projected positive through 2100, Table 8"
+      },
+      "OASDI_combined": {
+        "year_quarter": "2034 Q3",
+        "pct_scheduled_benefits_payable": 83,
+        "source": "Trustees 2026 summary Tables 7 and 8"
+      },
+      "HI": {
+        "year_quarter": "2033 Q2",
+        "pct_scheduled_benefits_payable": 89,
+        "source": "Trustees 2026 summary Tables 7, 8 and 12"
+      }
+    },
+    "first_year_cost_exceeds_income_excluding_interest": {
+      "OASI": 2010,
+      "OASDI": 2010,
+      "HI": 2026,
+      "DI": null
+    },
+    "actuarial_balance_pct_taxable_payroll": {
+      "OASI": -4.55,
+      "DI": 0.13,
+      "OASDI": -4.42,
+      "HI": -0.56
+    },
+    "source": "2026 OASDI and Medicare Trustees Reports, summary tables, ssa.gov/oact/trsum/, retrieved 2026-09-20, placed by the owner at data/raw/owner/SSA_2026_Trustees_Summary_Tables.md",
+    "verification": "NO saved original exists for this file: the source is an HTML page, not a PDF. Verified instead by arithmetic reconciliation of every accounting identity the tables contain."
+  },
+  "cbo_hr748": {
+    "deficit_increase_2020_2030_tn": 1.7,
+    "mandatory_outlay_increase_bn": 988.0,
+    "revenue_decrease_bn": 408.0,
+    "discretionary_outlay_increase_bn": 326.0,
+    "treasury_support_for_fed_facilities_bn": 454.0,
+    "document": "CBO, Preliminary Estimate of the Effects of H.R. 748, the CARES Act, Public Law 116-136, revised April 27 2020, letter to the Honorable Mike Enzi, Chairman, Senate Committee on the Budget",
+    "publication_page": "https://www.cbo.gov/publication/56334",
+    "source_pdf": "https://www.cbo.gov/system/files/2020-04/hr748.pdf",
+    "local_original": "data/raw/owner/CBO_hr748_ORIGINAL.pdf",
+    "period": "2020-2030",
+    "_use": "the 408bn revenue decrease is the CITED comparator for a one-act revenue shock and replaces the DERIVED receipts-fall threshold as the headline reference point for the public budget sheet"
+  },
+  "checks": [
+    {
+      "check": "Table 4 identity, OASI: opening + income - cost = closing",
+      "verdict": "OK",
+      "detail": "2538.3 + 1248.8 - 1448.8 = 2338.3 against a stated 2338.3"
+    },
+    {
+      "check": "Table 4 net change, OASI: income - cost = net change",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 4 identity, DI: opening + income - cost = closing",
+      "verdict": "OK",
+      "detail": "183.2 + 200.5 - 160.7 = 223.0 against a stated 223.0"
+    },
+    {
+      "check": "Table 4 net change, DI: income - cost = net change",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 4 identity, HI: opening + income - cost = closing",
+      "verdict": "OK",
+      "detail": "237.5 + 462.4 - 444.2 = 255.7 against a stated 255.7"
+    },
+    {
+      "check": "Table 4 net change, HI: income - cost = net change",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 4 identity, SMI: opening + income - cost = closing",
+      "verdict": "OK",
+      "detail": "170.4 + 763.8 - 765.8 = 168.4 against a stated 168.4"
+    },
+    {
+      "check": "Table 4 net change, SMI: income - cost = net change",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 5 components sum to total income, OASI",
+      "verdict": "OK",
+      "detail": "1248.8 against 1248.8"
+    },
+    {
+      "check": "Table 5 components sum to total income, DI",
+      "verdict": "OK",
+      "detail": "200.5 against 200.5"
+    },
+    {
+      "check": "Table 5 components sum to total income, HI",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 6 total cost matches Table 4 cost, all four funds",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 11 reconciliation: 2025 balance + total change = 2026 balance, OASDI",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "Table 13 reconciliation: 2025 balance + total change = 2026 balance, HI",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "160.2bn is the OASDI NET CHANGE IN RESERVES, not an HI figure and not a payroll-only balance",
+      "verdict": "OK",
+      "detail": "OASI -200.0 + DI 39.8 = -160.2"
+    },
+    {
+      "check": "HI was NOT in deficit in 2025: reserves rose",
+      "verdict": "OK",
+      "detail": "HI net change +18.2bn, reserves 237.5 to 255.7"
+    },
+    {
+      "check": "CBO figure present in BOTH the original PDF and the extraction: $1.7 trillion",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "CBO figure present in BOTH the original PDF and the extraction: $988 billion increase in mandatory outlays",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "CBO figure present in BOTH the original PDF and the extraction: $408 billion decrease in revenues",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "CBO figure present in BOTH the original PDF and the extraction: $326 billion increase in discretionary outlays",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "CBO figure present in BOTH the original PDF and the extraction: up to $454 billion",
+      "verdict": "OK",
+      "detail": ""
+    },
+    {
+      "check": "CBO extraction claims all 35 pages and the PDF has 35",
+      "verdict": "OK",
+      "detail": "35 pages"
+    },
+    {
+      "check": "random sample of extracted sentences found verbatim in the PDF text layer",
+      "verdict": "OK",
+      "detail": "37 of 40; the misses are table rows whose column whitespace the text layer re-flows, not content differences"
+    }
+  ],
+  "n_checks": 23,
+  "n_failures": 0
+}

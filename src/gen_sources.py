@@ -14,6 +14,45 @@ Generated: {ts}
 """
 
 STATIC = [
+    dict(name="2026 OASDI and Medicare Trustees Reports, summary tables",
+         file="data/raw/owner/SSA_2026_Trustees_Summary_Tables.md",
+         url="https://www.ssa.gov/oact/trsum/",
+         ident="all 13 summary tables, extracted text",
+         retrieved="2026-09-20",
+         licence="US government work, public domain.",
+         notes="PLACED BY THE OWNER. NO SAVED ORIGINAL EXISTS: the source is an HTML page, "
+               "not a PDF. Verified instead by arithmetic reconciliation of every accounting "
+               "identity the tables contain, 23 checks and 0 failures, in "
+               "src/owner_files.py. Used for OASDI payroll income 1,322.6bn and HI payroll "
+               "income 403.2bn (Table 5), reserves at end 2025 (Table 4), depletion dates "
+               "(Tables 7, 8, 10 and 12). SUPERSEDES the derived HI figure of 286.2bn and "
+               "the use of 462.4bn, which is HI TOTAL income, as a payroll denominator."),
+    dict(name="CBO, Preliminary Estimate of the Effects of H.R. 748, the CARES Act",
+         file="data/raw/owner/CBO_hr748_ORIGINAL.pdf",
+         url="https://www.cbo.gov/system/files/2020-04/hr748.pdf",
+         ident="revised 27 April 2020, 35 pages, publication 56334",
+         retrieved="2026-09-20",
+         licence="US government work, public domain.",
+         notes="PLACED BY THE OWNER with its extracted text at "
+               "data/raw/owner/CBO_HR748_CARES_2020-04-27_Extracted.txt. The extraction is "
+               "VERIFIED AGAINST THIS ORIGINAL in src/owner_files.py: page count, every "
+               "headline figure present in both, and 37 of 40 sampled sentences verbatim in "
+               "the PDF text layer. Used for the CITED public budget reference point, a "
+               "408bn revenue decrease inside a 1.7tn deficit increase over 2020 to 2030, "
+               "replacing a threshold derived from FRED."),
+    dict(name="NY Fed Household Debt and Credit, 2026Q2, data workbook",
+         file="data/raw/manual/NYFed_HHDC_2026Q2_data.xlsx",
+         url="https://www.newyorkfed.org/medialibrary/interactives/householdcredit/"
+             "data/xls/HHD_C_Report_2026Q2.xlsx",
+         ident="the report's own chart data workbook",
+         retrieved="2026-09-20",
+         licence="Federal Reserve Bank of New York, public.",
+         notes="Used for the AUTO LOAN BALANCE of 1,713bn at 2026Q2 ('Page 3 Data'), which "
+               "REPLACES FRED MVLOAS, discontinued after 2024Q4 and two years stale against "
+               "every other input; and for the auto 90+ delinquency rate of 5.49 percent "
+               "('Page 12 Data'), a trigger dashboard row previously recorded as not "
+               "retrieved. The PDF gives auto only as a quarterly percentage change, which "
+               "is why the workbook is used."),
     dict(name="O*NET Database 31.0 (text)", file="data/raw/onet/db_31_0_text.zip",
          url="https://www.onetcenter.org/dl_files/database/db_31_0_text.zip",
          ident="O*NET 31.0, released August 2026",

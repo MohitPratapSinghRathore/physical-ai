@@ -1,8 +1,28 @@
 # Replication brief
 
+> **SUPERSEDED, 2026-09-20. Do not rebuild from this file.**
+>
+> Round one of the independent replication was run against this version and matched 21 of 51
+> attempted quantities. **Use `notes/replication_brief_v2.md`**, which states every parameter
+> value this one named a source for and did not give, defines the working core, the exposure
+> group and the speed limit, and supplies the models for sections 5, 7, 10 and 11, which
+> produced no values at all.
+>
+> This file is kept unchanged as the document round one was scored against. Its sealed
+> counterpart is frozen at `notes/sealed/sealed_expected_values_round1_ARCHIVED.json`.
+>
+> **Four things in this file are now known to be WRONG**, not merely incomplete:
+> section 2's "rho evaluated at current slack" (R uses the directly observed 2026 rho);
+> section 12's case A loss `tau_l * dW - tau_k * dW` (it gives a break-even of tau_l, not
+> `tau_l * (1 - R)`); section 8's "speed limit about 2.5 times larger" (the slope ratio is
+> 1.107); and section 4's instruction to use FRED MVLOAS for the auto aggregate (the series
+> was discontinued after 2024Q4).
+
+
 **Purpose.** A fresh instance, with no sight of this repository's code, should be able to
 rebuild the quantities below from raw public data and compare them with the sealed values in
-`data/release/sealed_expected_values.json`. If a rebuilt value falls outside its stated
+`notes/sealed/sealed_expected_values.json` (moved there on 2026-09-20; it was in
+`data/release/` when round one was run). If a rebuilt value falls outside its stated
 tolerance, the claim that rests on it does not stand.
 
 **How to use this.** Do not read `src/`. Read this file, fetch the sources named, follow the

@@ -19,6 +19,35 @@ fitted line and a floor at the lowest rho ever observed.
 
 The switcher-omega compounding from A62 is retained: workers displaced more than once earn
 omega to the power of the number of displacements.
+
+THE WAGE BILL BASE, corrected this session (item 1 of the replication-repair session).
+
+This module converts a dose expressed as a SHARE of the wage bill into DOLLARS, and then
+applies tau_l to those dollars. Until now it multiplied the share by COMPENSATION OF
+EMPLOYEES (FRED COE, 16,224.3bn). That is the wrong base, for a reason that is not a
+judgement call:
+
+    tau_l is BUILT in src/fiscal_channel.py as federal taxes divided by WAGES AND SALARIES
+    (FRED WASCUR, 13,365.2bn). A rate and its base must be the same object. Compensation of
+    employees additionally includes employer contributions to pension and health plans,
+    which are not subject to the income tax or to the payroll tax at all, so applying a
+    wage tax rate to compensation taxes income that is not taxed.
+
+The correction divides every dollar fiscal figure in this module by 16,224.3 / 13,365.2 =
+1.2139, that is, it cuts them by 17.6 percent. Percentage-of-receipts, percentage-of-OASDI
+and percentage-of-HI figures fall by the same proportion. RATIO quantities that carry the
+base in both numerator and denominator (the trust fund ratios in
+src/trust_fund_and_benchmark.py, the break-even capital tax rate) are unaffected.
+
+THE ASSUMPTION THIS MAKES, stated because it is not free: the exposed group's share of
+NIPA wages and salaries is taken to equal its share of this project's occupational grid
+wage bill. The grid is a subset of covered earnings, so this is a proportional scale-up.
+
+THE TRUST FUND DENOMINATORS, corrected this session (item 6). OASDI payroll income and HI
+payroll income are now read from the 2026 Trustees summary tables the owner placed in
+data/raw/owner/, through data/processed/owner_sources.json. HI previously used 462.4bn,
+which is HI TOTAL income including interest, government contributions and beneficiary
+premiums. The fund's own PAYROLL income is 403.2bn, and that is what the brief requires.
 """
 import json, pathlib
 import numpy as np
@@ -31,7 +60,6 @@ TAU_L = {"AMR_0.255": 0.255, "bottom_up_0.301": 0.301, "bottom_up_0.318": 0.318}
 TAU_K_READINGS = {"barkai_rent_0.351": 0.0708, "KN_caseR_rent_0.00": 0.0500}
 G_CASES = {"no_outlays": 0.0, "modest_0.10": 0.10, "full_0.25": 0.25}
 DISCOUNT = 0.03
-OASDI_BN, HI_BN = 1323.2, 462.4
 OMEGA_SWITCHER = 0.58
 NONEMP_MAX = 24.71
 EXIT_SHARE = 0.462
@@ -46,7 +74,15 @@ def main():
     om_cf = json.loads((OUT / "retained_wage_share_summary.json").read_text()
                        )["omegas"]["counterfactual_blended_central"]
     fp = json.loads((OUT / "fiscal_persistence_summary.json").read_text())
-    receipts, comp = fp["federal_receipts_bn"], fp["compensation_bn"]
+    receipts = fp["federal_receipts_bn"]
+    # THE BASE. Wages and salaries, the object tau_l is built on, NOT compensation of
+    # employees. See the wage bill base note in this module's docstring.
+    lw = json.loads((OUT / "legW_us_derived.json").read_text())
+    comp = json.loads((OUT / "capacities.json").read_text())["national_wage_bill_bn"]
+    superseded_comp = lw["compensation_usd_bn"]
+    own = json.loads((OUT / "owner_sources.json").read_text())["trustees_2026"]
+    OASDI_BN = own["oasdi_payroll_income_bn"]
+    HI_BN = own["hi_payroll_income_bn"]
 
     axis = pd.read_csv(OUT / "scenario_axis_levels.csv")
     axis = axis[axis.share_of_TOTAL_wage_bill > 0].copy()
@@ -106,6 +142,13 @@ def main():
     base["wb_pct"] = (base.share_of_total_wage_bill * 100).round(0)
 
     pd.set_option("display.width", 240)
+    print("=== BASE AND DENOMINATORS ===")
+    print(f"  wage bill base, FRED WASCUR wages and salaries   {comp:>10,.1f}bn")
+    print(f"  SUPERSEDED base, FRED COE compensation           {superseded_comp:>10,.1f}bn"
+          f"   (ratio {superseded_comp / comp:.4f})")
+    print(f"  OASDI payroll income, Trustees 2026 Table 5      {OASDI_BN:>10,.1f}bn")
+    print(f"  HI payroll income, Trustees 2026 Table 5         {HI_BN:>10,.1f}bn"
+          f"   (SUPERSEDES 462.4bn, which is HI TOTAL income)")
     print("=== FISCAL LOSS ON THE EXTENDED AXIS, no saturation ===")
     print("    terminal-year loss, tau_l 0.301, no outlays, Barkai, 10-year horizon")
     for target in (10, 25, 50, 75):
@@ -124,6 +167,12 @@ def main():
     print("\n=== against the SATURATED figures A75 reported ===")
     print("    A75 said 2.05 percent of receipts and 9.29 percent of OASDI at 25, 50 and 75")
     (OUT / "fiscal_extended_axis_summary.json").write_text(json.dumps({
+        "wage_bill_base_bn": comp,
+        "wage_bill_base": "FRED WASCUR, wages and salaries, the base tau_l is built on",
+        "wage_bill_base_superseded_bn": superseded_comp,
+        "wage_bill_base_correction_factor": comp / superseded_comp,
+        "oasdi_payroll_income_bn": OASDI_BN,
+        "hi_payroll_income_bn": HI_BN,
         "saturation_removed": True,
         "rho_modes": ["fitted", "floor at the lowest observed rho of 0.49"],
         "nonemployment_max_observed": NONEMP_MAX,

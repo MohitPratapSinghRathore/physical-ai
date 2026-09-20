@@ -1,10 +1,10 @@
 quantity,value,bound,verdict,detail
-CORRECTED OASDI loss as percent of that fund's payroll income,76.4638,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
-CORRECTED HI loss as percent of that fund's payroll income,76.4638,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
+CORRECTED OASDI loss as percent of that fund's payroll income,76.4303,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
+CORRECTED HI loss as percent of that fund's payroll income,73.03,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,OK,rebuilt in A79 with the OASDI cap and a payroll numerator
 CORRECTED implied bank share after benchmarking,0.875,a subset cannot exceed its total: 0 to 1,OK,survey balances scaled to official aggregates in A79
-SUPERSEDED A77 terminal fiscal loss as percent of OASDI payroll income,236.3878,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
-SUPERSEDED A77 terminal fiscal loss as percent of HI Part A revenue,676.4455,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
-terminal fiscal loss as percent of federal receipts,52.3002,"cannot exceed the labour-linked share of receipts, about 65%, so 0 to 65 percent",OK,"a displacement shock removes labour-linked revenue, not capital or excise revenue"
+SUPERSEDED A77 terminal fiscal loss as percent of OASDI payroll income,194.8193,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
+SUPERSEDED A77 terminal fiscal loss as percent of HI Part A revenue,639.0574,a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent,VIOLATION,maximum across the extended axis at the ten-year horizon
+terminal fiscal loss as percent of federal receipts,43.0837,"cannot exceed the labour-linked share of receipts, about 65%, so 0 to 65 percent",OK,"a displacement shock removes labour-linked revenue, not capital or excise revenue"
 rho on the extended axis,0.0,a reemployment share is a probability: 0 to 1,OK,
 R = rho x omega,0.5968,a retained wage share is 0 to 1 unless reemployment raises wages,OK,
 SUPERSEDED A79 implied bank share of mortgage balances,0.1757,a subset cannot exceed its total: 0 to 1,OK,above 1 means the survey under-reports that balance relative to the aggregate
@@ -33,5 +33,12 @@ SUPERSEDED A79 implied bank share of student balances,0.7238,a subset cannot exc
 "student loss at 75% of wage bill, as a share of the national balance",0.05362007038240364,a loss cannot exceed the balance it sits on: 0 to 1,OK,
 maximum share of the total wage bill displaced,0.83749,a share of the wage bill is 0 to 1,OK,
 terminal prime-age nonemployment,64.8446,a nonemployment rate is 0 to 100 percent,OK,
+"break-even tau_k, case A, maximum",0.301,a break-even rate on the surplus cannot exceed the labour tax it replaces plus added outlays: tau_l + g = 0.301 + 0 = 0.301,OK,this is the bound the sealed 0.378371 broke
+"break-even tau_k, case A, minimum",0.124614,a tax rate is not negative,OK,nan
+"break-even tau_k, case B, maximum",0.649569319426274,no tax rate exceeds 1,OK,"case B may exceed tau_l legitimately, because the base shrinks as the loss grows, but it may not exceed 100 percent"
+"break-even tau_k, case B, minimum",0.1817708418746006,a tax rate is not negative,OK,nan
+"case B break-even minus case A, minimum across the grid",0.0571568418746006,"case B raises the loss and shrinks the base, so it cannot be the lower of the two",OK,nan
+"case B surplus, minimum",548.5651447079999,a break-even rate exists only while a positive surplus remains to tax,OK,nan
+case A break-even against the top of the SOURCED tau_k range,0.124614,"NOT a plausibility bound, a THESIS check: the fiscal condition is closable only if a break-even rate falls at or below the sourced maximum of 0.20351",OK,"reported, not enforced: a break-even rate below the sourced maximum WEAKENS the claim that the instrument is unavailable, and must be said plainly"
 stock-flow unemployment rate,0.218862,0 to 1.0,OK,
 "stock-flow prime-age E/P ratio, percent",80.240483,0 to 100.0,OK,

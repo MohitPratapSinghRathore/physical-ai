@@ -1,4 +1,10 @@
 {
+  "wage_bill_base_bn": 13365.2,
+  "wage_bill_base": "FRED WASCUR, wages and salaries, the base tau_l is built on",
+  "wage_bill_base_superseded_bn": 16224.3,
+  "wage_bill_base_correction_factor": 0.8237766806580253,
+  "oasdi_payroll_income_bn": 1322.6,
+  "hi_payroll_income_bn": 403.2,
   "saturation_removed": true,
   "rho_modes": [
     "fitted",
@@ -6,7 +12,7 @@
   ],
   "nonemployment_max_observed": 24.71,
   "range_terminal_pct_receipts": [
-    0.059790133433810955,
-    117.68688176227525
+    0.04925375105001953,
+    96.94777454526118
   ]
 }

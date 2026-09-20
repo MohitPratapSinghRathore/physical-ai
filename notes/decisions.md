@@ -428,3 +428,124 @@ Bank-held against agency mortgages; jumbo exposure in cognitive-heavy high-cost 
 the sudden regime; auto credit to the driving pathway; AI-linked lending concentration. These
 are reported even where the measured effect is small, because "small" is itself the finding a
 supervisor needs.
+
+---
+
+# DECISIONS, replication repair session, 2026-09-20
+
+## D-R1. The wage bill base is FRED WASCUR, one base for every module
+
+**Decision.** Every dose expressed as a share of the total wage bill is converted to dollars
+on FRED WASCUR national wages and salaries (13,365.2bn), carried in `capacities.json` as
+`national_wage_bill_bn`. Neither FRED COE compensation of employees (16,224.3bn) nor this
+project's occupational grid (9,870.2bn) is used for that purpose anywhere.
+
+**Why, and it is not a preference.** tau_l is built in `src/fiscal_channel.py` as federal
+taxes divided by WASCUR. A rate and its base must be the same object. Compensation of
+employees additionally includes employer pension and health contributions, which bear neither
+the income tax nor the payroll tax, so applying a wage tax rate to compensation taxes income
+that is not taxed.
+
+**TRADEOFF, and it is a real one.** The dose is defined on the occupational grid, which is
+73.9 percent of WASCUR, so converting on WASCUR assumes the exposed group's share of national
+wages equals its share of the grid. That assumption is now stated everywhere the conversion
+happens. The alternative, converting on the grid, avoids the assumption and instead
+understates every macro figure by a factor of 1.354 while leaving tau_l applied to the wrong
+base anyway. The assumption is the cheaper of the two costs.
+
+**COST.** Every fiscal dollar figure this project has published falls 17.6 percent and every
+second-round demand figure rises 35.4 percent. Twelve claims carry amended numbers.
+
+## D-R2. The break-even capital tax rate is defined analytically, not as a residual
+
+**Decision.** Case A break-even is `tau_l * (1 - R) + g * (1 - rho)`. Case B break-even is
+`tau_l * ((1 - R) * D + (W / Y) * dC) / (D - dC)`. Neither is computed by dividing a fiscal
+loss by a surplus.
+
+**Why.** The loss already nets out tau_k, so dividing it by anything cannot produce the tau_k
+at which it is zero. The residual form also invited the wage bill mismatch, because a
+numerator and a denominator built in different modules do not have to agree and nothing was
+checking that they did.
+
+**GAIN.** The quantity is now dimensionally immune to the base question: it is a pure rate and
+it does not move when the wage bill base changes.
+
+## D-R3. Plausibility bounds go in the brief, not only in the audit
+
+**Decision.** Every sealed quantity that has an analytic bound carries it in the brief, stated
+before the number. Seven new bounds on the break-even rate are added to
+`src/verify/plausibility_audit.py`, which goes from 36 checks to 43.
+
+**Why.** An outsider found a live arithmetic error in this project from a bound alone, with no
+access to the code, while the project's own promotion pass, which recomputed sixteen headline
+quantities in an independent script, did not. **Tolerances test whether two computations
+agree. Bounds test whether a number can exist.** The second is the stronger test and it was
+not in the brief.
+
+## D-R4. The slack measure is defended on mechanism and never on fit
+
+**Decision.** Any sentence preferring prime-age nonemployment to the unemployment rate gives
+the circularity argument in the same breath and does not claim the fit supports it.
+
+**Why.** This session was asked to record a post-2008 restriction on the preference and found
+there is no window on which prime-age nonemployment wins. The unemployment rate has the higher
+R squared on the full sample (0.812 against 0.773) and post-2008 (0.940 against 0.732), and
+its advantage is LARGER post-2008. The expectation the test was written to record is refuted.
+
+**GAIN.** The post-2008 result is itself evidence for the mechanism argument: a circular fit
+should get better as exits become more important, and it does.
+
+**COST.** Anyone selecting the specification on fit will select the other one and will not be
+making an arithmetic error. The paper has to carry the argument, not the statistic. The "2.5
+times larger speed limit" remark is withdrawn; the slope ratio is 1.107.
+
+## D-R5. Round one's sealed file is frozen and round two gets its own
+
+**Decision.** `notes/sealed/sealed_expected_values_round1_ARCHIVED.json` is never
+regenerated. `src/seal.py` writes `notes/sealed/sealed_expected_values_round2.json`. Neither
+goes in `notes/replication/`, which belongs to the replicator, and neither goes in
+`data/release/`, which is for material intended for publication.
+
+**Why.** Regenerating the round-one file destroys the record the first replication was scored
+against. It was in fact overwritten once during this session and restored from git; the
+separate path removes the possibility.
+
+## D-R6. Trust fund figures are read, never derived
+
+**Decision.** OASDI and HI payroll income, reserves, payroll shares of fund income and
+depletion dates come from `data/processed/owner_sources.json`, built by `src/owner_files.py`
+from the 2026 Trustees summary tables. The statutory 2.9 percent HI rate is retained in the
+code only to document the superseded derivation.
+
+**Why.** The derived HI figure was 71.0 percent of the published one, and the two funds have
+different payroll shares of total income (0.9126 and 0.8720) which the code did not
+distinguish.
+
+**GAIN.** The reserve column, blocked since A85 and recorded as blocked again in A100, is
+filled, and depletion timing enters as a capacity measure in its own right.
+
+## D-R7. The auto aggregate moves to the NY Fed, and cards do not
+
+**Decision.** The auto aggregate is the NY Fed Household Debt and Credit auto loan balance,
+1,713bn at 2026Q2, read from the report's own data workbook. Cards stay on FRED REVOLSL.
+
+**Why.** FRED MVLOAS was discontinued after 2024Q4 and Fed G.19 no longer publishes a live
+motor vehicle balance. The NY Fed is already the source for mortgage and student and is on the
+same vintage. Cards are a different matter: revolving consumer credit (1,357.2bn) and the NY
+Fed credit card balance (1,263bn) are different objects and the brief names REVOLSL. That is
+now a stated choice rather than an implicit one.
+
+**TRADEOFF.** The auto under-reporting factor moves 1.7431 to 1.9036, which breaks a
+round-one match the replicator had achieved. It is a vintage correction, not an error
+correction, and it is recorded as such. The auto bank loss does not move at all, because the
+same aggregate sits in the under-reporting factor and in the bank-held share and cancels.
+
+## D-R8. A replication status flag is separate from claim status
+
+**Decision.** Every claim carries two flags: its status under this project's own checklist,
+and whether something that did not write the code has rebuilt it. Nothing may be described as
+independently replicated without the second.
+
+**Why.** The promotion pass gave sixteen matches and zero failures and missed an error an
+outsider caught immediately. Self-checking and outside checking are different evidence and
+collapsing them into one word overstates what has been established.

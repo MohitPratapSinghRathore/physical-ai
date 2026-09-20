@@ -1,0 +1,52 @@
+quantity_id,my_value,sealed,verdict,gap,note
+households_occupied,131.33,131.33,MATCH (rounding),0.0,"brief text, not sealed"
+households_incl_vacant,145.33,145.33,MATCH (rounding),0.0,"brief text, not sealed"
+rho_slack.intercept,1.29948,1.227975,MISMATCH,0.05823,"corrected spec (OECD, Jan, n=14)"
+rho_slack.slope,-0.030632,-0.02749,MISMATCH,0.114296,corrected spec
+rho_slack.r_squared,0.791673,0.773334,MATCH (tolerance),0.023714,corrected spec
+rho_slack.n,14,14,MATCH (rounding),0,corrected spec
+rho_slack.x_range_low,18.27241,18.27241,MATCH (rounding),0.0,corrected spec
+rho_slack.x_range_high,24.70612,24.70612,MATCH (rounding),0.0,corrected spec
+fiscal.R_2026,0.6233,0.568316,MISMATCH,0.096749,my omega 0.90 vs implied 0.815
+fiscal.tau_k_needed_0.255,0.110079,0.110079,MATCH (rounding),0.0,rerun with sealed R
+fiscal.tau_k_needed_0.301,0.129937,0.129937,MATCH (rounding),0.0,rerun with sealed R
+fiscal.tau_k_sourced_high,0.1904,0.20351,MISMATCH,0.01311,my grid top vs sealed top
+fiscal.tau_k_sourced_low,0.1141,0.03245,MISMATCH,0.08165,my grid floor too high
+fiscal_magnitudes.terminal_loss_bn_at_10pct,122.4,103.38722,MISMATCH,0.183899,
+fiscal_magnitudes.terminal_loss_bn_at_25pct,305.9,366.47255,MISMATCH,0.165285,
+trust_funds.OASDI_pct_at_10pct,9.72,4.071273,MISMATCH,5.648727,
+trust_funds.OASDI_pct_at_25pct,24.29,12.037175,MISMATCH,12.252825,
+trust_funds.HI_pct_at_10pct,7.68,4.039627,MISMATCH,3.640373,
+under_reporting.mortgage,1.265,1.2592,MATCH (rounding),0.004606,
+under_reporting.card,2.522,2.5159,MATCH (rounding),0.002425,
+under_reporting.auto,1.751,1.7431,MATCH (rounding),0.004532,
+under_reporting.student,1.428,1.4233,MATCH (rounding),0.003302,
+coverage_share.mortgage,0.8217,0.8205,MATCH (rounding),0.0012,corrected working core
+coverage_share.card,0.7291,0.74,MISMATCH,0.0109,corrected working core
+coverage_share.auto,0.7776,0.7737,MATCH (tolerance),0.0039,corrected working core
+coverage_share.student,0.8936,0.8832,MISMATCH,0.0104,corrected working core
+cap_contrast.ACS.ALL,0.8985,0.8985,MATCH (rounding),0.0,
+cap_contrast.ACS.embodied,0.9733,0.9775,MATCH (rounding),0.0042,my O*NET proxy
+cap_contrast.ACS.cognitive_AIOE,0.8506,0.8119,MISMATCH,0.0387,
+cap_contrast.ACS.cognitive_GPT,0.8939,0.9075,MISMATCH,0.0136,
+cap_contrast.SIPP.embodied,0.8841,0.8837,MATCH (rounding),0.0004,my O*NET proxy
+cap_contrast.SIPP.cognitive_AIOE,0.7614,0.7044,MISMATCH,0.057,
+cap_contrast.SIPP.cognitive_GPT,0.8349,0.8328,MATCH (rounding),0.0021,
+pay_control.raw_gap.ACS_AIOE,0.1227,0.165674,MISMATCH,0.259389,cap outcome
+pay_control.raw_gap.ACS_GPT,0.0794,0.069899,MISMATCH,0.135925,cap outcome
+pay_control.raw_gap.SIPP_AIOE,0.1227,0.179265,MISMATCH,0.315538,cap outcome
+pay_control.raw_gap.SIPP_GPT,0.0492,0.050811,MATCH (within 5pct),0.031706,cap outcome
+pay_control.pay_share.ACS_AIOE,0.6151,0.885952,MISMATCH,0.270852,direction a only
+pay_control.pay_share.ACS_GPT,0.6105,0.965798,MISMATCH,0.355298,direction a only
+pay_control.pay_share.SIPP_AIOE,0.8796,0.989861,MISMATCH,0.110261,direction a only
+pay_control.pay_share.SIPP_GPT,1.4011,1.99627,MISMATCH,0.59517,direction a only; both exceed 1
+cases.case_B_over_A_min,-3.18,1.250129,MISMATCH,4.430129,unstable on my grid
+cases.case_B_over_A_max,3.97,1.442592,MISMATCH,2.527408,unstable on my grid
+cases.breakeven_tau_k_A_min,0.0576,0.213835,MISMATCH,0.156235,
+cases.breakeven_tau_k_A_max,0.1318,0.378371,MISMATCH,0.246571,
+cases.breakeven_tau_k_B_max,1.0979,0.860022,MISMATCH,0.237878,
+debt.debt_to_gdp_start,1.22594,1.214121,MISMATCH,0.011819,
+debt.baseline_20y,3.804,3.7674,MISMATCH,0.0366,my start ratio
+debt.baseline_20y_at_their_start,3.767,3.7674,MATCH (rounding),0.0004,their start ratio
+debt.increment_pp_10pct_emerging,13.6,19.168967,MISMATCH,0.29052,"mine case A, theirs case B"
+sovereign.federal_student_share,0.9728,0.972808,MATCH (rounding),8e-06,

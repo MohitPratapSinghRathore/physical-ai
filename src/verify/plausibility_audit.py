@@ -99,6 +99,19 @@ def main():
     chk("terminal prime-age nonemployment", mx,
         "a nonemployment rate is 0 to 100 percent", mx <= 100.0)
 
+    # ---- 6b. the break-even capital tax rate (item 1 of the replication-repair session).
+    #      The replicator found the sealed case A maximum of 0.378371 above the highest
+    #      reading of tau_l, which tau_l * (1 - R) makes impossible. The bounds were missing
+    #      from this audit as well as from the brief. They are now carried in
+    #      src/consistency.py and folded in here so they run with every other check. ----
+    try:
+        be = pd.read_csv(OUT / "break_even_bounds.csv")
+        for _, s in be.iterrows():
+            chk(s["quantity"], float(s["value"]), s["bound"],
+                s["verdict"] == "OK", str(s.get("detail", "")))
+    except FileNotFoundError:
+        pass
+
     # ---- 7. stock-flow outcome shares ----
     try:
         sf = pd.read_csv(OUT / "stock_flow_v3_grid.csv")

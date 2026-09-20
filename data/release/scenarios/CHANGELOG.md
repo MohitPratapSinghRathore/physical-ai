@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.8.0 (2026-09-20)
+Independent replication round one matched 21 of 51 quantities. This release is the repair.
+The mismatches are classified in notes/replication/round1_mismatch_classification.md and the
+rebuilt brief is notes/replication_brief_v2.md.
+
+- THE BREAK-EVEN CAPITAL TAX RATE WAS WRONG AND IS CORRECTED. The replicator found the
+  sealed case A maximum of 0.378371 above the highest reading of tau_l, which the brief's own
+  definition tau_l * (1 - R) makes impossible. Two defects multiplied: the expression divided
+  a loss that ALREADY nets out tau_k by a surplus, and numerator and denominator were built
+  on two different wage bill totals. Case A is now 0.125 to 0.301 and case B 0.182 to 0.650,
+  replacing 0.214 to 0.378 and 0.561 to 0.860. Plausibility bounds are now enforced: case A
+  cannot exceed tau_l + g, no rate can exceed 1, and case B cannot fall below case A.
+- THE WAGE BILL BASE IS CORRECTED THROUGHOUT. A dose is converted to dollars on FRED WASCUR
+  national wages and salaries, the base tau_l is actually built on. The fiscal modules were
+  using compensation of employees, which includes employer pension and health contributions
+  that bear neither the income tax nor the payroll tax, and the second-round module was using
+  this project's occupational grid, which is 73.9 percent of national wages. Fiscal dollar
+  figures fall 17.6 percent; second-round demand figures rise 35.4 percent.
+- THE TRUST FUND DENOMINATORS ARE READ FROM THE TRUSTEES REPORT, not derived. HI payroll
+  income is 403.2bn, replacing 462.4bn, which is HI TOTAL income including interest,
+  government contributions and premiums. HI's own payroll share of fund income, 0.8720,
+  replaces the OASDI share of 0.9126 that was being applied to both funds.
+- THE TRUST FUND RESERVE COLUMN IS FILLED and DEPLETION TIMING is added as a second capacity
+  measure: OASI 2,338.3bn depleting 2032 Q4, DI 223.0bn not depleting within 75 years, HI
+  255.7bn depleting 2033 Q2. HI was NOT in deficit in 2025: its reserves rose by 18.2bn.
+- THE AUTO AGGREGATE MOVES OFF A DISCONTINUED SERIES. FRED MVLOAS ended at 2024Q4 while every
+  other input is 2026. Replaced with the NY Fed Household Debt and Credit auto loan balance,
+  1,713bn at 2026Q2, the same source and vintage as the mortgage and student aggregates. The
+  auto under-reporting factor moves from 1.743 to 1.904; the auto bank loss does not move,
+  because the bank-held share carries the same denominator and the two cancel.
+- THE DASHBOARD gains auto loan delinquency, the trust fund reserve balances and the
+  depletion dates, which standing requirement 4 asks for and which were previously recorded
+  as blocked.
+
 ## 0.7.0 (2026-09-20)
 - THE TABLE IS REORGANISED BY WAGE QUINTILE. Exposure type turned out to be a pay proxy in
   three independent tests, so the organising dimension is now where in the wage distribution

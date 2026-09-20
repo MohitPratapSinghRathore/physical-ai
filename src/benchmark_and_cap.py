@@ -76,7 +76,18 @@ def main():
     hh = hh[hh["wgt"] > 0]
     core = (hh["n_earners"] > 0) & hh["ref_age"].between(25, 64)
 
-    AGG = {"mortgage": 13_100.0, "card": 1_357.2, "auto": 1_568.6, "student": 1_650.0}
+    # AUTO AGGREGATE, replaced in the replication-repair session (item 5).
+    # FRED MVLOAS, motor vehicle loans owned and securitized, was DISCONTINUED after 2024Q4
+    # while every other input in this project is 2026. Fed G.19 no longer publishes a live
+    # motor vehicle loan balance either, so the replacement is the NY Fed Household Debt and
+    # Credit report, which is ALREADY the source for the mortgage and student aggregates and
+    # is on the same 2026Q2 vintage. Auto loan balance 1,713bn at 2026Q2, read from the
+    # report's own data workbook (data/raw/manual/NYFed_HHDC_2026Q2_data.xlsx, "Page 3 Data"),
+    # against 1,568.6bn at 2024Q4 from the discontinued series.
+    # CARDS stay on FRED REVOLSL: revolving consumer credit and the NY Fed credit card balance
+    # are different objects (REVOLSL 1,357.2bn against a NY Fed card balance of 1,263bn), and
+    # the brief names REVOLSL. That choice is now stated rather than left implicit.
+    AGG = {"mortgage": 13_100.0, "card": 1_357.2, "auto": 1_713.0, "student": 1_650.0}
     rows = []
     for lab, agg in AGG.items():
         full = float((hh[lab].fillna(0) * hh["wgt"]).sum()) / 1e9

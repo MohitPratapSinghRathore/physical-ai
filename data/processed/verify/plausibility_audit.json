@@ -1,17 +1,17 @@
 {
-  "n_checks": 36,
+  "n_checks": 43,
   "n_violations": 4,
   "checks": [
     {
       "quantity": "CORRECTED OASDI loss as percent of that fund's payroll income",
-      "value": 76.4638,
+      "value": 76.4303,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "OK",
       "detail": "rebuilt in A79 with the OASDI cap and a payroll numerator"
     },
     {
       "quantity": "CORRECTED HI loss as percent of that fund's payroll income",
-      "value": 76.4638,
+      "value": 73.03,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "OK",
       "detail": "rebuilt in A79 with the OASDI cap and a payroll numerator"
@@ -25,21 +25,21 @@
     },
     {
       "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of OASDI payroll income",
-      "value": 236.3878,
+      "value": 194.8193,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "VIOLATION",
       "detail": "maximum across the extended axis at the ten-year horizon"
     },
     {
       "quantity": "SUPERSEDED A77 terminal fiscal loss as percent of HI Part A revenue",
-      "value": 676.4455,
+      "value": 639.0574,
       "bound": "a loss on a payroll tax cannot exceed that tax base: 0 to 100 percent",
       "verdict": "VIOLATION",
       "detail": "maximum across the extended axis at the ten-year horizon"
     },
     {
       "quantity": "terminal fiscal loss as percent of federal receipts",
-      "value": 52.3002,
+      "value": 43.0837,
       "bound": "cannot exceed the labour-linked share of receipts, about 65%, so 0 to 65 percent",
       "verdict": "OK",
       "detail": "a displacement shock removes labour-linked revenue, not capital or excise revenue"
@@ -239,6 +239,55 @@
       "bound": "a nonemployment rate is 0 to 100 percent",
       "verdict": "OK",
       "detail": ""
+    },
+    {
+      "quantity": "break-even tau_k, case A, maximum",
+      "value": 0.301,
+      "bound": "a break-even rate on the surplus cannot exceed the labour tax it replaces plus added outlays: tau_l + g = 0.301 + 0 = 0.301",
+      "verdict": "OK",
+      "detail": "this is the bound the sealed 0.378371 broke"
+    },
+    {
+      "quantity": "break-even tau_k, case A, minimum",
+      "value": 0.124614,
+      "bound": "a tax rate is not negative",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "break-even tau_k, case B, maximum",
+      "value": 0.649569319426274,
+      "bound": "no tax rate exceeds 1",
+      "verdict": "OK",
+      "detail": "case B may exceed tau_l legitimately, because the base shrinks as the loss grows, but it may not exceed 100 percent"
+    },
+    {
+      "quantity": "break-even tau_k, case B, minimum",
+      "value": 0.1817708418746006,
+      "bound": "a tax rate is not negative",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case B break-even minus case A, minimum across the grid",
+      "value": 0.0571568418746006,
+      "bound": "case B raises the loss and shrinks the base, so it cannot be the lower of the two",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case B surplus, minimum",
+      "value": 548.5651447079999,
+      "bound": "a break-even rate exists only while a positive surplus remains to tax",
+      "verdict": "OK",
+      "detail": "nan"
+    },
+    {
+      "quantity": "case A break-even against the top of the SOURCED tau_k range",
+      "value": 0.124614,
+      "bound": "NOT a plausibility bound, a THESIS check: the fiscal condition is closable only if a break-even rate falls at or below the sourced maximum of 0.20351",
+      "verdict": "OK",
+      "detail": "reported, not enforced: a break-even rate below the sourced maximum WEAKENS the claim that the instrument is unavailable, and must be said plainly"
     },
     {
       "quantity": "stock-flow unemployment rate",
