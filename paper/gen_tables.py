@@ -395,15 +395,29 @@ def _clean(s, limit=None):
 
 def tab_instruments():
     rs = rows("data/release/architecture/instruments.csv")
-    lines = [r"\begin{tabular}{p{0.4cm}p{3.2cm}p{4.4cm}p{1.5cm}p{3.6cm}}", r"\toprule",
-             r"\# & Institution that must act & Instrument & Type & Binds in \\",
-             r"\midrule"]
+    head = (r"\begin{longtable}{@{}p{0.4cm}p{3.0cm}p{5.0cm}p{1.4cm}p{3.4cm}@{}}")
+    cap = (r"\caption{The twelve instruments, the institution that must act, and the regime "
+           r"in which each binds. Generated from the released architecture file, which also "
+           r"carries the measured mechanism and the verified precedent for every row.}"
+           r"\label{tab:instruments}\\")
+    colhead = (r"\toprule" "\n"
+               r"\# & Institution that must act & Instrument & Type & Binds in \\" "\n"
+               r"\midrule" "\n"
+               r"\endfirsthead" "\n"
+               r"\toprule" "\n"
+               r"\# & Institution that must act & Instrument & Type & Binds in \\" "\n"
+               r"\midrule" "\n"
+               r"\endhead" "\n"
+               r"\bottomrule" "\n"
+               r"\endfoot")
+    lines = [head, cap, colhead]
     for r in rs:
         lines.append(" & ".join([
-            r["n"], _clean(r["institution"]), _clean(r["instrument"])[:170],
-            _clean(r["type"]), _clean(r["binds_in"])[:90]]) + r" \\")
-    lines += [r"\bottomrule", r"\end{tabular}"]
+            r["n"], _clean(r["institution"]), _clean(r["instrument"])[:150],
+            _clean(r["type"]), _clean(r["binds_in"])[:80]]) + r" \\")
+    lines.append(r"\end{longtable}")
     write("tab_instruments.tex", "\n".join(lines))
+
 
 
 # The clearing pass decides WHICH quantities were removed; these are the paper's own

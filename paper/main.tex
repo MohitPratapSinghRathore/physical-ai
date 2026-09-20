@@ -3,6 +3,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{microtype}\setlength{\emergencystretch}{3em}
 \usepackage{amsmath,amssymb,booktabs,graphicx,array,xcolor,enumitem,caption}
+\usepackage{longtable}
 \graphicspath{{figures/}}
 \usepackage[round]{natbib}
 \usepackage[hidelinks]{hyperref}
@@ -105,13 +106,7 @@ and the regime in which it binds. The table is generated from the released archi
 that file carries the measured mechanism, the verified precedent and the trigger with its current
 value for every row.
 
-\begin{table}[htbp]
-\centering\small
-\caption{The twelve instruments, the institution that must act, and the regime in which each
-binds.}
-\label{tab:instruments}
-\input{tables/tab_instruments.tex}
-\end{table}
+{\small\input{tables/tab_instruments.tex}}
 
 \bibliographystyle{apalike}
 \bibliography{references}
