@@ -100,10 +100,18 @@ def main():
     R = {}
 
     # ---- labour backing accounts
-    R["DebtOnlyDirect"] = pct(do["DEBT_ONLY_direct"])
-    R["DebtOnlyIndirect"] = pct(do["DEBT_ONLY_incl_indirect"])
-    R["AllClaimsDirect"] = pct(do["all_claims_direct"])
-    R["AllClaimsIndirect"] = pct(do["all_claims_incl_indirect"])
+    # THE ADOPTED BASIS. The household coefficients are the debt-weighted wage share of
+    # the income that services each class, which is what Definition 1 asks for. Every
+    # headline ratio and every exposure share below is on that basis, taken from the
+    # alternative block of b2_headline_effect.json. The coverage construction, which was
+    # the one independently rebuilt, is reported once in Section 4.1 and in the bridge
+    # table through the macros ending CoverageBasis.
+    wb = b2["alternative"]
+    cb = b2["published"]
+    R["DebtOnlyDirect"] = pct(wb["ratios"]["debt_only_direct"])
+    R["DebtOnlyIndirect"] = pct(wb["ratios"]["debt_only_incl_indirect"])
+    R["AllClaimsDirect"] = pct(wb["ratios"]["all_claims_direct"])
+    R["AllClaimsIndirect"] = pct(wb["ratios"]["all_claims_incl_indirect"])
     R["EquityShareDenom"] = pct(do["equity_share_of_all_claims_latest"])
     R["DebtOnlyCV"] = f"{do['coefficient_of_variation']['debt_only']:.4f}"
     R["AllClaimsCV"] = f"{do['coefficient_of_variation']['all_claims']:.4f}"
@@ -145,16 +153,28 @@ def main():
     R["AIEquityScale"] = pct(tsb["ai_leg"]["ai_equity_share_central"])
     R["HolderGap"] = pct(it3["holder_gap_central"])
 
-    # ---- the wage-quintile gradient
-    R["QTwoPerDollar"] = f"{float(quint['Q2']['labour_backed_per_unit_wage_bill']):.2f}"
-    R["QTopPerDollar"] = f"{float(quint['Q5_top']['labour_backed_per_unit_wage_bill']):.2f}"
+    # ---- the wage-quintile gradient, on the adopted basis
+    qg = b2["quintile_gradient"]["alternative"]
+    R["QTwoPerDollar"] = f"{float(qg['Q2']):.2f}"
+    R["QTopPerDollar"] = f"{float(qg['Q5_top']):.2f}"
     R["QTopWageShare"] = pct(quint["Q5_top"]["quintile_wage_bill_share"])
     R["QTopClaimShare"] = pct(quint["Q5_top"]["share_of_household_labour_backed"])
 
-    # ---- the holder map, wage side
-    R["SovereignUnion"] = pct(sov["share_union"])
-    R["SovereignCreditor"] = pct(sov["share_held_or_guaranteed"])
-    R["SovereignDebtor"] = pct(sov["share_obligor"])
+    # ---- the holder map, wage side, on the adopted basis
+    # one decimal: on the adopted basis the union is 79.5, which rounds to 80 at zero
+    # decimals and to 79 on the coverage construction. Reporting the decimal keeps the
+    # figure from moving a whole point on a rounding convention.
+    R["SovereignUnion"] = pct(wb["exposure"]["union"], 1)
+    R["SovereignCreditor"] = pct(wb["exposure"]["creditor"])
+    R["SovereignDebtor"] = pct(wb["exposure"]["debtor"])
+    R["WageBackedStockBn"] = f"{float(wb['exposure']['W_bn']):,.1f}"
+    # the same three on the coverage construction, for the cross-check in Section 4.1
+    R["SovereignUnionCoverage"] = pct(cb["exposure"]["union"])
+    R["SovereignCreditorCoverage"] = pct(cb["exposure"]["creditor"])
+    R["SovereignDebtorCoverage"] = pct(cb["exposure"]["debtor"])
+    R["AllClaimsDirectCoverage"] = pct(cb["ratios"]["all_claims_direct"])
+    R["AllClaimsIndirectCoverage"] = pct(cb["ratios"]["all_claims_incl_indirect"])
+    R["DebtOnlyIndirectCoverage"] = pct(cb["ratios"]["debt_only_incl_indirect"])
 
     # ---- the receipts bound
     R["GainsAGILow"] = pct(cg["capital_gains_share_of_agi_range"][0], 1)
@@ -573,6 +593,11 @@ def main():
     R["CardWageShare"] = f"{co['credit_card']['alternative']:.3f}"
     R["StudentCoverage"] = f"{co['student_loan']['published']:.3f}"
     R["StudentWageShare"] = f"{co['student_loan']['alternative']:.3f}"
+    R["AutoCoverage"] = f"{co['auto_loan']['published']:.3f}"
+    R["AutoWageShare"] = f"{co['auto_loan']['alternative']:.3f}"
+    R["OtherConsumerCoverage"] = f"{co['other_consumer']['published']:.3f}"
+    R["OtherConsumerWageShare"] = f"{co['other_consumer']['alternative']:.3f}"
+    R["CoefficientMaxMovePP"] = f"{100 * max(abs(v['change']) for v in co.values()):.1f}"
     R["DebtOnlyDirectWageBasis"] = pct(b2["alternative"]["ratios"]["debt_only_direct"])
     R["DebtOnlyIndirectWageBasis"] = pct(b2["alternative"]["ratios"]["debt_only_incl_indirect"])
     R["SovereignUnionWageBasis"] = pct(b2["alternative"]["exposure"]["union"], 1)

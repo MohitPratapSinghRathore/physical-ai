@@ -9,6 +9,7 @@ import re
 import sys
 
 HERE = pathlib.Path(__file__).parent
+ROOT = HERE.parent
 
 # Strings that belong to the project's internal record, never to the manuscript.
 INTERNAL = [
@@ -166,6 +167,46 @@ def main():
             fails.append(f"printed reference entries contain internal notes: {bad}")
     else:
         print("printed bibliography: main.bbl not built yet, gate skipped")
+
+    # ---- the coefficient basis: Table 2 must print the basis the text says is adopted
+    basis_file = ROOT / "data" / "release" / "revision_r2" / "b2_headline_effect.json"
+    table2 = HERE / "tables" / "tab_claim_classes.tex"
+    if basis_file.exists() and table2.exists():
+        coeffs = json.loads(basis_file.read_text(encoding="utf-8"))["coefficients"]
+        printed = table2.read_text(encoding="utf-8")
+        LABEL = {"home_mortgage": "Home mortgage", "credit_card": "Credit card",
+                 "auto_loan": "Auto loan", "student_loan": "Student loan"}
+        wrong = []
+        for key, label in LABEL.items():
+            row = [ln for ln in printed.splitlines() if ln.startswith(label + " &")]
+            if not row:
+                wrong.append(f"{label}: row not found in Table 2")
+                continue
+            cell = row[0].split("&")[2].strip()
+            adopted = f"{coeffs[key]['alternative']:.4f}"
+            coverage = f"{coeffs[key]['published']:.4f}"
+            if cell != adopted:
+                wrong.append(f"{label}: table prints {cell}, adopted basis is {adopted}"
+                             + (" (that is the coverage construction)"
+                                if cell == coverage else ""))
+        print(f"Table 2 coefficient basis: {wrong or 'adopted wage basis, as stated'}")
+        if wrong:
+            fails.append("Table 2 does not print the adopted coefficient basis: "
+                         + "; ".join(wrong))
+    else:
+        print("Table 2 coefficient basis: artifact or table missing, gate skipped")
+
+    # ---- withholding must not be described as unquantified anywhere
+    unquantified = []
+    for sent in re.split(r"(?<=[.])\s+", t):
+        low = sent.lower()
+        if "withhold" in low and ("not quantified" in low
+                                  or "have not quantified" in low):
+            unquantified.append(sent.strip()[:90])
+    print(f"withholding described as unquantified: {unquantified or 'none'}")
+    if unquantified:
+        fails.append("withholding is quantified in Section 5 but described as "
+                     f"unquantified: {unquantified}")
 
     hits = [b for b in BANNED_PHRASES if b.lower() in t.lower()]
     print(f"AI-tell phrases: {hits or 'none'}")

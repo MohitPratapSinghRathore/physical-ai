@@ -22,7 +22,29 @@ def rows(rel):
         return list(csv.DictReader(fh))
 
 
+# Tables whose natural width exceeds the text block. The replacement column
+# specification lets long headers wrap; the tighter column separation does the rest.
+# Presentation only: no value in any cell is affected.
+WIDE = {
+    "tab_tau_k.tex": ("{llrrrr}", "{p{2.9cm}p{2.2cm}rp{2.1cm}rr}"),
+    "tab_relief.tex": ("{lrrrrr}", "{p{4.0cm}rrrrr}"),
+    "tab_incidence_holder.tex": ("{lrrr}", "{p{4.8cm}p{2.2cm}p{2.5cm}p{2.5cm}}"),
+    "tab_under_reporting.tex": ("{lrrrr}", "{lrrrr}"),
+    "tab_institutions_by_model.tex": ("{lrrrrrr}", "{lrrrrrr}"),
+}
+
+
+def fit(name, body):
+    """Apply the width treatment for one table, if it needs one."""
+    if name not in WIDE:
+        return body
+    old, new = WIDE[name]
+    body = body.replace(r"\begin{tabular}" + old, r"\begin{tabular}" + new, 1)
+    return r"\setlength{\tabcolsep}{4pt}" + "\n" + body
+
+
 def write(name, body):
+    body = fit(name, body)
     (OUT / name).write_text(body.rstrip() + "\n", encoding="utf-8")
     print("wrote", name)
 
@@ -58,19 +80,32 @@ HOLDER_LABELS = [
 
 
 def tab_classes():
+    """Table 2, on the ADOPTED basis.
+
+    The five household coefficients are the debt-weighted wage share of the income that
+    services each class, which is what the definition asks for. They are taken from
+    b2_backing_basis; every other class is unchanged by the choice of basis. The
+    wage-backed column is the level times the coefficient, and the total row is the
+    all-claims direct ratio on the same basis.
+    """
     lb = load("data/release/labor_backing/direct_ratio_latest.json")
+    b2 = load("data/release/revision_r2/b2_headline_effect.json")
+    adopted = {k: v["alternative"] for k, v in b2["coefficients"].items()}
     by = lb["by_class"]
+    total_claims = lb["total_claims_bn"]
+    ratio = b2["alternative"]["ratios"]["all_claims_direct"]
     lines = [r"\begin{tabular}{lrrr}", r"\toprule",
              r"Claim class & Level (USD bn) & Labor backing & Wage-backed (USD bn) \\",
              r"\midrule"]
     for key, label in CLASS_LABELS:
         c = by[key]
-        mark = r"\,$\dagger$" if c["backing"] == 0 else ""
-        lines.append(f"{label}{mark} & {c['level_bn']:,.1f} & {c['backing']:.4f} "
-                     f"& {c['labour_backed_bn']:,.1f} \\\\")
+        backing = adopted.get(key, c["backing"])
+        mark = r"\,$\dagger$" if backing == 0 else ""
+        lines.append(f"{label}{mark} & {c['level_bn']:,.1f} & {backing:.4f} "
+                     f"& {backing * c['level_bn']:,.1f} \\\\")
     lines += [r"\midrule",
-              f"All thirteen classes & {lb['total_claims_bn']:,.1f} & "
-              f"{lb['direct_labour_backing_ratio']:.4f} & {lb['labour_backed_bn']:,.1f} \\\\",
+              f"All thirteen classes & {total_claims:,.1f} & "
+              f"{ratio:.4f} & {ratio * total_claims:,.1f} \\\\",
               r"\bottomrule", r"\end{tabular}"]
     write("tab_claim_classes.tex", "\n".join(lines))
 
@@ -173,9 +208,11 @@ def tab_quintile():
     lines = [r"\begin{tabular}{lrrr}", r"\toprule",
              r"Wage quintile & Share of the wage bill & Share of household wage-backed claims "
              r"& Claims per wage dollar \\", r"\midrule"]
+    b2 = load("data/release/revision_r2/b2_headline_effect.json")
+    adopted = b2["quintile_gradient"]["alternative"]
     for r in rs:
         per = ("withdrawn" if r["wage_quintile"] == "Q1_bottom"
-               else f"{float(r['labour_backed_per_unit_wage_bill']):.4f}")
+               else f"{float(adopted[r['wage_quintile']]):.4f}")
         lines.append(f"{QLAB[r['wage_quintile']]} & "
                      f"{float(r['quintile_wage_bill_share']):.4f} & "
                      f"{float(r['share_of_household_labour_backed']):.4f} & {per} \\\\")
@@ -522,8 +559,17 @@ def tab_removed():
 
 
 def tab_bridge():
-    """B1: from income sources to backing coefficients, one row per claim class."""
+    """Table 3: from income sources to backing coefficients, one row per claim class.
+
+    Set as a longtable so that it breaks across pages rather than overrunning one. The
+    coefficient column is the ADOPTED wage basis; the cross-check column carries the
+    coverage construction, which is the one that was independently rebuilt. Identifiers
+    from the source files are written out in words here.
+    """
     rs = rows("data/release/revision_r2/b1_bridge.csv")
+    b2 = load("data/release/revision_r2/b2_headline_effect.json")
+    adopted = {k: v["alternative"] for k, v in b2["coefficients"].items()}
+    coverage = {k: v["published"] for k, v in b2["coefficients"].items()}
     short = {"Home mortgages, one to four family": "Home mortgage",
              "Revolving consumer credit": "Credit card",
              "Consumer credit, automobile loans": "Auto loan",
@@ -532,17 +578,58 @@ def tab_bridge():
              "Multifamily residential mortgages": "Multifamily mortgage",
              "Treasury securities": "Treasury debt",
              "State and local government debt": "State and local debt"}
-    lines = [r"\begin{tabular}{p{2.2cm}p{3.5cm}p{2.6cm}p{2.4cm}p{3.0cm}}", r"\toprule",
-             r"Class & Numerator & Denominator & Source & Proxy assumption and alternative \\",
-             r"\midrule"]
+    # the source files carry short identifiers; the paper prints words
+    PLAIN = {
+        "acs_a38_definition=0.69913":
+            "the earlier rent definition gives 0.699",
+        "one_step_traced_to_demand=see B2":
+            "business revenue traced one further step, reported in Appendix~\\ref{app:detail} "
+            "and never blended with the headline",
+        "business revenue is not traced further":
+            "business revenue is not traced further",
+        "excluded from the debt-only denominator in any case":
+            "excluded from the debt-only denominator in any case",
+        "n/a": "",
+    }
+
+    def plain(text):
+        text = text.strip()
+        out = PLAIN.get(text)
+        if out is not None:
+            return out
+        if "(wage share of servicing income)" in text:
+            return "the wage share of servicing income, adopted here"
+        return text.replace("_", " ").replace("=", " gives ")
+
+    header = (r"Class & Numerator & Denominator & Source & Coefficient & "
+              r"Coverage & Proxy assumption \\")
+    caption = (r"\caption{From income sources to backing coefficients: the numerator, the "
+               r"denominator, the source and the proxy assumption for each class. The "
+               r"coefficient column is the adopted wage basis; the cross-check column is the "
+               r"coverage construction, which is the one that was independently rebuilt, and "
+               r"reads ``same'' where the basis does not apply. Measured; the proxy "
+               r"assumptions are stated assumptions.}\label{tab:bridge}\\")
+    lines = [r"\begin{longtable}{p{1.5cm}p{2.6cm}p{1.9cm}p{1.7cm}p{1.1cm}p{1.1cm}p{2.8cm}}",
+             caption,
+             r"\toprule", header, r"\midrule", r"\endfirsthead",
+             r"\multicolumn{7}{l}{\itshape Table \ref{tab:bridge}, continued} \\",
+             r"\toprule", header, r"\midrule", r"\endhead",
+             r"\midrule \multicolumn{7}{r}{\itshape continued on the next page} \\",
+             r"\endfoot", r"\bottomrule", r"\endlastfoot"]
     for r in rs:
+        key = r["claim_class"]
         label = short.get(r["label"], r["label"])
-        alt = r["alternative_estimate"]
-        proxy = r["proxy_assumption"]
-        cell = proxy if alt in ("n/a", "") else proxy + ". Alternative: " + alt
+        coef = adopted.get(key)
+        cover = coverage.get(key)
+        coef_cell = f"{coef:.4f}" if coef is not None else f"{float(r['coefficient']):.4f}"
+        cover_cell = f"{cover:.4f}" if cover is not None else "same"
+        cell = plain(r["proxy_assumption"])
+        alt = plain(r["alternative_estimate"])
+        if alt and "adopted here" not in alt:
+            cell = cell + ". " + alt[0].upper() + alt[1:] if cell else alt
         lines.append(" & ".join([label, r["numerator"], r["denominator"], r["source"],
-                                 cell]) + r" \\")
-    lines += [r"\bottomrule", r"\end{tabular}"]
+                                 coef_cell, cover_cell, cell]) + r" \\")
+    lines.append(r"\end{longtable}")
     write("tab_bridge.tex", "\n".join(lines))
 
 

@@ -49,9 +49,10 @@ round seen on the liability side, indirect backing the second.
 
 \begin{table}[htbp]
 \centering
-\caption{The thirteen claim classes, levels and labor backing, 2025. Classes marked $\dagger$ are
-serviced from business revenue and take zero direct backing under the one-step rule. Measured;
-the home mortgage and multifamily coefficients were rebuilt independently.}
+\caption{The thirteen claim classes, levels and labor backing, 2025. Household coefficients are
+on the adopted wage basis of Section~\ref{sec:accounts}. Classes marked $\dagger$ are serviced
+from business revenue and take zero direct backing under the one-step rule. Measured; the
+coverage construction of the same coefficients was rebuilt independently.}
 \label{tab:classes}
 \input{tables/tab_claim_classes.tex}
 \end{table}
@@ -68,31 +69,37 @@ income that services it rather than by who owns the paper, which is the receipts
 The one place the rule cannot be applied from the data is the private mortgage remainder, which is
 an arithmetic residual treated as private in full.
 
-\begin{table}[htbp]
-\centering\footnotesize
-\caption{From income sources to backing coefficients: the numerator, the denominator, the source
-and the proxy assumption for each class, with an alternative estimate where one exists. Measured;
-the proxy assumptions are stated assumptions.}
-\label{tab:bridge}
-\input{tables/tab_bridge.tex}
-\end{table}
+{\footnotesize
+\input{tables/tab_bridge.tex}}
 
-\paragraph{What the household coefficients measure, and the alternative.} The four household
-coefficients are coverage shares: the share of a class's balances owed by, or of mortgage service
-paid by, households with an employed member aged 25 to 64. That is a statement about who owes
-rather than about which income services the debt, and the definition asks for the second. We
-therefore compute it directly, as the debt-weighted share of total household income that is wages
-among the households owing each class, and adopt it as the headline basis because it is what the
-definition says. The two agree closely. The largest move is the mortgage coefficient, from
-\result{MortgageCoverage} on the coverage basis to \result{MortgageWageShare} on the wage basis;
-cards move from \result{CardCoverage} to \result{CardWageShare} and student debt from
-\result{StudentCoverage} to \result{StudentWageShare}. Every headline built on them survives the
-change: the debt-only direct ratio is \result{DebtOnlyDirectCoverageBasis} percent on the first
-basis and \result{DebtOnlyDirectWageBasisOneDP} on the second, the federal exposure share is
-\result{SovereignUnionCoverageBasis} and \result{SovereignUnionWageBasis} percent, and the
-quintile gradient changes level by a common factor while its shape, which is what we report, is
-identical. The agreement is a fact about these data rather than a justification of the coverage
-construction, and the definitional basis is the one adopted.
+\paragraph{The basis of the household coefficients, and the one adopted.}
+Definition~\ref{def:backing} asks for the share of the servicing cash flow that is labor income.
+We compute that directly, as the debt-weighted share of total household income that is wages among
+the households owing each class, and it is the basis of every coefficient, ratio, exposure share,
+figure and quintile figure reported in this paper, with the two exceptions named below. On that
+basis the home mortgage coefficient is \result{MortgageWageShare}, credit cards
+\result{CardWageShare}, auto loans \result{AutoWageShare}, student loans
+\result{StudentWageShare} and other consumer credit \result{OtherConsumerWageShare}.
+
+An earlier construction used coverage shares: the share of a class's balances owed by, or of
+mortgage service paid by, households with an employed member aged 25 to 64. That is a statement
+about who owes rather than about which income services the debt, so it answers a different
+question, and it is reported here once and in the cross-check column of
+Table~\ref{tab:bridge}: \result{MortgageCoverage}, \result{CardCoverage},
+\result{AutoCoverage}, \result{StudentCoverage} and \result{OtherConsumerCoverage}, no
+coefficient differing from the adopted one by more than \result{CoefficientMaxMovePP} percentage
+points. Carried through the accounts, the coverage construction gives an all-claims direct ratio
+of \result{AllClaimsDirectCoverage} percent against \result{AllClaimsDirect} on the adopted basis,
+a debt-only direct ratio of \result{DebtOnlyDirectCoverageBasis} against
+\result{DebtOnlyDirectWageBasisOneDP}, and a federal exposure share of
+\result{SovereignUnionCoverageBasis} against \result{SovereignUnion} percent.
+
+The two carry different statuses and the difference matters. The coverage construction, and the
+quantities built on it, were reproduced by the independent rebuild; the wage-basis variant is
+measured from the same surveys and agrees with it inside that margin, and has not itself been
+rebuilt. Two objects stay on the coverage construction because they cannot be put on the other
+one: the series from 1952, since income by source is not available for the historical years, and
+the judgment-call sensitivities that are computed against it. Both say so in their captions.
 
 \subsection{Two conventions, stated because they are contestable}
 
@@ -136,7 +143,8 @@ the calls interact, which the one-step rule does with all of them.
 \begin{table}[htbp]
 \centering
 \caption{Sensitivity of the debt-only labor backing ratio, one judgment call at a time.
-Measured.}
+Computed on the coverage construction, which is the basis these sensitivities were built and
+rebuilt against; the moves, not the levels, are what the table reports. Measured, rebuilt.}
 \label{tab:sensitivity}
 \input{tables/tab_debt_only_sensitivity.tex}
 \end{table}
@@ -194,7 +202,7 @@ Figure~\ref{fig:series} runs the accounts back to 1952. The ratio itself is clos
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{fig1_series.pdf}
-\caption{Federal exposure to directly wage-backed claims, 1952 to 2025, and the debt-only labor backing ratio. Upper panel: the exposure share as the union of the three roles, with its creditor or guarantor and debtor parts, which overlap where the federal sector holds its own debt and so do not sum to the union. Lower panel: the share of US debt serviced directly from wages. Measured, from the Federal Reserve financial accounts.}
+\caption{Federal exposure to directly wage-backed claims, 1952 to 2025, and the debt-only labor backing ratio. Upper panel: the exposure share as the union of the three roles, with its creditor or guarantor and debtor parts, which overlap where the federal sector holds its own debt and so do not sum to the union. Lower panel: the share of US debt serviced directly from wages. Both panels are on the coverage construction of the household coefficients, because income by source is not available for the historical years. Measured, from the Federal Reserve financial accounts.}
 \label{fig:series}
 \end{figure}
 

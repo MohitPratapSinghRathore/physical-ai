@@ -152,10 +152,14 @@ it is \result{CRSRescaledLow} to \result{CRSRescaledHigh} percent, and our figur
 We report the correction rather than the original comparison, because as first written our own
 check failed against our own construction.
 
-Foreign holders are treated as bearing no tax at the owner level, though dividends to them bear
-withholding tax at treaty rates. The effect on the assembled rate is upward and we have not
-quantified it; since our result is that the rate falls short, that is a limitation running against
-our own finding. The debt share is an economy-wide stock ratio, \result{DebtShareLow} to
+The base construction treats foreign holders as bearing no tax at the owner level, though
+dividends to them bear US withholding tax at treaty rates. That effect is sized in
+Section~\ref{sec:fiscal}: applying a fifteen percent treaty rate to the foreign-held share raises
+the assembled rate to \result{TauKWithholding} percent, and to \result{TauKJointWeakening} percent
+together with the filers' own debt share, both still below the \result{RequiredAllGovEasy} percent
+the condition requires. The treaty rate is a stated assumption, not a measurement, and what stays
+open is the effective rate actually borne, which varies by treaty and with the split between
+dividends and capital gains realized by foreign holders. The debt share is an economy-wide stock ratio, \result{DebtShareLow} to
 \result{DebtShareHigh} percent, standing in for a marginal flow; the evidence in
 Section~\ref{sec:bust} points below that range, and because the debt-financed term is negative, a
 lower debt share would raise the assembled rate.
@@ -476,9 +480,10 @@ spending, business revenue and the employment of everyone not displaced fixed, s
 loss is a floor. The \emph{procedural blind} in the rebuild protocol described in
 Section~\ref{sec:rebuild}, which is why this paper says quantities were independently rebuilt
 under a reported blind protocol and never that they were independently verified. And
-\emph{foreign withholding}: dividends to foreign holders bear US withholding tax at treaty rates
-and we treat them as untaxed at the owner level, which biases the assembled capital tax rate
-downward by an amount we have not quantified, running against our own finding.
+\emph{foreign withholding}: the base construction treats dividends to foreign holders as untaxed
+at the owner level though they bear US withholding tax at treaty rates. Applying a fifteen percent
+treaty rate raises the assembled rate to \result{TauKWithholding} percent and does not close the
+condition; the effective rate actually borne remains open.
 
 \subsection{Avenues for further work}
 
@@ -496,6 +501,6 @@ rate on each (L14). Extend the reemployment relationship using a source that obs
 displacement episodes, which would turn the bands above a quarter of the wage bill into estimates;
 let house prices, spending and non-displaced employment move together, which would also let the
 state and local feedback loop be modeled rather than named; run a rebuild with an enforced blind
-and expected values held by a third party; and quantify withholding tax on dividends to foreign
-holders, reporting the corrected rate even though it runs against our own finding.
+and expected values held by a third party; and measure the effective withholding rate borne by
+foreign holders treaty by treaty, rather than applying a single stated rate.
 

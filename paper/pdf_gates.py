@@ -36,7 +36,26 @@ def main():
     print(f"reference list: en dashes outside a page range {stray}")
     print(f"body word count (introduction to references): {words}")
 
+    # ---- identifiers typeset as mathematics in table cells
+    # A source identifier that reaches a table keeps its underscore, and inside math the
+    # underscore becomes a subscript, so "tau_k" prints as a variable rather than as the
+    # words the paper uses. Both forms are caught: the underscore inside math in the
+    # generated table source, and the literal underscore surviving into the PDF.
+    math_underscore = []
+    for tex in sorted((HERE / "tables").glob("*.tex")):
+        src = tex.read_text(encoding="utf-8")
+        for seg in re.findall(r"(?<!\\)\$([^$]*)\$", src):
+            if "_" in seg.replace("\\_", ""):
+                math_underscore.append(f"{tex.name}: ${seg[:40]}$")
+    pdf_underscore = sorted(set(re.findall(r"\b[a-z]{2,}_[a-z0-9]{2,}\b", text)))
+    print(f"identifiers in math in table cells: {math_underscore or 'none'}")
+    print(f"underscore identifiers surviving into the PDF: {pdf_underscore or 'none'}")
+
     fails = []
+    if math_underscore:
+        fails.append(f"underscore inside math in a table cell: {math_underscore[:4]}")
+    if pdf_underscore:
+        fails.append(f"raw identifiers printed in the PDF: {pdf_underscore[:6]}")
     if em or en:
         fails.append("dash rule violated in the body")
     if stray:
