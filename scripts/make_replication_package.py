@@ -196,6 +196,29 @@ def build(out: pathlib.Path) -> list[str]:
         copy_file(src, out / dest, report)
         n += 1
 
+    # the validation pilot: four documents only, exported from the pilot branch.
+    # No pilot code or data enters the package; the paper cites these in its limitations.
+    import subprocess
+    PILOT_COMMIT = "acaf6ba"
+    PILOT_DOCS = [("PREREGISTRATION.md", "preregistration.md"),
+                  ("DEVIATIONS.md", "deviations.md"),
+                  ("RESULTS.md", "results.md"),
+                  ("OWNER_SUMMARY.md", "close_out.md")]
+    for src_name, dst_name in PILOT_DOCS:
+        rev = f"{PILOT_COMMIT}:framework/validation/{src_name}"
+        try:
+            blob = subprocess.run(["git", "show", rev], cwd=ROOT, capture_output=True,
+                                  check=True).stdout.decode("utf-8")
+        except (subprocess.CalledProcessError, OSError) as exc:
+            report.append(f"PILOT DOC MISSING {src_name}: {exc}")
+            continue
+        text, hits = sanitise(blob, f"pilot/{src_name}")
+        report.extend(hits)
+        dst = out / "docs" / "validation_pilot" / dst_name
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_text(text, encoding="utf-8")
+        n += 1
+
     # static release assets: Makefile, harness, documentation templates
     assets = ROOT / "release_assets"
     for src in sorted(assets.rglob("*")):
