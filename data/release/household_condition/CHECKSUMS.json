@@ -1,0 +1,57 @@
+{
+  "source_branch": "household-condition",
+  "source_commit": "4e0507b",
+  "note": "artifacts copied read-only; no code imported",
+  "files": {
+    "RESULTS.md": {
+      "sha256": "27afb76e738021eaf7e73299baaf57215a205ba0a77a3f70e816b3d851c473d6",
+      "bytes": 18306,
+      "git_blob": "04973a48a92c31eb4891b04d954d6f4c3eae0fa1"
+    },
+    "RESULTS_V2.md": {
+      "sha256": "6ca21ba16968e30db5dd5db08938bad0f4e107d7a5826e115810813365598512",
+      "bytes": 11336,
+      "git_blob": "e96dfbf464ac8e421ff15083b14fe8063ab484b9"
+    },
+    "SPECIFICATION.md": {
+      "sha256": "476e093703da92d8eacf85332f2d6f637851b2e925b5a34bcb441d1e35f21f9b",
+      "bytes": 19117,
+      "git_blob": "cadd2ee2524cc10dd38a83e8725e367f1ef7213e"
+    },
+    "SPECIFICATION_V2.md": {
+      "sha256": "cabd85eac9da8785545da361240a23b583557fe4d090f13886a0a09933f50078",
+      "bytes": 7520,
+      "git_blob": "d7f3a2857fccb7a49383198ae1ec36fe2ec9cb5c"
+    },
+    "DEVIATIONS.md": {
+      "sha256": "d1b04b542cd4fffe34467b9ab66c1abbc416bc0cf630459bcd59064eb5092b6f",
+      "bytes": 11104,
+      "git_blob": "2860160d8893586643986d488e7d7a9bf338c9f3"
+    },
+    "main_results.json": {
+      "sha256": "5edc183e5df720ac35c3919578c339086f361d0da628dabc89f7493844586dee",
+      "bytes": 17032,
+      "git_blob": "f96e1b6d6a79a567afc4f80c2c3391917850445c"
+    },
+    "v2_results.json": {
+      "sha256": "5e86b7d76b0bb4caf4afac37b443dd70aba2fcc249630d3ad9c2b419e3af29f9",
+      "bytes": 26543,
+      "git_blob": "3fcd49ff74c450d913490224addecc0c4513705d"
+    },
+    "shares_table.csv": {
+      "sha256": "6c31a8c24248b3f039d0ec88b1f58ff402ef11787fe32713eaae68434cacd9b5",
+      "bytes": 54506,
+      "git_blob": "b3aeb79c92cc07057e17ff42e576253c4bcc865c"
+    },
+    "v2_distribution.csv": {
+      "sha256": "5dfd44aa43729a22173b026eca0ee68ebe6c1f6cac91c08c85c5eb01dd07ca1d",
+      "bytes": 83701,
+      "git_blob": "420c79e339fa2e9a31220c6ecbc108c8cb60a29d"
+    },
+    "arrangements.csv": {
+      "sha256": "0801413f1903b695e2853e43051cde4cdb9ba8b9a5bbe44aa489bd62ee6c9351",
+      "bytes": 2601,
+      "git_blob": "d75f4ae0fc2546d43159ce567c7e81a12f442c46"
+    }
+  }
+}

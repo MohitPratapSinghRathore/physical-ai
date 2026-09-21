@@ -485,6 +485,15 @@ at the owner level though they bear US withholding tax at treaty rates. Applying
 treaty rate raises the assembled rate to \result{TauKWithholding} percent and does not close the
 condition; the effective rate actually borne remains open.
 
+\subsection{How the extrapolation boundary is reported}
+
+\emph{Supporting Section~\ref{sec:displacement}, on the cells with no admissible solution.}
+
+The boundary is a limit of our specification, not a fact about the economy, and it is easy to
+conceal: a solver that clips at zero returns the clipping boundary as though it were an estimate,
+and about a quarter of the cells in the response surface have no admissible solution. We report
+those cells as bands, which lowers rather than raises the loss at large displacement.
+
 \subsection{Avenues for further work}
 
 \emph{Supporting Section~\ref{sec:limitations}, one avenue for each limitation.}

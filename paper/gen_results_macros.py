@@ -9,6 +9,7 @@ Run:  python paper/gen_results_macros.py
 import csv
 import json
 import pathlib
+import re
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 OUT = ROOT / "paper" / "results_macros.tex"
@@ -459,6 +460,29 @@ def main():
     R["HouseholdsAISide"] = pct(payoff["households"]["ai_leg_share"], 1)
 
     # ---- institutions, by regime
+    # ---- the household counterpart, from the household-condition artifacts
+    # Copied read-only into data/release/household_condition with their hashes; the
+    # numbers below are read from those files and never typed.
+    hh_dir = ROOT / "data" / "release" / "household_condition"
+    if hh_dir.exists():
+        hh_shares = {}
+        with (hh_dir / "shares_table.csv").open(newline="", encoding="utf-8") as fh:
+            for row in csv.DictReader(fh):
+                if row["s"] == "0.05" and row["ur_adjusted"] == "False":
+                    hh_shares[row["group"]] = row
+        R["HHBottomQuartileAffected"] = pct(
+            hh_shares["wealth:p0-25"]["share_households"])
+        R["HHTopOnePctAffected"] = pct(hh_shares["wealth:top1"]["share_households"])
+        R["HHDebtAffected"] = pct(hh_shares["all"]["debt_total"])
+        v2 = json.loads((hh_dir / "v2_results.json").read_text(encoding="utf-8"))
+        R["HHRestoreFive"] = pct(v2["median_se"]["0.05"]["median"])
+        R["HHRestoreTen"] = pct(v2["median_se"]["0.1"]["median"])
+        spec = (hh_dir / "SPECIFICATION.md").read_text(encoding="utf-8")
+        m = re.search(r"(\d\d) percent outside\s*\n?the household sector", spec)
+        R["HHEquityOutsideHouseholds"] = m.group(1)
+        m = re.search(r"\*\*(\d\d) percent sits in retirement accounts\*\*", spec)
+        R["HHEquityInRetirement"] = m.group(1)
+
     ai_total = (tsb["ai_leg"]["ai_equity_central_bn"]
                 + tsb["ai_leg"]["ai_onbalancesheet_debt_bn"])
     R["AISideTotalBn"] = f"{ai_total:,.1f}"
