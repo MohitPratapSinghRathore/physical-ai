@@ -1,0 +1,59 @@
+cff-version: 1.2.0
+message: "If you use this package, please cite both the paper and this archive."
+title: "Labor backing accounts: replication package"
+abstract: >-
+  Code, measured artifacts and documentation behind "Labor-Backed Finance and the Fiscal
+  Exposure to AI". Labor backing accounts decompose United States financial claims by the
+  income that services each claim and by who holds, guarantees or owes it, and the package
+  rebuilds every number the paper reports.
+version: 1.0.0
+date-released: "2026-09-21"
+license: MIT
+license-url: "https://opensource.org/licenses/MIT"
+type: software
+keywords:
+  - fiscal risk
+  - contingent liabilities
+  - financial accounts
+  - automation
+  - capital taxation
+  - stress testing
+  - replication
+authors:
+  - family-names: Rathore
+    given-names: Mohit Pratap Singh
+    affiliation: Oviqo
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # TO BE SUPPLIED
+  - family-names: Kalsi
+    given-names: Gunveer Singh
+    affiliation: Oviqo
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # TO BE SUPPLIED
+  - family-names: Meduri
+    given-names: Sriharsha
+    affiliation: Oviqo
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # TO BE SUPPLIED
+  - family-names: Mandal
+    given-names: Pratap Chandra
+    affiliation: Indian Institute of Management Shillong
+    orcid: "https://orcid.org/0000-0000-0000-0000"   # TO BE SUPPLIED
+identifiers:
+  - type: doi
+    value: "10.0000/zenodo.placeholder"
+    description: "Archive DOI, minted on release. PLACEHOLDER."
+references:
+  - type: article
+    title: "Labor-Backed Finance and the Fiscal Exposure to AI"
+    authors:
+      - family-names: Rathore
+        given-names: Mohit Pratap Singh
+      - family-names: Kalsi
+        given-names: Gunveer Singh
+      - family-names: Meduri
+        given-names: Sriharsha
+      - family-names: Mandal
+        given-names: Pratap Chandra
+    year: 2026
+    doi: "10.0000/paper.placeholder"
+    notes: "Paper DOI and working paper URL are placeholders until publication."
+# FLAGGED FOR OWNER CONFIRMATION: author names, the order above, affiliations and every
+# ORCID. Nothing here has been checked against an institutional record.

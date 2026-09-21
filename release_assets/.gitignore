@@ -1,0 +1,9 @@
+# build products and environments, never committed
+dist/
+build/
+.venv/
+__pycache__/
+*.pyc
+.env
+paper/results_macros.tex
+DATA_DICTIONARY.generated.md

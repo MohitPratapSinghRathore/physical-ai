@@ -72,3 +72,22 @@ framework/  matrices, propositions
 paper/      LaTeX source
 notes/      decisions.md, findings.md, open_questions.md, sizing_method.md
 ```
+
+## The public replication package
+
+`scripts/make_replication_package.py` builds the public package outside this repository,
+into `../labor-backing-replication/`, and `scripts/release_support.py` generates the
+documentation, the checksums and the list of reported values that the package's harness
+compares against. `scripts/release_scan.py` is the secrets and identity gate, run on the
+built tree and on each archive variant. The static files the package ships, its Makefile,
+its rebuild harness and its documentation, live in `release_assets/`.
+
+Neither script modifies anything in this repository. The release directory is a separate
+git repository with its own single initial commit and no shared history; the private
+commit it was cut from is recorded in its `RELEASE_NOTES.md`.
+
+```
+python scripts/make_replication_package.py
+python scripts/release_support.py
+python scripts/release_scan.py --tree ../labor-backing-replication --allow-identity
+```

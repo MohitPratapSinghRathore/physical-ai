@@ -1,0 +1,28 @@
+{
+  "title": "Labor backing accounts: replication package",
+  "description": "<p>Code, measured artifacts and documentation behind \"Labor-Backed Finance and the Fiscal Exposure to AI\". Labor backing accounts decompose United States financial claims by the income that services each claim and by who holds, guarantees or owes it. The package rebuilds every number the paper reports: <code>make headline</code> rebuilds the headline quantities offline from shipped processed inputs and compares each to the released artifacts, and <code>make all</code> rebuilds every artifact from raw data. No publisher's raw data is redistributed.</p>",
+  "version": "1.0.0",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "fiscal risk",
+    "contingent liabilities",
+    "financial accounts",
+    "automation",
+    "capital taxation",
+    "stress testing",
+    "replication"
+  ],
+  "creators": [
+    {"name": "Rathore, Mohit Pratap Singh", "affiliation": "Oviqo", "orcid": "0000-0000-0000-0000"},
+    {"name": "Kalsi, Gunveer Singh", "affiliation": "Oviqo", "orcid": "0000-0000-0000-0000"},
+    {"name": "Meduri, Sriharsha", "affiliation": "Oviqo", "orcid": "0000-0000-0000-0000"},
+    {"name": "Mandal, Pratap Chandra", "affiliation": "Indian Institute of Management Shillong", "orcid": "0000-0000-0000-0000"}
+  ],
+  "related_identifiers": [
+    {"identifier": "10.0000/paper.placeholder", "relation": "isSupplementTo", "resource_type": "publication-article", "scheme": "doi"},
+    {"identifier": "https://example.org/working-paper-placeholder", "relation": "isSupplementTo", "resource_type": "publication-preprint", "scheme": "url"}
+  ],
+  "notes": "Author names, order, affiliations, ORCIDs and both related identifiers are placeholders held for owner confirmation."
+}
