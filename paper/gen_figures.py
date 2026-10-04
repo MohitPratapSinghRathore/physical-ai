@@ -19,6 +19,11 @@ OUT = ROOT / "paper" / "figures"
 OUT.mkdir(exist_ok=True)
 
 plt.rcParams.update({
+    # Type 42 (TrueType), not matplotlib's default Type 3. Type 3 subsets render
+    # unreliably outside desktop PDF readers -- which is why figures came back
+    # "not loading" in review -- and most journals reject Type 3 outright.
+    "pdf.fonttype": 42,
+    "ps.fonttype": 42,
     "font.family": "serif",
     "font.size": 9,
     "axes.linewidth": 0.7,
