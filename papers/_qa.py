@@ -59,6 +59,13 @@ def main():
     missing = sorted(used - have)
     rows.append(("undefined \\result macros", len(missing), "0", not missing))
 
+    # playbook 2.3: phrases that read as machine-generated
+    tells = ["delve", "it is worth noting", "in today's world", "crucial role",
+             "vital role", "navigate the landscape", "tapestry", "testament to",
+             "In conclusion,", "Moreover,", "Furthermore,"]
+    found = [w for w in tells if w.lower() in t.lower()]
+    rows.append(("AI-tell phrases", len(found), "0", not found))
+
     # limitations <-> future research must pair one to one
     nL = len(re.findall(r"\\paragraph\{L\d+\.", src_text))
     nF = len(re.findall(r"\\item\[FR\d+\]", src_text))
@@ -72,6 +79,8 @@ def main():
         print(f"{name:30s} {str(val):>8s}  {req:<18s} {'PASS' if passed else 'FAIL'}")
     if missing:
         print("\nmissing macros:", ", ".join(missing))
+    if found:
+        print("\nAI-tell phrases present:", ", ".join(found))
     bw = len(body.split())
     print(f"\nbody words (approx, to references): {bw:,}")
     print("\nALL GATES PASS" if ok else "\nGATES FAILED")

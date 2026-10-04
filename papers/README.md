@@ -1,7 +1,7 @@
 # The two companion papers
 
-**Built to the Paper-Writing Playbook. 2026-10-04.** The original single manuscript remains
-untouched in `../paper/` as the archive; nothing here modifies it.
+**Built to the Paper-Writing Playbook. Last updated 2026-10-04.** The original single manuscript
+remains untouched in `../paper/` as the archive; nothing here modifies it.
 
 These two papers answer Sriharsha's review of 25.09.2026, which asked for a specific title, for
 focus, and for the content to be separated into two objectives.
@@ -20,6 +20,9 @@ focus, and for the content to be separated into two objectives.
 | Pages (author PDF) | 27 | 25 |
 | Figures | 1, 2 | 3, 6 |
 
+Corresponding author on both: **Mohit Pratap Singh Rathore**, first in the author list, on the
+manuscript, the title page and the DOCX.
+
 The single manuscript was about 18,700 words with one stated contribution and three supporting
 modules. Each paper here is a normal length for a Q1 field journal, and each has one thesis.
 
@@ -30,21 +33,53 @@ is not theirs and what is theirs cannot be spent; and an equity bust transmits w
 assets that fall are held where the propensity to consume is lowest. One fact, three
 consequences, and it displaces the profit-shifting explanation on measured evidence.
 
-## Suggested targets
+## Targets, with ratings verified 2026-10-04
 
-**These ratings have not been verified and must be checked against the official ABDC list and the
-current Scimago listing before submission.** They are suggestions based on genre fit, which
-matters more than prestige: a measurement paper sent to a policy journal is a desk reject.
+Checked against the ABDC list and Scimago rather than asserted. **International Tax and Public
+Finance turns out to be ABDC B**, so it has been demoted from the suggested list; the earlier
+draft of this file had it as a primary alternate, which was wrong.
 
-- **Paper A:** *Review of Income and Wealth* is the natural home, because it publishes new
-  national-accounts objects with long series and distributional cuts. Alternates: *Journal of
-  Financial Stability*, *Journal of Banking and Finance*.
-- **Paper B:** *National Tax Journal* or *International Tax and Public Finance*. Reach: *Journal
-  of Public Economics*. Alternate: *JMCB*.
+| Journal | ABDC | Scimago | Fit |
+|---|---|---|---|
+| Review of Income and Wealth | listed, rating to confirm | **Q1** Economics and Econometrics, SJR 1.212, h-index 77 | Best genre fit for Paper A |
+| Journal of Financial Stability | **A\*** | | Strong for Paper A |
+| Journal of Banking and Finance | **A\*** | | Alternate for Paper A |
+| National Tax Journal | **A** | | Best fit for Paper B |
+| Journal of Public Economics | **A\*** | | Reach for Paper B |
+| International Tax and Public Finance | **B** | | Only if the A-list fails |
+
+**Paper A.** There is a genuine trade-off. *Review of Income and Wealth* is the natural home,
+because it publishes new national-accounts objects with long series and distributional cuts, and
+it is confirmed Q1. *Journal of Financial Stability* is ABDC A\* and so satisfies the playbook's
+A/A\* preference outright, and the federal-exposure framing fits its scope. If the ABDC rule is
+binding, submit to JFS. If genre fit matters more, RIW.
+
+**Paper B.** *National Tax Journal* (A) is the best fit. *Journal of Public Economics* (A\*) is
+the reach and worth one attempt first, since the lever ranking is a genuinely new empirical
+claim about a question that journal publishes.
 
 Neither is a top-five paper, and that ceiling is structural: no identification, no model, one
 country, descriptive. Splitting does not raise the ceiling. It stops each paper being rejected
 for the other one's weaknesses.
+
+## Reference verification
+
+Playbook section 4 requires every reference to be web-verified. The inherited `references.bib`
+had not been checked this session, so every entry dated 2025 or later that is actually cited was
+verified on 2026-10-04 against the publisher.
+
+Verified and correct: Korinek and Lockwood (NBER WP 34873), Price and Suresh (RAND RR-A4980-1),
+Falk and Tsoukalas (arXiv 2603.20617), Barhoumi (IMF Note 2026/002), Cohen, Killen and Lau
+(Chicago Fed Insights), Ieong, Saputra, Maniar and Cheng (Windfall Trust), Bank for International
+Settlements (BIS Quarterly Review, March 2026). The specific claims attributed to each in the
+related-work sections match the sources.
+
+**One entry was wrong on two fields.** `Bayraktar` was recorded as *Emre* Bayraktar, year *2025*.
+The author is **Erhan Bayraktar** and the paper is **2026** (arXiv:2605.05127, v1 6 May 2026, v2
+31 July 2026, under review at the *Journal of Economic Dynamics and Control*). Both are
+corrected, the key is now `Bayraktar2026`, and all citing files were updated. The entry carried a
+`verification` field claiming it had already been checked, which is worth knowing: a verification
+note is not itself verification.
 
 ## What was deliberately left out
 
@@ -85,31 +120,34 @@ the figures and the tables have exactly one source of truth. `references.bib` is
 because bibtex does not resolve a relative database path reliably on this toolchain; the Makefile
 refreshes the copy on every build and it is gitignored.
 
-Helper scripts, reusable across projects: `_qa.py` (playbook section 8 gates), `_anoncheck.py`
-(identity-leak check on the blind build), `_count.py` (body word count), `_to_docx.py` (resolves
-the `\ifanon` toggle, the `\result{}` macros, `\ref`/`\eqref` from the `.aux` and natbib
-citations from the `.bbl`, then hands plain LaTeX to pandoc).
+Helper scripts, reusable across projects: `_qa.py` (playbook section 8 gates plus the section 2.3
+AI-tell check), `_anoncheck.py` (identity-leak check on the blind build), `_count.py` (body word
+count), `_to_docx.py` (resolves the `\ifanon` toggle, the `\result{}` macros, `\ref`/`\eqref`
+from the `.aux` and natbib citations from the `.bbl`, promotes the title and author block that
+pandoc would otherwise drop, then hands plain LaTeX to pandoc).
 
 ## QA status
 
 Both papers pass every gate: title within twelve words, abstract within 250, zero em-dashes, zero
 occurrences of "robust", zero undefined references or citations, zero undefined `\result` macros,
-limitations paired one-to-one with avenues for further research, and zero identity leaks in the
-blind build in both PDF and DOCX.
+zero AI-tell phrases, limitations paired one-to-one with avenues for further research, and zero
+identity leaks in the blind build in both PDF and DOCX.
 
 ## Open items for the authors
 
-1. **The AI declaration is deliberately not the playbook's standard wording.** The standard text
-   states that generative AI was not used to generate or analyse the study's data. For this
-   project that would be false, and the playbook's own first rule is total honesty, so both
-   papers carry the fuller declaration this project has always used. Flagged for approval rather
-   than changed silently.
-2. **Affiliation discrepancy.** The playbook records Sriharsha Meduri at Andhra University; the
+1. **Affiliation discrepancy.** The playbook records Sriharsha Meduri at Andhra University; the
    manuscript records Oviqo. Both title pages carry Oviqo, as the manuscript did, with the
    discrepancy noted on the page. Needs confirming.
-3. **Author order and the corresponding author** are inherited from the original manuscript and
-   have not been revisited.
-4. **ABDC and Scimago ratings** for the suggested venues are unverified, as noted above.
-5. **Paper A cites no companion dependency** and Paper B draws on the accounts without requiring
-   them to be published first, but if the two go to different journals the cross-reference in
-   Paper B's title page should become a formal citation once Paper A has a working-paper number.
+2. **ORCIDs** are marked "to be supplied" on both title pages, and Pratap Chandra Mandal's email
+   is not yet filled in.
+3. **The AI declaration** now uses the playbook's wording. Its third sentence has been adjusted,
+   as playbook section 6 directs ("adjust to the paper's method"), because the standard clause
+   says generative AI was not used to *analyse* the data, and for this project the analysis code
+   was AI-written. The declaration as it stands says AI was not used to *generate* the data,
+   which are public statistical releases, and that no reported value originates in a model's
+   assertion. Both statements are true. If you want the standard clause verbatim instead, say so
+   and it goes in, but it would not be accurate for this project.
+4. **Author order** is inherited from the original manuscript and has not been revisited.
+5. **Review of Income and Wealth's ABDC rating** was not pinned down from a primary source; its
+   Q1 status is confirmed. Worth checking on the ABDC list directly before choosing between RIW
+   and JFS.

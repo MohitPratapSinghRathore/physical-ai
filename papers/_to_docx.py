@@ -109,7 +109,21 @@ def main():
         if anon:
             head += "\n\\noindent\\textit{Author names and affiliations removed for " \
                     "double-anonymous peer review.}\n"
+        else:
+            head += (
+                "\n\\noindent Mohit Pratap Singh Rathore$^{1}$, "
+                "Gunveer Singh Kalsi$^{1}$, Sriharsha Meduri$^{1}$, "
+                "Pratap Chandra Mandal$^{2}$\n\n"
+                "\\noindent $^{1}$Oviqo. $^{2}$Indian Institute of Management Shillong.\n\n"
+                "\\noindent Corresponding author: Mohit Pratap Singh Rathore, "
+                "mohitpratapsinghr@gmail.com\n")
         text = text.replace("\\maketitle", head, 1)
+
+    # pandoc hoists the abstract environment above the title block, which puts the
+    # author names in the wrong place for a submission. Demote it to a heading so
+    # document order is preserved: title, authors, abstract, keywords.
+    text = text.replace("\\begin{abstract}", "\\subsection*{Abstract}")
+    text = text.replace("\\end{abstract}", "")
 
     refs = load_refs()
     text = re.sub(r"\\(?:eq)?ref\{([^}]*)\}", lambda m: refs.get(m.group(1), "?"), text)
