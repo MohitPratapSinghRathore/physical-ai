@@ -1,0 +1,15 @@
+{
+  "description": "R-squared of the bank-level labor backing measure regressed on the seven conventional loan-share controls alone. Establishes how much of the construct is a repackaging of loan composition.",
+  "source": "framework/predictive/ (branch predictive-panel), panel.csv after the minimum-book rule of DEVIATIONS.md D5",
+  "controls": [
+    "sh_resre",
+    "sh_consumer",
+    "sh_cre",
+    "sh_constr",
+    "sh_ci",
+    "sh_ag",
+    "sh_sec"
+  ],
+  "n_obs": 146273,
+  "r_squared": 0.5167
+}

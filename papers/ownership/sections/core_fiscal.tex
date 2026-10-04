@@ -1,0 +1,238 @@
+\section{The fiscal condition}
+\label{sec:fiscal}
+
+This module supports the central claim on its revenue side. If the public sector holds the wage
+side of the exposure, the question is whether the tax that reaches the capital replacing that
+labor could replace the revenue lost. We build both sides from components and report the answer
+under every reading we can defend.
+
+\subsection{What replacement requires}
+
+Not every dollar of displaced wages leaves the wage tax base, because some of the displaced are
+re-employed, at a wage on average lower than the one they lost.
+
+\begin{definition}[Retained wage share and the fiscal condition]
+\label{def:condition}
+Let $R \in [0,1]$ be the share of a displaced wage bill that returns as wages, $\tau_\ell$ the
+effective tax rate on wages and $\tau_k$ the effective marginal rate on the capital income that
+replaces them. Replacing the lost revenue requires
+\begin{equation}
+\tau_k \;\ge\; \tau_\ell\,(1 - R) \;\equiv\; \tau_k^{\ast},
+\label{eq:condition}
+\end{equation}
+where $\tau_k^{\ast}$ is the required rate.
+\end{definition}
+
+Measured on fourteen biennial vintages of displaced worker data and solved as a fixed point
+against the stock-flow identity of Section~\ref{sec:data}, $R = \result{RetainedWageShare}$. Two
+defensible readings of $\tau_\ell$ exist, a narrower one from the automation tax literature and a
+broader bottom-up one built from federal taxes over wages and salaries, giving
+$\tau_k^{\ast}$ between \result{RequiredEasy} and \result{RequiredHard} percent. We carry both and
+call the lower one the easier reading. The retained wage share and both bounds were reproduced by
+the independent rebuild.
+
+\subsection{Building the rate on the income that shifts}
+
+\begin{definition}[The assembled effective rate]
+\label{def:tauk}
+Let $\sigma$ be the share of the return that is economic rent, $s$ the share of rents booked in
+lower-taxed jurisdictions, $\tau_c$ the combined entity-level rate, $\theta$ the share of
+corporate equity held in taxable accounts, $\delta$ the present-value factor for deferral between
+accrual and realization, $\tau_s$ the statutory shareholder rate, $b$ the debt share of financing
+and $\tau_b$ the effective rate on interest income. With the shareholder layer
+$\tau_{sh} = \theta\,\delta\,\tau_s$ and the entity layer $e$ formed from $\tau_c$ and $s$,
+\begin{equation}
+\tau_k \;=\; \sigma\,\bigl[e + (1-e)\,\tau_{sh}\bigr]
+\;+\;(1-\sigma)\,\bigl[(1-b)\,\tau_{sh} + b\,(\tau_b - \tau_c)\bigr].
+\label{eq:tauk}
+\end{equation}
+The first bracket is the rate on rents; the second is the rate on the normal return.
+\end{definition}
+
+Two features of Equation~\eqref{eq:tauk} do most of the work and neither is our assumption.
+Under full expensing the normal return is relieved at the entity level, so at the margin it bears
+only the owner's tax \citep{AcemogluManeraRestrepo2020}, which is why the debt-financed term is
+negative throughout the sourced range and why the budget office's measured rate on debt-financed
+corporate investment, minus \result{CBODebtFinancedETR} percent, sits inside the interval our
+components imply \citep{CBO2014}. The rent share is the second: \citet{Barkai2020} puts it at
+\result{RentBarkai} and \citet{KarabarbounisNeiman2014} at zero, two readings of what has happened
+to the corporate sector rather than two estimates of one quantity, so we report both and never
+average them.
+
+\paragraph{The base, and the case against our own choice.} We take the rate on the marginal flow
+of US AI surplus, whoever holds the claim, because the question concerns the next dollar that
+moves. Against that, an economy-wide average rate on capital income, around twenty percent for
+advanced economies, is measured on a stock mostly neither fully expensed nor easily shifted; if AI
+capital comes to look like the rest of the capital stock, that is the relevant rate. Which base
+answers which question is a judgment, not a fact.
+
+\subsection{Which government, and the answer on each}
+
+The two sides of Equation~\eqref{eq:condition} have to be measured on the same government. The
+labor tax readings are federal: both are built from federal taxes on wages, one from the
+automation tax literature and one bottom-up from federal receipts over wages and salaries. The
+assembled rate, however, adds an effective state corporate tax to the federal entity rate, so a
+comparison between them as they stand mixes jurisdictions. We therefore report two consistent
+versions and make the federal one the headline, because the claim this paper makes is about the
+federal balance sheet.
+
+On the \emph{federal-only} version the state corporate term is set to zero, giving an assembled
+rate of \result{TauKFederalOnly} percent against a required \result{RequiredFedEasy} to
+\result{RequiredFedHard} percent. On the \emph{all-government} version the state corporate term
+stays and the labor side gains the state and local wage-linked tax, worth
+\result{StateLocalLaborAddOn} percent of the wage bill, giving \result{TauKAllGovernment} percent
+against \result{RequiredAllGovEasy} to \result{RequiredAllGovHard} percent. Making the
+comparison consistent widens the gap on either version, because the state adds more to the labor
+side than to the capital side. Under the second rent reading the assembled rate is
+\result{TauKKN} percent on either jurisdiction.
+
+This is a scenario result in the strict sense, since three components are swept rather than
+sourced; Figure~\ref{fig:tauk} shows that sweep. The construction was reproduced in full by the
+independent rebuild.
+
+How far short depends on the base for $\theta$, and the two answers differ enough that we report
+both. On our base, $\theta$ is measured over all US equity outstanding, foreign holders included,
+because a foreign holder bears close to no US tax at the owner level and that dollar is still in
+the surplus. On the alternative base, the same numerator over domestically held stock alone,
+$\theta$ rises to \result{CRSTheta} percent and the central rate to \result{TauKCRSCentral}
+percent.
+
+The precise statement is the share of a stated grid in which the condition closes. That grid is
+the set of swept components, each drawn uniformly over the range given for it in
+Section~\ref{sec:data} and the replication package; the share is a property of that grid and of
+the uniform weighting, and it is not a probability that the condition closes. On our base it is
+\result{PassShareOursEasy} percent against the easier labor tax reading and
+\result{PassShareOursHard} percent against the harder; on the domestic-holder base it is
+\result{PassShareCRSEasy} and \result{PassShareCRSHard} percent. The corners of the space reach further than those shares
+suggest: the analytic maximum is \result{AnalyticMaxOurs} percent on our base and
+\result{AnalyticMaxCRS} percent on the other, so both exceed the easier required rate of
+\result{RequiredEasy} percent, and the second exceeds the harder \result{RequiredHard} percent as
+well. What holds on every base and under every reading is that the central case falls short, and
+that under the second rent reading the condition closes nowhere in the swept space.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.84\textwidth]{fig3_capital_tax.pdf}
+\caption{The assembled effective marginal rate on income that moves from wages to AI capital,
+against the rate required to replace the wage taxes lost. Bars are central values, whiskers the
+fifth to ninety-fifth percentile of the swept components; the shaded band is the required rate
+across the two readings of the labor tax rate. The two left bars use the taxable-holder share
+measured over all equity outstanding, the two right bars the same numerator over domestically held
+stock. Scenario, on a construction reproduced by independent rebuild.}
+\label{fig:tauk}
+\end{figure}
+
+\subsection{What would have to be true for the conclusion to reverse}
+
+A shortfall is only interesting if it survives the assumptions that would close it, so we apply
+each of those in turn and then together, all on the all-government version for comparability.
+Treating the foreign-held share of equity as bearing a fifteen percent treaty withholding rate at
+the owner level, rather than nothing, raises the assembled rate to \result{TauKWithholding}
+percent; that treaty rate is a stated assumption and not a measurement. Taking the debt-financed
+share from the filers' own books rather than the economy-wide stock ratio raises it to
+\result{TauKLowDebtShare} percent, because the debt-financed term is negative. Applying both
+together gives \result{TauKJointWeakening} percent, still below the required
+\result{RequiredAllGovEasy} percent. The second rent reading moves in the opposite direction, to
+\result{TauKKN} percent.
+
+One further assumption works in the paper's favour and belongs here for that reason. The labor
+tax rate is economy-wide, while displacement is not uniform across the wage distribution. Using
+the payroll and income tax rates by wage quintile already in the release, the effective rate runs
+from \result{LaborTaxQuintileLow} percent at the bottom to \result{LaborTaxQuintileHigh} percent
+at the top, so displacement concentrated in the bottom quintile would require only
+\result{RequiredBottomQuintile} percent rather than \result{RequiredTopQuintile} percent at the
+top. Even that lower requirement is above the assembled rate on either jurisdiction.
+
+\subsection{Pass-through, and what it can do to the comparison}
+
+The condition in Definition~\ref{def:condition} carries a coefficient that the headline comparison
+sets to one. Written as $\tau_k \ge \tau_\ell (1 - R)$, it assumes that every dollar of displaced
+wages reappears as a dollar of taxable US capital income. Making that explicit,
+\begin{equation}
+\tau_k \, g \;\ge\; \tau_\ell\,(1 - R), \qquad
+\tau_k^{\ast} = \frac{\tau_\ell\,(1 - R)}{g},
+\label{eq:passthrough}
+\end{equation}
+with $g$ the taxable US capital income generated per dollar of displaced wages, bounded in
+$[0,1]$ with output preserved. Everything reported above is the case $g = 1$, and it stays the
+headline because $g$ cannot be sourced. Incomplete pass-through can only widen the shortfall,
+never close it: any $g$ below one raises the required rate, and the decomposition of a displaced
+wage dollar in Appendix~\ref{app:detail}, which puts $g$ at \result{GLow} to \result{GHigh}, is
+scenario arithmetic reported there for that reason.
+
+\subsection{The boundary, and what would have to happen for the condition to close}
+
+The bound $g \le 1$ belongs to the output-preserved case. If AI raises output, a displaced wage
+dollar can be associated with more than a dollar of taxable capital income, and $g$ can exceed
+one. Stating the condition that way turns a comparison of point estimates into a boundary, which
+is the more useful object: Figure~\ref{fig:boundary} draws the fiscal balance
+$\tau_k \, g - \tau_\ell (1 - R)$ over the retained wage share and $g$, with the zero contour for
+each jurisdiction and each labor tax reading.
+
+Two things can be read straight off it. At the measured retained wage share, the condition closes
+only if $g$ reaches \result{GStarFedEasy} to \result{GStarFedHard} on the federal-only version,
+or \result{GStarAllEasy} to \result{GStarAllHard} on the all-government one. Every one of those
+is above the output-preserved ceiling, so with output preserved the condition does not close at
+the assembled rate anywhere on the grid. And the conclusion reverses only in the upper region:
+either output rises enough to carry $g$ well past one, or the share of displaced wages that comes
+back as wages rises far above what the displaced worker data show.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.84\textwidth]{fig6_boundary.pdf}
+\caption{The fiscal balance per displaced wage dollar, $\tau_k \, g - \tau_\ell (1 - R)$, over the
+retained wage share $R$ and the taxable capital income generated per displaced wage dollar $g$.
+Each line is the zero contour for one jurisdiction and one labor tax reading, at the assembled
+capital rate for that jurisdiction; the condition closes above a line and fails below it. The
+shaded region is where it fails on the headline federal-only version. The horizontal line is the
+output-preserved ceiling and the vertical line the measured retained wage share. Scenario, on the
+assembled rate.}
+\label{fig:boundary}
+\end{figure}
+
+\subsection{What the rate is a statement about}
+
+Under full expensing the deduction precedes the income. The rate assembled here is therefore a
+present-value wedge over the life of one marginal investment, while the replacement question asks
+about tax collected in a year. The two are comparable only under three conditions: investment
+constant, so that this year's deduction matches the deductions behind the income now taxed; rates
+constant, so that the wedge on a project placed today is the wedge that applied to projects
+already in place; and the capital stock stationary, so that both annual flows are steady. Under
+those conditions the annual rate and the marginal wedge stand in the same ratio, and outside them
+every comparison in this section fails. The transition runs against the paper rather than for it:
+while investment grows, current deductions exceed the tax on income from a smaller earlier capital
+stock, so revenue actually collected is below the assembled rate implies, and
+Appendix~\ref{app:detail} sizes that with an illustrative path.
+
+\subsection{Why the rate is low, and it is not profit shifting}
+
+The binding constraint is who owns the claims. About \result{ThetaUntaxable} percent of US
+corporate equity is held in forms the individual income tax barely reaches, chiefly retirement
+accounts, foreign investors and nonprofits, leaving \result{ThetaTaxable} percent in taxable
+accounts across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
+\citep{RosenthalAustin2016,RosenthalBurke2020,RosenthalMucciolo2024}. Of the gains that do accrue
+there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, and what is
+realized is realized late, deferral cutting the present value by a factor of
+\result{DeferralLow} to \result{DeferralHigh} \citep{Gravelle2022}. The debt side has the same
+structure: \result{InterestSheltered} percent of corporate interest goes to holders who do not pay
+tax on it and \result{BondsRestOfWorld} percent of corporate bonds are held abroad. Together these
+are why the owner's layer adds only \result{ShareholderLayerPct} percent to the rate on rents.
+
+Profit shifting is real and it is not the explanation. Moving the shifted share across its whole
+range changes the assembled rate by \result{SwingShifted}, against \result{SwingDeferral} for
+deferral and step-up and \result{SwingStateCIT} for the state corporate tax.
+Table~\ref{tab:levers} ranks every lever by measured influence; profit shifting is fourth of
+seven, and the levers above it have had a fraction of the attention.
+Appendix~\ref{app:detail} reads one line of that table that is easy to read backwards.
+
+\begin{table}[htbp]
+\centering
+\caption{The levers, ranked by measured influence on the assembled rate. Each is moved across its
+whole sourced or swept range with the others at central values. Scenario.}
+\label{tab:levers}
+\input{tables/tab_levers.tex}
+\end{table}
+
+\subsection{Checks, and what this module does not reach}
+
+Two published figures check the assembly and one limitation runs against our own finding; both are set out in Appendix~\ref{app:detail}. In short, our shareholder layer corroborates the Congressional Research Service's text figure once the two are put on a common base, and the base construction treats foreign holders as bearing no tax at the owner level though dividends to them bear withholding tax. That effect is sized in Section~\ref{sec:fiscal} above: at a fifteen percent treaty rate it raises the assembled rate to \result{TauKWithholding} percent, and to \result{TauKJointWeakening} percent with the filers' own debt share as well, both below the \result{RequiredAllGovEasy} percent the condition requires. What stays open is the actual effective withholding rate, which varies by treaty and with the split between dividends, which bear it, and capital gains realized by foreign holders, which generally do not.

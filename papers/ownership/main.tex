@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}\setlength{\emergencystretch}{3em}
+\usepackage{amsmath,amssymb,amsthm,booktabs,graphicx,array,xcolor,enumitem,caption}
+\usepackage{longtable}
+
+% Shared assets live in the original manuscript tree: one source of truth for
+% every measured value, figure and table. Local files win, then the shared tree.
+\makeatletter
+\def\input@path{{./}{../../paper/}}
+\makeatother
+\graphicspath{{../../paper/figures/}}
+
+\usepackage[round]{natbib}
+\input{results_macros.tex}   % measured values only
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\newif\ifanon
+\ifdefined\ANON\anontrue\else\anonfalse\fi
+
+\title{\bfseries Ownership, Not Profit Shifting: Why Capital Taxation Cannot
+Replace Wage Taxes}
+
+\ifanon
+  \author{\normalsize\itshape Author names and affiliations removed for double-anonymous peer review}
+\else
+  \author{%
+    Mohit Pratap Singh Rathore\thanks{Oviqo. Corresponding author.}\quad
+    Gunveer Singh Kalsi\thanks{Oviqo.}\quad
+    Sriharsha Meduri\thanks{Oviqo.}\quad
+    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}}
+\fi
+\date{}
+
+\ifanon
+  \usepackage[hidelinks,pdftitle={Ownership, Not Profit Shifting},
+  pdfauthor={},pdfkeywords={capital taxation; effective marginal tax rate; tax base erosion;
+  automation; share ownership; household balance sheets}]{hyperref}
+\else
+  \usepackage[hidelinks,pdftitle={Ownership, Not Profit Shifting},
+  pdfauthor={Mohit Pratap Singh Rathore; Gunveer Singh Kalsi; Sriharsha Meduri;
+  Pratap Chandra Mandal},pdfkeywords={capital taxation; effective marginal tax rate; tax base
+  erosion; automation; share ownership; household balance sheets}]{hyperref}
+\fi
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+If income shifts from labour to capital, can the tax system collect on the capital what it loses
+on the wages? We state the condition that has to hold, assemble both of its sides from sourced
+components, and find that it fails on a margin wider than any single policy lever can close. On a
+consistently federal basis the effective marginal rate on income moving from wages to capital is
+\result{TauKFederalOnly} percent against the \result{RequiredFedEasy} to \result{RequiredFedHard}
+percent replacement requires. Writing the condition with an explicit pass-through coefficient
+turns a comparison of point estimates into a boundary: it closes only where taxable capital
+income per displaced wage dollar reaches \result{GStarFedEasy} to \result{GStarFedHard}, above
+the ceiling of one that output-preserving displacement implies. The binding constraint is not
+where the literature has looked. Profit shifting ranks third among seven levers, moving the
+assembled rate by \result{SwingShifted} against \result{SwingDeferral} for deferral and step-up
+at death. What binds is ownership: about \result{ThetaUntaxable} percent of US corporate equity
+sits in forms the individual income tax barely reaches. The same concentration governs two
+further results measured here. Household debt-service capacity cannot be restored by broadening
+ownership, because \result{HHEquityOutsideHouseholds} percent of corporate equity sits outside
+the household sector and broadened ownership without liquidity moves the boundary by exactly
+zero. And an equity bust transmits weakly to households, because the assets that fall are held
+where the propensity to consume is lowest. One fact, three consequences, and a shortfall a rate
+change cannot fix.
+\end{abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} capital taxation; effective marginal tax rate; tax base erosion;
+automation; share ownership; household balance sheets
+
+\vspace{1em}
+
+\input{sections/sec_intro.tex}
+
+\input{sections/sec_related.tex}
+
+\input{sections/sec_data.tex}
+
+\input{sections/core_fiscal.tex}
+
+\input{sections/core_household.tex}
+
+\input{sections/core_bust.tex}
+
+\input{sections/sec_implications.tex}
+
+\input{sections/sec_limitations.tex}
+
+\input{sections/sec_future.tex}
+
+\input{sections/sec_conclusion.tex}
+
+\input{sections/sec_declarations.tex}
+
+\appendix
+
+\input{sections/appx_rebuild.tex}
+
+\input{sections/appx_fiscal.tex}
+
+\bibliographystyle{apalike}
+\bibliography{references}
+
+\end{document}

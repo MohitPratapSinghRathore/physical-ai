@@ -1,0 +1,31 @@
+\section{The independent computational rebuilds}
+\label{app:rebuild}
+
+Three rebuild rounds have been run against the measurements in this paper. Each was carried out by
+a separate run with no access to the project's code, working from raw data and a published
+specification, and scored against expected values fixed before the round began.
+
+Round one established the protocol and produced no comparable values in several modules, because
+the specification it worked from left definitions unstated. Round two scored
+\result{RepTwoScored} quantities, \result{RepTwoSealed} of them against fixed expected values:
+\result{RepTwoFivePct} came within five percent and \result{RepTwoTolerance} inside the stated
+tolerance, while \result{RepTwoMismatch} did not match. The mismatches had six root causes, of
+which the largest were an undefined universe for one household object, a class omitted because the
+specification described the exclusion rule in prose without enumerating the classes, and a
+Treasury level the rebuild could not know was the sum of two published series. Three of the five
+quantities withdrawn from this paper were withdrawn as a direct result. Round three covered the
+two constructions the earlier rounds had not reached, the debt-only ratio and the assembled
+capital tax rate, and matched all \result{RepThreeSealed} quantities,
+\result{RepThreeRounding} within rounding and the remainder inside tolerance. Its two
+non-rounding matches were traced exactly: one to a central value taken at a range midpoint rather
+than at the sourced point, which the paper now reports at the sourced point, and one to the
+maximum of a finite sample over a seven-dimensional box, which is an extreme order statistic with
+no stable value and is now reported as the analytic corner instead.
+
+The blind was procedural rather than enforced. The rebuild ran on the same machine, with the file
+of expected values reachable at a path the specification names; it was not attached to the request
+and was reported unopened until the rebuild was final. The supporting evidence is internal and
+circumstantial: most insufficiencies were written before the file was opened, several of the
+mismatch causes were among them, and the rebuild declined to use coefficients the specification
+had leaked. On that basis the paper claims that these quantities were independently rebuilt under
+a reported blind protocol, and never that they were independently verified.

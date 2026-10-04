@@ -1,0 +1,85 @@
+\section{Data and method}
+\label{sec:data}
+
+This section states what the accounts are built from, what they hold fixed, and how a reader
+should weigh what comes out of them. It also sets the vocabulary of status labels used in every
+table caption that follows.
+
+\subsection{Sources}
+
+Claim levels and holder shares come from the Federal Reserve's financial accounts
+\citep{FRBZ1}. The instrument suffix there is not the same across sectors, so matching on the
+exact suffix pushes whole holder classes into an unallocated remainder; we match on the
+instrument family and take the closest suffix per sector, which cuts that remainder from about a
+fifth to under two percent. Every series used is recorded with the publisher's own description in
+the replication package.
+
+Household balances come from the Survey of Income and Program Participation \citep{CensusSIPP},
+and household composition, earnings and occupation from the American Community Survey
+\citep{CensusACS}, with official credit aggregates from the New York Federal Reserve
+\citep{NYFedHHDC2026} used to benchmark the survey universe. The wage share of adjusted gross
+income, and the realized gains bound that travels with it, are from the Statistics of Income
+\citep{IRSSOI}. The distribution of corporate equity is from the distributional financial
+accounts \citep{FRBDFA} and behind them the Survey of Consumer Finances \citep{FRBSCF}, and the
+housing agency book from the Enterprises' annual filings
+\citep{FannieMae10K2025,FreddieMac10K2025}. The side of the accounts that measures claims on AI
+capital is built from the filings of nine registrants, with the off-balance-sheet structures
+described by \citet{BIS2026} absent from them. The wage bill and federal receipts used as bases
+are \result{WageBillBn} and \result{FedReceiptsBn} billion dollars. Units are taken from the
+provider at retrieval rather than assumed, and a discontinued series is replaced rather than
+carried.
+
+\subsection{What the accounts hold fixed}
+
+Three choices travel with every number in this paper and are worth stating before any of them
+appear.
+
+The accounts are a decomposition of a \emph{stock} at a point in time, repeated annually. They
+contain no behavioural model, no adoption path and no forecast. Where we report a change between
+two dates, it is the difference between two measured decompositions and not an estimate of what
+caused it.
+
+Each backing coefficient is a ratio of two measured quantities with a proxy assumption between
+them. Table~\ref{tab:bridge} sets out all three for every class, together with an alternative
+estimate where one exists, so a reader who rejects a proxy can see exactly which number it
+produced.
+
+Every share we report is accompanied by the growth of its own numerator and denominator wherever
+the two move differently. A share that looks flat because its denominator grew is a different
+fact from a share that is flat because nothing moved, and the long series in
+Section~\ref{sec:accounts} contains both.
+
+\subsection{Status labels, and what was independently rebuilt}
+\label{sec:rebuild}
+
+Three labels are used throughout and appear in every table caption. \emph{Rebuilt} means the
+quantity was reproduced by an independent computational rebuild: a separate run that had no
+access to this paper's code and worked from raw data and a published specification alone, inside
+a tolerance fixed before the rebuild began. \emph{Measured} means produced by the pipeline,
+clearing every applicable bounds check, but not independently rebuilt. \emph{Scenario} means
+arithmetic conditional on an assumption stated where the number appears. In prose we give the
+label where a reader could otherwise mistake a scenario for a measurement; elsewhere the table
+caption carries it.
+
+What a rebuild establishes needs saying plainly, because the word invites more than it should. It
+establishes computational reproducibility: that the stated inputs and the stated construction
+produce the stated number. It says nothing about whether the construction is the right one, or
+whether the economic assumptions behind it hold. A quantity can be rebuilt to six decimal places
+and still rest on an assumption we have no evidence for, and several in this paper do.
+
+Three rebuild rounds have been run. Round two scored \result{RepTwoScored} quantities,
+\result{RepTwoSealed} of them against expected values fixed in advance; \result{RepTwoFivePct}
+came within five percent and \result{RepTwoTolerance} inside the stated tolerance, and
+\result{RepTwoMismatch} did not match. Round three covered the two constructions the earlier
+rounds had not reached, the debt-only ratio and the assembled capital tax rate, and matched all
+\result{RepThreeSealed} quantities, \result{RepThreeRounding} of them within rounding. The blind
+was procedural rather than enforced: the rebuild ran on the same machine, with the file of
+expected values reachable at a path the specification names, and reported it unopened until the
+rebuild was final. The claim is therefore that these quantities were independently rebuilt under
+a reported blind protocol, not that they were independently verified.
+Appendix~\ref{app:rebuild} gives the round-by-round detail and the causes of the mismatches.
+
+Separately, a standing check states the bound a quantity must respect before it is computed and
+tests it afterwards, so that a figure which cannot be right is caught before it is reported
+rather than after. Five quantities the accounts can produce are not reported here at all, and
+Table~\ref{tab:removed} lists each with the reason.

@@ -20,3 +20,16 @@ paper/*.out
 paper/*.pdf
 paper/main.fls
 paper/main.fdb_latexmk
+
+# companion papers: sources are tracked, build artifacts and deliverables are not
+papers/*/*.aux
+papers/*/*.bbl
+papers/*/*.blg
+papers/*/*.log
+papers/*/*.out
+papers/*/*.pdf
+papers/*/*.fls
+papers/*/*.fdb_latexmk
+papers/*/*.docx
+papers/*/main_docx.tex
+papers/*/references.bib
