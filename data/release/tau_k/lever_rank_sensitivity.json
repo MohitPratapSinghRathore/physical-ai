@@ -1,0 +1,15 @@
+{
+  "description": "Sensitivity of the lever ranking to the swept range on the profit-shifted share. tau_k is exactly linear in that parameter, so the swing scales with the range width.",
+  "current_range": [
+    0.3,
+    0.6
+  ],
+  "current_swing": 0.0124,
+  "current_rank": 3,
+  "slope_dtauk_ds": 0.04133,
+  "width_to_rank_second": 0.322,
+  "width_to_rank_first": 0.385,
+  "verified_point_value": 0.48,
+  "verified_source": "Torslov, Wier and Zucman (2023); a second verified source was sought and not obtained",
+  "conclusion": "The ranking is not stable. A range of 0.48 plus or minus 0.16 moves profit shifting to first. The paper therefore claims ownership matters MORE than profit shifting, not that profit shifting is irrelevant."
+}

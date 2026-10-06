@@ -21,6 +21,16 @@
 \newif\ifanon
 \ifdefined\ANON\anontrue\else\anonfalse\fi
 
+% The companion paper shares authors, so a named self-citation would leak
+% identity in the blind build. Cite the anonymized entry there instead.
+\ifanon
+  \newcommand{\companion}{\citep{CompanionOwnershipAnon}}
+  \newcommand{\companiont}{\citet{CompanionOwnershipAnon}}
+\else
+  \newcommand{\companion}{\citep{CompanionOwnership}}
+  \newcommand{\companiont}{\citet{CompanionOwnership}}
+\fi
+
 \title{\bfseries Labor Backing Accounts: Who Holds the Claims That Wages Pay?}
 
 \ifanon
@@ -54,13 +64,14 @@ Every financial claim is serviced out of some income stream, yet the national fi
 record who owes a claim and who holds it, never which income pays it. This paper adds that
 dimension. Labor backing accounts decompose the stock of United States financial claims twice over, by the income that
 services each claim and by who holds, guarantees or owes it, across thirteen claim classes and a
-series running from 1952 to 2025. About \result{DebtOnlyDirect} percent of US debt, public and
+series running from 1947 to 2025. About \result{DebtOnlyDirect} percent of US debt, public and
 private, is serviced directly from wages, and \result{DebtOnlyIndirect} percent once indirect
 servicing is counted. Counting the federal government as exposed when it is holder, guarantor or
 debtor, it stands behind about \result{SovereignUnion} percent of directly wage-backed claims,
 against about \result{AIFederalShareRounded} percent of the separately measured claims on AI
-capital. That federal share is not a recent development but a return: it traces a U across
-seventy-three years, and a large part of the recent rise is growth in federal debt itself rather
+capital. That federal share is not a recent development but a return: it traces a U from
+\result{SovUnion1947} percent in 1947, and a large part of the recent rise is growth in federal
+debt itself rather
 than new exposure to households. Claims are spread far more evenly than the income that services
 them, falling from \result{QTwoPerDollar} dollars of wage-backed claims per wage dollar in the
 second quintile to \result{QTopPerDollar} at the top. We state every convention the accounts rest
@@ -105,7 +116,9 @@ risk; household debt; income distribution
 
 \begin{table}[htbp]
 \centering
-\caption{Labor backing and federal exposure, selected years, 1952 to 2025. Computed on the
+\caption{Labor backing and federal exposure, selected years, 1947 to 2025. The debt-only ratio
+reads n/a for 1947 because it needs market-valued equity, which the accounts carry only from
+1952. Computed on the
 coverage construction of the household coefficients, because income by source is not available for
 the historical years; the 2025 row therefore differs slightly from the headline figures, which are
 on the adopted wage basis. The creditor and debtor columns overlap where the federal sector holds

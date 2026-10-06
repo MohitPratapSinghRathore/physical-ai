@@ -135,7 +135,7 @@ together gives \result{TauKJointWeakening} percent, still below the required
 \result{RequiredAllGovEasy} percent. The second rent reading moves in the opposite direction, to
 \result{TauKKN} percent.
 
-One further assumption works in the paper's favour and belongs here for that reason. The labor
+One further assumption works in the paper's favor and belongs here for that reason. The labor
 tax rate is economy-wide, while displacement is not uniform across the wage distribution. Using
 the payroll and income tax rates by wage quintile already in the release, the effective rate runs
 from \result{LaborTaxQuintileLow} percent at the bottom to \result{LaborTaxQuintileHigh} percent
@@ -204,26 +204,47 @@ while investment grows, current deductions exceed the tax on income from a small
 stock, so revenue actually collected is below the assembled rate implies, and
 Appendix~\ref{app:detail} sizes that with an illustrative path.
 
-\subsection{Why the rate is low, and it is not profit shifting}
+\subsection{Why the rate is low, and ownership matters more than profit shifting}
+\label{sec:levers}
 
 The binding constraint is who owns the claims. About \result{ThetaUntaxable} percent of US
 corporate equity is held in forms the individual income tax barely reaches, chiefly retirement
 accounts, foreign investors and nonprofits, leaving \result{ThetaTaxable} percent in taxable
 accounts across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
 \citep{RosenthalAustin2016,RosenthalBurke2020,RosenthalMucciolo2024}. Of the gains that do accrue
-there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, and what is
-realized is realized late, deferral cutting the present value by a factor of
-\result{DeferralLow} to \result{DeferralHigh} \citep{Gravelle2022}. The debt side has the same
+there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, on 2014 data
+\citep{CBO2014}, and what is realized is realized late, deferral cutting the present value by a
+factor of \result{DeferralLow} to \result{DeferralHigh} on the later CRS estimates
+\citep{Gravelle2022}. The two vintages are a decade apart and agree that roughly half of accrued
+gains never bear tax, which is why we carry both rather than the newer alone. The debt side has the same
 structure: \result{InterestSheltered} percent of corporate interest goes to holders who do not pay
 tax on it and \result{BondsRestOfWorld} percent of corporate bonds are held abroad. Together these
 are why the owner's layer adds only \result{ShareholderLayerPct} percent to the rate on rents.
 
-Profit shifting is real and it is not the explanation. Moving the shifted share across its whole
-range changes the assembled rate by \result{SwingShifted}, against \result{SwingDeferral} for
-deferral and step-up and \result{SwingStateCIT} for the state corporate tax.
-Table~\ref{tab:levers} ranks every lever by measured influence; profit shifting is fourth of
-seven, and the levers above it have had a fraction of the attention.
+Profit shifting is real, and on our ranges it is not the largest of these. Moving the shifted
+share across its whole swept range changes the assembled rate by \result{SwingShifted}, against
+\result{SwingDeferral} for deferral and step-up and \result{SwingStateCIT} for the state
+corporate tax. Table~\ref{tab:levers} ranks every lever by measured influence; profit shifting is
+third of seven, and the two levers above it have had a fraction of the attention.
 Appendix~\ref{app:detail} reads one line of that table that is easy to read backwards.
+
+\paragraph{How stable that ranking is, and it is not very.} The comparison above is close enough
+that it has to be reported with its sensitivity rather than asserted. The shifted share has one
+verified value, \result{ShiftVerifiedValue} \citep{TorslovWierZucman2023}, and we sweep it over
+\result{ShiftRangeLow} to \result{ShiftRangeHigh} because a second verified source was sought and
+not obtained. The assembled rate is exactly linear in that parameter, so the swing scales with
+the width of whatever range is chosen. Widening the sweep to
+\result{ShiftVerifiedValue} plus or minus \result{ShiftHalfWidthSecond} moves profit shifting
+past the state corporate tax into second place, and
+\result{ShiftVerifiedValue} plus or minus \result{ShiftHalfWidthFirst} moves it into first. Both
+are inside what a reader could reasonably call the uncertainty on a single-source parameter.
+
+What survives that sensitivity is the weaker claim, and it is the one this paper makes.
+Ownership matters more than profit shifting at the ranges we can defend, the ownership channel is
+pinned to narrow sourced ranges while the shifting channel is not pinned at all, and the
+instruments that touch ownership have had far less attention than the instruments that touch
+shifting. What does not survive is any claim that profit shifting is unimportant, and we do not
+make it.
 
 \begin{table}[htbp]
 \centering

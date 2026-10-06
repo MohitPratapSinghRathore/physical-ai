@@ -48,6 +48,13 @@ def main():
     rows.append(("em-dash in PDF", t.count(EM_DASH), "0", t.count(EM_DASH) == 0))
     rows.append(("'---' in sources", src_text.count("---"), "0",
                  src_text.count("---") == 0))
+    # an en-dash used as punctuation reads as a dash; one inside a number range
+    # (page numbers in the bibliography) is legitimate, so only flag the former
+    en_punct = len(re.findall(r"(?<=[A-Za-z,;\s])–(?=[A-Za-z\s])", t))
+    rows.append(("en-dash as punctuation", en_punct, "0", en_punct == 0))
+    # a bare double hyphen in prose (not a LaTeX comment or option) renders as a dash
+    dbl = len(re.findall(r"(?<![-\w])--(?![-\w])", src_text))
+    rows.append(("'--' as punctuation in src", dbl, "0", dbl == 0))
     nrob = len(re.findall("robust", t, re.I))
     rows.append(("'robust' in PDF", nrob, "0", nrob == 0))
     rows.append(("'??' undefined in PDF", body.count("??"), "0", body.count("??") == 0))

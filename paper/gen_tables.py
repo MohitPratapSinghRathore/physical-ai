@@ -145,17 +145,20 @@ def tab_sensitivity():
 
 
 def tab_series():
-    years = ["1952", "1970", "1990", "2000", "2008", "2020", "2025"]
+    years = ["1947", "1952", "1970", "1990", "2000", "2008", "2020", "2025"]
     dr = {r["year"]: r for r in rows("data/release/labor_backing/direct_ratio_timeseries.csv")}
     do = {r["year"]: r for r in rows("data/release/labor_backing/debt_only_ratio_timeseries.csv")}
     lines = [r"\begin{tabular}{lrrrrr}", r"\toprule",
              r"Year & Debt-only ratio & All-claims ratio & Federal, union "
              r"& \quad as creditor & \quad as debtor \\", r"\midrule"]
     for y in years:
-        a, b = dr[y], do[y]
+        a = dr[y]
         held = float(a["sovereign_share_of_labour_backed"])
         obl = float(a["sovereign_obligor_bn"]) / float(a["labour_backed_bn"])
-        lines.append(f"{y} & {float(b['DEBT_ONLY_ratio_direct']):.4f} & "
+        # the debt-only ratio needs market-valued equity and starts in 1952
+        dob = (f"{float(do[y]['DEBT_ONLY_ratio_direct']):.4f}"
+               if y in do else r"n/a")
+        lines.append(f"{y} & {dob} & "
                      f"{float(a['direct_labour_backing_ratio']):.4f} & "
                      f"{float(a['sovereign_share_union']):.4f} & {held:.4f} & {obl:.4f} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]

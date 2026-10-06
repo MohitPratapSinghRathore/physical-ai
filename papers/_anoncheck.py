@@ -15,20 +15,35 @@ NEEDLES = [
 ]
 
 
+def text_of(path):
+    """Plain text of a built PDF or DOCX."""
+    if path.suffix == ".pdf":
+        out = subprocess.run(["pdftotext", str(path), "-"], capture_output=True)
+    else:
+        out = subprocess.run(["pandoc", str(path), "-t", "plain"], capture_output=True)
+    return out.stdout.decode("utf-8", errors="replace")
+
+
 def main():
-    pdf = pathlib.Path("main_anon.pdf")
-    if not pdf.exists():
-        print("main_anon.pdf not built")
-        return 1
-    out = subprocess.run(["pdftotext", str(pdf), "-"], capture_output=True)
-    t = out.stdout.decode("utf-8", errors="replace")
-    hits = [n for n in NEEDLES if n.lower() in t.lower()]
-    print(f"anon PDF: {pdf.resolve().parent.name}/main_anon.pdf")
-    if hits:
-        print("IDENTITY LEAKS:", ", ".join(hits))
-        return 1
-    print(f"checked {len(NEEDLES)} identifying strings: 0 leaks")
-    return 0
+    # Both blind deliverables must be checked. The DOCX is built from its own
+    # .bbl; reading the author build's would put real names into the anonymous
+    # reference list, which is exactly the leak this catches.
+    targets = [pathlib.Path("main_anon.pdf")]
+    targets += sorted(pathlib.Path(".").glob("*_anon.docx"))
+    rc = 0
+    for p in targets:
+        if not p.exists():
+            print(f"{p.name}: NOT BUILT")
+            rc = 1
+            continue
+        t = text_of(p)
+        hits = [n for n in NEEDLES if n.lower() in t.lower()]
+        if hits:
+            print(f"{p.name}: IDENTITY LEAKS: {', '.join(hits)}")
+            rc = 1
+        else:
+            print(f"{p.name}: checked {len(NEEDLES)} identifying strings, 0 leaks")
+    return rc
 
 
 if __name__ == "__main__":

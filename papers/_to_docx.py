@@ -33,9 +33,13 @@ def load_refs():
     return out
 
 
-def load_cites():
-    """key -> (author, year) from the apalike .bbl."""
-    bbl = HERE / "main.bbl"
+def load_cites(anon=False):
+    """key -> (author, year) from the apalike .bbl.
+
+    The blind build has its own .bbl. Reading the author build's would put the
+    companion paper's real author names into the anonymous reference list.
+    """
+    bbl = HERE / ("main_anon.bbl" if anon else "main.bbl")
     out = {}
     if bbl.exists():
         for label, key in re.findall(r"\\bibitem\[([^\]]*)\]\{([^}]*)\}",
@@ -87,8 +91,11 @@ def main():
     anon = mode == "anon"
 
     text = (HERE / "main.tex").read_text(encoding="utf-8", errors="replace")
-    text = resolve_toggle(text, anon)
+    # Inline first, resolve the toggle second. The other order leaves every
+    # \ifanon block inside a section file unevaluated, which keeps the
+    # disclosure and funding paragraphs in the blind build.
     text = inline_inputs(text)
+    text = resolve_toggle(text, anon)
 
     macros = load_macros()
     missing = set()
@@ -128,7 +135,7 @@ def main():
     refs = load_refs()
     text = re.sub(r"\\(?:eq)?ref\{([^}]*)\}", lambda m: refs.get(m.group(1), "?"), text)
 
-    cites = load_cites()
+    cites = load_cites(anon)
 
     def citet(m):
         keys = [k.strip() for k in m.group(1).split(",")]
@@ -144,7 +151,7 @@ def main():
     text = re.sub(r"\\citep\{([^}]*)\}", citep, text)
 
     # the bibliography itself, as alphabetical paragraphs
-    bbl = HERE / "main.bbl"
+    bbl = HERE / ("main_anon.bbl" if anon else "main.bbl")
     biblio = ""
     if bbl.exists():
         raw = bbl.read_text(encoding="utf-8", errors="replace")

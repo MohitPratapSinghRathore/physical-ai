@@ -947,3 +947,45 @@
                   The earlier entry recorded the author as Emre and the year as 2025;
                   both were wrong and are corrected here.}
 }
+
+% ---------------------------------------------------------------------------
+% The two companion papers cite each other. Each has a named entry and an
+% anonymized entry; main.tex picks between them on the \ifanon toggle so the
+% blind build does not leak authorship through a self-citation.
+% ---------------------------------------------------------------------------
+
+@unpublished{CompanionAccounts,
+  author      = {Rathore, Mohit Pratap Singh and Kalsi, Gunveer Singh and
+                 Meduri, Sriharsha and Mandal, Pratap Chandra},
+  title       = {Labor Backing Accounts: Who Holds the Claims That Wages Pay?},
+  year        = {2026},
+  note        = {Working paper, companion to the present paper},
+  verification = {Companion manuscript by the same authors, 2026.}
+}
+
+@unpublished{CompanionAccountsAnon,
+  author      = {{Authors omitted for double-anonymous review}},
+  title       = {Labor Backing Accounts: Who Holds the Claims That Wages Pay?},
+  year        = {2026},
+  note        = {Working paper, companion to the present paper},
+  verification = {Anonymized form of CompanionAccounts for the blind build.}
+}
+
+@unpublished{CompanionOwnership,
+  author      = {Rathore, Mohit Pratap Singh and Kalsi, Gunveer Singh and
+                 Meduri, Sriharsha and Mandal, Pratap Chandra},
+  title       = {Ownership, Not Profit Shifting: Why Capital Taxation Falls
+                 Short of Replacing Wage Taxes},
+  year        = {2026},
+  note        = {Working paper, companion to the present paper},
+  verification = {Companion manuscript by the same authors, 2026.}
+}
+
+@unpublished{CompanionOwnershipAnon,
+  author      = {{Authors omitted for double-anonymous review}},
+  title       = {Ownership, Not Profit Shifting: Why Capital Taxation Falls
+                 Short of Replacing Wage Taxes},
+  year        = {2026},
+  note        = {Working paper, companion to the present paper},
+  verification = {Anonymized form of CompanionOwnership for the blind build.}
+}

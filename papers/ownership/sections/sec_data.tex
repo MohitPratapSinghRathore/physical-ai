@@ -4,15 +4,15 @@
 This section states what each side of the condition is built from, which components are sourced
 and which are swept, and how a reader should weigh what comes out. The distinction between
 sourced and swept carries through every number that follows and is the reason the central figure
-is labelled scenario rather than measured.
+is labeled scenario rather than measured.
 
 \subsection{Sources}
 
-The labour side of the condition is built from federal taxes over wages and salaries, with the
+The labor side of the condition is built from federal taxes over wages and salaries, with the
 wage share of adjusted gross income and the realized gains bound that travels with it from the
 Statistics of Income \citep{IRSSOI}. The retained wage share is fitted on fourteen biennial
 vintages of the worker displacement release \citep{BLSWorkerDisplacement} and solved as a fixed
-point, since displacement changes the labour market slack the fit is a function of.
+point, since displacement changes the labor market slack the fit is a function of.
 
 The capital side assembles the components of Definition~\ref{def:tauk}. The entity rate and
 the treatment of expensing follow \citet{AcemogluManeraRestrepo2020}; the share of rents booked
@@ -33,11 +33,39 @@ read from the filings of nine registrants, with the off-balance-sheet structures
 \citet{BIS2026} absent from them. The wage bill and federal receipts used as bases are
 \result{WageBillBn} and \result{FedReceiptsBn} billion dollars.
 
+\subsection{Three objects borrowed from the accounts}
+\label{sec:borrowed}
+
+Three quantities used below are built in a companion paper \companion\ rather than here, and a
+reader of this paper alone needs them defined. Each is stated in full there; what follows is
+enough to read the results in this one.
+
+\paragraph{The retained wage share.} Written $R$, this is the share of a displaced wage bill that
+returns as wages, since not every dollar of displaced pay leaves the wage tax base. It is fitted
+on fourteen biennial vintages of the worker displacement release \citep{BLSWorkerDisplacement}
+and solved as a fixed point, because displacement changes the labor market slack the fit is a
+function of. We measure $R = \result{RetainedWageShare}$ and it enters the condition in
+Definition~\ref{def:condition} directly.
+
+\paragraph{The holder mapping.} The companion paper decomposes the stock of US financial claims
+twice over, by the income that services each claim and by who holds, guarantees or owes it. Where
+this paper reports which share of a given pool of household debt the federal government stands
+behind, that attribution is the companion's holder map rather than a construction of our own. A
+claim is assigned to the party that bears the credit risk rather than to the party holding legal
+title, so an agency-guaranteed mortgage inside a security owned by a pension fund counts as
+federal.
+
+\paragraph{The agency classification.} Whether the housing agencies count as federal is a
+classification choice rather than a measurement, and the companion paper reports both readings
+because they do not agree. It is the largest single judgement call affecting the incidence result
+here, and Section~\ref{sec:limitations} records that it moves the holder attribution by about a
+factor of seven. Nothing in this paper's revenue-side result depends on it.
+
 \subsection{Sourced, swept, and why the distinction matters}
 
 Three components of the assembled rate have no single sourced value and are swept across a stated
 range instead: each is drawn uniformly over the range given for it in the replication package.
-Everything built on them is labelled \emph{scenario}, and we report the share of the swept grid
+Everything built on them is labeled \emph{scenario}, and we report the share of the swept grid
 in which the condition closes rather than a probability, because a share of a uniformly weighted
 grid is not a probability and reporting it as one would overstate what the sweep can tell anyone.
 

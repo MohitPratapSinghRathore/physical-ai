@@ -119,8 +119,11 @@ def main():
     R["OneStepMovePct"] = f"{abs(float(do['largest_move_pct'])):.0f}"
 
     # ---- the series, 1952 to 2025
-    for y in ("1952", "1970", "1990", "2000", "2008", "2020", "2025"):
-        R["DebtOnly" + y] = pct(dots[y]["DEBT_ONLY_ratio_direct"])
+    # 1947 is in the exposure series but not the debt-only series, which needs
+    # market-valued equity and starts in 1952.
+    for y in ("1947", "1952", "1970", "1990", "2000", "2008", "2020", "2025"):
+        if y in dots:
+            R["DebtOnly" + y] = pct(dots[y]["DEBT_ONLY_ratio_direct"])
         R["AllClaims" + y] = pct(drts[y]["direct_labour_backing_ratio"])
         R["SovUnion" + y] = pct(drts[y]["sovereign_share_union"])
         R["SovHeld" + y] = pct(drts[y]["sovereign_share_of_labour_backed"])
@@ -637,6 +640,16 @@ def main():
     R["AdditionalPurchaseBn"] = f"{target - held_now:,.0f}"
     R["PurchaseVersusAgencyCapital"] = \
         f"{(target - held_now) / float(wf10[0]['capital_bn']):.0f}"
+
+    # ---- how stable the lever ranking is to the swept profit-shifting range ----
+    lrs = load("data/release/tau_k/lever_rank_sensitivity.json")
+    R["ShiftRangeLow"] = f'{lrs["current_range"][0]:.2f}'
+    R["ShiftRangeHigh"] = f'{lrs["current_range"][1]:.2f}'
+    R["ShiftVerifiedValue"] = f'{lrs["verified_point_value"]:.2f}'
+    R["ShiftWidthRankSecond"] = f'{lrs["width_to_rank_second"]:.2f}'
+    R["ShiftWidthRankFirst"] = f'{lrs["width_to_rank_first"]:.2f}'
+    R["ShiftHalfWidthSecond"] = f'{lrs["width_to_rank_second"] / 2:.2f}'
+    R["ShiftHalfWidthFirst"] = f'{lrs["width_to_rank_first"] / 2:.2f}'
 
     # ---- the predictive null (branch predictive-panel, pre-registered) ----
     pred = load("data/release/predictive/results.json")

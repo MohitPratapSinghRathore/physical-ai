@@ -60,13 +60,18 @@ def finish(fig, name):
 def fig_series():
     do = {r["year"]: r for r in
           rows("data/release/labor_backing/debt_only_ratio_timeseries.csv")}
-    dr = [r for r in rows("data/release/labor_backing/direct_ratio_timeseries.csv")
-          if r["year"] in do]
+    # The exposure series runs from 1947. The debt-only ratio needs market-valued
+    # equity and only runs from 1952, so the two panels start in different years
+    # and the caption says so. Truncating the upper panel to the lower panel's
+    # start would hide the post-war level, which is the point of the series.
+    dr = rows("data/release/labor_backing/direct_ratio_timeseries.csv")
     years = [int(r["year"]) for r in dr]
     union = [float(r["sovereign_share_union"]) for r in dr]
     held = [float(r["sovereign_share_of_labour_backed"]) for r in dr]
     obl = [float(r["sovereign_obligor_bn"]) / float(r["labour_backed_bn"]) for r in dr]
-    debt_only = [float(do[r["year"]]["DEBT_ONLY_ratio_direct"]) for r in dr]
+    do_years = [int(r["year"]) for r in dr if r["year"] in do]
+    debt_only = [float(do[r["year"]]["DEBT_ONLY_ratio_direct"])
+                 for r in dr if r["year"] in do]
 
     fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(6.3, 5.2), sharex=True,
                                    gridspec_kw={"height_ratios": [2, 1]})
@@ -78,7 +83,7 @@ def fig_series():
     ax1.set_ylim(0, 0.95)
     ax1.legend(loc="upper left", fontsize=8)
 
-    ax2.plot(years, debt_only, color="0.10", lw=1.5,
+    ax2.plot(do_years, debt_only, color="0.10", lw=1.5,
              label="Debt-only labor backing ratio")
     ax2.set_ylabel("Share of debt")
     ax2.set_xlabel("Year")
