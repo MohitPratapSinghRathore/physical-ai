@@ -17,7 +17,7 @@ focus, and for the content to be separated into two objectives.
 | Objective | What income services the US claim stock, and who holds, guarantees or owes it | Whether the tax system can replace wage-tax revenue when income shifts to capital, and what binds |
 | Genre | Measurement, national accounts | Public finance |
 | Body words | 9,347 | 9,206 |
-| Pages (author PDF) | 27 | 25 |
+| Pages (author PDF) | 25 | 23 |
 | Figures | 1, 2 | 3, 6 |
 
 Corresponding author on both: **Mohit Pratap Singh Rathore**, first in the author list, on the
