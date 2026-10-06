@@ -86,12 +86,18 @@
       "sought": "a verified apportioned effective state rate."
     },
     "shifted_share": {
+      "status": "SOURCED 2026-10-06. Two independent estimates on the SAME denominator, the share of the foreign profits of US multinationals booked in tax havens. No longer swept over a judgement range.",
       "range": [
-        0.3,
-        0.6
+        0.47,
+        0.53
       ],
-      "bound": "a share. Centred on the one verified value, 0.48 (Torslov, Wier and Zucman), and swept because a SECOND verified source was required and not obtained.",
-      "sought": "Clausing (NBER w28442) and Garcia-Bernardo, Jansky and Zucman (NBER w30086, title verified, abstract not retrievable). Neither abstract could be read from a primary source in this session."
+      "bound": "a share. The range spans both sourced estimates and the stated imprecision of the second: Torslov, Wier and Zucman give 0.48 for 2016 from the BEA value added tables, and Garcia-Bernardo, Jansky and Zucman give 'around 50 percent, stable between 2015 and 2020' from survey, tax and firm financial data, read here as 0.50 plus or minus 0.03.",
+      "sources": [
+        "Torslov, Wier and Zucman, The Missing Profits of Nations: 'In 2016, according to the BEA Value Added tables, 48% of the pre-tax profit of majority-owned affiliates of US multinationals were made in tax havens.'",
+        "Garcia-Bernardo, Jansky and Zucman, NBER w30086, abstract verified verbatim 2026-10-06: 'The share of foreign profits booked in tax havens remained stable around 50% between 2015 and 2020.'"
+      ],
+      "correction": "The earlier note sought 'Clausing (NBER w28442)'. NBER w28442 is Solar Geoengineering, Learning, and Experimentation; it is not a profit-shifting paper and the number was wrong.",
+      "DENOMINATOR_CAVEAT": "Both estimates are shares of FOREIGN profits. assemble.py applies this parameter to the whole rent base, so a dollar of US rent is treated as booked abroad with this probability. That overstates shifting unless essentially all rent is earned through foreign affiliates, and correcting it would RAISE tau_k and NARROW the measured shortfall. Reported as a limitation, not silently changed."
     }
   },
   "the_main_result_of_this_module": "A117: the debt share is sourced too. Nine components verified, three swept."

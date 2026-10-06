@@ -93,6 +93,55 @@ markers matched their scan. The gate checks U+2014 anywhere, `---` in source, an
 punctuation (page ranges in the bibliography are correctly exempt) and a bare `--` in prose. Both
 papers score zero on all four.
 
+## FR7 and FR1, completed 2026-10-06
+
+Both were run because the alternative was a referee running them.
+
+**FR7, Paper A: the novelty search.** Protocol published at
+`framework/novelty/FR7_SEARCH.md`, with the kill criterion fixed before the search: locating a
+construction that takes a national claim stock, classifies each claim by the income that services
+it, crosses that with the holder structure and reports an aggregate share would retire the
+novelty claim. Six queries. **None located.** The nearest work is now named in the related-work
+section with the condition each fails: debt service ratios are a flow, for households, against
+disposable income; distributional national accounts answer who owns and owes rather than which
+income services what; fiscal risk matrices classify by trigger; who-to-whom accounting classifies
+by instrument and counterparty; household debt histories are one sector and distributional.
+
+The claim moves from "none located, no systematic search was run" to "none located under a
+stated protocol, and here are the bounds of that protocol". It does not move to "none exists",
+and L7 now states what the search does not reach.
+
+**FR1, Paper B: sourcing the swept components.** The profit-shifted share is now sourced from two
+independent studies measuring the same object, the share of the foreign profits of US
+multinationals booked in tax havens: 48 percent for 2016 from the BEA value added tables
+(Tørsløv, Wier and Zucman) and "stable around 50 percent between 2015 and 2020" (Garcia-Bernardo,
+Janský and Zucman, NBER w30086, abstract verified verbatim). The range narrows from 0.30 to 0.60,
+a judgement interval, to 0.47 to 0.53, which the two estimates span.
+
+**The effect is large and it is the point.** Profit shifting falls from rank 3 of 7 with a swing
+of 0.0124 to **rank 7 of 7 with a swing of 0.0025**. The reviewer's objection, that the ranking
+flipped if the range widened a little, no longer applies, because the range is no longer a
+choice. The headline rate is unchanged at 7.8 percent, because the central case always used the
+sourced point value; what changed is the uncertainty around it. The analytic maximum tightens
+from 12.4 to 11.5 percent and the pass share on our base falls to zero.
+
+Two things found along the way that go in the paper rather than being quietly fixed:
+
+- **A wrong citation.** The note recording what had been sought cited "Clausing (NBER w28442)".
+  NBER w28442 is *Solar Geoengineering, Learning, and Experimentation*. It is not a
+  profit-shifting paper.
+- **A denominator mismatch, and it runs against our own result.** Both sources measure a share of
+  *foreign* profits; the assembly applies the parameter to the whole rent base. That overstates
+  shifting unless essentially all rent is earned through foreign affiliates, and correcting it
+  would raise the assembled rate and narrow the shortfall the paper reports. It is now L11 with
+  FR11 paired to it, with the direction signed and the magnitude unbounded, rather than corrected
+  silently in either direction.
+
+**The two components that remain swept** are the effective state corporate rate and the
+shareholder-level statutory rate. A published apportioned effective state rate and a realized
+average shareholder rate were both sought on the same occasion and neither was found in a form
+verifiable from a primary source, so they stay swept and L1 says so.
+
 ## Targets, with ratings verified 2026-10-04
 
 | Journal | ABDC | Scimago | Fit |

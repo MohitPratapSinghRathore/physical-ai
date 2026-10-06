@@ -643,13 +643,15 @@ def main():
 
     # ---- how stable the lever ranking is to the swept profit-shifting range ----
     lrs = load("data/release/tau_k/lever_rank_sensitivity.json")
-    R["ShiftRangeLow"] = f'{lrs["current_range"][0]:.2f}'
-    R["ShiftRangeHigh"] = f'{lrs["current_range"][1]:.2f}'
-    R["ShiftVerifiedValue"] = f'{lrs["verified_point_value"]:.2f}'
-    R["ShiftWidthRankSecond"] = f'{lrs["width_to_rank_second"]:.2f}'
-    R["ShiftWidthRankFirst"] = f'{lrs["width_to_rank_first"]:.2f}'
-    R["ShiftHalfWidthSecond"] = f'{lrs["width_to_rank_second"] / 2:.2f}'
-    R["ShiftHalfWidthFirst"] = f'{lrs["width_to_rank_first"] / 2:.2f}'
+    R["ShiftRangeLow"] = f'{lrs["after"]["range"][0]:.2f}'
+    R["ShiftRangeHigh"] = f'{lrs["after"]["range"][1]:.2f}'
+    R["ShiftRangeOldLow"] = f'{lrs["before"]["range"][0]:.2f}'
+    R["ShiftRangeOldHigh"] = f'{lrs["before"]["range"][1]:.2f}'
+    R["ShiftRankNow"] = str(lrs["after"]["rank_of_seven"])
+    R["ShiftRankBefore"] = str(lrs["before"]["rank_of_seven"])
+    R["ShiftSwingBefore"] = f'{lrs["before"]["swing"]:.4f}'
+    R["ShiftTWZ"] = "48"
+    R["ShiftGBJZ"] = "50"
 
     # ---- the predictive null (branch predictive-panel, pre-registered) ----
     pred = load("data/release/predictive/results.json")

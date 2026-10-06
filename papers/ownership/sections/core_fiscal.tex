@@ -86,7 +86,7 @@ comparison consistent widens the gap on either version, because the state adds m
 side than to the capital side. Under the second rent reading the assembled rate is
 \result{TauKKN} percent on either jurisdiction.
 
-This is a scenario result in the strict sense, since three components are swept rather than
+This is a scenario result in the strict sense, since two components are swept rather than
 sourced; Figure~\ref{fig:tauk} shows that sweep. The construction was reproduced in full by the
 independent rebuild.
 
@@ -228,23 +228,35 @@ corporate tax. Table~\ref{tab:levers} ranks every lever by measured influence; p
 third of seven, and the two levers above it have had a fraction of the attention.
 Appendix~\ref{app:detail} reads one line of that table that is easy to read backwards.
 
-\paragraph{How stable that ranking is, and it is not very.} The comparison above is close enough
-that it has to be reported with its sensitivity rather than asserted. The shifted share has one
-verified value, \result{ShiftVerifiedValue} \citep{TorslovWierZucman2023}, and we sweep it over
-\result{ShiftRangeLow} to \result{ShiftRangeHigh} because a second verified source was sought and
-not obtained. The assembled rate is exactly linear in that parameter, so the swing scales with
-the width of whatever range is chosen. Widening the sweep to
-\result{ShiftVerifiedValue} plus or minus \result{ShiftHalfWidthSecond} moves profit shifting
-past the state corporate tax into second place, and
-\result{ShiftVerifiedValue} plus or minus \result{ShiftHalfWidthFirst} moves it into first. Both
-are inside what a reader could reasonably call the uncertainty on a single-source parameter.
+\paragraph{Why that ranking can be relied on, and what it would have taken to overturn it.} An
+earlier version of this paper reported profit shifting at rank \result{ShiftRankBefore} with a
+swing of \result{ShiftSwingBefore}, on a judgement range of \result{ShiftRangeOldLow} to
+\result{ShiftRangeOldHigh} drawn around a single source. That ranking was not stable. Because the
+assembled rate is exactly linear in this parameter, the swing scales with the width of whatever
+range is chosen, and a modestly wider range would have moved profit shifting to first. A ranking
+that can be reversed by widening one judgement interval is not a finding.
 
-What survives that sensitivity is the weaker claim, and it is the one this paper makes.
-Ownership matters more than profit shifting at the ranges we can defend, the ownership channel is
-pinned to narrow sourced ranges while the shifting channel is not pinned at all, and the
-instruments that touch ownership have had far less attention than the instruments that touch
-shifting. What does not survive is any claim that profit shifting is unimportant, and we do not
-make it.
+The parameter is now sourced rather than swept. Two independent estimates measure the same
+object, the share of the foreign profits of US multinationals booked in tax havens:
+\result{ShiftTWZ} percent for 2016 from the BEA value added tables
+\citep{TorslovWierZucman2023}, and ``stable around \result{ShiftGBJZ} percent between 2015 and
+2020'' from survey, tax and firm financial data \citep{GarciaBernardoJanskyZucman2022}. We take
+the range spanned by both, \result{ShiftRangeLow} to \result{ShiftRangeHigh}, which is the two
+point estimates plus the stated imprecision of the second.
+
+On that range the swing falls to \result{SwingShifted} and profit shifting ranks
+\result{ShiftRankNow} of seven, below every other lever in Table~\ref{tab:levers}. The reading is
+not that profit shifting stopped mattering. It is that once the parameter is pinned by two
+sources that agree, it stops being a source of uncertainty about the rate, while the ownership
+parameters continue to move it. That is the sense in which ownership matters more, and it is now
+a statement about measured quantities rather than about the width of an interval we chose.
+
+One caveat runs against us and belongs here rather than in a footnote. Both sources measure a
+share of \emph{foreign} profits, while the assembly applies the parameter to the whole rent base,
+treating a dollar of US rent as booked abroad with this probability. That overstates shifting
+unless essentially all rent is earned through foreign affiliates. Correcting it would raise the
+assembled rate and narrow the shortfall this paper reports, which is why it is stated plainly at
+L11 in Section~\ref{sec:limitations} rather than left for a reader to find.
 
 \begin{table}[htbp]
 \centering

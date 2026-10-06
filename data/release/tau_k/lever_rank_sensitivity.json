@@ -1,15 +1,69 @@
 {
-  "description": "Sensitivity of the lever ranking to the swept range on the profit-shifted share. tau_k is exactly linear in that parameter, so the swing scales with the range width.",
-  "current_range": [
-    0.3,
-    0.6
+  "description": "Effect of sourcing the profit-shifted share on the lever ranking. The parameter was swept over a judgement range because only one source had been obtained; a second was found on 2026-10-06 measuring the same object.",
+  "before": {
+    "range": [
+      0.3,
+      0.6
+    ],
+    "basis": "one source, swept judgement range",
+    "swing": 0.0124,
+    "rank_of_seven": 3,
+    "note": "At this width the ranking was unstable: widening to 0.48 plus or minus 0.16 moved profit shifting to second and 0.48 plus or minus 0.19 moved it to first."
+  },
+  "after": {
+    "range": [
+      0.47,
+      0.53
+    ],
+    "basis": "two independent sources on the same denominator",
+    "swing": 0.0025,
+    "rank_of_seven": 7
+  },
+  "sources": [
+    "Torslov, Wier and Zucman (2023), The Missing Profits of Nations: 48 percent of the pre-tax profit of majority-owned foreign affiliates of US multinationals was booked in tax havens in 2016, from the BEA value added tables.",
+    "Garcia-Bernardo, Jansky and Zucman (2022), NBER w30086, abstract verified verbatim: 'The share of foreign profits booked in tax havens remained stable around 50% between 2015 and 2020.'"
   ],
-  "current_swing": 0.0124,
-  "current_rank": 3,
-  "slope_dtauk_ds": 0.04133,
-  "width_to_rank_second": 0.322,
-  "width_to_rank_first": 0.385,
-  "verified_point_value": 0.48,
-  "verified_source": "Torslov, Wier and Zucman (2023); a second verified source was sought and not obtained",
-  "conclusion": "The ranking is not stable. A range of 0.48 plus or minus 0.16 moves profit shifting to first. The paper therefore claims ownership matters MORE than profit shifting, not that profit shifting is irrelevant."
+  "ranking_now": [
+    {
+      "rank": 1,
+      "parameter": "deferral_factor",
+      "swing": 0.0159
+    },
+    {
+      "rank": 2,
+      "parameter": "state_cit_effective",
+      "swing": 0.0133
+    },
+    {
+      "rank": 3,
+      "parameter": "shareholder_rate",
+      "swing": 0.0115
+    },
+    {
+      "rank": 4,
+      "parameter": "debt_share",
+      "swing": 0.0063
+    },
+    {
+      "rank": 5,
+      "parameter": "bondholder_rate",
+      "swing": 0.0042
+    },
+    {
+      "rank": 6,
+      "parameter": "theta_taxable",
+      "swing": 0.0037
+    },
+    {
+      "rank": 7,
+      "parameter": "shifted_share",
+      "swing": 0.0025
+    }
+  ],
+  "denominator_caveat": "Both sources measure a share of FOREIGN profits. The assembly applies the parameter to the whole rent base. That overstates shifting unless essentially all rent is earned through foreign affiliates; correcting it would raise tau_k and narrow the measured shortfall. Reported as a limitation rather than silently changed.",
+  "correction": "An earlier note sought 'Clausing (NBER w28442)'. NBER w28442 is Solar Geoengineering, Learning, and Experimentation, not a profit-shifting paper.",
+  "still_unsourced": [
+    "state_cit_effective",
+    "shareholder_rate"
+  ]
 }

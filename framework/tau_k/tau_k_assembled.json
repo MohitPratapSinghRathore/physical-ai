@@ -14,15 +14,15 @@
     {
       "rent_reading": "Barkai",
       "sigma_rent": 0.351,
-      "tau_k_p05": 0.0726,
-      "tau_k_median": 0.0851,
-      "tau_k_p95": 0.0993,
-      "tau_k_min_sample": 0.0593,
-      "tau_k_max_sample": 0.1166,
-      "tau_k_min_ANALYTIC": 0.0563,
-      "tau_k_max_ANALYTIC": 0.1236,
+      "tau_k_p05": 0.0721,
+      "tau_k_median": 0.0831,
+      "tau_k_p95": 0.0955,
+      "tau_k_min_sample": 0.0605,
+      "tau_k_max_sample": 0.1098,
+      "tau_k_min_ANALYTIC": 0.0583,
+      "tau_k_max_ANALYTIC": 0.1146,
       "component_ceiling": 0.3142,
-      "pass_share_vs_required_low": 0.0013,
+      "pass_share_vs_required_low": 0.0,
       "pass_share_vs_required_high": 0.0
     },
     {
@@ -78,13 +78,13 @@
       "rent_reading": "Barkai",
       "theta_taxable": 0.4545,
       "tau_k_central": 0.1024,
-      "tau_k_p05": 0.086,
-      "tau_k_median": 0.1031,
-      "tau_k_p95": 0.1231,
-      "tau_k_min_ANALYTIC": 0.0666,
-      "tau_k_max_ANALYTIC": 0.1506,
-      "pass_share_vs_required_low": 0.2832,
-      "pass_share_vs_required_high": 0.001,
+      "tau_k_p05": 0.0852,
+      "tau_k_median": 0.101,
+      "tau_k_p95": 0.1202,
+      "tau_k_min_ANALYTIC": 0.0686,
+      "tau_k_max_ANALYTIC": 0.142,
+      "pass_share_vs_required_low": 0.2198,
+      "pass_share_vs_required_high": 0.0,
       "central_passes_vs_required_low": false,
       "central_passes_vs_required_high": false
     },
@@ -106,11 +106,11 @@
   "SUPERSEDED_blind_sweep_for_comparison": [
     {
       "rent_reading": "Barkai",
-      "tau_k_p05": 0.0865,
-      "tau_k_median": 0.116,
-      "tau_k_p95": 0.1559,
-      "pass_share_vs_required_low": 0.6113,
-      "pass_share_vs_required_high": 0.1807
+      "tau_k_p05": 0.0853,
+      "tau_k_median": 0.1139,
+      "tau_k_p95": 0.1535,
+      "pass_share_vs_required_low": 0.5722,
+      "pass_share_vs_required_high": 0.1577
     },
     {
       "rent_reading": "Karabarbounis_Neiman_case_R",
@@ -144,7 +144,7 @@
     "Barkai": [
       "deferral_factor",
       "state_cit_effective",
-      "shifted_share"
+      "shareholder_rate"
     ],
     "Karabarbounis_Neiman_case_R": [
       "deferral_factor",
@@ -159,7 +159,7 @@
   "map_other_parameters": "held at range midpoints, which are NOT estimates",
   "marked_points": {
     "published operative rate, entity level only": 0.0708,
-    "assembled median, Barkai reading": 0.0851,
+    "assembled median, Barkai reading": 0.0831,
     "assembled median, Karabarbounis-Neiman reading": 0.0137,
     "IMF SDN/2024/002 economy-wide average, low": 0.2,
     "IMF SDN/2024/002 economy-wide average, high": 0.22,
@@ -184,9 +184,9 @@
     },
     {
       "parameter": "shifted_share",
-      "tau_k_at_range_low": 0.0926,
-      "tau_k_at_range_high": 0.0802,
-      "swing": 0.0124,
+      "tau_k_at_range_low": 0.0855,
+      "tau_k_at_range_high": 0.0831,
+      "swing": 0.0025,
       "crosses_a_threshold_alone": false
     },
     {
@@ -218,5 +218,5 @@
       "crosses_a_threshold_alone": false
     }
   ],
-  "headline": "Under the Barkai rent reading the assembled marginal rate spans 0.073 to 0.099 across the unverified components, against a required 0.110 to 0.137. The condition passes in 0 percent of the swept space against the easier threshold and 0 percent against the harder one. The published 0.0708 sits below that span because it omits the shareholder layer entirely."
+  "headline": "Under the Barkai rent reading the assembled marginal rate spans 0.072 to 0.096 across the unverified components, against a required 0.110 to 0.137. The condition passes in 0 percent of the swept space against the easier threshold and 0 percent against the harder one. The published 0.0708 sits below that span because it omits the shareholder layer entirely."
 }
