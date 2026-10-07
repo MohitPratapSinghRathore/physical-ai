@@ -22,6 +22,19 @@ statement, and \emph{indirectly wage-backed} when wages first become spending, s
 business revenue, and that revenue services the claim.
 \end{definition}
 
+\paragraph{What the household coefficients are, stated precisely.} Definition~\ref{def:backing}
+asks for the share of the servicing cash flow that is labor income. No survey observes that. What
+we observe is the composition of \emph{income} among the households owing each class, and we use
+it as the estimator, debt-weighted. These are different quantities: a household drawing eighty
+percent of its income from wages need not fund eighty percent of its debt service from wages,
+because savings, asset sales, transfers and further borrowing can also pay it.
+
+So the coefficients are an \textbf{attribution of outstanding claims to labor income under a
+proportional income-funding convention}, not a measurement of servicing cash flows. Everything
+downstream inherits that status. We use the shorter phrase ``labor backing'' throughout for
+readability, and this paragraph is what it means. The convention is testable in principle, by
+observing which income actually funds payments, and we are not aware of a source that does.
+
 \begin{definition}[The labor backing ratio]
 \label{def:ratio}
 Over the thirteen classes of Table~\ref{tab:classes}, the all-claims ratio is
@@ -104,9 +117,18 @@ the judgment-call sensitivities that are computed against it. Both say so in the
 \subsection{Two conventions, stated because they are contestable}
 
 \paragraph{Government debt enters by its receipts, not by its obligor.} Treasury debt takes the
-labor-linked share of federal receipts, measured at \result{ReceiptsPctLow} percent, and state and
-local debt the same on its own receipts mix. Without this convention a government funded entirely
-from payroll taxes and one funded entirely from capital taxes would score identically.
+labor-linked share of federal receipts, and state and local debt the same on its own receipts
+mix. Without this convention a government funded entirely from payroll taxes and one funded
+entirely from capital taxes would score identically.
+
+Two numbers travel with this convention and they are not the same quantity, so we separate them
+here to avoid a reader reconciling the wrong pair. The labor-linked share of federal
+\emph{receipts} is \result{ReceiptsPctLow} to \result{ReceiptsPctHigh} percent on Statistics of
+Income data, and we publish the lower end. The Treasury \emph{class backing coefficient} in
+Table~\ref{tab:classes} is a downstream quantity, the receipts composition applied to the
+servicing mix of the debt itself, and its own published lower end is 0.6578. The second is larger
+than the first and should be: they are different objects, and only the first is a share of
+receipts.
 
 \paragraph{The one-step rule is a convention, and it is the largest judgment in the paper.} We
 trace servicing one step and stop, so a claim serviced out of business revenue takes zero direct
@@ -165,7 +187,11 @@ and the rest of the world next at roughly eighteen percent each.
 
 \begin{table}[htbp]
 \centering
-\caption{Holders of directly wage-backed claims, 2025. Measured.}
+\caption{Holders of directly wage-backed claims, 2025. Computed on the coverage construction of
+the household coefficients, which is the basis that was independently rebuilt, so the column sums
+to \$40,380.5 billion against the \$39,957.2 billion of Table~\ref{tab:classes}, which is on the
+adopted wage basis. The 1.1 percent difference is the difference between the two coefficient
+sets, not a residual. Measured, rebuilt.}
 \label{tab:holders}
 \input{tables/tab_holders.tex}
 \end{table}
@@ -268,7 +294,11 @@ and one a companion paper takes up on these same accounts \companion.
 \includegraphics[width=0.84\textwidth]{fig2_holders.pdf}
 \caption{Holders of the two sides. The wage side is the measured stock of directly wage-backed
 claims; the AI side is a lower bound built from on-balance-sheet filings with a scenario scale for
-AI-attributable equity, so each AI share is an upper bound on the true share. The federal
+AI-attributable equity. Because the total is incomplete, a given holder's share is an upper bound
+only if that holder's share of the omitted claims is no larger than its share of the measured
+ones; for a holder over-represented in the omitted tier the printed share is a lower bound. We
+argue that condition for the federal share in Section~\ref{sec:aiside} and do not assert it for
+the others. The federal
 government is the largest holder on one side and close to absent on the other.}
 \label{fig:holders}
 \end{figure}

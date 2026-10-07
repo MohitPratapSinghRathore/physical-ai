@@ -29,10 +29,18 @@ Liquid runway by wage quintile gives the second household result, and buffers ar
 in pay: the thinnest are in the \emph{second} quintile, a median of \result{QTwoRunway} months
 against \result{QOneRunway} in the bottom quintile, with \result{QTwoUnderOne} percent under one
 month against \result{QOneUnderOne} percent. From there upward the gradient is monotonic,
-reaching \result{QFiveRunway} months at the top. Bottom-quintile households hold little debt and
-few of the commitments a runway is measured against, while second-quintile households carry the
-commitments of those above them without the income to service them, so relief targeted at the
-bottom of the distribution misses the households with the least room.
+reaching \result{QFiveRunway} months at the top.
+
+The denominator decides what this statistic means, so it should be stated rather than assumed.
+Runway here is liquid assets over monthly wage income, not over essential expenditure plus
+required debt service. The two are different objects and they need not rank quintiles the same
+way: a household with low income and low commitments can show a short runway on our definition
+and a long one on the other. We therefore report the non-monotonicity as a measured property of
+liquid assets relative to income, and we do not conclude from it that second-quintile households
+are the most vulnerable, which would require expenditure, benefits, dependants and other
+resources that the accounts do not carry. What the number supports is narrower: relief designed
+on the assumption that liquidity rises monotonically with pay is designed against a pattern the
+data do not show.
 
 \begin{table}[htbp]
 \centering
@@ -42,17 +50,26 @@ assets, and the share with less than one month. Measured.}
 \input{tables/tab_buffers.tex}
 \end{table}
 
-\subsection{What the two cuts say together}
+\subsection{What the two cuts say together, and what they do not}
 
 The claims gradient and the buffer gradient are measured on the same households from the same
-survey, and they do not line up. Claims per wage dollar peak one quintile above the bottom.
-Liquid runway bottoms out in the same place. The households carrying the most debt per dollar of
-income earned are also the households with the least room to absorb a gap in that income, and
-neither fact is visible in a statistic that ranks households by income alone or by wealth alone.
+survey, and they do not line up. Claims per wage dollar decline monotonically as pay rises.
+Liquid runway does not: it is lowest one quintile above the bottom. So the group carrying the
+most claims per dollar of wages is \emph{not} the group with the least liquid room, and a reader
+expecting the two to coincide should not.
 
-We state this as a measured coincidence rather than as a mechanism. The accounts cannot say why
-the second quintile occupies that position, and a plausible reading, that these are households
-with enough income to qualify for credit and not enough to build a buffer against it, is a
-hypothesis this paper does not test. What the accounts establish is the location. Anything
-targeted at the bottom of the wage distribution, whether credit policy, relief or disclosure,
-is aimed one quintile away from the thinnest margin in the household sector.
+One point of arithmetic belongs here because it is visible in Table~\ref{tab:quintile} and we do
+not want a reader to find it unaided. The share columns are on common totals, so they imply a
+value for the bottom quintile even though the per-dollar cell is withdrawn: roughly four claims
+per wage dollar, well above the second quintile's \result{QTwoPerDollar}. That implied value is
+precisely the cell an independent rebuild disputed by a factor of two and a half to three and a
+half, which is why the magnitude is not reported. Withdrawing it does not hide it, and we would
+rather state the implication and its status than leave the columns to speak for themselves. What
+survives is the direction: claims per wage dollar are highest at the bottom of the wage
+distribution and fall from there.
+
+We therefore make no claim that the two cuts identify a single most-exposed group. They identify
+different ones, measured on the same households, and that is the result. Why the second quintile
+holds the thinnest buffers is not something the accounts can answer; a plausible reading, that
+these are households with enough income to qualify for credit and not enough to build a buffer
+against it, is a hypothesis this paper does not test.

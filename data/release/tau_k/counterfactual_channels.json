@@ -1,0 +1,32 @@
+{
+  "description": "Counterfactual decomposition of the assembled marginal rate. Unlike the lever table, which moves each parameter across its UNCERTAINTY range and therefore measures sensitivity, this sets each channel to its no-friction value and measures the channel's CONTRIBUTION to the level of the rate.",
+  "note": "Sensitivity and importance are different quantities. A parameter pinned to a narrow range has a small swing and may still be the largest determinant of the level. The paper's appendix already made that argument for the taxable-holder share; this decomposition applies it to every channel.",
+  "readings": {
+    "Barkai": {
+      "baseline": 0.0775,
+      "no_profit_shifting": 0.0913,
+      "complete_ownership_reach": 0.2102,
+      "both": 0.2216,
+      "gain_from_removing_shifting": 0.0137,
+      "gain_from_ownership_reach": 0.1327,
+      "interaction": -0.0023,
+      "ratio_ownership_to_shifting": 9.7,
+      "shifting_alone_closes_easier_threshold": false,
+      "ownership_alone_closes_easier_threshold": true
+    },
+    "Karabarbounis_Neiman": {
+      "baseline": 0.0141,
+      "no_profit_shifting": 0.0141,
+      "complete_ownership_reach": 0.1451,
+      "both": 0.1451,
+      "gain_from_removing_shifting": 0.0,
+      "gain_from_ownership_reach": 0.1309,
+      "interaction": 0.0,
+      "ratio_ownership_to_shifting": null,
+      "shifting_alone_closes_easier_threshold": false,
+      "ownership_alone_closes_easier_threshold": true
+    }
+  },
+  "required_easier": 0.1101,
+  "finding": "On the Barkai reading, eliminating profit shifting entirely raises the assembled rate by 0.0137 and does NOT reach the easier required rate. Completing the reach of the shareholder tax raises it by 0.1327 and does. The ownership channel is about ten times the profit-shifting channel, the two are close to additive, and the comparison rests on counterfactuals rather than on the width of an uncertainty interval. Under the Karabarbounis-Neiman reading the rent share is zero, so profit shifting has no effect at all."
+}

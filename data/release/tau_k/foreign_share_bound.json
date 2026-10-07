@@ -1,0 +1,39 @@
+{
+  "description": "Bounding the denominator mismatch. Both sources measure the shifted share on FOREIGN profits; the assembly applies it to the whole rent base. If phi is the share of US rent earned through foreign affiliates, the correct whole-base parameter is phi times the sourced share. This recomputes the rate across phi.",
+  "sourced_share_on_foreign_profits": 0.48,
+  "by_phi": [
+    {
+      "phi": 1.0,
+      "s_effective": 0.48,
+      "tau_k": 0.0775
+    },
+    {
+      "phi": 0.8,
+      "s_effective": 0.384,
+      "tau_k": 0.0803
+    },
+    {
+      "phi": 0.6,
+      "s_effective": 0.288,
+      "tau_k": 0.083
+    },
+    {
+      "phi": 0.4,
+      "s_effective": 0.192,
+      "tau_k": 0.0858
+    },
+    {
+      "phi": 0.2,
+      "s_effective": 0.096,
+      "tau_k": 0.0885
+    },
+    {
+      "phi": 0.0,
+      "s_effective": 0.0,
+      "tau_k": 0.0913
+    }
+  ],
+  "required_easier": 0.1101,
+  "required_harder": 0.1373,
+  "finding": "The headline uses phi = 1, which assumes all US rent is earned through foreign affiliates and is the most favourable assumption for the paper's conclusion. At phi = 0 the rate reaches 0.0913, still below the easier required 0.1101. The shortfall therefore survives the correction across the entire admissible range of phi, so the mismatch changes the magnitude of the gap and not its existence."
+}

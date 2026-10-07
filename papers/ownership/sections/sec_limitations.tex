@@ -92,7 +92,19 @@ and this runs against our own result.} Both sources for that parameter measure a
 whole rent base, so a marginal dollar of US rent is treated as booked abroad with that
 probability. Unless essentially all rent is earned through foreign affiliates, that overstates
 shifting, and because shifting moves a dollar from the domestic entity rate to the lower
-preferential rate, overstating it \emph{depresses} the assembled rate. Correcting it would raise
-the rate and narrow the shortfall this paper reports. We have not corrected it, because doing so
-needs the foreign share of US AI rent and we have no source for that quantity, and we have not
-left it implicit either. The direction is signed and the magnitude is not bounded.
+preferential rate, overstating it \emph{depresses} the assembled rate.
+
+We cannot correct it, because the correction needs the foreign share of US rent on AI capital and
+we have no source for that quantity. We can bound it, which is better than disclosing it. Let
+$\phi$ be that share, so the correct whole-base parameter is $\phi$ times the sourced share. The
+headline uses $\phi = 1$, the assumption most favourable to our own conclusion, giving
+\result{PhiTauKFull} percent. At $\phi = 0.4$ the rate is \result{PhiTauKHalf} percent, and at
+$\phi = 0$, which removes the channel entirely and is the largest correction arithmetically
+possible, it reaches \result{PhiTauKZero} percent. That is still below the
+\result{RequiredFedEasy} percent the easier reading requires.
+
+The shortfall therefore survives the correction across the whole admissible range of $\phi$. The
+mismatch changes the size of the gap, by at most \result{PhiTauKZero} less
+\result{PhiTauKFull} percentage points, and not its existence. It also shrinks the
+profit-shifting counterfactual in Section~\ref{sec:levers}, which widens rather than narrows the
+margin by which the ownership channel exceeds it.

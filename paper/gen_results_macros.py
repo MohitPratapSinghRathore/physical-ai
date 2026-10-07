@@ -641,6 +641,34 @@ def main():
     R["PurchaseVersusAgencyCapital"] = \
         f"{(target - held_now) / float(wf10[0]['capital_bn']):.0f}"
 
+    rs2 = load("data/release/method/replication_r_sensitivity.json")
+    o = rs2["ours_observed_rho_and_our_omega"]
+    R["RhoReemploy"] = f'{o["rho"]:.3f}'
+    R["OmegaWageKept"] = f'{o["omega"]:.3f}'
+    alts = [v["R"] for v in rs2.values() if isinstance(v, dict) and "R" in v]
+    R["RSensLow"] = f'{min(alts):.3f}'
+    R["RSensHigh"] = f'{max(alts):.3f}'
+    reqs = [v["required_tau_k"]["AMR_0.255"] for v in rs2.values()
+            if isinstance(v, dict) and "required_tau_k" in v]
+    R["RReqSensLow"] = f'{100*min(reqs):.1f}'
+    R["RReqSensHigh"] = f'{100*max(reqs):.1f}'
+
+    # ---- counterfactual channel decomposition: contribution, not sensitivity ----
+    cf = load("data/release/tau_k/counterfactual_channels.json")["readings"]["Barkai"]
+    R["CfBase"] = f'{100*cf["baseline"]:.1f}'
+    R["CfNoShift"] = f'{100*cf["no_profit_shifting"]:.1f}'
+    R["CfOwnReach"] = f'{100*cf["complete_ownership_reach"]:.1f}'
+    R["CfBoth"] = f'{100*cf["both"]:.1f}'
+    R["CfGainShift"] = f'{100*cf["gain_from_removing_shifting"]:.2f}'
+    R["CfGainOwn"] = f'{100*cf["gain_from_ownership_reach"]:.2f}'
+    R["CfInteraction"] = f'{100*cf["interaction"]:.2f}'
+    R["CfRatio"] = f'{cf["ratio_ownership_to_shifting"]:.0f}'
+
+    fb = load("data/release/tau_k/foreign_share_bound.json")
+    R["PhiTauKFull"] = f'{100*[r for r in fb["by_phi"] if r["phi"]==1.0][0]["tau_k"]:.1f}'
+    R["PhiTauKZero"] = f'{100*[r for r in fb["by_phi"] if r["phi"]==0.0][0]["tau_k"]:.1f}'
+    R["PhiTauKHalf"] = f'{100*[r for r in fb["by_phi"] if r["phi"]==0.4][0]["tau_k"]:.1f}'
+
     # ---- how stable the lever ranking is to the swept profit-shifting range ----
     lrs = load("data/release/tau_k/lever_rank_sensitivity.json")
     R["ShiftRangeLow"] = f'{lrs["after"]["range"][0]:.2f}'

@@ -221,47 +221,73 @@ structure: \result{InterestSheltered} percent of corporate interest goes to hold
 tax on it and \result{BondsRestOfWorld} percent of corporate bonds are held abroad. Together these
 are why the owner's layer adds only \result{ShareholderLayerPct} percent to the rate on rents.
 
-Profit shifting is real, and on our ranges it is not the largest of these. Moving the shifted
-share across its whole swept range changes the assembled rate by \result{SwingShifted}, against
-\result{SwingDeferral} for deferral and step-up and \result{SwingStateCIT} for the state
-corporate tax. Table~\ref{tab:levers} ranks every lever by measured influence; profit shifting is
-third of seven, and the two levers above it have had a fraction of the attention.
-Appendix~\ref{app:detail} reads one line of that table that is easy to read backwards.
+Profit shifting is real. How much it matters is a different question from how uncertain it is,
+and the two are easy to conflate.
 
-\paragraph{Why that ranking can be relied on, and what it would have taken to overturn it.} An
-earlier version of this paper reported profit shifting at rank \result{ShiftRankBefore} with a
-swing of \result{ShiftSwingBefore}, on a judgement range of \result{ShiftRangeOldLow} to
-\result{ShiftRangeOldHigh} drawn around a single source. That ranking was not stable. Because the
-assembled rate is exactly linear in this parameter, the swing scales with the width of whatever
-range is chosen, and a modestly wider range would have moved profit shifting to first. A ranking
-that can be reversed by widening one judgement interval is not a finding.
+\paragraph{Sensitivity is not importance, and the lever table measures sensitivity.}
+Table~\ref{tab:levers} moves each component across its range with the others held at central
+values. That reports how much the answer would move if we were wrong about a parameter. It does
+not report how much that channel reduces the rate. A parameter pinned to a narrow range by good
+evidence has a small swing and may still be the largest determinant of the level, which is
+exactly the argument Appendix~\ref{app:detail} already makes about the taxable-holder share. The
+same logic applies to every row, so the table is reported here as an uncertainty diagnostic and
+no claim about relative importance is drawn from it.
 
-The parameter is now sourced rather than swept. Two independent estimates measure the same
-object, the share of the foreign profits of US multinationals booked in tax havens:
-\result{ShiftTWZ} percent for 2016 from the BEA value added tables
-\citep{TorslovWierZucman2023}, and ``stable around \result{ShiftGBJZ} percent between 2015 and
-2020'' from survey, tax and firm financial data \citep{GarciaBernardoJanskyZucman2022}. We take
-the range spanned by both, \result{ShiftRangeLow} to \result{ShiftRangeHigh}, which is the two
-point estimates plus the stated imprecision of the second.
-
-On that range the swing falls to \result{SwingShifted} and profit shifting ranks
-\result{ShiftRankNow} of seven, below every other lever in Table~\ref{tab:levers}. The reading is
-not that profit shifting stopped mattering. It is that once the parameter is pinned by two
-sources that agree, it stops being a source of uncertainty about the rate, while the ownership
-parameters continue to move it. That is the sense in which ownership matters more, and it is now
-a statement about measured quantities rather than about the width of an interval we chose.
-
-One caveat runs against us and belongs here rather than in a footnote. Both sources measure a
-share of \emph{foreign} profits, while the assembly applies the parameter to the whole rent base,
-treating a dollar of US rent as booked abroad with this probability. That overstates shifting
-unless essentially all rent is earned through foreign affiliates. Correcting it would raise the
-assembled rate and narrow the shortfall this paper reports, which is why it is stated plainly at
-L11 in Section~\ref{sec:limitations} rather than left for a reader to find.
+\paragraph{The counterfactual comparison.} To ask which channel matters we set each to its
+no-friction value and measure what happens to the level. Against a baseline of
+\result{CfBase} percent on the federal-only version and the Barkai rent reading:
 
 \begin{table}[htbp]
 \centering
-\caption{The levers, ranked by measured influence on the assembled rate. Each is moved across its
-whole sourced or swept range with the others at central values. Scenario.}
+\caption{Counterfactual contribution of each channel to the assembled marginal rate, federal-only
+basis, Barkai rent reading. Each row sets its channel to the no-friction value and leaves the
+rest at sourced centrals. Scenario.}
+\label{tab:counterfactual}
+\begin{tabular}{lrr}
+\toprule
+ & Assembled rate & Gain over baseline \\
+\midrule
+Baseline & \result{CfBase} percent & \\
+Profit shifting eliminated & \result{CfNoShift} percent & \result{CfGainShift} \\
+Reach of the shareholder tax completed & \result{CfOwnReach} percent & \result{CfGainOwn} \\
+Both & \result{CfBoth} percent & \result{CfGainOwn}\,+\,\result{CfGainShift} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Eliminating profit shifting entirely, so that no rent is booked abroad, raises the assembled rate
+by \result{CfGainShift} percentage points. Completing the reach of the shareholder tax, so that
+every share sits in a taxable account and nothing is deferred, raises it by \result{CfGainOwn}.
+The ownership channel is about \result{CfRatio} times the profit-shifting channel, and the two
+are close to additive: the interaction is \result{CfInteraction} percentage points.
+
+The threshold makes the comparison concrete. Removing profit shifting altogether leaves the rate
+at \result{CfNoShift} percent, still short of the \result{RequiredFedEasy} percent the easier
+reading requires. Completing the ownership reach alone takes it to \result{CfOwnReach} percent
+and clears it. That is the sense in which ownership matters more, and it rests on counterfactuals
+rather than on the width of an interval we chose.
+
+Two caveats belong with it. Neither counterfactual is a policy: no reform abolishes profit
+shifting or places all equity in taxable hands, and the rows are bounds on what each channel can
+contribute, not proposals. And under the Karabarbounis and Neiman rent reading the rent share is
+zero, so profit shifting contributes nothing at all while the ownership channel still contributes
+\result{CfGainOwn}-scale amounts through the normal-return term; the comparison is not close on
+either reading.
+
+\paragraph{The denominator caveat, which runs against us.} Both sources for the shifted share
+measure a share of \emph{foreign} profits, while the assembly applies the parameter to the whole
+rent base, treating a dollar of US rent as booked abroad with that probability. That overstates
+shifting unless essentially all rent is earned through foreign affiliates. Correcting it would
+raise the assembled rate and narrow the shortfall this paper reports, and it would also
+\emph{shrink} the profit-shifting counterfactual above, which is the direction that strengthens
+the comparison rather than the paper's headline. It is stated at L11 in
+Section~\ref{sec:limitations} and bounded there.
+\begin{table}[htbp]
+\centering
+\caption{The levers, ranked by sensitivity to parameter uncertainty rather than by importance.
+Each is moved across its whole sourced or swept range with the others at central values, so a row
+reports how much the answer would move if we were wrong about that parameter, not how much the
+channel reduces the rate. For the latter see Table~\ref{tab:counterfactual}. Scenario.}
 \label{tab:levers}
 \input{tables/tab_levers.tex}
 \end{table}

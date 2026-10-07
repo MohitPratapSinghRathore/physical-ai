@@ -24,8 +24,10 @@ measure to a conventional bank-risk model raised the out-of-sample $R^2$ by
 \result{PredRawDrTwo}. That apparent gain does not survive inspection: the baseline's own
 out-of-sample $R^2$ is negative in ten of the thirteen years, so a positive increment can be
 earned by correcting the level rather than by ordering the banks. Re-centring both predictions on
-the test-year mean, which removes level drift and leaves only cross-sectional ranking, moves the
-increment to \result{PredRecentredDrTwo}. The direct test of ranking is cleaner still: the
+the test-year mean removes that level difference and moves the increment to
+\result{PredRecentredDrTwo}; it does not isolate ranking, because a centred squared error still
+responds to the scale and dispersion of the predictions. The direct test of ranking is the
+cleaner one: the
 out-of-sample rank correlation between prediction and realized charge-off rate falls from
 \result{PredRhoControls} with conventional controls alone to \result{PredRhoWith} once the
 measure is added, and it improves in \result{PredYearsImproved} of \result{PredPanelYears} test
@@ -36,8 +38,13 @@ The reason is visible in the construct's own algebra rather than only in the out
 the class coefficients are close to binary, about 0.80 on every household class and zero on every
 business class, the bank-level measure is largely a restatement of how much household lending an
 institution does. Regressing it on the seven conventional loan-share controls alone gives an
-$R^2$ of \result{PredCollinearityRSq}. A measure that is half explained by loan composition
-cannot add information to a model that already contains loan composition.
+$R^2$ of \result{PredCollinearityRSq}. That makes the result unsurprising, and it is worth being
+careful about what it does and does not imply. It does not imply that the residual variation is
+uninformative: a measure half explained by a set of controls can in principle carry predictive
+content in the other half. What it establishes is that the measure is substantially a restatement
+of information the baseline already has, which is a reason to expect a small increment, not a
+proof that none exists. The claim we make is the empirical one, that in these two tests the
+increment was absent and the ranking got worse, not the general one that it must be.
 
 We therefore present labor backing accounts as aggregate accounting of where wage dependence
 sits, and not as an institution-level risk measure. The pre-registrations, amendments, deviations

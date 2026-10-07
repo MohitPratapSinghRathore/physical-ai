@@ -33,19 +33,32 @@ read from the filings of nine registrants, with the off-balance-sheet structures
 \citet{BIS2026} absent from them. The wage bill and federal receipts used as bases are
 \result{WageBillBn} and \result{FedReceiptsBn} billion dollars.
 
-\subsection{Three objects borrowed from the accounts}
+\subsection{Two objects borrowed from the accounts, and one built here}
 \label{sec:borrowed}
 
-Three quantities used below are built in a companion paper \companion\ rather than here, and a
+Two quantities used below are built in a companion paper \companion\ rather than here, and a
 reader of this paper alone needs them defined. Each is stated in full there; what follows is
 enough to read the results in this one.
 
-\paragraph{The retained wage share.} Written $R$, this is the share of a displaced wage bill that
-returns as wages, since not every dollar of displaced pay leaves the wage tax base. It is fitted
-on fourteen biennial vintages of the worker displacement release \citep{BLSWorkerDisplacement}
-and solved as a fixed point, because displacement changes the labor market slack the fit is a
-function of. We measure $R = \result{RetainedWageShare}$ and it enters the condition in
-Definition~\ref{def:condition} directly.
+\paragraph{The retained wage share, which is built here rather than borrowed.} Written $R$, this
+is the share of a displaced wage bill that returns as wages, since not every dollar of displaced
+pay leaves the wage tax base. It determines the replacement threshold directly through
+Definition~\ref{def:condition}, so it is set out in full rather than cited.
+
+It is the product of two quantities, $R = \rho\,\omega$. The reemployment rate $\rho$ is the share
+of displaced workers re-employed, fitted on fourteen biennial vintages of the worker displacement
+release \citep{BLSWorkerDisplacement} against labor market slack and solved as a fixed point,
+because displacement changes the slack the fit is a function of. The retention factor $\omega$ is
+the share of the prior wage kept on re-employment, from \citet{Huckfeldt2022}. At the observed
+reemployment rate, $\rho = \result{RhoReemploy}$ and $\omega = \result{OmegaWageKept}$, giving
+$R = \result{RetainedWageShare}$.
+
+Three specifications of $\rho$ are carried, the observed rate and two fitted variants, and they
+give $R$ between \result{RSensLow} and \result{RSensHigh}. The required rate moves with it,
+between \result{RReqSensLow} and \result{RReqSensHigh} percent on the narrower labor tax reading,
+and the assembled rate of \result{TauKFederalOnly} percent falls short across the whole of that
+range. The four decimal places this parameter is sometimes quoted to conceal how much fitting
+sits behind it, which is why the sensitivity is reported here beside the point estimate.
 
 \paragraph{The holder mapping.} The companion paper decomposes the stock of US financial claims
 twice over, by the income that services each claim and by who holds, guarantees or owes it. Where
