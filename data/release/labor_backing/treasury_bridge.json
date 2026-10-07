@@ -1,0 +1,20 @@
+{
+  "description": "Numerical bridge from the labor-linked share of federal receipts to the Treasury class backing coefficient. They are the SAME formula on two different vintages of the receipts aggregates, not different objects.",
+  "formula": "(social insurance contributions + w x federal personal current taxes) / federal current receipts, with w the SOI wage share of AGI",
+  "w_soi_2023": 0.6675,
+  "coefficient_vintage": {
+    "label": "2025 national accounts, FRED annual",
+    "social_insurance_bn": 1996.5,
+    "personal_current_taxes_bn": 2598.5,
+    "current_receipts_bn": 5672.1,
+    "result": 0.6578
+  },
+  "band_vintage": {
+    "label": "static totals quoted in the data section",
+    "social_insurance_bn": 2074.4,
+    "personal_current_taxes_bn": 2571.4,
+    "current_receipts_bn": 5980.6,
+    "result": 0.6339
+  },
+  "finding": "The difference is the receipts denominator, 5,672.1 against 5,980.6 billion dollars. The paper quotes the second as its federal receipts base while the Treasury coefficient is computed on the first. Same construction, two vintages, and the discrepancy is a vintage mismatch rather than a difference of concept."
+}

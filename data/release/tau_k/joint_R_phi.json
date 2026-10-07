@@ -1,0 +1,93 @@
+{
+  "description": "Joint sensitivity of the replacement condition to the retained wage share R and the foreign-rent share phi, which were previously checked separately. Separate checks are not cumulative robustness.",
+  "tau_l_implied": 0.255,
+  "grid": [
+    {
+      "phi": 1.0,
+      "R": 0.568,
+      "tau_k": 0.0775,
+      "required": 0.1102,
+      "gap_pp": -3.26
+    },
+    {
+      "phi": 1.0,
+      "R": 0.6,
+      "tau_k": 0.0775,
+      "required": 0.102,
+      "gap_pp": -2.45
+    },
+    {
+      "phi": 1.0,
+      "R": 0.637,
+      "tau_k": 0.0775,
+      "required": 0.0926,
+      "gap_pp": -1.5
+    },
+    {
+      "phi": 0.6,
+      "R": 0.568,
+      "tau_k": 0.083,
+      "required": 0.1102,
+      "gap_pp": -2.71
+    },
+    {
+      "phi": 0.6,
+      "R": 0.6,
+      "tau_k": 0.083,
+      "required": 0.102,
+      "gap_pp": -1.9
+    },
+    {
+      "phi": 0.6,
+      "R": 0.637,
+      "tau_k": 0.083,
+      "required": 0.0926,
+      "gap_pp": -0.96
+    },
+    {
+      "phi": 0.3,
+      "R": 0.568,
+      "tau_k": 0.0871,
+      "required": 0.1102,
+      "gap_pp": -2.3
+    },
+    {
+      "phi": 0.3,
+      "R": 0.6,
+      "tau_k": 0.0871,
+      "required": 0.102,
+      "gap_pp": -1.49
+    },
+    {
+      "phi": 0.3,
+      "R": 0.637,
+      "tau_k": 0.0871,
+      "required": 0.0926,
+      "gap_pp": -0.54
+    },
+    {
+      "phi": 0.0,
+      "R": 0.568,
+      "tau_k": 0.0913,
+      "required": 0.1102,
+      "gap_pp": -1.89
+    },
+    {
+      "phi": 0.0,
+      "R": 0.6,
+      "tau_k": 0.0913,
+      "required": 0.102,
+      "gap_pp": -1.08
+    },
+    {
+      "phi": 0.0,
+      "R": 0.637,
+      "tau_k": 0.0913,
+      "required": 0.0926,
+      "gap_pp": -0.13
+    }
+  ],
+  "narrowest_shortfall_pp": -0.13,
+  "cells_closing": 0,
+  "cells": 12
+}

@@ -233,46 +233,57 @@ exactly the argument Appendix~\ref{app:detail} already makes about the taxable-h
 same logic applies to every row, so the table is reported here as an uncertainty diagnostic and
 no claim about relative importance is drawn from it.
 
-\paragraph{The counterfactual comparison.} To ask which channel matters we set each to its
-no-friction value and measure what happens to the level. Against a baseline of
-\result{CfBase} percent on the federal-only version and the Barkai rent reading:
+\paragraph{The counterfactual comparison, by mechanism rather than by package.} To ask which
+channel matters we set each to its no-friction value and measure what happens to the level.
+Ownership is not one mechanism but two, the share of equity held in taxable accounts and the
+deferral and step-up that erode what reaches those accounts, and bundling them would overstate
+the comparison. They are kept apart.
 
 \begin{table}[htbp]
 \centering
-\caption{Counterfactual contribution of each channel to the assembled marginal rate, federal-only
-basis, Barkai rent reading. Each row sets its channel to the no-friction value and leaves the
-rest at sourced centrals. Scenario.}
+\caption{Counterfactual contribution of each mechanism to the assembled marginal rate,
+federal-only basis, Barkai rent reading. ``Alone'' sets that mechanism to its no-friction value
+with the others at sourced centrals. The Shapley column averages each mechanism's marginal
+contribution over all six orders of removal and sums exactly to the joint effect. Scenario.}
 \label{tab:counterfactual}
 \begin{tabular}{lrr}
 \toprule
- & Assembled rate & Gain over baseline \\
+Mechanism set to its no-friction value & Alone & Shapley \\
 \midrule
-Baseline & \result{CfBase} percent & \\
-Profit shifting eliminated & \result{CfNoShift} percent & \result{CfGainShift} \\
-Reach of the shareholder tax completed & \result{CfOwnReach} percent & \result{CfGainOwn} \\
-Both & \result{CfBoth} percent & \result{CfGainOwn}\,+\,\result{CfGainShift} \\
+Taxable shareholder base complete & \result{ShThetaAlone} & \result{ShThetaShapley} \\
+Deferral and step-up eliminated & \result{ShDeferAlone} & \result{ShDeferShapley} \\
+Profit shifting eliminated & \result{ShShiftAlone} & \result{ShShiftShapley} \\
+\midrule
+All three together & & \result{ShJoint} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Eliminating profit shifting entirely, so that no rent is booked abroad, raises the assembled rate
-by \result{CfGainShift} percentage points. Completing the reach of the shareholder tax, so that
-every share sits in a taxable account and nothing is deferred, raises it by \result{CfGainOwn}.
-The ownership channel is about \result{CfRatio} times the profit-shifting channel, and the two
-are close to additive: the interaction is \result{CfInteraction} percentage points.
+Read alone, the three are closer than a bundled comparison suggests. Eliminating profit shifting
+adds \result{ShShiftAlone} percentage points and eliminating deferral adds
+\result{ShDeferAlone}, which is larger but not by much. The taxable shareholder base is the
+outlier at \result{ShThetaAlone}.
 
-The threshold makes the comparison concrete. Removing profit shifting altogether leaves the rate
-at \result{CfNoShift} percent, still short of the \result{RequiredFedEasy} percent the easier
-reading requires. Completing the ownership reach alone takes it to \result{CfOwnReach} percent
-and clears it. That is the sense in which ownership matters more, and it rests on counterfactuals
-rather than on the width of an interval we chose.
+The alone column understates the ownership mechanisms because they are complements: fixing
+deferral makes the taxable base matter more and the reverse. The Shapley attribution, which
+averages over every order of removal and sums exactly to the joint effect of
+\result{ShJoint} points, puts the taxable base at \result{ShThetaShapley}, deferral at
+\result{ShDeferShapley} and profit shifting at \result{ShShiftShapley}.
 
-Two caveats belong with it. Neither counterfactual is a policy: no reform abolishes profit
-shifting or places all equity in taxable hands, and the rows are bounds on what each channel can
-contribute, not proposals. And under the Karabarbounis and Neiman rent reading the rent share is
-zero, so profit shifting contributes nothing at all while the ownership channel still contributes
-\result{CfGainOwn}-scale amounts through the normal-return term; the comparison is not close on
-either reading.
+So the comparison the title draws is this one. The single largest mechanism, the taxable
+shareholder base, is about \result{ShRatioTheta} times profit shifting. The two ownership
+mechanisms together are about \result{ShRatioPair} times it, and that figure is a package and is
+labelled as one. What does not hold is a claim that every ownership mechanism individually dwarfs
+shifting: deferral does not.
+
+Neither counterfactual is a policy. No reform abolishes profit shifting or places all equity in
+taxable hands with no deferral, so the rows bound what each mechanism can contribute rather than
+proposing anything.
+
+Under the Karabarbounis and Neiman rent reading profit shifting contributes exactly nothing, and
+that follows from the model rather than from the data: shifting operates only on the rent
+component and that reading sets the rent share to zero. It is reported for completeness and
+carries no evidential weight in the comparison.
 
 \paragraph{The denominator caveat, which runs against us.} Both sources for the shifted share
 measure a share of \emph{foreign} profits, while the assembly applies the parameter to the whole
@@ -291,6 +302,44 @@ channel reduces the rate. For the latter see Table~\ref{tab:counterfactual}. Sce
 \label{tab:levers}
 \input{tables/tab_levers.tex}
 \end{table}
+
+
+\paragraph{The separate checks are not cumulative, so here they are jointly.} This paper carries
+two parameters that move the answer in the paper's own favour when they move: the retained wage
+share $R$, whose specifications span \result{RSensLow} to \result{RSensHigh} and which lowers the
+required rate as it rises, and the foreign-rent share $\phi$ of
+Section~\ref{sec:limitations}, which raises the assembled rate as it falls. Checking them one at
+a time and reporting both as though the checks accumulated would be a mistake, because the favourable ends compound.
+
+\begin{table}[htbp]
+\centering
+\caption{The replacement condition over the retained wage share and the foreign-rent share
+jointly, federal-only basis, narrower labor tax reading. Cells are the assembled rate less the
+required rate in percentage points; negative is a shortfall. Scenario.}
+\label{tab:joint}
+\begin{tabular}{lrrrr}
+\toprule
+ & assembled rate & $R=0.568$ & $R=0.600$ & $R=0.637$ \\
+\midrule
+$\phi = 1.00$ & 7.75 & $-3.26$ & $-2.45$ & $-1.50$ \\
+$\phi = 0.60$ & 8.30 & $-2.71$ & $-1.90$ & $-0.96$ \\
+$\phi = 0.30$ & 8.71 & $-2.30$ & $-1.49$ & $-0.54$ \\
+$\phi = 0.00$ & 9.13 & $-1.89$ & $-1.08$ & $-0.13$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The condition closes in \result{JointClosing} of the \result{JointCells} cells, so the direction
+survives the joint move. The margin does not. At the corner most favourable to us, $\phi = 0$ and
+$R = \result{RSensHigh}$, the shortfall is \result{JointNarrowest} percentage points against
+\result{JointWidest} at the central case. That is close enough to nothing that we will not claim
+the shortfall is established at that corner, only that it has not reversed anywhere on the grid.
+
+Two things follow and both weaken the paper rather than strengthen it. The headline shortfall of
+\result{JointWidest} points is a central-case figure and not a lower bound. And a reader who
+holds different views about $R$ and $\phi$ than we do can reach a near-tie without leaving the
+range either parameter is defensibly in. The result we are willing to defend is the sign across
+this grid, not the size at any point in it.
 
 \subsection{Checks, and what this module does not reach}
 

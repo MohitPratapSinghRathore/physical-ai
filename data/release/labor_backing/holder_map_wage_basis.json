@@ -1,0 +1,97 @@
+{
+  "description": "Holder map on the adopted wage basis, so that holder amounts sum to the wage-backed total reported in the claim-class table. Holder shares are properties of the instrument and the consolidation rules and do not depend on the backing coefficient.",
+  "year": 2025,
+  "total_coverage_basis_bn": 40380.4,
+  "total_wage_basis_bn": 39957.1,
+  "gap_bn": 423.4,
+  "max_abs_deviation_from_published_coverage_map_bn": 0.05,
+  "adopted_coefficients": {
+    "credit_card": 0.730185,
+    "auto_loan": 0.778349,
+    "student_loan": 0.882183,
+    "home_mortgage": 0.810358,
+    "other_consumer": 0.80519
+  },
+  "by_holder": [
+    {
+      "holder": "federal_government",
+      "label": "Federal government",
+      "coverage_bn": 12981.5,
+      "wage_bn": 12712.5,
+      "coverage_share": 0.3215,
+      "wage_share": 0.3182
+    },
+    {
+      "holder": "banks",
+      "label": "Banks",
+      "coverage_bn": 7445.0,
+      "wage_bn": 7329.8,
+      "coverage_share": 0.1844,
+      "wage_share": 0.1834
+    },
+    {
+      "holder": "rest_of_world",
+      "label": "Rest of the world",
+      "coverage_bn": 7271.1,
+      "wage_bn": 7271.1,
+      "coverage_share": 0.1801,
+      "wage_share": 0.182
+    },
+    {
+      "holder": "other_financial",
+      "label": "Other financial",
+      "coverage_bn": 6186.9,
+      "wage_bn": 6158.8,
+      "coverage_share": 0.1532,
+      "wage_share": 0.1541
+    },
+    {
+      "holder": "households",
+      "label": "Households, direct",
+      "coverage_bn": 2451.0,
+      "wage_bn": 2449.6,
+      "coverage_share": 0.0607,
+      "wage_share": 0.0613
+    },
+    {
+      "holder": "state_local_government",
+      "label": "State and local government",
+      "coverage_bn": 1867.1,
+      "wage_bn": 1863.5,
+      "coverage_share": 0.0462,
+      "wage_share": 0.0466
+    },
+    {
+      "holder": "insurers",
+      "label": "Insurers",
+      "coverage_bn": 820.6,
+      "wage_bn": 816.2,
+      "coverage_share": 0.0203,
+      "wage_share": 0.0204
+    },
+    {
+      "holder": "residual_unallocated",
+      "label": "Unallocated remainder",
+      "coverage_bn": 661.4,
+      "wage_bn": 661.4,
+      "coverage_share": 0.0164,
+      "wage_share": 0.0166
+    },
+    {
+      "holder": "pensions",
+      "label": "Pension funds",
+      "coverage_bn": 444.6,
+      "wage_bn": 444.5,
+      "coverage_share": 0.011,
+      "wage_share": 0.0111
+    },
+    {
+      "holder": "nonfinancial_business",
+      "label": "Nonfinancial business",
+      "coverage_bn": 251.3,
+      "wage_bn": 249.7,
+      "coverage_share": 0.0062,
+      "wage_share": 0.0062
+    }
+  ]
+}

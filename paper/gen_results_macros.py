@@ -653,6 +653,21 @@ def main():
     R["RReqSensLow"] = f'{100*min(reqs):.1f}'
     R["RReqSensHigh"] = f'{100*max(reqs):.1f}'
 
+    sh = load("data/release/tau_k/channel_shapley.json")
+    for k, tag in (("shifting", "Shift"), ("taxable_share", "Theta"), ("deferral", "Defer")):
+        R["Sh" + tag + "Alone"] = f'{100*sh["gain_alone"][k]:.2f}'
+        R["Sh" + tag + "Shapley"] = f'{100*sh["shapley"][k]:.2f}'
+    R["ShJoint"] = f'{100*(sh["joint_all_three"] - sh["baseline"]):.2f}'
+    R["ShOwnPair"] = f'{100*(sh["shapley"]["taxable_share"] + sh["shapley"]["deferral"]):.2f}'
+    R["ShRatioPair"] = f'{(sh["shapley"]["taxable_share"] + sh["shapley"]["deferral"]) / sh["shapley"]["shifting"]:.0f}'
+    R["ShRatioTheta"] = f'{sh["shapley"]["taxable_share"] / sh["shapley"]["shifting"]:.0f}'
+
+    jp = load("data/release/tau_k/joint_R_phi.json")
+    R["JointCells"] = str(jp["cells"])
+    R["JointClosing"] = str(jp["cells_closing"])
+    R["JointNarrowest"] = f'{abs(jp["narrowest_shortfall_pp"]):.2f}'
+    R["JointWidest"] = f'{abs(min(g["gap_pp"] for g in jp["grid"])):.2f}'
+
     # ---- counterfactual channel decomposition: contribution, not sensitivity ----
     cf = load("data/release/tau_k/counterfactual_channels.json")["readings"]["Barkai"]
     R["CfBase"] = f'{100*cf["baseline"]:.1f}'
@@ -680,6 +695,15 @@ def main():
     R["ShiftSwingBefore"] = f'{lrs["before"]["swing"]:.4f}'
     R["ShiftTWZ"] = "48"
     R["ShiftGBJZ"] = "50"
+
+    tb = load("data/release/labor_backing/treasury_bridge.json")
+    R["TBSocIns"] = f'{tb["coefficient_vintage"]["social_insurance_bn"]:,.1f}'
+    R["TBPersonal"] = f'{tb["coefficient_vintage"]["personal_current_taxes_bn"]:,.1f}'
+    R["TBReceipts"] = f'{tb["coefficient_vintage"]["current_receipts_bn"]:,.1f}'
+    R["TBW"] = f'{tb["w_soi_2023"]:.4f}'
+    R["TBResult"] = f'{tb["coefficient_vintage"]["result"]:.4f}'
+    R["TBBandReceipts"] = f'{tb["band_vintage"]["current_receipts_bn"]:,.1f}'
+    R["TBBandResult"] = f'{tb["band_vintage"]["result"]:.4f}'
 
     # ---- the predictive null (branch predictive-panel, pre-registered) ----
     pred = load("data/release/predictive/results.json")

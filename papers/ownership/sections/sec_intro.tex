@@ -39,8 +39,15 @@ gain of \result{CfGainShift} points that still leaves it short of the
 \result{RequiredFedEasy} percent the easier reading requires. Completing the reach of the
 shareholder tax, so that every share sits in a taxable account and nothing is deferred, raises it
 to \result{CfOwnReach} percent, a gain of \result{CfGainOwn} points, and clears the threshold.
-The ownership channel is about \result{CfRatio} times the profit-shifting channel and the two are
-close to additive.
+
+Ownership is two mechanisms rather than one, and bundling them would overstate the comparison, so
+Section~\ref{sec:levers} separates them. Attributed by Shapley value over every order of removal,
+the taxable shareholder base contributes \result{ShThetaShapley} points, deferral and step-up
+\result{ShDeferShapley}, and profit shifting \result{ShShiftShapley}. The single largest mechanism
+is about \result{ShRatioTheta} times profit shifting; the two ownership mechanisms together are
+about \result{ShRatioPair} times it, and that second figure is a package. Deferral taken alone is
+only modestly larger than shifting, and we say so rather than letting the package carry the
+claim.
 
 Neither counterfactual is a policy. No reform abolishes profit shifting or places all equity in
 taxable hands, and the two rows bound what each channel can contribute rather than proposing

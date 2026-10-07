@@ -1,0 +1,20 @@
+{
+  "baseline": 0.0775,
+  "joint_all_three": 0.2216,
+  "alone": {
+    "shifting": 0.0913,
+    "taxable_share": 0.1475,
+    "deferral": 0.0939
+  },
+  "gain_alone": {
+    "shifting": 0.0137,
+    "taxable_share": 0.0699,
+    "deferral": 0.0163
+  },
+  "shapley": {
+    "shifting": 0.0127,
+    "taxable_share": 0.0923,
+    "deferral": 0.0391
+  },
+  "note": "Three separate mechanisms rather than an ownership package versus one shifting change. Shapley values average each mechanism's marginal contribution over all six orders of removal and sum exactly to the joint effect."
+}

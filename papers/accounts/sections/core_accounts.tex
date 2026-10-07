@@ -121,14 +121,27 @@ labor-linked share of federal receipts, and state and local debt the same on its
 mix. Without this convention a government funded entirely from payroll taxes and one funded
 entirely from capital taxes would score identically.
 
-Two numbers travel with this convention and they are not the same quantity, so we separate them
-here to avoid a reader reconciling the wrong pair. The labor-linked share of federal
-\emph{receipts} is \result{ReceiptsPctLow} to \result{ReceiptsPctHigh} percent on Statistics of
-Income data, and we publish the lower end. The Treasury \emph{class backing coefficient} in
-Table~\ref{tab:classes} is a downstream quantity, the receipts composition applied to the
-servicing mix of the debt itself, and its own published lower end is 0.6578. The second is larger
-than the first and should be: they are different objects, and only the first is a share of
-receipts.
+The coefficient is
+\[
+\beta_{\text{Treasury}} \;=\;
+\frac{\text{social insurance contributions} \;+\; w \times \text{federal personal current taxes}}
+     {\text{federal current receipts}},
+\]
+with $w$ the Statistics of Income wage share of adjusted gross income. On the 2025 national
+accounts and the 2023 SOI wage share of $w = \result{TBW}$ that is
+$(\result{TBSocIns} + \result{TBW} \times \result{TBPersonal}) / \result{TBReceipts} =
+\result{TBResult}$, which is the value in Table~\ref{tab:classes}.
+
+A reader comparing that with the \result{ReceiptsPctLow} to \result{ReceiptsPctHigh} percent band
+reported in Section~\ref{sec:accounts} will find they do not agree, and the reason is a vintage
+mismatch rather than a difference of concept. They are the same formula. The band is evaluated on
+the static receipts totals quoted in Section~\ref{sec:data}, whose denominator is
+\result{TBBandReceipts} billion dollars and which give \result{TBBandResult}; the coefficient is
+evaluated on the 2025 national accounts, whose denominator is \result{TBReceipts} billion. The
+paper therefore quotes one receipts base in its data section and computes the Treasury
+coefficient on another. We report both rather than silently reconciling them, and
+Section~\ref{sec:future} carries putting the whole accounts on one receipts vintage as an
+avenue.
 
 \paragraph{The one-step rule is a convention, and it is the largest judgment in the paper.} We
 trace servicing one step and stop, so a claim serviced out of business revenue takes zero direct
@@ -187,11 +200,12 @@ and the rest of the world next at roughly eighteen percent each.
 
 \begin{table}[htbp]
 \centering
-\caption{Holders of directly wage-backed claims, 2025. Computed on the coverage construction of
-the household coefficients, which is the basis that was independently rebuilt, so the column sums
-to \$40,380.5 billion against the \$39,957.2 billion of Table~\ref{tab:classes}, which is on the
-adopted wage basis. The 1.1 percent difference is the difference between the two coefficient
-sets, not a residual. Measured, rebuilt.}
+\caption{Holders of directly wage-backed claims, 2025, on the adopted wage basis. The column sums
+to the wage-backed total of Table~\ref{tab:classes}, so holder amounts and the headline stock
+combine directly. Holder shares are properties of the instrument and of the consolidation rule
+and do not depend on the backing coefficient, so the map is the published shares applied to the
+adopted coefficients; on the coverage coefficients the same calculation reproduces the
+independently rebuilt map to within 0.05 billion dollars. Measured.}
 \label{tab:holders}
 \input{tables/tab_holders.tex}
 \end{table}

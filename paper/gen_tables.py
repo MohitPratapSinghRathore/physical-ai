@@ -166,9 +166,11 @@ def tab_series():
 
 
 def tab_holders():
-    lb = load("data/release/labor_backing/direct_ratio_latest.json")
-    sh = lb["labour_backed_by_holder_share"]
-    bn = lb["labour_backed_by_holder_bn"]
+    # On the ADOPTED WAGE BASIS, so the column sums to the wage-backed total in
+    # tab_claim_classes and a reader can combine the two directly.
+    hm = load("data/release/labor_backing/holder_map_wage_basis.json")
+    sh = {r["holder"]: r["wage_share"] for r in hm["by_holder"]}
+    bn = {r["holder"]: r["wage_bn"] for r in hm["by_holder"]}
     lines = [r"\begin{tabular}{lrr}", r"\toprule",
              r"Holder & Wage-backed claims held (USD bn) & Share \\", r"\midrule"]
     for key, label in HOLDER_LABELS:
