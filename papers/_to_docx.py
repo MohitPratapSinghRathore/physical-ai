@@ -119,7 +119,7 @@ def main():
         else:
             head += (
                 "\n\\noindent Mohit Pratap Singh Rathore$^{1}$, "
-                "Gunveer Singh Kalsi$^{1}$, Sriharsha Meduri$^{1}$, "
+                "Sriharsha Meduri$^{1}$, Gunveer Singh Kalsi$^{1}$, "
                 "Pratap Chandra Mandal$^{2}$\n\n"
                 "\\noindent $^{1}$Oviqo. $^{2}$Indian Institute of Management Shillong.\n\n"
                 "\\noindent Corresponding author: Mohit Pratap Singh Rathore, "

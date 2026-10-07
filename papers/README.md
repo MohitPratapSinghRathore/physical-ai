@@ -239,13 +239,15 @@ blind PDF and the blind DOCX.
 ## Open items for the authors
 
 1. **The stress-test decision above.**
-2. **Affiliation discrepancy.** The playbook records Sriharsha Meduri at Andhra University; the
-   manuscript records Oviqo. Both title pages carry Oviqo with the discrepancy noted.
-3. **ORCIDs** are "to be supplied" on both title pages, and Pratap Chandra Mandal's email is not
-   filled in.
+2. **Resolved 2026-10-07.** Author order is Rathore, Meduri, Kalsi, Mandal, and Sriharsha
+   Meduri is at Oviqo. Both manuscripts, both title pages, the DOCX author block and the
+   companion bibliography entries carry this.
+3. **ORCID.** Required for the submitting corresponding author on Wiley journals, which covers
+   Review of Income and Wealth, so Mohit Pratap Singh Rathore needs one before a submission
+   there. Co-author ORCIDs are encouraged, not required. Elsevier and most other publishers
+   encourage rather than require. Pratap Chandra Mandal's email is still to be filled in.
 4. **The AI declaration** uses the playbook's wording with its third sentence adjusted, as
    playbook section 6 directs, because the standard clause says generative AI was not used to
    *analyse* the data and the analysis code here was AI-written.
-5. **Author order** is inherited from the original manuscript and has not been revisited.
 6. **Review of Income and Wealth's ABDC rating** was not pinned to a primary source; its Q1 status
    is confirmed.
