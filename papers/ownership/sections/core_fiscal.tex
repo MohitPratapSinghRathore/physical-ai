@@ -54,9 +54,17 @@ retention among the reemployed rather than the unweighted one, and that $\kappa 
 reemployed are a wage-representative subset of the displaced. The second fails if reemployment is
 correlated with prior pay. Where better-paid workers are reemployed at higher rates, $\kappa > 1$
 and the product $\rho\,\omega$ understates the retained wage bill, which makes the condition
-easier to satisfy rather than harder. We compute $R$ from Equation~\ref{eq:Rdef} directly on the
-wage bill, so no independence assumption is needed, and we report the product form only as a
-decomposition of a figure already measured.
+easier to satisfy rather than harder. \textbf{Our $R$ is the product, not the wage-bill ratio.} An earlier version of this
+section claimed we computed Equation~\ref{eq:Rdef} directly and therefore needed no
+independence assumption. That was wrong. The reported $R = \result{RetainedWageShare}$ is
+$\rho\omega$ with $\rho = \result{RhoReemploy}$, the observed reemployment rate across the
+biennial displaced-worker vintages, and $\omega = \result{OmegaRetention}$, the wage-retention
+factor among the reemployed. So the figure does carry the $\kappa = 1$ assumption, and the
+paper should not have said otherwise. We keep it because the correction runs against this
+paper rather than for it: if better-paid workers are reemployed at higher rates then
+$\kappa > 1$, the product understates the retained wage bill, the required rate falls and the
+condition becomes easier to satisfy. Computing Equation~\ref{eq:Rdef} on linked old and new
+wage bills is the right fix and we have not done it.
 
 \subsection{Building the rate on the income that shifts}
 
@@ -285,6 +293,26 @@ split, which is the joint treatment rather than the one-at-a-time version.
 \textbf{Only \result{NeverTaxedShare} percent of US corporate equity is never reached by any
 federal tax at all}, being nonprofits, government plans and insurance separate accounts.
 
+\paragraph{The retirement term needs a flow derivation, and it is an upper bound.} A holder
+share times a distribution rate does not by itself give annual receipts per dollar of current
+capital income, so here is the flow. Let the accounts hold stock $A$ earning $rA$, take
+contributions $C$ and pay withdrawals $W$ in the year. Deductible contributions cost revenue
+$\tau_{\text{ord}}C$ and taxable withdrawals raise $\tau_{\text{ord}}W$, so net annual receipts
+are $\tau_{\text{ord}}(W-C)$. If the accounts are stationary in aggregate then $W = C + rA$ and
+net receipts are exactly $\tau_{\text{ord}}rA$, which is $\tau_{\text{ord}}$ per dollar of capital
+income inside them. That is the condition under which a share times a rate is the right
+calculation, and it is what we assume.
+
+It does not hold here, and the direction runs against this paper. US retirement balances have
+been accumulating, so $C$ is large relative to $W$, $W-C < rA$, and
+$\tau_{\text{ord}}$ is an upper bound rather than the value. Bounding the gap needs aggregate
+contribution and withdrawal flows we have not assembled, and we do not claim a figure for it.
+What we can show is that the conclusion does not turn on it. Setting the retirement term to
+zero, the extreme case of a system that collects nothing, leaves the annual rate at
+\result{TauAnnRetZeroFed} percent federally and \result{TauAnnRetZeroAllGov} percent on all government, which
+\result{RetZeroClearsFed} and \result{RetZeroClearsAllGov} the harder requirement on each basis. The term
+moves the number and not the answer.
+
 The layer rises from \result{LayerPublished} percent as published to
 \result{LayerMarginalDecomp} percent on the marginal object, of which
 \result{LayerForeignPart} points is foreign withholding, and to \result{LayerAnnualDecomp}
@@ -313,10 +341,21 @@ to do.
 On the \textbf{annual} object the condition closes. Federally the rate is
 \result{TauAnnFedDec} percent against the \result{RequiredFedEasy} to \result{RequiredFedHard}
 percent required, a margin of \result{AnnMarginFed} points over the harder reading, and it
-clears that reading at every corner of the shareholder box, whose range is
+clears that reading at every corner of the shareholder box, at $g = 1$, whose range is
 \result{TauAnnFedLo} to \result{TauAnnFedHi} percent. On all government the rate is
 \result{TauAnnAllGovDec} percent against \result{RequiredAllGovEasy} to
 \result{RequiredAllGovHard} percent, and it clears at every corner there too.
+
+\paragraph{What "at every corner" does and does not mean.} It means every corner of the
+twelve-component rate box, holding the pass-through coefficient at one. It is not a statement
+over the pass-through range, and the condition is $\tau_k g \ge \tau_\ell(1-R)$, so the annual
+result carries its own boundary: $g^{\ast} = \result{GStarAnnFedEasy}$ on the easier federal
+reading and $\result{GStarAnnFedHard}$ on the harder one, running \result{GStarAnnFedBoxLo} to \result{GStarAnnFedBoxHi}
+across the shareholder box. The difference from the marginal reading is that these are \emph{below}
+one, so the annual condition closes without requiring output to rise, whereas the marginal
+boundary of \result{GStarFedEasy} to \result{GStarFedHard} is above the output-preserved ceiling and
+therefore does. For pass-through below \result{GStarAnnFedHard} the annual condition fails on the
+harder reading too, and we do not claim replacement over the whole pass-through range.
 
 On the \textbf{marginal} object the shortfall survives in sign and not in size. With the
 shareholder corrections applied jointly the federal rate is \result{TauMargFedDec} percent

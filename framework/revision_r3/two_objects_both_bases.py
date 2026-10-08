@@ -96,6 +96,12 @@ def main():
             "clears_harder": bool(a_dec >= REQ[basis]["harder"]),
             "clears_harder_at_worst_corner": bool(
                 tau_annual(p, basis, alo) >= REQ[basis]["harder"])}
+        # robustness to the retirement flow term, which rests on a stationarity condition
+        # that does not hold in the US. Zero is the extreme accumulating case.
+        r["annual_retirement_term_zero"] = {
+            "tau_k": round(tau_annual(p, basis, sl["marginal"]), 4),
+            "clears_harder": bool(tau_annual(p, basis, sl["marginal"]) >= REQ[basis]["harder"]),
+        }
         res["rates"][basis] = r
 
     f = res["rates"]["federal"]

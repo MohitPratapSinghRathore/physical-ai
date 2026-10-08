@@ -38,6 +38,10 @@
         "clears_easier": true,
         "clears_harder": true,
         "clears_harder_at_worst_corner": true
+      },
+      "annual_retirement_term_zero": {
+        "tau_k": 0.2103,
+        "clears_harder": true
       }
     },
     "all_government": {
@@ -63,6 +67,10 @@
         "clears_easier": true,
         "clears_harder": true,
         "clears_harder_at_worst_corner": true
+      },
+      "annual_retirement_term_zero": {
+        "tau_k": 0.2249,
+        "clears_harder": true
       }
     }
   },

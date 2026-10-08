@@ -21,6 +21,30 @@ WHAT THE DECOMPOSITION FINDS. Three corrections, and all three raise the layer.
      shareholder level, with the same resolution: zero marginal rate, positive annual
      receipts.
 
+     THE FLOW DERIVATION, which a referee rightly asked for, because a holder share times a
+     distribution rate does not on its own establish annual receipts per dollar of current
+     capital income. Let the accounts hold stock A earning r*A, take contributions C and pay
+     withdrawals W in the year. Deductible contributions cost revenue tau_ord*C; taxable
+     withdrawals raise tau_ord*W. Net annual receipts attributable to the accounts are
+     therefore
+
+         tau_ord * (W - C).
+
+     If the accounts are stationary in aggregate, so that the stock neither grows nor
+     shrinks, then W = C + r*A and net receipts are exactly tau_ord * r*A, which is
+     tau_ord per dollar of current capital income inside them. THAT is the condition under
+     which share times rate is the right calculation, and it is the condition we are
+     assuming.
+
+     IT DOES NOT HOLD IN THE US, and the direction runs against this paper. US retirement
+     balances have been accumulating, so C is large relative to W and W - C < r*A, which
+     makes tau_ord an UPPER BOUND on the annual receipts per dollar rather than the value.
+     Bounding the gap needs aggregate contribution and withdrawal flows we have not
+     assembled. What we can say is that the paper's conclusion does not turn on it: setting
+     the retirement term to zero, which is the extreme case of a fully accumulating system
+     that collects nothing, still leaves the annual rate clearing the harder requirement on
+     both jurisdictional bases. The term changes the number and not the answer.
+
   B. FOREIGN WITHHOLDING IS ALREADY IDENTIFIED BUT ONLY ONE AT A TIME. The base assembly
      sets the shareholder layer to theta_taxable x rate x deferral with theta_taxable = 0.27,
      which assigns no shareholder tax to the 0.42 of US equity held abroad. The paper does

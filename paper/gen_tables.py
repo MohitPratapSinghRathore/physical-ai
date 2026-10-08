@@ -214,21 +214,22 @@ QLAB = {"Q1_bottom": "Bottom quintile", "Q2": "Second quintile", "Q3_middle": "M
 
 def tab_quintile():
     rs = rows("data/release/labor_backing/quintile_labour_backing.csv")
-    fix = load("data/release/labor_backing/quintile_universe_fix.json")["by_quintile"]
-    b2 = load("data/release/revision_r2/b2_headline_effect.json")
-    adopted = b2["quintile_gradient"]["alternative"]
-    lines = [r"\begin{tabular}{lrrrr}", r"\toprule",
-             r"Wage quintile & Share of the wage bill & Share of household wage-backed "
-             r"claims & Claims per wage dollar & Same, own-survey denominator \\",
+    fix = load("data/release/labor_backing/quintile_universe_fix.json")
+    byq = fix["by_quintile"]
+    lines = [r"\small", r"\begin{tabular}{lrrrrr}", r"\toprule",
+             r"Wage & Share of & Share of & Index & Index, own & Claims per \\",
+             r"quintile & wage bill & claims & & survey & wage dollar \\",
              r"\midrule"]
     for r in rs:
         k = r["wage_quintile"]
+        d = byq[k]
         dag = r"\,$\dagger$" if k == "Q1_bottom" else ""
-        lines.append(f"{QLAB[k]} & "
+        lines.append(f"{QLAB[k].replace(' quintile','')} & "
                      f"{float(r['quintile_wage_bill_share']):.4f} & "
                      f"{float(r['share_of_household_labour_backed']):.4f} & "
-                     f"{float(adopted[k]):.4f}{dag} & "
-                     f"{float(fix[k]['per_dollar_sipp_adopted']):.4f}{dag} \\\\")
+                     f"{d['index_acs']:.4f}{dag} & "
+                     f"{d['index_sipp']:.4f}{dag} & "
+                     f"{d['level_per_wage_dollar_acs']:.4f}{dag} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     write("tab_quintile.tex", "\n".join(lines))
 

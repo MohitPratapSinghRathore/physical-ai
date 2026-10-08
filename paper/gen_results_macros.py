@@ -161,16 +161,36 @@ def main():
     R["AIEquityScale"] = pct(tsb["ai_leg"]["ai_equity_share_central"])
     R["HolderGap"] = pct(it3["holder_gap_central"])
 
-    # ---- the wage-quintile gradient, on the adopted basis
-    qg = b2["quintile_gradient"]["alternative"]
-    R["QOnePerDollar"] = f"{float(qg['Q1_bottom']):.2f}"
-    R["QTwoPerDollar"] = f"{float(qg['Q2']):.2f}"
-    R["QTopPerDollar"] = f"{float(qg['Q5_top']):.2f}"
-    R["QTopWageShare"] = pct(quint["Q5_top"]["quintile_wage_bill_share"])
+    # ---- the wage-quintile gradient. The reported statistic is the INDEX, the ratio of a
+    # quintile's claim share to its wage-bill share, which reproduces from the printed share
+    # columns and is invariant to any uniform rescaling of the household coefficients. An
+    # earlier version multiplied it by the factor relating the two coefficient sets, which is
+    # a level-scaling factor and does not belong in a ratio of shares. Converting the index
+    # to claims per wage dollar needs the aggregate multiplier, reported separately.
     _qf = load("data/release/labor_backing/quintile_universe_fix.json")
-    R["QOnePerDollarOwnSurvey"] = f"{float(_qf['by_quintile']['Q1_bottom']['per_dollar_sipp_adopted']):.2f}"
-    R["QuintDenomDivergence"] = f"{float(_qf['max_denominator_divergence_pct']):.1f}"
-    R["QOneAgreement"] = f"{float(_qf['bottom_quintile_agreement_pct']):.2f}"
+    _qb = _qf["by_quintile"]
+    R["QOnePerDollar"] = f"{_qb['Q1_bottom']['index_acs']:.2f}"
+    R["QTwoPerDollar"] = f"{_qb['Q2']['index_acs']:.2f}"
+    R["QTopPerDollar"] = f"{_qb['Q5_top']['index_acs']:.2f}"
+    R["QOnePerDollarOwnSurvey"] = f"{_qb['Q1_bottom']['index_sipp']:.2f}"
+    R["QAggMultiplier"] = f"{_qf['aggregate_claims_per_wage_dollar']:.4f}"
+    R["QOneLevel"] = f"{_qb['Q1_bottom']['level_per_wage_dollar_acs']:.2f}"
+    R["QTwoLevel"] = f"{_qb['Q2']['level_per_wage_dollar_acs']:.2f}"
+    R["QTopLevel"] = f"{_qb['Q5_top']['level_per_wage_dollar_acs']:.2f}"
+    R["QTopWageShare"] = pct(quint["Q5_top"]["quintile_wage_bill_share"])
+    # the U in the federal share: endpoints and the trough, so the comparison period is
+    # stated rather than left to "roughly doubled", which is false across the series.
+    import csv as _csv
+    with (ROOT / "data/release/labor_backing/direct_ratio_timeseries.csv").open() as _fh:
+        _ts = [r for r in _csv.DictReader(_fh)]
+    _ss = [(int(float(r["year"])), float(r["sovereign_share_union"])) for r in _ts]
+    _tr = min(_ss, key=lambda x: x[1])
+    R["SovUnionTroughYear"] = str(_tr[0])
+    R["SovUnionTrough"] = pct(_tr[1], 1)
+    R["SovUnionRiseFromTrough"] = f"{_ss[-1][1] / _tr[1]:.1f}"
+    R["SovUnionRiseFrom1947"] = f"{_ss[-1][1] / _ss[0][1]:.2f}"
+    R["QuintDenomDivergence"] = f"{_qf['max_index_divergence_pct']:.1f}"
+    R["QOneAgreement"] = f"{_qf['bottom_quintile_agreement_pct']:.2f}"
     R["QTopClaimShare"] = pct(quint["Q5_top"]["share_of_household_labour_backed"])
 
     # ---- the holder map, wage side, on the adopted basis
@@ -199,6 +219,8 @@ def main():
 
     # ---- the fiscal condition
     R["RetainedWageShare"] = f"{rsen['ours_observed_rho_and_our_omega']['R']:.4f}"
+    R["RhoReemploy"] = f"{rsen['ours_observed_rho_and_our_omega']['rho']:.4f}"
+    R["OmegaRetention"] = f"{rsen['ours_observed_rho_and_our_omega']['omega']:.4f}"
     R["RequiredLow"] = pct(min(req.values()), 1)
     R["RequiredHigh"] = pct(max(req.values()), 1)
     R["TauKBarkai"] = pct(cbk["tau_k_central"], 1)
@@ -602,10 +624,22 @@ def main():
     R["RequiredAllGovHard"] = pct(allg["required_harder"], 1)
     R["StateLocalLaborAddOn"] = pct(allg["state_local_labor_add_on"], 1)
     gs = cj["C3_g_at_which_the_condition_closes"]
-    R["GStarFedEasy"] = f"{gs['federal only']['g_closing_easier']:.1f}"
-    R["GStarFedHard"] = f"{gs['federal only']['g_closing_harder']:.1f}"
-    R["GStarAllEasy"] = f"{gs['all government']['g_closing_easier']:.1f}"
-    R["GStarAllHard"] = f"{gs['all government']['g_closing_harder']:.1f}"
+    # g* recomputed on the corrected layer. The published pair was on the superseded
+    # marginal rate. The old values are kept under *Old names for the comparison the text makes.
+    _gs = load("data/release/revision_r3/g_star_recomputed.json")["by_basis"]
+    for _b, _tag in (("federal", "Fed"), ("all_government", "All")):
+        _m = _gs[_b]["marginal_barkai__decomposed_layer"]
+        _an = _gs[_b]["annual__decomposed_layer"]
+        _op = _gs[_b]["marginal_barkai__published_layer"]
+        R["GStar" + _tag + "Easy"] = f'{_m["g_star_easier"]:.2f}'
+        R["GStar" + _tag + "Hard"] = f'{_m["g_star_harder"]:.2f}'
+        R["GStar" + _tag + "EasyOld"] = f'{_op["g_star_easier"]:.2f}'
+        R["GStar" + _tag + "HardOld"] = f'{_op["g_star_harder"]:.2f}'
+        R["GStarAnn" + _tag + "Easy"] = f'{_an["g_star_easier"]:.3f}'
+        R["GStarAnn" + _tag + "Hard"] = f'{_an["g_star_harder"]:.3f}'
+        _bx = _gs[_b]["annual__g_star_harder_over_box"]
+        R["GStarAnn" + _tag + "BoxLo"] = f'{_bx[0]:.3f}'
+        R["GStarAnn" + _tag + "BoxHi"] = f'{_bx[1]:.3f}'
     var = {v["variant"]: v for v in cj["C2_variants"]}
     R["TauKWithholding"] = pct(
         var["withholding tax on foreign holders at 15 percent"]["assembled_tau_k"], 1)
@@ -729,6 +763,9 @@ def main():
         R["TauAnn" + _tag + "Lo"] = pct(_a["range_over_shareholder_box"][0], 1)
         R["TauAnn" + _tag + "Hi"] = pct(_a["range_over_shareholder_box"][1], 1)
         R["AnnMargin" + _tag] = pct(_a["margin_over_harder"], 1)
+        _rz = _a if False else _tb["rates"][_b]["annual_retirement_term_zero"]
+        R["TauAnnRetZero" + _tag] = pct(_rz["tau_k"], 1)
+        R["RetZeroClears" + _tag] = "clears" if _rz["clears_harder"] else "does not clear"
         R["ObjGap" + _tag] = pct(
             _a["decomposed_layer"] - _m["decomposed_layer"], 1)
 
@@ -824,7 +861,10 @@ def main():
     lines = ["% AUTO-GENERATED by paper/gen_results_macros.py. Do not edit by hand.",
              "% Every value traces to a measured JSON artifact in this repository.",
              "\\makeatletter",
-             "\\newcommand{\\result}[1]{\\@nameuse{result@#1}}",
+             # robust, so a \result inside a caption survives being written to the list of
+             # tables and read back where @ is not a letter. A long caption using \result
+             # broke exactly that way.
+             "\\DeclareRobustCommand{\\result}[1]{\\@nameuse{result@#1}}",
              "\\makeatother"]
     for k, v in R.items():
         lines.append(f"\\expandafter\\def\\csname result@{k}\\endcsname{{{v}}}")

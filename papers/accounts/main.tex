@@ -137,15 +137,22 @@ what the table reports. Measured, rebuilt.}
 
 \begin{table}[htbp]
 \centering
-\caption{Wage-backed household claims by wage quintile, on the adopted wage basis. Claims per
-wage dollar is the share of household wage-attributed claims divided by the share of the wage
-bill. The fourth column uses the wage-bill share from the American Community Survey, as
-published; the fifth recomputes it from the same survey file as the balances, as workers times
-mean wage, so that numerator and denominator share one universe. The two differ by at most
-\result{QuintDenomDivergence} percent anywhere and by \result{QOneAgreement} percent at the
-bottom. $\dagger$ the bottom-quintile magnitude remains contested: an independent rebuild lands
-at 1.21 to 1.64 and we cannot reproduce its construction, so that quintile's rank is not
-established. See L6 in Section~\ref{sec:limitations}. Measured.}
+\caption{Wage-backed household claims by wage quintile, on the adopted wage basis. The
+\emph{index} is the quintile's share of household wage-attributed claims divided by its share of
+the wage bill, so it reproduces exactly from the two preceding columns and is a relative measure:
+being a ratio of two shares it is unchanged by any uniform rescaling of the household
+coefficients. An earlier version of this table multiplied it by the factor relating the two
+coefficient sets, which is a level-scaling factor and does not belong in a ratio of shares; that
+is corrected here and the index is now what the formula gives. The fourth column uses the
+wage-bill share from the American Community Survey, the fifth recomputes that share from the
+same survey file as the balances so numerator and denominator share one universe, and the two
+differ by at most \result{QuintDenomDivergence} percent and by \result{QOneAgreement} percent at the
+bottom. The last column converts the index to claims per wage dollar by the aggregate multiplier,
+total household wage-attributed claims over the total wage bill, which is \result{QAggMultiplier};
+the index alone is not a claims-per-dollar ratio. $\dagger$ the bottom-quintile figures are
+contested: an independent rebuild lands at 1.21 to 1.64 and we cannot reproduce its construction,
+so that quintile's rank is not established and no claim in this paper rests on it. See L6 in
+Section~\ref{sec:limitations}. Measured.}
 \label{tab:quintile}
 \input{tables/tab_quintile.tex}
 \end{table}

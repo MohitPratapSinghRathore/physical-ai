@@ -1,0 +1,84 @@
+{
+  "formula": "g_star = required / tau_k, from tau_k * g >= tau_l * (1 - R)",
+  "required": {
+    "federal": {
+      "easier": 0.1101,
+      "harder": 0.1373
+    },
+    "all_government": {
+      "easier": 0.124,
+      "harder": 0.151
+    }
+  },
+  "by_basis": {
+    "federal": {
+      "marginal_barkai__published_layer": {
+        "tau_k": 0.0785,
+        "g_star_easier": 1.403,
+        "g_star_harder": 1.749,
+        "g_star_harder_below_one": false
+      },
+      "marginal_barkai__decomposed_layer": {
+        "tau_k": 0.1051,
+        "g_star_easier": 1.048,
+        "g_star_harder": 1.306,
+        "g_star_harder_below_one": false
+      },
+      "marginal_barkai__g_star_harder_over_box": [
+        0.968,
+        1.441
+      ],
+      "annual__published_layer": {
+        "tau_k": 0.1885,
+        "g_star_easier": 0.584,
+        "g_star_harder": 0.728,
+        "g_star_harder_below_one": true
+      },
+      "annual__decomposed_layer": {
+        "tau_k": 0.238,
+        "g_star_easier": 0.463,
+        "g_star_harder": 0.577,
+        "g_star_harder_below_one": true
+      },
+      "annual__g_star_harder_over_box": [
+        0.494,
+        0.623
+      ]
+    },
+    "all_government": {
+      "marginal_barkai__published_layer": {
+        "tau_k": 0.0851,
+        "g_star_easier": 1.457,
+        "g_star_harder": 1.774,
+        "g_star_harder_below_one": false
+      },
+      "marginal_barkai__decomposed_layer": {
+        "tau_k": 0.1115,
+        "g_star_easier": 1.112,
+        "g_star_harder": 1.354,
+        "g_star_harder_below_one": false
+      },
+      "marginal_barkai__g_star_harder_over_box": [
+        1.021,
+        1.483
+      ],
+      "annual__published_layer": {
+        "tau_k": 0.2036,
+        "g_star_easier": 0.609,
+        "g_star_harder": 0.742,
+        "g_star_harder_below_one": true
+      },
+      "annual__decomposed_layer": {
+        "tau_k": 0.252,
+        "g_star_easier": 0.492,
+        "g_star_harder": 0.599,
+        "g_star_harder_below_one": true
+      },
+      "annual__g_star_harder_over_box": [
+        0.519,
+        0.643
+      ]
+    }
+  },
+  "finding": "Federal basis. On the marginal rate the corrected layer gives tau_k = 0.1051 and a boundary of g* = 1.048 to 1.306, against 1.403 to 1.749 on the superseded layer; both still exceed the output-preserved ceiling of one, so the marginal reading needs output to rise. On the annual rate tau_k = 0.2380 and g* = 0.463 to 0.577, both below one, so the annual condition closes without any increase in output and holds for any pass-through at or above 0.577 on the harder reading. Over the shareholder box the harder-reading boundary runs 0.494 to 0.623."
+}

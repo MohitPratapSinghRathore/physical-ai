@@ -34,7 +34,7 @@ reference; we claim no part of it, only that the replacement question has been a
 it. Section~\ref{sec:annual} carries it through the layers. In a stationary state expensing and economic depreciation give the same annual deduction, so
 the annual entity base is the whole of net capital income and not rents alone. On that object the
 rate is \result{TauAnnFedDec} percent centrally and \result{TauAnnFedLo} to
-\result{TauAnnFedHi} percent at every corner of the parameter box, so the condition closes
+\result{TauAnnFedHi} percent at every corner of the rate box with pass-through at one, so the condition closes
 everywhere, and the rent share that drives the marginal rate's entire spread drops out of the
 algebra. The gap between the two objects is \result{AnnualMarginalGapLo} to
 \result{AnnualMarginalGapHi} points, more than any disagreement among the components.
@@ -58,9 +58,11 @@ the largest thing in the calculation.
 So we compare counterfactuals instead, and they are computed on the decomposed layer of
 Section~\ref{sec:annual} rather than on the layer an earlier draft used. Eliminating profit
 shifting entirely, so that no rent is booked abroad, raises the marginal rate from \result{CfBaseFed}
-to \result{CfNoShiftFed} percent federally, a gain of \result{CfGainShiftFed} points that still
-leaves it short of the \result{RequiredFedEasy} percent the easier reading requires, though on the
-all-government basis it \result{CfShiftClearsAllGov}. Completing the reach of the shareholder tax,
+to \result{CfNoShiftFed} percent federally, a gain of \result{CfGainShiftFed} points. That
+\emph{clears} the \result{RequiredFedEasy} percent easier reading while staying below the
+\result{RequiredFedHard} percent harder one, and on the all-government basis it
+\result{CfShiftClearsAllGov} the easier reading too. An earlier draft said it still fell short, which
+was true of the superseded baseline and is not true of this one. Completing the reach of the shareholder tax,
 so that every share sits in a taxable account with nothing deferred and nothing stepped up,
 raises it to \result{CfOwnReachFed} percent, a gain of \result{CfGainOwnFed} points.
 
@@ -72,13 +74,12 @@ profit-shifting one falls from \result{CfRatioOldFed} to \result{CfRatioFed}, so
 while the margin narrows.
 
 Ownership is two mechanisms rather than one, and bundling them would overstate the comparison, so
-Section~\ref{sec:levers} separates them. Attributed by Shapley value over every order of removal,
-the taxable shareholder base contributes \result{ShThetaShapley} points, deferral and step-up
-\result{ShDeferShapley}, and profit shifting \result{ShShiftShapley}. The single largest mechanism
-is about \result{ShRatioTheta} times profit shifting; the two ownership mechanisms together are
-about \result{ShRatioPair} times it, and that second figure is a package. Deferral taken alone is
-only modestly larger than shifting, and we say so rather than letting the package carry the
-claim.
+Section~\ref{sec:levers} separates them by Shapley value over every order of removal. We do not
+quote those point attributions here. They were computed on the shareholder layer as first
+assembled, and decomposing that layer changes what the mechanisms mean, so the attributions do
+not carry over and we have not recomputed them. What survives is the ordering on the marginal
+rate, that the taxable shareholder base is the largest of the three and profit shifting the
+smallest, and Section~\ref{sec:levers} marks its table accordingly.
 
 Neither counterfactual is a policy. No reform abolishes profit shifting or places all equity in
 taxable hands, and the two rows bound what each channel can contribute rather than proposing
