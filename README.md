@@ -1,93 +1,86 @@
-# Physical AI: The Two-Sided Bet
+# Labor backing accounts, and the capital-tax replacement condition
 
-Research project on wage-backed debt, AI-capital-backed debt, and the financial
-architecture of a labor transition. See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for the
-thesis, the rules, and the workstreams. The brief is the source of truth.
+Two papers and the measurement pipeline behind them. Every number printed in either paper
+resolves to a file in `data/release`, so any figure can be traced to an artifact and a key.
 
-## Status
+## The papers
 
-Session 1 complete (2026-09-19). WS0 first query batch done; WS1 US Leg W done; Leg A
-Tier 2 done. Leg A Tiers 1 and 2b remain open, which is why no Leg W to Leg A verdict
-should be quoted yet.
+**Labor Backing Accounts: Who Holds the Claims That Wages Pay?** Decomposes the US financial
+claim stock twice over, by the income attributed to servicing each claim and by who holds,
+guarantees or owes it, across thirteen claim classes from 1947 to 2025. About 52 percent of US
+debt is attributed to labor income on the direct route and 60 percent once the indirect route is
+counted; the federal government stands behind about 79.5 percent of directly wage-attributed
+claims as holder, guarantor or debtor.
 
-Read [`notes/findings.md`](notes/findings.md) first. Results that weaken the thesis are at
-the top, per brief Rule 5, and one of the brief's central hypotheses did not survive
-testing this session.
+**Can Capital Taxes Replace Wage Tax Revenue? Both Sides Computed.** Assembles both sides of the
+replacement condition. Which effective rate is used decides the answer: on the marginal wedge the
+federal rate is 10.5 percent against the 11.0 to 13.7 percent replacement requires, and on the
+annual rate it is 23.8 percent. No shortfall is established on either, which corroborates
+Hötte, Theodorakopoulos and Koutroumpis (2024) by an independent route.
 
-## Headline results so far
+Sources are in `papers/accounts` and `papers/ownership`. `make` builds both, including the
+double-anonymous versions, and then runs the QA gates.
 
-| Result | Value | Where |
-|---|---|---|
-| Labor-linked share of US federal current receipts | 77.7% | findings B1 |
-| US household debt | 21,377.8 USD bn (65.8% of GDP) | findings B2 |
-| US federal public debt | 39,065.4 USD bn (120.3% of GDP) | findings B2 |
-| Physical AI Exposure Index | 911 occupations, O*NET 31.0 | findings B3 |
-| Mortgage debt service by PAEI quintile | concentration ratio flat, 0.93 to 1.08 | findings A4 |
-| Leg A Tier 2 capex (9 US firms) | 490.9 USD bn, self-funding 1.34 | findings B4 |
-| Leg A debt and leases / household debt | 2.14% (LOWER BOUND) | sizing_method.md |
+## What is measured, and what is a convention
 
-The last row is a lower bound, not a verdict. It excludes the off-balance-sheet structures
-BIS identifies as dominant, so the WS1 kill criterion is NOT yet evaluable (decision D4).
+The accounts observe the income composition of the parties owing each claim class and attribute
+claims in proportion. **They do not observe which income actually pays a claim.** Every figure is
+an attribution under that stated convention, not a measurement of servicing cash flows, and the
+papers say so in the abstract, the definitions and the conclusions. The largest single judgement
+is the one-step rule, which moves the headline ratio by about 15 percent, more than every other
+convention together.
 
-## The two original artifacts
+## Verifying a number
 
-**PAEI, the Physical AI Exposure Index** (`data/processed/paei_onet.csv`). Existing
-occupational AI-exposure measures score cognitive automation. PAEI scores exposure to
-embodied automation, and is two-factor and multiplicative following Moravec's paradox:
+    python paper/gen_results_macros.py     # prints every macro name and value
+    python paper/gen_tables.py             # rebuilds every table from the release data
 
-    PAEI = P * S,  P = embodiment intensity,  S = environmental structure
+Each printed figure in either paper is one of those macros. `data/release` holds 55 JSON and 49
+CSV artifacts, one per measured object.
 
-Either factor near zero means no exposure. The design is validated by an inversion an
-additive index would get wrong: electricians are more physically demanding than team
-assemblers (P 0.68 vs 0.55) but less exposed (PAEI 0.26 vs 0.32), because their work
-environment is unstructured. P and S correlate at -0.06 across 911 occupations, so the
-second factor carries independent information.
+**Raw survey and supervisory microdata are not in this repository.** The SIPP public-use file,
+the ACS extracts, the FDIC call report panel and the Federal Reserve financial accounts come from
+the providers named in each paper's data section and are not ours to redistribute, so `data/raw`
+is empty by design. This repository supports verification of every reported figure from the
+processed artifacts; it does not by itself support a rebuild from raw microdata.
 
-**DAR, Debt-at-Automation-Risk** (`data/processed/dar_us.csv`,
-`data/processed/dar_intensity_us.csv`). PAEI joined to ACS PUMS 2023 to measure how much US
-mortgage debt service is paid out of wages earned in high-exposure occupations.
+## Results that went against the project
 
-## Reproducing
+Kept deliberately visible, because the pipeline's value depends on it.
 
-```
-python -m venv .venv
-./.venv/Scripts/python.exe -m pip install -r requirements.txt
-./src/fetch_bulk.sh      # one-time large downloads (O*NET, PUMS, crosswalk)
-make all                 # fetch series, rebuild every table, regenerate SOURCES.md
-```
+- **A pre-registered institutional test was a null.** The accounts did not predict bank household
+  credit losses out of sample. `framework/stress_scoping/` holds the pre-registration, the
+  deviations log and the result.
+- **A third paper does not exist.** Three pre-registered tests on a stress-test allocation
+  question returned a failed novelty check, an inconclusive out-of-sample result in which the
+  shortcut rule won, and then a kill. `framework/stress_scoping/RESULTS_C3.md` is the verdict and
+  `REFEREE_C_REBUILD.md` records that the referee's own prescribed repairs overturned the
+  paper's headline.
+- **One distributional magnitude is contested.** The bottom-quintile claims-to-wages index is
+  4.15 here against an independent rebuild's 1.21 to 1.64. Unreconciled, flagged wherever it
+  appears, and no conclusion rests on its rank.
+- **Five quantities were withdrawn** after independent rebuild rounds disagreed with them. They
+  are listed with reasons in the removed-quantities table of the first paper rather than dropped
+  quietly.
 
-`data/SOURCES.md` is generated, never hand-edited. Every series carries its published
-title, units, source and retrieval date, read from the provider at fetch time rather than
-asserted by the pipeline (decision D1).
+## On the rebuilds
+
+Three rebuild rounds were run, each a separate run with no access to this code, working from raw
+data and a published specification and scored against values sealed before the round. Round two
+scored 127 quantities, 79 against sealed values, with 34 mismatches; round three matched all 32.
+The blind was procedural rather than enforced and the rounds shared the raw data, so they test
+the pipeline and the completeness of the specification rather than the validity of the inputs.
+The claim made is that these quantities were **independently rebuilt under a reported blind
+protocol**, never that they were independently verified.
 
 ## Layout
 
-```
-lit/        WS0 audit: protocol.md, matrix.csv, references.bib, audit_report.md
-data/raw/   untouched source files (gitignored; refetch with src/fetch_bulk.sh)
-data/       SOURCES.md, generated provenance for every figure
-data/processed/  built tables
-src/        pipeline, one entry point (Makefile)
-framework/  matrices, propositions
-paper/      LaTeX source
-notes/      decisions.md, findings.md, open_questions.md, sizing_method.md
-```
+    papers/          the two manuscripts, their shared QA gates and the build
+    paper/           generators for the macros, tables and figures
+    framework/       the measurement modules, by workstream
+    data/release/    one artifact per measured object; the source of every printed number
+    data/raw/        empty by design, see above
+    notes/           findings, gate reports and source extractions
 
-## The public replication package
-
-`scripts/make_replication_package.py` builds the public package outside this repository,
-into `../labor-backing-replication/`, and `scripts/release_support.py` generates the
-documentation, the checksums and the list of reported values that the package's harness
-compares against. `scripts/release_scan.py` is the secrets and identity gate, run on the
-built tree and on each archive variant. The static files the package ships, its Makefile,
-its rebuild harness and its documentation, live in `release_assets/`.
-
-Neither script modifies anything in this repository. The release directory is a separate
-git repository with its own single initial commit and no shared history; the private
-commit it was cut from is recorded in its `RELEASE_NOTES.md`.
-
-```
-python scripts/make_replication_package.py
-python scripts/release_support.py
-python scripts/release_scan.py --tree ../labor-backing-replication --allow-identity
-```
+`PROJECT_BRIEF.md` is the original brief and is kept for the record; where it and the papers
+disagree, the papers are current.
