@@ -89,3 +89,57 @@ standard, which is why the answer is hard to wave away.
   effective-rate distinction as standard method.
 - Add the literature that makes the claim, so there is a named target, and the standard
   effective-rate references, so the method is not presented as ours.
+
+---
+
+## Addendum, same session: the conclusion is not new either, and that must be said
+
+A further search located the paper that matters most, and it was not in the first pass.
+
+**Hotte, Theodorakopoulos and Koutroumpis (2024), "Automation and taxation", Oxford Economic
+Papers 76(4), 945, doi 10.1093/oep/gpae006.** The abstract asks "whether automation-induced
+changes in labour and capital income undermine public revenues", decomposes taxes by source for
+nineteen EU countries over 1995 to 2016, and reports that "there is no empirical evidence that
+tax revenues are negatively affected by automation in the long run", with the answer depending
+on the technology and the stage of diffusion.
+
+Two consequences, and the second is the awkward one.
+
+1. **The question is live and academic**, not merely a policy talking point. KILL-2 is confirmed
+   by a better source than the ones first found: a reputable journal publishes the question in
+   exactly the terms we pose it.
+2. **Our conclusion is not new.** The best existing empirical work already finds no revenue
+   erosion. We cannot present "no established shortfall" as a discovery. What we have is a
+   different route to an answer someone else has reached: forward-looking and structural, on US
+   data, assembling a replacement condition from effective rates, against their backward-looking
+   reduced-form panel evidence from the EU.
+
+Agreement between two methods that share no data and no identifying assumptions is worth
+reporting, and it is the honest frame. It is also a weaker claim than the manuscript currently
+makes.
+
+## Revised statement of what the paper may claim
+
+**May claim.**
+1. The first assembly, as far as we can find, of both sides of the wage-to-capital revenue
+   replacement condition from sourced components, forward-looking and on a consistent
+   jurisdictional basis for the United States.
+2. That the condition does not bind on the revenue-relevant rate, **corroborating Hotte et al.
+   by an independent route**, and that on the marginal rate the gap is under one point with a
+   straddling range.
+3. The shareholder-layer decomposition and the 8.8 percent residue, which is the one piece of
+   measurement we have not found elsewhere.
+4. That the rent-share disagreement drops out of the annual object, so the Barkai and
+   Karabarbounis-Neiman readings stop mattering once the right object is used.
+
+**May not claim.**
+1. That the marginal-versus-annual distinction is new. Cite Devereux and Griffith (2003),
+   International Tax and Public Finance 10(2), 107 to 126, verified, for the effective average
+   rate, and the standard effective-rate literature for the rest.
+2. That no revenue shortfall is a new finding. Hotte et al. have it. We corroborate it.
+3. That any specific published calculation is being corrected.
+4. That the paper settles which object belongs in the condition.
+
+**Standing.** The paper is a corroborating structural computation plus one new measurement. That
+is a sound contribution and a modest one. It is a field-journal paper, not a top-five one, and
+the earlier framing claimed considerably more than this.
