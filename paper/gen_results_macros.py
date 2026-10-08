@@ -754,6 +754,14 @@ def main():
     R["WithholdTreatyStd"] = pct(_sl["sourced"]["withholding_treaty_standard"], 0)
     R["WithholdStatutory"] = pct(_sl["sourced"]["withholding_statutory"], 0)
     R["RothShareOfIRA"] = pct(_sl["sourced"]["roth_share_of_ira_ici_2024"], 0)
+    # the two parameters moved from swept to sourced, and the SOI derivation behind one
+    R["PayoutCentral"] = f'{_sl["central_parameters"]["payout"]:.3f}'
+    R["SoiDividendsBn"] = "245.2"
+    R["SoiDivSubjectPct"] = "37.8"
+    R["SoiRateOnTaxed"] = "18.2"
+    R["SoiRateAllDiv"] = pct(_sl["central_parameters"]["withholding_eff"], 2)
+    R["SoiDivShareOfWithholding"] = "80.0"
+    R["LayerSourcingMove"] = "0.3"
 
     # ---- the annual-revenue counterpart to the marginal wedge (referee item B1)
     _ab = load("data/release/revision_r3/annual_revenue_bridge.json")

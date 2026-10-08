@@ -11,30 +11,30 @@
   },
   "shareholder_layers": {
     "published": 0.0315,
-    "decomposed_marginal": 0.0672,
-    "decomposed_annual": 0.109
+    "decomposed_marginal": 0.0643,
+    "decomposed_annual": 0.106
   },
   "rates": {
     "federal": {
       "marginal_barkai": {
         "published_layer": 0.0785,
-        "decomposed_layer": 0.1075,
+        "decomposed_layer": 0.1051,
         "range_over_shareholder_box": [
-          0.0818,
-          0.1315
+          0.0953,
+          0.1418
         ],
-        "gap_to_easier": 0.0026,
+        "gap_to_easier": 0.005,
         "clears_easier": false,
         "range_straddles_easier": true
       },
       "annual": {
         "published_layer": 0.1885,
-        "decomposed_layer": 0.24,
+        "decomposed_layer": 0.238,
         "range_over_shareholder_box": [
-          0.2094,
-          0.2695
+          0.2205,
+          0.2779
         ],
-        "margin_over_harder": 0.1027,
+        "margin_over_harder": 0.1007,
         "clears_easier": true,
         "clears_harder": true,
         "clears_harder_at_worst_corner": true
@@ -43,28 +43,28 @@
     "all_government": {
       "marginal_barkai": {
         "published_layer": 0.0851,
-        "decomposed_layer": 0.1139,
+        "decomposed_layer": 0.1115,
         "range_over_shareholder_box": [
-          0.0884,
-          0.1377
+          0.1018,
+          0.1479
         ],
-        "gap_to_easier": 0.0101,
+        "gap_to_easier": 0.0125,
         "clears_easier": false,
         "range_straddles_easier": true
       },
       "annual": {
         "published_layer": 0.2036,
-        "decomposed_layer": 0.2539,
+        "decomposed_layer": 0.252,
         "range_over_shareholder_box": [
-          0.224,
-          0.2827
+          0.2349,
+          0.291
         ],
-        "margin_over_harder": 0.1029,
+        "margin_over_harder": 0.101,
         "clears_easier": true,
         "clears_harder": true,
         "clears_harder_at_worst_corner": true
       }
     }
   },
-  "finding": "On the ANNUAL object the condition closes on both bases and at the worst corner of the shareholder box: 0.2400 federal against 0.1373 required, 0.2539 all-government against 0.1510. On the MARGINAL object, with the shareholder corrections applied jointly, the remaining gap is 0.0026 federal and 0.0101 all-government, and the range over the shareholder box straddles the federal requirement. A gap of well under one percentage point, with a range that straddles, does not establish a sign. The shortfall is therefore not a finding on either object: it closes on the annual one and is indistinguishable from zero on the marginal one."
+  "finding": "On the ANNUAL object the condition closes on both bases and at the worst corner of the shareholder box: 0.2380 federal against 0.1373 required, 0.2520 all-government against 0.1510. On the MARGINAL object, with the shareholder corrections applied jointly, the remaining gap is 0.0050 federal and 0.0125 all-government, and the range over the shareholder box straddles the federal requirement. A gap of well under one percentage point, with a range that straddles, does not establish a sign. The shortfall is therefore not a finding on either object: it closes on the annual one and is indistinguishable from zero on the marginal one."
 }

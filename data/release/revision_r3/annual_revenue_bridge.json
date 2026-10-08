@@ -80,5 +80,5 @@
       "shifted_share"
     ]
   },
-  "lever_finding": "On the marginal object the taxable shareholder base outranks profit shifting, 0.0037 against 0.0025, which is the paper's second claim. On the annual object the order REVERSES, 0.0056 for profit shifting against 0.0030 for the shareholder base, because shifting enters the entity layer directly and the entity layer is what the annual object collects. Both claims in the paper are therefore properties of the marginal reading."
+  "lever_finding": "On the marginal object the taxable shareholder base outranks profit shifting; on the annual object the order reverses, because the shifted share enters the entity layer and the entity layer is what the annual object collects and the marginal object washes out. Both orderings are reported in the paper."
 }

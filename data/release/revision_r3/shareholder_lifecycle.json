@@ -17,12 +17,12 @@
   },
   "swept": {
     "payout": [
-      0.35,
-      0.55
+      0.6419,
+      0.7083
     ],
     "withholding_eff": [
-      0.05,
-      0.2
+      0.0689,
+      0.182
     ],
     "ordinary_rate_retirement": [
       0.12,
@@ -38,8 +38,8 @@
     ]
   },
   "central_parameters": {
-    "payout": 0.45,
-    "withholding_eff": 0.15,
+    "payout": 0.6815,
+    "withholding_eff": 0.0689,
     "ordinary_rate_retirement": 0.18,
     "roth_share_of_dc": 0.1,
     "gains_rate": 0.194
@@ -53,19 +53,19 @@
   },
   "layer": {
     "published_assembly": 0.0315,
-    "marginal_decomposed": 0.0672,
-    "annual_decomposed": 0.109,
+    "marginal_decomposed": 0.0643,
+    "annual_decomposed": 0.106,
     "marginal_range": [
-      0.0355,
-      0.0969
+      0.0523,
+      0.1096
     ],
     "annual_range": [
-      0.0629,
-      0.1534
+      0.0797,
+      0.1661
     ],
-    "of_which_taxable_accounts": 0.0389,
-    "of_which_foreign_withholding": 0.0284,
+    "of_which_taxable_accounts": 0.0446,
+    "of_which_foreign_withholding": 0.0197,
     "of_which_traditional_retirement_annual": 0.0418
   },
-  "finding": "The base shareholder layer is 0.0315. Decomposed by holder and treatment it is 0.0672 on the marginal object, taking foreign withholding and the dividend split together rather than one at a time, and 0.1090 on the annual object, because traditional retirement distributions are taxed at ordinary rates. The headline ownership figure conflates three treatments: 0.232 of US equity sits in traditional retirement arrangements, untaxed on the margin and taxed annually on distribution; 0.42 is held abroad and bears withholding on dividends only; and only 0.088 is never reached by any federal tax at all."
+  "finding": "The base shareholder layer is 0.0315. Decomposed by holder and treatment it is 0.0643 on the marginal object, taking foreign withholding and the dividend split together rather than one at a time, and 0.1060 on the annual object, because traditional retirement distributions are taxed at ordinary rates. The headline ownership figure conflates three treatments: 0.232 of US equity sits in traditional retirement arrangements, untaxed on the margin and taxed annually on distribution; 0.42 is held abroad and bears withholding on dividends only; and only 0.088 is never reached by any federal tax at all."
 }

@@ -140,6 +140,27 @@ def main():
              min(v["central"] for v in res["marginal"].values()),
              max(v["central"] for v in res["marginal"].values()))
 
+    # lever ranking on each object: each component across its whole sourced range with the
+    # others at central values. Computed here rather than appended afterwards so the file is
+    # reproducible from one run.
+    def swing(fn, name):
+        lo = dict(CEN); lo[name] = min(BOX[name])
+        hi = dict(CEN); hi[name] = max(BOX[name])
+        return abs(fn(hi) - fn(lo))
+
+    res["lever_ranking"] = {}
+    for obj, fn in (("annual", tau_annual),
+                    ("marginal_barkai",
+                     lambda q: tau_marginal(q, K.RENT_READINGS["Barkai"]))):
+        rows = sorted(((swing(fn, n), n) for n in BOX), reverse=True)
+        res["lever_ranking"][obj] = {n: round(s, 4) for s, n in rows}
+        res["lever_ranking"][obj + "_order"] = [n for _, n in rows]
+    res["lever_finding"] = (
+        "On the marginal object the taxable shareholder base outranks profit shifting; on the "
+        "annual object the order reverses, because the shifted share enters the entity layer "
+        "and the entity layer is what the annual object collects and the marginal object "
+        "washes out. Both orderings are reported in the paper.")
+
     (OUT / "annual_revenue_bridge.json").write_text(json.dumps(res, indent=2))
     print(json.dumps({k: v for k, v in res.items() if k != "derivation"}, indent=2))
 

@@ -36,10 +36,15 @@ WHAT THE DECOMPOSITION FINDS. Three corrections, and all three raise the layer.
      taxable-account layer into a currently taxed dividend part and a deferred gains part
      raises it.
 
-STATUS. The holder shares and the Roth share are SOURCED. The dividend payout share, the
-effective foreign withholding rate, the ordinary rate on retirement distributions and the
-Roth share of defined contribution assets are SWEPT, because no aggregate figure for them
-was located, and every output is reported as a range over that box.
+STATUS. SOURCED: the holder shares, the Roth share of individual retirement accounts, the
+step-up share, the dividend payout share (NIPA) and the effective withholding rate on
+dividends paid abroad (IRS SOI, with both endpoints of its range published). STILL SWEPT:
+the ordinary rate applying to retirement distributions and the Roth share of defined
+contribution assets, because no aggregate figure for either was located. Every output is
+reported as a range over the box.
+
+Sourcing the first two moved the decomposed layer by 0.003 and narrowed every range. No
+conclusion in the paper turns on them, which is the useful thing to be able to say.
 """
 import itertools
 import json
@@ -64,16 +69,44 @@ GAINS_STEP_UP = 0.469             # CBO 2014, accrued gains never taxed at death
 WITHHOLDING_STATUTORY = 0.30      # 26 USC 871(a) and 881(a)
 WITHHOLDING_TREATY_STD = 0.15     # standard portfolio rate in the major US treaties
 
-# ---- SWEPT, with the reason each could not be sourced recorded in the paper.
+# ---- NOW SOURCED. Two parameters that were swept in the first version.
+#
+# PAYOUT. NIPA net corporate dividend payments over corporate profits after tax, from the
+# FRED series DIVIDEND and CPATAX. Summed over the window rather than averaging ratios:
+#   2015-2024 0.6815   2020-2024 0.7083   2010-2024 0.6419
+# The central value is the ten-year figure and the range spans the three windows. Note this
+# is well above the 0.35 to 0.55 first swept, which raises the taxable-account layer because
+# dividends are taxed on receipt with no deferral benefit.
+PAYOUT_CENTRAL, PAYOUT_RANGE = 0.6815, [0.6419, 0.7083]
+#
+# WITHHOLDING. IRS SOI, Foreign Recipients of US Income under Chapter 3, Form 1042-S, CY
+# 2019. Published figures: total US-source income to foreign persons 1,125.7 billion dollars
+# of which dividends 245.2 billion; total tax withheld 21.1 billion; 89.8 percent of all
+# income exempt from withholding; dividends 80.8 percent of the income that was subject to
+# tax; and dividend income subject to withholding taxed at an average effective rate of 18.2
+# percent. Those give dividends subject to tax of 92.8 billion, tax on dividends of 16.9
+# billion, and an effective rate on ALL dividends paid abroad of 0.0689. The derivation
+# cross-checks: 16.9 of 21.1 is 80.0 percent of all withholding from dividends, which is
+# what the SOI narrative says. The range runs from that all-dividend rate to the published
+# rate on the taxed subset, so both endpoints are sourced.
+WITHHOLDING_ALL_DIVIDENDS = 0.0689
+WITHHOLDING_RANGE = [0.0689, 0.1820]
+
+# ---- STILL SWEPT, with the reason recorded in the paper.
 BOX = {
-    "payout": [0.35, 0.55],             # dividend share of after-tax corporate earnings
-    "withholding_eff": [0.05, 0.20],    # effective collected rate, treaty standard 0.15
+    "payout": PAYOUT_RANGE,
+    "withholding_eff": WITHHOLDING_RANGE,
+    # no aggregate effective rate on retirement distributions was located
     "ordinary_rate_retirement": [0.12, 0.24],
+    # no asset share located. ICI and Vanguard report that 86 percent of plans offer a Roth
+    # option in 2024 but only 18 percent of eligible participants use it, and designated
+    # Roth balances are young, so the asset share is well below the participation share.
     "roth_share_of_dc": [0.05, 0.15],
     "gains_rate": list(K.U["shareholder_rate"]["range"]),
 }
 CEN = {k: float(np.mean(v)) for k, v in BOX.items()}
-CEN["withholding_eff"] = WITHHOLDING_TREATY_STD
+CEN["payout"] = PAYOUT_CENTRAL
+CEN["withholding_eff"] = WITHHOLDING_ALL_DIVIDENDS
 NAMES = list(BOX)
 
 

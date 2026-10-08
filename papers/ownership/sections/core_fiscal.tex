@@ -286,8 +286,22 @@ The layer rises from \result{LayerPublished} percent as published to
 \result{LayerMarginalDecomp} percent on the marginal object, of which
 \result{LayerForeignPart} points is foreign withholding, and to \result{LayerAnnualDecomp}
 percent on the annual object, the further \result{LayerTradPart} points being retirement
-distributions. Four of its inputs could not be sourced and are swept; the ranges below carry
-that box.
+distributions.
+
+Four inputs to the layer were swept in an earlier draft and two are now sourced. The dividend
+payout share is net corporate dividend payments over corporate profits after tax in the national
+accounts, \result{PayoutCentral} on the ten-year window, which is well above the judgement
+interval it replaces and raises the taxable-account part because dividends are taxed on receipt
+with no deferral benefit. The effective withholding rate on dividends paid abroad comes from the
+Internal Revenue Service data on foreign recipients of US income: of \result{SoiDividendsBn} billion
+dollars of dividends paid to foreign persons in 2019, \result{SoiDivSubjectPct} percent was subject
+to withholding and that part was taxed at \result{SoiRateOnTaxed} percent, giving an effective rate on
+all dividends paid abroad of \result{SoiRateAllDiv} percent. The derivation reproduces the published
+total: tax on dividends is \result{SoiDivShareOfWithholding} percent of all withholding, which is what
+the source reports. Both endpoints of the range are published figures rather than judgements.
+The two that remain swept are the ordinary rate applying to retirement distributions and the Roth
+share of defined contribution assets, for the reasons at L4. Sourcing the first two moved the
+layer by \result{LayerSourcingMove} points and narrowed every range below.
 
 \paragraph{What it gives, and it goes against this paper.} Each rate is compared with the
 requirement computed on its own jurisdictional basis, which a first pass of this exercise failed
