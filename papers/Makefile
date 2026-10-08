@@ -15,7 +15,7 @@ SHARED := ../paper
 A      := accounts
 B      := ownership
 A_NAME := Labor_Backing_Accounts
-B_NAME := Marginal_Wedge_or_Annual_Revenue
+B_NAME := Can_Capital_Taxes_Replace_Wage_Tax_Revenue
 
 .PHONY: all accounts ownership qa clean figures macros
 
