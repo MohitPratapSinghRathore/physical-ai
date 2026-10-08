@@ -33,3 +33,4 @@ papers/*/*.fdb_latexmk
 papers/*/*.docx
 papers/*/main_docx.tex
 papers/*/references.bib
+dist/

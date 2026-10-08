@@ -383,10 +383,11 @@ The constraint that binds the shareholder layer is who owns the claims. About \r
 of US corporate equity sits outside taxable accounts, leaving \result{ThetaTaxable} percent in them.
 That headline figure should be read with the decomposition of
 Section~\ref{sec:annual}, which splits it into holdings untaxed on the margin but taxed
-annually on distribution, holdings bearing withholding, and the \result{NeverTaxedShare} percent that no
-federal tax reaches at all. Taking it as a share beyond reach overstates the case, and the
+annually on distribution, holdings bearing withholding, and the \result{NoOwnerTaxShare} percent that no
+\emph{owner-level} federal tax reaches. Those holdings still bear the entity tax, so the share is
+outside the shareholder layer and not outside federal tax. Taking it as a share beyond reach overstates the case, and the
 decomposition is why this section no longer carries the paper. On the sourced range the taxable
-share runs \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
+share runs \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
 \citep{RosenthalAustin2016,RosenthalBurke2020,RosenthalMucciolo2024}. Of the gains that do accrue
 there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, on 2014 data
 \citep{CBO2014}, and what is realized is realized late, deferral cutting the present value by a
@@ -445,10 +446,13 @@ adds \result{ShShiftAlone} percentage points and eliminating deferral adds
 outlier at \result{ShThetaAlone}.
 
 The alone column understates the ownership mechanisms because they are complements: fixing
-deferral makes the taxable base matter more and the reverse. The Shapley attribution, which
-averages over every order of removal and sums exactly to the joint effect of
-\result{ShJoint} points, puts the taxable base at \result{ShThetaShapley}, deferral at
-\result{ShDeferShapley} and profit shifting at \result{ShShiftShapley}.
+deferral makes the taxable base matter more and the reverse, which is why the attribution
+averages over every order of removal and sums to the joint effect. \textbf{The levels in both
+columns are from the first-pass shareholder layer and we do not quote them as results.}
+Decomposing the layer changes what the mechanisms are, so the point attributions do not carry
+over, and recomputing them would mean redefining the three mechanisms in holder-group terms,
+which we have not done. The table stays because withdrawing it would hide the first pass rather
+than correct it. Only the ordering is used in the argument.
 
 \paragraph{The ordering holds on one object and reverses on the other.} Everything above is
 computed on the marginal wedge, and the comparison does not survive the move to annual revenue.
@@ -463,11 +467,17 @@ collects and the marginal object washes out. We therefore do not claim that owne
 harder than profit shifting as a general matter. It does so on the marginal wedge, it does not on
 annual revenue, and a reader who cares about collected revenue should take the second.
 
-So the comparison the title draws is this one. The single largest mechanism, the taxable
-shareholder base, is about \result{ShRatioTheta} times profit shifting. The two ownership
-mechanisms together are about \result{ShRatioPair} times it, and that figure is a package and is
-labelled as one. What does not hold is a claim that every ownership mechanism individually dwarfs
-shifting: deferral does not.
+\textbf{The ratios above belong to the superseded layer and are not the paper's comparison.}
+They were computed before the shareholder layer was decomposed, and an earlier version of this
+section concluded from them that the ownership package is about \result{ShRatioPair} times profit
+shifting. On the decomposed layer the ratio of the ownership counterfactual to the
+profit-shifting one is \result{CfRatioFed} federally, which is the figure the introduction and the
+conclusion use, and it is what we claim. The Shapley attributions in
+Table~\ref{tab:counterfactual} are retained as the record of the first pass and nothing in the
+argument rests on their levels. What survives the recomputation is the ordering: on the
+marginal rate the taxable shareholder base is the largest of the three mechanisms and profit
+shifting the smallest, and deferral taken alone is only modestly larger than shifting, so no
+claim that every ownership mechanism individually dwarfs shifting is available.
 
 Neither counterfactual is a policy. No reform abolishes profit shifting or places all equity in
 taxable hands with no deferral, so the rows bound what each mechanism can contribute rather than
