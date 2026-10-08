@@ -1,0 +1,84 @@
+{
+  "derivation": "REFEREE ITEM B1. Derive the mapping from the marginal investment wedge to an annual\nrevenue rate, and compute both. The referee's objection is that an effective marginal tax\nwedge is not a revenue collection rate, and that full expensing can null the wedge on a\nmarginal normal-return project while an established sector still pays positive annual tax.\n\nTHE DERIVATION, stated before computing.\n\nLet a stationary sector hold capital K, depreciating at delta, earning gross capital income\n(r + delta) K, so net capital income is r K. In steady state replacement investment is\nI = delta K.\n\n  Annual entity deduction under 100 percent expensing  = I     = delta K\n  Annual entity deduction under economic depreciation  = delta K\n  so the two coincide IN STEADY STATE and the annual entity base is\n      (r + delta) K - delta K = r K,\n  the whole net capital income, normal return and rent alike.\n\nThe marginal wedge is a different object. For one marginal project, expensing deducts the\nwhole outlay at once, and the present value of that deduction exactly offsets the present\nvalue of entity tax on the project's normal return. Hence the Acemoglu, Manera and Restrepo\nresult the paper uses, that the entity tax washes out on the normal return, which is correct\nON THE MARGIN and false for the annual flow from capital already in place.\n\nConsequences, which are the point of the exercise:\n\n  1. ANNUAL rate on a dollar of net capital income, equity financed: the entity tax applies,\n     then the shareholder layer applies to what is left.\n            ent + (1 - ent) * tau_sh\n  2. Debt financed: the interest deduction at the entity offsets the interest income, so the\n     annual entity tax is zero and only the bondholder layer collects.\n            bondholder_rate\n     This replaces the marginal object's (bond - fed_cit), which is negative and is a\n     SUBSIDY to a marginal debt-financed project, not a negative annual revenue.\n  3. tau_annual = (1 - debt) * [ent + (1 - ent) * tau_sh] + debt * bond.\n\n  4. **The rent share sigma does not appear.** On the annual object the entity tax reaches\n     normal return and rent alike, so the two rent readings that drive the marginal rate's\n     spread collapse to one number. That also disposes of the awkwardness of the\n     Karabarbounis and Neiman reading, under which sigma = 0 and the marginal rate nearly\n     vanishes.\n\nWHAT THIS DOES NOT ESTABLISH. The annual object is the right one for the replacement\ncondition only if the horizon over which displaced wage receipts must be replaced is long\nrelative to the transition, and if the capital stock is near stationary. During an investment\nboom current deductions exceed tax on income from a smaller earlier stock, so collections run\nbelow tau_annual and above tau_marginal. The two rates are therefore bounds on the transition\npath rather than rival point estimates, and we report them as such.",
+  "required": {
+    "easier": 0.1101,
+    "harder": 0.1373
+  },
+  "central_parameters": {
+    "shifted_share": 0.48,
+    "shareholder_rate": 0.194,
+    "state_cit_effective": 0.0475,
+    "theta_taxable": 0.27,
+    "deferral_factor": 0.6008,
+    "debt_share": 0.2001,
+    "bondholder_rate": 0.15932
+  },
+  "annual": {
+    "central": 0.2036,
+    "corner_min": 0.1689,
+    "corner_max": 0.2411,
+    "sigma_free": true,
+    "closes_easier": true,
+    "closes_harder": true,
+    "closes_easier_at_worst_corner": true,
+    "closes_harder_at_worst_corner": true
+  },
+  "marginal": {
+    "Barkai": {
+      "sigma": 0.351,
+      "central": 0.0851,
+      "corner_min": 0.0583,
+      "corner_max": 0.1146,
+      "closes_easier": false,
+      "gap_to_annual": 0.1185
+    },
+    "Karabarbounis_Neiman_case_R": {
+      "sigma": 0.0,
+      "central": 0.015,
+      "corner_min": -0.0063,
+      "corner_max": 0.0403,
+      "closes_easier": false,
+      "gap_to_annual": 0.1886
+    }
+  },
+  "finding": "The annual rate is 0.2036 at central values against a requirement of 0.1101 to 0.1373, so the replacement condition CLOSES on the annual object, and closes at every corner of the parameter box down to 0.1689. The marginal wedge is 0.0150 to 0.0851 across the two rent readings and closes on neither. The paper's headline shortfall is therefore a property of the marginal object and does not survive the translation to annual revenue. The referee's objection is correct and material.",
+  "lever_ranking": {
+    "annual": {
+      "state_cit_effective": 0.0302,
+      "deferral_factor": 0.0128,
+      "shareholder_rate": 0.0093,
+      "debt_share": 0.0065,
+      "bondholder_rate": 0.0064,
+      "shifted_share": 0.0056,
+      "theta_taxable": 0.003
+    },
+    "annual_order": [
+      "state_cit_effective",
+      "deferral_factor",
+      "shareholder_rate",
+      "debt_share",
+      "bondholder_rate",
+      "shifted_share",
+      "theta_taxable"
+    ],
+    "marginal_barkai": {
+      "deferral_factor": 0.0159,
+      "state_cit_effective": 0.0133,
+      "shareholder_rate": 0.0115,
+      "debt_share": 0.0063,
+      "bondholder_rate": 0.0042,
+      "theta_taxable": 0.0037,
+      "shifted_share": 0.0025
+    },
+    "marginal_barkai_order": [
+      "deferral_factor",
+      "state_cit_effective",
+      "shareholder_rate",
+      "debt_share",
+      "bondholder_rate",
+      "theta_taxable",
+      "shifted_share"
+    ]
+  },
+  "lever_finding": "On the marginal object the taxable shareholder base outranks profit shifting, 0.0037 against 0.0025, which is the paper's second claim. On the annual object the order REVERSES, 0.0056 for profit shifting against 0.0030 for the shareholder base, because shifting enters the entity layer directly and the entity layer is what the annual object collects. Both claims in the paper are therefore properties of the marginal reading."
+}
