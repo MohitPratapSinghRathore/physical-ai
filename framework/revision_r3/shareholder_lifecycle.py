@@ -117,7 +117,10 @@ def layers(p):
             + h["defined_benefit"]
             + h["defined_contribution"] * (1 - p["roth_share_of_dc"]))
     roth = h["ira"] * ROTH_SHARE_OF_IRA + h["defined_contribution"] * p["roth_share_of_dc"]
-    exempt = h["nonprofits"] + h["life_insurance_separate"] + h["government_and_529"] + roth
+    # Roth is reported as its own group, so it must NOT also sit in the exempt group. An
+    # earlier version added it to both, which made the five reported groups sum to 1.028
+    # instead of the 1.01 the source itself rounds to. Referee caught it.
+    exempt = h["nonprofits"] + h["life_insurance_separate"] + h["government_and_529"]
 
     # taxable accounts: dividends taxed on receipt, gains deferred and partly stepped up
     gains_eff = p["gains_rate"] * (1 - GAINS_STEP_UP)
@@ -159,9 +162,18 @@ def main():
         "central_parameters": {k: round(v, 4) for k, v in CEN.items()},
         "holder_groups": {"traditional_retirement": round(c["trad_share"], 4),
                           "roth": round(c["roth_share"], 4),
-                          "never_taxed": round(c["exempt_share"], 4),
+                          "no_owner_level_tax": round(c["exempt_share"], 4),
                           "taxable_accounts": HOLDERS["taxable_accounts"],
                           "foreign": HOLDERS["foreign"]},
+        "groups_sum": round(c["trad_share"] + c["roth_share"] + c["exempt_share"]
+                            + HOLDERS["taxable_accounts"] + HOLDERS["foreign"], 4),
+        "source_shares_sum": round(sum(HOLDERS.values()), 4),
+        "groups_note": ("The five groups partition the holder shares and sum to the same "
+                        "1.01 the source itself rounds to; they are not forced to one. The "
+                        "group carrying no owner-level tax is nonprofits, government and 529 "
+                        "plans, and life insurance separate accounts. Those holdings still "
+                        "bear the ENTITY-level tax, so the claim is about the shareholder "
+                        "layer and not about federal tax in total."),
         "layer": {
             "published_assembly": round(published_layer(CEN), 4),
             "marginal_decomposed": round(c["marginal"], 4),
@@ -179,8 +191,9 @@ def main():
         "traditional retirement distributions are taxed at ordinary rates. The headline "
         "ownership figure conflates three treatments: {:.3f} of US equity sits in traditional "
         "retirement arrangements, untaxed on the margin and taxed annually on distribution; "
-        "{:.2f} is held abroad and bears withholding on dividends only; and only {:.3f} is "
-        "never reached by any federal tax at all."
+        "{:.2f} is held abroad and bears withholding on dividends only; and only {:.3f} bears "
+        "no owner-level federal tax at all, those holdings still bearing the entity tax. The "
+        "five groups sum to the 1.01 the source itself rounds to."
     ).format(published_layer(CEN), c["marginal"], c["annual"],
              c["trad_share"], HOLDERS["foreign"], c["exempt_share"])
     (OUT / "shareholder_lifecycle.json").write_text(json.dumps(res, indent=2))

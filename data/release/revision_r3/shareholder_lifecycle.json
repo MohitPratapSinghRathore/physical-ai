@@ -47,10 +47,13 @@
   "holder_groups": {
     "traditional_retirement": 0.232,
     "roth": 0.018,
-    "never_taxed": 0.088,
+    "no_owner_level_tax": 0.07,
     "taxable_accounts": 0.27,
     "foreign": 0.42
   },
+  "groups_sum": 1.01,
+  "source_shares_sum": 1.01,
+  "groups_note": "The five groups partition the holder shares and sum to the same 1.01 the source itself rounds to; they are not forced to one. The group carrying no owner-level tax is nonprofits, government and 529 plans, and life insurance separate accounts. Those holdings still bear the ENTITY-level tax, so the claim is about the shareholder layer and not about federal tax in total.",
   "layer": {
     "published_assembly": 0.0315,
     "marginal_decomposed": 0.0643,
@@ -67,5 +70,5 @@
     "of_which_foreign_withholding": 0.0197,
     "of_which_traditional_retirement_annual": 0.0418
   },
-  "finding": "The base shareholder layer is 0.0315. Decomposed by holder and treatment it is 0.0643 on the marginal object, taking foreign withholding and the dividend split together rather than one at a time, and 0.1060 on the annual object, because traditional retirement distributions are taxed at ordinary rates. The headline ownership figure conflates three treatments: 0.232 of US equity sits in traditional retirement arrangements, untaxed on the margin and taxed annually on distribution; 0.42 is held abroad and bears withholding on dividends only; and only 0.088 is never reached by any federal tax at all."
+  "finding": "The base shareholder layer is 0.0315. Decomposed by holder and treatment it is 0.0643 on the marginal object, taking foreign withholding and the dividend split together rather than one at a time, and 0.1060 on the annual object, because traditional retirement distributions are taxed at ordinary rates. The headline ownership figure conflates three treatments: 0.232 of US equity sits in traditional retirement arrangements, untaxed on the margin and taxed annually on distribution; 0.42 is held abroad and bears withholding on dividends only; and only 0.070 bears no owner-level federal tax at all, those holdings still bearing the entity tax. The five groups sum to the 1.01 the source itself rounds to."
 }

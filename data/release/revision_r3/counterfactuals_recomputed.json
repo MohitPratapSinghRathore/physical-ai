@@ -1,0 +1,123 @@
+{
+  "definitions": ", unchanged from the published version so the comparison is like for like.\n  baseline                  the layer as assembled\n  no_profit_shifting        shifted share set to zero, so every dollar is booked domestically\n  complete_ownership_reach  the shareholder layer at its no-friction value: every share in a\n                            taxable account, nothing deferred, nothing stepped up at death, so\n                            the layer collapses to the statutory gains rate\n  both                      the two together, with the interaction reported\n\nThe ownership counterfactual is the one the decomposition changes, because the baseline layer\nit is measured against is no longer the same object.",
+  "layers": {
+    "published": 0.0315,
+    "decomposed": 0.0643,
+    "no_friction": 0.194
+  },
+  "required": {
+    "federal": 0.1101,
+    "all_government": 0.124
+  },
+  "readings": {
+    "Barkai": {
+      "federal": {
+        "published_layer": {
+          "baseline": 0.0785,
+          "no_profit_shifting": 0.0922,
+          "complete_ownership_reach": 0.2102,
+          "both": 0.2216,
+          "gain_from_removing_shifting": 0.0137,
+          "gain_from_ownership_reach": 0.1317,
+          "interaction": -0.0023,
+          "ratio_ownership_to_shifting": 9.6,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        },
+        "decomposed_layer": {
+          "baseline": 0.1051,
+          "no_profit_shifting": 0.1183,
+          "complete_ownership_reach": 0.2102,
+          "both": 0.2216,
+          "gain_from_removing_shifting": 0.0132,
+          "gain_from_ownership_reach": 0.1052,
+          "interaction": -0.0018,
+          "ratio_ownership_to_shifting": 7.9,
+          "shifting_alone_clears": true,
+          "ownership_alone_clears": true
+        }
+      },
+      "all_government": {
+        "published_layer": {
+          "baseline": 0.0851,
+          "no_profit_shifting": 0.1049,
+          "complete_ownership_reach": 0.2157,
+          "both": 0.2323,
+          "gain_from_removing_shifting": 0.0198,
+          "gain_from_ownership_reach": 0.1306,
+          "interaction": -0.0033,
+          "ratio_ownership_to_shifting": 6.6,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        },
+        "decomposed_layer": {
+          "baseline": 0.1115,
+          "no_profit_shifting": 0.1306,
+          "complete_ownership_reach": 0.2157,
+          "both": 0.2323,
+          "gain_from_removing_shifting": 0.0192,
+          "gain_from_ownership_reach": 0.1043,
+          "interaction": -0.0027,
+          "ratio_ownership_to_shifting": 5.4,
+          "shifting_alone_clears": true,
+          "ownership_alone_clears": true
+        }
+      }
+    },
+    "Karabarbounis_Neiman_case_R": {
+      "federal": {
+        "published_layer": {
+          "baseline": 0.015,
+          "no_profit_shifting": 0.015,
+          "complete_ownership_reach": 0.145,
+          "both": 0.145,
+          "gain_from_removing_shifting": 0.0,
+          "gain_from_ownership_reach": 0.13,
+          "interaction": 0.0,
+          "ratio_ownership_to_shifting": null,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        },
+        "decomposed_layer": {
+          "baseline": 0.0413,
+          "no_profit_shifting": 0.0413,
+          "complete_ownership_reach": 0.145,
+          "both": 0.145,
+          "gain_from_removing_shifting": 0.0,
+          "gain_from_ownership_reach": 0.1038,
+          "interaction": 0.0,
+          "ratio_ownership_to_shifting": null,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        }
+      },
+      "all_government": {
+        "published_layer": {
+          "baseline": 0.015,
+          "no_profit_shifting": 0.015,
+          "complete_ownership_reach": 0.145,
+          "both": 0.145,
+          "gain_from_removing_shifting": 0.0,
+          "gain_from_ownership_reach": 0.13,
+          "interaction": 0.0,
+          "ratio_ownership_to_shifting": null,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        },
+        "decomposed_layer": {
+          "baseline": 0.0413,
+          "no_profit_shifting": 0.0413,
+          "complete_ownership_reach": 0.145,
+          "both": 0.145,
+          "gain_from_removing_shifting": 0.0,
+          "gain_from_ownership_reach": 0.1038,
+          "interaction": 0.0,
+          "ratio_ownership_to_shifting": null,
+          "shifting_alone_clears": false,
+          "ownership_alone_clears": true
+        }
+      }
+    }
+  },
+  "finding": "On the Barkai reading and the federal basis, the published layer gave a baseline of 0.0785 with gains of +0.0137 from ending profit shifting and +0.1317 from completing the shareholder tax, a ratio of 9.6. On the decomposed layer the baseline is 0.1051 and the gains are +0.0132 and +0.1052, a ratio of 7.9. The ownership channel shrinks because the baseline layer it is measured against is already larger once withholding and the dividend split are counted: there is less friction left to remove. The qualitative ordering on the marginal object survives, and the paper reports the decomposed figures."
+}

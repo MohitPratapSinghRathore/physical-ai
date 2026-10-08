@@ -736,7 +736,27 @@ def main():
     _sl = load("data/release/revision_r3/shareholder_lifecycle.json")
     _tkd = load("data/release/revision_r3/tau_k_with_decomposed_layer.json")
     _hg, _ly = _sl["holder_groups"], _sl["layer"]
-    R["NeverTaxedShare"] = pct(_hg["never_taxed"], 1)
+    R["NoOwnerTaxShare"] = pct(_hg["no_owner_level_tax"], 1)
+    R["NeverTaxedShare"] = R["NoOwnerTaxShare"]   # retained alias
+    # counterfactuals recomputed on the decomposed layer. The published set was built on
+    # the superseded layer, so the intro and conclusion were carrying a 7.8 pct baseline
+    # against a 10.5 pct fiscal section. These supersede them.
+    _cf = load("data/release/revision_r3/counterfactuals_recomputed.json")
+    for _b, _tag in (("federal", "Fed"), ("all_government", "AllGov")):
+        _d = _cf["readings"]["Barkai"][_b]["decomposed_layer"]
+        _o = _cf["readings"]["Barkai"][_b]["published_layer"]
+        R["CfBase" + _tag] = pct(_d["baseline"], 1)
+        R["CfNoShift" + _tag] = pct(_d["no_profit_shifting"], 1)
+        R["CfOwnReach" + _tag] = pct(_d["complete_ownership_reach"], 1)
+        R["CfGainShift" + _tag] = pct(_d["gain_from_removing_shifting"], 2)
+        R["CfGainOwn" + _tag] = pct(_d["gain_from_ownership_reach"], 2)
+        R["CfRatio" + _tag] = f'{_d["ratio_ownership_to_shifting"]:.1f}'
+        R["CfShiftClears" + _tag] = "clears" if _d["shifting_alone_clears"] else "does not clear"
+        R["CfBaseOld" + _tag] = pct(_o["baseline"], 1)
+        R["CfGainOwnOld" + _tag] = pct(_o["gain_from_ownership_reach"], 2)
+        R["CfRatioOld" + _tag] = f'{_o["ratio_ownership_to_shifting"]:.1f}'
+
+    R["GroupsSum"] = f'{_sl["groups_sum"]:.2f}'
     R["TradRetireShare"] = pct(_hg["traditional_retirement"], 1)
     R["RothShare"] = pct(_hg["roth"], 1)
     R["ForeignEquityShare"] = pct(_hg["foreign"], 0)

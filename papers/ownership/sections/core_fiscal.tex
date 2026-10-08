@@ -105,7 +105,10 @@ federal balance sheet.
 
 On the \emph{federal-only} version the state corporate term is set to zero, giving an assembled
 rate of \result{TauKFederalOnly} percent against a required \result{RequiredFedEasy} to
-\result{RequiredFedHard} percent. On the \emph{all-government} version the state corporate term
+\result{RequiredFedHard} percent. That figure is this section's first pass, on the shareholder
+layer as assembled here; Section~\ref{sec:annual} decomposes the layer and corrects it to
+\result{CfBaseFed} percent, and every comparison in the paper's conclusions uses the corrected
+value. On the \emph{all-government} version the state corporate term
 stays and the labor side gains the state and local wage-linked tax, worth
 \result{StateLocalLaborAddOn} percent of the wage bill, giving \result{TauKAllGovernment} percent
 against \result{RequiredAllGovEasy} to \result{RequiredAllGovHard} percent. Making the
@@ -323,12 +326,14 @@ against \result{RequiredFedEasy} percent on the easier reading, a gap of
 government the gap is \result{MargGapAllGov} points and the range straddles likewise.
 
 \textbf{We therefore do not report a revenue shortfall.} It closes on the annual object by about
-ten points and is indistinguishable from zero on the marginal one. What the two rates bound is a
-transition: while investment grows, current deductions exceed tax on income from a smaller
-earlier stock, so collections run below $\tau_k^{\text{annual}}$, and as the stock matures they
-approach it. Which comparator is right depends on the horizon over which displaced wage receipts
-must be replaced, which is a question about the speed of displacement that this paper does not
-settle. The headline of the earlier version of this work, that the capital tax falls short of
+ten points and is indistinguishable from zero on the marginal one. We also do not claim the two rates bracket a
+transition path. Both are stationary objects: Equation~\ref{eq:annual} assumes a steady state,
+and a steady-state comparison establishes nothing about what is collected while a capital stock
+is still building. The direction is intuitive, since during an investment boom current
+deductions exceed tax on income from a smaller earlier stock, but an intuition is not a bound
+and we do not model the path. Which comparator is right depends on the horizon over which
+displaced wage receipts must be replaced, which is a question about the speed of displacement
+that this paper does not settle. The headline of the earlier version of this work, that the capital tax falls short of
 what is lost on wages, should be read as conditional on the marginal reading and on a
 shareholder layer that omitted withholding, and not as a finding about annual revenue.
 
@@ -374,7 +379,11 @@ the comparison. They are kept apart.
 \begin{table}[htbp]
 \centering
 \caption{Counterfactual contribution of each mechanism to the assembled marginal rate,
-federal-only basis, Barkai rent reading. ``Alone'' sets that mechanism to its no-friction value
+federal-only basis, Barkai rent reading. \textbf{Computed on the shareholder layer as first
+assembled, not on the decomposed layer of Section~\ref{sec:annual}.} The two-way
+counterfactuals are recomputed on the decomposed layer in the text above and shrink there,
+because a larger baseline leaves less friction to remove; the ordering of the mechanisms is what
+survives the recomputation, and the point attributions in this table do not. ``Alone'' sets that mechanism to its no-friction value
 with the others at sourced centrals. The Shapley column averages each mechanism's marginal
 contribution over all six orders of removal and sums exactly to the joint effect. Scenario.}
 \label{tab:counterfactual}

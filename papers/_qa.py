@@ -73,6 +73,41 @@ def main():
     found = [w for w in tells if w.lower() in t.lower()]
     rows.append(("AI-tell phrases", len(found), "0", not found))
 
+    # Mangled control sequences. Writing LaTeX through a shell heredoc can turn the
+    # backslash of \result or \ref into a bare carriage return, leaving a plain CR followed
+    # by "esult{...}" or "ef{...}". The macro stays defined and no "??" appears, so every
+    # other gate passes while the PDF prints "esultFoo". Four of these reached a reviewer.
+    # A CR not followed by LF is never legitimate in these sources.
+    CR = bytes([13])
+    LF = bytes([10])
+    mangled = []
+    for f in src:
+        b = f.read_bytes()
+        for i in range(len(b)):
+            if b[i:i + 1] == CR and b[i + 1:i + 2] != LF:
+                mangled.append(f"{f.name}: {b[i:i + 24].decode('latin-1')!r}")
+    rows.append(("mangled control seqs", len(mangled), "0", not mangled))
+
+    # Repairing the above by restoring only a backslash leaves \esult or \ef, because the
+    # letter after the backslash was consumed into the carriage return. LaTeX in nonstopmode
+    # then prints the argument and drops the command, so the PDF shows "MultifamilyZeroMovePct"
+    # with no stem to find. Check the SOURCE for the truncated forms, not the output.
+    trunc = []
+    for f in src:
+        b = f.read_bytes()
+        for bad in (b"\\esult", b"\\ef{", b"\\aragraph", b"\\esultp"):
+            if bad in b:
+                trunc.append(f"{f.name}: {bad.decode('latin-1')}")
+    rows.append(("truncated macro stems", len(trunc), "0", not trunc))
+
+    # Any undefined control sequence in the build log is this class of damage or worse.
+    log = here / "main.log"
+    undef = []
+    if log.exists():
+        lt = log.read_text(encoding="utf-8", errors="replace")
+        undef = re.findall(r"Undefined control sequence.*", lt)
+    rows.append(("undefined control seqs", len(undef), "0", not undef))
+
     # limitations <-> future research must pair one to one
     nL = len(re.findall(r"\\paragraph\{L\d+\.", src_text))
     nF = len(re.findall(r"\\item\[FR\d+\]", src_text))
@@ -84,6 +119,16 @@ def main():
     for name, val, req, passed in rows:
         ok &= passed
         print(f"{name:30s} {str(val):>8s}  {req:<18s} {'PASS' if passed else 'FAIL'}")
+    if mangled:
+        print("\nMANGLED CONTROL SEQUENCES (a carriage return replacing a backslash):")
+        for x in mangled:
+            print("   ", x)
+    if trunc:
+        print("\nTRUNCATED MACRO STEMS IN THE SOURCE:", ", ".join(trunc))
+    if undef:
+        print("\nUNDEFINED CONTROL SEQUENCES IN THE LOG:")
+        for x in undef[:8]:
+            print("   ", x.strip())
     if missing:
         print("\nmissing macros:", ", ".join(missing))
     if found:

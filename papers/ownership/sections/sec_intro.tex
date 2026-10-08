@@ -20,9 +20,11 @@ Section~\ref{sec:fiscal} builds it.
 
 Measured on fourteen biennial vintages of displaced worker data, the share of a displaced wage
 bill that returns as wages is \result{RetainedWageShare}. Assembled from sourced components on a
-consistently federal basis, the effective marginal wedge on the income that replaces those wages
-is \result{TauKFederalOnly} percent, against the \result{RequiredFedEasy} to
-\result{RequiredFedHard} percent replacement requires. On that object the condition closes only
+consistently federal basis, and after decomposing the shareholder layer by holder as
+Section~\ref{sec:annual} does, the effective marginal wedge on the income that replaces those
+wages is \result{CfBaseFed} percent, against the \result{RequiredFedEasy} to \result{RequiredFedHard}
+percent replacement requires. A first pass on an undecomposed layer gave \result{CfBaseOldFed} percent,
+and that figure is superseded wherever it still appears in the derivation. On that object the condition closes only
 where taxable capital income per displaced wage dollar reaches \result{GStarFedEasy} to
 \result{GStarFedHard}, and with output preserved that coefficient cannot exceed one.
 
@@ -37,9 +39,11 @@ everywhere, and the rent share that drives the marginal rate's entire spread dro
 algebra. The gap between the two objects is \result{AnnualMarginalGapLo} to
 \result{AnnualMarginalGapHi} points, more than any disagreement among the components.
 
-We do not treat either rate as the answer. They bound a transition: collections run below the
-annual rate while investment grows and approach it as the stock matures, so which comparator is
-right depends on the horizon over which displaced wage receipts must be replaced. Everything
+We do not treat either rate as the answer, and we do not claim the two bracket a transition
+path. Our calculation is stationary, and a stationary comparison cannot establish what is
+collected while the capital stock is still building; the direction is suggestive and the
+magnitude is not ours to assert. Which rate is the right comparator depends on the horizon over
+which displaced wage receipts must be replaced, and on a transition we do not model. Everything
 below that was framed in an earlier version of this work as a shortfall is therefore reported
 here as conditional on the marginal reading. The rest of the paper is about what is true on both
 objects and what is not.
@@ -51,12 +55,21 @@ how much the answer would change if we were wrong about it. It does not say how 
 channel costs. A well-measured channel has a narrow range and a small swing, and may still be
 the largest thing in the calculation.
 
-So we compare counterfactuals instead. Eliminating profit shifting entirely, so that no rent is
-booked abroad, raises the assembled rate from \result{CfBase} to \result{CfNoShift} percent, a
-gain of \result{CfGainShift} points that still leaves it short of the
-\result{RequiredFedEasy} percent the easier reading requires. Completing the reach of the
-shareholder tax, so that every share sits in a taxable account and nothing is deferred, raises it
-to \result{CfOwnReach} percent, a gain of \result{CfGainOwn} points, and clears the threshold.
+So we compare counterfactuals instead, and they are computed on the decomposed layer of
+Section~\ref{sec:annual} rather than on the layer an earlier draft used. Eliminating profit
+shifting entirely, so that no rent is booked abroad, raises the marginal rate from \result{CfBaseFed}
+to \result{CfNoShiftFed} percent federally, a gain of \result{CfGainShiftFed} points that still
+leaves it short of the \result{RequiredFedEasy} percent the easier reading requires, though on the
+all-government basis it \result{CfShiftClearsAllGov}. Completing the reach of the shareholder tax,
+so that every share sits in a taxable account with nothing deferred and nothing stepped up,
+raises it to \result{CfOwnReachFed} percent, a gain of \result{CfGainOwnFed} points.
+
+Both figures are smaller than the earlier draft reported, which had a baseline of \result{CfBaseOldFed}
+percent and an ownership gain of \result{CfGainOwnOldFed} points. The ownership channel shrinks
+because the baseline it is measured against is larger once withholding and the dividend split
+are counted: there is less friction left to remove. The ratio of the ownership channel to the
+profit-shifting one falls from \result{CfRatioOldFed} to \result{CfRatioFed}, so the ordering survives
+while the margin narrows.
 
 Ownership is two mechanisms rather than one, and bundling them would overstate the comparison, so
 Section~\ref{sec:levers} separates them. Attributed by Shapley value over every order of removal,
@@ -77,12 +90,14 @@ reach than the headline share suggests. About \result{ThetaUntaxable} percent of
 equity sits outside taxable accounts; decomposed by treatment, \result{TradRetireShare} percent is
 in traditional retirement arrangements, untaxed on the margin and taxed at ordinary rates on
 distribution, \result{ForeignEquityShare} percent is held abroad and bears withholding on dividends,
-and only \result{NeverTaxedShare} percent is never reached by any federal tax. Of the gains that
+and only \result{NoOwnerTaxShare} percent bears no owner-level federal tax at all, those
+holdings still bearing the entity tax. The five groups sum to the \result{GroupsSum} the source
+itself rounds to rather than to one. Of the gains that
 accrue in taxable accounts, \result{GainsUntaxedAtDeath} percent are held until death and never
 taxed on 2014 data \citep{CBO2014}. The owner's layer is \result{LayerPublished} percent as
 first assembled and \result{LayerAnnualDecomp} percent once the treatments are separated. That is a fact about the structure of
 ownership. A legislature can change a rate more easily than it can change that, which is a claim
-about political feasibility and not about arithmetic: Equation~ef{eq:condition} is satisfied by
+about political feasibility and not about arithmetic: Equation~\ref{eq:condition} is satisfied by
 any sufficiently large effective rate, and nothing here shows that no rate could close the gap.
 
 \paragraph{One structure, three places it shows up.} The same ownership concentration appears

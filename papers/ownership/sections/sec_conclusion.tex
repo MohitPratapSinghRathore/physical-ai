@@ -5,9 +5,9 @@ If income moves from labor to capital, the tax system has to collect on the seco
 on the first. We stated that requirement as a condition, assembled both of its sides from sourced
 components, and found that the answer depends on which tax rate is put into it.
 
-On a consistently federal basis the effective marginal wedge on income shifting from wages to
-capital is \result{TauKFederalOnly} percent, against the \result{RequiredFedEasy} to
-\result{RequiredFedHard} percent replacement requires. Written with an explicit pass-through
+On a consistently federal basis, with the shareholder layer decomposed by holder, the effective
+marginal wedge on income shifting from wages to capital is \result{CfBaseFed} percent, against
+the \result{RequiredFedEasy} to \result{RequiredFedHard} percent replacement requires. Written with an explicit pass-through
 coefficient the comparison becomes a boundary, and on that object the condition closes only where
 taxable capital income per displaced wage dollar reaches \result{GStarFedEasy} to
 \result{GStarFedHard}, above the ceiling of one that output-preserving displacement implies.
@@ -23,14 +23,17 @@ gap between the objects, \result{AnnualMarginalGapLo} to \result{AnnualMarginalG
 larger than any disagreement among the twelve components. We therefore do not report a revenue
 shortfall, and we do not claim that absence as a discovery: \citet{HotteTheodorakopoulosKoutroumpis2024}
 reach it from European panel data by a reduced-form route, and our structural and forward-looking
-computation on US data agrees with them. The two rates bound a transition, and placing an episode on that path requires the
-speed of displacement, which we do not measure.
+computation on US data agrees with them. We do not claim the two rates bracket a transition path.
+Both are stationary objects, and a stationary calculation cannot establish what is collected
+while a capital stock is still building. Choosing between them needs the speed of displacement
+and a transition we do not model.
 
 The reason the rate is low is the contribution, and it is not mainly profit shifting. Set against
 counterfactuals rather than against the width of an uncertainty interval, eliminating profit
-shifting entirely raises the rate by \result{CfGainShift} percentage points and leaves it short
-of the threshold, while completing the reach of the shareholder tax raises it by
-\result{CfGainOwn} and clears it. Separating ownership into its two mechanisms and attributing by
+shifting entirely raises the marginal rate by \result{CfGainShiftFed} percentage points and leaves
+it short of the federal threshold, while completing the reach of the shareholder tax raises it by
+\result{CfGainOwnFed}. Both are computed on the decomposed layer and both are smaller than the
+earlier draft reported, for the reason given in Section~\ref{sec:fiscal}. Separating ownership into its two mechanisms and attributing by
 Shapley value, the taxable shareholder base contributes \result{ShThetaShapley} points against
 \result{ShShiftShapley} for profit shifting, about \result{ShRatioTheta} times as much, while
 deferral at \result{ShDeferShapley} is a smaller margin over shifting than the bundled figure
@@ -41,7 +44,7 @@ annual rate the ordering reverses, and profit shifting moves that rate more than
 base does.
 About
 \result{ThetaUntaxable} percent of US corporate equity sits outside taxable accounts, though only
-\result{NeverTaxedShare} percent of it is beyond every federal tax once retirement distributions
+\result{NoOwnerTaxShare} percent of it bears no owner-level tax once retirement distributions
 and dividend withholding are counted, and of the gains that do accrue in taxable accounts,
 \result{GainsUntaxedAtDeath} percent are never taxed at all. A legislature can change a rate
 more readily than it can change who owns the claims, and the rate operates on a base most
