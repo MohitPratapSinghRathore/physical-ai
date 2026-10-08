@@ -122,11 +122,14 @@ are the right ones, or that the economic assumptions behind them hold. The blind
 rather than enforced, which is why this paper says these quantities were independently rebuilt
 under a reported blind protocol and never that they were independently verified.
 
-\paragraph{L9. The accounts mix two vintages of the federal receipts aggregates.} The Treasury
-class coefficient is computed on the 2025 national accounts, with a receipts denominator of
-\result{TBReceipts} billion dollars. The capital-gains band, and the federal receipts base quoted
-in Section~\ref{sec:data}, use a different vintage whose denominator is \result{TBBandReceipts}
-billion. The same formula on the two gives \result{TBResult} and \result{TBBandResult}. The gap
-is about two percentage points on one coefficient and it moves the headline exposure share by
-less than that, but it means the paper's own quoted receipts base does not reproduce its own
-Treasury coefficient, and a reader checking the arithmetic will find so.
+\paragraph{L9. One receipts vintage governs, and the other survives only as a sensitivity.} The
+accounts previously carried two vintages of the federal receipts aggregates without choosing
+between them, so the paper's own quoted receipts base did not reproduce its own Treasury
+coefficient. The 2025 national accounts vintage now governs, with the receipts denominator of
+\result{TBCoefReceipts} billion dollars, and the coefficient's numerator and denominator come
+from one release. The alternative vintage, denominator \result{TBBandReceipts} billion, is priced
+rather than carried: at \result{TBBandResult} it moves the debt-only ratio by
+\result{TBVintageMovePct} percent. What remains a limitation is narrower. The capital-gains band
+in Section~\ref{sec:accounts} is still evaluated on the second vintage, because its source
+publishes on that basis, so that band and the Treasury coefficient are not on one release even
+though each is internally consistent.

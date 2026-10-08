@@ -1,29 +1,29 @@
-\begin{longtable}{p{1.5cm}p{2.6cm}p{1.9cm}p{1.7cm}p{1.1cm}p{1.1cm}p{2.8cm}}
-\caption{From income sources to backing coefficients: the numerator, the denominator, the source and the proxy assumption for each class. The coefficient column is the adopted wage basis; the cross-check column is the coverage construction, which is the one that was independently rebuilt, and reads ``same'' where the basis does not apply. Measured; the proxy assumptions are stated assumptions.}\label{tab:bridge}\\
+\begin{longtable}{p{1.5cm}p{3.3cm}p{2.4cm}p{2.2cm}p{1.1cm}p{2.8cm}}
+\caption{From income sources to backing coefficients. Every column describes the \emph{adopted} wage basis, so numerator over denominator on the stated source reproduces the coefficient. The coverage construction is a different object, and for home mortgages a different survey, so it is reported separately in Table~\ref{tab:basiscompare} rather than beside these inputs. Measured; the proxy assumptions are stated assumptions.}\label{tab:bridge}\\
 \toprule
-Class & Numerator & Denominator & Source & Coefficient & Coverage & Proxy assumption \\
+Class & Numerator & Denominator & Source & Coefficient & Proxy assumption \\
 \midrule
 \endfirsthead
-\multicolumn{7}{l}{\itshape Table \ref{tab:bridge}, continued} \\
+\multicolumn{6}{l}{\itshape Table \ref{tab:bridge}, continued} \\
 \toprule
-Class & Numerator & Denominator & Source & Coefficient & Coverage & Proxy assumption \\
+Class & Numerator & Denominator & Source & Coefficient & Proxy assumption \\
 \midrule
 \endhead
-\midrule \multicolumn{7}{r}{\itshape continued on the next page} \\
+\midrule \multicolumn{6}{r}{\itshape continued on the next page} \\
 \endfoot
 \bottomrule
 \endlastfoot
-Home mortgage & mortgage service paid by households with an employed member aged 25 to 64 & mortgage service paid by all households & American Community Survey 2023 & 0.8104 & 0.8402 & who pays the service stands in for what income pays it \\
-Credit card & card balances owed by working-core households & card balances owed by all households & Survey of Income and Program Participation 2025 & 0.7302 & 0.7400 & who owes stands in for what income services the balance \\
-Auto loan & vehicle loan balances owed by working-core households & vehicle loan balances owed by all households & Survey of Income and Program Participation 2025 & 0.7783 & 0.7737 & who owes stands in for what income services the balance \\
-Student loan & student loan balances owed by working-core households & student loan balances owed by all households & Survey of Income and Program Participation 2025 & 0.8822 & 0.8832 & who owes stands in for what income services the balance \\
-Other non-revolving consumer credit & balance-weighted mean of the card, auto and student coefficients & the same three classes & derived from the three above & 0.8052 & 0.8156 & the residual consumer class is assumed to resemble the three measured ones \\
-Multifamily mortgage & gross rent paid by households with an employed member aged 25 to 64 & gross rent paid by all renter households & American Community Survey 2023 & 0.7275 & same & rent is assumed to service the mortgage on the building one for one. The earlier rent definition gives 0.699 \\
-Treasury debt & social insurance contributions in full plus the wage share of the individual income tax & federal current receipts & national accounts and Statistics of Income & 0.6578 & same & receipts composition stands in for the composition of debt service \\
-State and local debt & the wage-linked share of state and local own receipts & state and local own receipts & national accounts and Statistics of Income & 0.1593 & same & as for Treasury debt \\
-Corporate bonds, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & same & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
-Corporate loans, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & same & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
-Nonfinancial noncorporate business loans & zero by the one-step rule & n/a & convention & 0.0000 & same & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
-Commercial mortgages, excluding multifamily & zero by the one-step rule & n/a & convention & 0.0000 & same & rent from business tenants is not traced further. One step traced to demand gives see B2, never blended \\
-Corporate equities, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & same & excluded from the debt-only denominator in any case. One step traced to demand gives see B2, never blended \\
+Home mortgage & balance-weighted sum over owing households of each household's wage share of total income, earnings over income clipped to zero and one & the same households' mortgage balances & Survey of Income and Program Participation 2025, December month & 0.8104 & a household is assumed to service its debts out of income in proportion to the composition of that income \\
+Credit card & balance-weighted sum over owing households of each household's wage share of total income & the same households' card balances & Survey of Income and Program Participation 2025, December month & 0.7302 & a household is assumed to service its debts out of income in proportion to the composition of that income \\
+Auto loan & balance-weighted sum over owing households of each household's wage share of total income & the same households' vehicle loan balances & Survey of Income and Program Participation 2025, December month & 0.7783 & a household is assumed to service its debts out of income in proportion to the composition of that income \\
+Student loan & balance-weighted sum over owing households of each household's wage share of total income & the same households' student loan balances & Survey of Income and Program Participation 2025, December month & 0.8822 & a household is assumed to service its debts out of income in proportion to the composition of that income \\
+Other non-revolving consumer credit & balance-weighted mean of the card, auto and student coefficients on this basis & the same three classes & derived from the three above & 0.8052 & a household is assumed to service its debts out of income in proportion to the composition of that income, and the residual class to resemble the three measured ones \\
+Multifamily mortgage & gross rent paid by households with an employed member aged 25 to 64 & gross rent paid by all renter households & American Community Survey 2023 & 0.7275 & rent is assumed to service the mortgage on the building one for one. The earlier rent definition gives 0.699 \\
+Treasury debt & social insurance contributions in full plus the wage share of the individual income tax & federal current receipts & national accounts and Statistics of Income & 0.6578 & receipts composition stands in for the composition of debt service \\
+State and local debt & the wage-linked share of state and local own receipts & state and local own receipts & national accounts and Statistics of Income & 0.1593 & as for Treasury debt \\
+Corporate bonds, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
+Corporate loans, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
+Nonfinancial noncorporate business loans & zero by the one-step rule & n/a & convention & 0.0000 & business revenue is not traced further. One step traced to demand gives see B2, never blended \\
+Commercial mortgages, excluding multifamily & zero by the one-step rule & n/a & convention & 0.0000 & rent from business tenants is not traced further. One step traced to demand gives see B2, never blended \\
+Corporate equities, nonfinancial corporate & zero by the one-step rule & n/a & convention & 0.0000 & excluded from the debt-only denominator in any case. One step traced to demand gives see B2, never blended \\
 \end{longtable}

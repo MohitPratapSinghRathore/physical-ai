@@ -120,6 +120,10 @@ SENS_LABEL = {
         "Federal receipts at the upper bound of the labor-linked share",
     "commercial mortgage treated like multifamily":
         "Commercial mortgage treated as rent-serviced",
+    "multifamily treated like commercial mortgage":
+        "Multifamily mortgage treated as business-serviced",
+    "treasury coefficient on the alternative receipts vintage":
+        "Treasury coefficient on the alternative receipts vintage",
     "mortgage backing: the superseded A38 definition":
         "Mortgage backing on the earlier definition",
     "state and local: all personal current taxes":
@@ -569,6 +573,62 @@ def tab_removed():
 
 
 
+# ---- the adopted construction's own numerator, denominator and source. The bridge
+# ---- source file describes the COVERAGE construction, which is a different object and
+# ---- for home mortgages a different survey, so it cannot be printed beside the adopted
+# ---- coefficient. Referee point: each construction gets its own formula and inputs.
+ADOPTED_FORMULA = {
+    "home_mortgage": ("balance-weighted sum over owing households of each household's wage "
+                      "share of total income, earnings over income clipped to zero and one",
+                      "the same households' mortgage balances",
+                      "Survey of Income and Program Participation 2025, December month"),
+    "credit_card": ("balance-weighted sum over owing households of each household's wage "
+                    "share of total income",
+                    "the same households' card balances",
+                    "Survey of Income and Program Participation 2025, December month"),
+    "auto_loan": ("balance-weighted sum over owing households of each household's wage "
+                  "share of total income",
+                  "the same households' vehicle loan balances",
+                  "Survey of Income and Program Participation 2025, December month"),
+    "student_loan": ("balance-weighted sum over owing households of each household's wage "
+                     "share of total income",
+                     "the same households' student loan balances",
+                     "Survey of Income and Program Participation 2025, December month"),
+    "other_consumer": ("balance-weighted mean of the card, auto and student coefficients on "
+                       "this basis",
+                       "the same three classes",
+                       "derived from the three above"),
+}
+
+
+def tab_basis_compare():
+    """Referee point: the two constructions, each with its own inputs, and the mortgage
+    row separated into a construction effect and a source effect because the published
+    coverage figure for that class comes from a different survey."""
+    bb = load("data/release/revision_r2/b2_backing_basis.json")
+    b2 = load("data/release/revision_r2/b2_headline_effect.json")
+    pub = {k: v["published"] for k, v in b2["coefficients"].items()}
+    ado = {k: v["alternative"] for k, v in b2["coefficients"].items()}
+    cov_same = {r["claim_class"]: r["coverage_share_published_basis"] for r in bb["by_class"]}
+    bal = {r["claim_class"]: r["weighted_balances_bn"] for r in bb["by_class"]}
+    three = ["credit_card", "auto_loan", "student_loan"]
+    w = sum(bal[k] for k in three)
+    cov_same["other_consumer"] = sum(cov_same[k] * bal[k] for k in three) / w
+    LAB = {"home_mortgage": "Home mortgage", "credit_card": "Credit card",
+           "auto_loan": "Auto loan", "student_loan": "Student loan",
+           "other_consumer": "Other consumer"}
+    head = (r"Class & Adopted, wage basis & Coverage, same survey & Coverage, as published "
+            r"& Construction effect & Source effect \\")
+    lines = [r"\begin{tabular}{lrrrrr}", r"\toprule", head, r"\midrule"]
+    for k in ["home_mortgage", "credit_card", "auto_loan", "student_loan", "other_consumer"]:
+        ce = ado[k] - cov_same[k]
+        se = cov_same[k] - pub[k]
+        lines.append(f"{LAB[k]} & {ado[k]:.4f} & {cov_same[k]:.4f} & {pub[k]:.4f} & "
+                     f"{ce:+.4f} & {se:+.4f} " + r"\\")
+    lines += [r"\bottomrule", r"\end{tabular}"]
+    write("tab_basis_compare.tex", "\n".join(lines))
+
+
 def tab_bridge():
     """Table 3: from income sources to backing coefficients, one row per claim class.
 
@@ -613,19 +673,20 @@ def tab_bridge():
         return text.replace("_", " ").replace("=", " gives ")
 
     header = (r"Class & Numerator & Denominator & Source & Coefficient & "
-              r"Coverage & Proxy assumption \\")
-    caption = (r"\caption{From income sources to backing coefficients: the numerator, the "
-               r"denominator, the source and the proxy assumption for each class. The "
-               r"coefficient column is the adopted wage basis; the cross-check column is the "
-               r"coverage construction, which is the one that was independently rebuilt, and "
-               r"reads ``same'' where the basis does not apply. Measured; the proxy "
-               r"assumptions are stated assumptions.}\label{tab:bridge}\\")
-    lines = [r"\begin{longtable}{p{1.5cm}p{2.6cm}p{1.9cm}p{1.7cm}p{1.1cm}p{1.1cm}p{2.8cm}}",
+              r"Proxy assumption \\")
+    caption = (r"\caption{From income sources to backing coefficients. Every column "
+               r"describes the \emph{adopted} wage basis, so numerator over denominator on "
+               r"the stated source reproduces the coefficient. The coverage construction is "
+               r"a different object, and for home mortgages a different survey, so it is "
+               r"reported separately in Table~\ref{tab:basiscompare} rather than beside "
+               r"these inputs. Measured; the proxy assumptions are stated assumptions.}"
+               r"\label{tab:bridge}\\")
+    lines = [r"\begin{longtable}{p{1.5cm}p{3.3cm}p{2.4cm}p{2.2cm}p{1.1cm}p{2.8cm}}",
              caption,
              r"\toprule", header, r"\midrule", r"\endfirsthead",
-             r"\multicolumn{7}{l}{\itshape Table \ref{tab:bridge}, continued} \\",
+             r"\multicolumn{6}{l}{\itshape Table \ref{tab:bridge}, continued} \\",
              r"\toprule", header, r"\midrule", r"\endhead",
-             r"\midrule \multicolumn{7}{r}{\itshape continued on the next page} \\",
+             r"\midrule \multicolumn{6}{r}{\itshape continued on the next page} \\",
              r"\endfoot", r"\bottomrule", r"\endlastfoot"]
     for r in rs:
         key = r["claim_class"]
@@ -638,8 +699,15 @@ def tab_bridge():
         alt = plain(r["alternative_estimate"])
         if alt and "adopted here" not in alt:
             cell = cell + ". " + alt[0].upper() + alt[1:] if cell else alt
-        lines.append(" & ".join([label, r["numerator"], r["denominator"], r["source"],
-                                 coef_cell, cover_cell, cell]) + r" \\")
+        num, den, src = ADOPTED_FORMULA.get(
+            key, (r["numerator"], r["denominator"], r["source"]))
+        if key in ADOPTED_FORMULA:
+            cell = ("a household is assumed to service its debts out of income in "
+                    "proportion to the composition of that income")
+            if key == "other_consumer":
+                cell = cell + ", and the residual class to resemble the three measured ones"
+        lines.append(" & ".join([label, num, den, src,
+                                 coef_cell, cell]) + r" \\")
     lines.append(r"\end{longtable}")
     write("tab_bridge.tex", "\n".join(lines))
 
@@ -651,6 +719,7 @@ if __name__ == "__main__":
     tab_holders()
     tab_structural()
     tab_quintile()
+    tab_basis_compare()
     tab_under_reporting()
     tab_tau_k()
     tab_levers()

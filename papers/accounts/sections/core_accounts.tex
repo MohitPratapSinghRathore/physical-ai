@@ -85,6 +85,19 @@ an arithmetic residual treated as private in full.
 {\footnotesize
 \input{tables/tab_bridge.tex}}
 
+\begin{table}[htbp]
+\centering
+{\footnotesize
+\input{tables/tab_basis_compare.tex}}
+\caption{The two constructions of the household coefficients, each on its own inputs.
+The construction effect holds the survey fixed and moves from the coverage share to the wage
+share of servicing income. The source effect holds the construction fixed and moves from the
+figure published earlier to the same quantity computed on the survey used here. For home
+mortgages the source effect is the larger of the two, which is why the earlier coefficient
+could not be reproduced from the inputs printed beside it.}
+\label{tab:basiscompare}
+\end{table}
+
 \paragraph{The basis of the household coefficients, and the one adopted.}
 Definition~\ref{def:backing} asks for the share of the servicing cash flow that is labor income,
 and as stated above no source observes it. What we compute is the estimator: the debt-weighted
@@ -137,19 +150,35 @@ $(\result{TBSocIns} + \result{TBW} \times \result{TBPersonal}) / \result{TBRecei
 
 A reader comparing that with the \result{ReceiptsPctLow} to \result{ReceiptsPctHigh} percent band
 reported in Section~\ref{sec:accounts} will find they do not agree, and the reason is a vintage
-mismatch rather than a difference of concept. They are the same formula. The band is evaluated on
-the static receipts totals quoted in Section~\ref{sec:data}, whose denominator is
-\result{TBBandReceipts} billion dollars and which give \result{TBBandResult}; the coefficient is
-evaluated on the 2025 national accounts, whose denominator is \result{TBReceipts} billion. The
-paper therefore quotes one receipts base in its data section and computes the Treasury
-coefficient on another. We report both rather than silently reconciling them, and
-Section~\ref{sec:future} carries putting the whole accounts on one receipts vintage as an
-avenue.
+mismatch rather than a difference of concept: the same formula on two receipts vintages gives
+\result{TBResult} and \result{TBBandResult}. An earlier version of this paper reported both and
+left the choice open. That is not adequate for an accounting paper, so we make it.
+
+\textbf{The 2025 national accounts vintage governs}, with the receipts denominator of
+\result{TBCoefReceipts} billion dollars that appears in the formula above. We choose it because it
+is a dated series that can be retrieved and re-retrieved, and because the numerator and
+denominator of the coefficient are then drawn from one release. The alternative vintage, whose
+denominator is \result{TBBandReceipts} billion, is retained as a sensitivity and nothing else:
+putting the Treasury coefficient at \result{TBBandResult} moves the debt-only ratio by
+\result{TBVintageMovePct} percent, reported in Table~\ref{tab:sensitivity}.
+Section~\ref{sec:data} now names the vintage of every base it quotes, so the figure printed there
+is no longer offered as the denominator of this coefficient.
 
 \paragraph{The one-step rule is a convention, and it is the largest judgment in the paper.} We
 trace servicing one step and stop, so a claim serviced out of business revenue takes zero direct
-backing; multifamily mortgages are the one property class that does not, because the rent that
-services them is paid out of wages with no firm in between. Tracing further is what the indirect
+backing. Multifamily mortgages are the one property class treated otherwise, and that boundary
+needs more than an assertion, because the rent reaches the mortgage through a landlord's
+accounts rather than with no one in between. Our reason for the asymmetry is that the rent is
+the designated servicing flow of that particular mortgage, so the landlord's accounts pass it
+through, whereas business revenue funds operations, pay, investment, profit and debt service
+jointly, and attributing a share of it to any one claim means apportioning across uses, which
+is a second step and a weaker one. We do not claim the distinction is forced. It is a
+convention, the landlord's income statement is genuinely an intervening step, and the useful
+response is to price the alternative rather than argue for the convention: treating
+multifamily like commercial mortgage, at zero, moves the debt-only ratio by
+esult{MultifamilyZeroMovePct} percent, and the symmetric call in the other direction,
+treating commercial mortgage as rent-serviced, moves it by esult{CommercialRentMovePct}
+percent. Both are in Table~ef{tab:sensitivity}. Tracing further is what the indirect
 variant does, and we report both everywhere: on the whole claim stock, moving the business classes
 to their measured indirect share raises the ratio by \result{OneStepMoveAllClaimsPct} percent,
 more than every other judgment call together. Appendix~\ref{app:detail} gives both conventions in

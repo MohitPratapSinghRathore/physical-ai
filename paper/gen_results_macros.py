@@ -136,6 +136,10 @@ def main():
     R["DebtOnlySeriesLow"] = pct(do["debt_only_range_1952_2025"][0])
     R["DebtOnlySeriesHigh"] = pct(do["debt_only_range_1952_2025"][1])
     R["OneStepMoveAllClaimsPct"] = f"{acsen['largest_single_move_pct']:.0f}"
+    _sens = {r['judgement_call']: float(r['move_pct'])
+             for r in rows('data/release/labor_backing/debt_only_sensitivity.csv')}
+    R['MultifamilyZeroMovePct'] = f"{abs(_sens['multifamily treated like commercial mortgage']):.1f}"
+    R['CommercialRentMovePct'] = f"{_sens['commercial mortgage treated like multifamily']:.1f}"
 
     # ---- structural sensitivities on the federal exposure
     st = it3["structural_calls_that_do_move_it"]
@@ -709,6 +713,8 @@ def main():
     R["TBResult"] = f'{tb["coefficient_vintage"]["result"]:.4f}'
     R["TBBandReceipts"] = f'{tb["band_vintage"]["current_receipts_bn"]:,.1f}'
     R["TBBandResult"] = f'{tb["band_vintage"]["result"]:.4f}'
+    R["TBCoefReceipts"] = f'{tb["coefficient_vintage"]["current_receipts_bn"]:,.1f}'
+    R["TBVintageMovePct"] = f"{abs(_sens['treasury coefficient on the alternative receipts vintage']):.1f}"
 
     # ---- the predictive null (branch predictive-panel, pre-registered) ----
     pred = load("data/release/predictive/results.json")
