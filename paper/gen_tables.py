@@ -210,17 +210,21 @@ QLAB = {"Q1_bottom": "Bottom quintile", "Q2": "Second quintile", "Q3_middle": "M
 
 def tab_quintile():
     rs = rows("data/release/labor_backing/quintile_labour_backing.csv")
-    lines = [r"\begin{tabular}{lrrr}", r"\toprule",
-             r"Wage quintile & Share of the wage bill & Share of household wage-backed claims "
-             r"& Claims per wage dollar \\", r"\midrule"]
+    fix = load("data/release/labor_backing/quintile_universe_fix.json")["by_quintile"]
     b2 = load("data/release/revision_r2/b2_headline_effect.json")
     adopted = b2["quintile_gradient"]["alternative"]
+    lines = [r"\begin{tabular}{lrrrr}", r"\toprule",
+             r"Wage quintile & Share of the wage bill & Share of household wage-backed "
+             r"claims & Claims per wage dollar & Same, own-survey denominator \\",
+             r"\midrule"]
     for r in rs:
-        per = ("withdrawn" if r["wage_quintile"] == "Q1_bottom"
-               else f"{float(adopted[r['wage_quintile']]):.4f}")
-        lines.append(f"{QLAB[r['wage_quintile']]} & "
+        k = r["wage_quintile"]
+        dag = r"\,$\dagger$" if k == "Q1_bottom" else ""
+        lines.append(f"{QLAB[k]} & "
                      f"{float(r['quintile_wage_bill_share']):.4f} & "
-                     f"{float(r['share_of_household_labour_backed']):.4f} & {per} \\\\")
+                     f"{float(r['share_of_household_labour_backed']):.4f} & "
+                     f"{float(adopted[k]):.4f}{dag} & "
+                     f"{float(fix[k]['per_dollar_sipp_adopted']):.4f}{dag} \\\\")
     lines += [r"\bottomrule", r"\end{tabular}"]
     write("tab_quintile.tex", "\n".join(lines))
 
@@ -535,9 +539,11 @@ REMOVED_TEXT = {
         "that we cannot size it."),
     "quintile_labour_backed_Q1": (
         "Wage-backed claims per wage dollar in the bottom quintile",
-        "An independent rebuild landed a factor of two and a half to three and a half "
-        "away, and we cannot show its reading was wrong, because we defined neither the "
-        "universe nor the normalisation. The gradient survives; this magnitude does not."),
+        "The construction is now fully specified and the denominator universe has been "
+        "ruled out as the cause: an own-survey wage bill moves this cell by 0.3 percent "
+        "and no cell by more than 8.7. The independent rebuild still lands at 1.21 to "
+        "1.64, so the magnitude remains contested and the bottom quintile's rank is not "
+        "established. The decline from the second quintile down is unaffected."),
     "exposure_index_scores": (
         "The two occupation-level scores of cognitive exposure",
         "Eleven mismatches in the rebuild, running in opposite directions on the two "

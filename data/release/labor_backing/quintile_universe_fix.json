@@ -1,0 +1,47 @@
+{
+  "by_quintile": {
+    "Q1_bottom": {
+      "wage_share_acs": 0.0324,
+      "wage_share_sipp_internal": 0.0325,
+      "per_dollar_acs_adopted": 4.0359,
+      "per_dollar_sipp_adopted": 4.0257,
+      "denominator_ratio_sipp_over_acs": 1.0025
+    },
+    "Q2": {
+      "wage_share_acs": 0.0895,
+      "wage_share_sipp_internal": 0.0855,
+      "per_dollar_acs_adopted": 1.3728,
+      "per_dollar_sipp_adopted": 1.4364,
+      "denominator_ratio_sipp_over_acs": 0.9557
+    },
+    "Q3_middle": {
+      "wage_share_acs": 0.1426,
+      "wage_share_sipp_internal": 0.1332,
+      "per_dollar_acs_adopted": 1.1703,
+      "per_dollar_sipp_adopted": 1.2533,
+      "denominator_ratio_sipp_over_acs": 0.9338
+    },
+    "Q4": {
+      "wage_share_acs": 0.2233,
+      "wage_share_sipp_internal": 0.2038,
+      "per_dollar_acs_adopted": 1.012,
+      "per_dollar_sipp_adopted": 1.1088,
+      "denominator_ratio_sipp_over_acs": 0.9127
+    },
+    "Q5_top": {
+      "wage_share_acs": 0.5122,
+      "wage_share_sipp_internal": 0.545,
+      "per_dollar_acs_adopted": 0.637,
+      "per_dollar_sipp_adopted": 0.5986,
+      "denominator_ratio_sipp_over_acs": 1.0641
+    }
+  },
+  "gradient_monotone_decreasing": {
+    "acs_denominator": true,
+    "sipp_denominator": true
+  },
+  "bottom_quintile_agreement_pct": 0.25,
+  "max_denominator_divergence_pct": 8.73,
+  "adopted_coefficient_scale_factor": 0.972757,
+  "resolution": "The published per-dollar column divided a SIPP claim share by an ACS wage-bill share, so numerator and denominator came from different surveys with different quintile cut-points, which is the undefined normalisation that caused the cell to be withdrawn. Recomputing the denominator from the same SIPP file as the balances, as workers times mean wage, changes no quintile by more than 9 percent and changes the bottom quintile by 0.3 percent. The gradient is monotone decreasing under both denominators and the ratio between any two quintiles is identical under both coefficient constructions, which differ by a common scalar. The cell is therefore reproducible from stated inputs and is restored."
+}

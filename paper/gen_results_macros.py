@@ -159,9 +159,14 @@ def main():
 
     # ---- the wage-quintile gradient, on the adopted basis
     qg = b2["quintile_gradient"]["alternative"]
+    R["QOnePerDollar"] = f"{float(qg['Q1_bottom']):.2f}"
     R["QTwoPerDollar"] = f"{float(qg['Q2']):.2f}"
     R["QTopPerDollar"] = f"{float(qg['Q5_top']):.2f}"
     R["QTopWageShare"] = pct(quint["Q5_top"]["quintile_wage_bill_share"])
+    _qf = load("data/release/labor_backing/quintile_universe_fix.json")
+    R["QOnePerDollarOwnSurvey"] = f"{float(_qf['by_quintile']['Q1_bottom']['per_dollar_sipp_adopted']):.2f}"
+    R["QuintDenomDivergence"] = f"{float(_qf['max_denominator_divergence_pct']):.1f}"
+    R["QOneAgreement"] = f"{float(_qf['bottom_quintile_agreement_pct']):.2f}"
     R["QTopClaimShare"] = pct(quint["Q5_top"]["share_of_household_labour_backed"])
 
     # ---- the holder map, wage side, on the adopted basis

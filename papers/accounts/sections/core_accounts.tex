@@ -86,10 +86,13 @@ an arithmetic residual treated as private in full.
 \input{tables/tab_bridge.tex}}
 
 \paragraph{The basis of the household coefficients, and the one adopted.}
-Definition~\ref{def:backing} asks for the share of the servicing cash flow that is labor income.
-We compute that directly, as the debt-weighted share of total household income that is wages among
-the households owing each class, and it is the basis of every coefficient, ratio, exposure share,
-figure and quintile figure reported in this paper, with the two exceptions named below. On that
+Definition~\ref{def:backing} asks for the share of the servicing cash flow that is labor income,
+and as stated above no source observes it. What we compute is the estimator: the debt-weighted
+share of total household income that is wages among the households owing each class, carried into
+claims by the proportional income-funding convention. That estimator is the basis of every
+coefficient, ratio, exposure share, figure and quintile figure reported in this paper, with the
+two exceptions named below, and each of them is an attribution rather than an observed servicing
+flow. On that
 basis the home mortgage coefficient is \result{MortgageWageShare}, credit cards
 \result{CardWageShare}, auto loans \result{AutoWageShare}, student loans
 \result{StudentWageShare} and other consumer credit \result{OtherConsumerWageShare}.
@@ -162,9 +165,9 @@ read \result{AllClaims2000} percent at the 2000 equity peak and \result{AllClaim
 Definition~\ref{def:ratio} removes every market-valued class, measuring composition rather than
 valuation, and on those dates reads \result{DebtOnly2000} and \result{DebtOnly2008} percent.
 
-On this measure \result{DebtOnlyDirect} percent of US debt is serviced directly from wages and
-\result{DebtOnlyIndirect} percent including indirect servicing, against all-claims figures of
-\result{AllClaimsDirect} and \result{AllClaimsIndirect} percent; all four were reproduced by the
+On this measure \result{DebtOnlyDirect} percent of US debt is attributed to labor income on the
+direct route and \result{DebtOnlyIndirect} percent once the indirect route is counted, against
+all-claims figures of \result{AllClaimsDirect} and \result{AllClaimsIndirect} percent; all four were reproduced by the
 independent rebuild to within 0.001. Two further properties favor the debt-only variant and both
 were rebuilt: its coefficient of variation over 1952 to 2025 is \result{DebtOnlyCV} against
 \result{AllClaimsCV}, and the one-step rule moves it by \result{OneStepMovePct} percent against
@@ -263,7 +266,7 @@ position. Appendix~\ref{app:detail} gives the decomposition.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.86\textwidth]{fig1_series.pdf}
-\caption{Federal exposure to directly wage-backed claims, 1947 to 2025, and the debt-only labor backing ratio, 1952 to 2025. The two panels open in different years because the debt-only ratio needs market-valued equity, which the accounts carry only from 1952. Upper panel: the exposure share as the union of the three roles, with its creditor or guarantor and debtor parts, which overlap where the federal sector holds its own debt and so do not sum to the union. Lower panel: the share of US debt serviced directly from wages. Both panels are on the coverage construction of the household coefficients, because income by source is not available for the historical years. Measured, from the Federal Reserve financial accounts.}
+\caption{Federal exposure to directly wage-backed claims, 1947 to 2025, and the debt-only labor backing ratio, 1952 to 2025. The two panels open in different years because the debt-only ratio needs market-valued equity, which the accounts carry only from 1952. Upper panel: the exposure share as the union of the three roles, with its creditor or guarantor and debtor parts, which overlap where the federal sector holds its own debt and so do not sum to the union. Lower panel: the share of US debt attributed to labor income on the direct route. Both panels are on the coverage construction of the household coefficients, because income by source is not available for the historical years. Measured, from the Federal Reserve financial accounts.}
 \label{fig:series}
 \end{figure}
 
