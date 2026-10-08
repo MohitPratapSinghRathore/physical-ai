@@ -713,6 +713,25 @@ def main():
     R["TBResult"] = f'{tb["coefficient_vintage"]["result"]:.4f}'
     R["TBBandReceipts"] = f'{tb["band_vintage"]["current_receipts_bn"]:,.1f}'
     R["TBBandResult"] = f'{tb["band_vintage"]["result"]:.4f}'
+    # ---- the annual-revenue counterpart to the marginal wedge (referee item B1)
+    _ab = load("data/release/revision_r3/annual_revenue_bridge.json")
+    R["TauAnnualCentral"] = pct(_ab["annual"]["central"], 1)
+    R["TauAnnualLo"] = pct(_ab["annual"]["corner_min"], 1)
+    R["TauAnnualHi"] = pct(_ab["annual"]["corner_max"], 1)
+    R["TauMarginalBarkai"] = pct(_ab["marginal"]["Barkai"]["central"], 1)
+    R["TauMarginalKN"] = pct(_ab["marginal"]["Karabarbounis_Neiman_case_R"]["central"], 1)
+    R["AnnualMarginalGapLo"] = pct(_ab["marginal"]["Barkai"]["gap_to_annual"], 1)
+    R["AnnualMarginalGapHi"] = pct(
+        _ab["marginal"]["Karabarbounis_Neiman_case_R"]["gap_to_annual"], 1)
+    R["ShiftSwingAnnual"] = f'{_ab["lever_ranking"]["annual"]["shifted_share"]:.4f}'
+    R["ThetaSwingAnnual"] = f'{_ab["lever_ranking"]["annual"]["theta_taxable"]:.4f}'
+    R["ShThetaSwingMarginal"] = f'{_ab["lever_ranking"]["marginal_barkai"]["theta_taxable"]:.4f}'
+    R["ShiftSwingMarginal"] = f'{_ab["lever_ranking"]["marginal_barkai"]["shifted_share"]:.4f}'
+    R["ThetaSwingMarginal"] = f'{_ab["lever_ranking"]["marginal_barkai"]["theta_taxable"]:.4f}'
+    R["ShiftRankAnnual"] = str(
+        _ab["lever_ranking"]["annual_order"].index("shifted_share") + 1)
+    R["ThetaRankAnnual"] = str(
+        _ab["lever_ranking"]["annual_order"].index("theta_taxable") + 1)
     R["TBCoefReceipts"] = f'{tb["coefficient_vintage"]["current_receipts_bn"]:,.1f}'
     R["TBVintageMovePct"] = f"{abs(_sens['treasury coefficient on the alternative receipts vintage']):.1f}"
 
