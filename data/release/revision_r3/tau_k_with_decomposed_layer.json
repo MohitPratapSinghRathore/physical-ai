@@ -1,0 +1,23 @@
+{
+  "published_layer": 0.0315,
+  "tau_k_marginal_barkai": {
+    "published_layer": 0.0851,
+    "decomposed_marginal_layer": 0.1139,
+    "range_over_shareholder_box": [
+      0.0884,
+      0.1377
+    ]
+  },
+  "tau_k_annual": {
+    "published_layer": 0.2036,
+    "decomposed_annual_layer": 0.2539,
+    "range_over_shareholder_box": [
+      0.224,
+      0.2827
+    ]
+  },
+  "required": {
+    "easier": 0.1101,
+    "harder": 0.1373
+  }
+}

@@ -713,6 +713,48 @@ def main():
     R["TBResult"] = f'{tb["coefficient_vintage"]["result"]:.4f}'
     R["TBBandReceipts"] = f'{tb["band_vintage"]["current_receipts_bn"]:,.1f}'
     R["TBBandResult"] = f'{tb["band_vintage"]["result"]:.4f}'
+    # ---- the two tax objects on BOTH jurisdictional bases (referee items B1 and B3).
+    # A first pass compared an all-government rate to the federal requirement; this is the
+    # basis-consistent version and it is what the manuscript quotes.
+    _tb = load("data/release/revision_r3/two_objects_both_bases.json")
+    for _b, _tag in (("federal", "Fed"), ("all_government", "AllGov")):
+        _m, _a = _tb["rates"][_b]["marginal_barkai"], _tb["rates"][_b]["annual"]
+        R["TauMarg" + _tag + "Pub"] = pct(_m["published_layer"], 1)
+        R["TauMarg" + _tag + "Dec"] = pct(_m["decomposed_layer"], 1)
+        R["TauMarg" + _tag + "Lo"] = pct(_m["range_over_shareholder_box"][0], 1)
+        R["TauMarg" + _tag + "Hi"] = pct(_m["range_over_shareholder_box"][1], 1)
+        R["MargGap" + _tag] = pct(_m["gap_to_easier"], 2)
+        R["TauAnn" + _tag + "Pub"] = pct(_a["published_layer"], 1)
+        R["TauAnn" + _tag + "Dec"] = pct(_a["decomposed_layer"], 1)
+        R["TauAnn" + _tag + "Lo"] = pct(_a["range_over_shareholder_box"][0], 1)
+        R["TauAnn" + _tag + "Hi"] = pct(_a["range_over_shareholder_box"][1], 1)
+        R["AnnMargin" + _tag] = pct(_a["margin_over_harder"], 1)
+        R["ObjGap" + _tag] = pct(
+            _a["decomposed_layer"] - _m["decomposed_layer"], 1)
+
+    # ---- the shareholder layer decomposed by holder and treatment (referee item B2)
+    _sl = load("data/release/revision_r3/shareholder_lifecycle.json")
+    _tkd = load("data/release/revision_r3/tau_k_with_decomposed_layer.json")
+    _hg, _ly = _sl["holder_groups"], _sl["layer"]
+    R["NeverTaxedShare"] = pct(_hg["never_taxed"], 1)
+    R["TradRetireShare"] = pct(_hg["traditional_retirement"], 1)
+    R["RothShare"] = pct(_hg["roth"], 1)
+    R["ForeignEquityShare"] = pct(_hg["foreign"], 0)
+    R["LayerPublished"] = pct(_ly["published_assembly"], 2)
+    R["LayerMarginalDecomp"] = pct(_ly["marginal_decomposed"], 2)
+    R["LayerAnnualDecomp"] = pct(_ly["annual_decomposed"], 2)
+    R["LayerForeignPart"] = pct(_ly["of_which_foreign_withholding"], 2)
+    R["LayerTradPart"] = pct(_ly["of_which_traditional_retirement_annual"], 2)
+    R["TauKMargCorr"] = pct(_tkd["tau_k_marginal_barkai"]["decomposed_marginal_layer"], 1)
+    R["TauKMargCorrLo"] = pct(_tkd["tau_k_marginal_barkai"]["range_over_shareholder_box"][0], 1)
+    R["TauKMargCorrHi"] = pct(_tkd["tau_k_marginal_barkai"]["range_over_shareholder_box"][1], 1)
+    R["TauKAnnCorr"] = pct(_tkd["tau_k_annual"]["decomposed_annual_layer"], 1)
+    R["TauKAnnCorrLo"] = pct(_tkd["tau_k_annual"]["range_over_shareholder_box"][0], 1)
+    R["TauKAnnCorrHi"] = pct(_tkd["tau_k_annual"]["range_over_shareholder_box"][1], 1)
+    R["WithholdTreatyStd"] = pct(_sl["sourced"]["withholding_treaty_standard"], 0)
+    R["WithholdStatutory"] = pct(_sl["sourced"]["withholding_statutory"], 0)
+    R["RothShareOfIRA"] = pct(_sl["sourced"]["roth_share_of_ira_ici_2024"], 0)
+
     # ---- the annual-revenue counterpart to the marginal wedge (referee item B1)
     _ab = load("data/release/revision_r3/annual_revenue_bridge.json")
     R["TauAnnualCentral"] = pct(_ab["annual"]["central"], 1)

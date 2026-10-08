@@ -224,7 +224,7 @@ Under full expensing the deduction precedes the income, so the rate assembled ab
 present-value wedge over the life of one marginal investment. The replacement question asks
 about tax collected in a year. An earlier version of this paper asserted that stationarity made
 the two comparable and left it there. That is not enough, and working out the mapping changes
-the paper's answer, so we set it out and report what it gives.
+the answer, so we set it out and report what it gives.
 
 \paragraph{The mapping.} Let a sector hold capital $K$ depreciating at $\delta$, earning gross
 capital income $(r+\delta)K$, so net capital income is $rK$. In a stationary state replacement
@@ -235,11 +235,11 @@ income, normal return and rent alike.
 
 The marginal wedge is a different object. For one marginal project, expensing deducts the outlay
 at once and the present value of that deduction offsets the present value of entity tax on the
-project's normal return. That is the result of \citet{AcemogluManeraRestrepo2020} which the assembly above uses, and
-it is correct on the margin. It is false for the annual flow from capital already in place,
-because no deduction is taken this year against last decade's investment beyond replacement.
-A zero marginal wedge is therefore consistent with positive annual receipts, which is the
-distinction the assembled rate elides.
+project's normal return. That is the result of \citet{AcemogluManeraRestrepo2020} which the
+assembly above uses, and it is correct on the margin. It is false for the annual flow from
+capital already in place, because no deduction is taken this year against last decade's
+investment beyond replacement. A zero marginal wedge is therefore consistent with positive
+annual receipts, which is the distinction the assembled rate elides.
 
 Carrying that through the layers: equity-financed net capital income bears the entity rate and
 then the shareholder layer on what is left; debt-financed net income bears no annual entity tax,
@@ -250,40 +250,81 @@ collects. Hence
 \label{eq:annual}
 \end{equation}
 with $d$ the debt share, $\tau_e$ the blended entity rate, $\tau_s$ the shareholder layer and
-$\tau_b$ the bondholder rate, each as assembled above. Two features matter. The marginal
-object's debt term is $\tau_b-\tau_c$, which is negative: that is a subsidy to a marginal
-debt-financed project, not negative annual revenue, and it does not belong here. And the rent
-share $\sigma$ \textbf{does not appear}, because the annual entity tax reaches normal return and
-rent alike. The two rent readings that drive the marginal rate's whole spread collapse to one
-number.
+$\tau_b$ the bondholder rate. Two features matter. The marginal object's debt term is
+$\tau_b-\tau_c$, which is negative: that is a subsidy to a marginal debt-financed project, not
+negative annual revenue, and it does not belong here. And the rent share $\sigma$ \textbf{does
+not appear}, because the annual entity tax reaches normal return and rent alike. The two rent
+readings that drive the marginal rate's whole spread collapse to one number.
 
-\paragraph{What it gives, and it goes against this paper.} On the same components and the same
-sourced ranges, Equation~\ref{eq:annual} gives \result{TauAnnualCentral} percent at central
-values and \result{TauAnnualLo} to \result{TauAnnualHi} percent across all one hundred and
-twenty-eight corners of the parameter box, against the \result{RequiredFedEasy} to
-\result{RequiredFedHard} percent replacement requires. \textbf{The condition closes, and it
-closes at every corner.} The marginal wedge is \result{TauMarginalKN} to
-\result{TauMarginalBarkai} percent across the two rent readings and closes on neither. The gap
-between the objects is \result{AnnualMarginalGapLo} to \result{AnnualMarginalGapHi} points,
-which is larger than any disagreement among the components.
+\paragraph{The shareholder layer, decomposed by holder and treatment.} The layer above is
+assembled as $\theta\times$rate$\times$deferral on a taxable share of \result{ThetaTaxable}
+percent, which treats everything else as outside the base and applies one deferral factor to
+dividends and gains alike. Decomposing it by holder, on the shares of
+\citet{RosenthalMucciolo2024}, separates three treatments the single figure conflates.
 
-We therefore do not claim a revenue shortfall. What the two rates bound is a transition. While
-investment grows, current deductions exceed tax on income from a smaller earlier stock, so
-collections run below $\tau_k^{\text{annual}}$; as the stock matures they approach it. The
-marginal wedge is the lower bound of that path and the annual rate its upper bound, and which
-one is the right comparator depends on the horizon over which displaced wage receipts must be
-replaced, which is a question about the speed of displacement that this paper does not settle.
-Readers should take the headline of the earlier version of this work, that the capital tax
-cannot replace what is lost on wages, as conditional on the marginal reading and not as a
-finding about annual revenue.
+\result{TradRetireShare} percent of US equity sits in traditional retirement arrangements.
+A deductible contribution grown at $r$ and taxed on withdrawal at the same rate leaves the
+return untaxed, because the government is a pro-rata co-investor, so the marginal rate on the
+inside build-up is zero and treating these holdings as outside the base is correct \emph{on the
+margin}. It is wrong for annual revenue: in a mature system those distributions are taxed at
+ordinary rates every year. This is the expensing problem of Equation~\ref{eq:annual} appearing
+again one layer up, with the same resolution. Roth arrangements, at
+\result{RothShare} percent, are untaxed on both objects, having been taxed on contribution.
+\result{ForeignEquityShare} percent is held abroad and bears US withholding on dividends,
+statutorily \result{WithholdStatutory} percent and \result{WithholdTreatyStd} percent under the
+standard portfolio article of the major treaties, though not on portfolio gains. Section~5 sizes
+that effect on its own; here it is folded into the layer and taken together with the dividend
+split, which is the joint treatment rather than the one-at-a-time version.
+\textbf{Only \result{NeverTaxedShare} percent of US corporate equity is never reached by any
+federal tax at all}, being nonprofits, government plans and insurance separate accounts.
+
+The layer rises from \result{LayerPublished} percent as published to
+\result{LayerMarginalDecomp} percent on the marginal object, of which
+\result{LayerForeignPart} points is foreign withholding, and to \result{LayerAnnualDecomp}
+percent on the annual object, the further \result{LayerTradPart} points being retirement
+distributions. Four of its inputs could not be sourced and are swept; the ranges below carry
+that box.
+
+\paragraph{What it gives, and it goes against this paper.} Each rate is compared with the
+requirement computed on its own jurisdictional basis, which a first pass of this exercise failed
+to do.
+
+On the \textbf{annual} object the condition closes. Federally the rate is
+\result{TauAnnFedDec} percent against the \result{RequiredFedEasy} to \result{RequiredFedHard}
+percent required, a margin of \result{AnnMarginFed} points over the harder reading, and it
+clears that reading at every corner of the shareholder box, whose range is
+\result{TauAnnFedLo} to \result{TauAnnFedHi} percent. On all government the rate is
+\result{TauAnnAllGovDec} percent against \result{RequiredAllGovEasy} to
+\result{RequiredAllGovHard} percent, and it clears at every corner there too.
+
+On the \textbf{marginal} object the shortfall survives in sign and not in size. With the
+shareholder corrections applied jointly the federal rate is \result{TauMargFedDec} percent
+against \result{RequiredFedEasy} percent on the easier reading, a gap of
+\result{MargGapFed} points, and the range over the shareholder box,
+\result{TauMargFedLo} to \result{TauMargFedHi} percent, straddles the requirement. On all
+government the gap is \result{MargGapAllGov} points and the range straddles likewise.
+
+\textbf{We therefore do not report a revenue shortfall.} It closes on the annual object by about
+ten points and is indistinguishable from zero on the marginal one. What the two rates bound is a
+transition: while investment grows, current deductions exceed tax on income from a smaller
+earlier stock, so collections run below $\tau_k^{\text{annual}}$, and as the stock matures they
+approach it. Which comparator is right depends on the horizon over which displaced wage receipts
+must be replaced, which is a question about the speed of displacement that this paper does not
+settle. The headline of the earlier version of this work, that the capital tax falls short of
+what is lost on wages, should be read as conditional on the marginal reading and on a
+shareholder layer that omitted withholding, and not as a finding about annual revenue.
 
 \subsection{Why the rate is low, and which lever binds on each object}
 \label{sec:levers}
 
-The binding constraint is who owns the claims. About \result{ThetaUntaxable} percent of US
-corporate equity is held in forms the individual income tax barely reaches, chiefly retirement
-accounts, foreign investors and nonprofits, leaving \result{ThetaTaxable} percent in taxable
-accounts across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
+The constraint that binds the shareholder layer is who owns the claims. About \result{ThetaUntaxable} percent
+of US corporate equity sits outside taxable accounts, leaving \result{ThetaTaxable} percent in them.
+That headline figure should be read with the decomposition of
+Section~\ref{sec:annual}, which splits it into holdings untaxed on the margin but taxed
+annually on distribution, holdings bearing withholding, and the \result{NeverTaxedShare} percent that no
+federal tax reaches at all. Taking it as a share beyond reach overstates the case, and the
+decomposition is why this section no longer carries the paper. On the sourced range the taxable
+share runs \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent across a sourced range of \result{ThetaTaxableLow} to \result{ThetaTaxableHigh} percent
 \citep{RosenthalAustin2016,RosenthalBurke2020,RosenthalMucciolo2024}. Of the gains that do accrue
 there, \result{GainsUntaxedAtDeath} percent are held until death and never taxed, on 2014 data
 \citep{CBO2014}, and what is realized is realized late, deferral cutting the present value by a
