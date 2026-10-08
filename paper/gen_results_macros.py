@@ -775,6 +775,19 @@ def main():
     _hg, _ly = _sl["holder_groups"], _sl["layer"]
     R["NoOwnerTaxShare"] = pct(_hg["no_owner_level_tax"], 1)
     R["NeverTaxedShare"] = R["NoOwnerTaxShare"]   # retained alias
+    # three-mechanism Shapley recomputed by counterfactual on the decomposed layer, on both
+    # objects. Replaces an ordering that had been argued from sensitivity swings.
+    _sr = load("data/release/revision_r3/shapley_recomputed.json")["readings"]
+    _NAME = {"base": "Base", "defer": "Defer", "shift": "Shift"}
+    for _o, _tag in (("marginal_barkai", "Marg"), ("annual", "Ann")):
+        _d = _sr[_o]
+        for _m, _n in _NAME.items():
+            R["Sh" + _n + _tag] = pct(_d["shapley"][_m], 2)
+        R["ShJoint" + _tag] = pct(_d["joint"], 2)
+        R["ShOrder" + _tag] = ", ".join(_NAME[m].lower() for m in _d["order_largest_first"])
+        R["ShOwnOverShift" + _tag] = f'{_d["ownership_over_shifting"]:.1f}'
+        R["ShBaseOverShift" + _tag] = f'{_d["base_over_shifting"]:.1f}'
+
     # counterfactuals recomputed on the decomposed layer. The published set was built on
     # the superseded layer, so the intro and conclusion were carrying a 7.8 pct baseline
     # against a 10.5 pct fiscal section. These supersede them.

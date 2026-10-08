@@ -447,36 +447,48 @@ outlier at \result{ShThetaAlone}.
 
 The alone column understates the ownership mechanisms because they are complements: fixing
 deferral makes the taxable base matter more and the reverse, which is why the attribution
-averages over every order of removal and sums to the joint effect. \textbf{The levels in both
-columns are from the first-pass shareholder layer and we do not quote them as results.}
-Decomposing the layer changes what the mechanisms are, so the point attributions do not carry
-over, and recomputing them would mean redefining the three mechanisms in holder-group terms,
-which we have not done. The table stays because withdrawing it would hide the first pass rather
-than correct it. Only the ordering is used in the argument.
+averages over every order of removal and sums to the joint effect. \textbf{The levels in this table are from
+the first-pass shareholder layer and are superseded.} They are retained as the record of that
+pass rather than withdrawn, because withdrawing them would hide it. The decomposition is
+recomputed on the decomposed layer below, on both tax objects, and those are the values the
+paper claims.
 
-\paragraph{The ordering holds on one object and reverses on the other.} Everything above is
-computed on the marginal wedge, and the comparison does not survive the move to annual revenue.
-Sweeping each component across its whole sourced range with the others at central values, profit
-shifting moves the marginal rate by \result{ShiftSwingMarginal} and the taxable shareholder base
-by \result{ShThetaSwingMarginal}, which is the ordering the section has just argued. On the
-annual rate of Equation~\ref{eq:annual} the two are \result{ShiftSwingAnnual} and
-\result{ThetaSwingAnnual}, so profit shifting ranks \result{ShiftRankAnnual} of seven and the
-shareholder base \result{ThetaRankAnnual}, and the order flips. The reason is mechanical: the
-shifted share enters the entity layer, and the entity layer is precisely what the annual object
-collects and the marginal object washes out. We therefore do not claim that ownership binds
-harder than profit shifting as a general matter. It does so on the marginal wedge, it does not on
-annual revenue, and a reader who cares about collected revenue should take the second.
+\paragraph{What changes between the objects, computed as importance rather than sensitivity.}
+Section~\ref{sec:levers} says that moving a parameter across its uncertainty range measures how
+wrong the answer could be and not what a channel costs. An earlier version of this paragraph then
+argued an ordering from exactly those sensitivity swings, which contradicted the section it sits
+in. The decomposition is therefore recomputed here by counterfactual, on the decomposed
+shareholder layer, on both objects, with the three mechanisms set to their no-friction values and
+each one's Shapley value averaged over all six orders of removal.
+
+On the marginal wedge the values are \result{ShBaseMarg} points for the taxable shareholder base,
+\result{ShDeferMarg} for deferral and step-up and \result{ShShiftMarg} for profit shifting,
+summing exactly to the joint effect of \result{ShJointMarg}. On the annual rate they are
+\result{ShBaseAnn}, \result{ShDeferAnn} and \result{ShShiftAnn}.
+
+\textbf{The ordering does not reverse, and an earlier version of this paper said it did.} The
+taxable shareholder base is the largest of the three mechanisms on both objects. What changes is
+second place, where profit shifting overtakes deferral, and the size of the gap: ownership taken
+as a package is \result{ShOwnOverShiftMarg} times profit shifting on the marginal wedge and
+\result{ShOwnOverShiftAnn} times it on the annual rate. That the gap narrows by a factor of four
+is the substantive point, and it is the opposite in kind from a reversal. The sensitivity swings
+pointed the other way, which is a reason to compute importance when importance is the claim.
+
+The mechanism behind the narrowing is still the entity layer: the shifted share enters it, and
+the annual object collects the entity tax on all net capital income while the marginal object
+washes it out on the normal return. So profit shifting matters more for collected revenue than
+for the marginal wedge, by about a factor of two, without ever becoming the largest channel.
 
 \textbf{The ratios above belong to the superseded layer and are not the paper's comparison.}
 They were computed before the shareholder layer was decomposed, and an earlier version of this
 section concluded from them that the ownership package is about \result{ShRatioPair} times profit
 shifting. On the decomposed layer the ratio of the ownership counterfactual to the
 profit-shifting one is \result{CfRatioFed} federally, which is the figure the introduction and the
-conclusion use, and it is what we claim. The Shapley attributions in
-Table~\ref{tab:counterfactual} are retained as the record of the first pass and nothing in the
-argument rests on their levels. What survives the recomputation is the ordering: on the
-marginal rate the taxable shareholder base is the largest of the three mechanisms and profit
-shifting the smallest, and deferral taken alone is only modestly larger than shifting, so no
+conclusion use, and it is what we claim. The three-mechanism decomposition behind
+Table~\ref{tab:counterfactual} is recomputed above on the decomposed layer and on both objects,
+so nothing in the argument rests on that table's levels. On the marginal rate the recomputed
+values put the taxable shareholder base largest and profit shifting smallest, with deferral at
+\result{ShDeferMarg} points only modestly above shifting's \result{ShShiftMarg}, so no
 claim that every ownership mechanism individually dwarfs shifting is available.
 
 Neither counterfactual is a policy. No reform abolishes profit shifting or places all equity in

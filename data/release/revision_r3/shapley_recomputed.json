@@ -1,0 +1,43 @@
+{
+  "definitions": ", defined on the decomposed layer.\n\n  base        the taxable shareholder base is complete: every share sits in a taxable account,\n              so the holder groups collapse to the taxable-account treatment and no holding is\n              outside the owner-level base.\n  defer       deferral and step-up at death are eliminated: accrued gains bear the full\n              statutory rate rather than the rate reduced by the share never taxed at death.\n  shift       profit shifting is eliminated: every dollar of rent is booked domestically.\n\nVALUE FUNCTION. v(S) is the assembled rate with the mechanisms in S set to their no-friction\nvalues and the others at their measured values, so v({}) is the baseline and v({all}) is the\nfrictionless rate. Each mechanism's Shapley value averages its marginal contribution over all\nsix orderings of removal, and the three sum exactly to v({all}) - v({}).",
+  "basis": "federal only",
+  "readings": {
+    "marginal_barkai": {
+      "baseline": 0.1051,
+      "frictionless": 0.2216,
+      "joint": 0.1166,
+      "shapley": {
+        "base": 0.0894,
+        "defer": 0.0148,
+        "shift": 0.0124
+      },
+      "sums_to_joint": 0.1166,
+      "order_largest_first": [
+        "base",
+        "defer",
+        "shift"
+      ],
+      "ownership_over_shifting": 8.4,
+      "base_over_shifting": 7.2
+    },
+    "annual": {
+      "baseline": 0.238,
+      "frictionless": 0.3225,
+      "joint": 0.0844,
+      "shapley": {
+        "base": 0.045,
+        "defer": 0.0119,
+        "shift": 0.0275
+      },
+      "sums_to_joint": 0.0844,
+      "order_largest_first": [
+        "base",
+        "shift",
+        "defer"
+      ],
+      "ownership_over_shifting": 2.1,
+      "base_over_shifting": 1.6
+    }
+  },
+  "finding": "Recomputed by counterfactual on the decomposed layer, federal basis. On the marginal wedge the Shapley values are base 0.0894, deferral 0.0148, shifting 0.0124, summing to the joint effect of 0.1166, so the order largest first is base, defer, shift. On the annual rate they are base 0.0450, deferral 0.0119, shifting 0.0275, order base, shift, defer. The ordering is now claimed from an importance calculation rather than from sensitivity swings, which is what the counterfactual section says is required."
+}
