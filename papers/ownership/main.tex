@@ -10,7 +10,8 @@
 \makeatletter
 \def\input@path{{./}{../../paper/}}
 \makeatother
-\graphicspath{{../../paper/figures/}}
+% both paths: the first works in the repository, the second in a flat source archive
+\graphicspath{{../../paper/figures/}{figures/}}
 
 \usepackage[round]{natbib}
 \input{results_macros.tex}   % measured values only
