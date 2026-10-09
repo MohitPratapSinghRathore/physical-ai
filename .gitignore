@@ -34,3 +34,5 @@ papers/*/*.docx
 papers/*/main_docx.tex
 papers/*/references.bib
 dist/
+papers/*/tp3.docx
+papers/*/titlepage_3a_src.tex

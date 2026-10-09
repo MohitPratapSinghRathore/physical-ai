@@ -33,13 +33,17 @@ def load_refs():
     return out
 
 
+THREE_BBL = [False]
+
+
 def load_cites(anon=False):
     """key -> (author, year) from the apalike .bbl.
 
     The blind build has its own .bbl. Reading the author build's would put the
     companion paper's real author names into the anonymous reference list.
     """
-    bbl = HERE / ("main_anon.bbl" if anon else "main.bbl")
+    bbl = HERE / ("main_anon.bbl" if anon
+                  else "main_3a.bbl" if THREE_BBL[0] else "main.bbl")
     out = {}
     if bbl.exists():
         for label, key in re.findall(r"\\bibitem\[([^\]]*)\]\{([^}]*)\}",
@@ -68,12 +72,31 @@ def inline_inputs(text, seen=None):
     return re.sub(r"\\input\{([^}]*)\}", repl, text)
 
 
-def resolve_toggle(text, anon):
-    """Evaluate \\ifanon ... \\else ... \\fi without nesting support (none is used)."""
+def resolve_toggle(text, anon, three=False):
+    """Evaluate \\ifanon and \\ifthreeauth without nesting support.
+
+    Neither toggle may be nested inside the other in the sources. The companion-citation
+    selector is written flat for exactly this reason: it sets a key with three sequential
+    one-line conditionals instead of nesting them.
+    """
     # the toggle's own declaration must go first, or the regex below matches the
     # \ifanon inside \newif\ifanon and eats the preamble
     text = text.replace("\\newif\\ifanon", "")
     text = text.replace("\\ifdefined\\ANON\\anontrue\\else\\anonfalse\\fi", "")
+    text = text.replace("\\newif\\ifthreeauth", "")
+    text = text.replace(
+        "\\ifdefined\\THREEAUTH\\threeauthtrue\\else\\threeauthfalse\\fi", "")
+    tpat = re.compile(r"\\ifthreeauth(.*?)(?:\\else(.*?))?\\fi", re.S)
+
+    def trepl(m):
+        a, b = m.group(1), m.group(2) or ""
+        return a if three else b
+
+    while tpat.search(text):
+        nxt = tpat.sub(trepl, text)
+        if nxt == text:
+            break
+        text = nxt
     pat = re.compile(r"\\ifanon(.*?)(?:\\else(.*?))?\\fi", re.S)
     def repl(m):
         a, b = m.group(1), m.group(2) or ""
@@ -89,13 +112,15 @@ def resolve_toggle(text, anon):
 def main():
     mode = (sys.argv[1] if len(sys.argv) > 1 else "full").lower()
     anon = mode == "anon"
+    three = mode == "three"
+    THREE_BBL[0] = three
 
     text = (HERE / "main.tex").read_text(encoding="utf-8", errors="replace")
     # Inline first, resolve the toggle second. The other order leaves every
     # \ifanon block inside a section file unevaluated, which keeps the
     # disclosure and funding paragraphs in the blind build.
     text = inline_inputs(text)
-    text = resolve_toggle(text, anon)
+    text = resolve_toggle(text, anon, three)
 
     macros = load_macros()
     missing = set()
@@ -116,6 +141,14 @@ def main():
         if anon:
             head += "\n\\noindent\\textit{Author names and affiliations removed for " \
                     "double-anonymous peer review.}\n"
+        elif three:
+            # three-author variant: the fourth author and the second affiliation go
+            head += (
+                "\n\\noindent Mohit Pratap Singh Rathore, "
+                "Sriharsha Meduri, Gunveer Singh Kalsi\n\n"
+                "\\noindent Oviqo.\n\n"
+                "\\noindent Corresponding author: Mohit Pratap Singh Rathore, "
+                "mohitpratapsinghr@gmail.com\n")
         else:
             head += (
                 "\n\\noindent Mohit Pratap Singh Rathore$^{1}$, "
@@ -151,7 +184,8 @@ def main():
     text = re.sub(r"\\citep\{([^}]*)\}", citep, text)
 
     # the bibliography itself, as alphabetical paragraphs
-    bbl = HERE / ("main_anon.bbl" if anon else "main.bbl")
+    bbl = HERE / ("main_anon.bbl" if anon
+                  else "main_3a.bbl" if three else "main.bbl")
     biblio = ""
     if bbl.exists():
         raw = bbl.read_text(encoding="utf-8", errors="replace")

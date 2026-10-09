@@ -20,16 +20,18 @@
 
 \newif\ifanon
 \ifdefined\ANON\anontrue\else\anonfalse\fi
+\newif\ifthreeauth
+\ifdefined\THREEAUTH\threeauthtrue\else\threeauthfalse\fi
 
 % The companion paper shares authors, so a named self-citation would leak
 % identity in the blind build. Cite the anonymized entry there instead.
-\ifanon
-  \newcommand{\companion}{\citep{CompanionAccountsAnon}}
-  \newcommand{\companiont}{\citet{CompanionAccountsAnon}}
-\else
-  \newcommand{\companion}{\citep{CompanionAccounts}}
-  \newcommand{\companiont}{\citet{CompanionAccounts}}
-\fi
+% Flat selector, deliberately not nested: _to_docx.py resolves \ifanon by regex
+% and has no nesting support. Precedence is anon last, so it wins.
+\newcommand{\compkey}{CompanionAccounts}
+\ifthreeauth\renewcommand{\compkey}{CompanionAccountsThree}\fi
+\ifanon\renewcommand{\compkey}{CompanionAccountsAnon}\fi
+\newcommand{\companion}{\citep{\compkey}}
+\newcommand{\companiont}{\citet{\compkey}}
 
 \title{\bfseries Can Capital Taxes Replace Wage Tax Revenue? Both Sides
 Computed}
@@ -41,8 +43,9 @@ Computed}
     Mohit Pratap Singh Rathore\thanks{Oviqo. Corresponding author. Email:
       \texttt{mohitpratapsinghr@gmail.com}.}\quad
     Sriharsha Meduri\thanks{Oviqo.}\quad
-    Gunveer Singh Kalsi\thanks{Oviqo.}\quad
-    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}}
+    Gunveer Singh Kalsi\thanks{Oviqo.}%
+    \ifthreeauth\else\quad
+    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}\fi}
 \fi
 \date{}
 
@@ -52,8 +55,7 @@ Computed}
   automation; share ownership; household balance sheets}]{hyperref}
 \else
   \usepackage[hidelinks,pdftitle={Ownership More Than Profit Shifting},
-  pdfauthor={Mohit Pratap Singh Rathore; Sriharsha Meduri; Gunveer Singh Kalsi;
-  Pratap Chandra Mandal},pdfkeywords={capital taxation; effective marginal tax rate; tax base
+  pdfauthor={Mohit Pratap Singh Rathore; Sriharsha Meduri; Gunveer Singh Kalsi\ifthreeauth\else; Pratap Chandra Mandal\fi},pdfkeywords={capital taxation; effective marginal tax rate; tax base
   erosion; automation; share ownership; household balance sheets}]{hyperref}
 \fi
 

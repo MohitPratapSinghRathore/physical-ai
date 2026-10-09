@@ -20,16 +20,18 @@
 
 \newif\ifanon
 \ifdefined\ANON\anontrue\else\anonfalse\fi
+\newif\ifthreeauth
+\ifdefined\THREEAUTH\threeauthtrue\else\threeauthfalse\fi
 
 % The companion paper shares authors, so a named self-citation would leak
 % identity in the blind build. Cite the anonymized entry there instead.
-\ifanon
-  \newcommand{\companion}{\citep{CompanionOwnershipAnon}}
-  \newcommand{\companiont}{\citet{CompanionOwnershipAnon}}
-\else
-  \newcommand{\companion}{\citep{CompanionOwnership}}
-  \newcommand{\companiont}{\citet{CompanionOwnership}}
-\fi
+% Flat selector, deliberately not nested: _to_docx.py resolves \ifanon by regex
+% and has no nesting support. Precedence is anon last, so it wins.
+\newcommand{\compkey}{CompanionOwnership}
+\ifthreeauth\renewcommand{\compkey}{CompanionOwnershipThree}\fi
+\ifanon\renewcommand{\compkey}{CompanionOwnershipAnon}\fi
+\newcommand{\companion}{\citep{\compkey}}
+\newcommand{\companiont}{\citet{\compkey}}
 
 \title{\bfseries Labor Backing Accounts: Who Holds the Claims That Wages Pay?}
 
@@ -40,8 +42,9 @@
     Mohit Pratap Singh Rathore\thanks{Oviqo. Corresponding author. Email:
       \texttt{mohitpratapsinghr@gmail.com}.}\quad
     Sriharsha Meduri\thanks{Oviqo.}\quad
-    Gunveer Singh Kalsi\thanks{Oviqo.}\quad
-    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}}
+    Gunveer Singh Kalsi\thanks{Oviqo.}%
+    \ifthreeauth\else\quad
+    Pratap Chandra Mandal\thanks{Indian Institute of Management Shillong.}\fi}
 \fi
 \date{}
 
@@ -51,8 +54,7 @@
   fiscal risk; household debt; income distribution}]{hyperref}
 \else
   \usepackage[hidelinks,pdftitle={Labor Backing Accounts: Who Holds the Claims That Wages Pay?},
-  pdfauthor={Mohit Pratap Singh Rathore; Sriharsha Meduri; Gunveer Singh Kalsi;
-  Pratap Chandra Mandal},pdfkeywords={financial accounts; national accounts; contingent
+  pdfauthor={Mohit Pratap Singh Rathore; Sriharsha Meduri; Gunveer Singh Kalsi\ifthreeauth\else; Pratap Chandra Mandal\fi},pdfkeywords={financial accounts; national accounts; contingent
   liabilities; fiscal risk; household debt; income distribution}]{hyperref}
 \fi
 

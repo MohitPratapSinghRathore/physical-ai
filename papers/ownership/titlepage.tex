@@ -5,6 +5,9 @@
 \usepackage[hidelinks]{hyperref}
 \pagestyle{empty}
 
+\newif\ifthreeauth
+\ifdefined\THREEAUTH\threeauthtrue\else\threeauthfalse\fi
+
 \begin{document}
 
 \begin{center}
@@ -39,6 +42,7 @@ Oviqo\\
 ORCID: \textit{to be supplied}\\
 Email: gunveerkalsi@gmail.com
 
+\ifthreeauth\else
 \vspace{0.8em}
 
 \noindent
@@ -46,6 +50,7 @@ Email: gunveerkalsi@gmail.com
 Indian Institute of Management Shillong\\
 ORCID: \textit{to be supplied}\\
 Email: \textit{to be supplied}
+\fi
 
 \vspace{1em}
 
