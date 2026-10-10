@@ -36,3 +36,13 @@ papers/*/references.bib
 dist/
 papers/*/tp3.docx
 papers/*/titlepage_3a_src.tex
+
+# Manuscript prose is deliberately NOT tracked here. A text-similarity screen
+# cannot tell an author's own repository from an external source, and a public
+# copy of the full text can trigger a desk rejection at a preprint server.
+# The replication artifacts, the generators and the records stay public.
+papers/
+paper/sections/
+paper/main.tex
+paper/outline.md
+release_assets/REBUILDS.md

@@ -18,8 +18,8 @@ federal rate is 10.5 percent against the 11.0 to 13.7 percent replacement requir
 annual rate it is 23.8 percent. No shortfall is established on either, which corroborates
 Hötte, Theodorakopoulos and Koutroumpis (2024) by an independent route.
 
-Sources are in `papers/accounts` and `papers/ownership`. `make` builds both, including the
-double-anonymous versions, and then runs the QA gates.
+The manuscript sources are not tracked here, for the reason given below. The measurement
+pipeline that produces every number in them is.
 
 ## What is measured, and what is a convention
 
@@ -73,9 +73,20 @@ the pipeline and the completeness of the specification rather than the validity 
 The claim made is that these quantities were **independently rebuilt under a reported blind
 protocol**, never that they were independently verified.
 
+## The manuscripts are not in this repository
+
+Deliberately. A text-similarity screen cannot distinguish an author's own repository from an
+external source, so a public copy of a manuscript's full text can read as near-total overlap and
+trigger a desk rejection at a preprint server. Both papers' sources were removed from this
+repository for that reason; they are distributed as the published preprints and, on request, as a
+LaTeX source archive.
+
+Nothing a reader needs in order to check a number is affected. The artifacts, the generators, the
+pre-registrations and the rebuild records are all here, and that is what the papers' data
+availability statements point to.
+
 ## Layout
 
-    papers/          the two manuscripts, their shared QA gates and the build
     paper/           generators for the macros, tables and figures
     framework/       the measurement modules, by workstream
     data/release/    one artifact per measured object; the source of every printed number
