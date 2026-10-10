@@ -1,0 +1,124 @@
+{
+  "engine_sensitivities": {
+    "mortgage": {
+      "uplift_per_unit_dose": 0.08303860488489176,
+      "lgd_lo": 0.25,
+      "lgd_hi": 0.4,
+      "s_lo": 0.02075965122122294,
+      "s_hi": 0.033215441953956704,
+      "s_mid": 0.02698754658758982
+    },
+    "card": {
+      "uplift_per_unit_dose": 0.08139723061028885,
+      "lgd_lo": 0.8,
+      "lgd_hi": 1.0,
+      "s_lo": 0.06511778448823108,
+      "s_hi": 0.08139723061028885,
+      "s_mid": 0.07325750754925997
+    },
+    "auto": {
+      "uplift_per_unit_dose": 0.08222231190791583,
+      "lgd_lo": 0.45,
+      "lgd_hi": 0.65,
+      "s_lo": 0.03700004035856212,
+      "s_hi": 0.05344450274014529,
+      "s_mid": 0.04522227154935371
+    },
+    "student": {
+      "uplift_per_unit_dose": 0.08009018667168268,
+      "lgd_lo": 0.75,
+      "lgd_hi": 1.0,
+      "s_lo": 0.06006764000376201,
+      "s_hi": 0.08009018667168268,
+      "s_mid": 0.07007891333772234
+    }
+  },
+  "gap_distribution": {
+    "n_banks": 6585,
+    "n_exposed_banks": 461,
+    "gap_mean": 0.12332654148307035,
+    "gap_variance": 0.005422731831072128,
+    "gap_sd": 0.07363920036958663,
+    "lb_rival_sd": 0.09276767157176083,
+    "lb_debtor_sd": 0.12244214388568139,
+    "gap_sd_over_debtor_sd": 0.6014203772709188,
+    "gap_var_share_of_debtor_var": 0.3617064701966944,
+    "corr_gap_rival": 0.07052103106503811,
+    "gap_p10": 0.0426509429377417,
+    "gap_p50": 0.11407087682514358,
+    "gap_p90": 0.21976988816423945,
+    "gap_exposed_mean": 0.11255466816491787,
+    "gap_exposed_sd": 0.06356105012469548,
+    "gap_exposed_p10": 0.039906506371825204,
+    "gap_exposed_p50": 0.10861634344128539,
+    "gap_exposed_p90": 0.1950850512451243,
+    "wage_shock_mean": 0.05680859357731546,
+    "wage_shock_sd": 0.06767160757059391,
+    "wage_shock_exposed_mean": -0.0704722804483616
+  },
+  "power": {
+    "n": 6585,
+    "n_states": 53,
+    "sd_of_gap_x_shock_interaction": 1.0627171915084008,
+    "R2_of_interaction_on_controls_and_rival_interaction": 0.06490613548053181,
+    "residual_sd_of_interaction": 1.0276501971988323,
+    "assumed_model_R2": 0.3,
+    "assumed_intra_cluster_correlation": 0.05,
+    "design_effect": 7.162264150943397,
+    "implied_SE_of_theta_in_outcome_SD": 0.02685041407135865,
+    "MDE_80pct_power_5pct_two_sided_in_outcome_SD": 0.07522372267619014,
+    "prespecified_threshold": 0.1,
+    "powered_for_threshold": true
+  },
+  "predicted_loss": {
+    "pred_loss_rival_lo": {
+      "mean_pct_of_loans": 0.0033528104888472508,
+      "sd_pct": 0.017656300879664508,
+      "p90_pct": 0.0024941451069137362,
+      "max_pct": 0.4119893057858821,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.031169415971939948
+    },
+    "pred_loss_rival_mid": {
+      "mean_pct_of_loans": 0.004184432759722201,
+      "sd_pct": 0.021940081552741984,
+      "p90_pct": 0.0030882627412770276,
+      "max_pct": 0.5147699187732826,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.03881481995152831
+    },
+    "pred_loss_rival_hi": {
+      "mean_pct_of_loans": 0.005016055030597152,
+      "sd_pct": 0.026233228897863156,
+      "p90_pct": 0.0037010645798352397,
+      "max_pct": 0.6175505317606831,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.04646022393111666
+    },
+    "pred_loss_debtor_lo": {
+      "mean_pct_of_loans": 0.0058447786859081915,
+      "sd_pct": 0.02706876389568441,
+      "p90_pct": 0.0052245988873947016,
+      "max_pct": 0.5643912590817983,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.051555858784707816
+    },
+    "pred_loss_debtor_mid": {
+      "mean_pct_of_loans": 0.007318207030508101,
+      "sd_pct": 0.03377550225802076,
+      "p90_pct": 0.006483245652859134,
+      "max_pct": 0.7085746108676115,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.06438351350252934
+    },
+    "pred_loss_debtor_hi": {
+      "mean_pct_of_loans": 0.00879163537510801,
+      "sd_pct": 0.04049541935037711,
+      "p90_pct": 0.007846521774053355,
+      "max_pct": 0.8527579626534249,
+      "nonzero_banks": 806,
+      "exposed_mean_pct": 0.07721116822035085
+    },
+    "corr_pred_rival_vs_debtor_mid": 0.9457766429450131
+  }
+}

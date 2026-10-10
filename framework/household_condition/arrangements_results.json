@@ -1,0 +1,700 @@
+{
+  "arrangements": [
+    {
+      "s": 0.01,
+      "arrangement": "broadened_retirement",
+      "param": "illiquid",
+      "boundary": 0.05097778031037041,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.01,
+      "arrangement": "broadened_retirement",
+      "param": "liquid",
+      "boundary": 0.04607339108943118,
+      "fiscal_cost_bn": 27.357556324574727
+    },
+    {
+      "s": 0.01,
+      "arrangement": "capital_tax",
+      "param": "assembled_0.086",
+      "boundary": 0.05052032215257753,
+      "fiscal_cost_bn": 2.5409698314265006
+    },
+    {
+      "s": 0.01,
+      "arrangement": "capital_tax",
+      "param": "required_high_0.137",
+      "boundary": 0.05024922708208481,
+      "fiscal_cost_bn": 4.047824033784076
+    },
+    {
+      "s": 0.01,
+      "arrangement": "capital_tax",
+      "param": "required_low_0.110",
+      "boundary": 0.05039273055197855,
+      "fiscal_cost_bn": 3.2500776913594778
+    },
+    {
+      "s": 0.01,
+      "arrangement": "none",
+      "param": "",
+      "boundary": 0.05097778031037041,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.01,
+      "arrangement": "universal_fund",
+      "param": "omega=0.01",
+      "boundary": 0.048578386482236446,
+      "fiscal_cost_bn": 13.354919999999998
+    },
+    {
+      "s": 0.01,
+      "arrangement": "universal_fund",
+      "param": "omega=0.02",
+      "boundary": 0.04618992903922381,
+      "fiscal_cost_bn": 26.709839999999996
+    },
+    {
+      "s": 0.01,
+      "arrangement": "universal_fund",
+      "param": "omega=0.05",
+      "boundary": 0.039089432004779434,
+      "fiscal_cost_bn": 66.7746
+    },
+    {
+      "s": 0.01,
+      "arrangement": "universal_fund",
+      "param": "omega=0.1",
+      "boundary": 0.027467163045367515,
+      "fiscal_cost_bn": 133.5492
+    },
+    {
+      "s": 0.02,
+      "arrangement": "broadened_retirement",
+      "param": "illiquid",
+      "boundary": 0.10743396049815032,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.02,
+      "arrangement": "broadened_retirement",
+      "param": "liquid",
+      "boundary": 0.0965984719102027,
+      "fiscal_cost_bn": 54.715112649149454
+    },
+    {
+      "s": 0.02,
+      "arrangement": "capital_tax",
+      "param": "assembled_0.086",
+      "boundary": 0.10641853795508704,
+      "fiscal_cost_bn": 5.081939662853001
+    },
+    {
+      "s": 0.02,
+      "arrangement": "capital_tax",
+      "param": "required_high_0.137",
+      "boundary": 0.10581724883863117,
+      "fiscal_cost_bn": 8.095648067568153
+    },
+    {
+      "s": 0.02,
+      "arrangement": "capital_tax",
+      "param": "required_low_0.110",
+      "boundary": 0.106135496846229,
+      "fiscal_cost_bn": 6.5001553827189555
+    },
+    {
+      "s": 0.02,
+      "arrangement": "none",
+      "param": "",
+      "boundary": 0.10743396049815032,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.02,
+      "arrangement": "universal_fund",
+      "param": "omega=0.01",
+      "boundary": 0.10477006996302891,
+      "fiscal_cost_bn": 13.354919999999998
+    },
+    {
+      "s": 0.02,
+      "arrangement": "universal_fund",
+      "param": "omega=0.02",
+      "boundary": 0.10211897162795384,
+      "fiscal_cost_bn": 26.709839999999996
+    },
+    {
+      "s": 0.02,
+      "arrangement": "universal_fund",
+      "param": "omega=0.05",
+      "boundary": 0.09424151447360982,
+      "fiscal_cost_bn": 66.7746
+    },
+    {
+      "s": 0.02,
+      "arrangement": "universal_fund",
+      "param": "omega=0.1",
+      "boundary": 0.08135984947752947,
+      "fiscal_cost_bn": 133.5492
+    },
+    {
+      "s": 0.05,
+      "arrangement": "broadened_retirement",
+      "param": "illiquid",
+      "boundary": 0.32020656236585104,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.05,
+      "arrangement": "broadened_retirement",
+      "param": "liquid",
+      "boundary": 0.2824324902969465,
+      "fiscal_cost_bn": 136.78778162287364
+    },
+    {
+      "s": 0.05,
+      "arrangement": "capital_tax",
+      "param": "assembled_0.086",
+      "boundary": 0.3166044934462986,
+      "fiscal_cost_bn": 12.704849157132502
+    },
+    {
+      "s": 0.05,
+      "arrangement": "capital_tax",
+      "param": "required_high_0.137",
+      "boundary": 0.3144776646617156,
+      "fiscal_cost_bn": 20.239120168920387
+    },
+    {
+      "s": 0.05,
+      "arrangement": "capital_tax",
+      "param": "required_low_0.110",
+      "boundary": 0.31560277501845097,
+      "fiscal_cost_bn": 16.25038845679739
+    },
+    {
+      "s": 0.05,
+      "arrangement": "none",
+      "param": "",
+      "boundary": 0.32020656236585104,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.05,
+      "arrangement": "universal_fund",
+      "param": "omega=0.01",
+      "boundary": 0.31642175014297147,
+      "fiscal_cost_bn": 13.354919999999998
+    },
+    {
+      "s": 0.05,
+      "arrangement": "universal_fund",
+      "param": "omega=0.02",
+      "boundary": 0.31265859282045105,
+      "fiscal_cost_bn": 26.709839999999996
+    },
+    {
+      "s": 0.05,
+      "arrangement": "universal_fund",
+      "param": "omega=0.05",
+      "boundary": 0.3014972062478786,
+      "fiscal_cost_bn": 66.7746
+    },
+    {
+      "s": 0.05,
+      "arrangement": "universal_fund",
+      "param": "omega=0.1",
+      "boundary": 0.28331109243893293,
+      "fiscal_cost_bn": 133.5492
+    },
+    {
+      "s": 0.1,
+      "arrangement": "broadened_retirement",
+      "param": "illiquid",
+      "boundary": 0.9423853327444343,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.1,
+      "arrangement": "broadened_retirement",
+      "param": "liquid",
+      "boundary": 0.7873575791568159,
+      "fiscal_cost_bn": 273.5755632457473
+    },
+    {
+      "s": 0.1,
+      "arrangement": "capital_tax",
+      "param": "assembled_0.086",
+      "boundary": 0.9268600839701133,
+      "fiscal_cost_bn": 25.409698314265004
+    },
+    {
+      "s": 0.1,
+      "arrangement": "capital_tax",
+      "param": "required_high_0.137",
+      "boundary": 0.917770174573528,
+      "fiscal_cost_bn": 40.478240337840774
+    },
+    {
+      "s": 0.1,
+      "arrangement": "capital_tax",
+      "param": "required_low_0.110",
+      "boundary": 0.9225717466520014,
+      "fiscal_cost_bn": 32.50077691359478
+    },
+    {
+      "s": 0.1,
+      "arrangement": "none",
+      "param": "",
+      "boundary": 0.9423853327444343,
+      "fiscal_cost_bn": 0.0
+    },
+    {
+      "s": 0.1,
+      "arrangement": "universal_fund",
+      "param": "omega=0.01",
+      "boundary": 0.9341979697752073,
+      "fiscal_cost_bn": 13.354919999999998
+    },
+    {
+      "s": 0.1,
+      "arrangement": "universal_fund",
+      "param": "omega=0.02",
+      "boundary": 0.9260794355861026,
+      "fiscal_cost_bn": 26.709839999999996
+    },
+    {
+      "s": 0.1,
+      "arrangement": "universal_fund",
+      "param": "omega=0.05",
+      "boundary": 0.9021282227338487,
+      "fiscal_cost_bn": 66.7746
+    },
+    {
+      "s": 0.1,
+      "arrangement": "universal_fund",
+      "param": "omega=0.1",
+      "boundary": 0.8635081022955049,
+      "fiscal_cost_bn": 133.5492
+    }
+  ],
+  "sensitivities": [
+    {
+      "s": 0.01,
+      "sens": "baseline",
+      "param": "",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "equity_overstatement_real",
+      "param": "x1.504",
+      "boundary": 0.046466567283198666
+    },
+    {
+      "s": 0.01,
+      "sens": "indexed_transfers",
+      "param": "",
+      "boundary": 0.055607262731164474
+    },
+    {
+      "s": 0.01,
+      "sens": "kappa",
+      "param": "accrual",
+      "boundary": 0.042720349067442064
+    },
+    {
+      "s": 0.01,
+      "sens": "kappa",
+      "param": "cash_flow",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "kappa",
+      "param": "counterfactual",
+      "boundary": 0.027927276834407478
+    },
+    {
+      "s": 0.01,
+      "sens": "price_passthrough",
+      "param": "pi=0.0",
+      "boundary": 0.052000000000000005
+    },
+    {
+      "s": 0.01,
+      "sens": "price_passthrough",
+      "param": "pi=0.25",
+      "boundary": 0.042
+    },
+    {
+      "s": 0.01,
+      "sens": "price_passthrough",
+      "param": "pi=0.5",
+      "boundary": 0.035
+    },
+    {
+      "s": 0.01,
+      "sens": "price_passthrough",
+      "param": "pi=1.0",
+      "boundary": 0.027000000000000003
+    },
+    {
+      "s": 0.01,
+      "sens": "refinancing",
+      "param": "minus100bp",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "refinancing",
+      "param": "minus200bp",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "refinancing",
+      "param": "none",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "retained_wage_share",
+      "param": "R=0.568316",
+      "boundary": 0.05097778031037041
+    },
+    {
+      "s": 0.01,
+      "sens": "retained_wage_share",
+      "param": "R=0.7",
+      "boundary": 0.05097778031037037
+    },
+    {
+      "s": 0.01,
+      "sens": "retained_wage_share",
+      "param": "R=0.85",
+      "boundary": 0.05097778031037037
+    },
+    {
+      "s": 0.02,
+      "sens": "baseline",
+      "param": "",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "equity_overstatement_real",
+      "param": "x1.504",
+      "boundary": 0.09746315115917584
+    },
+    {
+      "s": 0.02,
+      "sens": "indexed_transfers",
+      "param": "",
+      "boundary": 0.11824539656186724
+    },
+    {
+      "s": 0.02,
+      "sens": "kappa",
+      "param": "accrual",
+      "boundary": 0.08925460967800722
+    },
+    {
+      "s": 0.02,
+      "sens": "kappa",
+      "param": "cash_flow",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "kappa",
+      "param": "counterfactual",
+      "boundary": 0.057464022274294146
+    },
+    {
+      "s": 0.02,
+      "sens": "price_passthrough",
+      "param": "pi=0.0",
+      "boundary": 0.10900000000000001
+    },
+    {
+      "s": 0.02,
+      "sens": "price_passthrough",
+      "param": "pi=0.25",
+      "boundary": 0.0865
+    },
+    {
+      "s": 0.02,
+      "sens": "price_passthrough",
+      "param": "pi=0.5",
+      "boundary": 0.072
+    },
+    {
+      "s": 0.02,
+      "sens": "price_passthrough",
+      "param": "pi=1.0",
+      "boundary": 0.054000000000000006
+    },
+    {
+      "s": 0.02,
+      "sens": "refinancing",
+      "param": "minus100bp",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "refinancing",
+      "param": "minus200bp",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "refinancing",
+      "param": "none",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "retained_wage_share",
+      "param": "R=0.568316",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "retained_wage_share",
+      "param": "R=0.7",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.02,
+      "sens": "retained_wage_share",
+      "param": "R=0.85",
+      "boundary": 0.10743396049815032
+    },
+    {
+      "s": 0.05,
+      "sens": "baseline",
+      "param": "",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "equity_overstatement_real",
+      "param": "x1.504",
+      "boundary": 0.28539535185882275
+    },
+    {
+      "s": 0.05,
+      "sens": "indexed_transfers",
+      "param": "",
+      "boundary": 0.3670950335309483
+    },
+    {
+      "s": 0.05,
+      "sens": "kappa",
+      "param": "accrual",
+      "boundary": 0.2576400202614609
+    },
+    {
+      "s": 0.05,
+      "sens": "kappa",
+      "param": "cash_flow",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "kappa",
+      "param": "counterfactual",
+      "boundary": 0.15725984747402605
+    },
+    {
+      "s": 0.05,
+      "sens": "price_passthrough",
+      "param": "pi=0.0",
+      "boundary": NaN
+    },
+    {
+      "s": 0.05,
+      "sens": "price_passthrough",
+      "param": "pi=0.25",
+      "boundary": NaN
+    },
+    {
+      "s": 0.05,
+      "sens": "price_passthrough",
+      "param": "pi=0.5",
+      "boundary": 0.1975
+    },
+    {
+      "s": 0.05,
+      "sens": "price_passthrough",
+      "param": "pi=1.0",
+      "boundary": 0.144
+    },
+    {
+      "s": 0.05,
+      "sens": "refinancing",
+      "param": "minus100bp",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "refinancing",
+      "param": "minus200bp",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "refinancing",
+      "param": "none",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "retained_wage_share",
+      "param": "R=0.568316",
+      "boundary": 0.32020656236585104
+    },
+    {
+      "s": 0.05,
+      "sens": "retained_wage_share",
+      "param": "R=0.7",
+      "boundary": 0.3202065623658511
+    },
+    {
+      "s": 0.05,
+      "sens": "retained_wage_share",
+      "param": "R=0.85",
+      "boundary": 0.3202065623658511
+    },
+    {
+      "s": 0.1,
+      "sens": "baseline",
+      "param": "",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "equity_overstatement_real",
+      "param": "x1.504",
+      "boundary": 0.7989312905076037
+    },
+    {
+      "s": 0.1,
+      "sens": "indexed_transfers",
+      "param": "",
+      "boundary": 1.3704244265034555
+    },
+    {
+      "s": 0.1,
+      "sens": "kappa",
+      "param": "accrual",
+      "boundary": 0.6942224123858585
+    },
+    {
+      "s": 0.1,
+      "sens": "kappa",
+      "param": "cash_flow",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "kappa",
+      "param": "counterfactual",
+      "boundary": 0.3735145036453722
+    },
+    {
+      "s": 0.1,
+      "sens": "price_passthrough",
+      "param": "pi=0.0",
+      "boundary": NaN
+    },
+    {
+      "s": 0.1,
+      "sens": "price_passthrough",
+      "param": "pi=0.25",
+      "boundary": NaN
+    },
+    {
+      "s": 0.1,
+      "sens": "price_passthrough",
+      "param": "pi=0.5",
+      "boundary": NaN
+    },
+    {
+      "s": 0.1,
+      "sens": "price_passthrough",
+      "param": "pi=1.0",
+      "boundary": NaN
+    },
+    {
+      "s": 0.1,
+      "sens": "refinancing",
+      "param": "minus100bp",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "refinancing",
+      "param": "minus200bp",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "refinancing",
+      "param": "none",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "retained_wage_share",
+      "param": "R=0.568316",
+      "boundary": 0.9423853327444343
+    },
+    {
+      "s": 0.1,
+      "sens": "retained_wage_share",
+      "param": "R=0.7",
+      "boundary": 0.9423853327444341
+    },
+    {
+      "s": 0.1,
+      "sens": "retained_wage_share",
+      "param": "R=0.85",
+      "boundary": 0.7838114749107639
+    }
+  ],
+  "stability": [
+    {
+      "s": 0.01,
+      "2019": 0.02552858068597006,
+      "2022": 0.05097778031037041,
+      "pct_change": -49.92214150843131,
+      "unstable_gt25pct": true
+    },
+    {
+      "s": 0.02,
+      "2019": 0.05239441930408595,
+      "2022": 0.10743396049815032,
+      "pct_change": -51.23104550819569,
+      "unstable_gt25pct": true
+    },
+    {
+      "s": 0.05,
+      "2019": 0.14215582501458474,
+      "2022": 0.32020656236585104,
+      "pct_change": -55.60496200819113,
+      "unstable_gt25pct": true
+    },
+    {
+      "s": 0.1,
+      "2019": 0.3314137107039073,
+      "2022": 0.9423853327444343,
+      "pct_change": -64.83246298637127,
+      "unstable_gt25pct": true
+    }
+  ]
+}

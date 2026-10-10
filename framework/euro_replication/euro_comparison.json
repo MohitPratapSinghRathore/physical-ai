@@ -1,0 +1,68 @@
+{
+  "period": "2025-Q4",
+  "euro_sovereign_share": 0.6840932335314759,
+  "us_sovereign_share": 0.793593,
+  "gap": 0.1094997664685241,
+  "criterion_threshold_pp": 0.15,
+  "criterion_met_at_us_coefficients": false,
+  "labour_backed_tn_eur": 16.282244664079,
+  "obligor_leg": 0.5887818090622132,
+  "holder_leg": 0.09531142446926263,
+  "sensitivity": [
+    {
+      "beta_govt": 0.5,
+      "euro_sovereign_share": 0.6321382737243653,
+      "gap_pp": 16.14547262756347,
+      "criterion_met": true
+    },
+    {
+      "beta_govt": 0.55,
+      "euro_sovereign_share": 0.6503598289600587,
+      "gap_pp": 14.323317103994126,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.6,
+      "euro_sovereign_share": 0.6668614181101565,
+      "gap_pp": 12.673158188984345,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.658,
+      "euro_sovereign_share": 0.684153168574657,
+      "gap_pp": 10.943983142534297,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.7,
+      "euro_sovereign_share": 0.6955947857114625,
+      "gap_pp": 9.79982142885375,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.75,
+      "euro_sovereign_share": 0.7081796121665769,
+      "gap_pp": 8.541338783342312,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.8,
+      "euro_sovereign_share": 0.7197651778465971,
+      "gap_pp": 7.3827822153402884,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.85,
+      "euro_sovereign_share": 0.7304659531619477,
+      "gap_pp": 6.312704683805226,
+      "criterion_met": false
+    },
+    {
+      "beta_govt": 0.9,
+      "euro_sovereign_share": 0.7403795673781006,
+      "gap_pp": 5.321343262189937,
+      "criterion_met": false
+    }
+  ],
+  "gap_closes_at_beta_govt": 0.55
+}

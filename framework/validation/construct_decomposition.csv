@@ -1,0 +1,7 @@
+model,R2_explaining_lb_bank
+loan composition only,0.5152208018789751
+county wage share only,0.3570471596691722
+"composition + wage share, additive",0.8792949826876821
+composition + wage share + interactions,0.939110947640318
+"household share x wage share, two terms only",0.6897407346245585
+"household share x wage share, with interaction",0.7270293577870086

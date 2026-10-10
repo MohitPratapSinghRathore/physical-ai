@@ -1,0 +1,5 @@
+episode,window,n_counties,national_wage_bill_change_pct_of_income,county_sd_pct,p10_pct,p50_pct,p90_pct,share_counties_negative,share_counties_below_minus_2pct_relative,cross_sectional_sd_rel_pct
+2001 recession,2000-2002,3110,1.96,7.9,-1.05,2.21,5.81,0.176,0.171,7.9
+2007-2010 financial crisis,2007-2010,3108,-0.25,5.49,-3.23,0.57,4.9,0.409,0.157,5.49
+2014-2016 oil collapse,2014-2016,3113,4.19,5.98,-1.34,1.85,5.04,0.188,0.568,5.98
+2020 pandemic,2019-2020,3112,0.74,4.54,-1.51,0.6,2.38,0.324,0.118,4.54

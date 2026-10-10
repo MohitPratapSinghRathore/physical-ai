@@ -1,0 +1,96 @@
+{
+  "dfa_quarter": "2022:Q4",
+  "reconciliation": [
+    {
+      "cell": "Home mortgages (incl. HELOC)",
+      "scf_bn": 11770.8,
+      "dfa_z1_bn": 12654.1,
+      "scf_over_official": 0.9302,
+      "implied_under_reporting_factor": 1.075,
+      "note": "SCF MRTHEL is mortgage + home-equity lines on the primary residence"
+    },
+    {
+      "cell": "Consumer credit (revolving + installment)",
+      "scf_bn": 2928.2,
+      "dfa_z1_bn": 4858.4,
+      "scf_over_official": 0.6027,
+      "implied_under_reporting_factor": 1.6592,
+      "note": "SCF CCBAL + INSTALL against DFA consumer credit"
+    },
+    {
+      "cell": "  of which revolving (credit card)",
+      "scf_bn": 363.5,
+      "dfa_z1_bn": NaN,
+      "scf_over_official": NaN,
+      "implied_under_reporting_factor": NaN,
+      "note": "no separate DFA line; compared to Z.1 revolving in the note below"
+    },
+    {
+      "cell": "Total liabilities",
+      "scf_bn": 16658.0,
+      "dfa_z1_bn": 18398.1,
+      "scf_over_official": 0.9054,
+      "implied_under_reporting_factor": 1.1045,
+      "note": "DFA liabilities include items the SCF does not field"
+    },
+    {
+      "cell": "Corporate equity + mutual funds, DIRECT",
+      "scf_bn": 25496.6,
+      "dfa_z1_bn": NaN,
+      "scf_over_official": NaN,
+      "implied_under_reporting_factor": NaN,
+      "note": "SCF direct holdings only; DFA line mixes direct and indirect"
+    },
+    {
+      "cell": "Corporate equity + mutual funds, ALL household routes",
+      "scf_bn": 50208.9,
+      "dfa_z1_bn": 33387.3,
+      "scf_over_official": 1.5038,
+      "implied_under_reporting_factor": 0.665,
+      "note": "SCF direct + retirement + annuities against the DFA equity line"
+    },
+    {
+      "cell": "Private business equity",
+      "scf_bn": 30772.9,
+      "dfa_z1_bn": 15953.5,
+      "scf_over_official": 1.9289,
+      "implied_under_reporting_factor": 0.5184,
+      "note": "SCF BUS includes S-corp and partnership stakes the DFA books differently; NOT expected to reconcile"
+    },
+    {
+      "cell": "Pension entitlements",
+      "scf_bn": 23838.3,
+      "dfa_z1_bn": 28313.6,
+      "scf_over_official": 0.8419,
+      "implied_under_reporting_factor": 1.1877,
+      "note": "SCF fields DC balances well and DB entitlements barely at all"
+    }
+  ],
+  "paper_sipp_factors_vs_scf": {
+    "mortgage": {
+      "paper_sipp_under_reporting_factor": 1.2592,
+      "paper_official_bn": 13100.0,
+      "scf_2022_bn": 11770.8,
+      "implied_scf_factor_vs_paper_official": 1.1129
+    },
+    "card": {
+      "paper_sipp_under_reporting_factor": 2.5159,
+      "paper_official_bn": 1357.2,
+      "scf_2022_bn": 363.5,
+      "implied_scf_factor_vs_paper_official": 3.7342
+    },
+    "auto": {
+      "paper_sipp_under_reporting_factor": 1.9036,
+      "paper_official_bn": 1713.0,
+      "scf_2022_bn": 968.7,
+      "implied_scf_factor_vs_paper_official": 1.7683
+    },
+    "student": {
+      "paper_sipp_under_reporting_factor": 1.4233,
+      "paper_official_bn": 1650.0,
+      "scf_2022_bn": 1338.8,
+      "implied_scf_factor_vs_paper_official": 1.2324
+    }
+  },
+  "scf_households_m": 131.31
+}

@@ -1,0 +1,15 @@
+{
+  "total_claims_bn": 149407.09999999998,
+  "total_labour_backed_bn": 40380.4239123,
+  "share_of_labour_backed_at_rw_le_20pct": 0.8940541947332835,
+  "share_of_labour_backed_at_rw_zero": 0.5921417473657739,
+  "share_of_labour_backed_sccl_exempt": 0.9231628881524717,
+  "share_of_ALL_claims_at_rw_le_20pct": 0.35683712487559166,
+  "labour_backed_weighted_mean_rw": 0.14426900182802418,
+  "claim_weighted_mean_rw": 1.6222588484750726,
+  "corr_labour_backing_vs_risk_weight_unweighted": -0.4903082092339055,
+  "corr_labour_backing_vs_risk_weight_claim_weighted": -0.8390420066706538,
+  "corr_excluding_corporate_equity_unweighted": -0.4195140379427549,
+  "criterion3_threshold": 0.5,
+  "criterion3_met": true
+}

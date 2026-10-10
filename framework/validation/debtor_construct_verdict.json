@@ -1,0 +1,16 @@
+{
+  "n_banks":6619.0,
+  "lb_debtor_mean":0.2885373707,
+  "lb_debtor_sd":0.1229828321,
+  "lb_rival_mean":0.1653844007,
+  "lb_rival_sd":0.09435405,
+  "corr_debtor_rival":0.8002873905,
+  "corr_debtor_paywtd_rival":0.7993857342,
+  "R2_rival_explaining_debtor":0.6404599075,
+  "corr_ws_mortgage_ws_pop":0.33166834,
+  "corr_ws_all_ws_pop":0.520880517,
+  "corr_ws_mortgage_ws_all":0.8184369208,
+  "mean_ws_mortgage":0.7966598499,
+  "mean_ws_all":0.7129910568,
+  "mean_ws_pop":0.4334450215
+}

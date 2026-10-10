@@ -1,0 +1,15 @@
+{
+  "n_banks":6637.0,
+  "lb_bank_mean":0.1651889742,
+  "lb_bank_sd":0.0943149455,
+  "lb_composition_mean":0.3808924945,
+  "lb_composition_sd":0.1551214743,
+  "geo_wage_share_mean":0.4330181211,
+  "geo_wage_share_sd":0.1478883422,
+  "R2_lb_bank_on_loan_composition":0.5152208019,
+  "R2_composition_leg_on_loan_composition":0.8988372143,
+  "corr_lb_bank_household_share":0.5820845855,
+  "corr_composition_leg_household_share":0.7650161774,
+  "residual_sd_after_composition":0.0656628586,
+  "residual_sd_as_share_of_total_sd":0.6962084143
+}

@@ -1,0 +1,12 @@
+{
+  "national_income_bn": 26651.6505,
+  "labour_income_bn": 16153.3955,
+  "capital_income_bn": 10498.255,
+  "alpha_labour_share": 0.606093626359088,
+  "lambda_all": 0.27027095767202497,
+  "lambda_ex_equity": 0.521628373822214,
+  "Lambda_L": 2.4998087863322604,
+  "Lambda_K_debt_only": 3.527424319565491,
+  "Lambda_K_incl_equity": 10.385221162945653,
+  "wedge_lambda_minus_alpha": -0.08446525253687398
+}

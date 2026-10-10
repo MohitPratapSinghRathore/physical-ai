@@ -1,0 +1,98 @@
+{
+  "laus/la.data.64.County": {
+    "sha256": "7e5a532fa79e41b2e7a4dd8db3bb231ce19b18ee969defb2510873f8f01c9858",
+    "bytes": 336423516,
+    "pinned": true,
+    "match": true
+  },
+  "laus/la.series": {
+    "sha256": "2b11e414cd4fba4e70b6e80280e88d274a78b8c91543b665ff0d658a97db77a4",
+    "bytes": 4052556,
+    "pinned": true,
+    "match": true
+  },
+  "laus/la.area": {
+    "sha256": "7f1dcbd6a2506d92d65641609cf08bd04f0a534503c6d0f23497f284dce1fc45",
+    "bytes": 439599,
+    "pinned": true,
+    "match": true
+  },
+  "fhfa/hpi_at_county.xlsx": {
+    "sha256": "534e9fd3224c4d9365300cc1be471bcfe4455b72311263a35e9cb50adf79afd1",
+    "bytes": 5334194,
+    "pinned": true,
+    "match": true
+  },
+  "ENGINE hand_check_credit.csv": {
+    "sha256": "a70b6ca41a4bb57dde30393428e41f27cb340c9316f7e614ce4a37c09ef37726",
+    "blob": "233e413becfec072b4a5f4cc6357f9f6e7499f79",
+    "pinned": true,
+    "match": true,
+    "master_head": "a1b6a0e"
+  },
+  "fdic_financials_20140630.csv": {
+    "sha256": "ed622e4f02fc32bebec3bd649689a0929f54ff89439a4290aa917a83e95e8bc7",
+    "bytes": 1351825,
+    "pinned": false,
+    "match": null
+  },
+  "fdic_sod_2014.csv": {
+    "sha256": "4aeadf42d0c710190beec8a66128ecac6bc4a236fb17a2b61e0805c5b6577454",
+    "bytes": 3512529,
+    "pinned": false,
+    "match": null
+  },
+  "CAINC4.zip": {
+    "sha256": "0de2d6308b4e6eb18ec70f438a70e354c35e909f3c343ec511580d5ddb5e81e9",
+    "bytes": 21345010,
+    "pinned": false,
+    "match": null
+  },
+  "CAINC5N.zip": {
+    "sha256": "e32577c332ce9d7f59e824c4d42772a91bfe687a536f5bd931640121850b14ec",
+    "bytes": 46282338,
+    "pinned": false,
+    "match": null
+  },
+  "qcew_2013_annual.zip": {
+    "sha256": "4485d675aa0fea95e4763a998c6558e36a994f00ac6c5557e714484a52a0c893",
+    "bytes": 76869588,
+    "pinned": false,
+    "match": null
+  },
+  "efa/household-debt.zip": {
+    "sha256": "d04a959e403f05b960e51233261e4371f907f70f6d32dcce27b171bb2d4441dc",
+    "bytes": 1262400,
+    "pinned": false,
+    "match": null
+  },
+  "pums2013/csv_hus.zip": {
+    "sha256": "02bb4ca836c57ecff1227d5e13bf7b6b26ec8fba368c2e2e9913fe619e0901c1",
+    "bytes": 995254236,
+    "pinned": false,
+    "match": null
+  },
+  "pums2013/csv_pus.zip": {
+    "sha256": "88415f4eeafe070ff09478c3beb4cc2c8fc1d756651cd829eef2a7f75de60257",
+    "bytes": 2493890978,
+    "pinned": false,
+    "match": null
+  },
+  "crosswalk/2010_tract_to_2010_puma.txt": {
+    "sha256": "3874b04b00b38d4b31d41de6fa799a9587778e9ade1a6ab10b02bb03a7f5a5ec",
+    "bytes": 1481853,
+    "pinned": false,
+    "match": null
+  },
+  "crosswalk/Gaz_tracts_national.zip": {
+    "sha256": "d1f4f1037e7d96d073a5b7c155289b7a974483b638f045d568848bde5219ad3b",
+    "bytes": 2475122,
+    "pinned": false,
+    "match": null
+  },
+  "HEAD": "ce61d86b1897dd31a23f8406e31b6dbfdbebe938",
+  "origin/master": "a1b6a0ea6ff1bdf017905b6a0067294db93a86bd",
+  "PREREGISTRATION.md sha256": "87961282d88edda92dc98594b2c6db24496cae502872347b1acc2646a0cce2d4",
+  "SESSION2_PLAN.md sha256": "1da99ed364a3b027e805973cf792a8aa854a4a36ae799dc6a967a11bd5df5e2e",
+  "working tree clean": "False"
+}

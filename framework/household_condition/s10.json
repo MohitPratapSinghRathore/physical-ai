@@ -1,0 +1,14 @@
+{
+  "s_values_with_uncensored_grid_boundary": [
+    0.01,
+    0.02
+  ],
+  "s_grid_spread_at_primary_convention": 0.05700000000000001,
+  "convention_spread_max": 0.05,
+  "per_s_convention_spread": {
+    "0.01": 0.023,
+    "0.02": 0.05
+  },
+  "convention_spread_exceeds_s_spread": false,
+  "note": "compared on the GRID boundary, the object section 6 defines; s values censored beyond g=0.20 in any convention cell are excluded from the comparison"
+}

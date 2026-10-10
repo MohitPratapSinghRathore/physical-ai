@@ -1,0 +1,58 @@
+{
+  "govt_debt_securities": {
+    "value_mn_eur": 11585622.0,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S13.S1.N.L.LE.F3.T._Z.XDC._T.S.V.N._T"
+  },
+  "govt_loans": {
+    "value_mn_eur": 2988510.5,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S13.S1.N.L.LE.F4.T._Z.XDC._T.S.V.N._T"
+  },
+  "household_loans_total": {
+    "value_mn_eur": 7991103.5,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S1M.S1.N.L.LE.F4.T._Z.XDC._T.S.V.N._T"
+  },
+  "household_loans_long": {
+    "value_mn_eur": 7679703.0,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S1M.S1.N.L.LE.F4.L._Z.XDC._T.S.V.N._T"
+  },
+  "household_loans_short": {
+    "value_mn_eur": 311400.13,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S1M.S1.N.L.LE.F4.S._Z.XDC._T.S.V.N._T"
+  },
+  "nfc_debt_securities": {
+    "value_mn_eur": 1953842.5,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S11.S1.N.L.LE.F3.T._Z.XDC._T.S.V.N._T"
+  },
+  "nfc_loans": {
+    "value_mn_eur": 14371902.0,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S11.S1.N.L.LE.F4.T._Z.XDC._T.S.V.N._T"
+  },
+  "nfc_equity": null,
+  "cb_holdings_debt_securities": {
+    "value_mn_eur": 4005575.75,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S121.S1.N.A.LE.F3.T._Z.XDC._T.S.V.N._T"
+  },
+  "govt_holdings_debt_securities": {
+    "value_mn_eur": 678679.94,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S13.S1.N.A.LE.F3.T._Z.XDC._T.S.V.N._T"
+  },
+  "govt_holdings_loans": {
+    "value_mn_eur": 1809801.5,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S13.S1.N.A.LE.F4.T._Z.XDC._T.S.V.N._T"
+  },
+  "cb_holdings_loans": {
+    "value_mn_eur": 37189.04,
+    "period": "2025-Q4",
+    "key": "Q.N.I9.W0.S121.S1.N.A.LE.F4.T._Z.XDC._T.S.V.N._T"
+  }
+}

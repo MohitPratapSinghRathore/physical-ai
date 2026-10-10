@@ -1,0 +1,363 @@
+{
+  "2022": {
+    "rows": 22975,
+    "households": 4595,
+    "implicates": 5,
+    "variables_total": 357,
+    "present": {
+      "income": [
+        "income",
+        "wageinc",
+        "bussefarminc",
+        "intdivinc",
+        "kginc",
+        "ssretinc",
+        "transfothinc",
+        "norminc",
+        "equitinc"
+      ],
+      "debt": [
+        "debt",
+        "mrthel",
+        "nh_mort",
+        "homeeq",
+        "othloc",
+        "resdbt",
+        "ccbal",
+        "veh_inst",
+        "edn_inst",
+        "install",
+        "odebt"
+      ],
+      "payment": [
+        "tpay",
+        "mortpay",
+        "conspay",
+        "revpay",
+        "pirtotal",
+        "pirmort",
+        "pircons",
+        "pirrev",
+        "pir40",
+        "debt2inc"
+      ],
+      "equity": [
+        "equity",
+        "stocks",
+        "nmmf",
+        "irakh",
+        "thrift",
+        "retqliq",
+        "annuit",
+        "savbnd",
+        "deq",
+        "bus",
+        "actbus",
+        "nonactbus",
+        "farmbus",
+        "kgbus"
+      ],
+      "liquid": [
+        "liq",
+        "checking",
+        "saving",
+        "mmda",
+        "call",
+        "cds"
+      ],
+      "distress": [
+        "late",
+        "late60",
+        "bnkruplast5",
+        "hpstppay"
+      ]
+    },
+    "absent": {
+      "income": [],
+      "debt": [],
+      "payment": [],
+      "equity": [],
+      "liquid": [],
+      "distress": [
+        "forecloselast5"
+      ]
+    },
+    "weighted_households_m": 131.31
+  },
+  "2019": {
+    "rows": 28885,
+    "households": 5777,
+    "implicates": 5,
+    "variables_total": 357,
+    "present": {
+      "income": [
+        "income",
+        "wageinc",
+        "bussefarminc",
+        "intdivinc",
+        "kginc",
+        "ssretinc",
+        "transfothinc",
+        "norminc",
+        "equitinc"
+      ],
+      "debt": [
+        "debt",
+        "mrthel",
+        "nh_mort",
+        "homeeq",
+        "othloc",
+        "resdbt",
+        "ccbal",
+        "veh_inst",
+        "edn_inst",
+        "install",
+        "odebt"
+      ],
+      "payment": [
+        "tpay",
+        "mortpay",
+        "conspay",
+        "revpay",
+        "pirtotal",
+        "pirmort",
+        "pircons",
+        "pirrev",
+        "pir40",
+        "debt2inc"
+      ],
+      "equity": [
+        "equity",
+        "stocks",
+        "nmmf",
+        "irakh",
+        "thrift",
+        "retqliq",
+        "annuit",
+        "savbnd",
+        "deq",
+        "bus",
+        "actbus",
+        "nonactbus",
+        "farmbus",
+        "kgbus"
+      ],
+      "liquid": [
+        "liq",
+        "checking",
+        "saving",
+        "mmda",
+        "call",
+        "cds"
+      ],
+      "distress": [
+        "late",
+        "late60",
+        "bnkruplast5",
+        "hpstppay"
+      ]
+    },
+    "absent": {
+      "income": [],
+      "debt": [],
+      "payment": [],
+      "equity": [],
+      "liquid": [],
+      "distress": [
+        "forecloselast5"
+      ]
+    },
+    "weighted_households_m": 128.64
+  },
+  "aggregates_2022_bn": {
+    "debt": {
+      "mean_bn": 16658.0,
+      "implicate_range_bn": [
+        16430.7,
+        16828.1
+      ]
+    },
+    "mrthel": {
+      "mean_bn": 11770.8,
+      "implicate_range_bn": [
+        11620.1,
+        11900.3
+      ]
+    },
+    "ccbal": {
+      "mean_bn": 363.5,
+      "implicate_range_bn": [
+        359.9,
+        367.5
+      ]
+    },
+    "veh_inst": {
+      "mean_bn": 968.7,
+      "implicate_range_bn": [
+        964.5,
+        973.8
+      ]
+    },
+    "edn_inst": {
+      "mean_bn": 1338.8,
+      "implicate_range_bn": [
+        1329.0,
+        1348.6
+      ]
+    },
+    "equity": {
+      "mean_bn": 37271.0,
+      "implicate_range_bn": [
+        36376.5,
+        38071.7
+      ]
+    },
+    "stocks": {
+      "mean_bn": 11040.7,
+      "implicate_range_bn": [
+        10650.4,
+        11297.7
+      ]
+    },
+    "retqliq": {
+      "mean_bn": 23838.3,
+      "implicate_range_bn": [
+        23627.2,
+        24367.7
+      ]
+    },
+    "bus": {
+      "mean_bn": 30772.9,
+      "implicate_range_bn": [
+        30259.5,
+        31215.8
+      ]
+    },
+    "income": {
+      "mean_bn": 18565.4,
+      "implicate_range_bn": [
+        18226.2,
+        18857.7
+      ]
+    },
+    "wageinc": {
+      "mean_bn": 10943.0,
+      "implicate_range_bn": [
+        10720.6,
+        11154.0
+      ]
+    }
+  },
+  "sample_sizes_2022": {
+    "by_wage_quintile": {
+      "1": {
+        "n": 938,
+        "n_indebted": 536,
+        "wtd_households_m": 15.31
+      },
+      "2": {
+        "n": 862,
+        "n_indebted": 538,
+        "wtd_households_m": 16.83
+      },
+      "3": {
+        "n": 803,
+        "n_indebted": 642,
+        "wtd_households_m": 21.7
+      },
+      "4": {
+        "n": 743,
+        "n_indebted": 664,
+        "wtd_households_m": 24.2
+      },
+      "5": {
+        "n": 1249,
+        "n_indebted": 992,
+        "wtd_households_m": 23.67
+      }
+    },
+    "by_wealth_group": {
+      "p0-25": {
+        "n": 1057,
+        "n_indebted": 747,
+        "wtd_households_m": 24.18
+      },
+      "p25-50": {
+        "n": 783,
+        "n_indebted": 641,
+        "wtd_households_m": 27.41
+      },
+      "p50-75": {
+        "n": 810,
+        "n_indebted": 682,
+        "wtd_households_m": 26.51
+      },
+      "p75-90": {
+        "n": 666,
+        "n_indebted": 514,
+        "wtd_households_m": 14.84
+      },
+      "p90-99": {
+        "n": 713,
+        "n_indebted": 503,
+        "wtd_households_m": 8.09
+      },
+      "top1": {
+        "n": 565,
+        "n_indebted": 285,
+        "wtd_households_m": 0.68
+      }
+    },
+    "by_debt_class": {
+      "mrthel": {
+        "n_holding": 1822,
+        "wtd_households_m": 55.27
+      },
+      "homeeq": {
+        "n_holding": 3094,
+        "wtd_households_m": 85.94
+      },
+      "veh_inst": {
+        "n_holding": 1391,
+        "wtd_households_m": 45.58
+      },
+      "edn_inst": {
+        "n_holding": 812,
+        "wtd_households_m": 28.47
+      },
+      "ccbal": {
+        "n_holding": 1742,
+        "wtd_households_m": 59.76
+      },
+      "odebt": {
+        "n_holding": 254,
+        "wtd_households_m": 6.73
+      },
+      "install": {
+        "n_holding": 2117,
+        "wtd_households_m": 69.67
+      },
+      "othloc": {
+        "n_holding": 121,
+        "wtd_households_m": 2.13
+      }
+    }
+  },
+  "replicate_weights": {
+    "file": "p22_rw1.dta",
+    "rows": 4595,
+    "columns": 2000,
+    "replicate_columns": 999,
+    "first_five": [
+      "wt1b1",
+      "wt1b2",
+      "wt1b3",
+      "wt1b4",
+      "wt1b5"
+    ],
+    "id_columns": [
+      "y1",
+      "yy1"
+    ]
+  }
+}

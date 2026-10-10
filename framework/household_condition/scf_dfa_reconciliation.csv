@@ -1,0 +1,9 @@
+cell,scf_bn,dfa_z1_bn,scf_over_official,implied_under_reporting_factor,note
+Home mortgages (incl. HELOC),11770.8,12654.1,0.9302,1.075,SCF MRTHEL is mortgage + home-equity lines on the primary residence
+Consumer credit (revolving + installment),2928.2,4858.4,0.6027,1.6592,SCF CCBAL + INSTALL against DFA consumer credit
+  of which revolving (credit card),363.5,,,,no separate DFA line; compared to Z.1 revolving in the note below
+Total liabilities,16658.0,18398.1,0.9054,1.1045,DFA liabilities include items the SCF does not field
+"Corporate equity + mutual funds, DIRECT",25496.6,,,,SCF direct holdings only; DFA line mixes direct and indirect
+"Corporate equity + mutual funds, ALL household routes",50208.9,33387.3,1.5038,0.665,SCF direct + retirement + annuities against the DFA equity line
+Private business equity,30772.9,15953.5,1.9289,0.5184,SCF BUS includes S-corp and partnership stakes the DFA books differently; NOT expected to reconcile
+Pension entitlements,23838.3,28313.6,0.8419,1.1877,SCF fields DC balances well and DB entitlements barely at all

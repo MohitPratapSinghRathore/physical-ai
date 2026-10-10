@@ -1,0 +1,5 @@
+episode,window,n_exposed,earn_change_exposed_pct,earn_change_rest_pct,gap_pp,corr_exposure_with_change
+2001 recession,2001-2003,246,4.08,4.67,-0.6,-0.042
+2007-2010 financial crisis,2007-2010,246,6.62,2.11,4.51,0.271
+2014-2016 oil collapse,2014-2016,246,-8.12,1.43,-9.55,-0.471
+2020 pandemic,2019-2020,246,-1.16,1.62,-2.78,-0.274

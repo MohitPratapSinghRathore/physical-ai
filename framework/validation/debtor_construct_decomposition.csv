@@ -1,0 +1,6 @@
+model,R2_explaining_lb_debtor,R2_explaining_lb_debtor_paywtd
+rival alone (loan shares x population wage share),0.6404599074729901,0.639017551971478
+loan composition shares alone,0.8739015210287864,0.8745574657288849
+population wage share alone,0.006825057897774212,0.006985106565513544
+rival + loan composition shares,0.9166064933831634,0.9165119964278595
+composition + population wage share + interactions,0.8880165325125808,0.8884320318191934

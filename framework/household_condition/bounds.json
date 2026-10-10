@@ -1,0 +1,22 @@
+{
+  "plausibility": {
+    "violations": [],
+    "bound1_ownership_weights_nonnegative": {
+      "checked": 15,
+      "negative": 0
+    },
+    "bound2_income_identity_worst_rel_dev": 5.740620314396112e-16,
+    "bound3_balance_worst_rel_dev": 3.572190016570999e-16,
+    "bound2_checks": 3780,
+    "bound5_negative_income_cells": 0,
+    "bound5_most_negative": -6.366462912410498e-12,
+    "bound4_reconciliation": {
+      "mortgage_scf_over_official": 0.93,
+      "within_10pct": true,
+      "total_liabilities_scf_over_official": 0.905,
+      "within_10pct_": true,
+      "consumer_credit_scf_over_official": 0.603,
+      "consumer_credit_reconciles": false
+    }
+  }
+}

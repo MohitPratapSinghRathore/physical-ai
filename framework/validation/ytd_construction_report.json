@@ -1,0 +1,50 @@
+{
+  "nt_reres": {
+    "source": "quarterly field",
+    "field": "NTRERESQ",
+    "negative_quarters": 23040,
+    "negative_pct": 21.244
+  },
+  "nt_crcd": {
+    "source": "quarterly field",
+    "field": "NTCRCDQ",
+    "negative_quarters": 2246,
+    "negative_pct": 2.071
+  },
+  "nt_auto": {
+    "source": "quarterly field",
+    "field": "NTAUTOQ",
+    "negative_quarters": 13407,
+    "negative_pct": 12.362
+  },
+  "nt_conoth": {
+    "source": "YTD differenced within calendar year",
+    "field": "NTCONOTH",
+    "negative_quarters": 16215,
+    "negative_pct": 14.951
+  },
+  "nt_ci": {
+    "source": "quarterly field",
+    "field": "NTCIQ",
+    "negative_quarters": 29152,
+    "negative_pct": 26.88
+  },
+  "nt_renres": {
+    "source": "YTD differenced within calendar year",
+    "field": "NTRENRES",
+    "negative_quarters": 17530,
+    "negative_pct": 16.164
+  },
+  "nt_recons": {
+    "source": "YTD differenced within calendar year",
+    "field": "NTRECONS",
+    "negative_quarters": 13752,
+    "negative_pct": 12.68
+  },
+  "nt_total": {
+    "source": "quarterly field",
+    "field": "NTLNLSQ",
+    "negative_quarters": 30648,
+    "negative_pct": 28.26
+  }
+}

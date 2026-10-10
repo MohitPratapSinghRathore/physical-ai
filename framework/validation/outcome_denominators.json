@@ -1,0 +1,30 @@
+{
+  "n_banks": 6629,
+  "household_denominator": {
+    "median_share_of_gross_loans": 0.32896256104729954,
+    "p10_share": 0.11221682202230801,
+    "p90_share": 0.6969070266337861,
+    "banks_qualifying": 5938,
+    "banks_qualifying_pct": 89.57610499321164,
+    "exposed_banks_qualifying": 407
+  },
+  "business_denominator": {
+    "median_share_of_gross_loans": 0.36713325348172177,
+    "p10_share": 0.12523964347744174,
+    "p90_share": 0.6568821677811871,
+    "banks_qualifying": 5762,
+    "banks_qualifying_pct": 86.92110423895006,
+    "exposed_banks_qualifying": 415
+  },
+  "both_qualifying": 5388,
+  "both_qualifying_exposed": 385,
+  "energy_adjacent_ci_proxy": {
+    "mean": 0.0037655386940612157,
+    "sd": 0.013832859169636396,
+    "p90": 0.00867923091749585,
+    "corr_with_mining_exposure": 0.8399683918925204,
+    "corr_with_ci_share": 0.32975719274925924
+  },
+  "exposed_banks_ci_share_median": 0.16732960234398878,
+  "unexposed_banks_ci_share_median": 0.1076235538563923
+}

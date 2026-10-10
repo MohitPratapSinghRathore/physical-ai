@@ -1,0 +1,83 @@
+{
+  "specification_sha256": "476e093703da92d8eacf85332f2d6f637851b2e925b5a34bcb441d1e35f21f9b",
+  "specification_unchanged": true,
+  "invariant1_2022": {
+    "weighted_households_m": 131.3064,
+    "expected_m": 131.31,
+    "implicates": 5,
+    "single_implicate_m": 26.2613,
+    "ratio_full_to_single": 5.0,
+    "pass": true
+  },
+  "invariant1_2019": {
+    "weighted_households_m": 128.6424,
+    "expected_m": 128.64,
+    "implicates": 5,
+    "single_implicate_m": 25.7285,
+    "ratio_full_to_single": 5.0,
+    "pass": true
+  },
+  "invariant2_wage_quintile_shares": [
+    0.2,
+    0.1997,
+    0.2002,
+    0.1998,
+    0.2003
+  ],
+  "invariant2_wealth_group_shares": [
+    0.2498,
+    0.2498,
+    0.2501,
+    0.1502,
+    0.0901,
+    0.01
+  ],
+  "plausibility_preconditions": {
+    "rows_income_negative": 0,
+    "rows_income_nonpositive": 197,
+    "rows_total": 22975,
+    "wageinc_min": -1.0809118236472945,
+    "wageinc_max": 30135821.643286575,
+    "intdivinc_min": 0.0,
+    "intdivinc_max": 109031575.6513026,
+    "kginc_min": -648547.0941883768,
+    "kginc_max": 457225701.4028056,
+    "bussefarminc_min": -1680817.885771543,
+    "bussefarminc_max": 86351883.76753508,
+    "rows_wageinc_negative": 20,
+    "pirtotal_min": 0.0,
+    "pirtotal_max": 313.5431901279708,
+    "pirtotal_above_1": 374,
+    "debt_min": 0.0,
+    "debt_rows_negative": 0,
+    "tpay_min": 0.0,
+    "tpay_rows_negative": 0,
+    "mrthel_min": 0.0,
+    "mrthel_rows_negative": 0,
+    "ccbal_min": 0.0,
+    "ccbal_rows_negative": 0,
+    "install_min": 0.0,
+    "install_rows_negative": 0,
+    "stocks_min": 0.0,
+    "stocks_rows_negative": 0,
+    "nmmf_min": 0.0,
+    "nmmf_rows_negative": 0,
+    "retqliq_min": 0.0,
+    "retqliq_rows_negative": 0,
+    "annuit_min": 0.0,
+    "annuit_rows_negative": 0,
+    "bus_min": -300.0,
+    "bus_rows_negative": 2,
+    "bus_negative_aggregate_bn": -0.0004,
+    "pir40_is_binary": [
+      0,
+      1
+    ]
+  },
+  "aggregate_wage_bill_bn": 10943.0,
+  "aggregate_income_bn": 18565.4,
+  "replicate_weights": {
+    "rows": 4595,
+    "replicates": 999
+  }
+}
