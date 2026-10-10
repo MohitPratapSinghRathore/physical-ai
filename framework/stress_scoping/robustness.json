@@ -1,0 +1,101 @@
+{
+  "description": "Robustness of the allocation disagreement to the imposed severity and to the shrinkage parameter.",
+  "by_severity": [
+    {
+      "severity_multiplier": 0.5,
+      "system_loss_bn": 296.8,
+      "breach_prorata": 25,
+      "breach_specific": 46,
+      "in_both": 24,
+      "jaccard": 0.5106
+    },
+    {
+      "severity_multiplier": 0.75,
+      "system_loss_bn": 445.2,
+      "breach_prorata": 31,
+      "breach_specific": 78,
+      "in_both": 28,
+      "jaccard": 0.3457
+    },
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 128,
+      "in_both": 34,
+      "jaccard": 0.2446
+    },
+    {
+      "severity_multiplier": 1.5,
+      "system_loss_bn": 890.5,
+      "breach_prorata": 324,
+      "breach_specific": 318,
+      "in_both": 104,
+      "jaccard": 0.1933
+    },
+    {
+      "severity_multiplier": 2.0,
+      "system_loss_bn": 1187.3,
+      "breach_prorata": 1067,
+      "breach_specific": 585,
+      "in_both": 337,
+      "jaccard": 0.2563
+    },
+    {
+      "severity_multiplier": 3.0,
+      "system_loss_bn": 1780.9,
+      "breach_prorata": 2318,
+      "breach_specific": 1008,
+      "in_both": 865,
+      "jaccard": 0.3515
+    }
+  ],
+  "by_rho": [
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 107,
+      "in_both": 36,
+      "jaccard": 0.3103,
+      "rho": 0.1
+    },
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 121,
+      "in_both": 34,
+      "jaccard": 0.2576,
+      "rho": 0.2
+    },
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 128,
+      "in_both": 34,
+      "jaccard": 0.2446,
+      "rho": 0.266
+    },
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 135,
+      "in_both": 33,
+      "jaccard": 0.2245,
+      "rho": 0.4
+    },
+    {
+      "severity_multiplier": 1.0,
+      "system_loss_bn": 593.6,
+      "breach_prorata": 45,
+      "breach_specific": 142,
+      "in_both": 33,
+      "jaccard": 0.2143,
+      "rho": 0.6
+    }
+  ],
+  "finding": "The two rules disagree at every severity tested. The Jaccard overlap ranges from 0.193 to 0.511 across a sixfold range of imposed loss, and the institution-specific rule identifies more banks than pro rata at every point. The disagreement is therefore not an artifact of the severity chosen."
+}

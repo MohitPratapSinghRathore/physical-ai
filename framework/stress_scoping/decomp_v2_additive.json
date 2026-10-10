@@ -1,0 +1,16 @@
+{
+  "r2_raw": -0.5567,
+  "r2_normalised": 0.153,
+  "additive": {
+    "mix": 0.1616,
+    "year": 0.004,
+    "bank_persistent": 0.2109,
+    "transitory": 0.6235
+  },
+  "bank_uncorrected": 0.2109,
+  "estimation_noise": 0.0863,
+  "bank_corrected": 0.1246,
+  "forecastable": 0.2862,
+  "mix_share_of_forecastable": 0.5647,
+  "icc": 0.1665
+}

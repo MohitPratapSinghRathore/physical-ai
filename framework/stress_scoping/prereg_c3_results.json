@@ -1,0 +1,189 @@
+{
+  "W1": {
+    "household": {
+      "_meta": {
+        "N": 10170,
+        "K": 453,
+        "n": 508,
+        "base_pct": 4.454,
+        "rho_training": 0.4341,
+        "min_attainable_z": -4.99,
+        "downside_reachable": true
+      },
+      "R1_group_rate": {
+        "k": 19,
+        "expected": 22.63,
+        "lift": 0.84,
+        "z": -0.8,
+        "tier1_flagged": 10.667,
+        "tier1_rest": 9.418,
+        "tier1_gap": 1.249,
+        "la_flagged": 11.757,
+        "la_rest": 11.747
+      },
+      "R2_own_history": {
+        "k": 37,
+        "expected": 22.63,
+        "lift": 1.635,
+        "z": 3.17,
+        "tier1_flagged": 9.625,
+        "tier1_rest": 9.449,
+        "tier1_gap": 0.176,
+        "la_flagged": 11.699,
+        "la_rest": 11.749
+      },
+      "R3_mix_residual": {
+        "k": 34,
+        "expected": 22.63,
+        "lift": 1.503,
+        "z": 2.51,
+        "tier1_flagged": 9.398,
+        "tier1_rest": 9.459,
+        "tier1_gap": -0.061,
+        "la_flagged": 11.65,
+        "la_rest": 11.753
+      }
+    },
+    "commercial": {
+      "_meta": {
+        "N": 9998,
+        "K": 457,
+        "n": 499,
+        "base_pct": 4.571,
+        "rho_training": 0.2956,
+        "min_attainable_z": -5.02,
+        "downside_reachable": true
+      },
+      "R1_group_rate": {
+        "k": 17,
+        "expected": 22.81,
+        "lift": 0.745,
+        "z": -1.28,
+        "tier1_flagged": 11.057,
+        "tier1_rest": 9.379,
+        "tier1_gap": 1.678,
+        "la_flagged": 10.996,
+        "la_rest": 11.785
+      },
+      "R2_own_history": {
+        "k": 23,
+        "expected": 22.81,
+        "lift": 1.008,
+        "z": 0.04,
+        "tier1_flagged": 9.913,
+        "tier1_rest": 9.406,
+        "tier1_gap": 0.507,
+        "la_flagged": 11.507,
+        "la_rest": 11.774
+      },
+      "R3_mix_residual": {
+        "k": 28,
+        "expected": 22.81,
+        "lift": 1.228,
+        "z": 1.14,
+        "tier1_flagged": 9.546,
+        "tier1_rest": 9.417,
+        "tier1_gap": 0.129,
+        "la_flagged": 11.767,
+        "la_rest": 11.759
+      }
+    }
+  },
+  "W2": {
+    "household": {
+      "_meta": {
+        "N": 10679,
+        "K": 43,
+        "n": 533,
+        "base_pct": 0.403,
+        "rho_training": 0.2566,
+        "min_attainable_z": -1.51,
+        "downside_reachable": false
+      },
+      "R1_group_rate": {
+        "k": 1,
+        "expected": 2.15,
+        "lift": 0.466,
+        "z": -0.8,
+        "tier1_flagged": 10.351,
+        "tier1_rest": 9.522,
+        "tier1_gap": 0.829,
+        "la_flagged": 11.697,
+        "la_rest": 12.02
+      },
+      "R2_own_history": {
+        "k": 1,
+        "expected": 2.15,
+        "lift": 0.466,
+        "z": -0.8,
+        "tier1_flagged": 9.493,
+        "tier1_rest": 9.549,
+        "tier1_gap": -0.057,
+        "la_flagged": 12.056,
+        "la_rest": 12.009
+      },
+      "R3_mix_residual": {
+        "k": 4,
+        "expected": 2.15,
+        "lift": 1.864,
+        "z": 1.3,
+        "tier1_flagged": 8.223,
+        "tier1_rest": 9.577,
+        "tier1_gap": -1.354,
+        "la_flagged": 12.16,
+        "la_rest": 12.004
+      }
+    },
+    "commercial": {
+      "_meta": {
+        "N": 10532,
+        "K": 43,
+        "n": 526,
+        "base_pct": 0.408,
+        "rho_training": 0.1793,
+        "min_attainable_z": -1.51,
+        "downside_reachable": false
+      },
+      "R1_group_rate": {
+        "k": 0,
+        "expected": 2.15,
+        "lift": 0.0,
+        "z": -1.51,
+        "tier1_flagged": 10.393,
+        "tier1_rest": 9.499,
+        "tier1_gap": 0.894,
+        "la_flagged": 11.159,
+        "la_rest": 12.049
+      },
+      "R2_own_history": {
+        "k": 3,
+        "expected": 2.15,
+        "lift": 1.397,
+        "z": 0.6,
+        "tier1_flagged": 9.434,
+        "tier1_rest": 9.526,
+        "tier1_gap": -0.092,
+        "la_flagged": 11.368,
+        "la_rest": 12.046
+      },
+      "R3_mix_residual": {
+        "k": 2,
+        "expected": 2.15,
+        "lift": 0.931,
+        "z": -0.1,
+        "tier1_flagged": 8.937,
+        "tier1_rest": 9.542,
+        "tier1_gap": -0.605,
+        "la_flagged": 11.855,
+        "la_rest": 12.033
+      }
+    }
+  },
+  "_hypotheses": {
+    "H1_antiselection": false,
+    "H2_capital_mechanism": true,
+    "H3_detection": false
+  },
+  "_verdict": "KILL",
+  "_violations": []
+}

@@ -1,0 +1,52 @@
+{
+  "benchmark": {
+    "n_obs": 141058,
+    "n_banks": 10292,
+    "r2_pooled_share_regression": 0.1289,
+    "r2_direct_prorata_rule": -0.2279,
+    "note": "the direct rule is the object a category allocation implies; the share regression is a best-fit upper bound on it because its coefficients are fitted, while the rule's are the realised category rates"
+  },
+  "variance_model": {
+    "share_mix": 0.1234,
+    "share_year_effects": 0.0144,
+    "share_bank_persistent_uncorrected": 0.3969,
+    "estimation_noise_in_bank_means": 0.0866,
+    "share_bank_persistent_corrected": 0.3103,
+    "share_transitory": 0.6255,
+    "mean_history_length": 13.71
+  },
+  "icc_vs_autocorr": {
+    "icc_implied_by_corrected_decomposition": 0.3316,
+    "autocorr_after_mix_only": 0.4073,
+    "autocorr_after_mix_and_year": 0.4014,
+    "autocorr_of_within_bank_residual": 0.1814,
+    "note": "the published 0.494 was measured after mix only, so it carried common year shocks. Removing year effects separates the two. A within-bank residual autocorrelation materially above zero means the transitory part is itself serially correlated, which is the structure Spearman-Brown does NOT assume"
+  },
+  "annual_cross_sectional_r2_direct_rule": {
+    "2002": 0.2609,
+    "2003": 0.2442,
+    "2004": 0.2702,
+    "2005": 0.2454,
+    "2006": 0.137,
+    "2007": 0.1156,
+    "2008": 0.1006,
+    "2009": 0.0286,
+    "2010": 0.0211,
+    "2011": 0.0398,
+    "2012": 0.0405,
+    "2013": 0.0471,
+    "2014": 0.074,
+    "2015": 0.1168,
+    "2016": 0.1785,
+    "2017": 0.2237,
+    "2018": 0.3049,
+    "2019": 0.335,
+    "2020": 0.3457,
+    "2021": 0.2749
+  },
+  "period_means": {
+    "pre_crisis_2001_2006": 0.2315,
+    "crisis_2007_2010": 0.0665,
+    "post_2011_2021": 0.1801
+  }
+}

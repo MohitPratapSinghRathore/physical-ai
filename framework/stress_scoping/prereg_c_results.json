@@ -1,0 +1,60 @@
+{
+  "W1_crisis": {
+    "pooled_class": {
+      "rmse": 0.030703881026376334,
+      "mae": 0.010175734086848218
+    },
+    "own_history": {
+      "rmse": 0.01680414707930386,
+      "mae": 0.01028504458073351
+    },
+    "pro_rata": {
+      "rmse": 0.01052422873432374,
+      "mae": 0.009881330684673865
+    },
+    "_meta": {
+      "banks": 8185,
+      "test_rows": 30764,
+      "rho_training": 0.4033,
+      "realised_system_rate": 0.011408
+    },
+    "improvement_vs_pooled": {
+      "own_history": 0.4527,
+      "pro_rata": 0.6572
+    },
+    "clears_margin": true
+  },
+  "W2_post": {
+    "pooled_class": {
+      "rmse": 0.0117227477639569,
+      "mae": 0.004639890254868433
+    },
+    "own_history": {
+      "rmse": 0.011719017870242938,
+      "mae": 0.004128920618422217
+    },
+    "pro_rata": {
+      "rmse": 0.005582945267588538,
+      "mae": 0.004142948440812531
+    },
+    "_meta": {
+      "banks": 6536,
+      "test_rows": 34876,
+      "rho_training": 0.2463,
+      "realised_system_rate": 0.004613
+    },
+    "improvement_vs_pooled": {
+      "own_history": 0.0003,
+      "pro_rata": 0.5238
+    },
+    "clears_margin": false
+  },
+  "_verdict": "INCONCLUSIVE",
+  "_windows_cleared": [
+    "W1_crisis"
+  ],
+  "_violations": [
+    "rho estimated on training window only = 0.4033",
+    "rho estimated on training window only = 0.2463"
+  ]
+}

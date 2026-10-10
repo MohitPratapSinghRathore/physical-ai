@@ -1,0 +1,163 @@
+{
+  "household": {
+    "W1_crisis": {
+      "_meta": {
+        "banks": 8188,
+        "failures_in_window": 45,
+        "flagged_n": 409,
+        "base_rate": 0.0055,
+        "rho_training": 0.4032
+      },
+      "R1_group_rate": {
+        "flagged_failures": 1,
+        "expected": 2.25,
+        "lift": 0.445,
+        "z": -0.86,
+        "median_tier1_flagged": 10.269,
+        "median_tier1_rest": 9.378,
+        "median_logassets_flagged": 11.76,
+        "median_logassets_rest": 11.969
+      },
+      "R2_own_history": {
+        "flagged_failures": 6,
+        "expected": 2.25,
+        "lift": 2.669,
+        "z": 2.57,
+        "median_tier1_flagged": 9.352,
+        "median_tier1_rest": 9.413,
+        "median_logassets_flagged": 11.837,
+        "median_logassets_rest": 11.969
+      },
+      "R3_mix_residual": {
+        "flagged_failures": 6,
+        "expected": 2.25,
+        "lift": 2.669,
+        "z": 2.57,
+        "median_tier1_flagged": 9.143,
+        "median_tier1_rest": 9.42,
+        "median_logassets_flagged": 11.821,
+        "median_logassets_rest": 11.971
+      }
+    },
+    "W2_post": {
+      "_meta": {
+        "banks": 6536,
+        "failures_in_window": 4,
+        "flagged_n": 326,
+        "base_rate": 0.00061,
+        "rho_training": 0.2463
+      },
+      "R1_group_rate": {
+        "flagged_failures": 1,
+        "expected": 0.2,
+        "lift": 5.012,
+        "z": 1.84,
+        "median_tier1_flagged": 10.947,
+        "median_tier1_rest": 10.431,
+        "median_logassets_flagged": 11.682,
+        "median_logassets_rest": 12.216
+      },
+      "R2_own_history": {
+        "flagged_failures": 1,
+        "expected": 0.2,
+        "lift": 5.012,
+        "z": 1.84,
+        "median_tier1_flagged": 10.92,
+        "median_tier1_rest": 10.434,
+        "median_logassets_flagged": 12.228,
+        "median_logassets_rest": 12.204
+      },
+      "R3_mix_residual": {
+        "flagged_failures": 0,
+        "expected": 0.2,
+        "lift": 0.0,
+        "z": -0.46,
+        "median_tier1_flagged": 10.385,
+        "median_tier1_rest": 10.454,
+        "median_logassets_flagged": 12.472,
+        "median_logassets_rest": 12.188
+      }
+    }
+  },
+  "commercial": {
+    "W1_crisis": {
+      "_meta": {
+        "banks": 8065,
+        "failures_in_window": 45,
+        "flagged_n": 403,
+        "base_rate": 0.00558,
+        "rho_training": 0.2604
+      },
+      "R1_group_rate": {
+        "flagged_failures": 1,
+        "expected": 2.25,
+        "lift": 0.445,
+        "z": -0.86,
+        "median_tier1_flagged": 10.778,
+        "median_tier1_rest": 9.335,
+        "median_logassets_flagged": 10.844,
+        "median_logassets_rest": 12.018
+      },
+      "R2_own_history": {
+        "flagged_failures": 2,
+        "expected": 2.25,
+        "lift": 0.889,
+        "z": -0.17,
+        "median_tier1_flagged": 9.75,
+        "median_tier1_rest": 9.371,
+        "median_logassets_flagged": 11.689,
+        "median_logassets_rest": 11.997
+      },
+      "R3_mix_residual": {
+        "flagged_failures": 1,
+        "expected": 2.25,
+        "lift": 0.445,
+        "z": -0.86,
+        "median_tier1_flagged": 9.372,
+        "median_tier1_rest": 9.382,
+        "median_logassets_flagged": 11.922,
+        "median_logassets_rest": 11.983
+      }
+    },
+    "W2_post": {
+      "_meta": {
+        "banks": 6463,
+        "failures_in_window": 4,
+        "flagged_n": 323,
+        "base_rate": 0.00062,
+        "rho_training": 0.1499
+      },
+      "R1_group_rate": {
+        "flagged_failures": 1,
+        "expected": 0.2,
+        "lift": 5.002,
+        "z": 1.84,
+        "median_tier1_flagged": 11.302,
+        "median_tier1_rest": 10.411,
+        "median_logassets_flagged": 11.153,
+        "median_logassets_rest": 12.248
+      },
+      "R2_own_history": {
+        "flagged_failures": 1,
+        "expected": 0.2,
+        "lift": 5.002,
+        "z": 1.84,
+        "median_tier1_flagged": 10.978,
+        "median_tier1_rest": 10.415,
+        "median_logassets_flagged": 11.486,
+        "median_logassets_rest": 12.245
+      },
+      "R3_mix_residual": {
+        "flagged_failures": 1,
+        "expected": 0.2,
+        "lift": 5.002,
+        "z": 1.84,
+        "median_tier1_flagged": 10.771,
+        "median_tier1_rest": 10.421,
+        "median_logassets_flagged": 11.93,
+        "median_logassets_rest": 12.227
+      }
+    }
+  },
+  "_violations": []
+}

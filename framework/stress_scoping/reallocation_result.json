@@ -1,0 +1,64 @@
+{
+  "description": "Pro rata versus institution-specific allocation of the same system loss per category, across the June 2026 FDIC panel.",
+  "banks": 4313,
+  "banks_with_history": 4190,
+  "coverage_of_assets": 0.9976,
+  "system_loss_bn": 593.6,
+  "severities_applied": {
+    "residential": 0.03,
+    "credit_card": 0.15,
+    "other_consumer": 0.06,
+    "cre": 0.055,
+    "business_credit": 0.04
+  },
+  "shrinkage_rho": 0.266,
+  "breaching_prorata": 45,
+  "breaching_specific": 128,
+  "breaching_both": 34,
+  "only_prorata": 11,
+  "only_specific": 94,
+  "jaccard_overlap_of_breach_sets": 0.2446,
+  "spearman_of_loss_ordering": 0.8994,
+  "assets_breaching_prorata_pct": 5.0358,
+  "assets_breaching_specific_pct": 6.1624,
+  "factor_spread": {
+    "business_credit": {
+      "p10": 0.142,
+      "median": 0.58,
+      "p90": 2.122
+    },
+    "cre": {
+      "p10": 0.116,
+      "median": 0.408,
+      "p90": 1.946
+    },
+    "credit_card": {
+      "p10": 0.26,
+      "median": 0.584,
+      "p90": 1.137
+    },
+    "other_consumer": {
+      "p10": 0.161,
+      "median": 0.479,
+      "p90": 1.24
+    },
+    "residential": {
+      "p10": 0.133,
+      "median": 0.351,
+      "p90": 1.008
+    }
+  },
+  "newly_flagged": {
+    "n": 94,
+    "median_assets_bn": 0.578,
+    "total_assets_bn": 319.8,
+    "pct_system_assets": 1.2,
+    "by_size_class": {
+      "community (under 1bn)": 63,
+      "midsize (1 to 10bn)": 26,
+      "regional (10 to 100bn)": 5
+    },
+    "median_leverage_under_prorata": 0.0648,
+    "median_leverage_under_specific": 0.0181
+  }
+}

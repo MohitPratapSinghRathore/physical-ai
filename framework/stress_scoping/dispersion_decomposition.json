@@ -1,0 +1,48 @@
+{
+  "description": "How much of the cross-sectional dispersion in realised household loan loss rates across US banks is explained by business mix alone. The institution-level stress test allocates losses pro rata by loan category, which makes business mix the only source of dispersion by construction. This quantifies what that discards.",
+  "source": "FDIC call reports via the predictive panel, 2001-2024, after the minimum-book rule.",
+  "by_outcome": {
+    "y_hh_1": {
+      "n_obs": 138239,
+      "n_banks": 9973,
+      "mix_r2": 0.0974,
+      "persistent_bank_specific": 0.2397,
+      "transitory": 0.6629,
+      "mix_share_of_forecastable": 0.2889,
+      "resid_autocorr": 0.4943
+    },
+    "y_hh_3": {
+      "n_obs": 138239,
+      "n_banks": 9973,
+      "mix_r2": 0.1423,
+      "persistent_bank_specific": 0.3243,
+      "transitory": 0.5334,
+      "mix_share_of_forecastable": 0.305,
+      "resid_autocorr": 0.8055
+    },
+    "y_tot_1": {
+      "n_obs": 138179,
+      "n_banks": 9967,
+      "mix_r2": 0.0951,
+      "persistent_bank_specific": 0.2061,
+      "transitory": 0.6988,
+      "mix_share_of_forecastable": 0.3156,
+      "resid_autocorr": 0.4955
+    }
+  },
+  "by_period": {
+    "pre_crisis_2001_2006": {
+      "mix_r2": 0.1622,
+      "n_obs": 51274
+    },
+    "crisis_2007_2010": {
+      "mix_r2": 0.1161,
+      "n_obs": 31213
+    },
+    "post_2011_2021": {
+      "mix_r2": 0.0913,
+      "n_obs": 64326
+    }
+  },
+  "finding": "Business mix explains about a tenth of total dispersion and under a third of the FORECASTABLE dispersion. It explains no more under stress: in the 2007-2010 window the mix R-squared is 0.116. A pro rata allocation therefore captures roughly 30 percent of the cross-sectional variation a stress test is trying to rank institutions on."
+}

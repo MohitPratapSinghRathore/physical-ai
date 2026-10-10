@@ -1,0 +1,40 @@
+{
+  "W1_crisis": {
+    "base_rate": 0.0571,
+    "n_banks": 8185,
+    "pooled_class": {
+      "flagged": 410,
+      "adverse_rate_flagged": 0.0463,
+      "lift": 0.81
+    },
+    "own_history": {
+      "flagged": 410,
+      "adverse_rate_flagged": 0.0829,
+      "lift": 1.45
+    },
+    "pro_rata": {
+      "flagged": 410,
+      "adverse_rate_flagged": 0.0122,
+      "lift": 0.21
+    }
+  },
+  "W2_post": {
+    "base_rate": 0.0138,
+    "n_banks": 6536,
+    "pooled_class": {
+      "flagged": 327,
+      "adverse_rate_flagged": 0.0122,
+      "lift": 0.89
+    },
+    "own_history": {
+      "flagged": 327,
+      "adverse_rate_flagged": 0.0183,
+      "lift": 1.33
+    },
+    "pro_rata": {
+      "flagged": 327,
+      "adverse_rate_flagged": 0.0031,
+      "lift": 0.22
+    }
+  }
+}
